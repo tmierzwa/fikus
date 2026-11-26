@@ -101,6 +101,14 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   z ust. 1 pkt 1, 2, 2a, 2b, 3 albo 4 wynosi odpowiednio 17, 15, 14, 12, 10 albo 12,5%.
 - Pytania: czy stawkę podwyższoną stosuje się do wszystkich przychodów, czy tylko do przychodów z danego
   punktu? Którą stawkę stosuje się, gdy podatnik ma przychody z kilku z tych punktów?
+- Przeszukane źródła urzędowe (2026-11-26), bez rozstrzygnięcia: wyszukiwarka MF Eureka (eureka.mf.gov.pl) nie ma
+  objaśnień podatkowych ani interpretacji ogólnej o art. 12 ust. 3; strona MF „Opodatkowanie ryczałtem od przychodów
+  ewidencjonowanych” (podatki.gov.pl, aktualizacja 26.11.2026) tego nie omawia.
+- Materiał dla eksperta: biznes.gov.pl, „Ryczałt od przychodów ewidencjonowanych” (https://www.biznes.gov.pl/pl/portal/00263,
+  aktualizacja 07.01.2026) podaje, że bez takiej ewidencji „Organ podatkowy przypisze te przychody do stawki 8,5% zamiast
+  do stawek niższych” oraz: „Zasady tej sankcji nie stosuje się do przychodów, dla których stawka ryczałtu jest wyższa niż
+  8,5%”. Według tej strony stawkę podwyższoną stosuje się więc tylko do przychodów z danego punktu. Portal nie jest
+  objaśnieniem podatkowym MF, więc nie rozstrzyga pytania.
 
 ## P7. Minimum rocznej składki zdrowotnej przy podatku liniowym: liczba miesięcy
 
@@ -195,6 +203,15 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
 - Strony MF (podatki.gov.pl) i biznes.gov.pl piszą tylko „rozpoczynasz prowadzenie działalności”.
 - Pytanie: czy prawo rozpoczynającego działalność do zaliczek kwartalnych (PIT) i do kwartalnego ryczałtu dotyczy tylko
   roku podatkowego, w którym rozpoczął działalność?
+- Przeszukane źródła urzędowe (2026-11-26), bez rozstrzygnięcia:
+  - Objaśnienia podatkowe MF z 27 września 2019 r. o wyborze formy opodatkowania i sposobu wpłacania zaliczek
+    (https://www.gov.pl/attachment/92eafef0-5159-42a7-be45-95a802efbd05), część V: zaliczki kwartalne może wybrać
+    podatnik „spełniający definicję małego podatnika albo rozpoczynający działalność”, a od 1 stycznia 2019 r.
+    „z kwartalnego sposobu wpłacania ryczałtu mogą korzystać podatnicy rozpoczynający prowadzenie działalności”.
+    Objaśnienia nie mówią, jak długo trwa ten status.
+  - Strona MF o ryczałcie (podatki.gov.pl, aktualizacja 26.11.2026) nadal podaje tylko warunek „rozpoczynasz
+    prowadzenie działalności gospodarczej”.
+  - Eureka: brak interpretacji ogólnej w tej sprawie.
 
 ## P12. Zaliczki uproszczone, gdy w roku poprzedzającym nie złożono zeznania PIT z działalności
 
@@ -208,6 +225,11 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   się ryczałtem i składał inne zeznanie), ani gdy nie złożył go dwa lata wcześniej.
 - Pytanie: czy w takim przypadku podatnik może wpłacać zaliczki uproszczone na podstawie zeznania sprzed dwóch lat,
   czy zaliczki uproszczone nie są dla niego dostępne?
+- Przeszukane źródła urzędowe (2026-11-26), bez rozstrzygnięcia: Eureka nie ma objaśnień podatkowych ani
+  interpretacji ogólnej o art. 44 ust. 6b; objaśnienia MF z 27 września 2019 r. (część V) dotyczą tylko informowania
+  o wyborze zaliczek uproszczonych w zeznaniu. Sam art. 44 ust. 6b rozstrzyga tylko przypadek, w którym w obu
+  zeznaniach nie wykazano dochodu albo wykazano dochód nieprzekraczający ilorazu („nie są możliwe wpłaty zaliczek
+  w uproszczonej formie”), a nie przypadek braku zeznania.
 
 ## P13. Limit odliczenia darowizn na ryczałcie: od jakiej kwoty przychodu
 
@@ -222,6 +244,16 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
 - Pytanie: czy na ryczałcie limit 6% liczy się od przychodu przed odliczeniami z art. 11 ust. 1 i 1a (składki,
   inne ulgi), czy od przychodu po tych odliczeniach? Czy przy przychodach opodatkowanych różnymi stawkami limit
   liczy się od łącznego przychodu?
+- Przeszukane źródła urzędowe (2026-11-26), bez rozstrzygnięcia:
+  - Broszura informacyjna MF do PIT/O za 2025 r. (https://www.podatki.gov.pl/media/z5abnlba/pit-o-broszura-za-2025-r.pdf):
+    limit to „6% Twojego dochodu (odpowiednio przychodu w zeznaniu PIT–28)”, bez wskazania, o jaki przychód chodzi.
+  - Formularz PIT-28(25) (https://www.gov.pl/attachment/4702beb3-9a78-4c10-a023-c9bdd2a037f6), część E.1: darowizny
+    z PIT/O odlicza się razem ze stratami i składkami społecznymi, a składki zdrowotne dopiero w części E.4; formularz
+    nie określa podstawy limitu 6%.
+  - Uzasadnienie projektu ustawy Dz.U. 2026 poz. 1541 (druk sejmowy nr 3149,
+    https://api.sejm.gov.pl/sejm/term10/prints/3149/3149-uzasadnienie.docx), część o krwiodawstwie: odliczenie „nie
+    może przekroczyć odpowiednio 6 % rocznego dochodu (przychodu)”.
+  - Eureka: brak objaśnień podatkowych i interpretacji ogólnej o art. 26 ust. 5 na ryczałcie.
 
 ## P14. Limit ulgi internetowej w zeznaniu za 2027 r. po jej uchyleniu
 
@@ -243,6 +275,15 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
      za 2027 r. ma podatnik, który po raz pierwszy odliczył wydatki od przychodu w zeznaniu za 2026 r.?
   3. Czy prawo zachowuje podatnik, który w 2026 r. odliczył wydatki na ryczałcie, a w 2027 r. rozlicza się według
      skali (albo odwrotnie)? Czy traci je podatnik, który w 2027 r. przeszedł na podatek liniowy?
+- Przeszukane źródła urzędowe (2026-11-26), bez rozstrzygnięcia:
+  - Uzasadnienie projektu (druk sejmowy nr 3149, https://api.sejm.gov.pl/sejm/term10/prints/3149/3149-uzasadnienie.docx),
+    część o art. 5: przepis „zachowuje zatem roczne prawa nabyte dla osób, które po raz pierwszy skorzystają z tego
+    odliczenia w rozliczeniu podatku PIT (zarówno na podstawie ustawy o PIT, jak i ustawy o ryczałcie), w rozliczeniu
+    podatku za rok poprzedzający rok wejścia w życie projektowanej ustawy”. We wstępie podaje obecny limit: „do wysokości
+    limitu 760 zł rocznie”. Uzasadnienie nie mówi o zmianie formy opodatkowania między 2026 a 2027 r. i nie podaje
+    wprost limitu dla zeznania za 2027 r. Uzasadnienie nie jest objaśnieniem podatkowym, więc nie rozstrzyga pytań 1 i 2.
+  - Strona MF „Ulga na Internet PIT” nadal ma aktualizację z 9.10.2026 (sprawdzone 2026-11-26), sprzed ogłoszenia ustawy.
+  - Eureka: brak objaśnień podatkowych i interpretacji ogólnej o uldze internetowej po 2026 r.
 
 ## P15. Wyłączenie łącznego opodatkowania przy podatku liniowym albo ryczałcie: rok bez przychodów i zmiana formy w trakcie roku
 
@@ -261,8 +302,29 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
 - Pytania: czy oba te wyjaśnienia wynikają z art. 6 ust. 8 i czy można je dopisać do zasady jako kroki?
   Czy tak samo jest przy ryczałcie od przychodów ewidencjonowanych (rok bez przychodów i kosztów) i przy
   karcie podatkowej?
+- Przeszukane źródła urzędowe (2026-11-26), bez rozstrzygnięcia:
+  - Objaśnienia podatkowe MF z 18 stycznia 2019 r. (Eureka, ID 482279,
+    https://eureka.mf.gov.pl/informacje/podglad/482279) powtarzają wyłączenia z art. 6 ust. 8 ogólnie, bez roku bez
+    przychodów i bez zmiany formy w trakcie roku.
+  - Materiał dla eksperta: „Pigułka wiedzy” KIS „Rozliczenie wspólne małżonków” (Eureka, ID 525130,
+    https://eureka.mf.gov.pl/informacje/podglad/525130), pytanie 5: „Wspólne rozliczenie z małżonkiem jest możliwe,
+    jeśli do któregoś z małżonków mają zastosowanie przepisy dot. działalności gospodarczej opodatkowanej podatkiem
+    liniowym, ale ma on „zerowy” PIT-36L”. Nie dotyczy ryczałtu, karty podatkowej ani zmiany formy w trakcie roku.
+    „Pigułka wiedzy” nie jest objaśnieniem podatkowym ani interpretacją ogólną.
 
 ## P16. Wniosek o łączne opodatkowanie w zeznaniu złożonym po terminie albo w korekcie; okres samotnego wychowywania dzieci
+
+- Materiał urzędowy znaleziony 2026-11-26 (pytanie zostaje otwarte): objaśnienia podatkowe MF z 18 stycznia 2019 r.
+  (Eureka, ID 482279, https://eureka.mf.gov.pl/informacje/podglad/482279) podają, że po uchyleniu art. 6 ust. 10 ustawy
+  o PIT możliwość „opodatkowania dochodów małżonków, wdów i wdowców albo osób samotnie wychowujących dzieci nie jest już
+  uzależniona od terminu złożenia wniosku o wyborze preferencyjnego sposobu opodatkowania zawartego w zeznaniu
+  podatkowym”, a małżonkowie, którzy złożyli zeznanie po terminie, „nie tracą uprawnienia do wspólnego opodatkowania
+  dochodów mimo upływu terminu na złożenie zeznania” (Przykład 2). Objaśnienia mówią też o podatnikach, którzy złożyli
+  zeznanie w terminie, ale nie skorzystali z preferencyjnego opodatkowania i „nie mogąc tego dokonać po terminie” czuli
+  się pokrzywdzeni („Wprowadzona zmiana eliminuje tę niedogodność”), a Przykład 1 (stan sprzed zmiany) opisuje korektę
+  wspólnego zeznania na odrębne zeznania. Objaśnienia opisują stan prawny z 2019 r.; w innych punktach (zawarcie
+  małżeństwa w trakcie roku, śmierć małżonka, dochody uczącego się dziecka) są nieaktualne. Kroków zasad nie zmieniono:
+  zmiana kroku wymaga nowej wersji po ocenie, czy objaśnienia obejmują też korektę zeznania.
 
 - Wpisy: `zasada.malzonkowie_wspolne_opodatkowanie` i `zasada.samotny_rodzic_opodatkowanie` (od 2025-01-01),
   krok o wniosku; przy osobie samotnie wychowującej dzieci także ostatni krok.
@@ -274,13 +336,18 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   24.06.2026): wniosek można wyrazić w korekcie zeznania, można też zmienić wspólne rozliczenie na
   indywidualne korektą, a złożenie zeznania po terminie nie pozbawia prawa do wspólnego rozliczenia.
 - Pytania: czy wniosek o łączne opodatkowanie (i o sposób opodatkowania dla osoby samotnie wychowującej
-  dzieci) można skutecznie wyrazić w zeznaniu złożonym po terminie z art. 45 ust. 1 albo w korekcie zeznania
-  i na jakiej podstawie (art. 81 Ordynacji podatkowej?), oraz czy korektą można z niego zrezygnować?
+  dzieci) można skutecznie wyrazić w korekcie zeznania i na jakiej podstawie (art. 81 Ordynacji podatkowej?),
+  oraz czy korektą można z niego zrezygnować? Czy objaśnienia z 18 stycznia 2019 r. (wyżej) pozwalają opisać w zasadzie
+  wniosek w zeznaniu złożonym po terminie?
 - Art. 6 ust. 4c: sposób opodatkowania dotyczy rodzica, który „w roku podatkowym samotnie wychowuje dzieci”.
   Przepis nie mówi, czy przez cały rok. podatki.gov.pl (Osoba samotnie wychowująca dziecko) podaje, że nie
   trzeba samotnie wychowywać dziecka przez cały rok (przykład rozwodu w trakcie roku).
 - Pytanie: czy warunek samotnego wychowywania dzieci jest spełniony, gdy trwał tylko przez część roku
   podatkowego, i czy można to dopisać do zasady?
+- Przeszukane źródła urzędowe (2026-11-26), bez rozstrzygnięcia pozostałych pytań: objaśnienia z 18 stycznia 2019 r. nie
+  mówią o okresie samotnego wychowywania; Eureka nie ma w tych sprawach innych objaśnień ani
+  interpretacji ogólnej. Odpowiedzi MF dla mediów z 9 lutego 2024 r. (Eureka, ID 578092 i 578172) dotyczą opieki
+  naprzemiennej, nie okresu w roku.
 
 ## P17. Wariant JPK_V7K dla deklaracji za I kwartał 2026 r.
 
@@ -348,3 +415,13 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   wśród odliczeń, po których koryguje się podstawę (art. 1 pkt 3).
 - Pytanie dodatkowe: w jakiej kolejności po 2026 r. stosuje się odliczenie i doliczenie z art. 26gb (ust. 9 i 6) za koszty
   sprzed 2027 r. i korektę podstawy z art. 26i: czy art. 26i stosuje się do podstawy przed nimi, czy po nich?
+- Przeszukane źródła urzędowe (2026-11-26), bez rozstrzygnięcia:
+  - Uzasadnienie projektu (druk sejmowy nr 3149, https://api.sejm.gov.pl/sejm/term10/prints/3149/3149-uzasadnienie.docx):
+    stanowisko MF „jest w tej sprawie niezmienne od początku obowiązywania przepisów regulujących ulgę na robotyzację”
+    i „W ocenie MF prawidłowym jest uznanie za koszt kwalifikowany kwoty dokonywanych odpisów amortyzacyjnych”; o art. 7:
+    przy rozliczaniu ulgi w latach po zmianie „nadal należy stosować ograniczenie, o którym mowa w uchylanym ust. 5a,
+    dotyczącym zasady DNSH (do kosztów sprzed nowelizacji)”; o art. 6: podatnicy będą „uprawnieni kontynuować
+    odliczenie nieodliczonej w poprzednich latach ulgi ze względu na brak dochodu”. Uzasadnienie nie mówi o odpisach
+    od aktywów nabytych przed 2027 r. ani o kolejności wobec art. 26i.
+  - Eureka: brak objaśnień podatkowych i interpretacji ogólnej o uldze na robotyzację i uldze na ekspansję. W odpowiedzi
+    dla mediów z 10 maja 2023 r. (Eureka, ID 543390) MF zapowiedziało objaśnienia o uldze na ekspansję; w Eurece ich nie ma.
