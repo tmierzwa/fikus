@@ -102,6 +102,18 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
 - Pytania: czy stawkę podwyższoną stosuje się do wszystkich przychodów, czy tylko do przychodów z danego
   punktu? Którą stawkę stosuje się, gdy podatnik ma przychody z kilku z tych punktów?
 
+## P7. Minimum rocznej składki zdrowotnej przy podatku liniowym: liczba miesięcy
+
+- Wpis: `zasada.liniowy_zdrowotna` (wersje od 2025-02-01, od 2026-02-01 i od 2027-02-01), krok o rocznej składce.
+- Zgłoszone: 2026-11-26.
+- Ustawa o świadczeniach opieki zdrowotnej (Dz.U. 2025 poz. 1461), art. 79a ust. 1 pkt 2: roczna składka nie mniej niż 9%
+  „iloczynu liczby miesięcy w roku składkowym, o którym mowa w art. 81 ust. 2, i minimalnego wynagrodzenia”. Art. 81 ust. 2b
+  dla minimalnej rocznej podstawy liczy natomiast miesiące podlegania ubezpieczeniu w roku kalendarzowym.
+- Poradnik ZUS „Polski Ład” (stan prawny na 1 stycznia 2025 r.) w przykładzie rocznej składki przy podatku liniowym liczy
+  minimum od liczby miesięcy podlegania ubezpieczeniu.
+- Pytanie: czy minimum rocznej składki z art. 79a ust. 1 pkt 2 liczy się od wszystkich miesięcy roku składkowego, czy tylko
+  od miesięcy podlegania ubezpieczeniu zdrowotnemu?
+
 ## P8. Od kiedy stosować art. 81 ust. 2zd pkt 2 bez art. 21 ust. 1 pkt 63a ustawy o PIT
 
 - Wpisy, których dotyczy wątpliwość:
