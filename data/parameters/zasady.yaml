@@ -90,6 +90,86 @@
           wymienia złożenie deklaracji i wniesienie odwołania, zapłaty nie wymienia. Brak drugiego źródła urzędowego po zmianie.
           Pytanie do eksperta: docs/pytania-do-eksperta.md, P5.
 
+- id: zasada.skala_podatek
+  name: Podatek według skali i zaliczki miesięczne
+  kind: rule
+  applies_to: {tax_form: [skala]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Ustal dochód z działalności według art. 9, art. 23o, art. 23u, art. 24 ust. 1, 2, 3b–3e, 4–4e, 6 i 21 albo art. 24b ust. 1 i 2 ustawy o PIT, z uwzględnieniem obniżenia o straty z lat poprzednich na zasadach art. 9 ust. 3. Przy podatkowej księdze przychodów i rozchodów dochodem jest różnica między przychodem a kosztami jego uzyskania, powiększona albo pomniejszona o różnicę między wartością remanentu końcowego i początkowego (art. 24 ust. 2 zdanie pierwsze). Ta zasada nie opisuje ustalania dochodu przy księgach rachunkowych (art. 24 ust. 1) ani dochodu z odpłatnego zbycia składników majątku (art. 24 ust. 2 zdanie drugie).
+            uses: []
+            basis: art. 26 ust. 1 zdanie pierwsze, art. 9 ust. 2 i 3 oraz art. 24 ust. 2 ustawy o podatku dochodowym od osób fizycznych
+          - text: Od dochodu odlicz składki na ubezpieczenia społeczne z art. 26 ust. 1 pkt 2 lit. a i pkt 2a ustawy o PIT zapłacone w roku podatkowym, na warunkach z tych przepisów (przy pkt 2 bez składek, których podstawą są dochody zwolnione albo dochody, od których zaniechano poboru podatku; przy pkt 2a z zastrzeżeniem art. 26 ust. 13b i 13c). Odliczasz tylko składki, które nie zostały zaliczone do kosztów uzyskania przychodów, odliczone od dochodów opodatkowanych na zasadach art. 30c ani od przychodu na podstawie ustawy o zryczałtowanym podatku dochodowym i nie zostały zwrócone w jakiejkolwiek formie (art. 26 ust. 13a).
+            uses: [zus.stawka.emerytalna, zus.stawka.rentowa, zus.stawka.chorobowa, zus.stawka.wypadkowa_do_9]
+            basis: art. 26 ust. 1 pkt 2 lit. a i pkt 2a oraz ust. 13a–13c ustawy o podatku dochodowym od osób fizycznych
+          - text: Od podstawy obliczenia podatku do progu podatek to podstawa pomnożona przez stawkę niższą, pomniejszona o kwotę zmniejszającą podatek. Od podstawy ponad próg podatek to kwota podatku od progu powiększona o stawkę wyższą od nadwyżki ponad próg.
+            uses: [podatek.skala]
+            basis: art. 27 ust. 1 ustawy o podatku dochodowym od osób fizycznych
+          - text: Podstawę opodatkowania i kwotę podatku zaokrąglij do pełnych złotych; końcówki poniżej 50 groszy pomiń, a od 50 groszy podwyższ do pełnego złotego.
+            uses: []
+            basis: art. 63 § 1 Ordynacji podatkowej
+          - text: Ta zasada nie opisuje pozostałych odliczeń od dochodu i od podatku (między innymi z art. 26 ust. 1 pkt 2b–9, art. 26e–26i, art. 27f i art. 52jb–52x ustawy o PIT), wspólnego opodatkowania małżonków i osób samotnie wychowujących dzieci (art. 6), łączenia dochodu z działalności z innymi dochodami opodatkowanymi według skali ani dochodów i podatku zagranicznego (metoda z art. 27 ust. 8 i odliczenie podatku zapłaconego za granicą z art. 27 ust. 9 i 9a).
+            uses: []
+            basis: art. 6, art. 26, art. 27 i art. 27f ustawy o podatku dochodowym od osób fizycznych
+          - text: Przy zaliczkach miesięcznych obowiązek zaliczki powstaje od miesiąca, w którym dochody przekroczyły iloraz kwoty zmniejszającej podatek i stawki niższej (art. 44 ust. 3 pkt 1). Zaliczka za ten miesiąc to podatek od tego dochodu obliczony według kroków powyżej, z tym że przy podatkowej księdze przychodów i rozchodów dochodem do zaliczki jest różnica między przychodem a kosztami wynikającymi z księgi, a różnicę remanentową uwzględniasz tylko wtedy, gdy sporządzasz remanent na koniec miesiąca albo zarządzi to naczelnik urzędu skarbowego (art. 44 ust. 2); a za dalsze miesiące różnica między podatkiem od dochodu od początku roku a sumą zaliczek za miesiące poprzedzające. Zaliczki można nie wpłacać, jeżeli podatek od dochodu od początku roku pomniejszony o sumę wpłaconych zaliczek nie przekracza 1000 zł. Gdy ta kwota przekroczy 1000 zł, wpłać różnicę między podatkiem od dochodu od początku roku a sumą zaliczek wpłaconych od początku roku. Mały podatnik i podatnik rozpoczynający działalność mogą zamiast tego wpłacać zaliczki kwartalne (art. 44 ust. 3g i 3i), a podatnik może wybrać zaliczki uproszczone (art. 44 ust. 6b–6e); ta zasada tych sposobów nie opisuje. Nie opisuje też zwolnienia z zaliczek podatnika, który po raz pierwszy rozpoczął działalność (art. 44 ust. 7a–7k), braku zaliczek w okresie zawieszenia działalności (art. 44 ust. 10) ani korekty dochodu przy niezapłaconych należnościach i zobowiązaniach (art. 44 ust. 17–26).
+            uses: [podatek.skala, termin.zaliczka_skala]
+            basis: art. 44 ust. 2, ust. 3 pkt 1–3 i ust. 15 ustawy o podatku dochodowym od osób fizycznych
+          - text: Po końcu roku podatek należny wykazujesz w zeznaniu rocznym. Przed upływem terminu złożenia zeznania wpłacasz różnicę między podatkiem należnym wynikającym z zeznania a sumą zapłaconych za ten rok zaliczek.
+            uses: [termin.zeznanie_skala]
+            basis: art. 45 ust. 1 i ust. 4 pkt 1 ustawy o podatku dochodowym od osób fizycznych
+      note: >-
+        Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku obowiązywania (2026-01-01)
+        nie jest potwierdzona źródłem. Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (podstawa)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 1
+          quote: "zapłaconych w roku podatkowym bezpośrednio na własne ubezpieczenia emerytalne, rentowe, chorobowe oraz wypadkowe podatnika oraz osób z nim współpracujących"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (skala)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 27 ust. 1
+          quote: "pobiera się od podstawy jego obliczenia według następującej skali podatkowej"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (zaliczki)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 3
+          quote: "zaliczkę za dalsze miesiące ustala się w wysokości różnicy pomiędzy podatkiem należnym od dochodu osiągniętego od początku roku a sumą zaliczek za miesiące poprzedzające"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (zaliczka do 1000 zł)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 15
+          quote: "pomniejszony o sumę zaliczek wpłaconych od początku roku nie przekracza 1000 zł"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dochód przy księdze przychodów i rozchodów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 24 ust. 2
+          quote: "dochodem z działalności jest różnica pomiędzy przychodem w rozumieniu art. 14 a kosztami uzyskania powiększona o różnicę"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (początek obowiązku zaliczki)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 3 pkt 1
+          quote: "obowiązek wpłacania zaliczki powstaje, poczynając od miesiąca, w którym dochody te przekroczyły kwotę stanowiącą"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (warunki odliczenia składek)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 13a
+          quote: "Wydatki na cele określone w ust. 1 podlegają odliczeniu od dochodu, jeżeli nie zostały zaliczone do kosztów uzyskania przychodów"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dochód do zaliczki przy księdze)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 2
+          quote: "jest różnica pomiędzy wynikającym z tych ksiąg przychodem i kosztami jego uzyskania"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wpłata różnicy po zeznaniu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 45 ust. 4 pkt 1
+          quote: "różnicę między podatkiem należnym wynikającym z zeznania, o którym mowa w ust. 1, a sumą zapłaconych za dany rok zaliczek"
+        - title: Dz.U. 2026 poz. 622, tekst jednolity Ordynacji podatkowej (zaokrąglenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/622/text.pdf
+          article: art. 63 § 1
+          quote: "Podstawy opodatkowania, kwoty podatków, odsetki za zwłokę, opłaty prolongacyjne, oprocentowanie nadpłat oraz wynagrodzenia przysługujące płatnikom i inkasentom zaokrągla się do pełnych złotych"
+        - title: biznes.gov.pl, Najważniejsze zasady opodatkowania według skali podatkowej, aktualizacja 07.01.2026
+          url: https://www.biznes.gov.pl/pl/portal/00264
+          kind: control
+          quote: "Składki na ubezpieczenia społeczne możesz odliczyć od dochodu tylko wtedy, gdy nie zostały zaliczone do kosztów uzyskania przychodów albo nie zostały ci zwrócone w jakiejkolwiek formie."
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
 - id: zasada.ryczalt_zdrowotna_prog
   name: Wybór progu składki zdrowotnej na ryczałcie
   kind: rule

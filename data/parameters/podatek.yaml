@@ -86,3 +86,32 @@
           quote: "12% - od przychodów ze świadczenia niektórych usług informatycznych"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: podatek.skala
+  name: Skala podatkowa (próg, stawki i kwota zmniejszająca podatek)
+  unit: "PLN albo % podstawy"
+  applies_to: {tax_form: [skala]}
+  versions:
+    - valid_from: 2025-01-01
+      value: {prog: 120000, stawka_do_progu: 12, kwota_zmniejszajaca: 3600, podatek_od_progu: 10800, stawka_ponad_prog: 32}
+      note: >-
+        Kwoty w złotych, stawki w procentach. Do progu podatek to stawka niższa od podstawy minus kwota zmniejszająca;
+        ponad próg to kwota podatku od progu plus stawka wyższa od nadwyżki. Teksty jednolite poz. 163 (przepisy ogłoszone
+        przed 9 stycznia 2025 r.) i poz. 592 (stan prawny na 1 kwietnia 2026 r.) mają to samo brzmienie art. 27 ust. 1,
+        więc potwierdzają, że ta skala obowiązywała 1 stycznia 2025 r. (nie że wtedy zaczęła obowiązywać).
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 27 ust. 1
+          quote: "Podatek wynosi 12 % minus kwota zmniejszająca podatek 3600 zł 10 800 zł + 32 % nadwyżki ponad 120 000 zł"
+        - title: Dz.U. 2025 poz. 163, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dla daty początku obowiązywania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/163/text.pdf
+          article: art. 27 ust. 1
+          quote: "Podatek wynosi 12 % minus kwota zmniejszająca podatek 3600 zł 10 800 zł + 32 % nadwyżki ponad 120 000 zł"
+          as_of: 2025-01-08
+        - title: podatki.gov.pl (MF), Stawki i limity, aktualizacja 15.12.2025 (skala podatkowa)
+          url: https://podatki.gov.pl/podatki-firmowe/pit/stawki-i-limity
+          kind: control
+          quote: "ponad do 120 000 12% minus kwota zmniejszająca podatek 3 600 zł 120 000 10 800 zł + 32% nadwyżki ponad 120 000 zł"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
