@@ -87,6 +87,236 @@
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
+- id: ryczalt.zakres_uslug
+  name: Brzmienie art. 12 ust. 1 ustawy o zryczałtowanym podatku dochodowym dla usług informatycznych i inżynierskich (symbole PKWiU)
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2024-01-01
+      valid_to: 2028-12-31
+      value:
+        klasyfikacja: PKWiU 2015 (rozporządzenie Rady Ministrów z dnia 4 września 2015 r., Dz.U. poz. 1676 ze zm.)
+        pkt_2_lit_a:
+          brzmienie: "reprodukcji komputerowych nośników informacji (PKWiU 18.20.30.0)"
+          uslugi:
+            - {pkwiu: "18.20.30.0", nazwa: "reprodukcji komputerowych nośników informacji"}
+        pkt_2_lit_e:
+          brzmienie: >-
+            licencyjnych związanych z: – nabywaniem praw do książek, broszur, ulotek, map itp. (PKWiU 58.11.60.0),
+            – nabywaniem praw do korzystania z wykazów i list (np. adresowych, telefonicznych) (PKWiU 58.12.30.0),
+            – nabywaniem praw do czasopism i pozostałych periodyków (PKWiU 58.14.40.0), – nabywaniem praw do
+            pozostałych wyrobów drukowanych (PKWiU 58.19.30.0), – nabywaniem praw do korzystania z gier komputerowych
+            (PKWiU 58.21.40.0), – nabywaniem praw do korzystania z programów komputerowych (PKWiU 58.29.50.0)
+          uslugi:
+            - {pkwiu: "58.11.60.0", nazwa: "licencyjnych związanych z nabywaniem praw do książek, broszur, ulotek, map itp."}
+            - {pkwiu: "58.12.30.0", nazwa: "licencyjnych związanych z nabywaniem praw do korzystania z wykazów i list (np. adresowych, telefonicznych)"}
+            - {pkwiu: "58.14.40.0", nazwa: "licencyjnych związanych z nabywaniem praw do czasopism i pozostałych periodyków"}
+            - {pkwiu: "58.19.30.0", nazwa: "licencyjnych związanych z nabywaniem praw do pozostałych wyrobów drukowanych"}
+            - {pkwiu: "58.21.40.0", nazwa: "licencyjnych związanych z nabywaniem praw do korzystania z gier komputerowych"}
+            - {pkwiu: "58.29.50.0", nazwa: "licencyjnych związanych z nabywaniem praw do korzystania z programów komputerowych"}
+        pkt_2_lit_i:
+          brzmienie: >-
+            przetwarzania danych (PKWiU ex 63.11.1), przesyłania strumieni wideo przez Internet (PKWiU 59.11.25.0),
+            przesyłania strumieni audio przez Internet (PKWiU 59.20.36.0), agencji informacyjnych (PKWiU 63.91.1) oraz
+            pozostałych w zakresie informacji, gdzie indziej niesklasyfikowanych (PKWiU 63.99)
+          uslugi:
+            - {pkwiu: "ex 63.11.1", nazwa: "przetwarzania danych"}
+            - {pkwiu: "59.11.25.0", nazwa: "przesyłania strumieni wideo przez Internet"}
+            - {pkwiu: "59.20.36.0", nazwa: "przesyłania strumieni audio przez Internet"}
+            - {pkwiu: "63.91.1", nazwa: "agencji informacyjnych"}
+            - {pkwiu: "63.99", nazwa: "pozostałych w zakresie informacji, gdzie indziej niesklasyfikowanych"}
+        pkt_2a_lit_b:
+          brzmienie: "architektonicznych i inżynierskich; usług badań i analiz technicznych (PKWiU dział 71)"
+          uslugi:
+            - {pkwiu: "dział 71", nazwa: "architektonicznych i inżynierskich; usług badań i analiz technicznych"}
+        pkt_2a_lit_c:
+          brzmienie: "w zakresie specjalistycznego projektowania (PKWiU 74.1)"
+          uslugi:
+            - {pkwiu: "74.1", nazwa: "w zakresie specjalistycznego projektowania"}
+        pkt_2b_lit_a:
+          brzmienie: >-
+            związanych z wydawaniem: – pakietów gier komputerowych (PKWiU ex 58.21.10.0), z wyłączeniem publikowania
+            gier komputerowych w trybie on-line, – pakietów oprogramowania systemowego (PKWiU 58.29.1), – pakietów
+            oprogramowania użytkowego (PKWiU 58.29.2), – oprogramowania komputerowego pobieranego z Internetu
+            (PKWiU ex 58.29.3), z wyłączeniem pobierania oprogramowania w trybie on-line
+          uslugi:
+            - {pkwiu: "ex 58.21.10.0", nazwa: "związanych z wydawaniem pakietów gier komputerowych", wylaczenie: "z wyłączeniem publikowania gier komputerowych w trybie on-line"}
+            - {pkwiu: "58.29.1", nazwa: "związanych z wydawaniem pakietów oprogramowania systemowego"}
+            - {pkwiu: "58.29.2", nazwa: "związanych z wydawaniem pakietów oprogramowania użytkowego"}
+            - {pkwiu: "ex 58.29.3", nazwa: "związanych z wydawaniem oprogramowania komputerowego pobieranego z Internetu", wylaczenie: "z wyłączeniem pobierania oprogramowania w trybie on-line"}
+        pkt_2b_lit_b:
+          brzmienie: >-
+            związanych z doradztwem w zakresie sprzętu komputerowego (PKWiU 62.02.10.0), związanych z oprogramowaniem
+            (PKWiU ex 62.01.1), objętych grupowaniem „Oryginały oprogramowania komputerowego” (PKWiU 62.01.2), związanych
+            z doradztwem w zakresie oprogramowania (PKWiU ex 62.02), w zakresie instalowania oprogramowania
+            (PKWiU ex 62.09.20.0), związanych z zarządzaniem siecią i systemami informatycznymi (PKWiU 62.03.1)
+          uslugi:
+            - {pkwiu: "62.02.10.0", nazwa: "związanych z doradztwem w zakresie sprzętu komputerowego"}
+            - {pkwiu: "ex 62.01.1", nazwa: "związanych z oprogramowaniem"}
+            - {pkwiu: "62.01.2", nazwa: "objętych grupowaniem „Oryginały oprogramowania komputerowego”"}
+            - {pkwiu: "ex 62.02", nazwa: "związanych z doradztwem w zakresie oprogramowania"}
+            - {pkwiu: "ex 62.09.20.0", nazwa: "w zakresie instalowania oprogramowania"}
+            - {pkwiu: "62.03.1", nazwa: "związanych z zarządzaniem siecią i systemami informatycznymi"}
+        pkt_4_lit_e:
+          brzmienie: "wykonywania usług w zakresie badań naukowych i prac rozwojowych (PKWiU dział 72)"
+          uslugi:
+            - {pkwiu: "dział 72", nazwa: "wykonywania usług w zakresie badań naukowych i prac rozwojowych"}
+      note: >-
+        Parametr podaje tylko brzmienie wybranych liter art. 12 ust. 1 ustawy o zryczałtowanym podatku dochodowym:
+        tych, które wymieniają usługi informatyczne, usługi związane z oprogramowaniem i usługi inżynierskie.
+        Nie przypisuje stawki do żadnego rodzaju przychodu i nie rozstrzyga, czy dana usługa mieści się w danym
+        symbolu PKWiU; to ustala podatnik. Pozostałe litery i punkty art. 12 ust. 1 są tylko w przepisie.
+        Początek klucza (na przykład pkt_2b) to punkt art. 12 ust. 1, a stawkę dla tego punktu podaje parametr
+        ryczalt.stawki pod tym samym kluczem (pkt 2 to 15%, pkt 2a to 14%, pkt 2b to 12%, pkt 4 to 8,5% przychodów
+        do 100 000 zł i 12,5% nadwyżki). Nazwy usług i wyłączenia („z wyłączeniem…”) są przepisane dosłownie;
+        w nazwach z lit. e i lit. a pkt 2b powtórzono wstęp litery („licencyjnych związanych z”, „związanych
+        z wydawaniem”). Oznaczenie „ex” przy symbolu oznacza według art. 4 ust. 4 ustawy, że zakres usług jest węższy
+        niż w tym grupowaniu; ustawa nie opisuje tego zakresu inaczej niż nazwą usługi i podanym wyłączeniem.
+        Symbole odnoszą się do PKWiU 2015: art. 4 ust. 1 pkt 1 ustawy odsyła do rozporządzenia z 4 września 2015 r.,
+        a rozporządzenie Rady Ministrów z 17 grudnia 2025 r. (Dz.U. 2025 poz. 1829), które od 1 stycznia 2026 r.
+        wprowadza PKWiU 2025, każe stosować PKWiU 2015 do celów ryczałtu od przychodów ewidencjonowanych do
+        31 grudnia 2028 r. Dlatego wersja kończy się 31 grudnia 2028 r.; po tej dacie serwer nie podaje zakresu,
+        dopóki przepisy nie określą, której klasyfikacji używać. Teksty jednolite Dz.U. 2024 poz. 776 (przepisy
+        ogłoszone przed 11 kwietnia 2024 r.) i Dz.U. 2025 poz. 843 (przed 12 czerwca 2025 r.) mają to samo brzmienie
+        tych liter; nowelizacje ogłoszone po tekście jednolitym poz. 843 (Dz.U. 2026 poz. 779, 1098 i 1541) nie
+        zmieniają art. 4 ani art. 12. Data początku obowiązywania (2024-01-01) to początek okresu, który potwierdzają
+        te teksty, tak jak w ryczalt.stawki, a nie dzień wejścia przepisów w życie.
+      sources:
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 2 lit. a)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 12 ust. 1 pkt 2 lit. a
+          quote: "2) 15 % przychodów ze świadczenia usług: a) reprodukcji komputerowych nośników informacji (PKWiU 18.20.30.0)"
+          confirms: [pkt_2_lit_a]
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 2 lit. e)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 12 ust. 1 pkt 2 lit. e
+          quote: >-
+            e) licencyjnych związanych z: – nabywaniem praw do książek, broszur, ulotek, map itp. (PKWiU 58.11.60.0),
+            – nabywaniem praw do korzystania z wykazów i list (np. adresowych, telefonicznych) (PKWiU 58.12.30.0),
+            – nabywaniem praw do czasopism i pozostałych periodyków (PKWiU 58.14.40.0), – nabywaniem praw do
+            pozostałych wyrobów drukowanych (PKWiU 58.19.30.0), – nabywaniem praw do korzystania z gier komputerowych
+            (PKWiU 58.21.40.0), – nabywaniem praw do korzystania z programów komputerowych (PKWiU 58.29.50.0)
+          confirms: [pkt_2_lit_e]
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 2 lit. i)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 12 ust. 1 pkt 2 lit. i
+          quote: >-
+            i) przetwarzania danych (PKWiU ex 63.11.1), przesyłania strumieni wideo przez Internet (PKWiU 59.11.25.0),
+            przesyłania strumieni audio przez Internet (PKWiU 59.20.36.0), agencji informacyjnych (PKWiU 63.91.1) oraz
+            pozostałych w zakresie informacji, gdzie indziej niesklasyfikowanych (PKWiU 63.99)
+          confirms: [pkt_2_lit_i]
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 2a lit. b i c)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 12 ust. 1 pkt 2a lit. b i c
+          quote: >-
+            b) architektonicznych i inżynierskich; usług badań i analiz technicznych (PKWiU dział 71), c) w zakresie
+            specjalistycznego projektowania (PKWiU 74.1)
+          confirms: [pkt_2a_lit_b, pkt_2a_lit_c]
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 2b lit. a)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 12 ust. 1 pkt 2b lit. a
+          quote: >-
+            2b) 12 % przychodów ze świadczenia usług: a) związanych z wydawaniem: – pakietów gier komputerowych
+            (PKWiU ex 58.21.10.0), z wyłączeniem publikowania gier komputerowych w trybie on-line, – pakietów
+            oprogramowania systemowego (PKWiU 58.29.1), – pakietów oprogramowania użytkowego (PKWiU 58.29.2),
+            – oprogramowania komputerowego pobieranego z Internetu (PKWiU ex 58.29.3), z wyłączeniem pobierania
+            oprogramowania w trybie on-line
+          confirms: [pkt_2b_lit_a]
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 2b lit. b)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 12 ust. 1 pkt 2b lit. b
+          quote: >-
+            b) związanych z doradztwem w zakresie sprzętu komputerowego (PKWiU 62.02.10.0), związanych z oprogramowaniem
+            (PKWiU ex 62.01.1), objętych grupowaniem „Oryginały oprogramowania komputerowego” (PKWiU 62.01.2), związanych
+            z doradztwem w zakresie oprogramowania (PKWiU ex 62.02), w zakresie instalowania oprogramowania
+            (PKWiU ex 62.09.20.0), związanych z zarządzaniem siecią i systemami informatycznymi (PKWiU 62.03.1)
+          confirms: [pkt_2b_lit_b, period]
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 4 lit. e)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 12 ust. 1 pkt 4 lit. e
+          quote: "e) wykonywania usług w zakresie badań naukowych i prac rozwojowych (PKWiU dział 72)"
+          confirms: [pkt_4_lit_e]
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (klasyfikacja)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 4 ust. 1 pkt 1
+          quote: >-
+            zgodnie z Polską Klasyfikacją Wyrobów i Usług (PKWiU) wprowadzoną rozporządzeniem Rady Ministrów z dnia
+            4 września 2015 r. w sprawie Polskiej Klasyfikacji Wyrobów i Usług (PKWiU)
+          confirms: [klasyfikacja]
+        - title: Dz.U. 2025 poz. 1829, rozporządzenie Rady Ministrów z 17 grudnia 2025 r. w sprawie Polskiej Klasyfikacji Wyrobów i Usług (PKWiU)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1829/text.pdf
+          article: § 2 pkt 2
+          quote: >-
+            zryczałtowanym podatkiem dochodowym w formie ryczałtu od przychodów ewidencjonowanych oraz karty podatkowej –
+            do dnia 31 grudnia 2028 r. – stosuje się Polską Klasyfikację Wyrobów i Usług (PKWiU) wprowadzoną
+            rozporządzeniem Rady Ministrów z dnia 4 września 2015 r.
+          confirms: [klasyfikacja]
+        - title: Dz.U. 2024 poz. 776, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (to samo brzmienie, dla daty początku obowiązywania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/776/text.pdf
+          article: art. 12 ust. 1 pkt 2b lit. b
+          quote: >-
+            b) związanych z doradztwem w zakresie sprzętu komputerowego (PKWiU 62.02.10.0), związanych z oprogramowaniem
+            (PKWiU ex 62.01.1)
+          as_of: 2024-04-10
+          confirms: [period]
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (15%, pierwsza pozycja)
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          quote: "2) 15% w przypadku przychodów osiąganych między innymi w zakresie świadczenia usług: reprodukcji komputerowych nośników informacji (PKWiU 18.20.30.0)"
+          as_of: 2026-11-26
+          confirms: [pkt_2_lit_a]
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (14%)
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          quote: >-
+            3) 14% przychodów ze świadczenia usług: w zakresie opieki zdrowotnej (PKWiU dział 86) architektonicznych
+            i inżynierskich, usług badań i analiz technicznych (PKWiU dział 71) w zakresie specjalistycznego
+            projektowania (PKWiU 74.1).
+          as_of: 2026-11-26
+          confirms: [pkt_2a_lit_b, pkt_2a_lit_c]
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (12%)
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          quote: >-
+            4) 12% przychodów ze świadczenia usług: związanych z wydawaniem: pakietów gier komputerowych
+            (PKWiU ex 58.21.10.0), z wyłączeniem publikowania gier komputerowych w trybie on-line pakietów
+            oprogramowania systemowego (PKWiU 58.29.1) pakietów oprogramowania użytkowego (PKWiU 58.29.2)
+            oprogramowania komputerowego pobieranego z internetu (PKWiU ex 58.29.3), z wyłączeniem pobierania
+            oprogramowania w trybie on-line związanych z doradztwem w zakresie sprzętu komputerowego (PKWiU 62.02.10.0),
+            związanych z oprogramowaniem (PKWiU ex 62.01.1), objętych grupowaniem „Oryginały oprogramowania
+            komputerowego” (PKWiU 62.01.2), związanych z doradztwem w zakresie oprogramowania (PKWiU ex 62.02),
+            w zakresie instalowania oprogramowania (PKWiU ex 62.09.20.0), związanych z zarządzaniem siecią
+            i systemami informatycznymi (PKWiU 62.03.1).
+          as_of: 2026-11-26
+          confirms: [pkt_2b_lit_a, pkt_2b_lit_b, period]
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (8,5% i 12,5%, badania naukowe i prace rozwojowe)
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          quote: >-
+            wykonywania usług w zakresie badań naukowych i prac rozwojowych (PKWiU dział 72)
+          as_of: 2026-11-26
+          confirms: [pkt_4_lit_e]
+        - title: LexLege (portal), art. 12 ustawy o zryczałtowanym podatku dochodowym, stan prawny Dz.U. 2025 poz. 843 (pkt 2 lit. e)
+          url: https://lexlege.pl/zryczl-pod-os-fiz/art-12/
+          kind: control
+          quote: >-
+            licencyjnych związanych z: – nabywaniem praw do książek, broszur, ulotek, map itp. (PKWiU 58.11.60.0),
+            – nabywaniem praw do korzystania z wykazów i list (np. adresowych, telefonicznych) (PKWiU 58.12.30.0),
+            – nabywaniem praw do czasopism i pozostałych periodyków (PKWiU 58.14.40.0), – nabywaniem praw do
+            pozostałych wyrobów drukowanych (PKWiU 58.19.30.0), – nabywaniem praw do korzystania z gier komputerowych
+            (PKWiU 58.21.40.0), – nabywaniem praw do korzystania z programów komputerowych (PKWiU 58.29.50.0)
+          as_of: 2026-11-26
+          confirms: [pkt_2_lit_e]
+        - title: LexLege (portal), art. 12 ustawy o zryczałtowanym podatku dochodowym, stan prawny Dz.U. 2025 poz. 843 (pkt 2 lit. i)
+          url: https://lexlege.pl/zryczl-pod-os-fiz/art-12/
+          kind: control
+          quote: >-
+            przetwarzania danych (PKWiU ex 63.11.1), przesyłania strumieni wideo przez Internet (PKWiU 59.11.25.0),
+            przesyłania strumieni audio przez Internet (PKWiU 59.20.36.0), agencji informacyjnych (PKWiU 63.91.1) oraz
+            pozostałych w zakresie informacji, gdzie indziej niesklasyfikowanych (PKWiU 63.99)
+          as_of: 2026-11-26
+          confirms: [pkt_2_lit_i]
+      verification: {checked_at: 2026-11-26}
+
 - id: podatek.liniowy.stawka
   name: Stawka podatku liniowego od dochodów z działalności gospodarczej
   unit: "% podstawy"
