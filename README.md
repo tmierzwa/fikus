@@ -57,7 +57,7 @@ Serwer działa lokalnie przez stdio, tylko czyta dołączone dane i nie łączy 
 | `list_profiles()` | profile przykładowe: forma opodatkowania, VAT, rodzaj ZUS |
 | `list_parameters(profile, as_of)` | wszystkie parametry, które dotyczą profilu |
 | `deadlines(profile, year, month)` | reguły terminów, dni wolne i zasadę przesunięcia; datę liczy klient |
-| `get_schema(form, as_of)` | wersję schematu XSD deklaracji (danych jeszcze nie ma) |
+| `get_schema(form, as_of)` | wersję schematu XSD deklaracji (JPK_V7M, JPK_V7K, JPK_PKPIR) |
 | `changes(since)` | wersje sprawdzone od podanej daty |
 
 - Daty mają format `RRRR-MM-DD`. Bez `as_of` obowiązuje dzisiejsza data w Polsce.

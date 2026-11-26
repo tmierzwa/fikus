@@ -10,6 +10,9 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 - Parametr `ryczalt.stawki`: stawki ryczałtu od przychodów ewidencjonowanych według punktów
   art. 12 ust. 1 ustawy o zryczałtowanym podatku dochodowym (nowy plik `data/parameters/podatek.yaml`).
+- Schematy `schemat.jpk_v7m`, `schemat.jpk_v7k` i `schemat.jpk_pkpir` oraz zasady przesyłania ksiąg
+  w formie JPK (`zasada.jpk_pd_pkpir`, `zasada.jpk_pd_ryczalt`) w nowym pliku `data/parameters/jpk.yaml`.
+  `get_schema` zwraca teraz dane dla tych symboli.
 
 ## [0.3.0] - 2026-11-26
 

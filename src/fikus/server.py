@@ -176,7 +176,8 @@ def get_schema(
 ) -> ParameterResult:
     """Zwraca wersję schematu XSD deklaracji obowiązującą w danym dniu.
 
-    Danych o schematach jeszcze nie ma, więc na razie wynik zawsze ma found=false.
+    Dla JPK_V7M i JPK_V7K dniem jest pierwszy dzień okresu rozliczeniowego, za który składa się plik.
+    Są dane dla JPK_V7M, JPK_V7K i JPK_PKPIR; dla innych symboli wynik ma found=false.
     """
     pid = f"schemat.{form.lower()}"
     if pid not in store.params:
