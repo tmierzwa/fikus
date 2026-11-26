@@ -2,7 +2,8 @@
 
 Fikus to dane o przepisach dla JDG z dowodami, skąd pochodzi każda wartość. Najbardziej przydają się:
 zgłoszenia błędów w danych, nowe wersje parametrów (na przykład stawki na kolejny rok), drugie
-niezależne źródła dla wpisów z pewnością `niska` i poprawki kodu.
+niezależne źródła dla wpisów z pewnością `niska` i poprawki kodu. Wpis z pewnością `średnia` ma już
+komplet dowodów; podnosi go tylko rozstrzygnięcie otwartego pytania.
 
 ## Czego tu nie robimy
 
@@ -36,7 +37,9 @@ w starej wersji opisz w PR, a w polu `note` tylko wtedy, gdy zmienia wartość, 
 prawną albo kroki zasady.
 
 Gdy źródła się różnią albo przepis wymaga interpretacji, nie zgaduj. Wpisz `open_issue` i dopisz
-pytanie w [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md). Odpowiedź eksperta zapisujemy
+pytanie w [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md). Gdy pytanie dotyczy tylko przypadku
+brzegowego, a nie samej wartości, dopisz `open_issue_scope: edge_case`; w razie wątpliwości go nie wpisuj.
+Odpowiedź eksperta zapisujemy
 w `verification.expert` z datą i podstawą. Imię i nazwisko eksperta wpisujemy tylko za jego zgodą
 na publikację; bez zgody wpisujemy samą kwalifikację, na przykład „doradca podatkowy”.
 

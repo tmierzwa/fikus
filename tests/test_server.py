@@ -69,3 +69,13 @@ def test_get_schema_follows_settlement_period():
     assert r.structured_content["value"]["system_code"] == "JPK_V7M (3)"
     r = _call("get_schema", {"form": "VAT-7", "as_of": "2026-02-01"})
     assert not r.is_error and r.structured_content["found"] is False
+
+
+def test_confidence_reports_medium_level_scope_and_unconfirmed_fields():
+    rule = _call("get_parameter", {"id": "zasada.ulgi_liniowy", "as_of": "2027-02-01"})
+    conf = rule.structured_content["confidence"]
+    assert conf["level"] == "średnia" and conf["open_issue_scope"] == "edge_case"
+    schema = _call("get_parameter", {"id": "schemat.jpk_v7m", "as_of": "2026-11-26"})
+    assert "system_code" in schema.structured_content["confidence"]["unconfirmed_fields"]
+    levels = {c["confidence"] for c in _call("changes", {"since": "2026-01-01"}).structured_content["result"]}
+    assert levels <= {"wysoka", "średnia", "niska"} and "średnia" in levels

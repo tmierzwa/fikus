@@ -2,7 +2,8 @@
 
 Pytania, na które źródła nie dają jednoznacznej odpowiedzi. Opiekun przekazuje je doradcy podatkowemu
 albo biuru rachunkowemu, a odpowiedź (imię, data, podstawa) trafia do pola `verification.expert`
-wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
+wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską albo, gdy pytanie dotyczy tylko
+przypadku brzegowego, średnią.
 
 ## P0. Granica doradztwa podatkowego przed publicznym udostępnieniem
 

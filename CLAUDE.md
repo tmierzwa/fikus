@@ -17,12 +17,15 @@ Fikus to serwer MCP z parametrami przepisów dla JDG. To samodzielny projekt spo
 - Klucze i wartości pól wyliczeniowych (`kind: control`, `rule`) zostają po angielsku. Treść (notatki, kroki, tytuły, pytania, komunikaty serwera) piszesz po polsku, bez nazw pól w zdaniach: zamiast „valid_from” piszesz „data początku obowiązywania”.
 - Dodajesz nową wersję, starej nie edytujesz. Poprawkę błędu w starej wersji opisz w PR. W polu `note` opisz ją tylko wtedy, gdy zmienia coś, co klient mógł już odczytać: wartość, okres, podstawę prawną albo kroki zasady. Poprawki samych źródeł i procesu (zaślepka, wycofany `agent_check`) idą tylko do PR.
 - Opiekun projektu nie jest ekspertem podatkowym i nie sprawdzi przepisów. Nie proś go o ocenę przepisów ani o wybór źródeł. Pytaj go o fakty, dokumenty i decyzje.
-- Pewność liczy model (`confidence`). Jest wysoka, gdy wersja ma cytat ze źródła pierwotnego, co najmniej dwa inne dowody i nie ma `open_issue`. Dowody to:
+- Pewność liczy model (`confidence`). Jest wysoka, gdy wersja ma cytat ze źródła pierwotnego, co najmniej dwa inne dowody i nie ma `open_issue`. Jest średnia, gdy ma ten sam komplet dowodów, a `open_issue` dotyczy tylko przypadku brzegowego (`open_issue_scope: edge_case`). W każdym innym przypadku jest niska. Dowody to:
   - `independent: true` lub `kind: control` przy źródle, które samo podaje tę samą wartość (źródła, które dają wartość dopiero razem, nie są niezależne);
+  - przy wartości złożonej z kilku pól: `confirms` przy źródłach, gdy każde pole i okres (`period`) podają co najmniej dwa różne dokumenty z cytatem, w tym źródło pierwotne; jeden dokument liczy się raz;
   - `agent_check`: data raportu subagenta `weryfikator-zrodel` bez niezgodności; wpisujesz ją dopiero po takim raporcie;
   - `filed_documents`: zgodność z deklaracją złożoną w urzędzie, zgłoszona przez kontrybutora i opisana bez kwot i danych podatnika; deklaracje opiekuna nie są dowodem;
   - `expert`: tylko z odpowiedzi eksperta przekazanej przez opiekuna, z datą i podstawą. Imię i nazwisko wpisujesz tylko wtedy, gdy ekspert zgodził się na publikację; inaczej wpisujesz samą kwalifikację.
 - Gdy źródła się różnią, przepis wymaga interpretacji albo brakuje drugiego źródła, wpisz `open_issue` i dopisz pytanie w `docs/pytania-do-eksperta.md`. Nie zgaduj.
+- `open_issue_scope: edge_case` wpisujesz tylko wtedy, gdy pytanie nie dotyczy samej wartości ani rdzenia zasady, a krok opisuje ten przypadek jako niewyjaśniony. W razie wątpliwości zostaw zakres `value` (domyślny). Zakres sprawdza `weryfikator-zrodel`.
+- Źródłem pierwotnym nie jest tabela kursów NBP. Broszura informacyjna MF lub KAS jest komunikatem MF.
 - Przed commitem uruchom `pytest` i `python scripts/sprawdz_cytaty.py`. Skrypt pobiera oficjalne teksty i odrzuca cytat, którego w nich nie ma.
 
 ## Czego nie robić

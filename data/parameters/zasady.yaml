@@ -514,6 +514,7 @@
       verification:
         checked_at: 2026-11-26
         agent_check: 2026-11-26
+        open_issue_scope: edge_case
         open_issue: "Art. 12 ust. 3 zdanie drugie ustawy o zryczałtowanym podatku dochodowym nie mówi wprost, czy stawka podwyższona (np. 17% przy przychodach także z pkt 1) dotyczy tylko przychodów z tego punktu, czy wszystkich przychodów, ani którą stawkę stosuje się przy przychodach z kilku punktów. Pytanie do eksperta: docs/pytania-do-eksperta.md, P6."
 
 - id: zasada.zus_fundusz_pracy

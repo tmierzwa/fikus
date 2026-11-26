@@ -18,7 +18,7 @@ Fikus podaje stawki, progi, terminy i dni wolne potrzebne do rozliczenia jednoos
 Serwer niczego nie liczy: zasady obliczeń opisuje krokami z podstawą prawną, a liczy klient, na przykład aplikacja księgowa albo agent AI.
 
 > [!WARNING]
-> Fikus nie jest doradztwem podatkowym ani prawnym. Dane mogą być błędne, niepełne albo nieaktualne i są udostępnione „tak jak są”, bez gwarancji. Przed złożeniem deklaracji lub zapłatą sprawdź wartość w podanym źródle, zwłaszcza gdy pewność jest `niska`.
+> Fikus nie jest doradztwem podatkowym ani prawnym. Dane mogą być błędne, niepełne albo nieaktualne i są udostępnione „tak jak są”, bez gwarancji. Przed złożeniem deklaracji lub zapłatą sprawdź wartość w podanym źródle, zwłaszcza gdy pewność jest `niska` albo `średnia`.
 >
 > *Fikus is not tax or legal advice. The data may be wrong or out of date and is provided as is, without warranty. Always check the cited source.*
 
@@ -78,7 +78,7 @@ Odpowiedź `get_parameter("zdrowotna.minimum")` w skrócie:
     { "kind": "primary", "title": "Komunikat ZUS …", "url": "https://www.zus.pl/…", "quote": "…" },
     { "kind": "control", "title": "…", "url": "…" }
   ],
-  "confidence": { "level": "niska", "evidence": ["cytat", "drugie_zrodlo"], "open_issue": "…" }
+  "confidence": { "level": "niska", "evidence": ["cytat", "drugie_zrodlo"], "open_issue": "…", "open_issue_scope": "value" }
 }
 ```
 
@@ -94,7 +94,15 @@ Pole `confidence.level` wynika z dowodów zapisanych przy wersji parametru:
 | `deklaracje` | zgodność z deklaracją przyjętą przez urząd |
 | `ekspert` | odpowiedź doradcy podatkowego lub księgowej |
 
-Pewność jest `wysoka`, gdy wersja ma cytat i co najmniej dwa inne dowody, a żadne pytanie nie jest otwarte (`open_issue`). W każdym innym przypadku jest `niska`.
+| Poziom | Kiedy |
+| --- | --- |
+| `wysoka` | cytat i co najmniej dwa inne dowody, bez otwartego pytania |
+| `średnia` | ten sam komplet dowodów, ale otwarte pytanie dotyczy tylko przypadku brzegowego (`open_issue_scope: edge_case`) |
+| `niska` | mniej dowodów albo otwarte pytanie o samą wartość lub rdzeń zasady (`open_issue_scope: value`) |
+
+- Przy pewności `średnia` przeczytaj `confidence.open_issue`. Opisuje przypadek, którego zasada nie rozstrzyga; jeśli Cię nie dotyczy, wartość ma pełny komplet dowodów.
+- Pytanie bez zakresu w danych traktujemy jak pytanie o wartość.
+- Wartość złożona z kilku pól (na przykład schemat JPK) może mieć drugie źródło potwierdzone pole po polu. Źródło wymienia w `confirms` pola, które samo podaje (klucze wartości i `period` dla okresu obowiązywania). Dowód `drugie_zrodlo` jest spełniony, gdy każde pole i okres podają co najmniej dwa różne dokumenty z cytatem, w tym źródło pierwotne. Jeden dokument liczy się raz. Gdy wersja używa `confirms`, liczy się tylko ta ścieżka: źródło kontrolne bez `confirms` nie zastępuje potwierdzenia pól. `confirms` wymaga cytatu. Pola, którym brakuje drugiego dokumentu, są w `confidence.unconfirmed_fields`.
 
 ## Zakres
 
