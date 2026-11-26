@@ -137,12 +137,48 @@ def ending_versions(store: Store, today: date, horizon: int) -> list[Finding]:
     return out
 
 
+def _base_act(act: str, fetch: Fetch) -> str:
+    """Akt bazowy tekstu jednolitego (DU/2026/592 → DU/1991/350); dla innych aktów sam akt."""
+    try:
+        base = fetch(act).get("references", {}).get("Tekst jednolity dla aktu", [])
+    except (OSError, ValueError, KeyError):   # błąd zgłosi check_act
+        return act
+    return base[0]["id"] if base else act
+
+
+def current_acts(store: Store, today: date, fetch: Fetch) -> dict[str, set[str]]:
+    """Jak cited_acts, ale bez starszych tekstów jednolitych, cytowanych obok nowszego tekstu
+    tej samej ustawy w tej samej wersji. Takie teksty są celowo nieaktualne: dowodzą stanu
+    prawnego z przeszłości (np. od kiedy obowiązuje przepis, czyli valid_from)."""
+    acts: dict[str, set[str]] = {}
+    for p in store.params.values():
+        for v in p.versions:
+            if v.valid_to is not None and v.valid_to < today:
+                continue
+            newest: dict[str, str] = {}            # akt bazowy → najnowszy cytowany tekst
+            for s in v.sources:
+                if s.kind == "primary" and (act := eli_id(s.url)):
+                    base = _base_act(act, fetch)
+                    if base not in newest or _order(act) > _order(newest[base]):
+                        newest[base] = act
+            for act in newest.values():
+                acts.setdefault(act, set()).add(p.id)
+    return acts
+
+
 def detect(store: Store, today: date, fetch: Fetch = fetch_act, reviewed: set[str] = frozenset(),
            horizon: int = 60) -> list[Finding]:
+    cache: dict[str, dict] = {}
+
+    def cached(act: str) -> dict:                  # każdy akt pobieramy z API raz
+        if act not in cache:
+            cache[act] = fetch(act)
+        return cache[act]
+
     findings = ending_versions(store, today, horizon)
-    for act, params in sorted(cited_acts(store, today).items()):
+    for act, params in sorted(current_acts(store, today, cached).items()):
         try:
-            findings += check_act(act, params, fetch, reviewed)
+            findings += check_act(act, params, cached, reviewed)
         except (OSError, ValueError, KeyError) as e:      # sieć, zły JSON, nieoczekiwany kształt
             findings.append(Finding("blad", act, tuple(sorted(params)), f"nie da się sprawdzić: {e}"))
     return findings
