@@ -104,7 +104,7 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
 
 ## P7. Minimum rocznej składki zdrowotnej przy podatku liniowym: liczba miesięcy
 
-- Wpis: `zasada.liniowy_zdrowotna` (obie wersje: od 2025-02-01 i od 2026-02-01), krok o rocznej składce.
+- Wpis: `zasada.liniowy_zdrowotna` (wersje od 2025-02-01, od 2026-02-01 i od 2027-02-01), krok o rocznej składce.
 - Zgłoszone: 2026-11-26.
 - Ustawa o świadczeniach opieki zdrowotnej (Dz.U. 2025 poz. 1461), art. 79a ust. 1 pkt 2: roczna składka nie mniej niż 9%
   „iloczynu liczby miesięcy w roku składkowym, o którym mowa w art. 81 ust. 2, i minimalnego wynagrodzenia”. Art. 81 ust. 2b
