@@ -114,6 +114,25 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
 - Pytanie: czy termin zapłaty podatku (np. zaliczki, VAT) jest „terminem do wykonania czynności” w rozumieniu nowego
   art. 12 § 5? Czy tak samo jest z terminem opłacenia składek ZUS, do których art. 12 stosuje się odpowiednio
   (art. 31 ustawy o systemie ubezpieczeń społecznych)?
+- Przeszukane źródła urzędowe (2026-11-26), bez rozstrzygnięcia:
+  - Zestawienie uwag z konsultacji dołączone do druku nr 2287 (stanowisko MF): przepis ma odnosić się „tylko do terminów
+    do wykonania czynności np. złożenie deklaracji czy wniesienie odwołania”; o terminie zapłaty nie ma mowy. Uzasadnienie
+    dodaje tylko, że nowe brzmienie nadal obejmuje termin z art. 150 (fikcja doręczenia).
+  - Sprawozdanie Komisji Finansów Publicznych (druk nr 2480), stenogram posiedzenia Sejmu z 12 maja 2026 r., zapis posiedzenia
+    Komisji Finansów Publicznych nr 270, uchwała Senatu (druk nr 2587), opinia Biura Legislacyjnego Senatu do druku senackiego nr 721 (20 maja
+    2026 r., https://www.senat.gov.pl/download/gfx/senat/pl/senatekspertyzy/7945/plik/721o.pdf) i sprawozdanie komisji
+    senackiej (druk nr 721 A): żaden z nich nie omawia terminu zapłaty w art. 12 § 5.
+  - Informacja prawna KIS za 22–26 czerwca 2026 r. (https://www.gov.pl/attachment/42efbcdb-a097-46be-9b93-f93c0faa3238)
+    powtarza tylko opis zmiany z uzasadnienia.
+  - Nie znaleziono objaśnień podatkowych, interpretacji ogólnej ani komunikatu MF, KAS lub ZUS o terminach zapłaty po
+    1 października 2026 r. Strona ZUS „Termin składania dokumentów i opłacania składek” przesuwa termin opłacenia składek
+    na następny dzień roboczy, ale powołuje ustawę w brzmieniu z Dz.U. 2021 poz. 423, więc nie dotyczy nowego brzmienia.
+  - Materiał dla eksperta (nie rozstrzyga): kalendarz przedsiębiorcy na biznes.gov.pl (https://www.biznes.gov.pl/pl/portal/005105,
+    aktualizacja 16.11.2026) podaje terminy zapłaty przesunięte z dni wolnych w listopadzie 2026 r.: kartę podatkową za
+    październik do 9 listopada, podatek od nieruchomości i składki ZUS płatników z osobowością prawną do 16 listopada.
+    Kalendarz Rzecznika MŚP (https://rzecznikmsp.gov.pl/kalendarz-przedsiebiorcy/) przesuwa składki ZUS płatników
+    z osobowością prawną na 16 listopada 2026 r., bo „15. dzień miesiąca przypada na niedzielę”. Żadna z tych stron nie
+    podaje przepisu, na podstawie którego przesuwa termin zapłaty.
 
 ## P6. Stawka ryczałtu bez ewidencji pozwalającej ustalić przychody z każdego rodzaju działalności
 
@@ -466,8 +485,27 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   o kaucji „w deklaracji za I kwartał 2026 r.”, co sugeruje wariant 3, ale nie mówi tego wprost.
 - Pytanie: czy plik JPK_V7K za marzec 2026 r. z deklaracją za I kwartał 2026 r. (i jego korekty) składa się
   w wariancie 3? Którego wariantu używa się do korekty deklaracji za I kwartał 2026 r.?
+- Dodatkowe materiały (2026-11-26), bez rozstrzygnięcia:
+  - Rozporządzenie Dz.U. 2024 poz. 13, § 5: do rozliczeń „za okresy rozliczeniowe przypadające przed dniem wejścia w życie”
+    (1 lutego 2026 r.) stosuje się przepisy dotychczasowe. I kwartał 2026 r. zaczął się przed 1 lutego 2026 r.; czy dla
+    deklaracji kwartalnej okresem rozliczeniowym w rozumieniu § 5 jest kwartał, jest częścią pytania. Jednocześnie § 2a pkt 2 (Dz.U. 2025 poz. 1800) każe wykazać kaucję
+    w deklaracji za I kwartał 2026 r., czego dotychczasowe przepisy nie przewidują.
+  - Broszura MF z 2026 r. (pole Miesiac): w pliku JPK_V7K z deklaracją podaje się ostatni miesiąc kwartału, ale broszura nie
+    mówi, który wariant stosuje się do kwartału obejmującego styczeń 2026 r. Komunikat MF z 19 grudnia 2025 r. (podatki.gov.pl
+    i gov.pl/web/finanse) mówi tylko o stosowaniu nowych wzorów „do rozliczeń od 1 lutego 2026 r.”.
+  - Schematy XSD obu wariantów (CRWDE 2021/12/27/11149 i 2025/12/19/14089) technicznie dopuszczają rok 2026 i każdy kwartał,
+    więc nie rozstrzygają pytania.
+  - Specyfikacja interfejsów usług JPK 5.6.0 i strona KAS „Struktury JPK” nie wyjaśniają tego przypadku.
 
-## P18. Czy na ryczałcie przesyła się ewidencję przychodów (JPK_EWP)
+## P18. Czy na ryczałcie przesyła się ewidencję przychodów (JPK_EWP) (rozstrzygnięte 2026-11-26, bez eksperta)
+
+- Rozstrzygnięcie: broszura MF o strukturze JPK_EWP(4) sama podaje wprost, że osoby fizyczne i spółki opodatkowane
+  ryczałtem od przychodów ewidencjonowanych, prowadzące ewidencję przychodów, „będą zobowiązane przesyłać plik XML zgodny
+  ze strukturą JPK_EWP”, i wskazuje art. 15 ust. 12 jako podstawę. Zgadza się to z ustawą: art. 15 ust. 1 nazywa ewidencję
+  przychodów „ewidencją”, a ust. 12 obejmuje podmioty „prowadzące ewidencję lub wykaz środków trwałych”. Strona KAS
+  „Struktury JPK w podatkach dochodowych” podaje dla ryczałtowców daty struktur JPK_EWP i JPK_ST z podstawą art. 15 ust. 12
+  i 13. Krok zasady poprawiony, P18 usunięty z `open_issue`. Ryczałtowiec prowadzący ewidencję przychodów przesyła ją
+  także wtedy, gdy nie ma środków trwałych.
 
 - Wpis: `zasada.jpk_pd_ryczalt` (od 2026-01-01).
 - Zgłoszone: 2026-11-26.
@@ -500,6 +538,12 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   VAT z kwartalnego na miesięczne (albo odwrotnie)? Czy ma go podatnik, który w trakcie 2026 r. zarejestrował się
   jako czynny podatnik VAT rozliczający się miesięcznie? Czy liczy się stan na początek roku, na koniec roku, czy
   którykolwiek miesiąc roku?
+- Przeszukane źródła (2026-11-26), bez rozstrzygnięcia: broszury MF o JPK_PKPIR(3) i JPK_EWP(4), strony MF o JPK_PD
+  i KAS „Struktury JPK w podatkach dochodowych”, uzasadnienie projektu ustawy z 9 czerwca 2022 r. (druk sejmowy nr 2186,
+  IX kadencja). Żadne z nich nie mówi, na który dzień ocenia się obowiązek. Pierwotne brzmienie art. 66 ust. 1 (Dz.U. 2022
+  poz. 1265) mówiło o „okresach rozliczeniowych rozpoczynających się” po danym dniu; ustawa Dz.U. 2023 poz. 1059 zastąpiła je
+  „rokiem podatkowym rozpoczynającym się”. Strona KAS mówi o podatnikach „obowiązanych przesyłać pliki JPK_V7M”,
+  a strona MF o JPK_PD o podatnikach „zobowiązani do składania JPK_VAT za okresy miesięczne”, obie bez wskazania dnia.
 
 ## P20. Ulga na robotyzację i ulga na ekspansję od 2027 r.: odpisy od aktywów sprzed 2027 r. i kolejność wobec art. 26i
 
