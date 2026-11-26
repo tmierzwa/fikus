@@ -22,8 +22,8 @@
         po ogłoszeniu końca okresu dodamy nową wersję. Wcześniejsze okresy podwyższonych stawek (art. 146aa) ta wersja nie obejmuje.
         Wartość nie obejmuje stawki 0% (między innymi wewnątrzwspólnotowa dostawa i eksport towarów), stawek z art. 146ef ust. 1
         pkt 3 i 4 (zryczałtowany zwrot dla rolników i ryczałt dla taksówek) ani stawek obniżonych rozporządzeniem dla
-        niektórych towarów i usług (art. 146ej). Tekst jednolity Dz.U. 2025 poz. 775 ma to samo brzmienie art. 41 ust. 1, 2 i 2a
-        oraz art. 146ef ust. 1. Nowelizacje po tekście jednolitym Dz.U. 2026 poz. 1263 nie zmieniają tych stawek: ustawa
+        niektórych towarów i usług (art. 146ej). Tekst jednolity Dz.U. 2025 poz. 775 ma tę samą treść art. 41 ust. 1, 2 i 2a
+        oraz art. 146ef ust. 1 (stawki i warunek); różni się tylko publikator ustawy o obronie Ojczyzny, do której odsyła art. 146ef. Nowelizacje po tekście jednolitym Dz.U. 2026 poz. 1263 nie zmieniają tych stawek: ustawa
         Dz.U. 2026 poz. 1270 zmienia w art. 41 ust. 1 tylko listę zastrzeżeń (od 1 stycznia 2027 r.) i dodaje ust. 14i (kaucja),
         ustawa Dz.U. 2026 poz. 1446 zmienia art. 41 ust. 4–11 (eksport), a ustawy Dz.U. 2026 poz. 1509 i 1556 nie zmieniają art. 41 ani 146ef.
       sources:
@@ -55,7 +55,7 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
           quote: "koniec okresu obowiązywania stawek podatku, o których mowa w ust. 1, w terminie do dnia 31 października roku"
           article: art. 146ef ust. 2
-        - title: Dz.U. 2025 poz. 775, tekst jednolity ustawy o podatku od towarów i usług (to samo brzmienie, dla daty początku obowiązywania)
+        - title: Dz.U. 2025 poz. 775, tekst jednolity ustawy o podatku od towarów i usług (ta sama treść, dla daty początku obowiązywania)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/775/text.pdf
           quote: "Art. 146ef. 1. W okresie od dnia 1 stycznia 2024 r. do końca roku"
           article: art. 146ef ust. 1
@@ -163,9 +163,9 @@
             uses: []
             basis: art. 86 ust. 2a i 10d, art. 86a ust. 16 i 17, art. 87, art. 88 ust. 6, art. 89a, 89b, 90 i 91 ustawy o VAT
       note: >-
-        Data początku obowiązywania (2026-01-01) to początek okresu, w którym sprawdzono brzmienie przepisów, a nie dzień ich
-        wejścia w życie: teksty jednolite Dz.U. 2025 poz. 775 i Dz.U. 2026 poz. 1263 (stan prawny na 26 sierpnia 2026 r.) mają
-        to samo brzmienie cytowanych przepisów. Strona biznes.gov.pl „Odliczenie i zwrot podatku od towarów i usług”
+        Data początku obowiązywania (2026-01-01) to ostrożnie wybrana data wewnątrz okresu, w którym teksty jednolite
+        Dz.U. 2025 poz. 775 i Dz.U. 2026 poz. 1263 (stan prawny na 26 sierpnia 2026 r.) mają tę samą treść cytowanych przepisów
+        (różnią się tylko pisownią, na przykład „nie wcześniej” i „niewcześniej”), a nie dzień wejścia tych przepisów w życie. Strona biznes.gov.pl „Odliczenie i zwrot podatku od towarów i usług”
         (https://www.biznes.gov.pl/pl/portal/00249, aktualizacja 13.03.2026) potwierdza kroki 5 i 6 i część kroku 3, a korektę
         (krok 7) opisuje inaczej, więc nie jest drugim źródłem zasady. Ustawa Dz.U. 2026
         poz. 1270 nadaje od 1 stycznia 2027 r. nowe brzmienie art. 88 ust. 3a pkt 4 lit. c (czynności dokonane w warunkach nadużycia
@@ -248,7 +248,7 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
           quote: "Obniżenia kwoty lub zwrotu różnicy podatku należnego nie stosuje się również do podatników, którzy nie są zarejestrowani jako podatnicy VAT czynni, zgodnie z art. 96"
           article: art. 88 ust. 4
-        - title: Dz.U. 2025 poz. 775, tekst jednolity ustawy o podatku od towarów i usług (to samo brzmienie art. 86 ust. 11)
+        - title: Dz.U. 2025 poz. 775, tekst jednolity ustawy o podatku od towarów i usług (ta sama treść art. 86 ust. 11)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/775/text.pdf
           quote: "może obniżyć kwotę podatku należnego w deklaracji podatkowej za jeden z trzech następnych okresów rozliczeniowych, a w przypadku podatnika, o którym mowa w art. 99 ust. 2 i 3, w deklaracji podatkowej za jeden z dwóch następnych okresów rozliczeniowych"
           article: art. 86 ust. 11
