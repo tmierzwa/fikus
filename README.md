@@ -7,6 +7,7 @@
 </p>
 
 <p align="center">
+  <a href="https://pypi.org/project/fikus/"><img src="https://img.shields.io/pypi/v/fikus" alt="PyPI"></a>
   <a href="https://github.com/tmierzwa/fikus/actions/workflows/testy.yml"><img src="https://github.com/tmierzwa/fikus/actions/workflows/testy.yml/badge.svg" alt="testy"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/kod-Apache%202.0-blue" alt="Kod: Apache 2.0"></a>
   <a href="data/LICENSE"><img src="https://img.shields.io/badge/dane-CC%20BY%204.0-green" alt="Dane: CC BY 4.0"></a>
@@ -28,7 +29,7 @@ Potrzebny jest [uv](https://docs.astral.sh/uv/).
 Claude Code:
 
 ```bash
-claude mcp add fikus -- uvx --from git+https://github.com/tmierzwa/fikus fikus
+claude mcp add fikus -- uvx fikus@latest
 ```
 
 Inny klient MCP (Claude Desktop, Cursor i inne):
@@ -38,13 +39,15 @@ Inny klient MCP (Claude Desktop, Cursor i inne):
   "mcpServers": {
     "fikus": {
       "command": "uvx",
-      "args": ["--from", "git+https://github.com/tmierzwa/fikus", "fikus"]
+      "args": ["fikus@latest"]
     }
   }
 }
 ```
 
-Serwer działa lokalnie przez stdio, tylko czyta dołączone dane i nie łączy się z siecią.
+Dane są częścią paczki, więc nowe wartości przychodzą z nowymi wersjami. `fikus@latest` sprawdza przy każdym starcie, czy na PyPI jest nowsza wersja. Bez `@latest` uv może uruchamiać wersję z pamięci podręcznej. Bez uv: `pip install fikus` i polecenie `fikus`.
+
+Serwer działa lokalnie przez stdio, tylko czyta dołączone dane i nie łączy się z siecią. Jest też w [MCP Registry](https://registry.modelcontextprotocol.io) jako `io.github.tmierzwa/fikus`.
 
 ## Narzędzia
 
