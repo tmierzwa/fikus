@@ -585,3 +585,19 @@ przypadku brzegowego, średnią.
 - Na 26 listopada 2026 r. żadna strona urzędu (podatki.gov.pl, biznes.gov.pl) nie podaje jeszcze kwoty na 2027 r.,
   więc wartość nie ma drugiego dowodu.
 - Pytanie: czy limit z art. 30c ust. 2 pkt 2 ustawy o PIT na rok podatkowy 2027 wynosi 15 100 zł?
+
+## P39. Deklaracja ZUS DRA za miesiąc, w którym działalność była zawieszona tylko przez część miesiąca
+
+- Wpis: `zasada.dra_obowiazek` (od 2024-11-01), krok o zawieszeniu działalności.
+- Zgłoszone: 2026-11-26.
+- Ustawa o systemie ubezpieczeń społecznych (Dz.U. 2026 poz. 1474), art. 36a ust. 3: „Za okres zawieszenia wykonywania
+  działalności gospodarczej przedsiębiorca będący płatnikiem składek wyłącznie za siebie nie ma obowiązku składania
+  deklaracji rozliczeniowej”. Art. 36a ust. 2: obowiązek ubezpieczeń społecznych ustaje od dnia rozpoczęcia zawieszenia
+  do dnia poprzedzającego wznowienie. Art. 46 ust. 1 i art. 47 ust. 1 każą rozliczać składki i przesyłać deklarację
+  za każdy miesiąc kalendarzowy.
+- Pytanie: czy za miesiąc, w którym zawieszenie zaczęło się albo skończyło w trakcie miesiąca, płatnik składek wyłącznie
+  za siebie składa deklarację rozliczeniową? Jeżeli tak, czy obejmuje ona tylko dni prowadzenia działalności i jak
+  wykazuje się w niej składkę zdrowotną za ten miesiąc?
+- Przeszukane źródła publiczne (2026-11-26), bez rozstrzygnięcia: zus.pl i biznes.gov.pl („Jak składać deklaracje
+  i raporty ZUS”, https://www.biznes.gov.pl/pl/portal/00287) mówią, że deklaracje składa się co miesiąc także wtedy,
+  gdy „zawieszasz lub wznawiasz działalność gospodarczą”, ale nie opisują miesiąca częściowego zawieszenia.
