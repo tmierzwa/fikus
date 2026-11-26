@@ -426,6 +426,7 @@
       verification:
         checked_at: 2026-11-26
         agent_check: 2026-11-26
+        open_issue_scope: edge_case
         open_issue: >-
           Krok o odliczeniach od podstawy: art. 52jb ust. 2a (od 1 stycznia 2027 r.) uznaje za koszty poniesione
           na robotyzację odpisy amortyzacyjne dokonywane w danym roku. Nie wiadomo, czy dotyczy to także odpisów od

@@ -6,6 +6,8 @@ from typing import Literal
 
 from pydantic import BaseModel, Field, field_validator, model_validator
 
+PERIOD = "period"   # w confirms: okres obowiązywania wersji
+
 
 class Source(BaseModel):
     """Źródło pierwotne (akt, obwieszczenie, komunikat) albo kontrolne (np. finwire)."""
@@ -20,6 +22,9 @@ class Source(BaseModel):
     # Źródło pierwotne, które samo, niezależnie od pozostałych, podaje tę samą wartość
     # (np. ustawa budżetowa obok obwieszczenia). Źródła, które dopiero razem dają wartość, nie są niezależne.
     independent: bool = False
+    # Pola wartości złożonej (klucze value i "period" dla okresu obowiązywania), które to źródło
+    # samo podaje. Pozwala potwierdzić drugie źródło pole po polu (Version.confidence).
+    confirms: list[str] | None = None
 
     @field_validator("url")
     @classmethod
@@ -43,6 +48,15 @@ class Verification(BaseModel):
     filed_documents: str | None = None  # zgodność z deklaracjami przyjętymi przez urząd, bez danych podatnika
     expert: Expert | None = None
     open_issue: str | None = None       # niejasność albo pytanie do eksperta; blokuje wysoki poziom
+    # Czego dotyczy otwarte pytanie: samej wartości lub rdzenia zasady (value) albo tylko przypadku
+    # brzegowego (edge_case). Przy edge_case i pełnym komplecie dowodów pewność jest średnia.
+    open_issue_scope: Literal["value", "edge_case"] | None = None
+
+    @model_validator(mode="after")
+    def _scope(self) -> "Verification":
+        if self.open_issue_scope and not self.open_issue:
+            raise ValueError("zakres pytania (open_issue_scope) bez otwartego pytania")
+        return self
 
 
 class Version(BaseModel):
@@ -59,15 +73,42 @@ class Version(BaseModel):
             raise ValueError("koniec obowiązywania wersji jest wcześniejszy niż jej początek")
         if not any(s.kind == "primary" for s in self.sources):
             raise ValueError("każda wersja potrzebuje źródła pierwotnego")
+        if any(s.confirms for s in self.sources):
+            if not isinstance(self.value, dict):
+                raise ValueError("potwierdzanie pól (confirms) dotyczy tylko wartości złożonej")
+            known = set(self.value) | {PERIOD}
+            for s in self.sources:
+                unknown = set(s.confirms or []) - known
+                if unknown:
+                    raise ValueError(f"źródło {s.url} potwierdza nieznane pola: {', '.join(sorted(unknown))}")
         return self
 
+    def _unconfirmed_fields(self) -> list[str] | None:
+        """Pola wartości złożonej (i okres), których nie podają co najmniej dwa różne dokumenty z cytatem,
+        w tym źródło pierwotne. Jeden dokument (adres) liczy się raz, także przy kilku cytatach.
+        None, gdy wersja nie potwierdza pól osobno."""
+        if not isinstance(self.value, dict) or not any(s.confirms for s in self.sources):
+            return None
+        missing = []
+        for field in [*self.value, PERIOD]:
+            docs = {s.url for s in self.sources if s.quote and field in (s.confirms or [])}
+            primary = {s.url for s in self.sources
+                       if s.quote and s.kind == "primary" and field in (s.confirms or [])}
+            if len(docs) < 2 or not primary:
+                missing.append(field)
+        return missing
+
     def confidence(self) -> dict:
-        """Wysoka: cytat ze źródła pierwotnego i co najmniej dwa inne dowody, bez otwartych pytań."""
+        """Wysoka: cytat ze źródła pierwotnego i co najmniej dwa inne dowody, bez otwartych pytań.
+        Średnia: ten sam komplet dowodów, a otwarte pytanie dotyczy tylko przypadku brzegowego.
+        Niska: każdy inny przypadek."""
         ver = self.verification
         evidence = []
         if any(s.kind == "primary" and s.quote for s in self.sources):
             evidence.append("cytat")
-        if any(s.kind == "control" or s.independent for s in self.sources):
+        unconfirmed = self._unconfirmed_fields()
+        if any((s.kind == "control" or s.independent) and not s.confirms for s in self.sources) \
+                or unconfirmed == []:
             evidence.append("drugie_zrodlo")
         if ver.agent_check:
             evidence.append("agent")
@@ -75,9 +116,19 @@ class Version(BaseModel):
             evidence.append("deklaracje")
         if ver.expert:
             evidence.append("ekspert")
-        high = "cytat" in evidence and len(evidence) >= 3 and not ver.open_issue
-        return {"level": "wysoka" if high else "niska", "evidence": evidence,
-                "open_issue": ver.open_issue}
+        full = "cytat" in evidence and len(evidence) >= 3
+        scope = (ver.open_issue_scope or "value") if ver.open_issue else None
+        if full and not ver.open_issue:
+            level = "wysoka"
+        elif full and scope == "edge_case":
+            level = "średnia"
+        else:
+            level = "niska"
+        result = {"level": level, "evidence": evidence, "open_issue": ver.open_issue,
+                  "open_issue_scope": scope}
+        if unconfirmed is not None:
+            result["unconfirmed_fields"] = unconfirmed
+        return result
 
     def covers(self, d: date) -> bool:
         return self.valid_from <= d and (self.valid_to is None or d <= self.valid_to)

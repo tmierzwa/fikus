@@ -96,6 +96,39 @@ def test_confidence_needs_quote_and_two_more_kinds_of_evidence():
     assert _version(agent_check="2026-01-02", open_issue="sprzeczne źródła").confidence()["level"] == "niska"
 
 
+def test_open_question_about_an_edge_case_gives_medium_confidence():
+    edge = _version(agent_check="2026-01-02", open_issue="przypadek brzegowy", open_issue_scope="edge_case")
+    assert edge.confidence()["level"] == "średnia"
+    assert edge.confidence()["open_issue_scope"] == "edge_case"
+    # Bez zakresu pytanie dotyczy wartości, a przy niepełnych dowodach zakres nie podnosi pewności.
+    assert _version(agent_check="2026-01-02", open_issue="?").confidence()["open_issue_scope"] == "value"
+    assert _version(open_issue="?", open_issue_scope="edge_case").confidence()["level"] == "niska"
+    with pytest.raises(ValueError):
+        _version(open_issue_scope="edge_case")
+
+
+def _composite(*sources):
+    return Version.model_validate({
+        "valid_from": "2026-01-01", "value": {"variant": 3, "code": "X (3)"},
+        "sources": list(sources), "verification": {"checked_at": "2026-01-01", "agent_check": "2026-01-02"}})
+
+
+def test_composite_value_can_be_confirmed_field_by_field():
+    a = {"title": "broszura", "url": "https://example.org/a", "quote": "q", "confirms": ["variant", "code", "period"]}
+    b = {"title": "strona", "url": "https://example.org/b", "quote": "q", "confirms": ["variant", "period"]}
+    c = {"title": "rejestr", "url": "https://example.org/c", "quote": "q", "confirms": ["code"]}
+    assert _composite(a, b, c).confidence()["level"] == "wysoka"
+    assert _composite(a, b).confidence()["level"] == "niska"          # kod podaje tylko jeden dokument
+    assert _composite(a, b).confidence()["unconfirmed_fields"] == ["code"]
+    assert "unconfirmed_fields" not in _version().confidence()
+    same_doc = {**c, "url": a["url"]}
+    assert _composite(a, b, same_doc).confidence()["level"] == "niska"  # jeden dokument liczy się raz
+    no_quote = {k: v for k, v in c.items() if k != "quote"}
+    assert _composite(a, b, no_quote).confidence()["level"] == "niska"
+    with pytest.raises(ValueError):
+        _composite(a, {**b, "confirms": ["wersja"]})                    # nieznane pole
+
+
 def test_quote_matching_ignores_layout_but_not_content():
     text = "Składka wynosi\n9 % podstawy wy-\nmiaru – na „ubezpieczenie”"
     assert quote_in('składka wynosi 9 % podstawy wymiaru - na "ubezpieczenie"', text)

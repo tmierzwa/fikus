@@ -69,6 +69,7 @@
       sources:
         - title: podatki.gov.pl (MF), JPK_VAT z deklaracją – pliki do pobrania
           url: https://podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat-z-deklaracja/pliki-do-pobrania
+          confirms: [form, variant]
           quote: "Struktura JPK_VAT z deklaracją miesięczną (JPK_V7M(3) w formacie XSD) obowiązująca od 1 lutego 2026 roku"
           article: art. 99 ust. 11c i 13a ustawy o VAT
           as_of: 2026-11-26
@@ -78,23 +79,28 @@
           as_of: 2026-11-26
         - title: CRWDE (ePUAP), wyróżnik wzoru 2025/12/19/14090, twórca wzoru Ministerstwo Finansów
           url: https://crd.gov.pl/wzor/2025/12/19/14090/wyroznik.xml
+          confirms: [form, variant]
           quote: "2026-02-01 JPK_V7M(3) DEKLARACJA MIESIĘCZNA I EWIDENCJA O PODATKU OD TOWARÓW I USŁUG"
           article: art. 99 ust. 13a ustawy o VAT
           as_of: 2026-11-26
         - title: CRWDE (ePUAP), wyróżnik wzoru 2025/12/19/14090 (adres schematu)
           url: https://crd.gov.pl/wzor/2025/12/19/14090/wyroznik.xml
+          confirms: [xsd_url]
           quote: "http://crd.gov.pl/wzor/2025/12/19/14090/schemat.xsd"
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Broszura – JPK_VAT z deklaracją od 1 lutego 2026 r. (kod systemowy i wersja schematu)
           url: https://podatki.gov.pl/media/wgbkrejs/broszura-jpk_vat-z-deklaracj%C4%85-od-1-lutego-2026-r.pdf
+          confirms: [form, variant, system_code, schema_version]
           quote: "kodSystemowy: JPK_V7M (3) [dla podatników rozliczających się miesięcznie] albo JPK_V7K (3) [dla podatników rozliczających się kwartalnie] - wersjaSchemy: 1-0E."
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Zmiany w strukturze JPK_V7M(3) w porównaniu do JPK_V7M(2) (wersja schematu)
           url: https://podatki.gov.pl/media/hwsb3pqh/zmiany_w_schemie_jpk_v7m3-2.pdf
+          confirms: [form, variant, schema_version]
           quote: "Schema JPK_V7M (3) (1-0E)"
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Broszura – JPK_VAT z deklaracją od 1 lutego 2026 r. (okresy wersji 3)
           url: https://podatki.gov.pl/media/wgbkrejs/broszura-jpk_vat-z-deklaracj%C4%85-od-1-lutego-2026-r.pdf
+          confirms: [variant, period]
           quote: "Wzór w wersji (3) należy stosować za okresy rozliczeniowe od lutego 2026 roku."
           as_of: 2026-11-26
         - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (wzór dokumentu elektronicznego)
@@ -183,6 +189,7 @@
       sources:
         - title: podatki.gov.pl (MF), JPK_VAT z deklaracją – pliki do pobrania
           url: https://podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat-z-deklaracja/pliki-do-pobrania
+          confirms: [form, variant]
           quote: "Struktura JPK_VAT z deklaracją kwartalną (JPK_V7K(3) w formacie XSD) obowiązująca od 1 lutego 2026 roku"
           article: art. 99 ust. 11c i 13a ustawy o VAT
           as_of: 2026-11-26
@@ -192,19 +199,23 @@
           as_of: 2026-11-26
         - title: CRWDE (ePUAP), wyróżnik wzoru 2025/12/19/14089, twórca wzoru Ministerstwo Finansów
           url: https://crd.gov.pl/wzor/2025/12/19/14089/wyroznik.xml
+          confirms: [form, variant]
           quote: "2026-02-01 JPK_V7K(3) DEKLARACJA KWARTALNA I EWIDENCJA O PODATKU OD TOWARÓW I USŁUG"
           article: art. 99 ust. 13a ustawy o VAT
           as_of: 2026-11-26
         - title: CRWDE (ePUAP), wyróżnik wzoru 2025/12/19/14089 (adres schematu)
           url: https://crd.gov.pl/wzor/2025/12/19/14089/wyroznik.xml
+          confirms: [xsd_url]
           quote: "http://crd.gov.pl/wzor/2025/12/19/14089/schemat.xsd"
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Broszura – JPK_VAT z deklaracją od 1 lutego 2026 r. (kod systemowy i wersja schematu)
           url: https://podatki.gov.pl/media/wgbkrejs/broszura-jpk_vat-z-deklaracj%C4%85-od-1-lutego-2026-r.pdf
+          confirms: [form, variant, system_code, schema_version]
           quote: "albo JPK_V7K (3) [dla podatników rozliczających się kwartalnie] - wersjaSchemy: 1-0E."
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Broszura – JPK_VAT z deklaracją od 1 lutego 2026 r. (okresy wersji 3)
           url: https://podatki.gov.pl/media/wgbkrejs/broszura-jpk_vat-z-deklaracj%C4%85-od-1-lutego-2026-r.pdf
+          confirms: [variant, period]
           quote: "Wzór w wersji (3) należy stosować za okresy rozliczeniowe od lutego 2026 roku."
           as_of: 2026-11-26
         - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (wzór dokumentu elektronicznego)

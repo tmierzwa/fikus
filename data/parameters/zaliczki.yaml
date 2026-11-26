@@ -201,6 +201,7 @@
       verification:
         checked_at: 2026-11-26
         agent_check: 2026-11-26
+        open_issue_scope: edge_case
         open_issue: >-
           Art. 44 ust. 3g wymienia „podatnicy rozpoczynający prowadzenie działalności gospodarczej, o których mowa
           w art. 22k ust. 11”, a ust. 3h „podatnicy rozpoczynający prowadzenie działalności gospodarczej” i każe stosować
@@ -302,6 +303,7 @@
       verification:
         checked_at: 2026-11-26
         agent_check: 2026-11-26
+        open_issue_scope: edge_case
         open_issue: >-
           Art. 44 ust. 6b pkt 2 każe sięgnąć do zeznania sprzed dwóch lat, gdy „w zeznaniu, o którym mowa w pkt 1”
           nie wykazano dochodu z działalności albo wykazano dochód nie wyższy od ilorazu kwoty zmniejszającej podatek
@@ -373,6 +375,7 @@
       verification:
         checked_at: 2026-11-26
         agent_check: 2026-11-26
+        open_issue_scope: edge_case
         open_issue: >-
           Art. 21 ust. 1b pozwala na kwartalne opłacanie ryczałtu „podatnikom rozpoczynającym prowadzenie działalności,
           o których mowa w art. 7”; art. 7 ust. 1 mówi o rozpoczęciu działalności w roku podatkowym. Przepis nie mówi
