@@ -33,12 +33,22 @@
       note: >-
         Poprawka źródła (wcześniej link-zaślepka). Tekst jednolity potwierdza stan prawny na 2026-08-26;
         valid_from 2020-10-01 nie jest potwierdzony źródłem.
+        Uzupełnienie dowodów 2026-11-26: cytat z art. 103 ust. 1 (wpłata) i źródło kontrolne biznes.gov.pl, które samo podaje 25. dzień dla deklaracji i zapłaty.
       sources:
         - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
           quote: "za okresy miesięczne w terminie do 25. dnia miesiąca następującego po każdym kolejnym miesiącu"
-          article: art. 99 ust. 1, art. 103 ust. 1, art. 109 ust. 3b
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+          article: art. 99 ust. 1, art. 109 ust. 3b
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (wpłata podatku)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "do obliczania i wpłacania podatku za okresy miesięczne w terminie do 25. dnia miesiąca następującego po miesiącu, w którym powstał obowiązek podatkowy"
+          article: art. 103 ust. 1
+        - title: biznes.gov.pl, Jak prawidłowo rozliczyć VAT, aktualizacja 02.11.2026 (deklaracja i zapłata)
+          url: https://www.biznes.gov.pl/pl/portal/00232
+          kind: control
+          quote: "Musisz złożyć deklarację i zapłacić wynikający z niej podatek: przy rozliczeniu miesięcznym – do 25. dnia następnego miesiąca"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: termin.zaliczka_ryczalt
   name: Ryczałt za miesiąc
@@ -74,18 +84,32 @@
       note: >-
         Wpłata miesięczna; za grudzień do 20 stycznia (art. 44 ust. 6 zd. 3). Kwartalny sposób wymaga
         osobnego parametru. Poprawka 2026-11-26: link-zaślepka zastąpiony tekstem jednolitym z cytatem.
-        Tekst jednolity potwierdza stan prawny na 2026-04-17; valid_from 2020-01-01 nie jest potwierdzony źródłem.
+        Poprawka 2026-11-26: tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r. (wcześniej błędnie 2026-04-17, data obwieszczenia).
+        Teksty jednolite poz. 1387 (przepisy ogłoszone przed 3 lipca 2019 r.) i poz. 1426 (przed 24 lipca 2020 r.) mają to samo
+        brzmienie art. 44 ust. 6, więc potwierdzają, że ten termin obowiązywał 1 stycznia 2020 r. (nie że wtedy zaczął obowiązywać).
+        Obecne brzmienie obowiązuje od 1 stycznia 2019 r.: przypis 268 w poz. 1387 wskazuje skreślenie zdania czwartego
+        (zwolnienie z zaliczki za grudzień przy wcześniejszym zeznaniu) ustawą Dz.U. 2018 poz. 2126; dzień 20 się nie zmienił.
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
           quote: "Zaliczki miesięczne od dochodów wymienionych w ust. 1, wpłaca się w terminie do 20 dnia każdego miesiąca za miesiąc poprzedni"
           article: art. 44 ust. 6
+        - title: Dz.U. 2019 poz. 1387, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dla valid_from)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2019/1387/text.pdf
+          quote: "Zaliczkę za ostatni miesiąc lub ostatni kwartał roku podatkowego podatnik wpłaca w terminie do 20 stycznia następnego roku podatkowego. 6a. (uchylony)"
+          article: art. 44 ust. 6
+          as_of: 2019-07-02
+        - title: Dz.U. 2020 poz. 1426, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dla valid_from)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2020/1426/text.pdf
+          quote: "Zaliczki miesięczne od dochodów wymienionych w ust. 1, wpłaca się w terminie do 20 dnia każdego miesiąca za miesiąc poprzedni"
+          article: art. 44 ust. 6
+          as_of: 2020-07-23
         - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym, aktualizacja 24.06.2026
           url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
           kind: control
           quote: "Zaliczki wpłacasz w terminie: do 20. dnia każdego miesiąca za miesiąc poprzedni, a za grudzień – do 20 stycznia następnego roku"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26}
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: termin.roczne_rozliczenie_zdrowotnej
   name: Roczne rozliczenie składki zdrowotnej (w DRA za kwiecień)
