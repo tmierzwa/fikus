@@ -41,7 +41,23 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
     i ponownego podjęcia działalności w ciągu roku.
   - FAQ ZUS („Zmiany od 2022 r.”): przy zawieszeniu działalności w poprzednim roku ust. 2h nie ma
     zastosowania. To przypadek pokrewny, nie ten z pytania.
-  - Niesprawdzone: decyzje Prezesa NFZ (art. 109a), orzeczenia sądów administracyjnych (CBOSA).
+  - Poradnik ZUS stawia przypis 21 („Art. 81 ust. 2h ustawy zdrowotnej”) po regule, że podstawę stosuje się „przez
+    cały rok”, a przed wyjątkiem o zakończeniu działalności. Dla samego wyjątku nie podaje żadnej podstawy.
+- Dalsze źródła przeszukane 2026-11-26, bez rozstrzygnięcia:
+  - Prezes NFZ nie wydaje rozstrzygnięć w tej sprawie (wniosek z przepisów, nie cytat): w ustawie o świadczeniach
+    (Dz.U. 2025 poz. 1461) art. 109 ust. 2 wyłącza z decyzji w indywidualnych sprawach sprawy z zakresu wymierzania
+    i pobierania składek, a art. 109a ust. 2 wyłącza z interpretacji indywidualnych Prezesa NFZ sprawy składek należące
+    do ZUS i KRUS (art. 83d ustawy o systemie ubezpieczeń społecznych, art. 62a ustawy o ubezpieczeniu społecznym rolników).
+  - ZUS, ulotka „Ryczałt od przychodów ewidencjonowanych” (2022,
+    https://www.zus.pl/documents/10182/4446388/Rycza%C5%82t.pdf/35fc43d1-637f-6933-9619-0833b896b0f5): podaje tylko
+    warunek prowadzenia działalności „przez cały poprzedni rok kalendarzowy”, bez wyjątku z poradnika.
+  - ZUS, bieżące wyjaśnienie komórek merytorycznych „Roczna podstawa wymiaru składki na ubezpieczenie zdrowotne osób
+    prowadzących działalność gospodarczą” (17 lutego 2023 r.): nie omawia art. 81 ust. 2h.
+  - Orzeczenia sądów powszechnych (baza SAOS, wyszukiwanie frazy „81 ust. 2h”): 8 wyroków z lat 2024–2026, wszystkie
+    w sprawach podstawy składki komorników sądowych; przepis jest w nich tylko wymieniony. Żaden nie dotyczy
+    zakończenia i ponownego podjęcia działalności. Sprawy składek rozpatrują sądy powszechne, nie administracyjne,
+    więc CBOSA nie jest właściwą bazą.
+  - Interpelacje poselskie (wyszukiwanie w sejm.gov.pl): brak odpowiedzi na to pytanie.
 
 ## P2. Minimalna składka zdrowotna na skali i liniowym w roku składkowym 2025/2026 (rozstrzygnięte 2026-11-26, bez eksperta)
 
@@ -74,10 +90,18 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
 - Ustawa wypadkowa, art. 28 ust. 1: stopa wynosi 50% najwyższej stopy ustalonej na dany rok składkowy
   dla grup działalności. Najwyższa stopa w tabeli z załącznika nr 2 rozporządzenia (Dz.U. 2025
   poz. 1874) to 3,33, a § 6 ust. 2 każe zaokrąglać według zasady matematycznej. Kwotę 1,67% podają
-  wprost tylko materiały ZUS (poradnik i strona o informacji ZUS IWA).
+  wprost materiały ZUS (poradnik i strona o informacji ZUS IWA), a za rok 2025/2026 także biznes.gov.pl, choć bez wskazania roku składkowego (niżej).
 - Pytanie: czy dla płatnika zgłaszającego nie więcej niż 9 ubezpieczonych stopa w latach składkowych
   2025/2026 i 2026/2027 wynosi 1,67%, i czy istnieje urzędowe źródło poza materiałami ZUS, które
   podaje tę stopę wprost?
+
+- Materiały znalezione 2026-11-26 (nie rozstrzygają pytania):
+  - Za rok 2026/2027: przedruk wypowiedzi regionalnej rzeczniczki prasowej ZUS z 1 kwietnia 2026 r. na stronie Starostwa
+    Powiatowego w Hajnówce (https://samorzad.gov.pl/web/powiat-hajnowski/stopy-procentowe) podaje 1,67% i najwyższą stopę
+    3,33% od 1 kwietnia 2026 r. To nadal materiał ZUS, nie źródło spoza ZUS.
+  - Za rok 2025/2026: biznes.gov.pl (https://www.biznes.gov.pl/pl/portal/00274, aktualizacja 11 lutego 2026 r.) podaje
+    „Składka wypadkowa od 1.04.2024 (1,67%)”, ale nie wskazuje roku składkowego, a na tej samej stronie podaje też stopę
+    „od 1.04.2021”.
 
 ## P5. Przesunięcie terminu z art. 12 § 5 Ordynacji podatkowej od 1 października 2026 r. a termin zapłaty
 
@@ -121,6 +145,36 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   minimum od liczby miesięcy podlegania ubezpieczeniu.
 - Pytanie: czy minimum rocznej składki z art. 79a ust. 1 pkt 2 liczy się od wszystkich miesięcy roku składkowego, czy tylko
   od miesięcy podlegania ubezpieczeniu zdrowotnemu?
+- Materiały zebrane 2026-11-26 (urzędowe źródła się różnią, więc pytanie zostaje otwarte):
+  - ZUS, bieżące wyjaśnienie komórek merytorycznych „Roczna podstawa wymiaru składki na ubezpieczenie zdrowotne osób
+    prowadzących działalność gospodarczą” (17 lutego 2023 r.,
+    https://www.zus.pl/-/roczna-podstawa-wymiaru-sk%C5%82adki-na-ubezpieczenie-zdrowotne-os%C3%B3b-prowadz%C4%85cych-dzia%C5%82alno%C5%9B%C4%87-gospodarcz%C4%85):
+    „Składka ustalana od podstawy rocznej nie może być niższa niż kwota równa 9% iloczynu liczby miesięcy podlegania
+    ubezpieczeniu zdrowotnemu i minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego.”
+  - ZUS, „Zmiany w składce zdrowotnej opłacanej przez przedsiębiorców od 1 stycznia 2025 r.” (2 stycznia 2025 r.,
+    https://www.zus.pl/-/zmiany-w-sk%C5%82adce-zdrowotnej-op%C5%82acanej-przez-przedsi%C4%99biorc%C3%B3w-od-1-stycznia-2025-r.):
+    minimalna roczna podstawa to iloczyn „liczby miesięcy podlegania ubezpieczeniu zdrowotnemu w roku 2025” i 75%
+    minimalnego wynagrodzenia, a przy podatku liniowym minimalna składka miesięczna i roczna to 9% minimalnej podstawy
+    wymiaru. Dotyczy tylko roku składkowego 2025/2026.
+  - ZUS, prezentacja z webinaru „Roczne rozliczenie składki na ubezpieczenie zdrowotne” (17 kwietnia 2023 r.,
+    https://www.zus.pl/documents/10182/24154/Webinar_prezentacja+17.04.2023+r.pdf/f8f3baa7-94bf-3c98-a085-84ce230e75b9,
+    str. 27–28): przy zmianie formy opodatkowania z ryczałtu na zasady ogólne od 1 stycznia 2023 r. (i przy rozpoczęciu
+    działalności 1 stycznia 2023 r.) styczeń 2023 r. zalicza się do „jednomiesięcznego roku składkowego”, a dla skali albo
+    podatku liniowego składka roczna za ten okres „będzie obliczona w wysokości 0 zł”.
+  - biznes.gov.pl, „Ile wynosi składka zdrowotna” (https://www.biznes.gov.pl/pl/portal/001052): powtarza brzmienie ustawy:
+    „Minimalna roczna składka zdrowotna to 9% iloczynu liczby miesięcy w roku składkowym i kwoty minimalnego wynagrodzenia
+    obowiązującego w pierwszym dniu roku składkowego”, z przykładem tylko dla pełnego roku składkowego.
+  - Historia przepisów: art. 79a ust. 1 pkt 2 w obecnym brzmieniu („liczby miesięcy w roku składkowym”) pochodzi z ustawy
+    z 29 października 2021 r. (Dz.U. 2021 poz. 2105, art. 15). Ta sama ustawa nadała art. 81 ust. 2b brzmienie „liczby miesięcy
+    w roku składkowym podlegania ubezpieczeniu”. Ustawa z 9 czerwca 2022 r. (Dz.U. 2022 poz. 1265, art. 10 pkt 6) zmieniła je na „liczby
+    miesięcy podlegania ubezpieczeniu zdrowotnemu w roku kalendarzowym”, a art. 79a ust. 1 pkt 2 zostawiła bez zmian.
+    Uzasadnienie projektu (druk sejmowy nr 2186, IX kadencja,
+    https://api.sejm.gov.pl/sejm/term9/prints/2186/2186-uzas.docx) mówi o zmianie art. 81 ust. 2b: ma ona „usunięcie
+    wątpliwości w zakresie ustalania liczby miesięcy podlegania dla celów określenia minimalnej rocznej podstawy wymiaru
+    składki”. O art. 79a uzasadnienie nie mówi.
+  - Orzeczenia sądów powszechnych (baza SAOS, fraza „liczby miesięcy w roku składkowym”): 31 wyroków z lat 2023–2025,
+    głównie w sprawach komorników sądowych. Przytaczają art. 79a ust. 1, ale żaden nie rozstrzyga, którą liczbę miesięcy
+    przyjąć.
 
 ## P8. Od kiedy stosować art. 81 ust. 2zd pkt 2 bez art. 21 ust. 1 pkt 63a ustawy o PIT
 
@@ -145,6 +199,23 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   - składki za styczeń 2027 r. liczonej od dochodu z grudnia 2026 r. (skala, liniowy);
   - rocznego rozliczenia za 2026 r. składanego w 2027 r.;
   - przychodu z 2026 r. przyjmowanego na ryczałcie według art. 81 ust. 2h.
+- Materiały zebrane 2026-11-26 (żadne urzędowe źródło nie podaje odpowiedzi):
+  - Uzasadnienie projektu (druk sejmowy nr 3160, X kadencja,
+    https://api.sejm.gov.pl/sejm/term10/prints/3160/3160-uzasadnienie.docx) omawia art. 12 projektu (ten sam numer w ustawie)
+    razem z innymi artykułami jednym zdaniem: „Zaproponowane zmiany związane są z wygaszeniem z dniem 1 stycznia 2027 r.
+    funkcjonowania SSE, co powoduje konieczność aktualizacji przepisów wymienionych ustaw.” O uchyleniu art. 21 ust. 1 pkt 63a
+    ustawy o PIT pisze, że po wygaszeniu SSE „brak będzie możliwości korzystania ze zwolnienia w ramach tego przepisu”.
+    O tym, od kiedy stosować nowe brzmienie art. 81 ust. 2zd, uzasadnienie nie mówi. Ocena skutków regulacji (druk 3160,
+    pkt 6) podaje w tabeli dochody NFZ od roku 1 po wejściu w życie, ale nie omawia art. 81 ust. 2zd ani okresu, od którego
+    zmiana ma wpływać na składkę.
+  - Senat przyjął ustawę bez poprawek 27 października 2026 r. (druk senacki nr 892). Na stronie posiedzenia z materiałów Biura
+    Legislacyjnego jest tylko materiał porównawczy (892m); opinii Biura Legislacyjnego do tej ustawy nie znaleziono.
+  - Komunikatów ZUS, MZ i MF o stosowaniu nowego brzmienia nie znaleziono (ustawa ogłoszona 23 listopada 2026 r.).
+  - Dla porównania: przy poprzedniej zmianie art. 81 ust. 2zd ustawa z 6 grudnia 2024 r. (Dz.U. 2024 poz. 1915) miała przepisy
+    przejściowe. Art. 2: nowe brzmienie art. 81 ust. 2zd pkt 3 (i inne wymienione przepisy) przy skali, liniowym i IP Box
+    „stosuje się do rozliczenia składek na ubezpieczenie zdrowotne należnych za okres od dnia 1 lutego 2025 r.”; art. 3:
+    do składek na ryczałcie należnych za okres do 31 grudnia 2024 r. stosuje się przepisy dotychczasowe. Ustawa Dz.U. 2026
+    poz. 1542 takich przepisów nie ma.
 
 ## P9. Ulga na start: jak liczyć 6 miesięcy ulgi i następne 24 miesiące podstawy preferencyjnej
 
@@ -160,9 +231,30 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
 - Ustawa o systemie ubezpieczeń społecznych (Dz.U. 2026 poz. 1474), art. 18aa ust. 1 i 3: po rezygnacji z ulgi albo
   po jej upływie okres 24 miesięcy kalendarzowych podstawy preferencyjnej liczy się „od dnia objęcia ubezpieczeniami”.
 - biznes.gov.pl (portal/00285): po rezygnacji z ulgi w połowie miesiąca okres obniżonych składek zaczyna się „dopiero od
-  kolejnego miesiąca”. ZUS (to samo wyjaśnienie): po rezygnacji okres liczy się od dnia objęcia ubezpieczeniami, a po
-  upływie ulgi od dnia następnego po upływie 6 miesięcy kalendarzowych.
+  kolejnego miesiąca”. ZUS liczy tak samo (zobacz materiały niżej). Przepis wprost nie mówi, jak liczyć
+  miesiąc, w którym objęcie ubezpieczeniami następuje w trakcie miesiąca.
 - Pytanie: jak liczyć 24 miesiące z art. 18aa ust. 1 i 3, gdy objęcie ubezpieczeniami następuje w trakcie miesiąca?
+- Materiały znalezione 2026-11-26 (nie rozstrzygają pytania, bo przepisy nie mówią wprost, jak liczyć niepełny miesiąc):
+  - ZUS, bieżące wyjaśnienie komórek merytorycznych „Zmiany w ubezpieczeniach wprowadzone przez »Konstytucję biznesu«”
+    (12 kwietnia 2018 r.,
+    https://www.zus.pl/baza-wiedzy/biezace-wyjasnienia-komorek-merytorycznych/-/asset_publisher/biezacewyjasnieniakomorekmerytorycznych/content/id/1540038):
+    ulga trwa „maksymalnie 6 miesięcy kalendarzowych”, miesiąca rozpoczęcia działalności w trakcie miesiąca nie wlicza się;
+    tak samo dla 24 miesięcy: „Jeśli przypada w trakcie miesiąca kalendarzowego, miesiąca tego nie wliczaj.” Przykład
+    w obecnej informacji ZUS o uldze na start (rezygnacja i objęcie ubezpieczeniami w trakcie miesiąca) daje ten sam wynik.
+    ZUS i biznes.gov.pl liczą więc oba okresy tak samo.
+  - Uzasadnienie projektu Prawa przedsiębiorców (druk sejmowy VIII kadencji nr 2051, https://api.sejm.gov.pl/sejm/term8/prints/2051/2051-uzas.docx):
+    okres 6 miesięcy „powinien być liczony od momentu podjęcia” działalności, czyli od pierwszej czynności w obrocie
+    gospodarczym. O pełnych miesiącach uzasadnienie nie mówi. Uzasadnienie przepisów wprowadzających (druk nr 2055)
+    nie mówi, jak liczyć 24 miesiące z art. 18aa.
+  - Wyrok SN z 27 kwietnia 2023 r., III USKP 34/22 (znany z omówienia w „Rachunkowości”,
+    https://rachunkowosc.com.pl/jak-zus-liczy-miesiace-przy-uldze-na-start; pełnego tekstu nie udało się pobrać ze strony SN):
+    60 miesięcy przerwy z art. 18 ust. 1 Prawa przedsiębiorców to nie miesiące kalendarzowe, bo przepis, inaczej niż art. 18a
+    ustawy o systemie ubezpieczeń społecznych, nie dodaje słowa „kalendarzowych”; okres liczy się według art. 57 Kpa.
+    Wyrok dotyczy okresu przerwy, nie 6 miesięcy ulgi, ale ten sam przepis mówi o „okresie 6 miesięcy” bez słowa
+    „kalendarzowych”.
+  - Niesprawdzone: interpretacje indywidualne ZUS w BIP (wyszukiwarka https://bip.zus.pl/inne/interpretacje nie daje
+    wyników bez formularza, a archiwa są w plikach RAR), pismo Centrali ZUS DI/100000/43/164/2022 (dostępne tylko w LEX),
+    artykuł „Ulga na start – krytyczna analiza instytucji z art. 18 ustawy Prawo przedsiębiorców” (Palestra 4/2020).
 
 ## P10. Mały ZUS Plus: skutek zgłoszenia po terminie i liczenie okresów od 2026 r.
 
@@ -186,6 +278,19 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   wykorzystać po 2025 r.
 - Pytania: czy miesiące korzystania z ulgi i prowadzenia działalności sprzed 1 stycznia 2026 r. wlicza się do okresów
   36 i 60 miesięcy z art. 18c ust. 11a–11c? Jak dodatkowe 12 miesięcy z art. 112a mają się do limitu 36 miesięcy?
+- Materiały znalezione 2026-11-26 (nie rozstrzygają pytań, bo źródła się różnią):
+  - Uzasadnienie rządowego projektu (druk sejmowy X kadencji nr 1108, https://api.sejm.gov.pl/sejm/term10/prints/1108/1108-uzasadnienie.docx,
+    część o ustawie o systemie ubezpieczeń społecznych): po 36 miesiącach ulgi następuje „karencja” 24 miesięcy, a nowe
+    ust. 11a–11c, przy planowanym w projekcie wejściu w życie 1 stycznia 2025 r., „znajdą zastosowanie zarówno do osób,
+    które już w przeszłości skorzystały z Małego ZUS Plus (i znajdują się obecnie w okresie »karencji«), jak i tych, które
+    są w trakcie korzystania z niego”. To sugeruje, że okresy liczy się także z miesięcy sprzed wejścia w życie, inaczej niż
+    podają ZUS i biznes.gov.pl („niezależnie od tego, czy wykorzystałeś ją przed 2026 rokiem”). Uchwalona ustawa wchodzi
+    w tej części w życie 1 stycznia 2026 r. (art. 48 pkt 1). Uzasadnienie art. 38 mówi tylko, że do praw z art. 112a stosuje
+    się dotychczasowy art. 18c ust. 11 pkt 6.
+  - Zgłoszenie po terminie: wyrok SN z 24 kwietnia 2024 r., III USKP 47/23 (znany z tezy w INFORLEX; pełnego tekstu nie udało
+    się pobrać): złożenie po terminie deklaracji rozliczeniowej uprawniającej do ulgi uniemożliwia skorzystanie z niej.
+    Sprawa dotyczyła deklaracji za luty 2020 r., czyli przepisów sprzed 2026 r. i terminu deklaracji, a nie zgłoszenia
+    z art. 36 ust. 4b lub 14a. Niesprawdzone: wyroki sądów okręgowych i apelacyjnych w Portalu Orzeczeń Sądów Powszechnych.
 
 ## P11. Jak długo podatnik jest „rozpoczynającym działalność” przy zaliczkach kwartalnych PIT i kwartalnym ryczałcie
 
@@ -425,3 +530,13 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
     od aktywów nabytych przed 2027 r. ani o kolejności wobec art. 26i.
   - Eureka: brak objaśnień podatkowych i interpretacji ogólnej o uldze na robotyzację i uldze na ekspansję. W odpowiedzi
     dla mediów z 10 maja 2023 r. (Eureka, ID 543390) MF zapowiedziało objaśnienia o uldze na ekspansję; w Eurece ich nie ma.
+
+## P30. Limit odliczenia składki zdrowotnej przy podatku liniowym na 2027 r.
+
+- Wpis: `podatek.liniowy.limit_skladki_zdrowotnej` (2027-01-01 – 2027-12-31, 15 100 zł).
+- Zgłoszone: 2026-11-26.
+- Obwieszczenie Ministra Finansów i Gospodarki z 16 listopada 2026 r. (M.P. 2026 poz. 1163), wydane na podstawie
+  art. 30c ust. 2c ustawy o PIT: łączna kwota „w roku 2027 nie może przekroczyć 15 100 zł”.
+- Na 26 listopada 2026 r. żadna strona urzędu (podatki.gov.pl, biznes.gov.pl) nie podaje jeszcze kwoty na 2027 r.,
+  więc wartość nie ma drugiego dowodu.
+- Pytanie: czy limit z art. 30c ust. 2 pkt 2 ustawy o PIT na rok podatkowy 2027 wynosi 15 100 zł?
