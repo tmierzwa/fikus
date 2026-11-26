@@ -181,3 +181,119 @@
           quote: "Przy rozliczeniu kwartalnym wypełniasz tylko część ewidencyjną za pierwsze 2 miesiące każdego kwartału. Wysyłasz je do 25. dnia każdego miesiąca za miesiąc poprzedni"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: termin.zeznanie_liniowy
+  name: Zeznanie roczne PIT-36L i wpłata różnicy podatku
+  kind: deadline
+  applies_to: {tax_form: [liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value: {day_of_month: 30, month: 4}
+      note: >-
+        Zeznanie za rok podatkowy składa się od 15 lutego do 30 kwietnia następnego roku; złożone wcześniej uznaje się
+        za złożone 15 lutego. Różnicę między podatkiem z zeznania a zapłaconymi zaliczkami wpłaca się przed upływem
+        terminu złożenia zeznania. Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku
+        obowiązywania (2026-01-01) nie jest potwierdzona źródłem.
+        Ustawa nie nazywa formularza; nazwa PIT-36L pochodzi ze źródła kontrolnego.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (termin zeznania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 45 ust. 1 i 1a pkt 2
+          quote: "w terminie od dnia 15 lutego do dnia 30 kwietnia roku następującego po roku podatkowym"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wpłata)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 45 ust. 4
+          quote: "Przed upływem terminu określonego na złożenie zeznania podatnicy są obowiązani wpłacić"
+        - title: biznes.gov.pl, Podatek liniowy, aktualizacja 18.02.2026 (zeznanie PIT-36L)
+          url: https://www.biznes.gov.pl/pl/portal/00253
+          kind: control
+          quote: "Zeznanie trzeba złożyć do 30 kwietnia po roku podatkowym, którego dotyczy."
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: termin.zeznanie_ryczalt
+  name: Zeznanie roczne PIT-28
+  kind: deadline
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2026-01-01
+      value: {day_of_month: 30, month: 4}
+      note: >-
+        Zeznanie za rok podatkowy składa się od 15 lutego do 30 kwietnia następnego roku; złożone wcześniej uznaje się
+        za złożone 15 lutego. Tekst jednolity uwzględnia zmiany ogłoszone przed 2025-06-12; data początku obowiązywania
+        (2026-01-01) nie jest potwierdzona źródłem. Ustawa nie nazywa formularza; nazwa PIT-28 pochodzi ze źródła
+        kontrolnego.
+      sources:
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 21 ust. 2 pkt 2
+          quote: "należnego ryczałtu od przychodów ewidencjonowanych – w terminie od dnia 15 lutego do dnia 30 kwietnia roku następującego po roku podatkowym"
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (zeznanie roczne)
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          quote: "rozliczają w terminie od 15 lutego do końca kwietnia następnego roku"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: termin.zaliczka_skala
+  name: Zaliczka na PIT według skali za miesiąc
+  kind: deadline
+  applies_to: {tax_form: [skala]}
+  versions:
+    - valid_from: 2020-01-01
+      value: {day_of_month: 20}
+      note: >-
+        Wpłata miesięczna; za grudzień do 20 stycznia (art. 44 ust. 6 zd. 3). Kwartalny sposób wymaga osobnego parametru.
+        Ten sam przepis co dla podatku liniowego. Teksty jednolite poz. 1387 (przepisy ogłoszone przed 3 lipca 2019 r.),
+        poz. 1426 (przed 24 lipca 2020 r.) i poz. 592 (stan prawny na 1 kwietnia 2026 r.) mają to samo brzmienie art. 44
+        ust. 6, więc potwierdzają, że ten termin obowiązywał 1 stycznia 2020 r. (nie że wtedy zaczął obowiązywać).
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 6
+          quote: "Zaliczki miesięczne od dochodów wymienionych w ust. 1, wpłaca się w terminie do 20 dnia każdego miesiąca za miesiąc poprzedni"
+        - title: Dz.U. 2019 poz. 1387, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dla daty początku obowiązywania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2019/1387/text.pdf
+          article: art. 44 ust. 6
+          quote: "Zaliczkę za ostatni miesiąc lub ostatni kwartał roku podatkowego podatnik wpłaca w terminie do 20 stycznia następnego roku podatkowego. 6a. (uchylony)"
+          as_of: 2019-07-02
+        - title: Dz.U. 2020 poz. 1426, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dla daty początku obowiązywania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2020/1426/text.pdf
+          article: art. 44 ust. 6
+          quote: "Zaliczki miesięczne od dochodów wymienionych w ust. 1, wpłaca się w terminie do 20 dnia każdego miesiąca za miesiąc poprzedni"
+          as_of: 2020-07-23
+        - title: podatki.gov.pl (MF), Opodatkowanie według skali podatkowej
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-wedlug-skali-podatkowej
+          kind: control
+          quote: "Zaliczki wpłacasz w terminie: do 20. dnia każdego miesiąca za miesiąc poprzedni, a za grudzień – do 20 stycznia następnego roku"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: termin.zeznanie_skala
+  name: Zeznanie roczne PIT-36 i wpłata różnicy podatku
+  kind: deadline
+  applies_to: {tax_form: [skala]}
+  versions:
+    - valid_from: 2026-01-01
+      value: {day_of_month: 30, month: 4}
+      note: >-
+        Zeznanie za rok podatkowy składa się od 15 lutego do 30 kwietnia następnego roku; złożone wcześniej uznaje się
+        za złożone 15 lutego. Różnicę między podatkiem z zeznania a zapłaconymi zaliczkami wpłaca się przed upływem
+        terminu złożenia zeznania. Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku
+        obowiązywania (2026-01-01) nie jest potwierdzona źródłem. Nazwę formularza (PIT-36) podaje źródło kontrolne;
+        ustawa mówi o zeznaniu według ustalonego wzoru.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (termin zeznania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 45 ust. 1
+          quote: "w terminie od dnia 15 lutego do dnia 30 kwietnia roku następującego po roku podatkowym"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wpłata)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 45 ust. 4 pkt 1
+          quote: "różnicę między podatkiem należnym wynikającym z zeznania, o którym mowa w ust. 1, a sumą zapłaconych za dany rok zaliczek"
+        - title: biznes.gov.pl, Najważniejsze zasady opodatkowania według skali podatkowej, aktualizacja 07.01.2026 (zeznanie PIT-36)
+          url: https://www.biznes.gov.pl/pl/portal/00264
+          kind: control
+          quote: "Zeznanie musisz złożyć w terminie do 30 kwietnia roku następującego po roku podatkowym, za który składasz zeznanie podatkowe."
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
