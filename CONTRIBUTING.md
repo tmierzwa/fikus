@@ -2,7 +2,8 @@
 
 Fikus to dane o przepisach dla JDG z dowodami, skąd pochodzi każda wartość. Najbardziej przydają się:
 zgłoszenia błędów w danych, nowe wersje parametrów (na przykład stawki na kolejny rok), drugie
-niezależne źródła dla wpisów z pewnością `niska` lub `średnia` i poprawki kodu.
+niezależne źródła dla wpisów z pewnością `niska` i poprawki kodu. Wpis z pewnością `średnia` ma już
+komplet dowodów; podnosi go tylko rozstrzygnięcie otwartego pytania.
 
 ## Czego tu nie robimy
 

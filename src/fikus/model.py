@@ -73,12 +73,18 @@ class Version(BaseModel):
             raise ValueError("koniec obowiązywania wersji jest wcześniejszy niż jej początek")
         if not any(s.kind == "primary" for s in self.sources):
             raise ValueError("każda wersja potrzebuje źródła pierwotnego")
-        if any(s.confirms for s in self.sources):
+        if any(s.confirms is not None for s in self.sources):
             if not isinstance(self.value, dict):
                 raise ValueError("potwierdzanie pól (confirms) dotyczy tylko wartości złożonej")
+            if PERIOD in self.value:
+                raise ValueError(f"klucz wartości {PERIOD!r} jest zarezerwowany dla okresu w confirms")
             known = set(self.value) | {PERIOD}
             for s in self.sources:
-                unknown = set(s.confirms or []) - known
+                if s.confirms is None:
+                    continue
+                if not s.confirms or not s.quote:
+                    raise ValueError(f"źródło {s.url}: confirms wymaga cytatu i co najmniej jednego pola")
+                unknown = set(s.confirms) - known
                 if unknown:
                     raise ValueError(f"źródło {s.url} potwierdza nieznane pola: {', '.join(sorted(unknown))}")
         return self
@@ -106,8 +112,9 @@ class Version(BaseModel):
         evidence = []
         if any(s.kind == "primary" and s.quote for s in self.sources):
             evidence.append("cytat")
+        # Gdy wersja potwierdza pola osobno, liczy się tylko ta ścieżka.
         unconfirmed = self._unconfirmed_fields()
-        if any((s.kind == "control" or s.independent) and not s.confirms for s in self.sources) \
+        if (unconfirmed is None and any(s.kind == "control" or s.independent for s in self.sources)) \
                 or unconfirmed == []:
             evidence.append("drugie_zrodlo")
         if ver.agent_check:

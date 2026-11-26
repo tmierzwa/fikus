@@ -123,10 +123,18 @@ def test_composite_value_can_be_confirmed_field_by_field():
     assert "unconfirmed_fields" not in _version().confidence()
     same_doc = {**c, "url": a["url"]}
     assert _composite(a, b, same_doc).confidence()["level"] == "niska"  # jeden dokument liczy się raz
-    no_quote = {k: v for k, v in c.items() if k != "quote"}
-    assert _composite(a, b, no_quote).confidence()["level"] == "niska"
     with pytest.raises(ValueError):
         _composite(a, {**b, "confirms": ["wersja"]})                    # nieznane pole
+    with pytest.raises(ValueError):
+        _composite(a, {**b, "confirms": []})                            # pusta lista
+    with pytest.raises(ValueError):
+        _composite(a, {k: v for k, v in b.items() if k != "quote"})     # confirms bez cytatu
+    # Źródło kontrolne bez confirms nie zastępuje potwierdzania pól, gdy wersja go używa.
+    control = {"title": "portal", "url": "https://example.org/d", "kind": "control"}
+    assert _composite(a, b, control).confidence()["level"] == "niska"
+    with pytest.raises(ValueError):
+        Version.model_validate({"valid_from": "2026-01-01", "value": {"period": 1}, "sources": [a],
+                                "verification": {"checked_at": "2026-01-01"}})
 
 
 def test_quote_matching_ignores_layout_but_not_content():

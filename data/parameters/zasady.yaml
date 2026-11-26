@@ -727,7 +727,6 @@
       verification:
         checked_at: 2026-11-26
         agent_check: 2026-11-26
-        open_issue_scope: edge_case
         open_issue: "Art. 79a ust. 1 pkt 2 ustawy o świadczeniach opieki zdrowotnej liczy minimum rocznej składki od liczby miesięcy w roku składkowym, a ZUS (przykład w poradniku i wyjaśnienie z 17 lutego 2023 r.) liczy je od liczby miesięcy podlegania ubezpieczeniu; biznes.gov.pl powtarza brzmienie ustawy. Którą liczbę miesięcy przyjąć? Pytanie do eksperta: docs/pytania-do-eksperta.md, P7."
     - valid_from: 2026-02-01
       valid_to: 2027-01-31
