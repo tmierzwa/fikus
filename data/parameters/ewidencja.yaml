@@ -1,0 +1,310 @@
+# Ewidencja przychodów (ryczałt) oraz data i przeliczenie przychodu z działalności.
+# Serwer niczego nie liczy i nie podaje kursów walut. Kurs pobiera klient z NBP.
+
+- id: termin.ewidencja_przychodow_wpis
+  name: Wpis przychodów za miesiąc do ewidencji przychodów
+  kind: deadline
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2026-01-01
+      value: {day_of_month: 20}
+      note: >-
+        Wpisy za miesiąc dokonuje się najpóźniej do 20. dnia następnego miesiąca, także za grudzień (do 20 stycznia):
+        przepis dotyczy każdego miesiąca i nie ma wyjątku dla grudnia (P31, rozstrzygnięte bez eksperta). Ten sam termin
+        dotyczy zapisów na podstawie miesięcznych raportów fiskalnych (§ 4 ust. 3). Termin wpisu nie zależy od tego, czy
+        ryczałt wpłaca się miesięcznie, czy kwartalnie. Data początku obowiązywania to wejście w życie rozporządzenia
+        z 6 września 2025 r. (§ 12), które zastąpiło rozporządzenie Dz.U. 2021 poz. 2414; ta wersja nie opisuje okresu przed
+        1 stycznia 2026 r. Rozporządzenie nie ma przepisów przejściowych dla ewidencji (§ 10 dotyczy tylko wykazu) i według
+        API ELI nie było zmieniane.
+      sources:
+        - title: Dz.U. 2025 poz. 1294, rozporządzenie Ministra Finansów i Gospodarki z 6 września 2025 r. w sprawie prowadzenia ewidencji przychodów i wykazu środków trwałych oraz wartości niematerialnych i prawnych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1294/text.pdf
+          quote: "Zapisy w ewidencji są dokonywane na podstawie dowodów, o których mowa w § 4 i § 5, najpóźniej do 20. dnia każdego miesiąca za miesiąc poprzedni."
+          article: § 6
+        - title: Dz.U. 2025 poz. 1294 (wejście w życie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1294/text.pdf
+          quote: "Rozporządzenie wchodzi w życie z dniem 1 stycznia 2026 r."
+          article: § 12
+        - title: Fakturowo.pl, Ryczałt – ewidencja przychodów i wykaz majątku (stan prawny na 8 listopada 2026 r.)
+          url: https://www.fakturowo.pl/blog/ryczalt-ewidencja-przychodow-i-wykaz-majatku
+          kind: control
+          quote: "Zapisy w ewidencji należy prowadzić chronologicznie, nie później niż do 20. dnia każdego miesiąca za miesiąc poprzedni."
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26}
+
+- id: zasada.ewidencja_przychodow
+  name: Prowadzenie ewidencji przychodów na ryczałcie
+  kind: rule
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Jeżeli jesteś opodatkowany ryczałtem od przychodów ewidencjonowanych, prowadzisz ewidencję przychodów odrębnie za każdy rok podatkowy. Obowiązek powstaje od dnia, od którego stosujesz ryczałt. Obowiązek nie dotyczy podatników osiągających przychody z art. 6 ust. 1a (między innymi najem poza działalnością gospodarczą) lub z art. 6 ust. 1d ustawy o ryczałcie. Przy działalności w formie spółki, o której mowa w art. 6 ust. 1 tej ustawy, wspólnicy prowadzą wspólną ewidencję.
+            uses: []
+            basis: art. 15 ust. 1–3 ustawy o zryczałtowanym podatku dochodowym; § 2 ust. 2 rozporządzenia Dz.U. 2025 poz. 1294
+          - text: Ewidencję prowadzisz według wzoru z załącznika do rozporządzenia. Wpis zawiera liczbę porządkową, datę wpisu, datę uzyskania przychodu, numer dowodu księgowego, numer identyfikujący fakturę wystawioną przy użyciu Krajowego Systemu e-Faktur, identyfikator podatkowy kontrahenta (z kodem kraju nadania), kwotę przychodu w kolumnie właściwej stawki ryczałtu, przychody ogółem i uwagi. Identyfikatora kontrahenta nie wpisujesz przy zapisach na podstawie dowodu wewnętrznego i raportów fiskalnych. Jeżeli wpłacasz ryczałt kwartalnie, w uwagach możesz wpisywać datę otrzymania przychodu.
+            uses: [zasada.przychod_data_uzyskania]
+            basis: § 2 ust. 1 rozporządzenia Dz.U. 2025 poz. 1294 i załącznik (wzór ewidencji z objaśnieniami)
+          - text: Ewidencję prowadzisz przy użyciu programów komputerowych i po zakończeniu roku przesyłasz ją w strukturze JPK_EWP; od którego roku te obowiązki cię dotyczą, opisuje zasada przesyłania ewidencji na ryczałcie w formie JPK. Jeżeli prowadzisz ewidencję bez użycia programów komputerowych, broszurujesz ją i kolejno numerujesz jej karty.
+            uses: [zasada.jpk_pd_ryczalt, schemat.jpk_ewp]
+            basis: art. 15 ust. 12 ustawy o zryczałtowanym podatku dochodowym; § 2 ust. 3 rozporządzenia Dz.U. 2025 poz. 1294
+          - text: Wpisów dokonujesz na podstawie faktur, faktur VAT RR, rachunków i dokumentów celnych, a przy sprzedaży bez faktur na podstawie dowodu wewnętrznego wystawionego na koniec dnia, z przychodami za ten dzień w podziale na stawki ryczałtu. Jeżeli prowadzisz ewidencję sprzedaży na kasie rejestrującej, wpisujesz dane z dobowych raportów fiskalnych albo na koniec miesiąca z miesięcznych raportów fiskalnych, skorygowane o kwoty mające wpływ na przychód; nie wpisujesz wtedy kwot z faktur do sprzedaży już ujętej na kasie. Przychody z art. 14 ust. 2 ustawy o PIT wpisujesz na podstawie dowodów potwierdzających ich uzyskanie.
+            uses: []
+            basis: § 4 ust. 1–3 i 6 oraz § 5 rozporządzenia Dz.U. 2025 poz. 1294
+          - text: Wpisów za miesiąc dokonujesz najpóźniej do 20. dnia następnego miesiąca.
+            uses: [termin.ewidencja_przychodow_wpis]
+            basis: § 6 rozporządzenia Dz.U. 2025 poz. 1294
+          - text: Jeżeli jesteś podatnikiem, o którym mowa w art. 84 ustawy o VAT (handel, w którym sprzedaż dzieli się na stawki VAT w proporcjach wynikających z zakupów), możesz wykazywać przychody w ewidencji łącznie z VAT, a na koniec miesiąca pomniejszasz przychód o należny VAT.
+            uses: []
+            basis: § 7 rozporządzenia Dz.U. 2025 poz. 1294
+          - text: Jeżeli stosujesz metodę kasową rozliczania przychodów, prowadzisz też ewidencję faktur z datą wystawienia, numerem faktury, kwotą należności z faktury i datą uregulowania należności.
+            uses: [zasada.przychod_data_uzyskania]
+            basis: art. 15 ust. 11a ustawy o zryczałtowanym podatku dochodowym
+          - text: Korektę przychodu, która nie wynika z błędu rachunkowego ani innej oczywistej omyłki, ujmujesz przez zmniejszenie albo zwiększenie przychodów okresu rozliczeniowego, w którym wystawiono fakturę korygującą, a bez faktury – inny dokument potwierdzający przyczynę korekty. Jeżeli przychody tego okresu są niższe od zmniejszenia, zmniejszasz przychody w kolejnych okresach. Korektę danych z raportów fiskalnych, której nie ujmujesz w odrębnych ewidencjach, wpisujesz na podstawie dowodu wewnętrznego ze znakiem minus. W którym okresie i w jaki sposób wpisujesz korektę wynikającą z błędu rachunkowego lub oczywistej omyłki, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: []
+            basis: art. 14 ust. 1m ustawy o PIT; art. 6 ust. 1e i 1f ustawy o zryczałtowanym podatku dochodowym; § 4 ust. 4 i 5 rozporządzenia Dz.U. 2025 poz. 1294
+          - text: Ewidencję prowadzisz rzetelnie i w sposób niewadliwy. Niewadliwa jest ewidencja prowadzona zgodnie z rozporządzeniem i według wzoru, a rzetelna – gdy zapisy odzwierciedlają stan rzeczywisty. Ewidencję uznaje się za rzetelną i niewadliwą także wtedy, gdy niewpisane lub błędnie wpisane przychody łącznie nie przekraczają 0,5 % przychodu wykazanego w ewidencji za rok (albo do dnia stwierdzenia błędów), gdy brak zapisów wynika z nieszczęśliwego wypadku lub zdarzenia losowego, gdy uzupełniłeś lub poprawiłeś zapisy przed rozpoczęciem kontroli albo w terminie do złożenia deklaracji lub korekty z art. 62 ust. 4 ustawy o KAS, albo gdy błędne zapisy są oczywistą omyłką i masz dowody, na podstawie których dokonuje się wpisów.
+            uses: []
+            basis: § 3 rozporządzenia Dz.U. 2025 poz. 1294
+      note: >-
+        Data początku obowiązywania to wejście w życie rozporządzenia Dz.U. 2025 poz. 1294 (§ 12); ta wersja nie opisuje
+        okresu przed 1 stycznia 2026 r. Rozporządzenie według API ELI nie było zmieniane. Tekst jednolity ustawy
+        o ryczałcie (Dz.U. 2025 poz. 843) zmieniła później tylko ustawa Dz.U. 2026 poz. 779, która dodaje art. 15 ust. 13a
+        (pełnomocnictwo do podpisywania przesyłanej ewidencji) i nie zmienia przepisów cytowanych w krokach. Tekst jednolity
+        ustawy o PIT (Dz.U. 2026 poz. 592) zmieniły ustawy Dz.U. 2026 poz. 779 (art. 24a), 846 (art. 25b, 30f, 31d),
+        1079 (art. 21), 1287 (dodaje art. 52zu) i 1371 (uchyla art. 14 ust. 2h i 2i, zmienia art. 22p, 23q i 23zf); żadna
+        nie zmienia art. 14 ust. 1m. Wzór ewidencji ma osobną kolumnę na numer KSeF faktury; broszura MF o JPK_EWP(4)
+        opisuje to pole w pliku jako opcjonalne. Kroki opisują dane słownie; pola pliku JPK_EWP opisuje broszura przy
+        schemacie. Ustawa o ryczałcie odwołuje się do korekty z art. 14 ust. 1m ustawy o PIT w art. 6 ust. 1e i 1f.
+      sources:
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (ewidencja za rok podatkowy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "odrębnie za każdy rok podatkowy, ewidencję przychodów, zwaną dalej „ewidencją”"
+          article: art. 15 ust. 1
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (początek obowiązku)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "Obowiązek prowadzenia ewidencji powstaje od dnia, od którego ma zastosowanie opodatkowanie w formie ryczałtu od przychodów ewidencjonowanych."
+          article: art. 15 ust. 2
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (wyłączenie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "Obowiązek prowadzenia ewidencji nie dotyczy podatników osiągających przychody, o których mowa w art. 6 ust. 1a lub 1d."
+          article: art. 15 ust. 3
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (ewidencja faktur przy metodzie kasowej)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "Ewidencja ta zawiera datę wystawienia faktury, numer faktury, kwotę należności wynikającą z faktury oraz datę uregulowania należności."
+          article: art. 15 ust. 11a
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (odesłanie do korekty z art. 14 ust. 1m ustawy o PIT)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "Jeżeli w okresie rozliczeniowym, w którym podatnik ma obowiązek dokonać zmniejszenia przychodów na podstawie art. 14 ust. 1m ustawy o podatku dochodowym, podatnik nie osiągnął przychodów lub osiągnięte przychody są niższe od kwoty zmniejszenia, podatnik dokonuje zmniejszenia w kolejnych okresach rozliczeniowych."
+          article: art. 6 ust. 1e
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (korekta przychodu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "Jeżeli korekta przychodu nie jest spowodowana błędem rachunkowym lub inną oczywistą omyłką, korekty dokonuje się poprzez zmniejszenie lub zwiększenie przychodów osiągniętych w okresie rozliczeniowym, w którym została wystawiona faktura korygująca"
+          article: art. 14 ust. 1m
+        - title: Dz.U. 2025 poz. 1294, rozporządzenie w sprawie prowadzenia ewidencji przychodów (wzór)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1294/text.pdf
+          quote: "Podatnicy są obowiązani prowadzić ewidencję według wzoru ustalonego w załączniku do rozporządzenia."
+          article: § 2 ust. 1
+        - title: Dz.U. 2025 poz. 1294 (wspólna ewidencja spółki)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1294/text.pdf
+          quote: "Wspólną ewidencję prowadzą podatnicy wykonujący działalność w formie spółki, o której mowa w art. 6 ust. 1 ustawy."
+          article: § 2 ust. 2
+        - title: Dz.U. 2025 poz. 1294 (ewidencja bez programu komputerowego)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1294/text.pdf
+          quote: "W przypadku prowadzenia ewidencji bez użycia programów komputerowych podatnik jest obowiązany zbroszurować ewidencję i kolejno ponumerować jej karty."
+          article: § 2 ust. 3
+        - title: Dz.U. 2025 poz. 1294 (rzetelność i niewadliwość)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1294/text.pdf
+          quote: "Za rzetelną uznaje się ewidencję, jeżeli dokonywane w niej zapisy odzwierciedlają stan rzeczywisty."
+          article: § 3 ust. 3
+        - title: Dz.U. 2025 poz. 1294 (przypadki uznania ewidencji za rzetelną i niewadliwą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1294/text.pdf
+          quote: "niewpisane lub błędnie wpisane przychody łącznie nie przekraczają 0,5 % przychodu wykazanego w ewidencji za dany rok podatkowy"
+          article: § 3 ust. 4
+        - title: Dz.U. 2025 poz. 1294 (dowody wpisu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1294/text.pdf
+          quote: "Zapisy w ewidencji są dokonywane na podstawie faktur, faktur VAT RR, rachunków oraz dokumentów celnych"
+          article: § 4 ust. 1
+        - title: Dz.U. 2025 poz. 1294 (korekta raportu fiskalnego)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1294/text.pdf
+          quote: "stanowi podstawę dokonania zapisu w ewidencji ze znakiem (-)"
+          article: § 4 ust. 5
+        - title: Dz.U. 2025 poz. 1294 (przychody z art. 14 ust. 2 ustawy o PIT)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1294/text.pdf
+          quote: "zapisów dokonuje się na podstawie dowodów potwierdzających uzyskanie tych przychodów"
+          article: § 5
+        - title: Dz.U. 2025 poz. 1294 (termin wpisu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1294/text.pdf
+          quote: "najpóźniej do 20. dnia każdego miesiąca za miesiąc poprzedni"
+          article: § 6
+        - title: Dz.U. 2025 poz. 1294 (przychody łącznie z VAT)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1294/text.pdf
+          quote: "mogą wykazywać przychody w ewidencji łącznie z podatkiem od towarów i usług, z tym że na koniec miesiąca przychód pomniejsza się o należny podatek od towarów i usług"
+          article: § 7
+        - title: Dz.U. 2025 poz. 1294 (objaśnienie wzoru o identyfikatorze kontrahenta)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1294/text.pdf
+          quote: "Identyfikator podatkowy kontrahenta obejmuje również kod kraju nadania identyfikatora. Kolumny 6 nie wypełnia się w przypadku zapisów dotyczących przychodów ze sprzedaży na podstawie dowodu wewnętrznego oraz raportów fiskalnych."
+          article: załącznik, objaśnienie 1
+        - title: podatki.gov.pl (MF), Broszura informacyjna dotycząca struktury JPK_EWP(4) (pole numeru KSeF)
+          url: https://podatki.gov.pl/media/0qmfysqh/broszura_informacyjna_dot_jpk_ewp-4.pdf
+          quote: "Numer identyfikujący fakturę wystawioną przy użyciu Krajowego Systemu e-Faktur (numer KSeF) (pole opcjonalne)"
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        open_issue: >-
+          P32: w którym okresie i w jaki sposób wpisuje się do ewidencji korektę przychodu wynikającą z błędu rachunkowego
+          lub innej oczywistej omyłki, do której nie stosuje się art. 14 ust. 1m ustawy o PIT? Zob. docs/pytania-do-eksperta.md.
+
+- id: zasada.przychod_data_uzyskania
+  name: Data uzyskania przychodu z działalności gospodarczej
+  kind: rule
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Przychodem z działalności są kwoty należne, choćby nie zostały faktycznie otrzymane, po wyłączeniu wartości zwróconych towarów, udzielonych bonifikat i skont. Jeżeli sprzedajesz towary i usługi opodatkowane VAT, przychodem jest kwota pomniejszona o należny VAT. Do przychodów nie zalicza się pobranych wpłat ani zarachowanych należności na poczet dostaw towarów i usług, które zostaną wykonane w następnych okresach sprawozdawczych.
+            uses: []
+            basis: art. 14 ust. 1 i ust. 3 pkt 1 ustawy o PIT
+          - text: Dniem uzyskania przychodu jest dzień wydania rzeczy, zbycia prawa majątkowego lub wykonania usługi albo częściowego wykonania usługi, nie później jednak niż dzień wystawienia faktury albo uregulowania należności. Którą datę stosujesz, gdy fakturę wystawiasz przed wykonaniem usługi, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: []
+            basis: art. 14 ust. 1c ustawy o PIT
+          - text: Jeżeli strony ustalą, że usługa jest rozliczana w okresach rozliczeniowych, dniem uzyskania przychodu jest ostatni dzień okresu rozliczeniowego określonego w umowie lub na fakturze, nie rzadziej niż raz w roku. Tak samo ustala się datę przy dostawie energii elektrycznej, cieplnej i gazu przewodowego.
+            uses: []
+            basis: art. 14 ust. 1e i 1h ustawy o PIT
+          - text: Jeżeli do przychodu z działalności nie stosuje się żadnej z dat z poprzednich kroków, dniem uzyskania przychodu jest dzień otrzymania zapłaty.
+            uses: []
+            basis: art. 14 ust. 1i ustawy o PIT
+          - text: Jeżeli pobierasz wpłaty na poczet dostaw towarów i usług wykonywanych w następnych okresach sprawozdawczych i rejestrowanych na kasie rejestrującej, możesz uznać za dzień uzyskania przychodu dzień pobrania wpłaty. Taki sposób stosujesz wtedy przez cały rok podatkowy i informujesz o nim w zeznaniu za ten rok.
+            uses: []
+            basis: art. 14 ust. 1j ustawy o PIT; art. 21 ust. 3e ustawy o zryczałtowanym podatku dochodowym
+          - text: Jeżeli stosujesz metodę kasową rozliczania przychodów (warunki, w tym oświadczenie złożone do 20 lutego roku podatkowego, podaje art. 14c ust. 1 ustawy o PIT), dniem uzyskania przychodu jest dzień uregulowania należności, nie później niż dzień upływu 2 lat od wystawienia faktury albo dzień likwidacji działalności. Metoda dotyczy tylko przychodów z transakcji z przedsiębiorcami udokumentowanych fakturami, z wyłączeniami z art. 14c ust. 5 i 6, i stosujesz ją przez cały rok podatkowy.
+            uses: []
+            basis: art. 14c ust. 1, 2 i 4–7 ustawy o PIT
+          - text: Na ryczałcie od przychodów ewidencjonowanych opodatkowane są przychody z działalności, o których mowa w art. 14 ustawy o PIT. Ustawa o ryczałcie odwołuje się też wprost do sposobu ustalania daty powstania przychodu z art. 14 ust. 1j ustawy o PIT i pozwala wybrać metodę kasową z art. 14c tej ustawy, którą stosuje się odpowiednio. Datę uzyskania przychodu wpisujesz w ewidencji przychodów.
+            uses: [zasada.ewidencja_przychodow]
+            basis: art. 6 ust. 1 i 1g oraz art. 21 ust. 3e ustawy o zryczałtowanym podatku dochodowym
+      note: >-
+        Tekst jednolity ustawy o PIT (Dz.U. 2026 poz. 592) zmieniły ustawy Dz.U. 2026 poz. 779 (art. 24a), 846 (art. 25b,
+        30f, 31d), 1079 (art. 21), 1287 (dodaje art. 52zu) i 1371 (uchyla art. 14 ust. 2h i 2i, zmienia art. 22p, 23q
+        i 23zf); żadna nie zmienia przepisów cytowanych w krokach. Ustawy Dz.U. 2026 poz. 1098 i 1123 zmieniają w ustawie
+        o PIT inne przepisy (art. 2, 39, 45ba, 45c, 45cd oraz art. 21, 22, 27f). Tekst jednolity ustawy o ryczałcie
+        (Dz.U. 2025 poz. 843) zmieniła później tylko ustawa Dz.U. 2026 poz. 779 (art. 15 ust. 13a). Art. 14c ust. 1 pkt 1
+        ma brzmienie z ustawy Dz.U. 2025 poz. 1858 od 1 stycznia 2026 r. (przypis w tekście jednolitym), dlatego wersja
+        zaczyna się 1 stycznia 2026 r.; okresu wcześniejszego nie opisuje. Korektę przychodu opisuje zasada prowadzenia
+        ewidencji przychodów (dla ryczałtu). Przeliczenie przychodu w walucie opisuje zasada.przychod_w_walucie.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (przychód należny)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "Za przychód z działalności, o której mowa w art. 10 ust. 1 pkt 3, uważa się kwoty należne, choćby nie zostały faktycznie otrzymane, po wyłączeniu wartości zwróconych towarów, udzielonych bonifikat i skont."
+          article: art. 14 ust. 1
+        - title: Dz.U. 2026 poz. 592 (data powstania przychodu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "dzień wydania rzeczy, zbycia prawa majątkowego lub wykonania usługi, albo częściowego wykonania usługi, niepóźniej niż dzień: 1) wystawienia faktury albo 2) uregulowania należności."
+          article: art. 14 ust. 1c
+        - title: Dz.U. 2026 poz. 592 (usługi rozliczane w okresach)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "za datę powstania przychodu uznaje się ostatni dzień okresu rozliczeniowego określonego w umowie lub na wystawionej fakturze, nierzadziej niż raz w roku"
+          article: art. 14 ust. 1e
+        - title: Dz.U. 2026 poz. 592 (energia i gaz)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "Przepis ust. 1e stosuje się odpowiednio do dostawy energii elektrycznej i cieplnej oraz gazu przewodowego."
+          article: art. 14 ust. 1h
+        - title: Dz.U. 2026 poz. 592 (dzień otrzymania zapłaty)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "do którego nie stosuje się ust. 1c, 1e i 1h, za datę powstania przychodu uznaje się dzień otrzymania zapłaty"
+          article: art. 14 ust. 1i
+        - title: Dz.U. 2026 poz. 592 (wpłaty rejestrowane na kasie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "za datę powstania przychodu podatnik może uznać dzień pobrania wpłaty"
+          article: art. 14 ust. 1j
+        - title: Dz.U. 2026 poz. 592 (wpłaty na poczet przyszłych dostaw)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "pobranych wpłat lub zarachowanych należności na poczet dostaw towarów i usług, które zostaną wykonane w następnych okresach sprawozdawczych"
+          article: art. 14 ust. 3 pkt 1
+        - title: Dz.U. 2026 poz. 592 (metoda kasowa)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "W przypadku metody kasowej rozliczania przychodów za datę powstania przychodu uważa się dzień uregulowania należności, niepóźniejszy niż dzień: 1) upływu 2 lat, licząc od dnia wystawienia faktury, albo 2) likwidacji działalności gospodarczej."
+          article: art. 14c ust. 2
+        - title: Dz.U. 2026 poz. 592 (warunek oświadczenia przy metodzie kasowej)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "złoży właściwemu naczelnikowi urzędu skarbowego sporządzone na piśmie oświadczenie o wyborze metody kasowej rozliczania przychodów w terminie do dnia 20 lutego roku podatkowego"
+          article: art. 14c ust. 1 pkt 3
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (przychody objęte ryczałtem)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "przedsiębiorstw w spadku z pozarolniczej działalności gospodarczej, o których mowa w art. 7a ust. 4 lub art. 14 ustawy o podatku dochodowym"
+          article: art. 6 ust. 1
+        - title: Dz.U. 2025 poz. 843 (metoda kasowa na ryczałcie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "W przypadku wyboru metody kasowej rozliczania przychodów przepisy art. 14c ustawy o podatku dochodowym stosuje się odpowiednio."
+          article: art. 6 ust. 1g
+        - title: Dz.U. 2025 poz. 843 (wybór sposobu ustalania daty z art. 14 ust. 1j ustawy o PIT)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "W przypadku wyboru sposobu ustalania daty powstania przychodu na podstawie art. 14 ust. 1j ustawy o podatku dochodowym podatnik informuje o tym wyborze w zeznaniu"
+          article: art. 21 ust. 3e
+      verification:
+        checked_at: 2026-11-26
+        open_issue: >-
+          P33: który dzień jest dniem uzyskania przychodu (i dniem, od którego liczy się kurs waluty), gdy fakturę wystawiono
+          przed wykonaniem usługi albo wydaniem rzeczy, skoro art. 14 ust. 1c ustawy o PIT wskazuje dzień wystawienia faktury
+          jako najpóźniejszy, a art. 14 ust. 3 pkt 1 wyłącza zarachowane należności na poczet przyszłych dostaw?
+          Zob. docs/pytania-do-eksperta.md.
+
+- id: zasada.przychod_w_walucie
+  name: Przeliczenie przychodu w walucie obcej i różnice kursowe
+  kind: rule
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Przychód w walucie obcej przeliczasz na złote według kursu średniego waluty ogłaszanego przez NBP z ostatniego dnia roboczego poprzedzającego dzień uzyskania przychodu. Kurs pobierasz z NBP; Fikus kursów nie podaje.
+            uses: [zasada.przychod_data_uzyskania]
+            basis: art. 11a ust. 1 ustawy o PIT
+          - text: Przychodem z działalności są też różnice kursowe, które ustalasz według art. 24c ustawy o PIT. Dodatnia różnica kursowa od przychodu powstaje, gdy wartość przychodu należnego przeliczona po kursie średnim NBP jest niższa od jego wartości w dniu otrzymania według faktycznie zastosowanego kursu z tego dnia; ujemna, gdy jest wyższa. Dodatnie różnice zwiększają przychody, a ujemne – koszty uzyskania przychodów.
+            uses: []
+            basis: art. 14 ust. 2 pkt 3, art. 14b ust. 1 i art. 24c ust. 1, ust. 2 pkt 1 i ust. 3 pkt 1 ustawy o PIT
+          - text: Na ryczałcie od przychodów ewidencjonowanych do przychodów z różnic kursowych stosujesz odpowiednio art. 24c ustawy o PIT, z tym że ujemne różnice kursowe zmniejszają przychody uzyskane w roku podatkowym, w którym powstały.
+            uses: []
+            basis: art. 6 ust. 1c ustawy o zryczałtowanym podatku dochodowym
+          - text: Ustawa o ryczałcie nie odsyła wprost do art. 11a ustawy o PIT. Czy na ryczałcie przychód w walucie obcej przeliczasz według art. 11a ust. 1 ustawy o PIT, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: []
+            basis: art. 6 ust. 1 i 1c ustawy o zryczałtowanym podatku dochodowym; art. 11a ust. 1 ustawy o PIT
+      note: >-
+        Kursów walut Fikus nie podaje; tabela kursów NBP nie jest źródłem pierwotnym w rozumieniu projektu. Tekst jednolity
+        ustawy o PIT (Dz.U. 2026 poz. 592) zmieniły ustawy Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287 i 1371; żadna
+        nie zmienia art. 11a, art. 14 ust. 2 pkt 3, art. 14b ani art. 24c. Tekst jednolity ustawy o ryczałcie
+        (Dz.U. 2025 poz. 843) zmieniła później tylko ustawa Dz.U. 2026 poz. 779 (art. 15 ust. 13a). W tekście ustawy
+        o ryczałcie nie ma odesłania do art. 11a ustawy o PIT; jej przepisy o przeliczaniu (na przykład art. 4 ust. 2)
+        dotyczą kwot wyrażonych w euro. Wersja zaczyna się 1 stycznia 2026 r. razem z zasadą daty uzyskania przychodu; okresu
+        wcześniejszego nie opisuje.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (kurs dla przychodu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "Przychody w walutach obcych przelicza się na złote według kursu średniego walut obcych ogłaszanego przez Narodowy Bank Polski z ostatniego dnia roboczego poprzedzającego dzień uzyskania przychodu."
+          article: art. 11a ust. 1
+        - title: Dz.U. 2026 poz. 592 (różnice kursowe według art. 24c)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "Podatnicy ustalają różnice kursowe na podstawie art. 24c, z zastrzeżeniem ust. 2."
+          article: art. 14b ust. 1
+        - title: Dz.U. 2026 poz. 592 (różnice kursowe zwiększają przychody albo koszty)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "Różnice kursowe zwiększają odpowiednio przychody jako dodatnie różnice kursowe albo koszty uzyskania przychodów jako ujemne różnice kursowe"
+          article: art. 24c ust. 1
+        - title: Dz.U. 2026 poz. 592 (dodatnia różnica kursowa od przychodu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "przychodu należnego wyrażonego w walucie obcej po przeliczeniu na złote według kursu średniego ogłaszanego przez Narodowy Bank Polski jest niższa od wartości tego przychodu w dniu jego otrzymania, przeliczonej według faktycznie zastosowanego kursu waluty z tego dnia"
+          article: art. 24c ust. 2 pkt 1
+        - title: Dz.U. 2026 poz. 592 (ujemna różnica kursowa od przychodu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "przychodu należnego wyrażonego w walucie obcej po przeliczeniu na złote według kursu średniego ogłaszanego przez Narodowy Bank Polski jest wyższa od wartości tego przychodu w dniu jego otrzymania"
+          article: art. 24c ust. 3 pkt 1
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (różnice kursowe na ryczałcie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "Do przychodów, o których mowa w ust. 1, z tytułu różnic kursowych stosuje się odpowiednio art. 24c ustawy o podatku dochodowym, z tym że ujemne różnice kursowe, o których mowa w art. 24c ustawy o podatku dochodowym, zmniejszają przychody uzyskane w roku podatkowym, w którym powstały te różnice."
+          article: art. 6 ust. 1c
+      verification:
+        checked_at: 2026-11-26
+        open_issue: >-
+          P34: czy podatnik na ryczałcie przelicza przychód w walucie obcej według art. 11a ust. 1 ustawy o PIT, skoro ustawa
+          o ryczałcie do niego wprost nie odsyła? P33: od którego dnia liczy się kurs, gdy fakturę wystawiono przed wykonaniem
+          usługi. Zob. docs/pytania-do-eksperta.md.
