@@ -14,7 +14,8 @@ Fikus to serwer MCP z parametrami przepisów dla JDG. To samodzielny projekt spo
 ## Praca z danymi
 
 - Jeden obszar przepisów (na przykład składka zdrowotna na ryczałcie) to jeden PR.
-- Dodajesz nową wersję, starej nie edytujesz. Poprawkę błędu w starej wersji opisz w PR i w polu `note`.
+- Klucze i wartości pól wyliczeniowych (`kind: control`, `rule`) zostają po angielsku. Treść (notatki, kroki, tytuły, pytania, komunikaty serwera) piszesz po polsku, bez nazw pól w zdaniach: zamiast „valid_from” piszesz „data początku obowiązywania”.
+- Dodajesz nową wersję, starej nie edytujesz. Poprawkę błędu w starej wersji opisz w PR. W polu `note` opisz ją tylko wtedy, gdy zmienia coś, co klient mógł już odczytać: wartość, okres, podstawę prawną albo kroki zasady. Poprawki samych źródeł i procesu (zaślepka, wycofany `agent_check`) idą tylko do PR.
 - Opiekun projektu nie jest ekspertem podatkowym i nie sprawdzi przepisów. Nie proś go o ocenę przepisów ani o wybór źródeł. Pytaj go o fakty, dokumenty i decyzje.
 - Pewność liczy model (`confidence`). Jest wysoka, gdy wersja ma cytat ze źródła pierwotnego, co najmniej dwa inne dowody i nie ma `open_issue`. Dowody to:
   - `independent: true` lub `kind: control` przy źródle, które samo podaje tę samą wartość (źródła, które dają wartość dopiero razem, nie są niezależne);

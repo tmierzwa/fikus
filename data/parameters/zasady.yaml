@@ -16,8 +16,8 @@
             uses: [termin.zus]
             basis: art. 31 ustawy o systemie ubezpieczeń społecznych
       note: >-
-        Poprawka źródeł (wcześniej link-zaślepka) i dodany krok o składkach ZUS.
-        valid_from 2020-01-01 nie jest potwierdzony źródłem.
+        Poprawka: dodany krok o składkach ZUS.
+        data początku obowiązywania (2020-01-01) nie jest potwierdzona źródłem.
         Zamknięta 2026-09-30: od 1 października 2026 r. art. 12 § 5 ma brzmienie nadane ustawą Dz.U. 2026 poz. 846 (następna wersja).
       sources:
         - title: Dz.U. 2026 poz. 622, tekst jednolity Ordynacji podatkowej
@@ -209,7 +209,7 @@
       note: >-
         Poprawka: krok o składce zdrowotnej powoływał art. 11 ust. 1c (różnice kursowe), właściwy jest ust. 1a;
         dodany krok o proporcji z ust. 3, który w obecnym brzmieniu dotyczy przychodów od 1 stycznia 2024 r.,
-        stąd valid_from 2024-01-01 (wcześniej 2022-01-01); link-zaślepka zastąpiony.
+        stąd początek obowiązywania 2024-01-01 (wcześniej 2022-01-01).
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
