@@ -46,6 +46,16 @@ Konfiguracja klienta MCP (na przykład Claude Code, plik `.mcp.json`):
 | `get_schema(form, as_of)` | wersję schematu XSD deklaracji (danych jeszcze nie ma) |
 | `changes(since)` | wersje sprawdzone od podanej daty |
 
+Daty podaje się w formacie `RRRR-MM-DD`. Bez `as_of` serwer bierze dzisiejszą datę w Polsce, niezależnie od strefy czasowej komputera, na którym działa.
+
+Każde narzędzie ma w MCP schemat wyniku (`outputSchema`), więc klient dostaje odpowiedź jako JSON w `structuredContent` i tę samą treść jako tekst. Wszystkie narzędzia są oznaczone jako tylko do odczytu (`readOnlyHint`). Nie zmieniają danych i nie łączą się z siecią.
+
+Gdy argument jest błędny, na przykład parametr albo profil nie istnieje, data jest niepoprawna albo miesiąc wykracza poza zakres od 1 do 12, narzędzie zwraca błąd (`isError: true`). Komunikat mówi, co poprawić, a przy nieznanym identyfikatorze wymienia dostępne. Jeśli parametr istnieje, ale żadna jego wersja nie obowiązuje w podanym dniu, wynik ma `found: false` i powód w polu `reason`.
+
+Pola `quote`, `note` i opisy kroków zasad pochodzą z repozytorium. Klient powinien je traktować jak dane, a nie jak polecenia dla modelu.
+
+Serwer korzysta z SDK `mcp` w wersji 2 i działa przez stdio. Testy w `tests/test_server.py` łączą się z nim prawdziwym klientem MCP.
+
 ## Dane
 
 Dane są w `data/parameters/`, jeden plik YAML na obszar przepisów. Parametr to lista wersji, a okresy wersji nie mogą na siebie nachodzić (pilnują tego walidator i testy). Parametr ma jeden z czterech rodzajów (`kind`): `value` (wartość), `deadline` (reguła terminu), `rule` (zasada obliczeń w krokach) albo `calendar` (dni wolne). Kroki zasady wskazują parametry, których używają (`uses`), a walidator sprawdza, czy te parametry istnieją.

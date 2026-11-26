@@ -98,7 +98,23 @@ class Parameter(BaseModel):
             if a.valid_to is None or a.valid_to >= b.valid_from:
                 raise ValueError(f"{self.id}: okresy {a.valid_from} i {b.valid_from} nakładają się")
         self.versions = vs
+        for v in vs:
+            self._check_value_shape(v)
         return self
+
+    def _check_value_shape(self, v: Version) -> None:
+        """Wymagany kształt wartości zależy od rodzaju parametru. Błąd w YAML wychodzi przy ładowaniu."""
+        where = f"{self.id} {v.valid_from}"
+        if self.kind == "deadline":
+            day = v.value.get("day_of_month") if isinstance(v.value, dict) else None
+            if not isinstance(day, int) or not 1 <= day <= 31:
+                raise ValueError(f"{where}: termin potrzebuje value.day_of_month od 1 do 31")
+        elif self.kind == "rule":
+            steps = v.value.get("steps") if isinstance(v.value, dict) else None
+            if not steps or not all(isinstance(s, dict) and s.get("text") for s in steps):
+                raise ValueError(f"{where}: zasada potrzebuje value.steps, a każdy krok pola text")
+        elif self.kind == "calendar" and not isinstance(v.value, list):
+            raise ValueError(f"{where}: kalendarz potrzebuje listy dat")
 
     def at(self, d: date) -> Version | None:
         return next((v for v in self.versions if v.covers(d)), None)
