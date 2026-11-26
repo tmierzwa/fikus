@@ -45,7 +45,7 @@ class _HttpsOnlyRedirects(urllib.request.HTTPRedirectHandler):
 
 def normalize(s: str) -> str:
     """Sprowadza tekst do postaci, w której liczy się tylko treść, a nie układ strony."""
-    s = s.replace("­", "")
+    s = re.sub("[\u00ad\u200b\u200c\u200d\u2060\ufeff]", "", s)   # miękki dywiz i znaki zerowej szerokości
     s = re.sub(r"-\s*\n\s*", "", s)                  # przeniesienie wyrazu
     s = s.translate(str.maketrans({"„": '"', "”": '"', "“": '"', "«": '"', "»": '"',
                                    "–": "-", "—": "-", "‑": "-", "’": "'", "ˮ": '"'}))
