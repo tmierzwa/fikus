@@ -99,11 +99,13 @@
           quote: "Zaliczkę za ostatni miesiąc lub ostatni kwartał roku podatkowego podatnik wpłaca w terminie do 20 stycznia następnego roku podatkowego. 6a. (uchylony)"
           article: art. 44 ust. 6
           as_of: 2019-07-02
+          role: historical
         - title: Dz.U. 2020 poz. 1426, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dla valid_from)
           url: https://api.sejm.gov.pl/eli/acts/DU/2020/1426/text.pdf
           quote: "Zaliczki miesięczne od dochodów wymienionych w ust. 1, wpłaca się w terminie do 20 dnia każdego miesiąca za miesiąc poprzedni"
           article: art. 44 ust. 6
           as_of: 2020-07-23
+          role: historical
         - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym, aktualizacja 24.06.2026
           url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
           kind: control

@@ -2,7 +2,8 @@
 
 Skrypt pyta API ELI Sejmu (api.sejm.gov.pl/eli) o każdy akt cytowany jako źródło pierwotne
 w wersji, która obowiązuje dziś albo zacznie obowiązywać później. Wersje zamknięte pomija,
-bo ich źródła mają prawo być nieaktualne. Zgłasza:
+bo ich źródła mają prawo być nieaktualne. Z tego samego powodu pomija źródła z `role: historical`
+(dawny tekst jednolity, który dowodzi tylko `valid_from`). Zgłasza:
 
 - akt, który przestał obowiązywać;
 - nowszy tekst jednolity niż cytowany;
@@ -82,14 +83,14 @@ def load_reviewed(path: Path) -> set[str]:
 
 
 def cited_acts(store: Store, today: date) -> dict[str, set[str]]:
-    """Akty ELI cytowane jako źródła pierwotne w wersjach obowiązujących dziś lub później."""
+    """Akty ELI cytowane jako aktualne źródła pierwotne w wersjach obowiązujących dziś lub później."""
     acts: dict[str, set[str]] = {}
     for p in store.params.values():
         for v in p.versions:
             if v.valid_to is not None and v.valid_to < today:
                 continue
             for s in v.sources:
-                if s.kind == "primary" and (act := eli_id(s.url)):
+                if s.kind == "primary" and s.role == "current" and (act := eli_id(s.url)):
                     acts.setdefault(act, set()).add(p.id)
     return acts
 

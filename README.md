@@ -110,7 +110,7 @@ Dane są w [`data/parameters/`](data/parameters), jeden plik YAML na obszar prze
 Co tydzień CI uruchamia dwa skrypty, które niczego nie zmieniają w danych:
 
 - `scripts/sprawdz_cytaty.py` sprawdza, czy każdy cytat nadal jest w oficjalnym tekście;
-- `scripts/wykryj_zmiany.py` pyta [API ELI Sejmu](https://api.sejm.gov.pl/eli) o cytowane akty i zgłasza akty uchylone, nowsze teksty jednolite, nowelizacje po cytowanym tekście oraz wersje, które kończą się w ciągu 60 dni bez następczyni.
+- `scripts/wykryj_zmiany.py` pyta [API ELI Sejmu](https://api.sejm.gov.pl/eli) o cytowane akty i zgłasza akty uchylone, nowsze teksty jednolite, nowelizacje po cytowanym tekście oraz wersje, które kończą się w ciągu 60 dni bez następczyni. Pomija źródła z `role: historical`: dawne teksty jednolite (z `as_of`), cytowane tylko jako dowód, że wartość obowiązywała w dniu `valid_from`. Takie źródło musi stać obok aktualnego źródła pierwotnego.
 
 Gdy skrypt coś znajdzie, zadanie kończy się na czerwono, a lista jest w podsumowaniu zadania. Nowelizację, która zmienia wartość, obsługujemy nową wersją parametru. Przejrzaną nowelizację bez wpływu na wartości wpisz do [`data/zmiany_sprawdzone.yaml`](data/zmiany_sprawdzone.yaml) z uzasadnieniem.
 

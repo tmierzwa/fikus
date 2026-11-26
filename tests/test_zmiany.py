@@ -60,6 +60,26 @@ def test_only_primary_sources_of_current_or_future_versions_are_checked():
     assert cited_acts(s, TODAY) == {"DU/2025/1": {"a"}, "DU/2027/4": {"d"}}
 
 
+def test_historical_consolidated_text_cited_for_valid_from_is_not_checked():
+    p = _param("a", "https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf", "2020-01-01")
+    p["versions"][0]["sources"].append({"title": "dawny tekst jednolity", "as_of": "2020-07-23",
+                                        "url": "https://api.sejm.gov.pl/eli/acts/DU/2020/1426/text.pdf",
+                                        "role": "historical"})
+    assert cited_acts(_store(p), TODAY) == {"DU/2026/592": {"a"}}
+
+
+def test_historical_source_needs_as_of_primary_kind_and_a_current_primary():
+    from fikus.model import Source, Version
+    url = "https://eli.gov.pl/eli/DU/2020/1426/ogl"
+    with pytest.raises(ValueError, match="as_of"):
+        Source(title="t", url=url, role="historical")
+    with pytest.raises(ValueError, match="pierwotnego"):
+        Source(title="t", url=url, role="historical", kind="control", as_of="2020-07-23")
+    with pytest.raises(ValueError, match="role: current"):
+        Version(valid_from="2020-01-01", value=1, verification={"checked_at": "2026-01-01"},
+                sources=[{"title": "t", "url": url, "role": "historical", "as_of": "2020-07-23"}])
+
+
 def test_amendments_after_current_consolidated_text_are_reported_except_reviewed():
     f = _fake({"DU/2025/1461": TJ_CURRENT, "DU/2004/2135": BASE})
     out = check_act("DU/2025/1461", {"p"}, f, reviewed={"DU/2025/1739"})

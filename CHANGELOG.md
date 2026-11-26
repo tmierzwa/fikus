@@ -6,6 +6,16 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ## [Niewydane]
 
+### Dodane
+
+- Pole `role` w źródle (`current` albo `historical`). Źródło historyczne to dawny tekst jednolity
+  z `as_of`, cytowany jako dowód `valid_from`; wersja nadal potrzebuje aktualnego źródła pierwotnego.
+
+### Poprawione
+
+- `scripts/wykryj_zmiany.py` nie zgłasza źródeł z `role: historical` jako aktów, które przestały
+  obowiązywać, ani jako nieaktualnych tekstów jednolitych.
+
 ## [0.2.0] - 2026-11-26
 
 ### Dodane

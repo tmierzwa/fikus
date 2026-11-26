@@ -20,6 +20,10 @@ class Source(BaseModel):
     # Źródło pierwotne, które samo, niezależnie od pozostałych, podaje tę samą wartość
     # (np. ustawa budżetowa obok obwieszczenia). Źródła, które dopiero razem dają wartość, nie są niezależne.
     independent: bool = False
+    # "historical": tekst jednolity z dawnym stanem prawnym, cytowany tylko po to, żeby pokazać, że
+    # wartość obowiązywała już w dniu valid_from. Wymaga as_of. scripts/wykryj_zmiany.py takich
+    # źródeł nie sprawdza, bo mają prawo być nieaktualne; aktualne brzmienie podaje inne źródło pierwotne.
+    role: Literal["current", "historical"] = "current"
 
     @field_validator("url")
     @classmethod
@@ -27,6 +31,15 @@ class Source(BaseModel):
         if not v.startswith("https://"):
             raise ValueError("adres źródła musi zaczynać się od https://")
         return v
+
+    @model_validator(mode="after")
+    def _historical(self) -> "Source":
+        if self.role == "historical":
+            if self.kind != "primary":
+                raise ValueError("role: historical dotyczy tylko źródła pierwotnego")
+            if self.as_of is None:
+                raise ValueError("źródło historyczne potrzebuje as_of (stan prawny tekstu)")
+        return self
 
 
 class Expert(BaseModel):
@@ -57,8 +70,8 @@ class Version(BaseModel):
     def _check(self) -> "Version":
         if self.valid_to and self.valid_to < self.valid_from:
             raise ValueError("valid_to przed valid_from")
-        if not any(s.kind == "primary" for s in self.sources):
-            raise ValueError("każda wersja potrzebuje źródła pierwotnego")
+        if not any(s.kind == "primary" and s.role == "current" for s in self.sources):
+            raise ValueError("każda wersja potrzebuje źródła pierwotnego z aktualnym brzmieniem (role: current)")
         return self
 
     def confidence(self) -> dict:
