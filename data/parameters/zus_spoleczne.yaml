@@ -81,7 +81,6 @@
     - valid_from: 2027-01-01
       valid_to: 2027-12-31
       value: 300990
-      note: Komunikat ZUS o wysokości składek w 2027 r. zwykle ukazuje się pod koniec grudnia; po publikacji dopisz go jako źródło niezależne.
       sources:
         - title: M.P. 2026 poz. 1098, obwieszczenie MRPiPS z 3 listopada 2026 r.
           url: https://api.sejm.gov.pl/eli/acts/MP/2026/1098/text.pdf
@@ -279,6 +278,23 @@
           independent: true
           quote: "minimalne wynagrodzenie za pracę wynosi 4.806 zł"
           as_of: 2025-12-30
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+    - valid_from: 2027-01-01
+      valid_to: 2027-12-31
+      value: 4950
+      note: >-
+        Kwota obowiązująca w całym 2027 r. Rozporządzenie wchodzi w życie 1 stycznia 2027 r.
+      sources:
+        - title: Dz.U. 2026 poz. 1213, rozporządzenie Rady Ministrów z 14 września 2026 r. w sprawie wysokości minimalnego wynagrodzenia za pracę oraz wysokości minimalnej stawki godzinowej w 2027 r.
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1213/text.pdf
+          article: § 1
+          quote: "Od dnia 1 stycznia 2027 r. ustala się minimalne wynagrodzenie za pracę w wysokości 4950 zł."
+          as_of: 2026-09-15
+        - title: gov.pl, Ministerstwo Rodziny, Pracy i Polityki Społecznej, Równe traktowanie w zatrudnieniu
+          url: https://www.gov.pl/web/rodzina/rowne-traktowanie-w-zatrudnieniu
+          kind: control
+          quote: "od 1 stycznia 2027 r. - 4950 zł"
+          as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: zus.podstawa_preferencyjna
