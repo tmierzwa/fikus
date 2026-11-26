@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  Parametry przepisów dla JDG w Polsce, ze źródłami, jako serwer MCP.
+  Serwer MCP dla przepisów dotyczących JDG w Polsce, ze źródłami.
 </p>
 
 <p align="center">
@@ -12,7 +12,9 @@
   <a href="data/LICENSE"><img src="https://img.shields.io/badge/dane-CC%20BY%204.0-green" alt="Dane: CC BY 4.0"></a>
 </p>
 
-Fikus podaje stawki, progi, terminy i dni wolne potrzebne do rozliczenia jednoosobowej działalności gospodarczej. Każda wartość ma okres obowiązywania, źródło pierwotne z dosłownym cytatem i poziom pewności. Serwer niczego nie liczy: zasady obliczeń opisuje krokami z podstawą prawną, a liczy klient, na przykład aplikacja księgowa albo agent AI.
+Fikus podaje stawki, progi, terminy i dni wolne potrzebne do rozliczenia jednoosobowej działalności gospodarczej. Każda wartość ma okres obowiązywania, źródło pierwotne z dosłownym cytatem i poziom pewności. 
+
+Serwer niczego nie liczy: zasady obliczeń opisuje krokami z podstawą prawną, a liczy klient, na przykład aplikacja księgowa albo agent AI.
 
 > [!WARNING]
 > Fikus nie jest doradztwem podatkowym ani prawnym. Dane mogą być błędne, niepełne albo nieaktualne i są udostępnione „tak jak są”, bez gwarancji. Przed złożeniem deklaracji lub zapłatą sprawdź wartość w podanym źródle, zwłaszcza gdy pewność jest `niska`.
