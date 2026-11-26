@@ -6,6 +6,8 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ## [Niewydane]
 
+## [0.2.0] - 2026-11-26
+
 ### Dodane
 
 - `scripts/wykryj_zmiany.py`: cotygodniowe wykrywanie zmian w cytowanych aktach (API ELI Sejmu)
@@ -34,5 +36,6 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
   cytaty w oficjalnych tekstach.
 - Licencje: kod Apache 2.0, dane CC BY 4.0.
 
-[Niewydane]: https://github.com/tmierzwa/fikus/compare/v0.1.0...HEAD
+[Niewydane]: https://github.com/tmierzwa/fikus/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/tmierzwa/fikus/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/tmierzwa/fikus/releases/tag/v0.1.0
