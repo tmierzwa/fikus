@@ -4,7 +4,7 @@ description: Dodaje nowy parametr albo nową wersję parametru w data/parameters
 ---
 1. Znajdź źródło pierwotne: tekst jednolity w ISAP/ELI (link do tekstu: `https://api.sejm.gov.pl/eli/acts/DU/<rok>/<poz>/text.pdf`), obwieszczenie w M.P., komunikat ZUS lub MF. Bez źródła pierwotnego przerwij i zgłoś to użytkownikowi.
 2. Przy źródle pierwotnym wpisz `quote`: dosłowny, krótki fragment, z którego wynika wartość (z liczbą, jeśli jest), oraz `article`. Cytat kopiuj z tekstu, nie przepisuj z pamięci.
-3. Znajdź drugie, niezależne źródło, które samo podaje tę samą wartość: inny akt lub komunikat urzędu (`independent: true`) albo źródło kontrolne (`kind: control`, np. finwire). Akty, które dopiero razem dają wartość, nie są niezależne.
+3. Znajdź drugie, niezależne źródło, które samo podaje tę samą wartość: inny akt lub komunikat urzędu (`independent: true`) albo źródło kontrolne (`kind: control`: najpierw strona urzędu, portal dopiero wtedy, gdy urząd nie podaje wartości). Akty, które dopiero razem dają wartość, nie są niezależne.
 4. Dodaj nową wersję. Nie edytuj istniejących wersji. Zamknij poprzednią wersję polem `valid_to` dzień przed `valid_from` nowej. Jeśli tekst jednolity nie potwierdza `valid_from`, napisz to w `note`.
 5. Ustaw `verification: {checked_at: <dziś>}`. Gdy źródła się różnią, przepis wymaga interpretacji albo nie ma drugiego źródła, dodaj `open_issue` z pytaniem do eksperta.
 6. Zasady (`kind: rule`) zapisuj jako kroki słowne. Każdy krok ma `text`, `uses` (identyfikatory parametrów) i `basis` (artykuł). Bez formuł i bez przykładów liczbowych.

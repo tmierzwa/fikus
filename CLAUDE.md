@@ -31,6 +31,25 @@ Fikus to serwer MCP z parametrami przepisów dla JDG. To samodzielny projekt spo
 - Nie kopiować stałych ze Staffkey bez sprawdzenia w źródle pierwotnym.
 - Nie umieszczać w repozytorium ani w zgłoszeniach żadnych danych podatnika: kwot z deklaracji, NIP, PESEL, informacji o tym, kto jak się rozlicza. Profile w `data/profiles.yaml` są przykładowe.
 
+## Zmiany w aktach
+
+- `python scripts/wykryj_zmiany.py` sprawdza w API ELI Sejmu, czy akty cytowane w danych mają nowelizacje lub nowy tekst jednolity, których dane jeszcze nie uwzględniają. W CI robi to co tydzień zadanie `zmiany`.
+- Nowelizacja, która zmienia wartość, termin albo zasadę, to nowa wersja parametru (skill `dodaj-parametr`).
+- Nowelizacja, która nie dotyka naszych parametrów, to wpis w `data/zmiany_sprawdzone.yaml`: identyfikator ELI aktu, data przejrzenia i notatka z dokładną listą zmienianych artykułów. Pole `for` dodajesz, gdy nowelizacja zmienia kilka aktów, a wpis dotyczy tylko jednego. Listę artykułów sprawdza `weryfikator-zrodel`.
+
+## Git i pull requesty
+
+- Każda zmiana powstaje na osobnej gałęzi wyprowadzonej z `origin/main` (najpierw `git fetch`). Przy pracy równoległej używasz osobnego worktree, nie przełączasz gałęzi we wspólnej kopii.
+- Każdy commit ma podpis DCO: `git commit -s`.
+- Na `main` zmiany trafiają tylko przez PR. Nie scalasz gałęzi w lokalnym `main`. Wymagane sprawdzenia to `testy`, `dco` i `python-min`. Nadpisywanie historii jest zablokowane, więc commit bez podpisu przenosisz na nową gałąź przez `git cherry-pick -s`.
+- Po scaleniu PR lokalny `main` ustawiasz na `origin/main` dopiero po sprawdzeniu, że nie ma w nim pracy, której brakuje na GitHubie.
+
+## Wydanie
+
+1. W PR wydania podnosisz wersję w `pyproject.toml`, w `server.json` (dwa pola `version`) i w `CITATION.cff` (razem z datą wydania), a sekcję „Niewydane” w `CHANGELOG.md` przenosisz pod nową wersję.
+2. Po scaleniu tworzysz wydanie na GitHubie z tagiem `vX.Y.Z`. Workflow `publikacja.yml` sprawdza zgodność wersji i publikuje paczkę na PyPI (Trusted Publishing, środowisko `pypi`).
+3. Na końcu aktualizujesz wpis w MCP Registry: `mcp-publisher login github` i `mcp-publisher publish`. Logowanie robi opiekun.
+
 ## Decyzje
 
 Decyzje projektowe prowadzi opiekun w dokumencie projektowym (dostęp ma tylko on): https://claude.ai/artifact/DDEwjBDuVupHq7TVkogc6p. Nowa decyzja trafia najpierw tam, potem do kodu i do tego pliku.
