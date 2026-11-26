@@ -194,6 +194,7 @@
         za złożone 15 lutego. Różnicę między podatkiem z zeznania a zapłaconymi zaliczkami wpłaca się przed upływem
         terminu złożenia zeznania. Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku
         obowiązywania (2026-01-01) nie jest potwierdzona źródłem.
+        Ustawa nie nazywa formularza; nazwa PIT-36L pochodzi ze źródła kontrolnego.
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (termin zeznania)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -220,7 +221,8 @@
       note: >-
         Zeznanie za rok podatkowy składa się od 15 lutego do 30 kwietnia następnego roku; złożone wcześniej uznaje się
         za złożone 15 lutego. Tekst jednolity uwzględnia zmiany ogłoszone przed 2025-06-12; data początku obowiązywania
-        (2026-01-01) nie jest potwierdzona źródłem.
+        (2026-01-01) nie jest potwierdzona źródłem. Ustawa nie nazywa formularza; nazwa PIT-28 pochodzi ze źródła
+        kontrolnego.
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
