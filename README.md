@@ -1,5 +1,7 @@
 # Fikus
 
+<!-- mcp-name: io.github.tmierzwa/fikus -->
+
 Fikus to serwer MCP z parametrami przepisów dla jednoosobowej działalności gospodarczej (JDG) w Polsce: stawkami, progami, terminami i dniami wolnymi. Każda wartość ma okres obowiązywania, źródło z dosłownym cytatem i poziom pewności. Serwer niczego nie liczy. Zasady obliczeń opisuje słowami, krok po kroku, z podstawą prawną, a liczy klient, na przykład aplikacja księgowa albo agent AI.
 
 ## Zastrzeżenie
