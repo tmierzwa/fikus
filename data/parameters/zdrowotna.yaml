@@ -116,7 +116,7 @@
         - title: Fakturownia, kalkulator ZUS
           url: https://fakturownia.pl/kalkulator-zus
           kind: control
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25, filed_documents: kwota zgodna z deklaracją ZUS DRA za 10/2026}
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
 
 - id: zdrowotna.ryczalt.progi
   name: Progi przychodu dla składki zdrowotnej na ryczałcie
