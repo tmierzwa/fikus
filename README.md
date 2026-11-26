@@ -1,87 +1,120 @@
-# Fikus
+<h1 align="center">
+  <img src="docs/fikus-logo.png" width="200" alt="Fikus">
+</h1>
 
-Fikus to serwer MCP z parametrami przepisów dla jednoosobowej działalności gospodarczej (JDG) w Polsce: stawkami, progami, terminami i dniami wolnymi. Każda wartość ma okres obowiązywania, źródło z dosłownym cytatem i poziom pewności. Serwer niczego nie liczy. Zasady obliczeń opisuje słowami, krok po kroku, z podstawą prawną, a liczy klient, na przykład aplikacja księgowa albo agent AI.
+<p align="center">
+  Parametry przepisów dla JDG w Polsce, ze źródłami, jako serwer MCP.
+</p>
 
-## Zastrzeżenie
+<p align="center">
+  <a href="https://github.com/tmierzwa/fikus/actions/workflows/testy.yml"><img src="https://github.com/tmierzwa/fikus/actions/workflows/testy.yml/badge.svg" alt="testy"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/kod-Apache%202.0-blue" alt="Kod: Apache 2.0"></a>
+  <a href="data/LICENSE"><img src="https://img.shields.io/badge/dane-CC%20BY%204.0-green" alt="Dane: CC BY 4.0"></a>
+</p>
 
-Fikus nie jest doradztwem podatkowym ani prawnym i nie zastępuje doradcy podatkowego ani biura rachunkowego. Nie odpowiada na pytania o sytuację konkretnego podatnika.
+Fikus podaje stawki, progi, terminy i dni wolne potrzebne do rozliczenia jednoosobowej działalności gospodarczej. Każda wartość ma okres obowiązywania, źródło pierwotne z dosłownym cytatem i poziom pewności. Serwer niczego nie liczy: zasady obliczeń opisuje krokami z podstawą prawną, a liczy klient, na przykład aplikacja księgowa albo agent AI.
 
-Dane mogą być błędne, niepełne albo nieaktualne, mimo opisanej niżej weryfikacji. Przed złożeniem deklaracji lub zapłatą sprawdź wartość w źródle podanym przy parametrze. Na wersje z pewnością `niska` uważaj szczególnie.
+> [!WARNING]
+> Fikus nie jest doradztwem podatkowym ani prawnym. Dane mogą być błędne, niepełne albo nieaktualne i są udostępnione „tak jak są”, bez gwarancji. Przed złożeniem deklaracji lub zapłatą sprawdź wartość w podanym źródle, zwłaszcza gdy pewność jest `niska`.
+>
+> *Fikus is not tax or legal advice. The data may be wrong or out of date and is provided as is, without warranty. Always check the cited source.*
 
-Kod i dane udostępniamy „tak jak są”, bez gwarancji. Autorzy nie odpowiadają za skutki ich użycia, w tym za zaległości podatkowe, odsetki i sankcje. Szczegóły są w licencjach.
+## Szybki start
 
-*Fikus is not tax or legal advice. The data may be wrong or out of date and is provided as is, without warranty. Always check the cited source.*
+Potrzebny jest [uv](https://docs.astral.sh/uv/).
 
-## Uruchomienie
+Claude Code:
 
-Potrzebny jest Python 3.11 lub nowszy. Skrypt sprawdzający cytaty wymaga też `pdftotext` (pakiet poppler).
-
+```bash
+claude mcp add fikus -- uvx --from git+https://github.com/tmierzwa/fikus fikus
 ```
-git clone https://github.com/tmierzwa/fikus.git
-cd fikus
-pip install -e ".[dev]"
-pytest
-python scripts/sprawdz_cytaty.py   # czy cytaty są w oficjalnych tekstach
-fikus                              # serwer MCP przez stdio
-```
 
-Konfiguracja klienta MCP (na przykład Claude Code, plik `.mcp.json`):
+Inny klient MCP (Claude Desktop, Cursor i inne):
 
 ```json
 {
   "mcpServers": {
-    "fikus": { "command": ".venv/bin/fikus", "args": [] }
+    "fikus": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/tmierzwa/fikus", "fikus"]
+    }
   }
 }
 ```
 
-## Narzędzia MCP
+Serwer działa lokalnie przez stdio, tylko czyta dołączone dane i nie łączy się z siecią.
+
+## Narzędzia
 
 | Narzędzie | Co zwraca |
 | --- | --- |
-| `get_parameter(id, as_of)` | wartość lub opis zasady na dany dzień, źródła i dowody weryfikacji |
-| `list_profiles()` | dostępne profile przykładowe |
-| `list_parameters(profile, as_of)` | wszystkie parametry danego profilu |
+| `get_parameter(id, as_of)` | wartość albo zasadę obowiązującą danego dnia, ze źródłami i pewnością |
+| `list_profiles()` | profile przykładowe: forma opodatkowania, VAT, rodzaj ZUS |
+| `list_parameters(profile, as_of)` | wszystkie parametry, które dotyczą profilu |
 | `deadlines(profile, year, month)` | reguły terminów, dni wolne i zasadę przesunięcia; datę liczy klient |
 | `get_schema(form, as_of)` | wersję schematu XSD deklaracji (danych jeszcze nie ma) |
 | `changes(since)` | wersje sprawdzone od podanej daty |
 
-Daty podaje się w formacie `RRRR-MM-DD`. Bez `as_of` serwer bierze dzisiejszą datę w Polsce, niezależnie od strefy czasowej komputera, na którym działa.
+- Daty mają format `RRRR-MM-DD`. Bez `as_of` obowiązuje dzisiejsza data w Polsce.
+- Wyniki są w `structuredContent` zgodnie z `outputSchema` narzędzia. Wszystkie narzędzia mają `readOnlyHint`.
+- Błędny argument (nieznany identyfikator, zła data) daje błąd narzędzia z listą poprawnych wartości. Brak wersji na dany dzień nie jest błędem: wynik ma `found: false` i powód w `reason`.
+- Pola `quote`, `note` i opisy kroków to dane z repozytorium. Klient nie powinien ich traktować jak poleceń dla modelu.
 
-Każde narzędzie ma w MCP schemat wyniku (`outputSchema`), więc klient dostaje odpowiedź jako JSON w `structuredContent` i tę samą treść jako tekst. Wszystkie narzędzia są oznaczone jako tylko do odczytu (`readOnlyHint`). Nie zmieniają danych i nie łączą się z siecią.
+Odpowiedź `get_parameter("zdrowotna.minimum")` w skrócie:
 
-Gdy argument jest błędny, na przykład parametr albo profil nie istnieje, data jest niepoprawna albo miesiąc wykracza poza zakres od 1 do 12, narzędzie zwraca błąd (`isError: true`). Komunikat mówi, co poprawić, a przy nieznanym identyfikatorze wymienia dostępne. Jeśli parametr istnieje, ale żadna jego wersja nie obowiązuje w podanym dniu, wynik ma `found: false` i powód w polu `reason`.
+```jsonc
+{
+  "id": "zdrowotna.minimum",
+  "found": true,
+  "value": "…", "unit": "PLN/miesiąc",
+  "valid_from": "2026-02-01", "valid_to": "2027-01-31",
+  "sources": [
+    { "kind": "primary", "title": "Komunikat ZUS …", "url": "https://www.zus.pl/…", "quote": "…" },
+    { "kind": "control", "title": "…", "url": "…" }
+  ],
+  "confidence": { "level": "niska", "evidence": ["cytat", "drugie_zrodlo"], "open_issue": "…" }
+}
+```
 
-Pola `quote`, `note` i opisy kroków zasad pochodzą z repozytorium. Klient powinien je traktować jak dane, a nie jak polecenia dla modelu.
+## Pewność danych
 
-Serwer korzysta z SDK `mcp` w wersji 2 i działa przez stdio. Testy w `tests/test_server.py` łączą się z nim prawdziwym klientem MCP.
+Pole `confidence.level` wynika z dowodów zapisanych przy wersji parametru:
+
+| Dowód | Znaczenie |
+| --- | --- |
+| `cytat` | dosłowny fragment źródła pierwotnego (ISAP/ELI, M.P., komunikat ZUS lub MF), sprawdzany skryptem w oficjalnym tekście |
+| `drugie_zrodlo` | niezależne źródło, które samo podaje tę samą wartość |
+| `agent` | sprawdzenie przez osobnego agenta, który porównał wpis ze źródłami |
+| `deklaracje` | zgodność z deklaracją przyjętą przez urząd |
+| `ekspert` | odpowiedź doradcy podatkowego lub księgowej |
+
+Pewność jest `wysoka`, gdy wersja ma cytat i co najmniej dwa inne dowody, a żadne pytanie nie jest otwarte (`open_issue`). W każdym innym przypadku jest `niska`.
+
+## Zakres
+
+Są: składki ZUS i zdrowotna, terminy ZUS, zaliczek na ryczałt i podatek liniowy oraz JPK_V7M i JPK_V7K, dni wolne na 2026 i 2027 rok, zasady przesunięcia terminu i wyliczenia składki zdrowotnej na ryczałcie.
+
+Brakuje między innymi: stawek ryczałtu i podatku liniowego, limitu odliczenia składki zdrowotnej i schematów JPK. Pytania, których źródła nie rozstrzygają, są w [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md).
 
 ## Dane
 
-Dane są w `data/parameters/`, jeden plik YAML na obszar przepisów. Parametr to lista wersji, a okresy wersji nie mogą na siebie nachodzić (pilnują tego walidator i testy). Parametr ma jeden z czterech rodzajów (`kind`): `value` (wartość), `deadline` (reguła terminu), `rule` (zasada obliczeń w krokach) albo `calendar` (dni wolne). Kroki zasady wskazują parametry, których używają (`uses`), a walidator sprawdza, czy te parametry istnieją.
+Dane są w [`data/parameters/`](data/parameters), jeden plik YAML na obszar przepisów. Parametr to lista wersji o rozłącznych okresach i jednym z rodzajów: `value`, `deadline`, `rule` albo `calendar`. Profile w [`data/profiles.yaml`](data/profiles.yaml) są przykładowe i służą tylko do wybierania parametrów. Z danych można korzystać bez serwera.
 
-Profile w `data/profiles.yaml` to przykłady połączeń formy opodatkowania, VAT i rodzaju ZUS. Służą do wybierania parametrów, które dotyczą danego przypadku.
+## Rozwój
 
-Poziom pewności (`confidence`) jest w każdej odpowiedzi serwera i wynika z dowodów zapisanych przy wersji:
+```bash
+git clone https://github.com/tmierzwa/fikus.git && cd fikus
+pip install -e ".[dev]"
+pytest
+python scripts/sprawdz_cytaty.py   # wymaga pdftotext (poppler)
+```
 
-- `cytat`: dosłowny fragment źródła pierwotnego; `scripts/sprawdz_cytaty.py` sprawdza, czy jest w oficjalnym tekście;
-- `drugie_zrodlo`: niezależne źródło, które samo podaje tę samą wartość (`independent: true` albo `kind: control`);
-- `agent`: sprawdzenie przez osobnego agenta (`weryfikator-zrodel`), który porównuje wpis ze źródłami;
-- `deklaracje`: zgodność z deklaracją przyjętą przez urząd;
-- `ekspert`: odpowiedź doradcy podatkowego lub księgowej.
+Najbardziej potrzebne są zgłoszenia błędów w danych i drugie źródła dla wpisów z pewnością `niska`. Zasady, w tym podpis DCO, są w [CONTRIBUTING.md](CONTRIBUTING.md). Obowiązuje [kodeks postępowania](CODE_OF_CONDUCT.md), a luki bezpieczeństwa zgłaszaj według [SECURITY.md](SECURITY.md).
 
-Pewność jest `wysoka`, gdy wersja ma cytat i co najmniej dwa inne dowody, a żadne pytanie nie pozostaje otwarte (`open_issue`). W pozostałych przypadkach jest `niska`.
-
-## Stan
-
-Wczesna wersja. Obejmuje składki ZUS i zdrowotną, terminy ZUS, ryczałtu i JPK_V7 oraz dni wolne na 2026 i 2027 rok. Brakuje między innymi stawek ryczałtu i podatku liniowego, limitu odliczenia składki zdrowotnej i schematów JPK. Część wersji ma pewność niską. Pytania, których źródła nie rozstrzygają, są w [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md).
-
-## Współtworzenie
-
-Zgłoszenia błędów w danych i nowe źródła są najbardziej potrzebne. Zasady są w [CONTRIBUTING.md](CONTRIBUTING.md), a obowiązuje [kodeks postępowania](CODE_OF_CONDUCT.md).
+Nie odpowiadamy na pytania o sytuację konkretnego podatnika. Nie publikuj w zgłoszeniach swoich danych podatkowych.
 
 ## Licencje
 
-- Kod: [Apache License 2.0](LICENSE).
-- Dane w `data/`: [CC BY 4.0](data/LICENSE). Korzystając z danych, podaj źródło: „Fikus, https://github.com/tmierzwa/fikus”.
-- Cytaty w polach `quote` nie są objęte licencją CC BY 4.0. Wyjaśnienie jest w pliku [NOTICE](NOTICE).
+- Kod: [Apache 2.0](LICENSE).
+- Dane w `data/`: [CC BY 4.0](data/LICENSE). Podaj źródło: „Fikus, https://github.com/tmierzwa/fikus”.
+- Cytaty w polach `quote` nie są objęte CC BY 4.0, zobacz [NOTICE](NOTICE).
