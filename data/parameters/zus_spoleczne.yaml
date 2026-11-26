@@ -123,6 +123,7 @@
         Rok składkowy 2025/2026. 50% najwyższej stopy dla grup działalności (3,33% w załączniku nr 2
         w brzmieniu od 1 kwietnia 2024 r.), czyli 1,665, zaokrąglone do 0,01 zgodnie z § 6 ust. 2 rozporządzenia.
         Zmiana rozporządzenia Dz.U. 2025 poz. 1292 nie zmienia stóp.
+        Uzupełnienie dowodów 2026-11-26: źródło kontrolne PIT.pl za cały rok składkowy.
       sources:
         - title: Dz.U. 2025 poz. 1644, tekst jednolity ustawy o ubezpieczeniu społecznym z tytułu wypadków przy pracy i chorób zawodowych
           url: https://eli.gov.pl/eli/DU/2025/1644/ogl
@@ -138,7 +139,12 @@
           article: § 6 ust. 2
         - title: Dz.U. 2025 poz. 1292, rozporządzenie MRPiPS z 18 września 2025 r.
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1292/text.pdf
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+        - title: PIT.pl, Składka wypadkowa – stopy procentowe (podaje stopę dla płatników do 9 ubezpieczonych na rok składkowy 2025/2026)
+          url: https://www.pit.pl/?p=9018
+          kind: control
+          quote: "od 1 kwietnia 2025 r. do 31 marca 2026 r. takich płatników obowiązuje stopa procentowa składki wypadkowej w wysokości 1,67%"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
     - valid_from: 2026-04-01
       valid_to: 2027-03-31
       value: 1.67
