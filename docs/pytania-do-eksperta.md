@@ -34,7 +34,7 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
 
 ## P2. Minimalna składka zdrowotna na skali i liniowym w roku składkowym 2025/2026 (rozstrzygnięte 2026-11-26, bez eksperta)
 
-- Rozstrzygnięcie: Podatnik.info samo podaje 314,96 zł „od lutego 2025 r. do stycznia 2026 r.”; dodane jako źródło kontrolne, `open_issue` usunięty.
+- Rozstrzygnięcie: informacja ZUS na samorzad.gov.pl (18 lutego 2025 r.) sama podaje, że od lutego 2025 r. do stycznia 2026 r. składka nie może być niższa niż 314,96 zł; dodana jako źródło kontrolne, `open_issue` usunięty. Styczeń 2026 potwierdza też komunikat ZUS z 2026 r.
 
 - Wpis: `zdrowotna.minimum` (2025-02-01 – 2026-01-31, 314,96 zł).
 - Zgłoszone: 2026-11-26.
@@ -47,7 +47,7 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
 
 ## P3. Minimalna składka zdrowotna na skali i liniowym za styczeń 2027 (rozstrzygnięte 2026-11-26, bez eksperta)
 
-- Rozstrzygnięcie: Poradnik Przedsiębiorcy samo podaje 432,54 zł „od lutego 2026 roku do stycznia 2027 roku” (tabela według miesięcy DRA); dodane jako źródło kontrolne, `open_issue` usunięty. Wynika to też wprost z art. 81 ust. 2 i 2d (minimalne wynagrodzenie z pierwszego dnia roku składkowego).
+- Rozstrzygnięcie: biznes.gov.pl sam podaje 432,54 zł za okres od 1 lutego 2026 r. do 31 stycznia 2027 r., tak jak komunikat ZUS z 2 lutego 2026 r.; dodany jako źródło kontrolne, `open_issue` usunięty.
 
 - Wpis: `zdrowotna.minimum` (2026-02-01 – 2027-01-31, 432,54 zł).
 - Zgłoszone: 2026-11-26.
@@ -55,3 +55,15 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   (9% z 4806 zł, art. 81 ust. 2d). Źródło kontrolne (ifirma) potwierdza kwotę tylko za luty–grudzień 2026.
 - Pytanie: czy minimalna składka za styczeń 2027 r. (ostatni miesiąc roku składkowego) wynosi 432,54 zł,
   mimo że od 1 stycznia 2027 r. obowiązuje nowe minimalne wynagrodzenie?
+
+## P4. Zryczałtowana stopa składki wypadkowej dla płatnika do 9 ubezpieczonych
+
+- Wpis: `zus.stawka.wypadkowa_do_9` (2025-04-01 – 2026-03-31 i 2026-04-01 – 2027-03-31, 1,67%).
+- Zgłoszone: 2026-11-26.
+- Ustawa wypadkowa, art. 28 ust. 1: stopa wynosi 50% najwyższej stopy ustalonej na dany rok składkowy
+  dla grup działalności. Najwyższa stopa w tabeli z załącznika nr 2 rozporządzenia (Dz.U. 2025
+  poz. 1874) to 3,33, a § 6 ust. 2 każe zaokrąglać według zasady matematycznej. Kwotę 1,67% podają
+  wprost tylko materiały ZUS (poradnik i strona o informacji ZUS IWA).
+- Pytanie: czy dla płatnika zgłaszającego nie więcej niż 9 ubezpieczonych stopa w latach składkowych
+  2025/2026 i 2026/2027 wynosi 1,67%, i czy istnieje urzędowe źródło poza materiałami ZUS, które
+  podaje tę stopę wprost?

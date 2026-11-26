@@ -125,6 +125,8 @@
         Zmiana rozporządzenia Dz.U. 2025 poz. 1292 nie zmienia stóp.
         Uzupełnienie dowodów 2026-11-26: poradnik ZUS (stan prawny na 1 stycznia 2026 r.) podaje 1,67% dla płatników do 9 ubezpieczonych
         nieprzerwanie od 1 kwietnia 2018 r.; stopa jest ustalana na cały rok składkowy (art. 28 ust. 1). Zastępuje portal PIT.pl.
+        Poprawka 2026-11-26: usunięty agent_check wpisany przed raportem weryfikatora; raport wskazał, że wartość
+        nie wynika z żadnego pojedynczego cytatu ze źródła pierwotnego (open_issue).
       sources:
         - title: Dz.U. 2025 poz. 1644, tekst jednolity ustawy o ubezpieczeniu społecznym z tytułu wypadków przy pracy i chorób zawodowych
           url: https://eli.gov.pl/eli/DU/2025/1644/ogl
@@ -145,7 +147,9 @@
           independent: true
           quote: "podlegasz wpisowi do rejestru REGON i zgłaszasz do ubezpieczenia wypadkowego nie więcej niż 9 ubezpieczonych, • nie podlegasz wpisowi do rejestru REGON (bez znaczenia jest w tym przypadku, ilu ubezpieczonych zgłaszasz do ubezpieczenia wypadkowego), obowiązuje Cię stopa zryczałtowana, która od 1 kwietnia 2018 r. wynosi 1,67%"
           as_of: 2026-01-01
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification:
+        checked_at: 2026-11-26
+        open_issue: "Żaden cytat ze źródła pierwotnego nie podaje 1,67 wprost: wartość wynika z połączenia art. 28 ust. 1, najwyższej stopy 3,33 z tabeli w załączniku nr 2 i § 6 ust. 2; dosłownie podają ją tylko materiały ZUS. Potrzebny drugi dowód poza materiałem ZUS albo cytat, który sam daje najwyższą stopę."
     - valid_from: 2026-04-01
       valid_to: 2027-03-31
       value: 1.67
@@ -153,8 +157,11 @@
         50% najwyższej stopy dla grup działalności (3,33% w załączniku nr 2 rozporządzenia), czyli 1,665,
         zaokrąglone do 0,01 zgodnie z § 6 ust. 2 rozporządzenia.
         Okres to rok składkowy z art. 2 pkt 8; rozporządzenie nie ma daty końcowej (załącznik nr 2
-        obowiązuje od 1 kwietnia 2024 r.; zmiana z 10 października 2025 r. dotyczy tylko kodów PKD).
+        obowiązuje od 1 kwietnia 2024 r.; według obwieszczenia poz. 1874 jedyną późniejszą zmianą jest
+        rozporządzenie z 18 września 2025 r., Dz.U. 2025 poz. 1292).
         Uzupełnienie dowodów 2026-11-26: artykuł Fakturowni (bez cytatu) zastąpiony komunikatem ZUS o roku składkowym 2026/2027.
+        Poprawka 2026-11-26: data zmiany rozporządzenia poprawiona według poz. 1874 (było: 10 października 2025 r.);
+        usunięty agent_check wpisany przed raportem weryfikatora (open_issue).
       sources:
         - title: Dz.U. 2025 poz. 1644, tekst jednolity ustawy o ubezpieczeniu społecznym z tytułu wypadków przy pracy i chorób zawodowych
           url: https://eli.gov.pl/eli/DU/2025/1644/ogl
@@ -169,7 +176,9 @@
           independent: true
           quote: "Dla płatników zgłaszających do ubezpieczenia wypadkowego do 9 ubezpieczonych stopa procentowa składki na ubezpieczenie wypadkowe wynosi 50% najwyższej stopy procentowej ustalonej na dany rok składkowy dla grup działalności, tj. 1,67%"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification:
+        checked_at: 2026-11-26
+        open_issue: "Żaden cytat ze źródła pierwotnego nie podaje 1,67 wprost: wartość wynika z połączenia art. 28 ust. 1, najwyższej stopy 3,33 z tabeli w załączniku nr 2 i § 6 ust. 2; dosłownie podają ją tylko materiały ZUS. Potrzebny drugi dowód poza materiałem ZUS albo cytat, który sam daje najwyższą stopę."
 
 - id: zus.stawka.fundusz_pracy
   name: Stopa składki na Fundusz Pracy
