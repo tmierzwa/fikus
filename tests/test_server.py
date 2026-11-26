@@ -71,6 +71,24 @@ def test_get_schema_follows_settlement_period():
     assert not r.is_error and r.structured_content["found"] is False
 
 
+def test_get_schema_jpk_ewp():
+    r = _call("get_schema", {"form": "JPK_EWP", "as_of": "2026-01-01"})
+    assert not r.is_error and r.structured_content["found"] is True
+    value = r.structured_content["value"]
+    assert value["variant"] == 4 and value["system_code"] == "JPK_EWP (4)"
+    tools = {t.name: t for t in _run(lambda c: c.list_tools()).tools}
+    assert "JPK_EWP" in tools["get_schema"].description
+
+
+def test_deadlines_list_revenue_record_entry_for_flat_rate_only():
+    ids = {d["id"] for d in _call("deadlines", {"profile": "przyklad_ryczalt", "year": 2026, "month": 11})
+           .structured_content["deadlines"]}
+    assert {"termin.ewidencja_przychodow_wpis", "termin.zaliczka_ryczalt"} <= ids
+    ids = {d["id"] for d in _call("deadlines", {"profile": "przyklad_liniowy", "year": 2026, "month": 11})
+           .structured_content["deadlines"]}
+    assert "termin.ewidencja_przychodow_wpis" not in ids
+
+
 def test_confidence_reports_medium_level_scope_and_unconfirmed_fields():
     rule = _call("get_parameter", {"id": "zasada.ulgi_liniowy", "as_of": "2027-02-01"})
     conf = rule.structured_content["confidence"]

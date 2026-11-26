@@ -16,6 +16,10 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 - Schematy `schemat.jpk_v7m`, `schemat.jpk_v7k` i `schemat.jpk_pkpir` oraz zasady przesyłania ksiąg
   w formie JPK (`zasada.jpk_pd_pkpir`, `zasada.jpk_pd_ryczalt`) w nowym pliku `data/parameters/jpk.yaml`.
   `get_schema` zwraca teraz dane dla tych symboli.
+- Schemat `schemat.jpk_ewp` (JPK_EWP, wariant 4 od 2026 r.); `get_schema` zwraca go dla symbolu JPK_EWP.
+- Nowy plik `data/parameters/ewidencja.yaml`: termin `termin.ewidencja_przychodow_wpis` (wpis przychodów
+  za miesiąc na ryczałcie; `deadlines` zwraca go dla profili na ryczałcie) oraz zasady `zasada.ewidencja_przychodow`,
+  `zasada.przychod_data_uzyskania` i `zasada.przychod_w_walucie`.
 - Parametry VAT w nowym pliku `data/parameters/vat.yaml`: `vat.stawki` (stawka podstawowa i obniżone
   w okresie z art. 146ef ustawy o VAT), `vat.limit_zwolnienia` (limit zwolnienia podmiotowego z art. 113
   ust. 1) i zasada `zasada.vat_odliczenie` (prawo do odliczenia, moment i korekta, samochody, wyłączenia).
