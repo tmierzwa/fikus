@@ -115,7 +115,6 @@ def test_quotes_match_cached_official_texts():
         pytest.skip("brak tekstów źródeł w .cache/zrodla (uruchom scripts/sprawdz_cytaty.py)")
 
 
-
 def test_unknown_profile_and_bad_month_return_reasons():
     assert store.for_profile("nie_ma", date(2026, 6, 1))[0]["known"] == sorted(store.profiles)
     assert store.deadlines("nie_ma", 2026, 6)["found"] is False
@@ -141,3 +140,21 @@ def test_deadline_version_starting_mid_month_is_listed():
     days = [d["day_of_month"] for d in s.deadlines("przyklad_ryczalt", 2026, 3)["deadlines"]
             if d["id"] == "termin.test"]
     assert days == [20, 25]
+
+
+def test_source_fetch_refuses_redirect_outside_https():
+    import urllib.error
+    import urllib.request
+
+    from fikus.cytaty import _HttpsOnlyRedirects
+    req = urllib.request.Request("https://example.org/a")
+    with pytest.raises(urllib.error.URLError):
+        _HttpsOnlyRedirects().redirect_request(req, None, 302, "Found", {}, "http://example.org/b")
+
+
+def test_deadline_without_day_is_rejected_at_load():
+    with pytest.raises(ValueError, match="day_of_month"):
+        Parameter.model_validate({"id": "termin.x", "name": "t", "kind": "deadline", "versions": [
+            {"valid_from": "2026-01-01", "value": {"day": 20},
+             "sources": [{"title": "akt", "url": "https://example.org/a"}],
+             "verification": {"checked_at": "2026-01-01"}}]})

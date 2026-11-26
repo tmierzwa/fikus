@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Wersjonowane parametry przepisów dla JDG w Polsce, udostępniane przez MCP"
 license = "Apache-2.0"
 requires-python = ">=3.11"
-dependencies = ["mcp>=1.2,<3", "pydantic>=2", "pyyaml>=6"]
+dependencies = ["mcp>=2.3,<3", "pydantic>=2", "pyyaml>=6", "tzdata; sys_platform == 'win32'"]
 
 [project.optional-dependencies]
 dev = ["pytest"]

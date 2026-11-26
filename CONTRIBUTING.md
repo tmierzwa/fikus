@@ -7,7 +7,7 @@ niezależne źródła dla wpisów z pewnością `niska` i poprawki kodu.
 ## Czego tu nie robimy
 
 - Nie odpowiadamy na pytania o sytuację konkretnego podatnika („jak mam się rozliczyć”, „czy mogę
-  odliczyć”). Takie porady może zawodowo udzielać tylko doradca podatkowy, adwokat, radca prawny
+  odliczyć”). Takich porad może zawodowo udzielać tylko doradca podatkowy, adwokat, radca prawny
   albo biegły rewident (art. 2 ust. 2 i art. 3 ust. 1 ustawy o doradztwie podatkowym). Zgłoszenia
   z takim pytaniem zamykamy.
 - Nie publikuj swoich danych podatkowych: kwot z deklaracji, NIP, PESEL, numerów rachunków, skanów
