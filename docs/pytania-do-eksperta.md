@@ -607,7 +607,8 @@ przypadku brzegowego, średnią.
 - Ustawa o PIT (Dz.U. 2026 poz. 592), art. 14 ust. 1m: jeżeli korekta przychodu „nie jest spowodowana błędem rachunkowym
   lub inną oczywistą omyłką”, ujmuje się ją w okresie rozliczeniowym, w którym wystawiono fakturę korygującą. Ustawa
   o ryczałcie (Dz.U. 2025 poz. 843) odwołuje się do tej korekty w art. 6 ust. 1e i 1f, więc dla korekt bez błędu ustawa
-  sama wskazuje okres i to opisuje krok zasady.
+  sama wskazuje okres i to opisuje krok zasady, razem z art. 6 ust. 1f (korekta po zmianie formy opodatkowania).
+  Wyłączeń z art. 14 ust. 1o krok nie opisuje.
 - Ani ustawa, ani rozporządzenie Dz.U. 2025 poz. 1294 nie mówią, w którym okresie ujmuje się korektę wynikającą z błędu
   rachunkowego lub oczywistej omyłki. Rozporządzenie przewiduje zapis „ze znakiem (-)” tylko dla korekty danych
   z raportów fiskalnych (§ 4 ust. 5); wzór ewidencji nie ma osobnej kolumny na korektę.

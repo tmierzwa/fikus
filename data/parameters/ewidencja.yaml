@@ -55,26 +55,21 @@
           - text: Wpisów za miesiąc dokonujesz najpóźniej do 20. dnia następnego miesiąca.
             uses: [termin.ewidencja_przychodow_wpis]
             basis: § 6 rozporządzenia Dz.U. 2025 poz. 1294
-          - text: Jeżeli jesteś podatnikiem, o którym mowa w art. 84 ustawy o VAT (handel, w którym sprzedaż dzieli się na stawki VAT w proporcjach wynikających z zakupów), możesz wykazywać przychody w ewidencji łącznie z VAT, a na koniec miesiąca pomniejszasz przychód o należny VAT.
+          - text: Jeżeli jesteś podatnikiem, o którym mowa w art. 84 ustawy o VAT (świadczysz usługi w zakresie handlu, dokonujesz sprzedaży opodatkowanej i zwolnionej od VAT albo opodatkowanej według różnych stawek, nie masz obowiązku prowadzenia ewidencji przy użyciu kasy rejestrującej z art. 111 ust. 1 tej ustawy i możesz podzielić sprzedaż w proporcjach wynikających z udokumentowanych zakupów), możesz wykazywać przychody w ewidencji łącznie z VAT, a na koniec miesiąca pomniejszasz przychód o należny VAT.
             uses: []
             basis: § 7 rozporządzenia Dz.U. 2025 poz. 1294
           - text: Jeżeli stosujesz metodę kasową rozliczania przychodów, prowadzisz też ewidencję faktur z datą wystawienia, numerem faktury, kwotą należności z faktury i datą uregulowania należności.
             uses: [zasada.przychod_data_uzyskania]
             basis: art. 15 ust. 11a ustawy o zryczałtowanym podatku dochodowym
-          - text: Korektę przychodu, która nie wynika z błędu rachunkowego ani innej oczywistej omyłki, ujmujesz przez zmniejszenie albo zwiększenie przychodów okresu rozliczeniowego, w którym wystawiono fakturę korygującą, a bez faktury – inny dokument potwierdzający przyczynę korekty. Jeżeli przychody tego okresu są niższe od zmniejszenia, zmniejszasz przychody w kolejnych okresach. Korektę danych z raportów fiskalnych, której nie ujmujesz w odrębnych ewidencjach, wpisujesz na podstawie dowodu wewnętrznego ze znakiem minus. W którym okresie i w jaki sposób wpisujesz korektę wynikającą z błędu rachunkowego lub oczywistej omyłki, jest niewyjaśnione (otwarte pytanie do eksperta).
+          - text: Korektę przychodu, która nie wynika z błędu rachunkowego ani innej oczywistej omyłki, ujmujesz przez zmniejszenie albo zwiększenie przychodów okresu rozliczeniowego, w którym wystawiono fakturę korygującą, a bez faktury – inny dokument potwierdzający przyczynę korekty. Jeżeli przychody tego okresu są niższe od zmniejszenia, zmniejszasz przychody w kolejnych okresach. Jeżeli korekta następuje po zmianie formy opodatkowania z ryczałtu na zasady ogólne, podatek liniowy, podatek tonażowy albo podatek od wartości sprzedanej produkcji, zmniejszenia lub zwiększenia przychodów dokonujesz w ostatnim okresie rozliczeniowym przed zmianą formy opodatkowania. Wyłączeń z art. 14 ust. 1o ustawy o PIT (korekta przychodu związanego z przedawnionym zobowiązaniem podatkowym, korekta cen transferowych) ten krok nie opisuje. Korektę danych z raportów fiskalnych, której nie ujmujesz w odrębnych ewidencjach, wpisujesz na podstawie dowodu wewnętrznego ze znakiem minus. W jaki sposób wpisujesz do ewidencji korektę faktury (nowym zapisem czy poprawieniem pierwotnego) oraz w którym okresie i jak wpisujesz korektę wynikającą z błędu rachunkowego lub oczywistej omyłki, jest niewyjaśnione (otwarte pytanie do eksperta).
             uses: []
-            basis: art. 14 ust. 1m ustawy o PIT; art. 6 ust. 1e i 1f ustawy o zryczałtowanym podatku dochodowym; § 4 ust. 4 i 5 rozporządzenia Dz.U. 2025 poz. 1294
+            basis: art. 14 ust. 1m i 1o ustawy o PIT; art. 6 ust. 1e i 1f ustawy o zryczałtowanym podatku dochodowym; § 4 ust. 4 i 5 rozporządzenia Dz.U. 2025 poz. 1294
           - text: Ewidencję prowadzisz rzetelnie i w sposób niewadliwy. Niewadliwa jest ewidencja prowadzona zgodnie z rozporządzeniem i według wzoru, a rzetelna – gdy zapisy odzwierciedlają stan rzeczywisty. Ewidencję uznaje się za rzetelną i niewadliwą także wtedy, gdy niewpisane lub błędnie wpisane przychody łącznie nie przekraczają 0,5 % przychodu wykazanego w ewidencji za rok (albo do dnia stwierdzenia błędów), gdy brak zapisów wynika z nieszczęśliwego wypadku lub zdarzenia losowego, gdy uzupełniłeś lub poprawiłeś zapisy przed rozpoczęciem kontroli albo w terminie do złożenia deklaracji lub korekty z art. 62 ust. 4 ustawy o KAS, albo gdy błędne zapisy są oczywistą omyłką i masz dowody, na podstawie których dokonuje się wpisów.
             uses: []
             basis: § 3 rozporządzenia Dz.U. 2025 poz. 1294
       note: >-
         Data początku obowiązywania to wejście w życie rozporządzenia Dz.U. 2025 poz. 1294 (§ 12); ta wersja nie opisuje
-        okresu przed 1 stycznia 2026 r. Rozporządzenie według API ELI nie było zmieniane. Tekst jednolity ustawy
-        o ryczałcie (Dz.U. 2025 poz. 843) zmieniła później tylko ustawa Dz.U. 2026 poz. 779, która dodaje art. 15 ust. 13a
-        (pełnomocnictwo do podpisywania przesyłanej ewidencji) i nie zmienia przepisów cytowanych w krokach. Tekst jednolity
-        ustawy o PIT (Dz.U. 2026 poz. 592) zmieniły ustawy Dz.U. 2026 poz. 779 (art. 24a), 846 (art. 25b, 30f, 31d),
-        1079 (art. 21), 1287 (dodaje art. 52zu) i 1371 (uchyla art. 14 ust. 2h i 2i, zmienia art. 22p, 23q i 23zf); żadna
-        nie zmienia art. 14 ust. 1m. Wzór ewidencji ma osobną kolumnę na numer KSeF faktury; broszura MF o JPK_EWP(4)
+        okresu przed 1 stycznia 2026 r. Rozporządzenie według API ELI nie było zmieniane. Tekst jednolity ustawy o ryczałcie (Dz.U. 2025 poz. 843) zmieniły później ustawy Dz.U. 2026 poz. 779 (dodaje art. 15 ust. 13a o pełnomocnictwie do podpisywania przesyłanej ewidencji), 1098 (art. 37: nowe brzmienie art. 21c, uchyla art. 21d; od 1 stycznia 2027 r.) i 1541 (art. 3: art. 11 ust. 1 i 2; od 1 stycznia 2027 r.); żadna nie zmienia art. 6, art. 15 ani art. 21 ust. 3e. Tekst jednolity ustawy o PIT (Dz.U. 2026 poz. 592) zmieniły ustawy Dz.U. 2026 poz. 779 (art. 24a), 846 (art. 25b, 30f, 31d), 1079 (art. 21), 1098 (art. 2, 45ba, 45c, 45cd; uchyla art. 45ce i 45cf), 1123 (art. 21 ust. 1 pkt 67b, art. 22 ust. 1p), 1287 (dodaje art. 52zu), 1347 (uchyla art. 14 ust. 2 pkt 14 lit. b od 1 grudnia 2026 r.), 1354 (art. 14 ust. 2 pkt 10 lit. a od 1 stycznia 2027 r.), 1371 (uchyla art. 14 ust. 2h i 2i, zmienia art. 22p, 23q i 23zf), 1541 (art. 26, 26gb, 26i, 52jb), 1542 (art. 21, 23b, 23z, 26e, 26ga) i 1556 (art. 21 ust. 1 pkt 114a). Żadna z nich nie zmienia art. 14 ust. 1m–1o. Wzór ewidencji ma osobną kolumnę na numer KSeF faktury; broszura MF o JPK_EWP(4)
         opisuje to pole w pliku jako opcjonalne. Kroki opisują dane słownie; pola pliku JPK_EWP opisuje broszura przy
         schemacie. Ustawa o ryczałcie odwołuje się do korekty z art. 14 ust. 1m ustawy o PIT w art. 6 ust. 1e i 1f.
       sources:
@@ -98,10 +93,18 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           quote: "Jeżeli w okresie rozliczeniowym, w którym podatnik ma obowiązek dokonać zmniejszenia przychodów na podstawie art. 14 ust. 1m ustawy o podatku dochodowym, podatnik nie osiągnął przychodów lub osiągnięte przychody są niższe od kwoty zmniejszenia, podatnik dokonuje zmniejszenia w kolejnych okresach rozliczeniowych."
           article: art. 6 ust. 1e
+        - title: Dz.U. 2025 poz. 843 (korekta po zmianie formy opodatkowania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "zmniejszenia lub zwiększenia przychodów dokonuje się w ostatnim okresie rozliczeniowym przed zmianą formy opodatkowania"
+          article: art. 6 ust. 1f
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (korekta przychodu)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
           quote: "Jeżeli korekta przychodu nie jest spowodowana błędem rachunkowym lub inną oczywistą omyłką, korekty dokonuje się poprzez zmniejszenie lub zwiększenie przychodów osiągniętych w okresie rozliczeniowym, w którym została wystawiona faktura korygująca"
           article: art. 14 ust. 1m
+        - title: Dz.U. 2026 poz. 592 (wyłączenia z korekty bieżącej)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "korekty dotyczącej przychodu związanego z zobowiązaniem podatkowym, które uległo przedawnieniu"
+          article: art. 14 ust. 1o pkt 1
         - title: Dz.U. 2025 poz. 1294, rozporządzenie w sprawie prowadzenia ewidencji przychodów (wzór)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1294/text.pdf
           quote: "Podatnicy są obowiązani prowadzić ewidencję według wzoru ustalonego w załączniku do rozporządzenia."
@@ -154,7 +157,8 @@
         checked_at: 2026-11-26
         open_issue: >-
           P32: w którym okresie i w jaki sposób wpisuje się do ewidencji korektę przychodu wynikającą z błędu rachunkowego
-          lub innej oczywistej omyłki, do której nie stosuje się art. 14 ust. 1m ustawy o PIT? Zob. docs/pytania-do-eksperta.md.
+          lub innej oczywistej omyłki, do której nie stosuje się art. 14 ust. 1m ustawy o PIT, i jak wpisuje się korektę
+          z art. 14 ust. 1m (nowym zapisem czy poprawieniem pierwotnego)? Zob. docs/pytania-do-eksperta.md.
 
 - id: zasada.przychod_data_uzyskania
   name: Data uzyskania przychodu z działalności gospodarczej
@@ -178,18 +182,14 @@
           - text: Jeżeli pobierasz wpłaty na poczet dostaw towarów i usług wykonywanych w następnych okresach sprawozdawczych i rejestrowanych na kasie rejestrującej, możesz uznać za dzień uzyskania przychodu dzień pobrania wpłaty. Taki sposób stosujesz wtedy przez cały rok podatkowy i informujesz o nim w zeznaniu za ten rok.
             uses: []
             basis: art. 14 ust. 1j ustawy o PIT; art. 21 ust. 3e ustawy o zryczałtowanym podatku dochodowym
-          - text: Jeżeli stosujesz metodę kasową rozliczania przychodów (warunki, w tym oświadczenie złożone do 20 lutego roku podatkowego, podaje art. 14c ust. 1 ustawy o PIT), dniem uzyskania przychodu jest dzień uregulowania należności, nie później niż dzień upływu 2 lat od wystawienia faktury albo dzień likwidacji działalności. Metoda dotyczy tylko przychodów z transakcji z przedsiębiorcami udokumentowanych fakturami, z wyłączeniami z art. 14c ust. 5 i 6, i stosujesz ją przez cały rok podatkowy.
+          - text: Jeżeli stosujesz metodę kasową rozliczania przychodów (warunki, w tym oświadczenie złożone w terminie z art. 14c ust. 1 pkt 3, podaje art. 14c ust. 1 ustawy o PIT), dniem uzyskania przychodu jest dzień uregulowania należności, nie później niż dzień upływu 2 lat od wystawienia faktury albo dzień likwidacji działalności. Metoda dotyczy tylko przychodów z transakcji z przedsiębiorcami udokumentowanych fakturami, z wyłączeniami z art. 14c ust. 5 i 6, i stosujesz ją przez cały rok podatkowy.
             uses: []
             basis: art. 14c ust. 1, 2 i 4–7 ustawy o PIT
           - text: Na ryczałcie od przychodów ewidencjonowanych opodatkowane są przychody z działalności, o których mowa w art. 14 ustawy o PIT. Ustawa o ryczałcie odwołuje się też wprost do sposobu ustalania daty powstania przychodu z art. 14 ust. 1j ustawy o PIT i pozwala wybrać metodę kasową z art. 14c tej ustawy, którą stosuje się odpowiednio. Datę uzyskania przychodu wpisujesz w ewidencji przychodów.
             uses: [zasada.ewidencja_przychodow]
             basis: art. 6 ust. 1 i 1g oraz art. 21 ust. 3e ustawy o zryczałtowanym podatku dochodowym
       note: >-
-        Tekst jednolity ustawy o PIT (Dz.U. 2026 poz. 592) zmieniły ustawy Dz.U. 2026 poz. 779 (art. 24a), 846 (art. 25b,
-        30f, 31d), 1079 (art. 21), 1287 (dodaje art. 52zu) i 1371 (uchyla art. 14 ust. 2h i 2i, zmienia art. 22p, 23q
-        i 23zf); żadna nie zmienia przepisów cytowanych w krokach. Ustawy Dz.U. 2026 poz. 1098 i 1123 zmieniają w ustawie
-        o PIT inne przepisy (art. 2, 39, 45ba, 45c, 45cd oraz art. 21, 22, 27f). Tekst jednolity ustawy o ryczałcie
-        (Dz.U. 2025 poz. 843) zmieniła później tylko ustawa Dz.U. 2026 poz. 779 (art. 15 ust. 13a). Art. 14c ust. 1 pkt 1
+        Tekst jednolity ustawy o PIT (Dz.U. 2026 poz. 592) zmieniły ustawy Dz.U. 2026 poz. 779 (art. 24a), 846 (art. 25b, 30f, 31d), 1079 (art. 21), 1098 (art. 2, 45ba, 45c, 45cd; uchyla art. 45ce i 45cf), 1123 (art. 21 ust. 1 pkt 67b, art. 22 ust. 1p), 1287 (dodaje art. 52zu), 1347 (uchyla art. 14 ust. 2 pkt 14 lit. b od 1 grudnia 2026 r.), 1354 (art. 14 ust. 2 pkt 10 lit. a od 1 stycznia 2027 r.), 1371 (uchyla art. 14 ust. 2h i 2i, zmienia art. 22p, 23q i 23zf), 1541 (art. 26, 26gb, 26i, 52jb), 1542 (art. 21, 23b, 23z, 26e, 26ga) i 1556 (art. 21 ust. 1 pkt 114a). Żadna z nich nie zmienia art. 14 ust. 1, 1c, 1e, 1h–1j ani ust. 3 pkt 1 ani art. 14c. Tekst jednolity ustawy o ryczałcie (Dz.U. 2025 poz. 843) zmieniły później ustawy Dz.U. 2026 poz. 779 (dodaje art. 15 ust. 13a o pełnomocnictwie do podpisywania przesyłanej ewidencji), 1098 (art. 37: nowe brzmienie art. 21c, uchyla art. 21d; od 1 stycznia 2027 r.) i 1541 (art. 3: art. 11 ust. 1 i 2; od 1 stycznia 2027 r.); żadna nie zmienia art. 6, art. 15 ani art. 21 ust. 3e. Art. 14c ust. 1 pkt 1
         ma brzmienie z ustawy Dz.U. 2025 poz. 1858 od 1 stycznia 2026 r. (przypis w tekście jednolitym), dlatego wersja
         zaczyna się 1 stycznia 2026 r.; okresu wcześniejszego nie opisuje. Korektę przychodu opisuje zasada prowadzenia
         ewidencji przychodów (dla ryczałtu). Przeliczenie przychodu w walucie opisuje zasada.przychod_w_walucie.
@@ -257,10 +257,10 @@
     - valid_from: 2026-01-01
       value:
         steps:
-          - text: Przychód w walucie obcej przeliczasz na złote według kursu średniego waluty ogłaszanego przez NBP z ostatniego dnia roboczego poprzedzającego dzień uzyskania przychodu. Kurs pobierasz z NBP; Fikus kursów nie podaje.
+          - text: Jeżeli rozliczasz się według skali albo podatkiem liniowym, przychód w walucie obcej przeliczasz na złote według kursu średniego waluty ogłaszanego przez NBP z ostatniego dnia roboczego poprzedzającego dzień uzyskania przychodu. Czy tak samo jest na ryczałcie, opisuje ostatni krok (niewyjaśnione). Kurs pobierasz z NBP; Fikus kursów nie podaje.
             uses: [zasada.przychod_data_uzyskania]
             basis: art. 11a ust. 1 ustawy o PIT
-          - text: Przychodem z działalności są też różnice kursowe, które ustalasz według art. 24c ustawy o PIT. Dodatnia różnica kursowa od przychodu powstaje, gdy wartość przychodu należnego przeliczona po kursie średnim NBP jest niższa od jego wartości w dniu otrzymania według faktycznie zastosowanego kursu z tego dnia; ujemna, gdy jest wyższa. Dodatnie różnice zwiększają przychody, a ujemne – koszty uzyskania przychodów.
+          - text: Jeżeli rozliczasz się według skali albo podatkiem liniowym, przychodem z działalności są też różnice kursowe, które ustalasz według art. 24c ustawy o PIT. Dodatnia różnica kursowa od przychodu powstaje, gdy wartość przychodu należnego przeliczona po kursie średnim NBP jest niższa od jego wartości w dniu otrzymania według faktycznie zastosowanego kursu z tego dnia; ujemna, gdy jest wyższa. Dodatnie różnice zwiększają przychody, a ujemne – koszty uzyskania przychodów.
             uses: []
             basis: art. 14 ust. 2 pkt 3, art. 14b ust. 1 i art. 24c ust. 1, ust. 2 pkt 1 i ust. 3 pkt 1 ustawy o PIT
           - text: Na ryczałcie od przychodów ewidencjonowanych do przychodów z różnic kursowych stosujesz odpowiednio art. 24c ustawy o PIT, z tym że ujemne różnice kursowe zmniejszają przychody uzyskane w roku podatkowym, w którym powstały.
@@ -270,10 +270,7 @@
             uses: []
             basis: art. 6 ust. 1 i 1c ustawy o zryczałtowanym podatku dochodowym; art. 11a ust. 1 ustawy o PIT
       note: >-
-        Kursów walut Fikus nie podaje; tabela kursów NBP nie jest źródłem pierwotnym w rozumieniu projektu. Tekst jednolity
-        ustawy o PIT (Dz.U. 2026 poz. 592) zmieniły ustawy Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287 i 1371; żadna
-        nie zmienia art. 11a, art. 14 ust. 2 pkt 3, art. 14b ani art. 24c. Tekst jednolity ustawy o ryczałcie
-        (Dz.U. 2025 poz. 843) zmieniła później tylko ustawa Dz.U. 2026 poz. 779 (art. 15 ust. 13a). W tekście ustawy
+        Kursów walut Fikus nie podaje; tabela kursów NBP nie jest źródłem pierwotnym w rozumieniu projektu. Tekst jednolity ustawy o PIT (Dz.U. 2026 poz. 592) zmieniły ustawy Dz.U. 2026 poz. 779 (art. 24a), 846 (art. 25b, 30f, 31d), 1079 (art. 21), 1098 (art. 2, 45ba, 45c, 45cd; uchyla art. 45ce i 45cf), 1123 (art. 21 ust. 1 pkt 67b, art. 22 ust. 1p), 1287 (dodaje art. 52zu), 1347 (uchyla art. 14 ust. 2 pkt 14 lit. b od 1 grudnia 2026 r.), 1354 (art. 14 ust. 2 pkt 10 lit. a od 1 stycznia 2027 r.), 1371 (uchyla art. 14 ust. 2h i 2i, zmienia art. 22p, 23q i 23zf), 1541 (art. 26, 26gb, 26i, 52jb), 1542 (art. 21, 23b, 23z, 26e, 26ga) i 1556 (art. 21 ust. 1 pkt 114a). Żadna z nich nie zmienia art. 11a, art. 14 ust. 2 pkt 3, art. 14b ani art. 24c. Tekst jednolity ustawy o ryczałcie (Dz.U. 2025 poz. 843) zmieniły później ustawy Dz.U. 2026 poz. 779 (dodaje art. 15 ust. 13a o pełnomocnictwie do podpisywania przesyłanej ewidencji), 1098 (art. 37: nowe brzmienie art. 21c, uchyla art. 21d; od 1 stycznia 2027 r.) i 1541 (art. 3: art. 11 ust. 1 i 2; od 1 stycznia 2027 r.); żadna nie zmienia art. 6, art. 15 ani art. 21 ust. 3e. W tekście ustawy
         o ryczałcie nie ma odesłania do art. 11a ustawy o PIT; jej przepisy o przeliczaniu (na przykład art. 4 ust. 2)
         dotyczą kwot wyrażonych w euro. Wersja zaczyna się 1 stycznia 2026 r. razem z zasadą daty uzyskania przychodu; okresu
         wcześniejszego nie opisuje.
