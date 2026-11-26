@@ -16,7 +16,6 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ### Zmienione
 
-- `schemat.jpk_pkpir` ma adres pliku XSD ze strony KAS „Struktury JPK w podatkach dochodowych”.
 - Sprawdzanie cytatów pomija znaki zerowej szerokości, którymi strony gov.pl dzielą nazwy plików.
 
 ## [0.3.0] - 2026-11-26
