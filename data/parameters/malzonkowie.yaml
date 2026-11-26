@@ -1,0 +1,264 @@
+# Łączne opodatkowanie dochodów: wspólne rozliczenie małżonków i osoby samotnie wychowującej dzieci (art. 6
+# i art. 6a ustawy o podatku dochodowym od osób fizycznych). Zasady opisują przepis krokami; serwer nie ocenia,
+# czy konkretny podatnik spełnia warunki.
+
+- id: zasada.malzonkowie_wspolne_opodatkowanie
+  name: Wspólne opodatkowanie dochodów małżonków (warunki i sposób ustalenia podatku)
+  kind: rule
+  applies_to: {tax_form: [skala]}
+  versions:
+    - valid_from: 2025-01-01
+      value:
+        steps:
+          - text: Małżonkowie mogą być opodatkowani łącznie, jeżeli oboje podlegają nieograniczonemu obowiązkowi podatkowemu (mają miejsce zamieszkania w Polsce) i pozostają w związku małżeńskim i we wspólności majątkowej przez cały rok podatkowy albo, gdy związek zawarto w trakcie roku, od dnia jego zawarcia do ostatniego dnia roku podatkowego.
+            uses: []
+            basis: art. 6 ust. 2 pkt 1 i 2 oraz art. 3 ust. 1 ustawy o podatku dochodowym od osób fizycznych
+          - text: Te same zasady stosuje się do małżonków, którzy oboje mają miejsce zamieszkania dla celów podatkowych w innym państwie Unii Europejskiej, Europejskiego Obszaru Gospodarczego albo w Szwajcarii, oraz do małżonków, z których jeden podlega nieograniczonemu obowiązkowi podatkowemu w Polsce, a drugi ma takie miejsce zamieszkania za granicą. Warunki są trzy. Przychody podlegające opodatkowaniu w Polsce stanowią łącznie co najmniej 75% całkowitego przychodu obojga małżonków w roku podatkowym; całkowite przychody to przychody ze wszystkich źródeł z art. 10 ust. 1 bez względu na miejsce ich położenia. Miejsce zamieszkania jest udokumentowane certyfikatem rezydencji. Umowa o unikaniu podwójnego opodatkowania albo inna ratyfikowana umowa międzynarodowa daje organowi podatkowemu podstawę do uzyskania informacji podatkowych od państwa zamieszkania. Na żądanie organu podatkowego wysokość całkowitych przychodów dokumentuje się zaświadczeniem zagranicznego organu podatkowego albo innym dokumentem.
+            uses: []
+            basis: art. 6 ust. 3a i 11–13 ustawy o podatku dochodowym od osób fizycznych
+          - text: Łączne opodatkowanie następuje na wspólny wniosek wyrażony w zeznaniu podatkowym. Wniosek może wyrazić jeden z małżonków; jest to równoznaczne z jego oświadczeniem, złożonym pod rygorem odpowiedzialności karnej za fałszywe zeznania, że współmałżonek upoważnił go do złożenia wniosku. Zeznanie roczne składa się w terminie z art. 45 ust. 1. Ta zasada nie opisuje, czy wniosek można wyrazić w zeznaniu złożonym po terminie albo w korekcie zeznania (otwarte pytanie do eksperta).
+            uses: [termin.zeznanie_skala]
+            basis: art. 6 ust. 2 i 2a oraz art. 45 ust. 1 ustawy o podatku dochodowym od osób fizycznych
+          - text: Łączne opodatkowanie nie ma zastosowania w przypadkach wyłączonych przepisem o podatku liniowym, ryczałcie, podatku tonażowym i aktywizacji przemysłu okrętowego; opisuje je osobna zasada.
+            uses: [zasada.opodatkowanie_laczne_wylaczenia]
+            basis: art. 6 ust. 2 i 8 ustawy o podatku dochodowym od osób fizycznych
+          - text: Każdy z małżonków odrębnie ustala swój dochód według art. 9 ust. 1 i 1a i odrębnie odlicza od niego przysługujące mu kwoty pomniejszające dochód. Dochody obojga po tych odliczeniach sumuje się.
+            uses: [zasada.skala_podatek]
+            basis: art. 6 ust. 2 ustawy o podatku dochodowym od osób fizycznych
+          - text: Od połowy łącznych dochodów oblicza się podatek według skali podatkowej. Podatek małżonków to podwójna wysokość tak obliczonego podatku; określa się go na imię obojga małżonków.
+            uses: [podatek.skala]
+            basis: art. 6 ust. 2 i art. 27 ust. 1 ustawy o podatku dochodowym od osób fizycznych
+          - text: Tak samo ustala się podatek, gdy jeden z małżonków w roku podatkowym nie uzyskał przychodów ze źródeł, z których dochód jest opodatkowany według skali, albo osiągnął dochody w wysokości, która nie powoduje obowiązku zapłaty podatku.
+            uses: []
+            basis: art. 6 ust. 3 ustawy o podatku dochodowym od osób fizycznych
+          - text: Wniosek o łączne opodatkowanie może złożyć także podatnik, który w roku podatkowym pozostawał w związku małżeńskim i we wspólności majątkowej, a jego małżonek zmarł w trakcie roku podatkowego albo po jego upływie, przed złożeniem zeznania za ten rok. Stosuje się wtedy ten sam sposób ustalenia podatku, przepisy o małżonku bez przychodów albo bez obowiązku zapłaty podatku, warunki dla małżonków mieszkających za granicą, te same wyłączenia oraz art. 6 ust. 11–13; nie stosuje się przepisów o osobie samotnie wychowującej dzieci.
+            uses: [zasada.opodatkowanie_laczne_wylaczenia]
+            basis: art. 6a ust. 1 i 2 ustawy o podatku dochodowym od osób fizycznych
+          - text: Ta zasada nie opisuje doliczania dochodów małoletnich dzieci (art. 7), odliczeń od dochodu i od podatku przy łącznym opodatkowaniu ani zaliczek w trakcie roku.
+            uses: []
+            basis: art. 7, art. 26, art. 27f i art. 44 ustawy o podatku dochodowym od osób fizycznych
+      note: >-
+        Teksty jednolite poz. 163 (przepisy ogłoszone przed 9 stycznia 2025 r.) i poz. 592 (stan prawny na 1 kwietnia
+        2026 r.) mają to samo brzmienie art. 6 i art. 6a, poza zaktualizowanymi odesłaniami do Dziennika Ustaw w ust. 4e
+        i 4f, więc potwierdzają, że ta zasada obowiązywała 1 stycznia 2025 r. (nie że wtedy zaczęła obowiązywać).
+        Nowelizacje ogłoszone po tekście jednolitym poz. 592 (poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371,
+        1541, 1542 i 1556) nie zmieniają art. 6 ani art. 6a. Ustawa mówi o zeznaniu według ustalonego wzoru; nazwę
+        formularza (PIT-36 albo PIT-37) podaje źródło kontrolne. Zasada podatku według
+        skali i termin zeznania, do których odwołują się kroki, mają wersje od 1 stycznia 2026 r.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (warunki i wniosek)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6 ust. 2
+          quote: "mogą być, z zastrzeżeniem ust. 8, na wspólny wniosek wyrażony w zeznaniu podatkowym, opodatkowani łącznie od sumy swoich dochodów"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (sposób ustalenia podatku)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6 ust. 2
+          quote: "podatek określa się na imię obojga małżonków w podwójnej wysokości podatku obliczonego od połowy łącznych dochodów małżonków"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wniosek jednego z małżonków)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6 ust. 2a
+          quote: "Wniosek, o którym mowa w ust. 2, może być wyrażony przez jednego z małżonków."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (małżonek bez dochodów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6 ust. 3
+          quote: "Zasada wyrażona w ust. 2 ma zastosowanie również, jeżeli jeden z małżonków w roku podatkowym nie uzyskał przychodów"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (małżonkowie mieszkający za granicą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6 ust. 3a
+          quote: "łącznie co najmniej 75 % całkowitego przychodu osiągniętego przez oboje małżonków w danym roku podatkowym"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (umowa o wymianie informacji)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6 ust. 12
+          quote: "Przepisy ust. 3a i 4g stosuje się pod warunkiem istnienia podstawy prawnej wynikającej z umowy o unikaniu podwójnego opodatkowania"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (śmierć małżonka)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6a ust. 1
+          quote: "a jego małżonek zmarł w trakcie roku podatkowego albo zmarł po upływie roku podatkowego przed złożeniem zeznania"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (przepisy stosowane po śmierci małżonka)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6a ust. 2 pkt 2
+          quote: "stosuje się przepisy art. 6 ust. 3, 3a, 8 i 11–13"
+        - title: Dz.U. 2025 poz. 163, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (to samo brzmienie, dla daty początku obowiązywania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/163/text.pdf
+          article: art. 6 ust. 2
+          quote: "podatek określa się na imię obojga małżonków w podwójnej wysokości podatku obliczonego od połowy łącznych dochodów małżonków"
+          as_of: 2025-01-08
+        - title: podatki.gov.pl (MF), Wspólne rozliczenie małżonków, aktualizacja 24.06.2026 (sposób obliczenia)
+          url: https://podatki.gov.pl/poradniki-i-informatory/wspolne-rozliczenie-malzonkow
+          kind: control
+          quote: "sumujesz uzyskane przez Was dochody (po uprzednim dokonaniu przysługujących odliczeń od dochodu odrębnie przez każdego z Was), tak ustaloną sumę dochodów dzielisz przez 2"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Wspólne rozliczenie małżonków, aktualizacja 24.06.2026 (wniosek w zeznaniu)
+          url: https://podatki.gov.pl/poradniki-i-informatory/wspolne-rozliczenie-malzonkow
+          kind: control
+          quote: "złożycie wniosek o wspólne opodatkowanie dochodów, wyrażony w zeznaniu podatkowym PIT-37 lub PIT-36"
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          Przepis wymaga wniosku wyrażonego w zeznaniu, ale nie mówi, czy można go wyrazić w zeznaniu złożonym
+          po terminie albo w korekcie zeznania. Strona MF podaje, że tak; pytanie P16 w docs/pytania-do-eksperta.md.
+
+- id: zasada.samotny_rodzic_opodatkowanie
+  name: Opodatkowanie dochodów osoby samotnie wychowującej dzieci (warunki i sposób ustalenia podatku)
+  kind: rule
+  applies_to: {tax_form: [skala]}
+  versions:
+    - valid_from: 2025-01-01
+      value:
+        steps:
+          - text: Sposób opodatkowania dla osoby samotnie wychowującej dzieci może stosować rodzic albo opiekun prawny podlegający nieograniczonemu obowiązkowi podatkowemu, który jest panną, kawalerem, wdową, wdowcem, rozwódką, rozwodnikiem, osobą w separacji orzeczonej według odrębnych przepisów albo osobą, której małżonek został pozbawiony praw rodzicielskich lub odbywa karę pozbawienia wolności, jeżeli w roku podatkowym samotnie wychowuje dzieci małoletnie, dzieci pełnoletnie, które otrzymywały zasiłek (dodatek) pielęgnacyjny lub rentę socjalną, albo dzieci pełnoletnie do ukończenia 25. roku życia uczące się w szkołach według przepisów o systemie oświaty lub szkolnictwie wyższym, w Polsce albo w innym państwie.
+            uses: []
+            basis: art. 6 ust. 4c i art. 3 ust. 1 ustawy o podatku dochodowym od osób fizycznych
+          - text: Dziecka uczącego się do ukończenia 25. roku życia nie uwzględnia się, jeżeli w roku podatkowym uzyskało dochody opodatkowane według art. 27 lub art. 30b (z wyjątkiem renty rodzinnej) albo przychody z art. 21 ust. 1 pkt 148 i 152 w łącznej wysokości przekraczającej dwunastokrotność kwoty renty socjalnej obowiązującej w grudniu roku podatkowego.
+            uses: []
+            basis: art. 6 ust. 4e ustawy o podatku dochodowym od osób fizycznych
+          - text: Tego sposobu nie stosuje się do osoby, która wychowuje co najmniej jedno dziecko wspólnie z drugim rodzicem albo opiekunem prawnym, także gdy dziecko jest pod opieką naprzemienną, w związku z którą obojgu rodzicom ustalono świadczenie wychowawcze według art. 5 ust. 2a ustawy o pomocy państwa w wychowywaniu dzieci. Nie stosuje się go też w przypadkach wyłączonych przepisem o podatku liniowym, ryczałcie, podatku tonażowym i aktywizacji przemysłu okrętowego; opisuje je osobna zasada.
+            uses: [zasada.opodatkowanie_laczne_wylaczenia]
+            basis: art. 6 ust. 4f i 8 ustawy o podatku dochodowym od osób fizycznych
+          - text: Ten sam sposób stosuje się do osoby z ograniczonym obowiązkiem podatkowym, która samotnie wychowuje takie dzieci, jeżeli łącznie ma miejsce zamieszkania dla celów podatkowych w innym państwie Unii Europejskiej, Europejskiego Obszaru Gospodarczego albo w Szwajcarii, osiągnęła przychody podlegające opodatkowaniu w Polsce w wysokości co najmniej 75% całkowitego przychodu w roku podatkowym i udokumentowała miejsce zamieszkania certyfikatem rezydencji. Obowiązują wtedy te same warunki co do dzieci, wspólnego wychowywania i wyłączeń, a także warunek umowy o wymianie informacji podatkowych i obowiązek udokumentowania całkowitych przychodów na żądanie organu podatkowego.
+            uses: []
+            basis: art. 6 ust. 4g, 4h i 11–13 oraz art. 3 ust. 2a ustawy o podatku dochodowym od osób fizycznych
+          - text: Podatek ustala się na wniosek wyrażony w rocznym zeznaniu podatkowym. Zeznanie składa się w terminie z art. 45 ust. 1. Ta zasada nie opisuje, czy wniosek można wyrazić w zeznaniu złożonym po terminie albo w korekcie zeznania (otwarte pytanie do eksperta).
+            uses: [termin.zeznanie_skala]
+            basis: art. 6 ust. 4c i art. 45 ust. 1 ustawy o podatku dochodowym od osób fizycznych
+          - text: Podatek to podwójna wysokość podatku obliczonego według skali od połowy dochodów osoby samotnie wychowującej dzieci, z uwzględnieniem doliczenia dochodów małoletnich dzieci według art. 7. Do sumy tych dochodów nie wlicza się dochodów (przychodów) opodatkowanych w sposób zryczałtowany na zasadach ustawy o podatku dochodowym od osób fizycznych.
+            uses: [podatek.skala, zasada.skala_podatek]
+            basis: art. 6 ust. 4d i art. 27 ust. 1 ustawy o podatku dochodowym od osób fizycznych
+          - text: Ta zasada nie opisuje, czy warunek samotnego wychowywania dzieci musi być spełniony przez cały rok podatkowy (otwarte pytanie do eksperta), doliczania dochodów małoletnich dzieci (art. 7), odliczeń od dochodu i od podatku ani zaliczek w trakcie roku.
+            uses: []
+            basis: art. 6 ust. 4c, art. 7, art. 26, art. 27f i art. 44 ustawy o podatku dochodowym od osób fizycznych
+      note: >-
+        Teksty jednolite poz. 163 (przepisy ogłoszone przed 9 stycznia 2025 r.) i poz. 592 (stan prawny na 1 kwietnia
+        2026 r.) mają to samo brzmienie art. 6 ust. 4c–4h, 8 i 11–13, poza zaktualizowanymi odesłaniami do Dziennika
+        Ustaw w ust. 4e i 4f, więc potwierdzają, że ta zasada obowiązywała 1 stycznia 2025 r. (nie że wtedy zaczęła
+        obowiązywać). Nowelizacje ogłoszone po tekście jednolitym poz. 592 nie zmieniają art. 6. Nazwę formularza
+        (PIT-36 albo PIT-37) podaje źródło kontrolne. Zasada podatku według skali
+        i termin zeznania, do których odwołują się kroki, mają wersje od 1 stycznia 2026 r.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (warunki)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6 ust. 4c
+          quote: "jeżeli ten rodzic lub opiekun w roku podatkowym samotnie wychowuje dzieci"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (sposób ustalenia podatku)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6 ust. 4d
+          quote: "podatek jest określany w podwójnej wysokości podatku obliczonego od połowy dochodów osoby samotnie wychowującej dzieci"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dochody dziecka uczącego się)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6 ust. 4e
+          quote: "w łącznej wysokości przekraczającej dwunastokrotność kwoty renty socjalnej"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wspólne wychowywanie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6 ust. 4f
+          quote: "nie ma zastosowania do osoby, która wychowuje wspólnie z drugim rodzicem albo opiekunem prawnym co najmniej jedno dziecko"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (osoby mieszkające za granicą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6 ust. 4g
+          quote: "co najmniej 75 % całkowitego przychodu osiągniętego w danym roku podatkowym"
+        - title: Dz.U. 2025 poz. 163, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (to samo brzmienie, dla daty początku obowiązywania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/163/text.pdf
+          article: art. 6 ust. 4d
+          quote: "podatek jest określany w podwójnej wysokości podatku obliczonego od połowy dochodów osoby samotnie wychowującej dzieci"
+          as_of: 2025-01-08
+        - title: podatki.gov.pl (MF), Osoba samotnie wychowująca dziecko, aktualizacja 24.06.2026 (sposób obliczenia)
+          url: https://podatki.gov.pl/poradniki-i-informatory/osoba-samotnie-wychowujaca-dziecko
+          kind: control
+          quote: "dzielisz uzyskane przez Ciebie dochody (po uprzednim dokonaniu przysługujących odliczeń od dochodu) przez 2"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Osoba samotnie wychowująca dziecko, aktualizacja 24.06.2026 (wniosek w zeznaniu)
+          url: https://podatki.gov.pl/poradniki-i-informatory/osoba-samotnie-wychowujaca-dziecko
+          kind: control
+          quote: "złożysz wniosek o preferencyjne rozliczenie w zeznaniu PIT-37 lub PIT-36"
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          Przepis wymaga wniosku wyrażonego w rocznym zeznaniu, ale nie mówi, czy można go wyrazić w zeznaniu złożonym
+          po terminie albo w korekcie zeznania. Strona MF podaje, że korekta jest możliwa. Przepis mówi też, że rodzic
+          „w roku podatkowym samotnie wychowuje dzieci”, ale nie mówi, czy przez cały rok; strona MF podaje, że nie musi
+          to być cały rok. Pytanie P16 w docs/pytania-do-eksperta.md.
+
+- id: zasada.opodatkowanie_laczne_wylaczenia
+  name: Kiedy nie można się rozliczyć wspólnie z małżonkiem ani jako osoba samotnie wychowująca dzieci
+  kind: rule
+  versions:
+    - valid_from: 2025-01-01
+      value:
+        steps:
+          - text: Wspólnego opodatkowania małżonków ani sposobu opodatkowania dla osoby samotnie wychowującej dzieci nie stosuje się, gdy choćby jeden z małżonków, osoba samotnie wychowująca dziecko albo jej dziecko stosuje przepisy o podatku liniowym (art. 30c) w zakresie osiągniętych w roku podatkowym przychodów, poniesionych kosztów uzyskania przychodów, zobowiązania lub uprawnienia do zwiększania lub pomniejszania podstawy opodatkowania albo przychodów, zobowiązania lub uprawnienia do dokonywania innych doliczeń lub odliczeń.
+            uses: [podatek.liniowy.stawka]
+            basis: art. 6 ust. 8 pkt 1 lit. a ustawy o podatku dochodowym od osób fizycznych
+          - text: To samo dotyczy stosowania w tym samym zakresie przepisów ustawy o zryczałtowanym podatku dochodowym, z wyjątkiem art. 6 ust. 1a tej ustawy, czyli ryczałtu od przychodów z najmu, podnajmu, dzierżawy, poddzierżawy i podobnych umów z art. 10 ust. 1 pkt 6 ustawy o podatku dochodowym od osób fizycznych (poza składnikami majątku związanymi z działalnością gospodarczą).
+            uses: [ryczalt.stawki]
+            basis: art. 6 ust. 8 pkt 1 lit. b ustawy o podatku dochodowym od osób fizycznych; art. 6 ust. 1a ustawy o zryczałtowanym podatku dochodowym; art. 10 ust. 1 pkt 6 ustawy o podatku dochodowym od osób fizycznych
+          - text: To samo dotyczy osoby, która podlega opodatkowaniu na zasadach ustawy o podatku tonażowym albo ustawy o aktywizacji przemysłu okrętowego i przemysłów komplementarnych.
+            uses: []
+            basis: art. 6 ust. 8 pkt 2 ustawy o podatku dochodowym od osób fizycznych
+          - text: Te wyłączenia stosuje się także do małżonków, z których oboje albo jeden mają miejsce zamieszkania dla celów podatkowych w innym państwie Unii Europejskiej, Europejskiego Obszaru Gospodarczego albo w Szwajcarii, do osób samotnie wychowujących dzieci, które mają takie miejsce zamieszkania, oraz do wspólnego rozliczenia po śmierci małżonka.
+            uses: [zasada.malzonkowie_wspolne_opodatkowanie, zasada.samotny_rodzic_opodatkowanie]
+            basis: art. 6 ust. 3a i 4h oraz art. 6a ust. 2 pkt 2 ustawy o podatku dochodowym od osób fizycznych
+          - text: Ta zasada nie opisuje, jak ocenić rok, w którym ktoś zmienił w trakcie roku podatek liniowy albo ryczałt na skalę podatkową, ani rok, w którym przy działalności na podatku liniowym albo ryczałcie nie było przychodów, kosztów ani odliczeń (otwarte pytanie do eksperta).
+            uses: []
+            basis: art. 6 ust. 8 pkt 1 ustawy o podatku dochodowym od osób fizycznych
+      note: >-
+        Teksty jednolite poz. 163 (przepisy ogłoszone przed 9 stycznia 2025 r.) i poz. 592 (stan prawny na 1 kwietnia
+        2026 r.) mają to samo brzmienie art. 6 ust. 8 i art. 6a, więc potwierdzają, że ta zasada obowiązywała
+        1 stycznia 2025 r. (nie że wtedy zaczęła obowiązywać). Nowelizacje ogłoszone po tekście jednolitym poz. 592 nie
+        zmieniają art. 6 ani art. 6a. Brzmienie art. 6 ust. 1a ustawy o zryczałtowanym podatku dochodowym według tekstu
+        jednolitego Dz.U. 2025 poz. 843.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wyłączenie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6 ust. 8
+          quote: "Sposób opodatkowania, o którym mowa w ust. 2 i 4d, nie ma zastosowania, w przypadku gdy chociażby jeden z małżonków, osoba samotnie wychowująca dziecko lub jej dziecko"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ryczałt i wyjątek)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6 ust. 8 pkt 1 lit. b
+          quote: "ustawy o zryczałtowanym podatku dochodowym, z wyjątkiem art. 6 ust. 1a tej ustawy"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (zakres wyłączenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6 ust. 8 pkt 1
+          quote: "w zakresie osiągniętych w roku podatkowym przychodów, poniesionych kosztów uzyskania przychodów, zobowiązania lub uprawnienia do zwiększania lub pomniejszenia podstawy opodatkowania"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (podatek tonażowy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6 ust. 8 pkt 2
+          quote: "podlega opodatkowaniu na zasadach wynikających z ustawy z dnia 24 sierpnia 2006 r. o podatku tonażowym"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (najem jako źródło przychodów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 10 ust. 1 pkt 6
+          quote: "najem, podnajem, dzierżawa, poddzierżawa oraz inne umowy o podobnym charakterze"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (ryczałt od najmu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 6 ust. 1a
+          quote: "z tytułów, o których mowa w art. 10 ust. 1 pkt 6 ustawy o podatku dochodowym"
+        - title: Dz.U. 2025 poz. 163, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (to samo brzmienie, dla daty początku obowiązywania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/163/text.pdf
+          article: art. 6 ust. 8
+          quote: "Sposób opodatkowania, o którym mowa w ust. 2 i 4d, nie ma zastosowania, w przypadku gdy chociażby jeden z małżonków, osoba samotnie wychowująca dziecko lub jej dziecko"
+          as_of: 2025-01-08
+        - title: biznes.gov.pl, Najważniejsze zasady opodatkowania według skali podatkowej, aktualizacja 07.01.2026 (rozliczanie z małżonkiem; tylko małżonkowie, podatek liniowy i ryczałt)
+          url: https://www.biznes.gov.pl/pl/portal/00264
+          kind: control
+          quote: "Wspólne rozliczenie z małżonkiem nie jest możliwe, jeżeli choćby jeden z małżonków prowadzi działalność gospodarczą opodatkowaną podatkiem liniowym, ryczałtem od przychodów ewidencjonowanych lub kartą podatkową i z tego tytułu osiąga jakiekolwiek przychody, poniósł koszty, skorzystał z odliczeń bądź ulg"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Wspólne rozliczenie małżonków, aktualizacja 24.06.2026 (wyłączenia)
+          url: https://podatki.gov.pl/poradniki-i-informatory/wspolne-rozliczenie-malzonkow
+          kind: control
+          quote: "nie stosowało przepisów dotyczących 19% podatku liniowego lub ustawy o zryczałtowanym podatku dochodowym (z wyjątkiem przepisów dotyczących przychodów z najmu lub dzierżawy prowadzonych poza działalnością gospodarczą)"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Osoba samotnie wychowująca dziecko, aktualizacja 24.06.2026 (wyłączenia)
+          url: https://podatki.gov.pl/poradniki-i-informatory/osoba-samotnie-wychowujaca-dziecko
+          kind: control
+          quote: "19% podatku liniowego lub przepisy ustawy o zryczałtowanym podatku dochodowym (z wyłączeniem przychodów z najmu lub dzierżawy prowadzonych poza działalnością gospodarczą)"
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          Przepis wyłącza łączne opodatkowanie przy stosowaniu podatku liniowego albo ryczałtu „w zakresie” przychodów,
+          kosztów i odliczeń z roku podatkowego. Strony MF i biznes.gov.pl podają, że nie wyklucza go rok bez przychodów,
+          kosztów i odliczeń na tej formie („zerowy” PIT-36L); biznes.gov.pl podaje też, że wyklucza go zmiana w trakcie
+          roku z podatku liniowego albo ryczałtu na skalę. Pytanie P15 w docs/pytania-do-eksperta.md.
