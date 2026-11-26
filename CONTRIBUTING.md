@@ -13,6 +13,7 @@ niezależne źródła dla wpisów z pewnością `niska` i poprawki kodu.
 - Nie publikuj swoich danych podatkowych: kwot z deklaracji, NIP, PESEL, numerów rachunków, skanów
   dokumentów. Repozytorium i zgłoszenia są publiczne. Jeśli wartość zgadza się z Twoją deklaracją,
   napisz tylko, z jaką deklaracją i za jaki okres (pole `filed_documents`), bez kwot.
+- Dane opierają się wyłącznie na źródłach publicznych i na wkładzie kontrybutorów.
 - Nie dodajemy kalkulatorów, przykładów liczbowych ani formuł wykonywalnych. Serwer podaje
   wartości i opisuje zasady słowami; liczy klient.
 
