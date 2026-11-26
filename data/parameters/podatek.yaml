@@ -86,3 +86,60 @@
           quote: "12% - od przychodów ze świadczenia niektórych usług informatycznych"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: podatek.liniowy.stawka
+  name: Stawka podatku liniowego od dochodów z działalności gospodarczej
+  unit: "% podstawy"
+  applies_to: {tax_form: [liniowy]}
+  versions:
+    - valid_from: 2020-01-01
+      value: 19
+      note: >-
+        Teksty jednolite poz. 1387 (przepisy ogłoszone przed 3 lipca 2019 r.), poz. 1426 (przed 24 lipca 2020 r.)
+        i poz. 592 (stan prawny na 1 kwietnia 2026 r.) mają to samo brzmienie art. 30c ust. 1, więc potwierdzają,
+        że ta stawka obowiązywała 1 stycznia 2020 r. (nie że wtedy zaczęła obowiązywać).
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30c ust. 1
+          quote: "z zastrzeżeniem art. 29 i art. 30, wynosi 19 % podstawy obliczenia podatku"
+        - title: Dz.U. 2019 poz. 1387, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dla daty początku obowiązywania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2019/1387/text.pdf
+          article: art. 30c ust. 1
+          quote: "z zastrzeżeniem art. 29 i art. 30, wynosi 19 % podstawy obliczenia podatku"
+          as_of: 2019-07-02
+        - title: Dz.U. 2020 poz. 1426, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dla daty początku obowiązywania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2020/1426/text.pdf
+          article: art. 30c ust. 1
+          quote: "z zastrzeżeniem art. 29 i art. 30, wynosi 19 % podstawy obliczenia podatku"
+          as_of: 2020-07-23
+        - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym, aktualizacja 24.06.2026
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
+          kind: control
+          quote: "Podatek wynosi 19% dochodu bez względu na to, jak wysoki dochód osiągasz"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: podatek.liniowy.limit_skladki_zdrowotnej
+  name: Roczny limit składki zdrowotnej odliczanej od dochodu albo zaliczanej do kosztów przy podatku liniowym
+  unit: PLN/rok
+  applies_to: {tax_form: [liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      valid_to: 2026-12-31
+      value: 14100
+      note: >-
+        Łączny limit składek zaliczonych do kosztów uzyskania przychodów i odliczonych od dochodu w roku podatkowym.
+        Kwota z ustawy jest co roku podwyższana i ogłaszana obwieszczeniem w Monitorze Polskim.
+        Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: M.P. 2025 poz. 1274, obwieszczenie Ministra Finansów i Gospodarki z 12 grudnia 2025 r.
+          url: https://api.sejm.gov.pl/eli/acts/MP/2025/1274/text.pdf
+          article: art. 30c ust. 2 pkt 2 i ust. 2c, art. 23 ust. 1 pkt 58 ustawy o podatku dochodowym od osób fizycznych
+          quote: "w roku 2026 nie może przekroczyć 14 100 zł"
+        - title: podatki.gov.pl (MF), Odliczenie składek na ubezpieczenie zdrowotne PIT, aktualizacja 23.11.2026 (podatek liniowy)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/odliczenie-skladek-na-ubezpieczenie-zdrowotne-pit
+          kind: control
+          quote: "Wysokość odliczenia nie może jednak przekroczyć: w 2026 r. kwoty 14 100 zł"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}

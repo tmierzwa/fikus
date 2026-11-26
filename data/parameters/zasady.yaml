@@ -90,6 +90,68 @@
           wymienia złożenie deklaracji i wniesienie odwołania, zapłaty nie wymienia. Brak drugiego źródła urzędowego po zmianie.
           Pytanie do eksperta: docs/pytania-do-eksperta.md, P5.
 
+- id: zasada.liniowy_podatek
+  name: Podatek liniowy i zaliczki miesięczne
+  kind: rule
+  applies_to: {tax_form: [liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Ustal dochód z działalności według art. 9 ust. 1, 2–3b i 5, art. 24 ust. 1, 2, 3b–3e i ust. 4 zdanie pierwsze albo art. 24b ust. 1 i 2, albo art. 23o ustawy o PIT, czyli przychody pomniejszone o koszty ich uzyskania, z uwzględnieniem obniżenia o straty z lat poprzednich na zasadach art. 9 ust. 3.
+            uses: []
+            basis: art. 30c ust. 2 zdanie pierwsze ustawy o podatku dochodowym od osób fizycznych
+          - text: Dochód możesz pomniejszyć o składki na ubezpieczenia społeczne z art. 26 ust. 1 pkt 2 lit. a i pkt 2a ustawy o PIT zapłacone w roku podatkowym, na warunkach z tych przepisów (przy pkt 2 bez składek, których podstawą są dochody zwolnione albo dochody, od których zaniechano poboru podatku; przy pkt 2a z zastrzeżeniem art. 26 ust. 13a–13c), jeżeli nie zostały zaliczone do kosztów, odliczone od dochodów opodatkowanych według skali ani od przychodów na ryczałcie i nie zostały zwrócone.
+            uses: [zus.stawka.emerytalna, zus.stawka.rentowa, zus.stawka.chorobowa, zus.stawka.wypadkowa_do_9]
+            basis: art. 30c ust. 2 pkt 1, ust. 3 i 3a w zw. z art. 26 ust. 1 pkt 2 lit. a i pkt 2a oraz ust. 13a–13c ustawy o podatku dochodowym od osób fizycznych
+          - text: Dochód możesz pomniejszyć o składki zdrowotne zapłacone w roku podatkowym z tytułu tej działalności i za osoby współpracujące, z tymi samymi warunkami z art. 30c ust. 3. Składki zdrowotne zaliczone do kosztów i odliczone od dochodu łącznie nie mogą przekroczyć rocznego limitu.
+            uses: [podatek.liniowy.limit_skladki_zdrowotnej]
+            basis: art. 30c ust. 2 pkt 2, ust. 2b, 2c i 3 oraz art. 23 ust. 1 pkt 58 ustawy o podatku dochodowym od osób fizycznych
+          - text: Dochód możesz też pomniejszyć o wpłaty na indywidualne konto zabezpieczenia emerytalnego do wysokości określonej w przepisach o tych kontach (to odliczenie tylko w zeznaniu) oraz o darowiznę na cele kształcenia zawodowego z art. 26 ust. 1 pkt 9 lit. d ustawy o PIT, nie więcej niż 6% dochodu. Do obu stosuje się warunki z art. 30c ust. 3.
+            uses: []
+            basis: art. 30c ust. 2 pkt 3 i 4, ust. 3, 3a i 3b oraz art. 26 ust. 1 pkt 2b ustawy o podatku dochodowym od osób fizycznych
+          - text: Podatek to podstawa pomnożona przez stawkę podatku liniowego. Podstawę opodatkowania i kwotę podatku zaokrąglij do pełnych złotych; końcówki poniżej 50 groszy pomiń, a od 50 groszy podwyższ do pełnego złotego. Ta zasada nie opisuje odliczeń od podstawy obliczenia podatku z art. 26e, 26ga, 26gb, 26h–26he, 26i, 52jb, 52n i 52x ustawy o PIT ani odliczenia podatku zapłaconego za granicą z art. 30c ust. 4.
+            uses: [podatek.liniowy.stawka]
+            basis: art. 30c ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 63 § 1 Ordynacji podatkowej
+          - text: Przy zaliczkach miesięcznych zaliczka za miesiąc to różnica między podatkiem od dochodu osiągniętego od początku roku, obliczonym według kroków powyżej, a sumą należnych zaliczek za poprzednie miesiące. Zamiast tego mały podatnik i podatnik rozpoczynający działalność mogą wpłacać zaliczki kwartalne (art. 44 ust. 3h i 3i), a podatnik może wybrać zaliczki uproszczone (art. 44 ust. 6b–6e i 6h, z obniżeniem o część składki zdrowotnej według art. 44 ust. 6j); ta zasada tych sposobów nie opisuje.
+            uses: [podatek.liniowy.stawka, termin.zaliczka_liniowy]
+            basis: art. 44 ust. 3f ustawy o podatku dochodowym od osób fizycznych
+      note: >-
+        Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku obowiązywania (2026-01-01)
+        nie jest potwierdzona źródłem. Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (podstawa i odliczenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30c ust. 2
+          quote: "Dochód ten podatnicy mogą pomniejszyć o: 1) składki na ubezpieczenia społeczne określone w art. 26 ust. 1 pkt 2 lit. a i pkt 2a"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (stawka)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30c ust. 1
+          quote: "z zastrzeżeniem art. 29 i art. 30, wynosi 19 % podstawy obliczenia podatku"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (zaliczki)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 3f
+          quote: "wpłacać na rachunek urzędu skarbowego zaliczki miesięczne w wysokości różnicy między podatkiem należnym od dochodu osiągniętego od początku roku, obliczonym zgodnie z art. 30c"
+        - title: Dz.U. 2026 poz. 622, tekst jednolity Ordynacji podatkowej (zaokrąglenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/622/text.pdf
+          article: art. 63 § 1
+          quote: "Podstawy opodatkowania, kwoty podatków, odsetki za zwłokę, opłaty prolongacyjne, oprocentowanie nadpłat oraz wynagrodzenia przysługujące płatnikom i inkasentom zaokrągla się do pełnych złotych"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (zaliczki uproszczone)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 6j
+          quote: "Zaliczkę obliczoną zgodnie z ust. 6h podatnik może obniżyć o kwotę stanowiącą 19 % składki na ubezpieczenie zdrowotne"
+        - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym, aktualizacja 24.06.2026
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
+          kind: control
+          quote: "możesz zaliczać do kosztów uzyskania przychodów lub odliczać od dochodu składki na ubezpieczenie zdrowotne (do wysokości limitu)"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Odliczenie składek na ubezpieczenie zdrowotne PIT, aktualizacja 23.11.2026 (podatek liniowy)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/odliczenie-skladek-na-ubezpieczenie-zdrowotne-pit
+          kind: control
+          quote: "Odliczasz składki na ubezpieczenie zdrowotne, które zapłaciłeś(-aś) w danym roku podatkowym"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
 - id: zasada.ryczalt_zdrowotna_prog
   name: Wybór progu składki zdrowotnej na ryczałcie
   kind: rule
