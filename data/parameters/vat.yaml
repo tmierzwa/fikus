@@ -68,7 +68,7 @@
         - title: biznes.gov.pl, Jak prawidłowo rozliczyć VAT, aktualizacja 02.11.2026 (podaje 23%, 8% i 5%)
           url: https://www.biznes.gov.pl/pl/portal/00232
           kind: control
-          quote: "23% – tyle wynosi podstawowa stawka podatku od towarów i usług"
+          quote: "23% – tyle wynosi podstawowa stawka podatku od towarów i usług 8% – stawka obniżona, dotyczy m.in. budownictwa objętego społecznym programem mieszkaniowym, niektórych usług związanych z kulturą, sportem, rekreacją 5% – stawka obniżona, obejmuje m.in. podstawowe produkty żywnościowe (np. pieczywo, nabiał), niektóre artykuły dla niemowląt, książki i e-booki"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26}
 
@@ -138,7 +138,7 @@
           - text: Jeżeli nie odliczysz podatku także w tych terminach, możesz to zrobić przez korektę deklaracji za okres, w którym powstało prawo, albo za jeden z trzech następnych okresów (przy deklaracjach kwartalnych – dwóch), nie później niż w ciągu 5 lat, licząc od początku roku, w którym powstało prawo. Przy wewnątrzwspólnotowym nabyciu towarów oraz dostawach i usługach, dla których podatnikiem jest nabywca, korektę składasz za okres, w którym powstało prawo, nie później niż w ciągu 5 lat, licząc od końca roku, w którym ono powstało.
             uses: []
             basis: art. 86 ust. 13 i 13a ustawy o VAT
-          - text: Przy wydatkach związanych z pojazdami samochodowymi (pojazdy o dopuszczalnej masie całkowitej nieprzekraczającej 3,5 tony) podatkiem naliczonym jest 50% kwoty podatku z faktury, dokumentu celnego, deklaracji importowej albo decyzji oraz podatku należnego, który rozliczasz jako nabywca. Dotyczy to wydatków na nabycie, import lub wytworzenie pojazdu i jego części, na używanie pojazdu na podstawie najmu, dzierżawy, leasingu lub podobnej umowy oraz na paliwo, naprawy, konserwację i inne towary i usługi związane z eksploatacją lub używaniem pojazdu.
+          - text: Przy wydatkach związanych z pojazdami samochodowymi (pojazdy o dopuszczalnej masie całkowitej nieprzekraczającej 3,5 tony) podatkiem naliczonym jest 50% kwoty podatku z faktury, dokumentu celnego, deklaracji importowej albo decyzji, podatku należnego, który rozliczasz jako nabywca, oraz podatku należnego przy imporcie rozliczanym w deklaracji (art. 33a). Dotyczy to wydatków na nabycie, import lub wytworzenie pojazdu i jego części, na używanie pojazdu na podstawie najmu, dzierżawy, leasingu lub podobnej umowy oraz na paliwo, naprawy, konserwację i inne towary i usługi związane z eksploatacją lub używaniem pojazdu.
             uses: []
             basis: art. 86a ust. 1 i 2 oraz art. 2 pkt 34 ustawy o VAT
           - text: Ograniczenia do 50% nie stosujesz, gdy pojazd jest wykorzystywany wyłącznie do Twojej działalności gospodarczej albo jest konstrukcyjnie przeznaczony do przewozu co najmniej 10 osób łącznie z kierowcą, jeżeli wynika to z dokumentów wydanych na podstawie przepisów o ruchu drogowym. Nie stosujesz go też do towarów montowanych w pojeździe i związanych z nimi usług montażu, naprawy i konserwacji, jeżeli przeznaczenie tych towarów obiektywnie wskazuje na możliwość wykorzystywania ich wyłącznie do działalności gospodarczej.
@@ -163,8 +163,11 @@
             uses: []
             basis: art. 86 ust. 2a i 10d, art. 86a ust. 16 i 17, art. 87, art. 88 ust. 6, art. 89a, 89b, 90 i 91 ustawy o VAT
       note: >-
-        Tekst jednolity potwierdza stan prawny na 26 sierpnia 2026 r.; cytowane przepisy mają to samo brzmienie w tekście
-        jednolitym Dz.U. 2025 poz. 775. Data początku obowiązywania (2026-01-01) nie jest potwierdzona źródłem. Ustawa Dz.U. 2026
+        Data początku obowiązywania (2026-01-01) to początek okresu, w którym sprawdzono brzmienie przepisów, a nie dzień ich
+        wejścia w życie: teksty jednolite Dz.U. 2025 poz. 775 i Dz.U. 2026 poz. 1263 (stan prawny na 26 sierpnia 2026 r.) mają
+        to samo brzmienie cytowanych przepisów. Strona biznes.gov.pl „Odliczenie i zwrot podatku od towarów i usług”
+        (https://www.biznes.gov.pl/pl/portal/00249, aktualizacja 13.03.2026) potwierdza kroki 5 i 6 i część kroku 3, a korektę
+        (krok 7) opisuje inaczej, więc nie jest drugim źródłem zasady. Ustawa Dz.U. 2026
         poz. 1270 nadaje od 1 stycznia 2027 r. nowe brzmienie art. 88 ust. 3a pkt 4 lit. c (czynności dokonane w warunkach nadużycia
         prawa zamiast czynności z art. 58 i 83 Kodeksu cywilnego); kroki tego przypadku nie opisują. Nie zmienia art. 86 ani 86a.
         Ustawy Dz.U. 2026 poz. 1446, 1509 i 1556 nie zmieniają art. 86, 86a ani 88.
@@ -250,9 +253,4 @@
           quote: "może obniżyć kwotę podatku należnego w deklaracji podatkowej za jeden z trzech następnych okresów rozliczeniowych, a w przypadku podatnika, o którym mowa w art. 99 ust. 2 i 3, w deklaracji podatkowej za jeden z dwóch następnych okresów rozliczeniowych"
           article: art. 86 ust. 11
           as_of: 2025-06-16
-        - title: biznes.gov.pl, Odliczenie i zwrot podatku od towarów i usług, aktualizacja 13.03.2026 (kroki 3, 5, 6 i 7 bez ust. 13a; w krokach 8, 12, 13 i 14 tylko ogólnie)
-          url: https://www.biznes.gov.pl/pl/portal/00249
-          kind: control
-          quote: "Jeżeli nie odliczysz VAT w pierwszym możliwym okresie rozliczeniowym, możesz to zrobić: w jednym z kolejnych trzech okresów rozliczeniowych, w przypadku podatników rozliczających VAT w okresach miesięcznych lub w jednym z dwóch następnych okresów rozliczeniowych, w przypadku podatników rozliczających VAT w okresach kwartalnych."
-          as_of: 2026-11-26
       verification: {checked_at: 2026-11-26}
