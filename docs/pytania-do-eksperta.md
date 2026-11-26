@@ -348,3 +348,13 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   wśród odliczeń, po których koryguje się podstawę (art. 1 pkt 3).
 - Pytanie dodatkowe: w jakiej kolejności po 2026 r. stosuje się odliczenie i doliczenie z art. 26gb (ust. 9 i 6) za koszty
   sprzed 2027 r. i korektę podstawy z art. 26i: czy art. 26i stosuje się do podstawy przed nimi, czy po nich?
+
+## P30. Limit odliczenia składki zdrowotnej przy podatku liniowym na 2027 r.
+
+- Wpis: `podatek.liniowy.limit_skladki_zdrowotnej` (2027-01-01 – 2027-12-31, 15 100 zł).
+- Zgłoszone: 2026-11-26.
+- Obwieszczenie Ministra Finansów i Gospodarki z 16 listopada 2026 r. (M.P. 2026 poz. 1163), wydane na podstawie
+  art. 30c ust. 2c ustawy o PIT: łączna kwota „w roku 2027 nie może przekroczyć 15 100 zł”.
+- Na 26 listopada 2026 r. żadna strona urzędu (podatki.gov.pl, biznes.gov.pl) nie podaje jeszcze kwoty na 2027 r.,
+  więc wartość nie ma drugiego dowodu.
+- Pytanie: czy limit z art. 30c ust. 2 pkt 2 ustawy o PIT na rok podatkowy 2027 wynosi 15 100 zł?
