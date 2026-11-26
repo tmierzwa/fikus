@@ -11,10 +11,11 @@ Lukę w kodzie (na przykład w pobieraniu i przetwarzaniu źródeł) zgłoś pry
 „Report a vulnerability” w zakładce Security repozytorium. Nie opisuj jej w publicznym issue.
 
 Serwer MCP działa lokalnie przez stdio i tylko czyta pliki z `data/`. Nie łączy się z siecią
-i nie przyjmuje połączeń z zewnątrz. Z siecią łączy się tylko `scripts/sprawdz_cytaty.py`.
-Pobiera wyłącznie adresy `https://`, nie idzie za przekierowaniem na inny protokół, odrzuca
-pliki większe niż 50 MB i zapisuje teksty w `.cache/zrodla/`. Adresy źródeł pochodzą z danych
-w repozytorium, więc nowe adresy w PR warto obejrzeć przed uruchomieniem skryptu.
+i nie przyjmuje połączeń z zewnątrz. Z siecią łączą się tylko skrypty `scripts/sprawdz_cytaty.py`
+i `scripts/wykryj_zmiany.py` (API ELI Sejmu). Pobierają wyłącznie adresy `https://`, nie idą
+za przekierowaniem na inny protokół i mają limit rozmiaru odpowiedzi. Teksty źródeł trafiają
+do `.cache/zrodla/`. Adresy źródeł pochodzą z danych w repozytorium, więc nowe adresy w PR warto
+obejrzeć przed uruchomieniem skryptów.
 
 ## Kontakt
 

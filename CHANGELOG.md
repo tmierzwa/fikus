@@ -6,6 +6,22 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ## [Niewydane]
 
+### Dodane
+
+- `scripts/wykryj_zmiany.py`: cotygodniowe wykrywanie zmian w cytowanych aktach (API ELI Sejmu)
+  i wersji kończących się bez następczyni; przejrzane nowelizacje w `data/zmiany_sprawdzone.yaml`.
+- Publikacja na PyPI przez Trusted Publishing i `server.json` dla MCP Registry.
+- Sprawdzanie kształtu wartości przy wczytywaniu danych (terminy, zasady, kalendarz).
+
+### Zmienione
+
+- Serwer zgodny ze specyfikacją MCP 2026-07-28 i SDK `mcp` 2.x: schematy wyników, adnotacje
+  tylko do odczytu, błędy narzędzi z listą poprawnych wartości. Wymaga `mcp>=2.3`.
+- Dane opierają się wyłącznie na źródłach publicznych i wkładzie kontrybutorów; usunięte dowody
+  oparte na deklaracjach opiekuna.
+- Pobieranie źródeł tylko przez https, z limitem rozmiaru i czasu.
+- Metadane paczki (PEP 639), licencja `Apache-2.0 AND CC-BY-4.0`, nowe README z logo.
+
 ## [0.1.0] - 2026-11-26
 
 ### Dodane

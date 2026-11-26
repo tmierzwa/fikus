@@ -19,7 +19,7 @@ Fikus to serwer MCP z parametrami przepisów dla JDG. To samodzielny projekt spo
 - Pewność liczy model (`confidence`). Jest wysoka, gdy wersja ma cytat ze źródła pierwotnego, co najmniej dwa inne dowody i nie ma `open_issue`. Dowody to:
   - `independent: true` lub `kind: control` przy źródle, które samo podaje tę samą wartość (źródła, które dają wartość dopiero razem, nie są niezależne);
   - `agent_check`: data raportu subagenta `weryfikator-zrodel` bez niezgodności; wpisujesz ją dopiero po takim raporcie;
-  - `filed_documents`: zgodność z deklaracją złożoną w urzędzie, opisana bez kwot i danych podatnika;
+  - `filed_documents`: zgodność z deklaracją złożoną w urzędzie, zgłoszona przez kontrybutora i opisana bez kwot i danych podatnika; deklaracje opiekuna nie są dowodem;
   - `expert`: tylko z odpowiedzi eksperta przekazanej przez opiekuna, z datą i podstawą. Imię i nazwisko wpisujesz tylko wtedy, gdy ekspert zgodził się na publikację; inaczej wpisujesz samą kwalifikację.
 - Gdy źródła się różnią, przepis wymaga interpretacji albo brakuje drugiego źródła, wpisz `open_issue` i dopisz pytanie w `docs/pytania-do-eksperta.md`. Nie zgaduj.
 - Przed commitem uruchom `pytest` i `python scripts/sprawdz_cytaty.py`. Skrypt pobiera oficjalne teksty i odrzuca cytat, którego w nich nie ma.

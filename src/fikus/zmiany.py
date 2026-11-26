@@ -17,7 +17,6 @@ from __future__ import annotations
 
 import json
 import re
-import urllib.error
 import urllib.request
 from dataclasses import dataclass
 from datetime import date, timedelta
@@ -26,6 +25,7 @@ from typing import Callable
 
 import yaml
 
+from .cytaty import _HttpsOnlyRedirects
 from .store import Store
 
 API = "https://api.sejm.gov.pl/eli/acts/"
@@ -52,13 +52,6 @@ def eli_id(url: str) -> str | None:
 def _order(act: str) -> tuple[int, int]:
     _, year, pos = act.split("/")
     return int(year), int(pos)
-
-
-class _HttpsOnlyRedirects(urllib.request.HTTPRedirectHandler):
-    def redirect_request(self, req, fp, code, msg, headers, newurl):
-        if not newurl.startswith("https://"):
-            raise urllib.error.URLError(f"przekierowanie poza https: {newurl}")
-        return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
 def fetch_act(act: str) -> dict:

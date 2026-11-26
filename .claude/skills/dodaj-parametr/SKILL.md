@@ -10,5 +10,5 @@ description: Dodaje nowy parametr albo nową wersję parametru w data/parameters
 6. Zasady (`kind: rule`) zapisuj jako kroki słowne. Każdy krok ma `text`, `uses` (identyfikatory parametrów) i `basis` (artykuł). Bez formuł i bez przykładów liczbowych.
 7. Uruchom `python scripts/sprawdz_cytaty.py` i `python -m pytest -q`. Cytat odrzucony przez skrypt popraw według tekstu źródła.
 8. Uruchom subagenta `weryfikator-zrodel` na zmienionych wpisach. Popraw zgłoszone niezgodności. Dopiero po raporcie bez niezgodności dopisz `agent_check: <data>`.
-9. Jeśli opiekun ma deklarację złożoną w urzędzie, która potwierdza wartość, dopisz `filed_documents` z opisem bez kwot i danych podatnika.
+9. Nie pytaj opiekuna o jego deklaracje i nie opieraj na nich wpisu (decyzja 18). `filed_documents` dopisujesz tylko na podstawie zgłoszenia kontrybutora, z opisem bez kwot i danych podatnika.
 10. Jeden obszar przepisów na jeden PR. W opisie PR podaj źródła, wynik skryptu cytatów, wynik weryfikacji i poziom pewności.
