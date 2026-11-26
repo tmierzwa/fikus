@@ -6,15 +6,6 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ## [Niewydane]
 
-### Zmienione
-
-- Trzy poziomy pewności zamiast dwóch: `wysoka`, `średnia` i `niska`. `średnia` oznacza pełny komplet
-  dowodów i otwarte pytanie tylko o przypadek brzegowy (`verification.open_issue_scope: edge_case`).
-  Klient, który porównuje poziom z `niska`, musi obsłużyć nową wartość. Odpowiedź podaje też
-  `confidence.open_issue_scope`.
-- Drugie źródło wartości złożonej można potwierdzić pole po polu (`confirms` przy źródle).
-  `confidence.unconfirmed_fields` wymienia pola, którym brakuje drugiego dokumentu.
-
 ### Dodane
 
 - Parametr `ryczalt.stawki`: stawki ryczałtu od przychodów ewidencjonowanych według punktów
@@ -25,6 +16,12 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ### Zmienione
 
+- Trzy poziomy pewności zamiast dwóch: `wysoka`, `średnia` i `niska`. `średnia` oznacza pełny komplet
+  dowodów i otwarte pytanie tylko o przypadek brzegowy (`verification.open_issue_scope: edge_case`).
+  Klient, który porównuje poziom z `niska`, musi obsłużyć nową wartość. Odpowiedź podaje też
+  `confidence.open_issue_scope`.
+- Drugie źródło wartości złożonej można potwierdzić pole po polu (`confirms` przy źródle).
+  `confidence.unconfirmed_fields` wymienia pola, którym brakuje drugiego dokumentu.
 - Sprawdzanie cytatów pomija znaki zerowej szerokości, którymi strony gov.pl dzielą nazwy plików.
 
 ## [0.3.0] - 2026-11-26
