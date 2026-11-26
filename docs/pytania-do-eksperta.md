@@ -74,10 +74,18 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
 - Ustawa wypadkowa, art. 28 ust. 1: stopa wynosi 50% najwyższej stopy ustalonej na dany rok składkowy
   dla grup działalności. Najwyższa stopa w tabeli z załącznika nr 2 rozporządzenia (Dz.U. 2025
   poz. 1874) to 3,33, a § 6 ust. 2 każe zaokrąglać według zasady matematycznej. Kwotę 1,67% podają
-  wprost tylko materiały ZUS (poradnik i strona o informacji ZUS IWA).
+  wprost materiały ZUS (poradnik i strona o informacji ZUS IWA), a za rok 2025/2026 także biznes.gov.pl, choć bez wskazania roku składkowego (niżej).
 - Pytanie: czy dla płatnika zgłaszającego nie więcej niż 9 ubezpieczonych stopa w latach składkowych
   2025/2026 i 2026/2027 wynosi 1,67%, i czy istnieje urzędowe źródło poza materiałami ZUS, które
   podaje tę stopę wprost?
+
+- Materiały znalezione 2026-11-26 (nie rozstrzygają pytania):
+  - Za rok 2026/2027: przedruk wypowiedzi regionalnej rzeczniczki prasowej ZUS z 1 kwietnia 2026 r. na stronie Starostwa
+    Powiatowego w Hajnówce (https://samorzad.gov.pl/web/powiat-hajnowski/stopy-procentowe) podaje 1,67% i najwyższą stopę
+    3,33% od 1 kwietnia 2026 r. To nadal materiał ZUS, nie źródło spoza ZUS.
+  - Za rok 2025/2026: biznes.gov.pl (https://www.biznes.gov.pl/pl/portal/00274, aktualizacja 11 lutego 2026 r.) podaje
+    „Składka wypadkowa od 1.04.2024 (1,67%)”, ale nie wskazuje roku składkowego, a na tej samej stronie podaje też stopę
+    „od 1.04.2021”.
 
 ## P5. Przesunięcie terminu z art. 12 § 5 Ordynacji podatkowej od 1 października 2026 r. a termin zapłaty
 
@@ -152,9 +160,30 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
 - Ustawa o systemie ubezpieczeń społecznych (Dz.U. 2026 poz. 1474), art. 18aa ust. 1 i 3: po rezygnacji z ulgi albo
   po jej upływie okres 24 miesięcy kalendarzowych podstawy preferencyjnej liczy się „od dnia objęcia ubezpieczeniami”.
 - biznes.gov.pl (portal/00285): po rezygnacji z ulgi w połowie miesiąca okres obniżonych składek zaczyna się „dopiero od
-  kolejnego miesiąca”. ZUS (to samo wyjaśnienie): po rezygnacji okres liczy się od dnia objęcia ubezpieczeniami, a po
-  upływie ulgi od dnia następnego po upływie 6 miesięcy kalendarzowych.
+  kolejnego miesiąca”. ZUS liczy tak samo (zobacz materiały niżej). Przepis wprost nie mówi, jak liczyć
+  miesiąc, w którym objęcie ubezpieczeniami następuje w trakcie miesiąca.
 - Pytanie: jak liczyć 24 miesiące z art. 18aa ust. 1 i 3, gdy objęcie ubezpieczeniami następuje w trakcie miesiąca?
+- Materiały znalezione 2026-11-26 (nie rozstrzygają pytania, bo przepisy nie mówią wprost, jak liczyć niepełny miesiąc):
+  - ZUS, bieżące wyjaśnienie komórek merytorycznych „Zmiany w ubezpieczeniach wprowadzone przez »Konstytucję biznesu«”
+    (12 kwietnia 2018 r.,
+    https://www.zus.pl/baza-wiedzy/biezace-wyjasnienia-komorek-merytorycznych/-/asset_publisher/biezacewyjasnieniakomorekmerytorycznych/content/id/1540038):
+    ulga trwa „maksymalnie 6 miesięcy kalendarzowych”, miesiąca rozpoczęcia działalności w trakcie miesiąca nie wlicza się;
+    tak samo dla 24 miesięcy: „Jeśli przypada w trakcie miesiąca kalendarzowego, miesiąca tego nie wliczaj.” Przykład
+    w obecnej informacji ZUS o uldze na start (rezygnacja i objęcie ubezpieczeniami w trakcie miesiąca) daje ten sam wynik.
+    ZUS i biznes.gov.pl liczą więc oba okresy tak samo.
+  - Uzasadnienie projektu Prawa przedsiębiorców (druk sejmowy VIII kadencji nr 2051, https://api.sejm.gov.pl/sejm/term8/prints/2051/2051-uzas.docx):
+    okres 6 miesięcy „powinien być liczony od momentu podjęcia” działalności, czyli od pierwszej czynności w obrocie
+    gospodarczym. O pełnych miesiącach uzasadnienie nie mówi. Uzasadnienie przepisów wprowadzających (druk nr 2055)
+    nie mówi, jak liczyć 24 miesiące z art. 18aa.
+  - Wyrok SN z 27 kwietnia 2023 r., III USKP 34/22 (znany z omówienia w „Rachunkowości”,
+    https://rachunkowosc.com.pl/jak-zus-liczy-miesiace-przy-uldze-na-start; pełnego tekstu nie udało się pobrać ze strony SN):
+    60 miesięcy przerwy z art. 18 ust. 1 Prawa przedsiębiorców to nie miesiące kalendarzowe, bo przepis, inaczej niż art. 18a
+    ustawy o systemie ubezpieczeń społecznych, nie dodaje słowa „kalendarzowych”; okres liczy się według art. 57 Kpa.
+    Wyrok dotyczy okresu przerwy, nie 6 miesięcy ulgi, ale ten sam przepis mówi o „okresie 6 miesięcy” bez słowa
+    „kalendarzowych”.
+  - Niesprawdzone: interpretacje indywidualne ZUS w BIP (wyszukiwarka https://bip.zus.pl/inne/interpretacje nie daje
+    wyników bez formularza, a archiwa są w plikach RAR), pismo Centrali ZUS DI/100000/43/164/2022 (dostępne tylko w LEX),
+    artykuł „Ulga na start – krytyczna analiza instytucji z art. 18 ustawy Prawo przedsiębiorców” (Palestra 4/2020).
 
 ## P10. Mały ZUS Plus: skutek zgłoszenia po terminie i liczenie okresów od 2026 r.
 
@@ -178,6 +207,19 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   wykorzystać po 2025 r.
 - Pytania: czy miesiące korzystania z ulgi i prowadzenia działalności sprzed 1 stycznia 2026 r. wlicza się do okresów
   36 i 60 miesięcy z art. 18c ust. 11a–11c? Jak dodatkowe 12 miesięcy z art. 112a mają się do limitu 36 miesięcy?
+- Materiały znalezione 2026-11-26 (nie rozstrzygają pytań, bo źródła się różnią):
+  - Uzasadnienie rządowego projektu (druk sejmowy X kadencji nr 1108, https://api.sejm.gov.pl/sejm/term10/prints/1108/1108-uzasadnienie.docx,
+    część o ustawie o systemie ubezpieczeń społecznych): po 36 miesiącach ulgi następuje „karencja” 24 miesięcy, a nowe
+    ust. 11a–11c, przy planowanym w projekcie wejściu w życie 1 stycznia 2025 r., „znajdą zastosowanie zarówno do osób,
+    które już w przeszłości skorzystały z Małego ZUS Plus (i znajdują się obecnie w okresie »karencji«), jak i tych, które
+    są w trakcie korzystania z niego”. To sugeruje, że okresy liczy się także z miesięcy sprzed wejścia w życie, inaczej niż
+    podają ZUS i biznes.gov.pl („niezależnie od tego, czy wykorzystałeś ją przed 2026 rokiem”). Uchwalona ustawa wchodzi
+    w tej części w życie 1 stycznia 2026 r. (art. 48 pkt 1). Uzasadnienie art. 38 mówi tylko, że do praw z art. 112a stosuje
+    się dotychczasowy art. 18c ust. 11 pkt 6.
+  - Zgłoszenie po terminie: wyrok SN z 24 kwietnia 2024 r., III USKP 47/23 (znany z tezy w INFORLEX; pełnego tekstu nie udało
+    się pobrać): złożenie po terminie deklaracji rozliczeniowej uprawniającej do ulgi uniemożliwia skorzystanie z niej.
+    Sprawa dotyczyła deklaracji za luty 2020 r., czyli przepisów sprzed 2026 r. i terminu deklaracji, a nie zgłoszenia
+    z art. 36 ust. 4b lub 14a. Niesprawdzone: wyroki sądów okręgowych i apelacyjnych w Portalu Orzeczeń Sądów Powszechnych.
 
 ## P11. Jak długo podatnik jest „rozpoczynającym działalność” przy zaliczkach kwartalnych PIT i kwartalnym ryczałcie
 
