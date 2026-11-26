@@ -1,0 +1,408 @@
+# Schematy JPK i obowiązek przesyłania ksiąg w formie JPK.
+# Wersja schematu JPK_V7M i JPK_V7K obowiązuje za okresy rozliczeniowe (miesiąc, za który składa się plik),
+# a nie według daty wysłania pliku. Narzędzie get_schema szuka parametru schemat.<symbol małymi literami>.
+
+- id: schemat.jpk_v7m
+  name: Schemat JPK_V7M (deklaracja miesięczna i ewidencja VAT)
+  kind: value
+  applies_to: {vat: [czynny_miesiecznie]}
+  versions:
+    - valid_from: 2022-01-01
+      valid_to: 2026-01-31
+      value:
+        form: JPK_V7M
+        variant: 2
+        system_code: JPK_V7M (2)
+        schema_version: 1-0E
+        xsd_url: http://crd.gov.pl/wzor/2021/12/27/11148/schemat.xsd
+      note: >-
+        Okres obowiązywania dotyczy okresów rozliczeniowych od stycznia 2022 r. do stycznia 2026 r.
+        Wzór opublikowano w Centralnym Repozytorium Wzorów Dokumentów Elektronicznych 27 grudnia 2021 r. pod
+        numerem 2021/12/27/11148; adres schematu pochodzi z wyróżnika wzoru (tak jak w rejestrze, z http). Żaden
+        dokument nie podaje sam całej wartości: okres podają strona KAS i broszura MF z 2026 r., wariant i datę
+        początku wyróżnik wzoru, kod systemowy broszura KAS z 2023 r., a wersję schematu 1-0E broszura KAS z 2023 r.
+        i zestawienie zmian MF. Dlatego wersja nie ma drugiego niezależnego dowodu.
+      sources:
+        - title: gov.pl (KAS), Struktury JPK
+          url: https://www.gov.pl/web/kas/struktury-jpk
+          quote: "obowiązują za okresy do rozliczenia za styczeń 2026 roku"
+          article: art. 99 ust. 11c i 13a ustawy o VAT
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2021/12/27/11148, twórca wzoru Ministerstwo Finansów
+          url: https://crd.gov.pl/wzor/2021/12/27/11148/wyroznik.xml
+          quote: "2022-01-01 JPK_V7M(2) DEKLARACJA MIESIĘCZNA I EWIDENCJA DLA PODATKU OD TOWARÓW I USŁUG"
+          article: art. 99 ust. 13a ustawy o VAT
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2021/12/27/11148 (adres schematu)
+          url: https://crd.gov.pl/wzor/2021/12/27/11148/wyroznik.xml
+          quote: "http://crd.gov.pl/wzor/2021/12/27/11148/schemat.xsd"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Broszura – JPK_VAT z deklaracją od 1 lutego 2026 r. (okresy wersji 2)
+          url: https://podatki.gov.pl/media/wgbkrejs/broszura-jpk_vat-z-deklaracj%C4%85-od-1-lutego-2026-r.pdf
+          quote: "Wzór w wersji (2) należy stosować za okresy rozliczeniowe od stycznia 2022 roku do stycznia 2026 roku."
+          as_of: 2026-11-26
+        - title: gov.pl (KAS), Broszura – JPK_VAT z deklaracją od 1 kwietnia 2023 (kod systemowy i wersja schematu)
+          url: https://www.gov.pl/attachment/d503c474-e8e5-4b95-ac7a-60db69fd6374
+          quote: "kodSystemowy: JPK_V7M (2) [dla podatników rozliczających się miesięcznie]"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Zmiany w strukturze JPK_V7M(3) w porównaniu do JPK_V7M(2) (wersja schematu)
+          url: https://podatki.gov.pl/media/hwsb3pqh/zmiany_w_schemie_jpk_v7m3-2.pdf
+          quote: "Schema JPK_V7M (2) (1-0E)"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+    - valid_from: 2026-02-01
+      value:
+        form: JPK_V7M
+        variant: 3
+        system_code: JPK_V7M (3)
+        schema_version: 1-0E
+        xsd_url: http://crd.gov.pl/wzor/2025/12/19/14090/schemat.xsd
+      note: >-
+        Okres obowiązywania dotyczy okresów rozliczeniowych od lutego 2026 r. Wzór opublikowano w Centralnym
+        Repozytorium Wzorów Dokumentów Elektronicznych 19 grudnia 2025 r. pod numerem 2025/12/19/14090; adres schematu pochodzi z wyróżnika wzoru (tak jak w rejestrze, z http). Nowy wariant wynika ze zmian rozporządzenia
+        w sprawie szczegółowego zakresu danych w deklaracjach i ewidencji VAT (oznaczenia związane z Krajowym
+        Systemem e-Faktur), które weszły w życie 1 lutego 2026 r.; do okresów wcześniejszych stosuje się przepisy
+        dotychczasowe. Rozporządzenie bazowe (Dz.U. 2019 poz. 1988) nie ma tekstu jednolitego w ELI.
+        Wariant, kod systemowy, wersję schematu 1-0E i okres podaje sama tylko broszura MF z 2026 r.; wersję 1-0E
+        potwierdza też zestawienie zmian MF, ale bez okresu, a adres schematu podaje tylko wyróżnik wzoru. Dlatego
+        wersja nie ma drugiego niezależnego dowodu.
+      sources:
+        - title: podatki.gov.pl (MF), JPK_VAT z deklaracją – pliki do pobrania
+          url: https://podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat-z-deklaracja/pliki-do-pobrania
+          quote: "Struktura JPK_VAT z deklaracją miesięczną (JPK_V7M(3) w formacie XSD) obowiązująca od 1 lutego 2026 roku"
+          article: art. 99 ust. 11c i 13a ustawy o VAT
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Nowe wzory struktur JPK_VAT dostępne na ePUAP, 19.12.2025 (numer wzoru)
+          url: https://podatki.gov.pl/aktualnosci/nowe-wzory-struktur-jpk_vat-dostepne-na-epuap
+          quote: "Wzory zostały udostępnione odpowiednio pod numerami 2025/12/19/14090 oraz 2025/12/19/14089 i będą stosowane do rozliczeń od 1 lutego 2026 r."
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2025/12/19/14090, twórca wzoru Ministerstwo Finansów
+          url: https://crd.gov.pl/wzor/2025/12/19/14090/wyroznik.xml
+          quote: "2026-02-01 JPK_V7M(3) DEKLARACJA MIESIĘCZNA I EWIDENCJA O PODATKU OD TOWARÓW I USŁUG"
+          article: art. 99 ust. 13a ustawy o VAT
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2025/12/19/14090 (adres schematu)
+          url: https://crd.gov.pl/wzor/2025/12/19/14090/wyroznik.xml
+          quote: "http://crd.gov.pl/wzor/2025/12/19/14090/schemat.xsd"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Broszura – JPK_VAT z deklaracją od 1 lutego 2026 r. (kod systemowy i wersja schematu)
+          url: https://podatki.gov.pl/media/wgbkrejs/broszura-jpk_vat-z-deklaracj%C4%85-od-1-lutego-2026-r.pdf
+          quote: "kodSystemowy: JPK_V7M (3) [dla podatników rozliczających się miesięcznie] albo JPK_V7K (3) [dla podatników rozliczających się kwartalnie] - wersjaSchemy: 1-0E."
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Zmiany w strukturze JPK_V7M(3) w porównaniu do JPK_V7M(2) (wersja schematu)
+          url: https://podatki.gov.pl/media/hwsb3pqh/zmiany_w_schemie_jpk_v7m3-2.pdf
+          quote: "Schema JPK_V7M (3) (1-0E)"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Broszura – JPK_VAT z deklaracją od 1 lutego 2026 r. (okresy wersji 3)
+          url: https://podatki.gov.pl/media/wgbkrejs/broszura-jpk_vat-z-deklaracj%C4%85-od-1-lutego-2026-r.pdf
+          quote: "Wzór w wersji (3) należy stosować za okresy rozliczeniowe od lutego 2026 roku."
+          as_of: 2026-11-26
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (wzór dokumentu elektronicznego)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "Minister właściwy do spraw finansów publicznych określi i udostępni na elektronicznej platformie usług administracji publicznej wzór dokumentu, o którym mowa w ust. 11c."
+          article: art. 99 ust. 11c i 13a, art. 109 ust. 3b
+        - title: Dz.U. 2024 poz. 947, rozporządzenie MF zmieniające rozporządzenie zmieniające (wejście w życie 1 lutego 2026 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/947/text.pdf
+          quote: "w § 6 wyrazy „z dniem 1 lipca 2024 r.” zastępuje się wyrazami „z dniem 1 lutego 2026 r.”"
+          article: § 1 pkt 3
+        - title: Dz.U. 2024 poz. 13, rozporządzenie MF zmieniające rozporządzenie w sprawie szczegółowego zakresu danych w deklaracjach i ewidencji VAT
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/13/text.pdf
+          quote: "Do rozliczeń za okresy rozliczeniowe przypadające przed dniem wejścia w życie niniejszego rozporządzenia stosuje się przepisy dotychczasowe."
+          article: § 5 i § 6
+        - title: Dz.U. 2025 poz. 1800, rozporządzenie MFiG zmieniające rozporządzenie zmieniające (oznaczenia KSeF w ewidencji)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1800/text.pdf
+          quote: "„OFF” – faktura, o której mowa w art. 106nf ust. 1 ustawy, która na dzień złożenia ewidencji nie posiada numeru identyfikującego tę fakturę w Krajowym Systemie e-Faktur"
+          article: § 1 pkt 1 lit. d
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: schemat.jpk_v7k
+  name: Schemat JPK_V7K (deklaracja kwartalna i ewidencja VAT)
+  kind: value
+  applies_to: {vat: [czynny_kwartalnie]}
+  versions:
+    - valid_from: 2022-01-01
+      valid_to: 2026-01-31
+      value:
+        form: JPK_V7K
+        variant: 2
+        system_code: JPK_V7K (2)
+        schema_version: 1-0E
+        xsd_url: http://crd.gov.pl/wzor/2021/12/27/11149/schemat.xsd
+      note: >-
+        Okres obowiązywania dotyczy okresów rozliczeniowych od stycznia 2022 r. do stycznia 2026 r. Wzór
+        opublikowano w Centralnym Repozytorium Wzorów Dokumentów Elektronicznych 27 grudnia 2021 r. pod numerem
+        2021/12/27/11149; adres schematu pochodzi z wyróżnika wzoru (tak jak w rejestrze, z http). Żaden dokument
+        nie podaje sam całej wartości: okres podają strona KAS i broszura MF z 2026 r., wariant i datę początku
+        wyróżnik wzoru, a kod systemowy i wersję schematu 1-0E tylko broszura KAS z 2023 r. (zestawienie zmian MF
+        dla JPK_V7K ma w nagłówku symbol JPK_V7M, więc go nie cytujemy). Dlatego wersja nie ma drugiego niezależnego
+        dowodu. Data końca obowiązywania zależy od odpowiedzi na otwarte pytanie o deklarację za I kwartał 2026 r.
+      sources:
+        - title: gov.pl (KAS), Struktury JPK
+          url: https://www.gov.pl/web/kas/struktury-jpk
+          quote: "obowiązują za okresy do rozliczenia za styczeń 2026 roku"
+          article: art. 99 ust. 11c i 13a ustawy o VAT
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2021/12/27/11149, twórca wzoru Ministerstwo Finansów
+          url: https://crd.gov.pl/wzor/2021/12/27/11149/wyroznik.xml
+          quote: "2022-01-01 JPK_V7K(2) DEKLARACJA KWARTALNA I EWIDENCJA DLA PODATKU OD TOWARÓW I USŁUG"
+          article: art. 99 ust. 13a ustawy o VAT
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2021/12/27/11149 (adres schematu)
+          url: https://crd.gov.pl/wzor/2021/12/27/11149/wyroznik.xml
+          quote: "http://crd.gov.pl/wzor/2021/12/27/11149/schemat.xsd"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Broszura – JPK_VAT z deklaracją od 1 lutego 2026 r. (okresy wersji 2)
+          url: https://podatki.gov.pl/media/wgbkrejs/broszura-jpk_vat-z-deklaracj%C4%85-od-1-lutego-2026-r.pdf
+          quote: "Wzór w wersji (2) należy stosować za okresy rozliczeniowe od stycznia 2022 roku do stycznia 2026 roku."
+          as_of: 2026-11-26
+        - title: gov.pl (KAS), Broszura – JPK_VAT z deklaracją od 1 kwietnia 2023 (kod systemowy i wersja schematu)
+          url: https://www.gov.pl/attachment/d503c474-e8e5-4b95-ac7a-60db69fd6374
+          quote: "albo JPK_V7K (2) [dla podatników rozliczających się kwartalnie] - wersjaSchemy: 1-0E."
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          P17: jeśli plik JPK_V7K za marzec 2026 r. z deklaracją za I kwartał 2026 r. składa się w wariancie 2,
+          data końca obowiązywania tej wersji (2026-01-31) jest za wczesna. Zob. docs/pytania-do-eksperta.md.
+    - valid_from: 2026-02-01
+      value:
+        form: JPK_V7K
+        variant: 3
+        system_code: JPK_V7K (3)
+        schema_version: 1-0E
+        xsd_url: http://crd.gov.pl/wzor/2025/12/19/14089/schemat.xsd
+      note: >-
+        Okres obowiązywania dotyczy okresów rozliczeniowych od lutego 2026 r. Wzór opublikowano w Centralnym
+        Repozytorium Wzorów Dokumentów Elektronicznych 19 grudnia 2025 r. pod numerem 2025/12/19/14089; adres schematu pochodzi z wyróżnika wzoru (tak jak w rejestrze, z http). Plik JPK_V7K składa się za miesiąc; plik za
+        trzeci miesiąc kwartału zawiera też deklarację za cały kwartał. Źródła nie mówią wprost, w którym
+        wariancie składa się deklarację za I kwartał 2026 r., który obejmuje styczeń (otwarte pytanie).
+        Rozporządzenie bazowe (Dz.U. 2019 poz. 1988) nie ma tekstu jednolitego w ELI. Wariant, kod systemowy,
+        wersję schematu 1-0E i okres podaje sama tylko broszura MF z 2026 r., a adres schematu tylko wyróżnik wzoru;
+        wersji 1-0E nie potwierdza drugi dokument. Dlatego wersja nie ma drugiego niezależnego dowodu.
+      sources:
+        - title: podatki.gov.pl (MF), JPK_VAT z deklaracją – pliki do pobrania
+          url: https://podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat-z-deklaracja/pliki-do-pobrania
+          quote: "Struktura JPK_VAT z deklaracją kwartalną (JPK_V7K(3) w formacie XSD) obowiązująca od 1 lutego 2026 roku"
+          article: art. 99 ust. 11c i 13a ustawy o VAT
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Nowe wzory struktur JPK_VAT dostępne na ePUAP, 19.12.2025 (numer wzoru)
+          url: https://podatki.gov.pl/aktualnosci/nowe-wzory-struktur-jpk_vat-dostepne-na-epuap
+          quote: "Wzory zostały udostępnione odpowiednio pod numerami 2025/12/19/14090 oraz 2025/12/19/14089 i będą stosowane do rozliczeń od 1 lutego 2026 r."
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2025/12/19/14089, twórca wzoru Ministerstwo Finansów
+          url: https://crd.gov.pl/wzor/2025/12/19/14089/wyroznik.xml
+          quote: "2026-02-01 JPK_V7K(3) DEKLARACJA KWARTALNA I EWIDENCJA O PODATKU OD TOWARÓW I USŁUG"
+          article: art. 99 ust. 13a ustawy o VAT
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2025/12/19/14089 (adres schematu)
+          url: https://crd.gov.pl/wzor/2025/12/19/14089/wyroznik.xml
+          quote: "http://crd.gov.pl/wzor/2025/12/19/14089/schemat.xsd"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Broszura – JPK_VAT z deklaracją od 1 lutego 2026 r. (kod systemowy i wersja schematu)
+          url: https://podatki.gov.pl/media/wgbkrejs/broszura-jpk_vat-z-deklaracj%C4%85-od-1-lutego-2026-r.pdf
+          quote: "albo JPK_V7K (3) [dla podatników rozliczających się kwartalnie] - wersjaSchemy: 1-0E."
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Broszura – JPK_VAT z deklaracją od 1 lutego 2026 r. (okresy wersji 3)
+          url: https://podatki.gov.pl/media/wgbkrejs/broszura-jpk_vat-z-deklaracj%C4%85-od-1-lutego-2026-r.pdf
+          quote: "Wzór w wersji (3) należy stosować za okresy rozliczeniowe od lutego 2026 roku."
+          as_of: 2026-11-26
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (wzór dokumentu elektronicznego)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "Minister właściwy do spraw finansów publicznych określi i udostępni na elektronicznej platformie usług administracji publicznej wzór dokumentu, o którym mowa w ust. 11c."
+          article: art. 99 ust. 11c i 13a, art. 109 ust. 3c
+        - title: Dz.U. 2024 poz. 947, rozporządzenie MF zmieniające rozporządzenie zmieniające (wejście w życie 1 lutego 2026 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/947/text.pdf
+          quote: "w § 6 wyrazy „z dniem 1 lipca 2024 r.” zastępuje się wyrazami „z dniem 1 lutego 2026 r.”"
+          article: § 1 pkt 3
+        - title: Dz.U. 2024 poz. 13, rozporządzenie MF zmieniające rozporządzenie w sprawie szczegółowego zakresu danych w deklaracjach i ewidencji VAT
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/13/text.pdf
+          quote: "Do rozliczeń za okresy rozliczeniowe przypadające przed dniem wejścia w życie niniejszego rozporządzenia stosuje się przepisy dotychczasowe."
+          article: § 5 i § 6
+        - title: Dz.U. 2025 poz. 1800, rozporządzenie MFiG zmieniające rozporządzenie zmieniające (dane w deklaracji za I kwartał 2026 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1800/text.pdf
+          quote: "w ewidencji za luty 2026 r. i w deklaracji za I kwartał 2026 r., jeżeli składa deklaracje podatkowe za okresy kwartalne"
+          article: § 1 pkt 3 (§ 2a pkt 2)
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          P17: w którym wariancie (2 czy 3) składa się plik JPK_V7K za marzec 2026 r. z deklaracją za cały
+          I kwartał 2026 r., skoro wariant 2 obowiązuje za okresy do stycznia 2026 r.? Zob. docs/pytania-do-eksperta.md.
+
+- id: schemat.jpk_pkpir
+  name: Schemat JPK_PKPIR (podatkowa księga przychodów i rozchodów)
+  kind: value
+  applies_to: {tax_form: [liniowy, skala]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        form: JPK_PKPIR
+        variant: 3
+        system_code: JPK_PKPIR (3)
+        schema_version: "1-0"
+      note: >-
+        Broszura MF podaje, że struktura „będzie obowiązywać od 01.01.2026 r.”. Obowiązek przesłania księgi i pierwszy rok, za który się ją
+        przesyła, opisuje zasada.jpk_pd_pkpir. Broszura podaje, że struktura logiczna jest dostępna
+        w Biuletynie Informacji Publicznej na stronie podmiotowej urzędu obsługującego ministra właściwego do spraw
+        finansów publicznych; adresu pliku XSD w urzędowym źródle nie ustalono, więc go nie podajemy.
+        Całą wartość (wariant, kod systemowy, wersję schematu 1-0 i datę) podaje sama tylko broszura MF. Strona MF
+        o JPK_PD podaje tylko wariant 3, a specyfikacja interfejsów usług JPK wariant i datę, bez wersji schematu,
+        więc żadna z nich nie jest drugim niezależnym dowodem.
+      sources:
+        - title: podatki.gov.pl (MF), Broszura informacyjna dotycząca struktury JPK_PKPIR(3)
+          url: https://podatki.gov.pl/media/pbqdgqcp/broszura_informacyjna_dot_jpk_pkpir-3.pdf
+          quote: "wersja 3, w formacie XSD (XML Schema Definition), która będzie obowiązywać od 01.01.2026 r."
+          article: art. 193a § 2 Ordynacji podatkowej, art. 24a ust. 1e ustawy o PIT
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Broszura informacyjna dotycząca struktury JPK_PKPIR(3) (kod systemowy i wersja schematu)
+          url: https://podatki.gov.pl/media/pbqdgqcp/broszura_informacyjna_dot_jpk_pkpir-3.pdf
+          quote: "kodSystemowy: „JPK_PKPIR (3)”"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Broszura informacyjna dotycząca struktury JPK_PKPIR(3) (wersja schematu)
+          url: https://podatki.gov.pl/media/pbqdgqcp/broszura_informacyjna_dot_jpk_pkpir-3.pdf
+          quote: "wersjaSchemy: „1-0”"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), JPK_PD (formularz dla prowadzących księgę; tylko wariant)
+          url: https://podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_pd/jpk_pd
+          quote: "formularz JPK_PKPIR(3) – podatkowa księga przychodów i rozchodów"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Specyfikacja Interfejsów usług JPK wersja 5.6.0 (wariant i data, bez wersji schematu)
+          url: https://podatki.gov.pl/media/bngboylg/specyfikacja-interfejs%C3%B3w-us%C5%82ug-jpk-wersja-560.pdf
+          quote: "JPK_PKPIR(3) PODATKOWA KSIĘGA PRZYCHODÓW I ROZCHODÓW (W FORMIE JEDNOLITEGO PLIKU KONTROLNEGO (3)) (schemat dostępny produkcyjnie od 01.01.2026)"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: zasada.jpk_pd_pkpir
+  name: Przesyłanie podatkowej księgi przychodów i rozchodów w formie JPK (JPK_PKPIR)
+  kind: rule
+  applies_to: {tax_form: [liniowy, skala]}
+  versions:
+    - valid_from: 2026-07-01
+      value:
+        steps:
+          - text: Podatnik prowadzący podatkową księgę przychodów i rozchodów lub ewidencję środków trwałych oraz wartości niematerialnych i prawnych prowadzi je przy użyciu programów komputerowych i po zakończeniu roku podatkowego przesyła je naczelnikowi urzędu skarbowego w postaci elektronicznej odpowiadającej strukturze logicznej, do dnia upływu terminu złożenia zeznania, o którym mowa w art. 45 ust. 1 ustawy o PIT.
+            uses: [schemat.jpk_pkpir, termin.zeznanie_skala, termin.zeznanie_liniowy]
+            basis: art. 24a ust. 1e pkt 1 ustawy o PIT w brzmieniu od 1 lipca 2026 r.; art. 193a § 2 Ordynacji podatkowej
+          - text: Po raz pierwszy księgę przesyła się za rok podatkowy rozpoczynający się po 31 grudnia 2025 r., jeżeli podatnik jest obowiązany przesyłać ewidencję VAT za każdy miesiąc łącznie z deklaracją (rozliczenie miesięczne VAT).
+            uses: [schemat.jpk_v7m]
+            basis: art. 66 ust. 1 pkt 1 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) w brzmieniu nadanym ustawami Dz.U. 2022 poz. 1265 i Dz.U. 2023 poz. 1059; art. 109 ust. 3b ustawy o VAT
+          - text: Pozostali podatnicy (w tym rozliczający VAT kwartalnie i niebędący czynnymi podatnikami VAT) przesyłają księgę po raz pierwszy za rok podatkowy rozpoczynający się po 31 grudnia 2026 r.
+            uses: []
+            basis: art. 66 ust. 1 pkt 2 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) w brzmieniu nadanym ustawami Dz.U. 2022 poz. 1265 i Dz.U. 2023 poz. 1059
+      note: >-
+        Data początku obowiązywania to wejście w życie nowego brzmienia art. 24a ust. 1e (ustawa Dz.U. 2026 poz. 779,
+        art. 5). Wcześniejsze brzmienie (tekst jednolity Dz.U. 2026 poz. 592) też wiązało termin przesłania księgi
+        z terminem złożenia zeznania; okresu przed 1 lipca 2026 r. ta wersja nie opisuje. Art. 66 ust. 1 pkt 1
+        wszedł w życie 1 stycznia 2026 r., a pkt 2 wchodzi 1 stycznia 2027 r. (art. 89 pkt 7 i 8 ustawy
+        z 29 października 2021 r. w brzmieniu nadanym ustawą Dz.U. 2023 poz. 1059). Ustawa z 29 października 2021 r.
+        nie ma tekstu jednolitego, więc brzmienie art. 66 wynika z ustaw zmieniających. Inne zmiany tej ustawy wymienione w obwieszczeniu (Dz.U. 2021 poz. 2349 i 2427, Dz.U. 2022 poz. 1301, 1719 i 2180, Dz.U. 2023 poz. 1414, Dz.U. 2024 poz. 1593 i 1685, Dz.U. 2025 poz. 222) ani ustawy Dz.U. 2021 poz. 2469 (zmienia tylko art. 15 pkt 8) i Dz.U. 2023 poz. 1598 (zmienia tylko art. 88 ust. 1) nie zmieniają art. 66 ust. 1 ani art. 89 pkt 7 i 8; brzmienie art. 89 pkt 7 i 8 podaje obwieszczenie do tekstu jednolitego Dz.U. 2025 poz. 843. Przepis nie mówi, na który
+        dzień ocenia się sposób rozliczania VAT (otwarte pytanie). Termin zeznania z art. 45 ust. 1 opisują parametry
+        termin.zeznanie_skala (art. 45 ust. 1) i termin.zeznanie_liniowy (art. 45 ust. 1 i 1a pkt 2).
+      sources:
+        - title: Dz.U. 2026 poz. 779, ustawa z 15 maja 2026 r. o zmianie ustawy o PIT, ustawy o CIT i ustawy o ryczałcie
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/779/text.pdf
+          quote: "do dnia upływu terminu złożenia zeznania, o którym mowa w art. 45 ust. 1 – w przypadku podatkowej księgi przychodów i rozchodów oraz ewidencji środków trwałych oraz wartości niematerialnych i prawnych"
+          article: art. 1 pkt 5 (art. 24a ust. 1e), art. 5
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (brzmienie przed 1 lipca 2026 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "są obowiązane prowadzić te księgi i ewidencję przy użyciu programów komputerowych oraz przesyłać właściwemu naczelnikowi urzędu skarbowego te księgi i ewidencję po zakończeniu roku podatkowego"
+          article: art. 24a ust. 1e
+        - title: Dz.U. 2022 poz. 1265, ustawa z 9 czerwca 2022 r. (nowe brzmienie art. 66 ustawy z 29 października 2021 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2022/1265/text.pdf
+          quote: "Księgi, ewidencje i wykazy, o których mowa w art. 24a ust. 1e ustawy zmienianej w art. 1 oraz w art. 15 ust. 12 ustawy zmienianej w art. 9, są prowadzone przy użyciu programów komputerowych i przesyłane po raz pierwszy"
+          article: art. 13 pkt 2 (art. 66 ust. 1)
+        - title: Dz.U. 2023 poz. 1059, ustawa z 26 maja 2023 r. (daty w art. 66 ust. 1 ustawy z 29 października 2021 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/1059/text.pdf
+          quote: "we wprowadzeniu do wyliczenia wyrazy „okresy rozliczeniowe rozpoczynające” zastępuje się wyrazami „rok podatkowy rozpoczynający”, – w pkt 1 wyrazy „31 grudnia 2024 r.” zastępuje się wyrazami „31 grudnia 2025 r.”, – w pkt 2 wyrazy „31 grudnia 2025 r.” zastępuje się wyrazami „31 grudnia 2026 r.”"
+          article: art. 13 pkt 4 lit. a (art. 66 ust. 1), art. 13 pkt 5 (art. 89 pkt 7 i 8)
+        - title: Dz.U. 2025 poz. 843, obwieszczenie o tekście jednolitym ustawy o ryczałcie (brzmienie art. 89 pkt 7 i 8 ustawy z 29 października 2021 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "art. 66 ust. 1 pkt 1 i ust. 2 pkt 2, które wchodzą w życie z dniem 1 stycznia 2026 r.; 8) art. 66 ust. 1 pkt 2 i ust. 2 pkt 3, które wchodzą w życie z dniem 1 stycznia 2027 r."
+          article: pkt 2 ppkt 1 obwieszczenia (art. 89 pkt 7 i 8)
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (rozliczenie miesięczne)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "są obowiązani przesyłać, na zasadach określonych w art. 99 ust. 11c, za każdy miesiąc do urzędu skarbowego"
+          article: art. 109 ust. 3b
+        - title: podatki.gov.pl (MF), Broszura informacyjna dotycząca struktury JPK_PKPIR(3) (pierwszy rok i termin przesłania księgi; bez ewidencji środków trwałych)
+          url: https://podatki.gov.pl/media/pbqdgqcp/broszura_informacyjna_dot_jpk_pkpir-3.pdf
+          quote: "31 grudnia 2025 r. - w przypadku podmiotów, które są obowiązane przesyłać ewidencję, o której mowa w art. 109 ust. 3 ustawy VAT, zgodnie z art. 109 ust. 3b tej ustawy[5], tj. podmiotów zobowiązanych przesyłać miesięczne pliki JPK_V7M;"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), JPK_PD (kto przekazuje)
+          url: https://podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_pd/jpk_pd
+          kind: control
+          quote: "31 grudnia 2025 r. – pozostali podatnicy CIT i PIT zobowiązani do składania JPK_VAT za okresy miesięczne, 31 grudnia 2026 r. – pozostali podatnicy, w tym podatnicy zobowiązani do składania JPK_VAT za okresy kwartalne."
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          P19: przepis nie mówi, na który dzień ocenia się obowiązek przesyłania ewidencji VAT za każdy miesiąc
+          (na przykład przy zmianie rozliczenia z kwartalnego na miesięczne w 2026 r. albo rejestracji jako
+          czynny podatnik VAT w trakcie roku). Zob. docs/pytania-do-eksperta.md.
+
+- id: zasada.jpk_pd_ryczalt
+  name: Przesyłanie ewidencji na ryczałcie w formie JPK
+  kind: rule
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Podatnik na ryczałcie prowadzący ewidencję lub wykaz środków trwałych oraz wartości niematerialnych i prawnych prowadzi je przy użyciu programów komputerowych i po zakończeniu roku podatkowego przesyła je naczelnikowi urzędu skarbowego w postaci elektronicznej odpowiadającej strukturze logicznej, do dnia upływu terminu złożenia zeznania rocznego. Czy obowiązek obejmuje też ewidencję przychodów (JPK_EWP), jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [termin.zeznanie_ryczalt]
+            basis: art. 15 ust. 12 ustawy o zryczałtowanym podatku dochodowym; art. 193a § 2 Ordynacji podatkowej
+          - text: Po raz pierwszy przesyła się je za rok podatkowy rozpoczynający się po 31 grudnia 2025 r., jeżeli podatnik jest obowiązany przesyłać ewidencję VAT za każdy miesiąc łącznie z deklaracją (rozliczenie miesięczne VAT).
+            uses: [schemat.jpk_v7m]
+            basis: art. 66 ust. 1 pkt 1 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) w brzmieniu nadanym ustawami Dz.U. 2022 poz. 1265 i Dz.U. 2023 poz. 1059; art. 109 ust. 3b ustawy o VAT
+          - text: Pozostali podatnicy (w tym rozliczający VAT kwartalnie i niebędący czynnymi podatnikami VAT) przesyłają je po raz pierwszy za rok podatkowy rozpoczynający się po 31 grudnia 2026 r.
+            uses: []
+            basis: art. 66 ust. 1 pkt 2 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) w brzmieniu nadanym ustawami Dz.U. 2022 poz. 1265 i Dz.U. 2023 poz. 1059
+      note: >-
+        Art. 15 ust. 12 wszedł w życie 1 stycznia 2026 r. (przypis w tekście jednolitym Dz.U. 2025 poz. 843).
+        Art. 66 ust. 1 pkt 1 wszedł w życie 1 stycznia 2026 r., a pkt 2 wchodzi 1 stycznia 2027 r. Ustawa
+        z 29 października 2021 r. nie ma tekstu jednolitego, więc brzmienie art. 66 wynika z ustaw zmieniających.
+        Inne zmiany tej ustawy wymienione w obwieszczeniu (Dz.U. 2021 poz. 2349 i 2427, Dz.U. 2022 poz. 1301, 1719 i 2180, Dz.U. 2023 poz. 1414, Dz.U. 2024 poz. 1593 i 1685, Dz.U. 2025 poz. 222) ani ustawy Dz.U. 2021 poz. 2469 (zmienia tylko art. 15 pkt 8) i Dz.U. 2023 poz. 1598 (zmienia tylko art. 88 ust. 1) nie zmieniają art. 66 ust. 1 ani art. 89 pkt 7 i 8; brzmienie art. 89 pkt 7 i 8 podaje obwieszczenie do tekstu jednolitego Dz.U. 2025 poz. 843.
+        Broszura MF o strukturze JPK_EWP(4) wskazuje art. 15 ust. 12 jako podstawę obowiązku przesyłania
+        ewidencji przychodów, a strona MF o JPK_PD wymienia JPK_EWP wśród struktur, które JPK_PD obejmie, i mówi
+        o obligatoryjnych plikach JPK_PD. Tekst art. 15 ust. 12 wymienia jednak ewidencję lub wykaz środków
+        trwałych oraz wartości niematerialnych i prawnych. Broszurę cytujemy tylko dla pierwszego roku. Dlatego ta wersja nie przesądza, czy przesyła się JPK_EWP. Przepis nie mówi też,
+        na który dzień ocenia się sposób rozliczania VAT (otwarte pytanie).
+      sources:
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "prowadzące ewidencję lub wykaz środków trwałych oraz wartości niematerialnych i prawnych są obowiązane prowadzić tę ewidencję i wykaz przy użyciu programów komputerowych"
+          article: art. 15 ust. 12
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (wejście w życie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "wejdzie w życie z dniem 1 stycznia 2026 r."
+          article: przypis 8 do art. 15 ust. 12
+        - title: Dz.U. 2022 poz. 1265, ustawa z 9 czerwca 2022 r. (nowe brzmienie art. 66 ustawy z 29 października 2021 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2022/1265/text.pdf
+          quote: "Księgi, ewidencje i wykazy, o których mowa w art. 24a ust. 1e ustawy zmienianej w art. 1 oraz w art. 15 ust. 12 ustawy zmienianej w art. 9, są prowadzone przy użyciu programów komputerowych i przesyłane po raz pierwszy"
+          article: art. 13 pkt 2 (art. 66 ust. 1)
+        - title: Dz.U. 2023 poz. 1059, ustawa z 26 maja 2023 r. (daty w art. 66 ust. 1 ustawy z 29 października 2021 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/1059/text.pdf
+          quote: "we wprowadzeniu do wyliczenia wyrazy „okresy rozliczeniowe rozpoczynające” zastępuje się wyrazami „rok podatkowy rozpoczynający”, – w pkt 1 wyrazy „31 grudnia 2024 r.” zastępuje się wyrazami „31 grudnia 2025 r.”, – w pkt 2 wyrazy „31 grudnia 2025 r.” zastępuje się wyrazami „31 grudnia 2026 r.”"
+          article: art. 13 pkt 4 lit. a (art. 66 ust. 1), art. 13 pkt 5 (art. 89 pkt 7 i 8)
+        - title: Dz.U. 2025 poz. 843, obwieszczenie o tekście jednolitym ustawy o ryczałcie (brzmienie art. 89 pkt 7 i 8 ustawy z 29 października 2021 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "art. 66 ust. 1 pkt 1 i ust. 2 pkt 2, które wchodzą w życie z dniem 1 stycznia 2026 r.; 8) art. 66 ust. 1 pkt 2 i ust. 2 pkt 3, które wchodzą w życie z dniem 1 stycznia 2027 r."
+          article: pkt 2 ppkt 1 obwieszczenia (art. 89 pkt 7 i 8)
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (rozliczenie miesięczne)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "są obowiązani przesyłać, na zasadach określonych w art. 99 ust. 11c, za każdy miesiąc do urzędu skarbowego"
+          article: art. 109 ust. 3b
+        - title: podatki.gov.pl (MF), Broszura informacyjna dotycząca struktury JPK_EWP(4) (pierwszy rok; dotyczy ewidencji przychodów, sporne)
+          url: https://podatki.gov.pl/media/0qmfysqh/broszura_informacyjna_dot_jpk_ewp-4.pdf
+          quote: "31 grudnia 2025 r. - w przypadku podmiotów, które są obowiązane przesyłać ewidencję, o której mowa w art. 109 ust. 3 ustawy VAT, zgodnie z art. 109 ust. 3b tej ustawy[4], tj. podmiotów zobowiązanych przesyłać miesięczne pliki JPK_V7M;"
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          P18: czy art. 15 ust. 12 ustawy o ryczałcie obejmuje ewidencję przychodów (JPK_EWP), jak podają broszura MF
+          o JPK_EWP(4) i strona MF o JPK_PD (JPK_EWP wśród struktur JPK_PD, obligatoryjne pliki JPK_PD), czy tylko ewidencję lub wykaz środków trwałych oraz wartości niematerialnych i prawnych (JPK_ST)?
+          P19: na który dzień ocenia się obowiązek przesyłania ewidencji VAT za każdy miesiąc (zmiana rozliczenia
+          z kwartalnego na miesięczne w 2026 r., rejestracja jako czynny podatnik VAT w trakcie roku)?
+          Zob. docs/pytania-do-eksperta.md.

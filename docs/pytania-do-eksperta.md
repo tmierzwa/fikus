@@ -137,3 +137,50 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   - składki za styczeń 2027 r. liczonej od dochodu z grudnia 2026 r. (skala, liniowy);
   - rocznego rozliczenia za 2026 r. składanego w 2027 r.;
   - przychodu z 2026 r. przyjmowanego na ryczałcie według art. 81 ust. 2h.
+
+## P17. Wariant JPK_V7K dla deklaracji za I kwartał 2026 r.
+
+- Wpisy: `schemat.jpk_v7k` (od 2026-02-01, wariant 3, i do 2026-01-31, wariant 2: od odpowiedzi zależy data końca).
+- Zgłoszone: 2026-11-26.
+- MF (podatki.gov.pl, gov.pl/web/kas/struktury-jpk, broszura z 1 lutego 2026 r.): wariant 2 stosuje się „za okresy
+  rozliczeniowe od stycznia 2022 roku do stycznia 2026 roku”, a wariant 3 „za okresy rozliczeniowe od lutego 2026 roku”.
+- Plik JPK_V7K składa się za miesiąc; plik za trzeci miesiąc kwartału zawiera też deklarację za cały kwartał.
+  I kwartał 2026 r. obejmuje styczeń, za który obowiązuje wariant 2.
+- Rozporządzenie Dz.U. 2025 poz. 1800 (§ 2a pkt 2 dodany do rozporządzenia Dz.U. 2024 poz. 13) każe wykazać dane
+  o kaucji „w deklaracji za I kwartał 2026 r.”, co sugeruje wariant 3, ale nie mówi tego wprost.
+- Pytanie: czy plik JPK_V7K za marzec 2026 r. z deklaracją za I kwartał 2026 r. (i jego korekty) składa się
+  w wariancie 3? Którego wariantu używa się do korekty deklaracji za I kwartał 2026 r.?
+
+## P18. Czy na ryczałcie przesyła się ewidencję przychodów (JPK_EWP)
+
+- Wpis: `zasada.jpk_pd_ryczalt` (od 2026-01-01).
+- Zgłoszone: 2026-11-26.
+- Ustawa o zryczałtowanym podatku dochodowym (Dz.U. 2025 poz. 843), art. 15 ust. 12: podmioty z ust. 1
+  „prowadzące ewidencję lub wykaz środków trwałych oraz wartości niematerialnych i prawnych są obowiązane prowadzić
+  tę ewidencję i wykaz przy użyciu programów komputerowych” i przesyłać je po zakończeniu roku do upływu terminu
+  zeznania. Art. 66 ust. 1 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) wymienia „księgi, ewidencje
+  i wykazy” z art. 15 ust. 12.
+- Broszura MF o strukturze JPK_EWP(4) (podatki.gov.pl) podaje, że podmioty prowadzące ewidencję przychodów „będą
+  zobowiązane przesyłać plik XML zgodny ze strukturą JPK_EWP”, i wskazuje art. 15 ust. 12 jako podstawę.
+- Strona MF o JPK_PD (podatki.gov.pl) podaje, że ustawa z 29 października 2021 r. nałożyła obowiązek prowadzenia
+  „ewidencji i wykazów prowadzonych dla celów podatków dochodowych” przy użyciu programów komputerowych
+  i ich przekazywania, wymienia JPK_EWP wśród pięciu struktur, które „JPK_PD obejmie”, i mówi o przesyłaniu danych
+  w postaci „obligatoryjnych plików JPK_PD”. Tekst art. 15 ust. 12 wymienia jednak tylko „ewidencję lub wykaz środków trwałych oraz
+  wartości niematerialnych i prawnych”.
+- Pytanie: czy art. 15 ust. 12 obejmuje ewidencję przychodów (czyli czy ryczałtowiec przesyła JPK_EWP), czy tylko
+  ewidencję lub wykaz środków trwałych oraz wartości niematerialnych i prawnych (JPK_ST)? Czy ryczałtowiec bez
+  środków trwałych przesyła cokolwiek?
+
+## P19. Na który dzień ocenia się rozliczanie VAT miesięcznie przy pierwszym przesłaniu ksiąg w formie JPK
+
+- Wpisy: `zasada.jpk_pd_pkpir` (od 2026-07-01) i `zasada.jpk_pd_ryczalt` (od 2026-01-01).
+- Zgłoszone: 2026-11-26.
+- Art. 66 ust. 1 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105, w brzmieniu z Dz.U. 2022 poz. 1265
+  i Dz.U. 2023 poz. 1059): księgi i ewidencje przesyła się po raz pierwszy za rok podatkowy rozpoczynający się po
+  31 grudnia 2025 r. „w przypadku podmiotów, które są obowiązane przesyłać ewidencję”, o której mowa w art. 109
+  ust. 3 ustawy o VAT, zgodnie z art. 109 ust. 3b (rozliczenie miesięczne), a pozostali za rok rozpoczynający się
+  po 31 grudnia 2026 r. Przepis nie mówi, na który dzień albo za który okres ocenia się ten obowiązek.
+- Pytania: czy obowiązek przesłania księgi lub ewidencji za 2026 r. ma podatnik, który w 2026 r. zmienił rozliczenie
+  VAT z kwartalnego na miesięczne (albo odwrotnie)? Czy ma go podatnik, który w trakcie 2026 r. zarejestrował się
+  jako czynny podatnik VAT rozliczający się miesięcznie? Czy liczy się stan na początek roku, na koniec roku, czy
+  którykolwiek miesiąc roku?

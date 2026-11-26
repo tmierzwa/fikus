@@ -60,3 +60,12 @@ def test_deadlines_through_protocol():
     r = _call("deadlines", {"profile": "przyklad_liniowy", "year": 2026, "month": 12})
     assert not r.is_error
     assert r.structured_content["non_working_days"] == ["2026-12-24", "2026-12-25", "2026-12-26"]
+
+
+def test_get_schema_follows_settlement_period():
+    r = _call("get_schema", {"form": "JPK_V7M", "as_of": "2026-01-01"})
+    assert not r.is_error and r.structured_content["value"]["system_code"] == "JPK_V7M (2)"
+    r = _call("get_schema", {"form": "JPK_V7M", "as_of": "2026-02-01"})
+    assert r.structured_content["value"]["system_code"] == "JPK_V7M (3)"
+    r = _call("get_schema", {"form": "VAT-7", "as_of": "2026-02-01"})
+    assert not r.is_error and r.structured_content["found"] is False
