@@ -23,7 +23,8 @@ Każda wersja parametru musi mieć:
 
 1. okres obowiązywania (`valid_from`, opcjonalnie `valid_to`);
 2. źródło pierwotne: tekst jednolity z ISAP/ELI, obwieszczenie w M.P., komunikat ZUS lub MF,
-   z dosłownym cytatem (`quote`), z którego wynika wartość;
+   z dosłownym cytatem (`quote`), z którego wynika wartość. Gdy zmiany nie ma jeszcze w tekście
+   jednolitym, cytuj ustawę zmieniającą z Dz.U. obok ostatniego tekstu jednolitego;
 3. pole `verification` z datą sprawdzenia.
 
 Portale, blogi i kalkulatory mogą być tylko źródłem kontrolnym (`kind: control`). Bez źródła

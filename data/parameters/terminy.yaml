@@ -1,5 +1,6 @@
 # Terminy. day_of_month to dzień miesiąca następującego po okresie rozliczeniowym.
-# Gdy termin wypada w sobotę lub dzień wolny, przesuwa się według zasada.przesuniecie_terminu.
+# Gdy termin wypada w sobotę lub dzień wolny, zasadę przesunięcia opisuje zasada.przesuniecie_terminu
+# (od 2026-10-01 z otwartą kwestią, czy obejmuje terminy zapłaty; zob. otwarte pytanie przy tej zasadzie).
 # Datę liczy klient, nie serwer.
 
 - id: termin.zus

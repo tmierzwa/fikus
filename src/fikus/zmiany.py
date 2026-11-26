@@ -71,14 +71,15 @@ def fetch_act(act: str) -> dict:
 
 
 def load_reviewed(path: Path) -> set[str]:
-    """Nowelizacje już przejrzane: identyfikatory ELI z data/zmiany_sprawdzone.yaml."""
+    """Nowelizacje już przejrzane z data/zmiany_sprawdzone.yaml: identyfikator ELI nowelizacji
+    albo, gdy wpis ma pole `for`, para „nowelizacja@akt” (przejrzana tylko dla tego aktu)."""
     if not path.is_file():
         return set()
     entries = yaml.safe_load(path.read_text(encoding="utf-8")) or []
     for e in entries:
         if not {"act", "checked_at", "note"} <= set(e):
             raise ValueError(f"{path.name}: wpis {e!r} potrzebuje pól act, checked_at i note")
-    return {e["act"] for e in entries}
+    return {f"{e['act']}@{e['for']}" if e.get("for") else e["act"] for e in entries}
 
 
 def cited_acts(store: Store, today: date) -> dict[str, set[str]]:
@@ -118,7 +119,7 @@ def check_act(act: str, params: set[str], fetch: Fetch, reviewed: set[str]) -> l
         changes = refs.get("Akty zmieniające", [])
 
     for c in sorted(changes, key=lambda r: _order(r["id"])):
-        if c["id"] not in reviewed:
+        if c["id"] not in reviewed and f"{c['id']}@{act}" not in reviewed:
             when = f", wchodzi w życie {c['date']}" if c.get("date") else ""
             out.append(Finding("nowelizacja", act, ps, f"{c['id']}{when}"))
     return out
@@ -146,7 +147,8 @@ def _base_act(act: str, fetch: Fetch) -> str:
     return base[0]["id"] if base else act
 
 
-def current_acts(store: Store, today: date, fetch: Fetch) -> dict[str, set[str]]:
+def current_acts(store: Store, today: date, fetch: Fetch,
+                 handled: set[str] | None = None) -> dict[str, set[str]]:
     """Jak cited_acts, ale bez starszych tekstów jednolitych, cytowanych obok nowszego tekstu
     tej samej ustawy w tej samej wersji. Takie teksty są celowo nieaktualne: dowodzą stanu
     prawnego z przeszłości (np. od kiedy obowiązuje przepis, czyli valid_from)."""
@@ -163,6 +165,8 @@ def current_acts(store: Store, today: date, fetch: Fetch) -> dict[str, set[str]]
                         newest[base] = act
             for act in newest.values():
                 acts.setdefault(act, set()).add(p.id)
+                if handled is not None:            # nowelizacja cytowana obok aktu = obsłużona
+                    handled.update(f"{a}@{act}" for a in newest.values() if a != act)
     return acts
 
 
@@ -176,9 +180,10 @@ def detect(store: Store, today: date, fetch: Fetch = fetch_act, reviewed: set[st
         return cache[act]
 
     findings = ending_versions(store, today, horizon)
-    for act, params in sorted(current_acts(store, today, cached).items()):
+    handled: set[str] = set()
+    for act, params in sorted(current_acts(store, today, cached, handled).items()):
         try:
-            findings += check_act(act, params, cached, reviewed)
+            findings += check_act(act, params, cached, set(reviewed) | handled)
         except (OSError, ValueError, KeyError) as e:      # sieć, zły JSON, nieoczekiwany kształt
             findings.append(Finding("blad", act, tuple(sorted(params)), f"nie da się sprawdzić: {e}"))
     return findings

@@ -7,7 +7,7 @@ Fikus to serwer MCP z parametrami przepisów dla JDG. To samodzielny projekt spo
 1. Serwer niczego nie liczy. Udostępnia wartości, reguły terminów, dni wolne i zasady obliczeń opisane krokami z podstawą prawną.
 2. Serwer nie odpowiada na pytania o sytuację konkretnego podatnika, bo to byłoby doradztwo podatkowe. To samo dotyczy odpowiedzi w zgłoszeniach i PR-ach.
 3. Każda wersja ma okres obowiązywania, pole `verification` z dowodami i co najmniej jedno źródło pierwotne z dosłownym cytatem (`quote`), z którego wynika wartość.
-4. Źródło pierwotne to tekst jednolity w ISAP/ELI, obwieszczenie w M.P. albo komunikat ZUS lub MF. Blog, kalkulator i portal mogą być tylko źródłem kontrolnym (`kind: control`).
+4. Źródło pierwotne to tekst jednolity w ISAP/ELI, obwieszczenie w M.P. albo komunikat ZUS lub MF. Gdy zmiany nie ma jeszcze w tekście jednolitym, źródłem nowego brzmienia jest ustawa zmieniająca w Dz.U., cytowana obok ostatniego tekstu jednolitego; nowy tekst jednolity dopisujesz po ogłoszeniu. Blog, kalkulator i portal mogą być tylko źródłem kontrolnym (`kind: control`).
 5. Bez źródła pierwotnego wartość nie trafia do danych. Lepiej nie mieć wartości niż mieć niepewną.
 6. Serwer opiera się wyłącznie na źródłach publicznych i na wkładzie kontrybutorów.
 

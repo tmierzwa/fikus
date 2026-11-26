@@ -6,6 +6,8 @@
 #   act: identyfikator ELI nowelizacji, np. DU/2026/986
 #   checked_at: data przejrzenia
 #   note: co zmienia i dlaczego nie dotyczy naszych parametrów, np. "zmienia tylko art. 15"
+# Opcjonalnie `for: <ELI aktu>`, gdy wpis dotyczy tylko jednego z aktów zmienianych przez nowelizację.
+# Nowelizacja cytowana jako źródło w tej samej wersji co zmieniany akt jest uznana za obsłużoną.
 - act: DU/2025/1537
   checked_at: 2026-11-26
   note: "ustawa o świadczeniach: zmienia art. 19a, 20, 23c, 23h i 47c (kolejki, świadczenia); nie dotyka art. 79–82"
@@ -48,3 +50,19 @@
 - act: DU/2026/1154
   checked_at: 2026-11-26
   note: "Ordynacja podatkowa (art. 2): zmienia art. 299 § 3 (tajemnica skarbowa); nie dotyka art. 12"
+- act: DU/2026/846
+  for: DU/2026/592
+  checked_at: 2026-11-26
+  note: "ustawa o PIT (art. 4): zmienia art. 25b i 30f; nie dotyka art. 44. Zmianę art. 12 § 5 Ordynacji obsługuje wersja zasada.przesuniecie_terminu od 2026-10-01"
+- act: DU/2026/875
+  for: DU/2026/622
+  checked_at: 2026-11-26
+  note: "Ordynacja podatkowa (art. 6): dodaje § 3–15 w art. 67a (milczące załatwienie wniosku o umorzenie); nie dotyka art. 12"
+- act: DU/2026/1098
+  for: DU/2026/622
+  checked_at: 2026-11-26
+  note: "Ordynacja podatkowa (art. 35): zmienia art. 3b, 297, 298, 299, 299c i 306; nie dotyka art. 12"
+- act: DU/2026/1206
+  for: DU/2026/622
+  checked_at: 2026-11-26
+  note: "Ordynacja podatkowa (art. 3): zmienia art. 119zg pkt 1 lit. c; nie dotyka art. 12"
