@@ -192,7 +192,7 @@ def get_schema(
 
     Dla JPK_V7M i JPK_V7K dniem jest pierwszy dzień okresu rozliczeniowego, za który składa się plik.
     Dla ZUS_DRA (wzór formularza, bez schematu XSD) dniem jest dzień złożenia dokumentu.
-    Są dane dla JPK_V7M, JPK_V7K, JPK_PKPIR i ZUS_DRA; dla innych symboli wynik ma found=false.
+    Są dane dla JPK_V7M, JPK_V7K, JPK_PKPIR, JPK_EWP i ZUS_DRA; dla innych symboli wynik ma found=false.
     """
     pid = f"schemat.{form.lower()}"
     if pid not in store.params:

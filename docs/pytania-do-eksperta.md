@@ -529,6 +529,8 @@ przypadku brzegowego, średnią.
 ## P19. Na który dzień ocenia się rozliczanie VAT miesięcznie przy pierwszym przesłaniu ksiąg w formie JPK
 
 - Wpisy: `zasada.jpk_pd_pkpir` (od 2026-07-01) i `zasada.jpk_pd_ryczalt` (od 2026-01-01).
+- Dotyczy też `schemat.jpk_ewp` (od 2026-01-01), ale tylko pośrednio: od odpowiedzi zależy, za który rok po raz
+  pierwszy przesyła się plik JPK_EWP, a nie wariant schematu. Dlatego ten wpis nie ma otwartego pytania.
 - Zgłoszone: 2026-11-26.
 - Art. 66 ust. 1 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105, w brzmieniu z Dz.U. 2022 poz. 1265
   i Dz.U. 2023 poz. 1059): księgi i ewidencje przesyła się po raz pierwszy za rok podatkowy rozpoczynający się po
@@ -585,6 +587,65 @@ przypadku brzegowego, średnią.
 - Na 26 listopada 2026 r. żadna strona urzędu (podatki.gov.pl, biznes.gov.pl) nie podaje jeszcze kwoty na 2027 r.,
   więc wartość nie ma drugiego dowodu.
 - Pytanie: czy limit z art. 30c ust. 2 pkt 2 ustawy o PIT na rok podatkowy 2027 wynosi 15 100 zł?
+
+## P31. Termin wpisu przychodów do ewidencji za grudzień (rozstrzygnięte 2026-11-26, bez eksperta)
+
+- Rozstrzygnięcie: rozporządzenie w sprawie prowadzenia ewidencji przychodów (Dz.U. 2025 poz. 1294), § 6, samo podaje
+  wprost, że zapisy dokonuje się „najpóźniej do 20. dnia każdego miesiąca za miesiąc poprzedni”. Przepis obejmuje każdy
+  miesiąc i nie ma wyjątku dla grudnia, więc wpisy za grudzień dokonuje się do 20 stycznia. Rozporządzenie nie ma przepisów
+  przejściowych dla ewidencji (§ 10 dotyczy tylko wykazu środków trwałych). Termin nie zależy od kwartalnego wpłacania
+  ryczałtu. Wpis `termin.ewidencja_przychodow_wpis` nie ma otwartego pytania.
+
+- Wpis: `termin.ewidencja_przychodow_wpis` (od 2026-01-01).
+- Zgłoszone: 2026-11-26 (specyfikacja Staffkey, obszar A2).
+- Pytanie: czy termin wpisu przychodów za grudzień jest inny niż za pozostałe miesiące?
+
+## P32. Korekta przychodu w ewidencji przychodów przy błędzie rachunkowym lub oczywistej omyłce
+
+- Wpis: `zasada.ewidencja_przychodow` (od 2026-01-01), krok o korekcie przychodu.
+- Zgłoszone: 2026-11-26.
+- Ustawa o PIT (Dz.U. 2026 poz. 592), art. 14 ust. 1m: jeżeli korekta przychodu „nie jest spowodowana błędem rachunkowym
+  lub inną oczywistą omyłką”, ujmuje się ją w okresie rozliczeniowym, w którym wystawiono fakturę korygującą. Ustawa
+  o ryczałcie (Dz.U. 2025 poz. 843) odwołuje się do tej korekty w art. 6 ust. 1e i 1f, więc dla korekt bez błędu ustawa
+  sama wskazuje okres i to opisuje krok zasady, razem z art. 6 ust. 1f (korekta po zmianie formy opodatkowania).
+  Wyłączeń z art. 14 ust. 1o krok nie opisuje.
+- Ani ustawa, ani rozporządzenie Dz.U. 2025 poz. 1294 nie mówią, w którym okresie ujmuje się korektę wynikającą z błędu
+  rachunkowego lub oczywistej omyłki. Rozporządzenie przewiduje zapis „ze znakiem (-)” tylko dla korekty danych
+  z raportów fiskalnych (§ 4 ust. 5); wzór ewidencji nie ma osobnej kolumny na korektę.
+- Pytania: czy korektę wynikającą z błędu rachunkowego lub oczywistej omyłki ujmuje się w okresie, w którym ujęto
+  pierwotny przychód (z korektą wpłaconego ryczałtu za ten okres)? Jak wpisuje się taką korektę i korektę z art. 14 ust. 1m
+  do ewidencji: nowym zapisem ze znakiem minus z datą wpisu w dniu korekty, czy poprawieniem pierwotnego zapisu?
+
+## P33. Data uzyskania przychodu, gdy faktura jest wystawiona przed wykonaniem usługi
+
+- Wpisy: `zasada.przychod_data_uzyskania` (od 2026-01-01), krok o dniu wykonania usługi, oraz `zasada.przychod_w_walucie`
+  (od 2026-01-01), krok o kursie.
+- Zgłoszone: 2026-11-26.
+- Ustawa o PIT (Dz.U. 2026 poz. 592), art. 14 ust. 1c: datą powstania przychodu jest dzień wydania rzeczy lub wykonania
+  usługi, „niepóźniej niż dzień: 1) wystawienia faktury albo 2) uregulowania należności”. Art. 14 ust. 3 pkt 1: do
+  przychodów nie zalicza się „pobranych wpłat lub zarachowanych należności na poczet dostaw towarów i usług, które zostaną
+  wykonane w następnych okresach sprawozdawczych”.
+- Art. 11a ust. 1: przychód w walucie przelicza się po kursie z ostatniego dnia roboczego przed „dniem uzyskania
+  przychodu”, więc od odpowiedzi zależy też dzień kursu.
+- Pytania: czy przy fakturze wystawionej przed wykonaniem usługi (albo wydaniem rzeczy), bez zapłaty, dniem uzyskania
+  przychodu jest dzień wystawienia faktury? Czy inaczej jest, gdy faktura dokumentuje usługę wykonywaną w następnym okresie
+  (zarachowana należność z art. 14 ust. 3 pkt 1)? Czy na ryczałcie odpowiedź jest taka sama?
+
+## P34. Przeliczenie przychodu w walucie obcej na ryczałcie
+
+- Wpis: `zasada.przychod_w_walucie` (od 2026-01-01), krok o ryczałcie.
+- Zgłoszone: 2026-11-26.
+- Ustawa o PIT (Dz.U. 2026 poz. 592), art. 11a ust. 1: przychody w walutach obcych przelicza się „według kursu średniego
+  walut obcych ogłaszanego przez Narodowy Bank Polski z ostatniego dnia roboczego poprzedzającego dzień uzyskania
+  przychodu”.
+- Ustawa o ryczałcie (Dz.U. 2025 poz. 843) nie odsyła do art. 11a. Art. 6 ust. 1 obejmuje ryczałtem przychody,
+  „o których mowa w art. 7a ust. 4 lub art. 14 ustawy o podatku dochodowym”, a art. 6 ust. 1c każe stosować odpowiednio
+  art. 24c (różnice kursowe), który sam posługuje się kursem średnim NBP. Przepisy ustawy o ryczałcie o przeliczaniu
+  (na przykład art. 4 ust. 2) dotyczą kwot wyrażonych w euro.
+- Przeszukane źródła urzędowe (2026-11-26), bez rozstrzygnięcia: strony podatki.gov.pl i biznes.gov.pl o ryczałcie od
+  przychodów ewidencjonowanych, broszura MF o JPK_EWP(4) (pole kwoty przychodu w PLN, bez zasady przeliczenia).
+- Pytanie: czy podatnik na ryczałcie przelicza przychód w walucie obcej według art. 11a ust. 1 ustawy o PIT? Jeżeli tak,
+  na jakiej podstawie (art. 6 ust. 1 ustawy o ryczałcie)?
 
 ## P39. Deklaracja ZUS DRA za miesiąc, w którym działalność zawieszono w trakcie miesiąca
 
