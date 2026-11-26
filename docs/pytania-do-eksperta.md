@@ -32,7 +32,9 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   podejmiesz nową” (przykład 17).
 - Pytanie: czy wyjątek z poradnika ZUS wynika z przepisu (którego?) i czy należy go dopisać do zasady?
 
-## P2. Minimalna składka zdrowotna na skali i liniowym w roku składkowym 2025/2026
+## P2. Minimalna składka zdrowotna na skali i liniowym w roku składkowym 2025/2026 (rozstrzygnięte 2026-11-26, bez eksperta)
+
+- Rozstrzygnięcie: Podatnik.info samo podaje 314,96 zł „od lutego 2025 r. do stycznia 2026 r.”; dodane jako źródło kontrolne, `open_issue` usunięty.
 
 - Wpis: `zdrowotna.minimum` (2025-02-01 – 2026-01-31, 314,96 zł).
 - Zgłoszone: 2026-11-26.
@@ -45,7 +47,9 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
 - Zamiast eksperta wystarczą też deklaracje DRA za ten okres (podatnika na liniowym), jeśli w którymś
   miesiącu składka była minimalna. Wtedy wpis dostaje `filed_documents`.
 
-## P3. Minimalna składka zdrowotna na skali i liniowym za styczeń 2027
+## P3. Minimalna składka zdrowotna na skali i liniowym za styczeń 2027 (rozstrzygnięte 2026-11-26, bez eksperta)
+
+- Rozstrzygnięcie: Poradnik Przedsiębiorcy samo podaje 432,54 zł „od lutego 2026 roku do stycznia 2027 roku” (tabela według miesięcy DRA); dodane jako źródło kontrolne, `open_issue` usunięty. Wynika to też wprost z art. 81 ust. 2 i 2d (minimalne wynagrodzenie z pierwszego dnia roku składkowego).
 
 - Wpis: `zdrowotna.minimum` (2026-02-01 – 2027-01-31, 432,54 zł).
 - Zgłoszone: 2026-11-26.
