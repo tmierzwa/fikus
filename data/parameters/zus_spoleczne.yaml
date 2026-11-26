@@ -42,7 +42,7 @@
         - title: Symfonia, składki ZUS w 2026 r. dla przedsiębiorców
           url: https://symfonia.pl/blog/firmy/male-firmy/skladki-zus-w-2026-r-dla-przedsiebiorcow-ile-wyniosa/
           kind: control
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25, filed_documents: kwota zgodna z deklaracją ZUS DRA za 10/2026}
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
 
 - id: zus.limit_rocznej_podstawy
   name: Roczny limit podstawy wymiaru składek emerytalnej i rentowej
@@ -76,7 +76,7 @@
         - title: Komunikat ZUS z 30 grudnia 2025 r., nowe wysokości składek na ubezpieczenia społeczne w 2026 r.
           url: https://www.zus.pl/-/nowe-wysoko%C5%9Bci-sk%C5%82adek-na-ubezpieczenia-spo%C5%82eczne-w-2026-r.
           independent: true
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25, filed_documents: kwota zgodna z deklaracją ZUS DRA za 10/2026}
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
 
 - id: zus.stawka.rentowa
   name: Stopa składki na ubezpieczenia rentowe
@@ -93,7 +93,7 @@
         - title: Komunikat ZUS z 30 grudnia 2025 r., nowe wysokości składek na ubezpieczenia społeczne w 2026 r.
           url: https://www.zus.pl/-/nowe-wysoko%C5%9Bci-sk%C5%82adek-na-ubezpieczenia-spo%C5%82eczne-w-2026-r.
           independent: true
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25, filed_documents: kwota zgodna z deklaracją ZUS DRA za 10/2026}
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
 
 - id: zus.stawka.chorobowa
   name: Stopa składki na ubezpieczenie chorobowe (dobrowolne dla przedsiębiorcy)
@@ -110,7 +110,7 @@
         - title: Komunikat ZUS z 30 grudnia 2025 r., nowe wysokości składek na ubezpieczenia społeczne w 2026 r.
           url: https://www.zus.pl/-/nowe-wysoko%C5%9Bci-sk%C5%82adek-na-ubezpieczenia-spo%C5%82eczne-w-2026-r.
           independent: true
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25, filed_documents: kwota zgodna z deklaracją ZUS DRA za 10/2026}
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
 
 - id: zus.stawka.wypadkowa_do_9
   name: Stopa składki wypadkowej płatnika zgłaszającego nie więcej niż 9 ubezpieczonych
@@ -169,7 +169,7 @@
           independent: true
           quote: "Dla płatników zgłaszających do ubezpieczenia wypadkowego do 9 ubezpieczonych stopa procentowa składki na ubezpieczenie wypadkowe wynosi 50% najwyższej stopy procentowej ustalonej na dany rok składkowy dla grup działalności, tj. 1,67%"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, filed_documents: kwota zgodna z deklaracją ZUS DRA za 10/2026}
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: zus.stawka.fundusz_pracy
   name: Stopa składki na Fundusz Pracy
@@ -184,7 +184,7 @@
           url: https://eli.gov.pl/eli/DU/2026/62/ogl
           quote: "obowiązkowej składki na Fundusz Pracy, która wynosi 1,0 % podstawy wymiaru składek"
           article: art. 25 (na podstawie art. 260 ustawy o rynku pracy i służbach zatrudnienia)
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25, filed_documents: suma FP i FS zgodna z deklaracją ZUS DRA za 10/2026}
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
 
 - id: zus.stawka.fundusz_solidarnosciowy
   name: Stopa składki na Fundusz Solidarnościowy
@@ -199,4 +199,4 @@
           url: https://eli.gov.pl/eli/DU/2026/62/ogl
           quote: "obowiązkowej składki na Fundusz Solidarnościowy, która wynosi 1,45 % podstawy wymiaru"
           article: art. 26 (na podstawie art. 4 ust. 2 ustawy o Funduszu Solidarnościowym)
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25, filed_documents: suma FP i FS zgodna z deklaracją ZUS DRA za 10/2026}
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}

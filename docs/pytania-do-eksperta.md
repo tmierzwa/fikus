@@ -44,8 +44,6 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   podają ją tylko za styczeń 2026, a PITax podaje okres do grudnia 2026.
 - Pytanie: czy minimalna miesięczna składka zdrowotna przedsiębiorcy na skali i na podatku liniowym
   wynosiła 314,96 zł za każdy miesiąc od lutego 2025 r. do stycznia 2026 r.?
-- Zamiast eksperta wystarczą też deklaracje DRA za ten okres (podatnika na liniowym), jeśli w którymś
-  miesiącu składka była minimalna. Wtedy wpis dostaje `filed_documents`.
 
 ## P3. Minimalna składka zdrowotna na skali i liniowym za styczeń 2027 (rozstrzygnięte 2026-11-26, bez eksperta)
 

@@ -123,7 +123,7 @@
           kind: control
           quote: "poniżej 60 tys. zł 498,35 zł 5980,16 zł od 60 tys. zł do 300 tys. zł 830,58 zł 9966,96 zł powyżej 300 tys. zł 1495,04 zł"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, filed_documents: kwota zgodna z deklaracją ZUS DRA za 10/2026}
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: zdrowotna.ryczalt.progi
   name: Progi przychodu dla składki zdrowotnej na ryczałcie
