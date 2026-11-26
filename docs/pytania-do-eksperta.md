@@ -41,7 +41,23 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
     i ponownego podjęcia działalności w ciągu roku.
   - FAQ ZUS („Zmiany od 2022 r.”): przy zawieszeniu działalności w poprzednim roku ust. 2h nie ma
     zastosowania. To przypadek pokrewny, nie ten z pytania.
-  - Niesprawdzone: decyzje Prezesa NFZ (art. 109a), orzeczenia sądów administracyjnych (CBOSA).
+  - Poradnik ZUS stawia przypis 21 („Art. 81 ust. 2h ustawy zdrowotnej”) po regule, że podstawę stosuje się „przez
+    cały rok”, a przed wyjątkiem o zakończeniu działalności. Dla samego wyjątku nie podaje żadnej podstawy.
+- Dalsze źródła przeszukane 2026-11-26, bez rozstrzygnięcia:
+  - Prezes NFZ nie wydaje rozstrzygnięć w tej sprawie (wniosek z przepisów, nie cytat): w ustawie o świadczeniach
+    (Dz.U. 2025 poz. 1461) art. 109 ust. 2 wyłącza z decyzji w indywidualnych sprawach sprawy z zakresu wymierzania
+    i pobierania składek, a art. 109a ust. 2 wyłącza z interpretacji indywidualnych Prezesa NFZ sprawy składek należące
+    do ZUS i KRUS (art. 83d ustawy o systemie ubezpieczeń społecznych, art. 62a ustawy o ubezpieczeniu społecznym rolników).
+  - ZUS, ulotka „Ryczałt od przychodów ewidencjonowanych” (2022,
+    https://www.zus.pl/documents/10182/4446388/Rycza%C5%82t.pdf/35fc43d1-637f-6933-9619-0833b896b0f5): podaje tylko
+    warunek prowadzenia działalności „przez cały poprzedni rok kalendarzowy”, bez wyjątku z poradnika.
+  - ZUS, bieżące wyjaśnienie komórek merytorycznych „Roczna podstawa wymiaru składki na ubezpieczenie zdrowotne osób
+    prowadzących działalność gospodarczą” (17 lutego 2023 r.): nie omawia art. 81 ust. 2h.
+  - Orzeczenia sądów powszechnych (baza SAOS, wyszukiwanie frazy „81 ust. 2h”): 8 wyroków z lat 2024–2026, wszystkie
+    w sprawach podstawy składki komorników sądowych; przepis jest w nich tylko wymieniony. Żaden nie dotyczy
+    zakończenia i ponownego podjęcia działalności. Sprawy składek rozpatrują sądy powszechne, nie administracyjne,
+    więc CBOSA nie jest właściwą bazą.
+  - Interpelacje poselskie (wyszukiwanie w sejm.gov.pl): brak odpowiedzi na to pytanie.
 
 ## P2. Minimalna składka zdrowotna na skali i liniowym w roku składkowym 2025/2026 (rozstrzygnięte 2026-11-26, bez eksperta)
 
@@ -121,6 +137,36 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   minimum od liczby miesięcy podlegania ubezpieczeniu.
 - Pytanie: czy minimum rocznej składki z art. 79a ust. 1 pkt 2 liczy się od wszystkich miesięcy roku składkowego, czy tylko
   od miesięcy podlegania ubezpieczeniu zdrowotnemu?
+- Materiały zebrane 2026-11-26 (urzędowe źródła się różnią, więc pytanie zostaje otwarte):
+  - ZUS, bieżące wyjaśnienie komórek merytorycznych „Roczna podstawa wymiaru składki na ubezpieczenie zdrowotne osób
+    prowadzących działalność gospodarczą” (17 lutego 2023 r.,
+    https://www.zus.pl/-/roczna-podstawa-wymiaru-sk%C5%82adki-na-ubezpieczenie-zdrowotne-os%C3%B3b-prowadz%C4%85cych-dzia%C5%82alno%C5%9B%C4%87-gospodarcz%C4%85):
+    „Składka ustalana od podstawy rocznej nie może być niższa niż kwota równa 9% iloczynu liczby miesięcy podlegania
+    ubezpieczeniu zdrowotnemu i minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego.”
+  - ZUS, „Zmiany w składce zdrowotnej opłacanej przez przedsiębiorców od 1 stycznia 2025 r.” (2 stycznia 2025 r.,
+    https://www.zus.pl/-/zmiany-w-sk%C5%82adce-zdrowotnej-op%C5%82acanej-przez-przedsi%C4%99biorc%C3%B3w-od-1-stycznia-2025-r.):
+    minimalna roczna podstawa to iloczyn „liczby miesięcy podlegania ubezpieczeniu zdrowotnemu w roku 2025” i 75%
+    minimalnego wynagrodzenia, a przy podatku liniowym minimalna składka miesięczna i roczna to 9% minimalnej podstawy
+    wymiaru. Dotyczy tylko roku składkowego 2025/2026.
+  - ZUS, prezentacja z webinaru „Roczne rozliczenie składki na ubezpieczenie zdrowotne” (17 kwietnia 2023 r.,
+    https://www.zus.pl/documents/10182/24154/Webinar_prezentacja+17.04.2023+r.pdf/f8f3baa7-94bf-3c98-a085-84ce230e75b9,
+    str. 27–28): przy zmianie formy opodatkowania z ryczałtu na zasady ogólne od 1 stycznia 2023 r. (i przy rozpoczęciu
+    działalności 1 stycznia 2023 r.) styczeń 2023 r. zalicza się do „jednomiesięcznego roku składkowego”, a dla skali albo
+    podatku liniowego składka roczna za ten okres „będzie obliczona w wysokości 0 zł”.
+  - biznes.gov.pl, „Ile wynosi składka zdrowotna” (https://www.biznes.gov.pl/pl/portal/001052): powtarza brzmienie ustawy:
+    „Minimalna roczna składka zdrowotna to 9% iloczynu liczby miesięcy w roku składkowym i kwoty minimalnego wynagrodzenia
+    obowiązującego w pierwszym dniu roku składkowego”, z przykładem tylko dla pełnego roku składkowego.
+  - Historia przepisów: art. 79a ust. 1 pkt 2 w obecnym brzmieniu („liczby miesięcy w roku składkowym”) pochodzi z ustawy
+    z 29 października 2021 r. (Dz.U. 2021 poz. 2105, art. 15). Ta sama ustawa nadała art. 81 ust. 2b brzmienie „liczby miesięcy
+    w roku składkowym podlegania ubezpieczeniu”. Ustawa z 9 czerwca 2022 r. (Dz.U. 2022 poz. 1265, art. 10 pkt 6) zmieniła je na „liczby
+    miesięcy podlegania ubezpieczeniu zdrowotnemu w roku kalendarzowym”, a art. 79a ust. 1 pkt 2 zostawiła bez zmian.
+    Uzasadnienie projektu (druk sejmowy nr 2186, IX kadencja,
+    https://api.sejm.gov.pl/sejm/term9/prints/2186/2186-uzas.docx) mówi o zmianie art. 81 ust. 2b: ma ona „usunięcie
+    wątpliwości w zakresie ustalania liczby miesięcy podlegania dla celów określenia minimalnej rocznej podstawy wymiaru
+    składki”. O art. 79a uzasadnienie nie mówi.
+  - Orzeczenia sądów powszechnych (baza SAOS, fraza „liczby miesięcy w roku składkowym”): 31 wyroków z lat 2023–2025,
+    głównie w sprawach komorników sądowych. Przytaczają art. 79a ust. 1, ale żaden nie rozstrzyga, którą liczbę miesięcy
+    przyjąć.
 
 ## P8. Od kiedy stosować art. 81 ust. 2zd pkt 2 bez art. 21 ust. 1 pkt 63a ustawy o PIT
 
@@ -145,6 +191,23 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   - składki za styczeń 2027 r. liczonej od dochodu z grudnia 2026 r. (skala, liniowy);
   - rocznego rozliczenia za 2026 r. składanego w 2027 r.;
   - przychodu z 2026 r. przyjmowanego na ryczałcie według art. 81 ust. 2h.
+- Materiały zebrane 2026-11-26 (żadne urzędowe źródło nie podaje odpowiedzi):
+  - Uzasadnienie projektu (druk sejmowy nr 3160, X kadencja,
+    https://api.sejm.gov.pl/sejm/term10/prints/3160/3160-uzasadnienie.docx) omawia art. 12 projektu (ten sam numer w ustawie)
+    razem z innymi artykułami jednym zdaniem: „Zaproponowane zmiany związane są z wygaszeniem z dniem 1 stycznia 2027 r.
+    funkcjonowania SSE, co powoduje konieczność aktualizacji przepisów wymienionych ustaw.” O uchyleniu art. 21 ust. 1 pkt 63a
+    ustawy o PIT pisze, że po wygaszeniu SSE „brak będzie możliwości korzystania ze zwolnienia w ramach tego przepisu”.
+    O tym, od kiedy stosować nowe brzmienie art. 81 ust. 2zd, uzasadnienie nie mówi. Ocena skutków regulacji (druk 3160,
+    pkt 6) podaje w tabeli dochody NFZ od roku 1 po wejściu w życie, ale nie omawia art. 81 ust. 2zd ani okresu, od którego
+    zmiana ma wpływać na składkę.
+  - Senat przyjął ustawę bez poprawek 27 października 2026 r. (druk senacki nr 892). Na stronie posiedzenia z materiałów Biura
+    Legislacyjnego jest tylko materiał porównawczy (892m); opinii Biura Legislacyjnego do tej ustawy nie znaleziono.
+  - Komunikatów ZUS, MZ i MF o stosowaniu nowego brzmienia nie znaleziono (ustawa ogłoszona 23 listopada 2026 r.).
+  - Dla porównania: przy poprzedniej zmianie art. 81 ust. 2zd ustawa z 6 grudnia 2024 r. (Dz.U. 2024 poz. 1915) miała przepisy
+    przejściowe. Art. 2: nowe brzmienie art. 81 ust. 2zd pkt 3 (i inne wymienione przepisy) przy skali, liniowym i IP Box
+    „stosuje się do rozliczenia składek na ubezpieczenie zdrowotne należnych za okres od dnia 1 lutego 2025 r.”; art. 3:
+    do składek na ryczałcie należnych za okres do 31 grudnia 2024 r. stosuje się przepisy dotychczasowe. Ustawa Dz.U. 2026
+    poz. 1542 takich przepisów nie ma.
 
 ## P9. Ulga na start: jak liczyć 6 miesięcy ulgi i następne 24 miesiące podstawy preferencyjnej
 
