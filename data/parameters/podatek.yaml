@@ -165,6 +165,8 @@
         tych, które wymieniają usługi informatyczne, usługi związane z oprogramowaniem i usługi inżynierskie.
         Nie przypisuje stawki do żadnego rodzaju przychodu i nie rozstrzyga, czy dana usługa mieści się w danym
         symbolu PKWiU; to ustala podatnik. Pozostałe litery i punkty art. 12 ust. 1 są tylko w przepisie.
+        Lista nie wyczerpuje usług objętych art. 12 ust. 1: pkt 5 lit. a obejmuje przychody z działalności usługowej
+        z zastrzeżeniem pkt 1–4 oraz 6–8.
         Początek klucza (na przykład pkt_2b) to punkt art. 12 ust. 1, a stawkę dla tego punktu podaje parametr
         ryczalt.stawki pod tym samym kluczem (pkt 2 to 15%, pkt 2a to 14%, pkt 2b to 12%, pkt 4 to 8,5% przychodów
         do 100 000 zł i 12,5% nadwyżki). Nazwy usług i wyłączenia („z wyłączeniem…”) są przepisane dosłownie;
@@ -174,7 +176,7 @@
         Symbole odnoszą się do PKWiU 2015: art. 4 ust. 1 pkt 1 ustawy odsyła do rozporządzenia z 4 września 2015 r.,
         a rozporządzenie Rady Ministrów z 17 grudnia 2025 r. (Dz.U. 2025 poz. 1829), które od 1 stycznia 2026 r.
         wprowadza PKWiU 2025, każe stosować PKWiU 2015 do celów ryczałtu od przychodów ewidencjonowanych do
-        31 grudnia 2028 r. Dlatego wersja kończy się 31 grudnia 2028 r.; po tej dacie serwer nie podaje zakresu,
+        31 grudnia 2028 r. (to samo podaje strona GUS). Dlatego wersja kończy się 31 grudnia 2028 r.; po tej dacie serwer nie podaje zakresu,
         dopóki przepisy nie określą, której klasyfikacji używać. Teksty jednolite Dz.U. 2024 poz. 776 (przepisy
         ogłoszone przed 11 kwietnia 2024 r.) i Dz.U. 2025 poz. 843 (przed 12 czerwca 2025 r.) mają to samo brzmienie
         tych liter; nowelizacje ogłoszone po tekście jednolitym poz. 843 (Dz.U. 2026 poz. 779, 1098 i 1541) nie
@@ -229,7 +231,7 @@
             (PKWiU ex 62.01.1), objętych grupowaniem „Oryginały oprogramowania komputerowego” (PKWiU 62.01.2), związanych
             z doradztwem w zakresie oprogramowania (PKWiU ex 62.02), w zakresie instalowania oprogramowania
             (PKWiU ex 62.09.20.0), związanych z zarządzaniem siecią i systemami informatycznymi (PKWiU 62.03.1)
-          confirms: [pkt_2b_lit_b, period]
+          confirms: [pkt_2b_lit_b]
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 4 lit. e)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           article: art. 12 ust. 1 pkt 4 lit. e
@@ -240,7 +242,7 @@
           article: art. 4 ust. 1 pkt 1
           quote: >-
             zgodnie z Polską Klasyfikacją Wyrobów i Usług (PKWiU) wprowadzoną rozporządzeniem Rady Ministrów z dnia
-            4 września 2015 r. w sprawie Polskiej Klasyfikacji Wyrobów i Usług (PKWiU)
+            4 września 2015 r. w sprawie Polskiej Klasyfikacji Wyrobów i Usług (PKWiU) (Dz. U. poz. 1676
           confirms: [klasyfikacja]
         - title: Dz.U. 2025 poz. 1829, rozporządzenie Rady Ministrów z 17 grudnia 2025 r. w sprawie Polskiej Klasyfikacji Wyrobów i Usług (PKWiU)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1829/text.pdf
@@ -248,8 +250,17 @@
           quote: >-
             zryczałtowanym podatkiem dochodowym w formie ryczałtu od przychodów ewidencjonowanych oraz karty podatkowej –
             do dnia 31 grudnia 2028 r. – stosuje się Polską Klasyfikację Wyrobów i Usług (PKWiU) wprowadzoną
-            rozporządzeniem Rady Ministrów z dnia 4 września 2015 r.
-          confirms: [klasyfikacja]
+            rozporządzeniem Rady Ministrów z dnia 4 września 2015 r. w sprawie Polskiej Klasyfikacji Wyrobów i Usług
+            (PKWiU) (Dz. U. poz. 1676
+          confirms: [klasyfikacja, period]
+        - title: GUS, Urząd Statystyczny w Łodzi, Ośrodek Klasyfikacji i Nomenklatur, Zadania (stosowanie PKWiU 2015 do celów podatkowych)
+          url: https://lodz.new.stat.gov.pl/o-nas-lodz/informacje-ogolne/osrodki/osrodek-klasyfikacji-i-nomenklatur-urzedu-statystycznego-w-lodzi/zadania
+          kind: control
+          quote: >-
+            zryczałtowanym podatkiem dochodowym w formie ryczałtu od przychodów ewidencjonowanych oraz karty podatkowej –
+            do dnia 31 grudnia 2028 r. – stosuje się Polską Klasyfikację Wyrobów i Usług (PKWiU 2015)
+          as_of: 2026-11-26
+          confirms: [klasyfikacja, period]
         - title: Dz.U. 2024 poz. 776, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (to samo brzmienie, dla daty początku obowiązywania)
           url: https://api.sejm.gov.pl/eli/acts/DU/2024/776/text.pdf
           article: art. 12 ust. 1 pkt 2b lit. b
@@ -257,7 +268,6 @@
             b) związanych z doradztwem w zakresie sprzętu komputerowego (PKWiU 62.02.10.0), związanych z oprogramowaniem
             (PKWiU ex 62.01.1)
           as_of: 2024-04-10
-          confirms: [period]
         - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (15%, pierwsza pozycja)
           url: https://www.biznes.gov.pl/pl/portal/00263
           kind: control
@@ -287,12 +297,17 @@
             w zakresie instalowania oprogramowania (PKWiU ex 62.09.20.0), związanych z zarządzaniem siecią
             i systemami informatycznymi (PKWiU 62.03.1).
           as_of: 2026-11-26
-          confirms: [pkt_2b_lit_a, pkt_2b_lit_b, period]
+          confirms: [pkt_2b_lit_a, pkt_2b_lit_b]
         - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (8,5% i 12,5%, badania naukowe i prace rozwojowe)
           url: https://www.biznes.gov.pl/pl/portal/00263
           kind: control
           quote: >-
-            wykonywania usług w zakresie badań naukowych i prac rozwojowych (PKWiU dział 72)
+            6) 8,5%przychodów do kwoty 100 tys. zł oraz 12,5% przychodów od nadwyżki ponad kwotę 100 tys. zł z tytułu:
+            przychodów osiągniętych w ramach umów najmu, podnajmu, poddzierżawy oraz umów o podobnym charakterze (te
+            stawki znajdują zastosowanie wyłącznie w odniesieniu do przychodów osiąganych w ramach umów, które nie są
+            zawierane w ramach prowadzonej działalności) świadczenia usług związanych z zakwaterowaniem (PKWiU dział 55)
+            świadczenia usług wynajmu i obsługi nieruchomości własnych lub dzierżawionych (PKWiU 68.20.1) wykonywania
+            usług w zakresie badań naukowych i prac rozwojowych (PKWiU dział 72)
           as_of: 2026-11-26
           confirms: [pkt_4_lit_e]
         - title: LexLege (portal), art. 12 ustawy o zryczałtowanym podatku dochodowym, stan prawny Dz.U. 2025 poz. 843 (pkt 2 lit. e)
