@@ -1,0 +1,1089 @@
+# Ulgi i odliczenia inne niż składki: które przysługują przy danej formie opodatkowania i jakie mają
+# limity z ustaw. Serwer podaje limity i opisuje zasady krokami z podstawą prawną. Czy podatnik spełnia
+# warunki ulgi i ile odlicza, ustala podatnik albo klient.
+
+- id: zasada.ulgi_ryczalt
+  name: Ulgi i odliczenia od przychodu na ryczałcie od przychodów ewidencjonowanych
+  kind: rule
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2026-01-01
+      valid_to: 2026-12-31
+      value:
+        steps:
+          - text: Od przychodów opodatkowanych ryczałtem możesz odliczyć stratę z art. 9 ust. 3–3b ustawy o podatku dochodowym od osób fizycznych oraz wydatki z art. 26 ust. 1 pkt 2, 2a, 2b, 2c, 5–6a i 9, art. 26h ust. 1 i art. 26hb ust. 1 tej ustawy, jeżeli nie zostały odliczone od dochodu ani zaliczone do kosztów uzyskania przychodów. Odliczenie składek społecznych (pkt 2 i 2a) i połowy składki zdrowotnej opisuje zasada podstawy opodatkowania ryczałtem.
+            uses: [zasada.ryczalt_podstawa]
+            basis: art. 11 ust. 1 i 1a ustawy o zryczałtowanym podatku dochodowym
+          - text: Wpłaty na indywidualne konto zabezpieczenia emerytalnego dokonane w roku podatkowym odliczasz do wysokości rocznego limitu wpłat z ustawy o tych kontach, w zeznaniu.
+            uses: [ikze.limit_wplat]
+            basis: art. 11 ust. 1 i 2 ustawy o zryczałtowanym podatku dochodowym; art. 26 ust. 1 pkt 2b i ust. 6g ustawy o podatku dochodowym od osób fizycznych; art. 13a ustawy o indywidualnych kontach emerytalnych oraz indywidualnych kontach zabezpieczenia emerytalnego
+          - text: Wydatki na użytkowanie sieci Internet odliczasz do rocznego limitu, wyłącznie w dwóch kolejnych latach podatkowych i tylko wtedy, gdy w okresie poprzedzającym te lata nie korzystałeś z tego odliczenia.
+            uses: [ulga.internet.limit]
+            basis: art. 11 ust. 1 i 2 ustawy o zryczałtowanym podatku dochodowym; art. 26 ust. 1 pkt 6a i ust. 6h ustawy o podatku dochodowym od osób fizycznych
+          - text: Wydatki na cele rehabilitacyjne i na ułatwienie wykonywania czynności życiowych odliczasz według katalogu z art. 26 ust. 7a ustawy o PIT; część pozycji ma roczny limit, a wydatki na leki odliczasz w części przekraczającej kwotę miesięczną. Warunki (orzeczenie, brak finansowania z funduszy, osoby na utrzymaniu) są w art. 26 ust. 7b–7g.
+            uses: [ulga.rehabilitacyjna.limity]
+            basis: art. 11 ust. 1 i 2 ustawy o zryczałtowanym podatku dochodowym; art. 26 ust. 1 pkt 6 i ust. 7a–7g ustawy o podatku dochodowym od osób fizycznych
+          - text: Darowizny na cele z art. 26 ust. 1 pkt 9 ustawy o PIT odliczasz łącznie do limitu procentowego. Nie odliczysz darowizn na rzecz osób fizycznych ani podmiotów wymienionych w art. 26 ust. 5 pkt 2, ani darowizn zaliczonych do kosztów. Wysokość darowizny ustalasz na podstawie dokumentów z art. 26 ust. 7.
+            uses: [ulga.darowizny.limit_ryczalt]
+            basis: art. 11 ust. 1 i 2 ustawy o zryczałtowanym podatku dochodowym; art. 26 ust. 1 pkt 9, ust. 5, 6, 6f i 7 ustawy o podatku dochodowym od osób fizycznych
+          - text: Wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, odliczasz do limitu na wszystkie przedsięwzięcia, na warunkach art. 26h ust. 2–9 ustawy o PIT. Ta zasada nie opisuje odliczenia wydatków na zabytki (art. 26hb ust. 1) ani wydatków na terminal płatniczy (art. 11 ust. 3a ustawy o ryczałcie w zw. z art. 26hd ustawy o PIT).
+            uses: [ulga.termomodernizacja.limit]
+            basis: art. 11 ust. 1, 2 i 3a ustawy o zryczałtowanym podatku dochodowym; art. 26h ust. 1 i 2 ustawy o podatku dochodowym od osób fizycznych
+          - text: Przy przychodach opodatkowanych różnymi stawkami odliczenia dzielisz w takim stosunku, w jakim pozostają poszczególne przychody w ogólnej kwocie przychodów.
+            uses: [zasada.ryczalt_podstawa]
+            basis: art. 11 ust. 3 ustawy o zryczałtowanym podatku dochodowym
+          - text: Ulgi na dzieci nie odliczasz od ryczałtu. Art. 27f ustawy o PIT pozwala odliczyć ją od podatku obliczonego według skali podatkowej (art. 27), a art. 11 ustawy o ryczałcie jej nie wymienia. Jeżeli oprócz przychodów z ryczałtu masz dochody opodatkowane według skali, ulgę wykazujesz w zeznaniu, w którym rozliczasz te dochody.
+            uses: [ulga.dzieci.kwoty]
+            basis: art. 27f ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 11 ustawy o zryczałtowanym podatku dochodowym
+      note: >-
+        Art. 11 ustawy o ryczałcie ma to brzmienie w tekście jednolitym Dz.U. 2025 poz. 843 (przepisy ogłoszone
+        przed 12 czerwca 2025 r.); późniejsze nowelizacje (Dz.U. 2026 poz. 779 i 1098) art. 11 nie zmieniają, a zmiana
+        z Dz.U. 2026 poz. 1541 wchodzi w życie 1 stycznia 2027 r. (następna wersja). Przepisy ustawy o PIT, do których
+        odsyła art. 11, mają brzmienie z tekstu jednolitego Dz.U. 2026 poz. 592 (stan prawny na 1 kwietnia 2026 r.);
+        zmiany ustawy o PIT, które weszły w życie między 1 stycznia a 1 kwietnia 2026 r. (Dz.U. 2025 poz. 1795,
+        Dz.U. 2026 poz. 203 i 424), zmieniają tylko art. 21 i 52zr, a zmiana z Dz.U. 2025 poz. 1301 (tylko art. 52zo–52zr)
+        weszła w życie w 2025 r., więc to brzmienie obowiązywało od 1 stycznia
+        2026 r. Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (katalog odliczeń)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 11 ust. 1
+          quote: "oraz wydatki określone w art. 26 ust. 1 pkt 2, 2a, 2b, 2c, 5–6a i 9, art. 26h ust. 1 oraz art. 26hb ust. 1 ustawy o podatku dochodowym"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (przepisy stosowane odpowiednio)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 11 ust. 2
+          quote: "stosuje się odpowiednio przepisy art. 9 ust. 3–3b, art. 26 ust. 5–7h, 13b, 13c i 15, art. 26h ust. 2–9"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (terminal płatniczy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 11 ust. 3a
+          quote: "może odliczyć od tych przychodów wydatki określone w art. 26hd ust. 1 i 2 ustawy o podatku dochodowym"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (proporcja)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 11 ust. 3
+          quote: "odliczeń tych dokonuje w takim stosunku, w jakim w roku podatkowym pozostają poszczególne przychody"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (Internet, dwa lata)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 6h
+          quote: "przysługuje podatnikowi wyłącznie w kolejno po sobie następujących dwóch latach podatkowych, jeżeli w okresie poprzedzającym te lata nie korzystał z tego odliczenia"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (IKZE w zeznaniu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 6g
+          quote: "Odliczenia, o którym mowa w ust. 1 pkt 2b i 2c, dokonuje się w zeznaniu podatkowym."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ulga na dzieci od podatku według skali)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 27f ust. 1
+          quote: "Od podatku dochodowego obliczonego zgodnie z art. 27 podatnik ma prawo odliczyć kwotę obliczoną zgodnie z ust. 2"
+        - title: podatki.gov.pl (MF), Ulga na Internet PIT, aktualizacja 9.10.2026 (krok 3)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-internet-pit
+          kind: control
+          quote: "dochody opodatkowane skalą podatkową lub przychody opodatkowane ryczałtem od przychodów ewidencjonowanych"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Ulga rehabilitacyjna PIT, aktualizacja 26.10.2026 (krok 4)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-rehabilitacyjna-pit
+          kind: control
+          quote: "Ulgę odliczasz od: dochodu opodatkowanego według skali podatkowej lub przychodu opodatkowanego ryczałtem od przychodów ewidencjonowanych"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Ulga termomodernizacyjna PIT, aktualizacja 12.10.2026 (krok 6)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-termomodernizacyjna-pit
+          kind: control
+          quote: "od przychodu podlegającego opodatkowaniu ryczałtem od przychodów ewidencjonowanych"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (krok 8)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
+          kind: control
+          quote: "Nie możesz skorzystać z ulgi, jeżeli uzyskujesz wyłącznie dochody (przychody) opodatkowane: podatkiem liniowym z tytułu prowadzonej działalności gospodarczej lub działów specjalnych produkcji rolnej, ryczałtem ewidencjonowanym"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Ulga na IKZE PIT, aktualizacja 23.10.2026 (krok 2)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-ikze-pit
+          kind: control
+          quote: "Ulgi na IKZE nie możesz uwzględnić przy obliczaniu zaliczek na podatek dochodowy. Odliczenia dokonujesz w zeznaniu rocznym."
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+    - valid_from: 2027-01-01
+      value:
+        steps:
+          - text: Od przychodów opodatkowanych ryczałtem możesz odliczyć stratę z art. 9 ust. 3–3b ustawy o podatku dochodowym od osób fizycznych oraz wydatki z art. 26 ust. 1 pkt 2, 2a, 2b, 2c, 5, 6 i 9, art. 26h ust. 1 i art. 26hb ust. 1 tej ustawy, jeżeli nie zostały odliczone od dochodu ani zaliczone do kosztów uzyskania przychodów. Odliczenie składek społecznych (pkt 2 i 2a) i połowy składki zdrowotnej opisuje zasada podstawy opodatkowania ryczałtem.
+            uses: [zasada.ryczalt_podstawa]
+            basis: art. 11 ust. 1 i 1a ustawy o zryczałtowanym podatku dochodowym w brzmieniu od 1 stycznia 2027 r.
+          - text: Wpłaty na indywidualne konto zabezpieczenia emerytalnego dokonane w roku podatkowym odliczasz do wysokości rocznego limitu wpłat z ustawy o tych kontach, w zeznaniu.
+            uses: [ikze.limit_wplat]
+            basis: art. 11 ust. 1 i 2 ustawy o zryczałtowanym podatku dochodowym w brzmieniu od 1 stycznia 2027 r.; art. 26 ust. 1 pkt 2b i ust. 6g ustawy o podatku dochodowym od osób fizycznych; art. 13a ustawy o indywidualnych kontach emerytalnych oraz indywidualnych kontach zabezpieczenia emerytalnego
+          - text: Odliczenie wydatków na Internet nie przysługuje od przychodów uzyskanych od 1 stycznia 2027 r. Przepis przejściowy (art. 5 ust. 1) zachowuje to odliczenie w zeznaniu za 2027 r. na dotychczasowych zasadach podatnikowi, który po raz pierwszy skorzystał z niego w zeznaniu za 2026 r. Do podatników, którzy odliczali je na ryczałcie, stosuje się go odpowiednio (art. 5 ust. 2); jak dokładnie działa przy odliczeniu od przychodu, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [ulga.internet.limit]
+            basis: art. 3 pkt 1, art. 4 ust. 1 i art. 5 ust. 1 i 2 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1541)
+          - text: Wydatki na cele rehabilitacyjne i na ułatwienie wykonywania czynności życiowych odliczasz według katalogu z art. 26 ust. 7a ustawy o PIT; część pozycji ma roczny limit, a wydatki na leki odliczasz w części przekraczającej kwotę miesięczną. Warunki (orzeczenie, brak finansowania z funduszy, osoby na utrzymaniu) są w art. 26 ust. 7b–7g.
+            uses: [ulga.rehabilitacyjna.limity]
+            basis: art. 11 ust. 1 i 2 ustawy o zryczałtowanym podatku dochodowym w brzmieniu od 1 stycznia 2027 r.; art. 26 ust. 1 pkt 6 i ust. 7a–7g ustawy o podatku dochodowym od osób fizycznych
+          - text: Darowizny na cele z art. 26 ust. 1 pkt 9 ustawy o PIT odliczasz łącznie do limitu procentowego. Nie odliczysz darowizn na rzecz osób fizycznych ani podmiotów wymienionych w art. 26 ust. 5 pkt 2, ani darowizn zaliczonych do kosztów. Wysokość darowizny ustalasz na podstawie dokumentów z art. 26 ust. 7. Od 1 stycznia 2027 r. darowiznę na krwiodawstwo liczy się według podwojonej kwoty rekompensaty (art. 26 ust. 1 pkt 9 lit. c w nowym brzmieniu).
+            uses: [ulga.darowizny.limit_ryczalt]
+            basis: art. 11 ust. 1 i 2 ustawy o zryczałtowanym podatku dochodowym w brzmieniu od 1 stycznia 2027 r.; art. 26 ust. 1 pkt 9, ust. 5, 6, 6f i 7 ustawy o podatku dochodowym od osób fizycznych
+          - text: Wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, odliczasz do limitu na wszystkie przedsięwzięcia, na warunkach art. 26h ust. 2–9 ustawy o PIT. Ta zasada nie opisuje odliczenia wydatków na zabytki (art. 26hb ust. 1) ani wydatków na terminal płatniczy (art. 11 ust. 3a ustawy o ryczałcie w zw. z art. 26hd ustawy o PIT).
+            uses: [ulga.termomodernizacja.limit]
+            basis: art. 11 ust. 1, 2 i 3a ustawy o zryczałtowanym podatku dochodowym; art. 26h ust. 1 i 2 ustawy o podatku dochodowym od osób fizycznych
+          - text: Przy przychodach opodatkowanych różnymi stawkami odliczenia dzielisz w takim stosunku, w jakim pozostają poszczególne przychody w ogólnej kwocie przychodów.
+            uses: [zasada.ryczalt_podstawa]
+            basis: art. 11 ust. 3 ustawy o zryczałtowanym podatku dochodowym
+          - text: Ulgi na dzieci nie odliczasz od ryczałtu. Art. 27f ustawy o PIT pozwala odliczyć ją od podatku obliczonego według skali podatkowej (art. 27), a art. 11 ustawy o ryczałcie jej nie wymienia. Jeżeli oprócz przychodów z ryczałtu masz dochody opodatkowane według skali, ulgę wykazujesz w zeznaniu, w którym rozliczasz te dochody.
+            uses: [ulga.dzieci.kwoty]
+            basis: art. 27f ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 11 ustawy o zryczałtowanym podatku dochodowym
+      note: >-
+        Od 1 stycznia 2027 r. art. 11 ust. 1 i 2 ustawy o ryczałcie mają brzmienie nadane art. 3 ustawy Dz.U. 2026
+        poz. 1541 (wejście w życie według art. 8, stosowanie do przychodów od 1 stycznia 2027 r. według art. 4 ust. 1),
+        a w ustawie o PIT uchylono art. 26 ust. 1 pkt 6a i ust. 6h. Tekstu jednolitego z tą zmianą jeszcze nie ma:
+        brzmienie wynika z tekstu jednolitego Dz.U. 2025 poz. 843 i ustawy zmieniającej. Nowe brzmienie art. 11 ust. 2 nie
+        obejmuje art. 26 ust. 6a (uchylonego już wcześniej) i ust. 6h; art. 26 ust. 5 nadal stosuje się odpowiednio.
+      sources:
+        - title: Dz.U. 2026 poz. 1541, ustawa z 22 października 2026 r. o zmianie ustawy o PIT, ustawy o CIT oraz ustawy o ryczałcie (nowy katalog odliczeń)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 3 pkt 1
+          quote: "w ust. 1 wyrazy „art. 26 ust. 1 pkt 2, 2a, 2b, 2c, 5–6a i 9” zastępuje się wyrazami „art. 26 ust. 1 pkt 2, 2a, 2b, 2c, 5, 6 i 9”"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (stosowanie od 2027 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 4 ust. 1
+          quote: "Przepisy ustaw zmienianych w art. 1–3, w brzmieniu nadanym niniejszą ustawą, mają zastosowanie do dochodów (przychodów) uzyskanych od dnia 1 stycznia 2027 r."
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (przepis przejściowy dla ulgi internetowej)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 5 ust. 2
+          quote: "na podstawie art. 11 ust. 1 ustawy zmienianej w art. 3, w brzmieniu dotychczasowym"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (przepis przejściowy dla ulgi internetowej, zasada ogólna)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 5 ust. 1
+          quote: "zachowuje prawo do tego odliczenia w zeznaniu podatkowym składanym za 2027 r. na zasadach określonych w art. 26 ust. 1 pkt 6a i ust. 6h ustawy zmienianej w art. 1"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (krwiodawstwo)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 1 pkt 1 lit. a
+          quote: "w wysokości iloczynu podwojonej kwoty rekompensaty"
+          as_of: 2026-11-23
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pozostała część art. 11 ust. 1)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 11 ust. 1
+          quote: "art. 26h ust. 1 oraz art. 26hb ust. 1 ustawy o podatku dochodowym, jeżeli nie zostały odliczone od dochodu"
+        - title: Dz.U. 2026 poz. 1541 (nowe brzmienie art. 11 ust. 2 ustawy o ryczałcie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 3 pkt 2
+          quote: "zastępuje się wyrazami „art. 26 ust. 5, 6, 6b–6g, 7–7h, 13b, 13c i 15”"
+          as_of: 2026-11-23
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (termomodernizacja na ryczałcie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 11 ust. 2
+          quote: "art. 26h ust. 2–9 oraz art. 26hb ust. 2–12 ustawy o podatku dochodowym"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (terminal płatniczy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 11 ust. 3a
+          quote: "może odliczyć od tych przychodów wydatki określone w art. 26hd ust. 1 i 2 ustawy o podatku dochodowym"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (IKZE w zeznaniu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 6g
+          quote: "Odliczenia, o którym mowa w ust. 1 pkt 2b i 2c, dokonuje się w zeznaniu podatkowym."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (termomodernizacja)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26h ust. 2
+          quote: "Kwota odliczenia nie może przekroczyć 53 000 zł w odniesieniu do wszystkich realizowanych przedsięwzięć termomodernizacyjnych"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (proporcja)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 11 ust. 3
+          quote: "odliczeń tych dokonuje w takim stosunku, w jakim w roku podatkowym pozostają poszczególne przychody"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ulga na dzieci od podatku według skali)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 27f ust. 1
+          quote: "Od podatku dochodowego obliczonego zgodnie z art. 27 podatnik ma prawo odliczyć kwotę obliczoną zgodnie z ust. 2"
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          Krok o Internecie: art. 5 ust. 2 ustawy Dz.U. 2026 poz. 1541 stosuje przepis przejściowy do ryczałtu tylko
+          odpowiednio; nie wiadomo, jak art. 5 ust. 1 stosuje się przy odliczeniu od przychodu na ryczałcie. Przepis nie
+          rozstrzyga też, czy prawo do odliczenia w zeznaniu za 2027 r. zachowuje podatnik, który zmienił formę
+          opodatkowania między 2026 a 2027 r. (z ryczałtu na skalę albo odwrotnie). Kwota limitu na 2027 r. wynika
+          tylko z przepisu przejściowego. Pytanie do eksperta: docs/pytania-do-eksperta.md, P14.
+
+- id: zasada.ulgi_liniowy
+  name: Ulgi i odliczenia przy podatku liniowym
+  kind: rule
+  applies_to: {tax_form: [liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      valid_to: 2026-12-31
+      value:
+        steps:
+          - text: Dochód z działalności opodatkowanej podatkiem liniowym możesz pomniejszyć tylko o pozycje wymienione w art. 30c ust. 2 ustawy o PIT. Odliczenie składek społecznych i zdrowotnych opisuje zasada podatku liniowego.
+            uses: [zasada.liniowy_podatek]
+            basis: art. 30c ust. 2 ustawy o podatku dochodowym od osób fizycznych
+          - text: Wpłaty na indywidualne konto zabezpieczenia emerytalnego odliczasz do wysokości rocznego limitu wpłat z ustawy o tych kontach, wyłącznie w zeznaniu, jeżeli nie zostały zaliczone do kosztów, odliczone od dochodów opodatkowanych według skali ani od przychodów na ryczałcie i nie zostały zwrócone.
+            uses: [ikze.limit_wplat]
+            basis: art. 30c ust. 2 pkt 3, ust. 3 i 3b ustawy o podatku dochodowym od osób fizycznych; art. 13a ustawy o indywidualnych kontach emerytalnych oraz indywidualnych kontach zabezpieczenia emerytalnego
+          - text: Z darowizn odliczasz tylko darowiznę na cele kształcenia zawodowego z art. 26 ust. 1 pkt 9 lit. d (materiały dydaktyczne lub środki trwałe dla publicznych szkół, placówek i centrów kształcenia zawodowego, na warunkach art. 26 ust. 6ea i 6eb), w wysokości darowizny, nie więcej niż limit procentowy dochodu. Pozostałych odliczeń z art. 26 ust. 1, na przykład wydatków na Internet i na cele rehabilitacyjne, art. 30c ust. 2 nie wymienia.
+            uses: [ulga.darowizny.limit]
+            basis: art. 30c ust. 2 pkt 4, ust. 3 i 3a ustawy o podatku dochodowym od osób fizycznych; art. 26 ust. 1 pkt 9 lit. d, ust. 6ea i 6eb tej ustawy
+          - text: Od podstawy obliczenia podatku ustalonej według art. 30c ust. 2 możesz odliczyć wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, do limitu na wszystkie przedsięwzięcia. Do tej podstawy odnoszą się też odliczenia z art. 26e, 26ga, 26gb, 26ha, 26hb, 26hc, 26hd i 26he ustawy o PIT, art. 52jb (ulga na robotyzację, 50% kosztów poniesionych na robotyzację, nie więcej niż dochód z działalności, dla kosztów poniesionych w latach 2022–2026; przedłużenie do lat 2022–2036 z ustawy Dz.U. 2026 poz. 1541 stosuje się do dochodów uzyskanych od 1 stycznia 2027 r.) oraz art. 52n (darowizny na przeciwdziałanie COVID-19) i art. 52x (darowizny rzeczowe laptopów i tabletów dla organów prowadzących placówki oświatowe albo dla organizacji, o których mowa w art. 3 ust. 2 i 3 ustawy o działalności pożytku publicznego, prowadzących działalność pożytku publicznego w sferze zadań publicznych, lub operatora OSE, z przeznaczeniem na dalsze nieodpłatne przekazanie), w obu przypadkach przekazane od 1 stycznia 2020 r. do końca miesiąca odwołania stanu epidemii; ta zasada ich nie opisuje. Podstawę po odliczeniach z art. 26e, 26ga, 26gb, 26h–26he i 52jb można zmniejszyć o wartość nieuregulowanych wierzytelności, a trzeba zwiększyć o wartość nieuregulowanych zobowiązań, na zasadach art. 26i (ulga na złe długi); ta zasada tego nie opisuje. Ta lista obejmuje odliczenia i zmiany tej podstawy, które przepisy ustawy o PIT (tekst jednolity Dz.U. 2026 poz. 592) wiążą z podstawą ustaloną według art. 26 ust. 1 lub art. 30c ust. 2; odliczeń przewidzianych w odrębnych ustawach (art. 26 ust. 6b) nie sprawdzono, więc lista nie musi być pełna.
+            uses: [ulga.termomodernizacja.limit]
+            basis: art. 26h ust. 1 i 2, art. 26i ust. 1, art. 52jb ust. 1 i 5, art. 52n ust. 1 i art. 52x ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 1 pkt 4 lit. b i art. 4 ust. 1 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1541)
+          - text: Ulgi na dzieci nie odliczasz od podatku liniowego, bo art. 27f ustawy o PIT dotyczy podatku obliczonego według skali (art. 27). Dochody opodatkowane podatkiem liniowym wlicza się jednak do dochodów, od których zależy prawo do ulgi na jedno dziecko. Jeżeli masz też dochody opodatkowane według skali, ulgę wykazujesz w zeznaniu, w którym rozliczasz te dochody.
+            uses: [ulga.dzieci.kwoty, ulga.dzieci.limit_dochodow]
+            basis: art. 27f ust. 1, 2 pkt 1 i ust. 2a ustawy o podatku dochodowym od osób fizycznych
+      note: >-
+        Tekst jednolity Dz.U. 2026 poz. 592 uwzględnia stan prawny na 1 kwietnia 2026 r.; zmiany ustawy o PIT, które
+        weszły w życie między 1 stycznia a 1 kwietnia 2026 r. (Dz.U. 2025 poz. 1795, Dz.U. 2026 poz. 203 i 424), zmieniają
+        tylko art. 21 i 52zr, a zmiana z Dz.U. 2025 poz. 1301 (tylko art. 52zo–52zr) weszła w życie w 2025 r., więc to brzmienie obowiązywało od 1 stycznia 2026 r. Późniejsze nowelizacje do
+        31 grudnia 2026 r. (poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1556) art. 26, 26h, 27f i 30c nie zmieniają;
+        ustawa Dz.U. 2026 poz. 1542 od 1 stycznia 2027 r. zmienia art. 21, 23b i 23z, a z przepisów o odliczeniach
+        tylko warunki art. 26e ust. 6 i art. 26ga ust. 10 przy zwolnieniu z art. 21 ust. 1 pkt 63b. Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (IKZE)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30c ust. 2 pkt 3
+          quote: "3) wpłaty na indywidualne konto zabezpieczenia emerytalnego określone w art. 26 ust. 1 pkt 2b"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (darowizna na kształcenie zawodowe)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30c ust. 2 pkt 4
+          quote: "darowiznę, o której mowa w art. 26 ust. 1 pkt 9 lit. d, w wysokości dokonanej darowizny, niewięcej jednak niż kwoty stanowiącej 6 % dochodu"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (warunki odliczeń)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30c ust. 3
+          quote: "oraz dokonane darowizny na cele kształcenia zawodowego określone w art. 26 ust. 1 pkt 9 lit. d, podlegają odliczeniu od dochodu, jeżeli nie zostały"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (IKZE w zeznaniu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30c ust. 3b
+          quote: "Odliczenia wpłat na indywidualne konto zabezpieczenia emerytalnego, o którym mowa w ust. 2, dokonuje się w zeznaniu podatkowym."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (termomodernizacja)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26h ust. 1
+          quote: "ma prawo odliczyć od podstawy obliczenia podatku, ustalonej zgodnie z art. 26 ust. 1 lub art. 30c ust. 2, wydatki poniesione w roku podatkowym na materiały budowlane"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ulga na robotyzację)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 52jb ust. 1
+          quote: "ustalonej zgodnie z art. 26 ust. 1 lub art. 30c ust. 2, kwotę stanowiącą 50 % kosztów uzyskania przychodów poniesionych w roku podatkowym na robotyzację"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (darowizny na przeciwdziałanie COVID-19)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 52n ust. 1
+          quote: "Od podstawy obliczenia podatku ustalonej zgodnie z art. 26 ust. 1 lub art. 30c ust. 2 w celu obliczenia podatku lub zaliczki podatnik może odliczyć darowizny przekazane od dnia 1 stycznia 2020 r."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (darowizny laptopów i tabletów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 52x ust. 1
+          quote: "podatnik może odliczyć darowizny rzeczowe, których przedmiotem są komputery przenośne będące laptopami lub tabletami"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ulga na złe długi)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26i ust. 1
+          quote: "Podstawa obliczenia podatku ustalona zgodnie z art. 26 ust. 1, art. 30c ust. 2 lub art. 30ca ust. 3 oraz po uprzednim odliczeniu kwot określonych w art. 26e, art. 26ga, art. 26gb, art. 26h–26he i art. 52jb"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (okres ulgi na robotyzację)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 52jb ust. 5
+          quote: "ma zastosowanie do kosztów uzyskania przychodów poniesionych na robotyzację w latach 2022–2026"
+        - title: Dz.U. 2026 poz. 1541 (przedłużenie ulgi na robotyzację)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 1 pkt 4 lit. b
+          quote: "w ust. 5 wyrazy „w latach 2022–2026” zastępuje się wyrazami „w latach 2022–2036”"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (nowe brzmienie stosuje się do dochodów od 2027 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 4 ust. 1
+          quote: "Przepisy ustaw zmienianych w art. 1–3, w brzmieniu nadanym niniejszą ustawą, mają zastosowanie do dochodów (przychodów) uzyskanych od dnia 1 stycznia 2027 r."
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ulga na dzieci od podatku według skali)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 27f ust. 1
+          quote: "Od podatku dochodowego obliczonego zgodnie z art. 27 podatnik ma prawo odliczyć kwotę obliczoną zgodnie z ust. 2"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dochody do limitu ulgi na dzieci)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 27f ust. 2a
+          quote: "do których mają zastosowanie zasady opodatkowania określone w art. 27, art. 30b i art. 30c"
+        - title: podatki.gov.pl (MF), Ulga na IKZE PIT, aktualizacja 23.10.2026 (krok 2)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-ikze-pit
+          kind: control
+          quote: "dochodu opodatkowanego 19% podatkiem liniowym"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Darowizny na kształcenie zawodowe PIT, aktualizacja 23.11.2026 (krok 3)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/darowizny-na-ksztalcenie-zawodowe-pit
+          kind: control
+          quote: "dochody opodatkowane według skali podatkowej lub dochody opodatkowane 19% podatkiem liniowym lub przychody opodatkowane ryczałtem od przychodów ewidencjonowanych"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Ulga termomodernizacyjna PIT, aktualizacja 12.10.2026 (krok 4)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-termomodernizacyjna-pit
+          kind: control
+          quote: "od dochodu opodatkowanego 19% podatkiem liniowym"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (krok 5)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
+          kind: control
+          quote: "Jeżeli oprócz tych dochodów lub przychodów uzyskujesz również dochody opodatkowane według skali podatkowej, możesz skorzystać z ulgi na dziecko."
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+    - valid_from: 2027-01-01
+      value:
+        steps:
+          - text: Dochód z działalności opodatkowanej podatkiem liniowym możesz pomniejszyć tylko o pozycje wymienione w art. 30c ust. 2 ustawy o PIT. Odliczenie składek społecznych i zdrowotnych opisuje zasada podatku liniowego.
+            uses: [zasada.liniowy_podatek]
+            basis: art. 30c ust. 2 ustawy o podatku dochodowym od osób fizycznych
+          - text: Wpłaty na indywidualne konto zabezpieczenia emerytalnego odliczasz do wysokości rocznego limitu wpłat z ustawy o tych kontach, wyłącznie w zeznaniu, jeżeli nie zostały zaliczone do kosztów, odliczone od dochodów opodatkowanych według skali ani od przychodów na ryczałcie i nie zostały zwrócone.
+            uses: [ikze.limit_wplat]
+            basis: art. 30c ust. 2 pkt 3, ust. 3 i 3b ustawy o podatku dochodowym od osób fizycznych; art. 13a ustawy o indywidualnych kontach emerytalnych oraz indywidualnych kontach zabezpieczenia emerytalnego
+          - text: Z darowizn odliczasz tylko darowiznę na cele kształcenia zawodowego z art. 26 ust. 1 pkt 9 lit. d (materiały dydaktyczne lub środki trwałe dla publicznych szkół, placówek i centrów kształcenia zawodowego, na warunkach art. 26 ust. 6ea i 6eb), w wysokości darowizny, nie więcej niż limit procentowy dochodu. Pozostałych odliczeń z art. 26 ust. 1, na przykład wydatków na cele rehabilitacyjne, art. 30c ust. 2 nie wymienia.
+            uses: [ulga.darowizny.limit]
+            basis: art. 30c ust. 2 pkt 4, ust. 3 i 3a ustawy o podatku dochodowym od osób fizycznych; art. 26 ust. 1 pkt 9 lit. d, ust. 6ea i 6eb tej ustawy
+          - text: Od podstawy obliczenia podatku ustalonej według art. 30c ust. 2 możesz odliczyć wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, do limitu na wszystkie przedsięwzięcia. Do tej podstawy odnoszą się też odliczenia z art. 26e, 26ga, 26ha, 26hb, 26hc, 26hd i 26he ustawy o PIT, art. 52jb (ulga na robotyzację, 50% kosztów poniesionych na robotyzację, nie więcej niż dochód z działalności, dla kosztów poniesionych w latach 2022–2036; od 1 stycznia 2027 r. przy środkach trwałych i wartościach niematerialnych i prawnych podlegających amortyzacji za koszty poniesione na robotyzację uznaje się dokonywane w danym roku podatkowym i zaliczane do kosztów odpisy amortyzacyjne od nich (ust. 2a), a wyłączenie z ust. 5a uchylono, z tym że do kosztów poniesionych przed tym dniem nadal się je stosuje; jak ust. 2a stosuje się do odpisów od aktywów nabytych przed 2027 r., jest niewyjaśnione (otwarte pytanie do eksperta)) oraz art. 52n (darowizny na przeciwdziałanie COVID-19) i art. 52x (darowizny rzeczowe laptopów i tabletów dla organów prowadzących placówki oświatowe albo dla organizacji, o których mowa w art. 3 ust. 2 i 3 ustawy o działalności pożytku publicznego, prowadzących działalność pożytku publicznego w sferze zadań publicznych, lub operatora OSE, z przeznaczeniem na dalsze nieodpłatne przekazanie), w obu przypadkach przekazane od 1 stycznia 2020 r. do końca miesiąca odwołania stanu epidemii; ta zasada ich nie opisuje. Podstawę po odliczeniach z art. 26e, 26ga, 26h–26he i 52jb można zmniejszyć o wartość nieuregulowanych wierzytelności, a trzeba zwiększyć o wartość nieuregulowanych zobowiązań, na zasadach art. 26i (ulga na złe długi; od 1 stycznia 2027 r. bez odesłania do uchylonego art. 26gb); ta zasada tego nie opisuje. Ta lista obejmuje odliczenia i zmiany tej podstawy, które przepisy ustawy o PIT (tekst jednolity Dz.U. 2026 poz. 592) wiążą z podstawą ustaloną według art. 26 ust. 1 lub art. 30c ust. 2; odliczeń przewidzianych w odrębnych ustawach (art. 26 ust. 6b) nie sprawdzono, więc lista nie musi być pełna. Art. 26gb (ulga na ekspansję) uchylono od 1 stycznia 2027 r.; według art. 6 ust. 1 ustawy Dz.U. 2026 poz. 1541 do kosztów poniesionych przed tym dniem stosuje się przepisy dotychczasowe, więc odliczenia z art. 26gb za takie koszty mogą trwać po 2026 r. (w tym odliczenie nieodliczonej części w zeznaniach za kolejne sześć lat z art. 26gb ust. 9 i doliczenie z ust. 6). W jakiej kolejności stosuje się je wobec art. 26i, który od 1 stycznia 2027 r. nie odsyła do art. 26gb, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [ulga.termomodernizacja.limit]
+            basis: art. 26h ust. 1 i 2, art. 26i ust. 1, art. 52jb, art. 52n ust. 1 i art. 52x ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 1 pkt 2, 3 i 4, art. 4 ust. 1, art. 6 ust. 1, art. 7 ust. 1 i art. 8 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1541)
+          - text: Ulgi na dzieci nie odliczasz od podatku liniowego, bo art. 27f ustawy o PIT dotyczy podatku obliczonego według skali (art. 27). Dochody opodatkowane podatkiem liniowym wlicza się jednak do dochodów, od których zależy prawo do ulgi na jedno dziecko. Jeżeli masz też dochody opodatkowane według skali, ulgę wykazujesz w zeznaniu, w którym rozliczasz te dochody.
+            uses: [ulga.dzieci.kwoty, ulga.dzieci.limit_dochodow]
+            basis: art. 27f ust. 1, 2 pkt 1 i ust. 2a ustawy o podatku dochodowym od osób fizycznych
+      note: >-
+        Od 1 stycznia 2027 r. ustawa Dz.U. 2026 poz. 1541 uchyla art. 26gb ustawy o PIT (wejście w życie według art. 8,
+        stosowanie do dochodów od 1 stycznia 2027 r. według art. 4 ust. 1, przepis przejściowy w art. 6 ust. 1).
+        Tekstu jednolitego z tą zmianą jeszcze nie ma: brzmienie wynika z tekstu jednolitego Dz.U. 2026 poz. 592
+        i ustawy zmieniającej. Ustawa Dz.U. 2026 poz. 1542 od tego dnia zmienia art. 26e ust. 6 i art. 26ga ust. 10
+        (warunki przy zwolnieniu z art. 21 ust. 1 pkt 63b); ta zasada tych odliczeń nie opisuje.
+        W art. 52jb ta sama ustawa od 1 stycznia 2027 r. dodaje ust. 2a (odpisy amortyzacyjne jako koszty poniesione
+        na robotyzację), uchyla ust. 5a (do kosztów poniesionych przed tym dniem stosuje się go nadal, art. 7 ust. 1)
+        i przedłuża okres w ust. 5 do lat 2022–2036 (art. 1 pkt 4 lit. b wchodzi w życie 31 grudnia 2026 r., ale według
+        art. 4 ust. 1 dotyczy dochodów od 1 stycznia 2027 r.), a w art. 26i ust. 1 skreśla odesłanie do art. 26gb.
+      sources:
+        - title: Dz.U. 2026 poz. 1541, ustawa z 22 października 2026 r. o zmianie ustawy o PIT, ustawy o CIT oraz ustawy o ryczałcie (uchylenie ulgi na ekspansję)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 1 pkt 2
+          quote: "2) uchyla się art. 26gb;"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (koszty sprzed 2027 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 6 ust. 1
+          quote: "do kosztów, o których mowa w art. 26gb ustawy zmienianej w art. 1, poniesionych przed dniem 1 stycznia 2027 r., stosuje się przepisy dotychczasowe"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (wejście w życie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 8
+          quote: "Ustawa wchodzi w życie z dniem 1 stycznia 2027 r."
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (IKZE)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30c ust. 2 pkt 3
+          quote: "3) wpłaty na indywidualne konto zabezpieczenia emerytalnego określone w art. 26 ust. 1 pkt 2b"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (darowizna na kształcenie zawodowe)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30c ust. 2 pkt 4
+          quote: "darowiznę, o której mowa w art. 26 ust. 1 pkt 9 lit. d, w wysokości dokonanej darowizny, niewięcej jednak niż kwoty stanowiącej 6 % dochodu"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (termomodernizacja)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26h ust. 1
+          quote: "ma prawo odliczyć od podstawy obliczenia podatku, ustalonej zgodnie z art. 26 ust. 1 lub art. 30c ust. 2, wydatki poniesione w roku podatkowym na materiały budowlane"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ulga na robotyzację)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 52jb ust. 1
+          quote: "ustalonej zgodnie z art. 26 ust. 1 lub art. 30c ust. 2, kwotę stanowiącą 50 % kosztów uzyskania przychodów poniesionych w roku podatkowym na robotyzację"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (darowizny na przeciwdziałanie COVID-19)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 52n ust. 1
+          quote: "Od podstawy obliczenia podatku ustalonej zgodnie z art. 26 ust. 1 lub art. 30c ust. 2 w celu obliczenia podatku lub zaliczki podatnik może odliczyć darowizny przekazane od dnia 1 stycznia 2020 r."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (darowizny laptopów i tabletów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 52x ust. 1
+          quote: "podatnik może odliczyć darowizny rzeczowe, których przedmiotem są komputery przenośne będące laptopami lub tabletami"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ulga na złe długi)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26i ust. 1
+          quote: "Podstawa obliczenia podatku ustalona zgodnie z art. 26 ust. 1, art. 30c ust. 2 lub art. 30ca ust. 3 oraz po uprzednim odliczeniu kwot określonych w art. 26e, art. 26ga, art. 26gb, art. 26h–26he i art. 52jb"
+        - title: Dz.U. 2026 poz. 1541 (przedłużenie ulgi na robotyzację)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 1 pkt 4 lit. b
+          quote: "w ust. 5 wyrazy „w latach 2022–2026” zastępuje się wyrazami „w latach 2022–2036”"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (nowe brzmienie stosuje się do dochodów od 2027 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 4 ust. 1
+          quote: "Przepisy ustaw zmienianych w art. 1–3, w brzmieniu nadanym niniejszą ustawą, mają zastosowanie do dochodów (przychodów) uzyskanych od dnia 1 stycznia 2027 r."
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (odpisy amortyzacyjne)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 1 pkt 4 lit. a
+          quote: "W przypadku środków trwałych i wartości niematerialnych i prawnych podlegających amortyzacji za koszty uzyskania przychodów poniesione na robotyzację uznaje się dokonywane w danym roku podatkowym"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (uchylenie art. 52jb ust. 5a)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 1 pkt 4 lit. c
+          quote: "w ust. 5 wyrazy „w latach 2022–2026” zastępuje się wyrazami „w latach 2022–2036”, c) uchyla się ust. 5a"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (art. 26i bez art. 26gb)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 1 pkt 3
+          quote: "w art. 26i w ust. 1 we wprowadzeniu do wyliczenia skreśla się wyrazy „art. 26gb,”"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (koszty sprzed 2027 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 7 ust. 1
+          quote: "poniesionych przed dniem 1 stycznia 2027 r., stosuje się przepis art. 52jb ust. 5a ustawy zmienianej w art. 1"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ulga na dzieci)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 27f ust. 1 i 2a
+          quote: "do których mają zastosowanie zasady opodatkowania określone w art. 27, art. 30b i art. 30c"
+        - title: ifirma.pl, Zmiany w ulgach podatkowych od 2027 (krok 4, tylko likwidacja ulgi na ekspansję i przedłużenie ulgi na robotyzację do 2036 r.)
+          url: https://www.ifirma.pl/blog/zmiany-w-ulgach-podatkowych-od-2027-koniec-ulgi-na-internet-i-ekspansje-wyzsza-ulga-dla-krwiodawcow/
+          kind: control
+          quote: "Ulga na ekspansję zlikwidowana, a ulga na robotyzację przedłużona – ulga na robotyzację ma obowiązywać do 2036 r."
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          Krok o odliczeniach od podstawy: art. 52jb ust. 2a (od 1 stycznia 2027 r.) uznaje za koszty poniesione
+          na robotyzację odpisy amortyzacyjne dokonywane w danym roku. Nie wiadomo, czy dotyczy to także odpisów od
+          środków trwałych i wartości niematerialnych i prawnych nabytych przed 2027 r., i jak to się ma do art. 7 ust. 1
+          ustawy Dz.U. 2026 poz. 1541. Nie wiadomo też, w jakiej kolejności po 2026 r. stosuje się odliczenia i doliczenia
+          z art. 26gb (ust. 9 i 6) za koszty sprzed 2027 r. (art. 6 ust. 1 tej ustawy) wobec art. 26i, który od 1 stycznia 2027 r. nie odsyła do
+          art. 26gb. Pytanie do eksperta: docs/pytania-do-eksperta.md, P20.
+
+- id: zasada.ulgi_skala
+  name: Ulgi i odliczenia przy opodatkowaniu według skali podatkowej
+  kind: rule
+  applies_to: {tax_form: [skala]}
+  versions:
+    - valid_from: 2026-01-01
+      valid_to: 2026-12-31
+      value:
+        steps:
+          - text: Od dochodu (art. 26 ust. 1 ustawy o PIT) odliczasz wydatki na cele z art. 26 ust. 1, jeżeli nie zostały zaliczone do kosztów, odliczone od dochodów opodatkowanych podatkiem liniowym ani od przychodów na ryczałcie i nie zostały zwrócone. Ta zasada nie opisuje odliczenia składek społecznych (pkt 2 i 2a) ani zwrotu nienależnych świadczeń (pkt 5).
+            uses: []
+            basis: art. 26 ust. 1 i 13a ustawy o podatku dochodowym od osób fizycznych
+          - text: Wpłaty na indywidualne konto zabezpieczenia emerytalnego odliczasz do wysokości rocznego limitu wpłat z ustawy o tych kontach, a składki członkowskie na związki zawodowe do kwoty rocznej z art. 26 ust. 1 pkt 2c; oba odliczenia tylko w zeznaniu.
+            uses: [ikze.limit_wplat]
+            basis: art. 26 ust. 1 pkt 2b i 2c oraz ust. 6g ustawy o podatku dochodowym od osób fizycznych; art. 13a ustawy o indywidualnych kontach emerytalnych oraz indywidualnych kontach zabezpieczenia emerytalnego
+          - text: Wydatki na użytkowanie sieci Internet odliczasz do rocznego limitu, wyłącznie w dwóch kolejnych latach podatkowych i tylko wtedy, gdy w okresie poprzedzającym te lata nie korzystałeś z tego odliczenia.
+            uses: [ulga.internet.limit]
+            basis: art. 26 ust. 1 pkt 6a i ust. 6h ustawy o podatku dochodowym od osób fizycznych
+          - text: Wydatki na cele rehabilitacyjne i na ułatwienie wykonywania czynności życiowych odliczasz według katalogu z art. 26 ust. 7a; część pozycji ma roczny limit, a wydatki na leki odliczasz w części przekraczającej kwotę miesięczną. Warunki są w art. 26 ust. 7b–7g.
+            uses: [ulga.rehabilitacyjna.limity]
+            basis: art. 26 ust. 1 pkt 6 i ust. 7a–7g ustawy o podatku dochodowym od osób fizycznych
+          - text: Darowizny na cele z art. 26 ust. 1 pkt 9 odliczasz łącznie do limitu procentowego dochodu. Nie odliczysz darowizn na rzecz osób fizycznych ani podmiotów wymienionych w art. 26 ust. 5 pkt 2, ani darowizn zaliczonych do kosztów. Darowiznę na kształcenie zawodowe (pkt 9 lit. d) odlicza tylko podatnik z przychodami z działalności gospodarczej.
+            uses: [ulga.darowizny.limit]
+            basis: art. 26 ust. 1 pkt 9, ust. 5, 6, 6eb, 6f i 7 ustawy o podatku dochodowym od osób fizycznych
+          - text: Od podstawy obliczenia podatku możesz odliczyć wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, do limitu na wszystkie przedsięwzięcia. Do tej podstawy odnoszą się też odliczenia z art. 26e, 26ga, 26gb, 26ha, 26hb, 26hc, 26hd i 26he, art. 52jb (ulga na robotyzację, 50% kosztów poniesionych na robotyzację, nie więcej niż dochód z działalności, dla kosztów poniesionych w latach 2022–2026; przedłużenie do lat 2022–2036 z ustawy Dz.U. 2026 poz. 1541 stosuje się do dochodów uzyskanych od 1 stycznia 2027 r.) oraz art. 52n (darowizny na przeciwdziałanie COVID-19) i art. 52x (darowizny rzeczowe laptopów i tabletów dla organów prowadzących placówki oświatowe albo dla organizacji, o których mowa w art. 3 ust. 2 i 3 ustawy o działalności pożytku publicznego, prowadzących działalność pożytku publicznego w sferze zadań publicznych, lub operatora OSE, z przeznaczeniem na dalsze nieodpłatne przekazanie), w obu przypadkach przekazane od 1 stycznia 2020 r. do końca miesiąca odwołania stanu epidemii; ta zasada ich nie opisuje. Podstawę po odliczeniach z art. 26e, 26ga, 26gb, 26h–26he i 52jb można zmniejszyć o wartość nieuregulowanych wierzytelności, a trzeba zwiększyć o wartość nieuregulowanych zobowiązań, na zasadach art. 26i (ulga na złe długi); ta zasada tego nie opisuje. Ta lista obejmuje odliczenia i zmiany tej podstawy, które przepisy ustawy o PIT (tekst jednolity Dz.U. 2026 poz. 592) wiążą z podstawą ustaloną według art. 26 ust. 1 lub art. 30c ust. 2; odliczeń przewidzianych w odrębnych ustawach (art. 26 ust. 6b) nie sprawdzono, więc lista nie musi być pełna.
+            uses: [ulga.termomodernizacja.limit]
+            basis: art. 26h ust. 1 i 2, art. 26i ust. 1, art. 52jb ust. 1 i 5, art. 52n ust. 1 i art. 52x ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 1 pkt 4 lit. b i art. 4 ust. 1 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1541)
+          - text: Od podatku obliczonego według skali odliczasz ulgę na dzieci, za każdy miesiąc wykonywania władzy rodzicielskiej, pełnienia funkcji opiekuna prawnego albo rodziny zastępczej, w kwotach zależnych od liczby dzieci. Przy jednym dziecku ulga przysługuje tylko wtedy, gdy dochody nie przekroczyły limitu (z wyjątkiem dziecka z orzeczeniem albo decyzją z art. 26 ust. 7d); przy dwojgu i więcej dzieciach limitu dochodów nie ma. Na pełnoletnie dzieci ulga przysługuje na warunkach art. 27f ust. 6.
+            uses: [ulga.dzieci.kwoty, ulga.dzieci.limit_dochodow]
+            basis: art. 27f ust. 1, 2, 2a, 2b, 2e i 6 ustawy o podatku dochodowym od osób fizycznych
+          - text: Jeżeli ulga na dzieci jest wyższa od kwoty odliczonej w zeznaniu, przysługuje różnica, nie wyższa niż suma składek wskazanych w art. 27f ust. 9; wykazujesz ją w zeznaniu.
+            uses: [ulga.dzieci.kwoty]
+            basis: art. 27f ust. 8, 9 i 12 ustawy o podatku dochodowym od osób fizycznych
+      note: >-
+        Tekst jednolity Dz.U. 2026 poz. 592 uwzględnia stan prawny na 1 kwietnia 2026 r.; zmiany ustawy o PIT, które
+        weszły w życie między 1 stycznia a 1 kwietnia 2026 r. (Dz.U. 2025 poz. 1795, Dz.U. 2026 poz. 203 i 424), zmieniają
+        tylko art. 21 i 52zr, a zmiana z Dz.U. 2025 poz. 1301 (tylko art. 52zo–52zr) weszła w życie w 2025 r., więc to brzmienie obowiązywało od 1 stycznia 2026 r. Późniejsze nowelizacje do
+        31 grudnia 2026 r. (poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1556) art. 26, 26h i 27f nie zmieniają. Zasada nie opisuje skali podatkowej ani innych odliczeń od
+        podatku. Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (warunek odliczeń z art. 26 ust. 1)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 13a
+          quote: "Wydatki na cele określone w ust. 1 podlegają odliczeniu od dochodu, jeżeli nie zostały zaliczone do kosztów uzyskania przychodów"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (IKZE)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 1 pkt 2b
+          quote: "wpłat na indywidualne konto zabezpieczenia emerytalnego dokonanych przez podatnika w roku podatkowym, do wysokości określonej w przepisach o indywidualnych kontach zabezpieczenia emerytalnego"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (związki zawodowe)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 1 pkt 2c
+          quote: "składek członkowskich zapłaconych na rzecz związków zawodowych, w wysokości nieprzekraczającej w roku podatkowym kwoty 840 zł"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (w zeznaniu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 6g
+          quote: "Odliczenia, o którym mowa w ust. 1 pkt 2b i 2c, dokonuje się w zeznaniu podatkowym."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (Internet, dwa lata)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 6h
+          quote: "przysługuje podatnikowi wyłącznie w kolejno po sobie następujących dwóch latach podatkowych, jeżeli w okresie poprzedzającym te lata nie korzystał z tego odliczenia"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (kształcenie zawodowe)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 6eb
+          quote: "przysługuje podatnikom osiągającym przychody ze źródła, o którym mowa w art. 10 ust. 1 pkt 3"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (termomodernizacja)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26h ust. 1
+          quote: "ma prawo odliczyć od podstawy obliczenia podatku, ustalonej zgodnie z art. 26 ust. 1 lub art. 30c ust. 2, wydatki poniesione w roku podatkowym na materiały budowlane"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ulga na robotyzację)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 52jb ust. 1
+          quote: "ustalonej zgodnie z art. 26 ust. 1 lub art. 30c ust. 2, kwotę stanowiącą 50 % kosztów uzyskania przychodów poniesionych w roku podatkowym na robotyzację"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (darowizny na przeciwdziałanie COVID-19)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 52n ust. 1
+          quote: "Od podstawy obliczenia podatku ustalonej zgodnie z art. 26 ust. 1 lub art. 30c ust. 2 w celu obliczenia podatku lub zaliczki podatnik może odliczyć darowizny przekazane od dnia 1 stycznia 2020 r."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (darowizny laptopów i tabletów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 52x ust. 1
+          quote: "podatnik może odliczyć darowizny rzeczowe, których przedmiotem są komputery przenośne będące laptopami lub tabletami"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ulga na złe długi)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26i ust. 1
+          quote: "Podstawa obliczenia podatku ustalona zgodnie z art. 26 ust. 1, art. 30c ust. 2 lub art. 30ca ust. 3 oraz po uprzednim odliczeniu kwot określonych w art. 26e, art. 26ga, art. 26gb, art. 26h–26he i art. 52jb"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (okres ulgi na robotyzację)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 52jb ust. 5
+          quote: "ma zastosowanie do kosztów uzyskania przychodów poniesionych na robotyzację w latach 2022–2026"
+        - title: Dz.U. 2026 poz. 1541 (przedłużenie ulgi na robotyzację)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 1 pkt 4 lit. b
+          quote: "w ust. 5 wyrazy „w latach 2022–2026” zastępuje się wyrazami „w latach 2022–2036”"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (nowe brzmienie stosuje się do dochodów od 2027 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 4 ust. 1
+          quote: "Przepisy ustaw zmienianych w art. 1–3, w brzmieniu nadanym niniejszą ustawą, mają zastosowanie do dochodów (przychodów) uzyskanych od dnia 1 stycznia 2027 r."
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ulga na dzieci)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 27f ust. 1
+          quote: "Od podatku dochodowego obliczonego zgodnie z art. 27 podatnik ma prawo odliczyć kwotę obliczoną zgodnie z ust. 2"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (limit przy jednym dziecku z orzeczeniem)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 27f ust. 2e
+          quote: "Limity dochodów określone w ust. 2 pkt 1 nie dotyczą podatnika i jego małżonka"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (różnica do zwrotu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 27f ust. 8 i 9
+          quote: "Kwota stanowiąca różnicę, o której mowa w ust. 8, nie może przekroczyć sumy"
+        - title: podatki.gov.pl (MF), Ulga na Internet PIT, aktualizacja 9.10.2026 (krok 3)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-internet-pit
+          kind: control
+          quote: "Ulgę na Internet możesz odliczyć wyłącznie w dwóch kolejno po sobie następujących latach podatkowych."
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Darowizny na cele pożytku publicznego PIT, aktualizacja 6.10.2026 (krok 5)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/darowizny-na-cele-pozytku-publicznego-pit
+          kind: control
+          quote: "Odliczasz kwotę faktycznie przekazanej darowizny, nie więcej jednak niż 6% Twojego dochodu (przychodu)."
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (krok 7)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
+          kind: control
+          quote: "112 000 zł - jeśli przez cały rok pozostajesz w związku małżeńskim"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+    - valid_from: 2027-01-01
+      value:
+        steps:
+          - text: Od dochodu (art. 26 ust. 1 ustawy o PIT) odliczasz wydatki na cele z art. 26 ust. 1, jeżeli nie zostały zaliczone do kosztów, odliczone od dochodów opodatkowanych podatkiem liniowym ani od przychodów na ryczałcie i nie zostały zwrócone. Ta zasada nie opisuje odliczenia składek społecznych (pkt 2 i 2a) ani zwrotu nienależnych świadczeń (pkt 5).
+            uses: []
+            basis: art. 26 ust. 1 i 13a ustawy o podatku dochodowym od osób fizycznych
+          - text: Wpłaty na indywidualne konto zabezpieczenia emerytalnego odliczasz do wysokości rocznego limitu wpłat z ustawy o tych kontach, a składki członkowskie na związki zawodowe do kwoty rocznej z art. 26 ust. 1 pkt 2c; oba odliczenia tylko w zeznaniu.
+            uses: [ikze.limit_wplat]
+            basis: art. 26 ust. 1 pkt 2b i 2c oraz ust. 6g ustawy o podatku dochodowym od osób fizycznych; art. 13a ustawy o indywidualnych kontach emerytalnych oraz indywidualnych kontach zabezpieczenia emerytalnego
+          - text: Odliczenie wydatków na Internet nie przysługuje od dochodów uzyskanych od 1 stycznia 2027 r. Wyjątek dotyczy podatnika, który po raz pierwszy skorzystał z tego odliczenia w zeznaniu za 2026 r.; zachowuje je w zeznaniu za 2027 r. na dotychczasowych zasadach, do dotychczasowego rocznego limitu.
+            uses: [ulga.internet.limit]
+            basis: art. 1 pkt 1, art. 4 ust. 1 i art. 5 ust. 1 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1541)
+          - text: Wydatki na cele rehabilitacyjne i na ułatwienie wykonywania czynności życiowych odliczasz według katalogu z art. 26 ust. 7a; część pozycji ma roczny limit, a wydatki na leki odliczasz w części przekraczającej kwotę miesięczną. Warunki są w art. 26 ust. 7b–7g.
+            uses: [ulga.rehabilitacyjna.limity]
+            basis: art. 26 ust. 1 pkt 6 i ust. 7a–7g ustawy o podatku dochodowym od osób fizycznych
+          - text: Darowizny na cele z art. 26 ust. 1 pkt 9 odliczasz łącznie do limitu procentowego dochodu. Nie odliczysz darowizn na rzecz osób fizycznych ani podmiotów wymienionych w art. 26 ust. 5 pkt 2, ani darowizn zaliczonych do kosztów. Darowiznę na kształcenie zawodowe (pkt 9 lit. d) odlicza tylko podatnik z przychodami z działalności gospodarczej. Darowiznę na krwiodawstwo liczy się według podwojonej kwoty rekompensaty.
+            uses: [ulga.darowizny.limit]
+            basis: art. 26 ust. 1 pkt 9 (lit. c w brzmieniu od 1 stycznia 2027 r.), ust. 5, 6, 6eb, 6f i 7 ustawy o podatku dochodowym od osób fizycznych
+          - text: Od podstawy obliczenia podatku możesz odliczyć wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, do limitu na wszystkie przedsięwzięcia. Do tej podstawy odnoszą się też odliczenia z art. 26e, 26ga, 26ha, 26hb, 26hc, 26hd i 26he, art. 52jb (ulga na robotyzację, 50% kosztów poniesionych na robotyzację, nie więcej niż dochód z działalności, dla kosztów poniesionych w latach 2022–2036; od 1 stycznia 2027 r. przy środkach trwałych i wartościach niematerialnych i prawnych podlegających amortyzacji za koszty poniesione na robotyzację uznaje się dokonywane w danym roku podatkowym i zaliczane do kosztów odpisy amortyzacyjne od nich (ust. 2a), a wyłączenie z ust. 5a uchylono, z tym że do kosztów poniesionych przed tym dniem nadal się je stosuje; jak ust. 2a stosuje się do odpisów od aktywów nabytych przed 2027 r., jest niewyjaśnione (otwarte pytanie do eksperta)) oraz art. 52n (darowizny na przeciwdziałanie COVID-19) i art. 52x (darowizny rzeczowe laptopów i tabletów dla organów prowadzących placówki oświatowe albo dla organizacji, o których mowa w art. 3 ust. 2 i 3 ustawy o działalności pożytku publicznego, prowadzących działalność pożytku publicznego w sferze zadań publicznych, lub operatora OSE, z przeznaczeniem na dalsze nieodpłatne przekazanie), w obu przypadkach przekazane od 1 stycznia 2020 r. do końca miesiąca odwołania stanu epidemii; ta zasada ich nie opisuje. Podstawę po odliczeniach z art. 26e, 26ga, 26h–26he i 52jb można zmniejszyć o wartość nieuregulowanych wierzytelności, a trzeba zwiększyć o wartość nieuregulowanych zobowiązań, na zasadach art. 26i (ulga na złe długi; od 1 stycznia 2027 r. bez odesłania do uchylonego art. 26gb); ta zasada tego nie opisuje. Ta lista obejmuje odliczenia i zmiany tej podstawy, które przepisy ustawy o PIT (tekst jednolity Dz.U. 2026 poz. 592) wiążą z podstawą ustaloną według art. 26 ust. 1 lub art. 30c ust. 2; odliczeń przewidzianych w odrębnych ustawach (art. 26 ust. 6b) nie sprawdzono, więc lista nie musi być pełna. Art. 26gb (ulga na ekspansję) uchylono od 1 stycznia 2027 r.; według art. 6 ust. 1 ustawy Dz.U. 2026 poz. 1541 do kosztów poniesionych przed tym dniem stosuje się przepisy dotychczasowe, więc odliczenia z art. 26gb za takie koszty mogą trwać po 2026 r. (w tym odliczenie nieodliczonej części w zeznaniach za kolejne sześć lat z art. 26gb ust. 9 i doliczenie z ust. 6). W jakiej kolejności stosuje się je wobec art. 26i, który od 1 stycznia 2027 r. nie odsyła do art. 26gb, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [ulga.termomodernizacja.limit]
+            basis: art. 26h ust. 1 i 2, art. 26i ust. 1, art. 52jb, art. 52n ust. 1 i art. 52x ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 1 pkt 2, 3 i 4, art. 4 ust. 1, art. 6 ust. 1, art. 7 ust. 1 i art. 8 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1541)
+          - text: Od podatku obliczonego według skali odliczasz ulgę na dzieci, za każdy miesiąc wykonywania władzy rodzicielskiej, pełnienia funkcji opiekuna prawnego albo rodziny zastępczej, w kwotach zależnych od liczby dzieci. Przy jednym dziecku ulga przysługuje tylko wtedy, gdy dochody nie przekroczyły limitu (z wyjątkiem dziecka z orzeczeniem albo decyzją z art. 26 ust. 7d); przy dwojgu i więcej dzieciach limitu dochodów nie ma. Na pełnoletnie dzieci ulga przysługuje na warunkach art. 27f ust. 6.
+            uses: [ulga.dzieci.kwoty, ulga.dzieci.limit_dochodow]
+            basis: art. 27f ust. 1, 2, 2a, 2b, 2e i 6 ustawy o podatku dochodowym od osób fizycznych
+          - text: Jeżeli ulga na dzieci jest wyższa od kwoty odliczonej w zeznaniu, przysługuje różnica, nie wyższa niż suma składek wskazanych w art. 27f ust. 9; wykazujesz ją w zeznaniu.
+            uses: [ulga.dzieci.kwoty]
+            basis: art. 27f ust. 8, 9 i 12 ustawy o podatku dochodowym od osób fizycznych
+      note: >-
+        Od 1 stycznia 2027 r. ustawa Dz.U. 2026 poz. 1541 uchyla art. 26 ust. 1 pkt 6a i ust. 6h oraz art. 26gb ustawy
+        o PIT i zmienia art. 26 ust. 1 pkt 9 lit. c (wejście w życie według art. 8, stosowanie do dochodów od 1 stycznia
+        2027 r. według art. 4 ust. 1, przepisy przejściowe w art. 5 i 6). Tekstu jednolitego z tą zmianą jeszcze nie ma:
+        brzmienie wynika z tekstu jednolitego Dz.U. 2026 poz. 592 i ustawy zmieniającej.
+        W art. 52jb ta sama ustawa od 1 stycznia 2027 r. dodaje ust. 2a (odpisy amortyzacyjne jako koszty poniesione
+        na robotyzację), uchyla ust. 5a (do kosztów poniesionych przed tym dniem stosuje się go nadal, art. 7 ust. 1)
+        i przedłuża okres w ust. 5 do lat 2022–2036 (art. 1 pkt 4 lit. b wchodzi w życie 31 grudnia 2026 r., ale według
+        art. 4 ust. 1 dotyczy dochodów od 1 stycznia 2027 r.), a w art. 26i ust. 1 skreśla odesłanie do art. 26gb.
+      sources:
+        - title: Dz.U. 2026 poz. 1541, ustawa z 22 października 2026 r. o zmianie ustawy o PIT, ustawy o CIT oraz ustawy o ryczałcie (uchylenie ulgi internetowej)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 1 pkt 1 lit. a
+          quote: "w ust. 1: – uchyla się pkt 6a"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (przepis przejściowy dla ulgi internetowej)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 5 ust. 1
+          quote: "zachowuje prawo do tego odliczenia w zeznaniu podatkowym składanym za 2027 r. na zasadach określonych w art. 26 ust. 1 pkt 6a i ust. 6h ustawy zmienianej w art. 1"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (krwiodawstwo)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 1 pkt 1 lit. a
+          quote: "w wysokości iloczynu podwojonej kwoty rekompensaty"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (uchylenie ulgi na ekspansję)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 1 pkt 2 i art. 6 ust. 1
+          quote: "do kosztów, o których mowa w art. 26gb ustawy zmienianej w art. 1, poniesionych przed dniem 1 stycznia 2027 r., stosuje się przepisy dotychczasowe"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (stosowanie od 2027 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 4 ust. 1
+          quote: "Przepisy ustaw zmienianych w art. 1–3, w brzmieniu nadanym niniejszą ustawą, mają zastosowanie do dochodów (przychodów) uzyskanych od dnia 1 stycznia 2027 r."
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (warunek odliczeń z art. 26 ust. 1)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 13a
+          quote: "Wydatki na cele określone w ust. 1 podlegają odliczeniu od dochodu, jeżeli nie zostały zaliczone do kosztów uzyskania przychodów"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ulga na robotyzację)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 52jb ust. 1
+          quote: "ustalonej zgodnie z art. 26 ust. 1 lub art. 30c ust. 2, kwotę stanowiącą 50 % kosztów uzyskania przychodów poniesionych w roku podatkowym na robotyzację"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (darowizny na przeciwdziałanie COVID-19)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 52n ust. 1
+          quote: "Od podstawy obliczenia podatku ustalonej zgodnie z art. 26 ust. 1 lub art. 30c ust. 2 w celu obliczenia podatku lub zaliczki podatnik może odliczyć darowizny przekazane od dnia 1 stycznia 2020 r."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (darowizny laptopów i tabletów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 52x ust. 1
+          quote: "podatnik może odliczyć darowizny rzeczowe, których przedmiotem są komputery przenośne będące laptopami lub tabletami"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ulga na złe długi)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26i ust. 1
+          quote: "Podstawa obliczenia podatku ustalona zgodnie z art. 26 ust. 1, art. 30c ust. 2 lub art. 30ca ust. 3 oraz po uprzednim odliczeniu kwot określonych w art. 26e, art. 26ga, art. 26gb, art. 26h–26he i art. 52jb"
+        - title: Dz.U. 2026 poz. 1541 (przedłużenie ulgi na robotyzację)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 1 pkt 4 lit. b
+          quote: "w ust. 5 wyrazy „w latach 2022–2026” zastępuje się wyrazami „w latach 2022–2036”"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (nowe brzmienie stosuje się do dochodów od 2027 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 4 ust. 1
+          quote: "Przepisy ustaw zmienianych w art. 1–3, w brzmieniu nadanym niniejszą ustawą, mają zastosowanie do dochodów (przychodów) uzyskanych od dnia 1 stycznia 2027 r."
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (odpisy amortyzacyjne)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 1 pkt 4 lit. a
+          quote: "W przypadku środków trwałych i wartości niematerialnych i prawnych podlegających amortyzacji za koszty uzyskania przychodów poniesione na robotyzację uznaje się dokonywane w danym roku podatkowym"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (uchylenie art. 52jb ust. 5a)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 1 pkt 4 lit. c
+          quote: "w ust. 5 wyrazy „w latach 2022–2026” zastępuje się wyrazami „w latach 2022–2036”, c) uchyla się ust. 5a"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (art. 26i bez art. 26gb)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 1 pkt 3
+          quote: "w art. 26i w ust. 1 we wprowadzeniu do wyliczenia skreśla się wyrazy „art. 26gb,”"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (koszty sprzed 2027 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 7 ust. 1
+          quote: "poniesionych przed dniem 1 stycznia 2027 r., stosuje się przepis art. 52jb ust. 5a ustawy zmienianej w art. 1"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ulga na dzieci)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 27f ust. 1
+          quote: "Od podatku dochodowego obliczonego zgodnie z art. 27 podatnik ma prawo odliczyć kwotę obliczoną zgodnie z ust. 2"
+        - title: ifirma.pl, Zmiany w ulgach podatkowych od 2027 (krok 3, przepis przejściowy; strona nie podaje limitu na 2027 r.)
+          url: https://www.ifirma.pl/blog/zmiany-w-ulgach-podatkowych-od-2027-koniec-ulgi-na-internet-i-ekspansje-wyzsza-ulga-dla-krwiodawcow/
+          kind: control
+          quote: "Osoby, które po raz pierwszy skorzystają z ulgi w rozliczeniu za 2026 r., będą mogły odliczyć ją również za 2027 zachowując obecny dwuletni okres korzystania z ulgi."
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          Krok o Internecie: art. 5 ust. 2 ustawy Dz.U. 2026 poz. 1541 stosuje przepis przejściowy do ryczałtu tylko
+          odpowiednio i nie rozstrzyga, czy prawo do odliczenia w zeznaniu za 2027 r. zachowuje podatnik, który zmienił
+          formę opodatkowania między 2026 a 2027 r. (z ryczałtu na skalę albo odwrotnie). Kwota limitu na 2027 r. wynika
+          tylko z przepisu przejściowego. Pytanie do eksperta: docs/pytania-do-eksperta.md, P14.
+          Krok o odliczeniach od podstawy: art. 52jb ust. 2a (od 1 stycznia 2027 r.) uznaje za koszty poniesione
+          na robotyzację odpisy amortyzacyjne dokonywane w danym roku. Nie wiadomo, czy dotyczy to także odpisów od
+          środków trwałych i wartości niematerialnych i prawnych nabytych przed 2027 r., i jak to się ma do art. 7 ust. 1
+          ustawy Dz.U. 2026 poz. 1541. Nie wiadomo też, w jakiej kolejności po 2026 r. stosuje się odliczenia i doliczenia
+          z art. 26gb (ust. 9 i 6) za koszty sprzed 2027 r. (art. 6 ust. 1 tej ustawy) wobec art. 26i, który od 1 stycznia 2027 r. nie odsyła do
+          art. 26gb. Pytanie do eksperta: docs/pytania-do-eksperta.md, P20.
+
+- id: ulga.internet.limit
+  name: Roczny limit odliczenia wydatków na użytkowanie sieci Internet
+  unit: PLN/rok
+  applies_to: {tax_form: [ryczalt, skala]}
+  versions:
+    - valid_from: 2026-01-01
+      valid_to: 2026-12-31
+      value: 760
+      note: >-
+        Limit na podatnika w roku podatkowym; odliczenie przysługuje tylko w dwóch kolejnych latach podatkowych
+        (art. 26 ust. 6h). Na ryczałcie od przychodu przez art. 11 ust. 1 ustawy o ryczałcie; przy podatku liniowym
+        nie przysługuje (art. 30c ust. 2 go nie wymienia). Tekst jednolity Dz.U. 2026 poz. 592 uwzględnia stan prawny
+        na 1 kwietnia 2026 r.; zmiany wchodzące w życie między 1 stycznia a 1 kwietnia 2026 r. art. 26 nie dotyczą, więc
+        limit obowiązywał od 1 stycznia 2026 r. Zamknięta 2026-12-31: ustawa Dz.U. 2026 poz. 1541 uchyla to odliczenie
+        dla dochodów (przychodów) od 1 stycznia 2027 r. (następna wersja). Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 1 pkt 6a
+          quote: "wydatków ponoszonych przez podatnika z tytułu użytkowania sieci Internet, w wysokości nieprzekraczającej w roku podatkowym kwoty 760 zł"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (odliczenie od przychodu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 11 ust. 1
+          quote: "oraz wydatki określone w art. 26 ust. 1 pkt 2, 2a, 2b, 2c, 5–6a i 9"
+        - title: podatki.gov.pl (MF), Ulga na Internet PIT, aktualizacja 9.10.2026
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-internet-pit
+          kind: control
+          quote: "Możesz odliczyć wydatki poniesione na korzystanie z Internetu, ale nie więcej niż 760 zł w roku podatkowym."
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+    - valid_from: 2027-01-01
+      valid_to: 2027-12-31
+      value: 760
+      note: >-
+        Podatnik, który po raz pierwszy skorzystał z odliczenia w zeznaniu za 2026 r., zachowuje je w zeznaniu za 2027 r.
+        na zasadach z art. 26 ust. 1 pkt 6a i ust. 6h w brzmieniu dotychczasowym (art. 5 ust. 1 ustawy Dz.U. 2026
+        poz. 1541), więc z tym samym limitem. Do podatników, którzy odliczali wydatki na ryczałcie, przepis stosuje się
+        odpowiednio (art. 5 ust. 2); kogo dokładnie obejmuje na ryczałcie, jest otwartym pytaniem (P14). Poza przepisem
+        przejściowym odliczenie od dochodów (przychodów) uzyskanych od 1 stycznia 2027 r. nie przysługuje. Po 2027 r. wersji nie ma.
+        Przepis przejściowy opisuje też ifirma.pl
+        (https://www.ifirma.pl/blog/zmiany-w-ulgach-podatkowych-od-2027-koniec-ulgi-na-internet-i-ekspansje-wyzsza-ulga-dla-krwiodawcow/),
+        ale nie podaje kwoty limitu na 2027 r. Strona MF „Ulga na Internet PIT” (aktualizacja 9.10.2026) powstała
+        przed ogłoszeniem ustawy i opisuje tylko regułę dwóch lat z art. 26 ust. 6h.
+      sources:
+        - title: Dz.U. 2026 poz. 1541, ustawa z 22 października 2026 r. o zmianie ustawy o PIT, ustawy o CIT oraz ustawy o ryczałcie (przepis przejściowy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 5 ust. 1
+          quote: "zachowuje prawo do tego odliczenia w zeznaniu podatkowym składanym za 2027 r. na zasadach określonych w art. 26 ust. 1 pkt 6a i ust. 6h ustawy zmienianej w art. 1"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 1541 (ryczałt)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 5 ust. 2
+          quote: "na podstawie art. 11 ust. 1 ustawy zmienianej w art. 3, w brzmieniu dotychczasowym"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (brzmienie dotychczasowe)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 1 pkt 6a
+          quote: "wydatków ponoszonych przez podatnika z tytułu użytkowania sieci Internet, w wysokości nieprzekraczającej w roku podatkowym kwoty 760 zł"
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          Limit na 2027 r. wynika z art. 5 ustawy Dz.U. 2026 poz. 1541 w zw. z dotychczasowym art. 26 ust. 1 pkt 6a.
+          Żadne inne źródło nie podaje samo kwoty 760 zł dla zeznania za 2027 r. (strona MF sprzed ogłoszenia ustawy,
+          ifirma.pl podaje przepis przejściowy bez kwoty). Nie wiadomo, jak art. 5 ust. 1 stosuje się odpowiednio na ryczałcie
+          (art. 5 ust. 2). Nie wiadomo też, czy przepis przejściowy obejmuje podatnika,
+          który zmienił formę opodatkowania między 2026 a 2027 r. Pytanie do eksperta: docs/pytania-do-eksperta.md, P14.
+
+- id: ulga.dzieci.kwoty
+  name: Miesięczne kwoty ulgi na dzieci odliczane od podatku według skali
+  unit: PLN/miesiąc na dziecko
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        pierwsze_dziecko: 92.67
+        drugie_dziecko: 92.67
+        trzecie_dziecko: 166.67
+        czwarte_i_kolejne_dziecko: 225
+      note: >-
+        Kwoty za każdy miesiąc z art. 27f ust. 2; przy jednym dziecku ulga zależy od limitu dochodów
+        (ulga.dzieci.limit_dochodow). Ulgę odlicza się od podatku obliczonego według skali (art. 27), więc dotyczy
+        dochodów na skali także u podatnika, który działalność rozlicza podatkiem liniowym albo ryczałtem.
+        Tekst jednolity Dz.U. 2026 poz. 592 uwzględnia stan prawny na 1 kwietnia 2026 r.; zmiany wchodzące w życie
+        między 1 stycznia a 1 kwietnia 2026 r. art. 27f nie dotyczą, a późniejsze nowelizacje (w tym poz. 1123, która
+        odsyła do art. 27f ust. 1 w art. 21 ust. 1 pkt 67b i art. 22 ust. 1p) go nie zmieniają. Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (jedno dziecko)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 27f ust. 2 pkt 1
+          quote: "jednego małoletniego dziecka – kwota 92,67 zł, jeżeli dochody podatnika"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (troje i więcej dzieci)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 27f ust. 2 pkt 3
+          quote: "92,67 zł odpowiednio na pierwsze i drugie dziecko, b) 166,67 zł na trzecie dziecko, c) 225 zł na czwarte i każde kolejne dziecko"
+        - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (trzecie dziecko)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
+          kind: control
+          quote: "166,67 zł – na trzecie dziecko (rocznie 2000,04 zł)"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (czwarte dziecko)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
+          kind: control
+          quote: "225,00 zł – na czwarte i każde kolejne dziecko"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (pierwsze dziecko)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
+          kind: control
+          quote: "92,67 zł – na pierwsze dziecko (rocznie 1112,04 zł)"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: ulga.dzieci.limit_dochodow
+  name: Roczne limity dochodów dla ulgi na jedno małoletnie dziecko
+  unit: PLN/rok
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        malzonkowie_przez_caly_rok: 112000
+        samotnie_wychowujacy: 112000
+        pozostali: 56000
+      note: >-
+        Limity z art. 27f ust. 2 pkt 1 dotyczą tylko ulgi na jedno małoletnie dziecko. U małżonków przez cały rok
+        liczy się łączne dochody obojga; samotnie wychowujący dziecko (art. 6 ust. 4c i 4g) ma limit taki jak małżonkowie.
+        Dochodami są dochody opodatkowane według art. 27, 30b i 30c, pomniejszone o składki z art. 26 ust. 1 pkt 2 i 2a
+        oraz art. 30c ust. 2 pkt 2 (art. 27f ust. 2a). Limitów nie stosuje się przy dziecku z orzeczeniem albo decyzją
+        z art. 26 ust. 7d (art. 27f ust. 2e). Okres i nowelizacje jak przy ulga.dzieci.kwoty.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (małżonkowie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 27f ust. 2 pkt 1 lit. a
+          quote: "pozostającego przez cały rok podatkowy w związku małżeńskim i jego małżonka, nie przekroczyły w roku podatkowym kwoty 112 000 zł"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (pozostali i samotnie wychowujący)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 27f ust. 2 pkt 1 lit. b
+          quote: "nie przekroczyły w roku podatkowym kwoty 56 000 zł, za wyjątkiem podatnika samotnie wychowującego małoletnie dziecko wymienionego w art. 6 ust. 4c i 4g, do którego ma zastosowanie kwota dochodu określona w lit. a"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (jakie dochody)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 27f ust. 2a
+          quote: "do których mają zastosowanie zasady opodatkowania określone w art. 27, art. 30b i art. 30c, pomniejszone o kwotę składek"
+        - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (małżonkowie)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
+          kind: control
+          quote: "112 000 zł - jeśli przez cały rok pozostajesz w związku małżeńskim"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (samotnie wychowujący)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
+          kind: control
+          quote: "112 000 zł - jeśli jesteś osobą samotnie wychowującą dziecko"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (pozostali)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
+          kind: control
+          quote: "56 000 zł - jeśli nie pozostajesz w związku małżeńskim, w tym również przez część roku, a nie jesteś osobą samotnie wychowującą dziecko"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: ulga.termomodernizacja.limit
+  name: Limit odliczenia wydatków na przedsięwzięcia termomodernizacyjne
+  unit: PLN na podatnika
+  applies_to: {tax_form: [ryczalt, liniowy, skala]}
+  versions:
+    - valid_from: 2026-01-01
+      value: 53000
+      note: >-
+        Limit dotyczy wszystkich przedsięwzięć termomodernizacyjnych we wszystkich budynkach mieszkalnych
+        jednorodzinnych, których podatnik jest właścicielem lub współwłaścicielem (art. 26h ust. 2), a nie roku podatkowego.
+        Odliczenie od podstawy obliczenia podatku na skali i przy podatku liniowym (art. 26h ust. 1), a na ryczałcie
+        od przychodu (art. 11 ust. 1 i 2 ustawy o ryczałcie). Tekst jednolity Dz.U. 2026 poz. 592 uwzględnia stan prawny
+        na 1 kwietnia 2026 r.; zmiany wchodzące w życie między 1 stycznia a 1 kwietnia 2026 r. i późniejsze nowelizacje
+        art. 26h nie zmieniają. Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26h ust. 2
+          quote: "Kwota odliczenia nie może przekroczyć 53 000 zł w odniesieniu do wszystkich realizowanych przedsięwzięć termomodernizacyjnych"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (stosowanie na ryczałcie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 11 ust. 2
+          quote: "art. 26h ust. 2–9 oraz art. 26hb ust. 2–12 ustawy o podatku dochodowym"
+        - title: podatki.gov.pl (MF), Ulga termomodernizacyjna PIT, aktualizacja 12.10.2026
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-termomodernizacyjna-pit
+          kind: control
+          quote: "Możesz odliczyć wydatki, które ponosisz na realizację przedsięwzięć termomodernizacyjnych, jednak nie więcej niż 53 000 zł"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: ulga.darowizny.limit
+  name: Limit odliczenia darowizn od dochodu na skali i przy podatku liniowym
+  unit: "% dochodu"
+  applies_to: {tax_form: [skala, liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value: 6
+      note: >-
+        Na skali łączny limit wszystkich darowizn z art. 26 ust. 1 pkt 9 (art. 26 ust. 5). Przy podatku liniowym
+        odlicza się tylko darowiznę na kształcenie zawodowe z art. 26 ust. 1 pkt 9 lit. d, do tego samego limitu
+        (art. 30c ust. 2 pkt 4). Darowizny odliczane na podstawie odrębnych ustaw mają własne zasady (art. 26 ust. 6b
+        i 6d); ten parametr ich nie obejmuje. Zmiana art. 26 ust. 1 pkt 9 lit. c od 1 stycznia 2027 r. (Dz.U. 2026
+        poz. 1541) dotyczy wyceny darowizny na krwiodawstwo, nie limitu. Tekst jednolity Dz.U. 2026 poz. 592 uwzględnia
+        stan prawny na 1 kwietnia 2026 r.; wcześniejsze w 2026 r. i późniejsze nowelizacje art. 26 ust. 5 i art. 30c
+        ust. 2 pkt 4 nie zmieniają. Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (skala)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 5
+          quote: "Łączna kwota odliczeń z tytułów określonych w ust. 1 pkt 9 nie może przekroczyć w roku podatkowym kwoty stanowiącej 6 % dochodu"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (podatek liniowy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30c ust. 2 pkt 4
+          quote: "darowiznę, o której mowa w art. 26 ust. 1 pkt 9 lit. d, w wysokości dokonanej darowizny, niewięcej jednak niż kwoty stanowiącej 6 % dochodu"
+        - title: podatki.gov.pl (MF), Darowizny na cele pożytku publicznego PIT, aktualizacja 6.10.2026
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/darowizny-na-cele-pozytku-publicznego-pit
+          kind: control
+          quote: "Odliczasz nie więcej niż kwotę, która stanowi 6% Twojego dochodu."
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Darowizny na kształcenie zawodowe PIT, aktualizacja 23.11.2026 (podatek liniowy)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/darowizny-na-ksztalcenie-zawodowe-pit
+          kind: control
+          quote: "Odliczasz kwotę faktycznie przekazanej darowizny, nie więcej jednak niż 6% Twojego dochodu (przychodu)."
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: ulga.darowizny.limit_ryczalt
+  name: Limit odliczenia darowizn od przychodu na ryczałcie
+  unit: "%"
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2026-01-01
+      value: 6
+      note: >-
+        Na ryczałcie darowizny z art. 26 ust. 1 pkt 9 ustawy o PIT odlicza się od przychodu (art. 11 ust. 1 ustawy
+        o ryczałcie), a limit z art. 26 ust. 5 stosuje się odpowiednio (art. 11 ust. 2). Ustawa mówi o 6% dochodu;
+        strony MF podają „6% Twojego dochodu (przychodu)”. Od jakiej kwoty przychodu liczy się limit, jest
+        niewyjaśnione (otwarte pytanie do eksperta). Od 1 stycznia 2027 r. art. 11 ust. 2 ma nowe brzmienie (Dz.U. 2026
+        poz. 1541), ale nadal odsyła do art. 26 ust. 5. Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (odpowiednie stosowanie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 11 ust. 2
+          quote: "stosuje się odpowiednio przepisy art. 9 ust. 3–3b, art. 26 ust. 5–7h, 13b, 13c i 15"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (limit)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 5
+          quote: "Łączna kwota odliczeń z tytułów określonych w ust. 1 pkt 9 nie może przekroczyć w roku podatkowym kwoty stanowiącej 6 % dochodu"
+        - title: Dz.U. 2026 poz. 1541 (art. 11 ust. 2 od 2027 r. nadal obejmuje art. 26 ust. 5)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 3 pkt 2
+          quote: "zastępuje się wyrazami „art. 26 ust. 5, 6, 6b–6g, 7–7h, 13b, 13c i 15”"
+          as_of: 2026-11-23
+        - title: podatki.gov.pl (MF), Darowizny na cele pożytku publicznego PIT, aktualizacja 6.10.2026
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/darowizny-na-cele-pozytku-publicznego-pit
+          kind: control
+          quote: "Odliczasz kwotę faktycznie przekazanej darowizny, nie więcej jednak niż 6% Twojego dochodu (przychodu)."
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          Art. 26 ust. 5 ustawy o PIT, stosowany na ryczałcie odpowiednio (art. 11 ust. 2 ustawy o ryczałcie), określa
+          limit jako 6% dochodu. Nie wiadomo, czy na ryczałcie liczy się go od przychodu przed odliczeniami z art. 11
+          ust. 1 i 1a, czy po nich, ani czy przy przychodach opodatkowanych różnymi stawkami liczy się go od łącznego
+          przychodu. Pytanie do eksperta: docs/pytania-do-eksperta.md, P13.
+
+- id: ulga.rehabilitacyjna.limity
+  name: Limity kwotowe wydatków na cele rehabilitacyjne
+  unit: PLN
+  applies_to: {tax_form: [ryczalt, skala]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        wyroby_chlonne_rocznie: 2280
+        przewodnik_rocznie: 2280
+        pies_asystujacy_rocznie: 2280
+        samochod_rocznie: 2280
+        leki_kwota_miesieczna_nieodliczana: 100
+      note: >-
+        Klucze to pozycje art. 26 ust. 7a ustawy o PIT: pkt 3a (pieluchomajtki, pieluchy anatomiczne, chłonne majtki,
+        podkłady, wkłady anatomiczne), pkt 7 (przewodnicy osób niewidomych i z niepełnosprawnością narządu ruchu),
+        pkt 8 (pies asystujący) i pkt 14 (używanie samochodu osobowego) mają limit na rok podatkowy. Przy lekach
+        (pkt 12) odlicza się różnicę między wydatkami w danym miesiącu a kwotą 100 zł. Pozostałe pozycje art. 26 ust. 7a
+        nie mają limitu kwotowego. Limit dochodów osoby na utrzymaniu (art. 26 ust. 7e, dwunastokrotność renty
+        socjalnej z grudnia) nie jest tu podany. Odliczenie przysługuje na skali i na ryczałcie (art. 11 ust. 1
+        ustawy o ryczałcie), przy podatku liniowym nie (art. 30c ust. 2 go nie wymienia). Tekst jednolity Dz.U. 2026
+        poz. 592 uwzględnia stan prawny na 1 kwietnia 2026 r.; wcześniejsze w 2026 r. i późniejsze nowelizacje
+        (w tym poz. 1556, która zmienia tylko art. 21) art. 26 ust. 7a nie zmieniają. Wcześniejszych wersji nie
+        wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wyroby chłonne)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 7a pkt 3a
+          quote: "pieluchomajtki, pieluchy anatomiczne, chłonne majtki, podkłady, wkłady anatomiczne, w kwocie nieprzekraczającej w roku podatkowym 2280 zł"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (przewodnik)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 7a pkt 7
+          quote: "ruchu zaliczonych do I grupy inwalidztwa, w kwocie nieprzekraczającej w roku podatkowym 2280 zł"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (pies asystujący)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 7a pkt 8
+          quote: "utrzymanie psa asystującego, o którym mowa w ustawie o rehabilitacji zawodowej, w kwocie nieprzekraczającej w roku podatkowym 2280 zł"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (samochód)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 7a pkt 14
+          quote: "w wysokości nieprzekraczającej w roku podatkowym kwoty 2280 zł"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (leki)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 7a pkt 12
+          quote: "w wysokości stanowiącej różnicę pomiędzy faktycznie poniesionymi wydatkami w danym miesiącu a kwotą 100 zł"
+        - title: podatki.gov.pl (MF), Ulga rehabilitacyjna PIT, aktualizacja 26.10.2026 (limity roczne)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-rehabilitacyjna-pit
+          kind: control
+          quote: "utrzymanie psa asystującego , o którym mowa w ustawie o rehabilitacji zawodowej, nie więcej niż 2280 zł w roku podatkowym"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Ulga rehabilitacyjna PIT, aktualizacja 26.10.2026 (leki)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-rehabilitacyjna-pit
+          kind: control
+          quote: "możesz odliczyć różnicę między wydatkami poniesionymi w danym miesiącu, a kwotą 100 zł"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: ikze.limit_wplat
+  name: Roczny limit wpłat na indywidualne konto zabezpieczenia emerytalnego (górna granica odliczenia)
+  unit: PLN/rok
+  applies_to: {tax_form: [ryczalt, liniowy, skala]}
+  versions:
+    - valid_from: 2026-01-01
+      valid_to: 2026-12-31
+      value:
+        prowadzacy_dzialalnosc: 16956
+        pozostali: 11304
+      note: >-
+        Kwoty z obwieszczenia ministra właściwego do spraw zabezpieczenia społecznego na rok 2026. Wyższy limit
+        (1,8-krotność przeciętnego prognozowanego wynagrodzenia) dotyczy osoby prowadzącej pozarolniczą działalność
+        w rozumieniu art. 8 ust. 6 ustawy o systemie ubezpieczeń społecznych (art. 13a ust. 1a), niższy (1,2-krotność)
+        pozostałych (art. 13a ust. 1). Wpłaty odlicza się od dochodu na skali (art. 26 ust. 1 pkt 2b), od dochodu przy
+        podatku liniowym (art. 30c ust. 2 pkt 3) i od przychodu na ryczałcie (art. 11 ust. 1 ustawy o ryczałcie),
+        tylko w zeznaniu.
+      sources:
+        - title: M.P. 2025 poz. 1156, obwieszczenie Ministra Rodziny, Pracy i Polityki Społecznej z 10 listopada 2025 r. (działalność)
+          url: https://api.sejm.gov.pl/eli/acts/MP/2025/1156/text.pdf
+          article: pkt 2 obwieszczenia
+          quote: "o której mowa w art. 13a ust. 1a wymienionej ustawy, w roku 2026 wynosi 16 956 zł"
+        - title: M.P. 2025 poz. 1156 (pozostali)
+          url: https://api.sejm.gov.pl/eli/acts/MP/2025/1156/text.pdf
+          article: pkt 1 obwieszczenia
+          quote: "o której mowa w art. 13a ust. 1 wymienionej ustawy, w roku 2026 wynosi 11 304 zł"
+        - title: Dz.U. 2026 poz. 91, tekst jednolity ustawy o indywidualnych kontach emerytalnych oraz indywidualnych kontach zabezpieczenia emerytalnego (podstawa, prowadzący działalność)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/91/text.pdf
+          article: art. 13a ust. 1a
+          quote: "Wpłaty dokonywane na IKZE w roku kalendarzowym przez osobę prowadzącą pozarolniczą działalność"
+        - title: Dz.U. 2026 poz. 91, tekst jednolity ustawy o indywidualnych kontach emerytalnych oraz indywidualnych kontach zabezpieczenia emerytalnego (podstawa, pozostali)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/91/text.pdf
+          article: art. 13a ust. 1
+          quote: "Wpłaty dokonywane na IKZE w roku kalendarzowym nie mogą przekroczyć kwoty odpowiadającej 1,2-krotności"
+        - title: podatki.gov.pl (MF), Ulga na IKZE PIT, aktualizacja 23.10.2026
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-ikze-pit
+          kind: control
+          quote: "Maksymalny limit wpłat na IKZE w roku 2026 wynosi: 11 304 zł lub 16 956 zł"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+    - valid_from: 2027-01-01
+      valid_to: 2027-12-31
+      value:
+        prowadzacy_dzialalnosc: 18059.40
+        pozostali: 12039.60
+      note: >-
+        Kwoty z obwieszczenia ministra właściwego do spraw zabezpieczenia społecznego na rok 2027. Zasady jak
+        w poprzedniej wersji. Tekst jednolity ustawy o IKE i IKZE (Dz.U. 2026 poz. 91) nie ma późniejszych nowelizacji
+        art. 13a.
+      sources:
+        - title: M.P. 2026 poz. 1062, obwieszczenie Ministra Rodziny, Pracy i Polityki Społecznej z 27 października 2026 r. (działalność)
+          url: https://api.sejm.gov.pl/eli/acts/MP/2026/1062/text.pdf
+          article: pkt 2 obwieszczenia
+          quote: "o której mowa w art. 13a ust. 1a wymienionej ustawy, w roku 2027 wynosi 18 059,40 zł"
+        - title: M.P. 2026 poz. 1062 (pozostali)
+          url: https://api.sejm.gov.pl/eli/acts/MP/2026/1062/text.pdf
+          article: pkt 1 obwieszczenia
+          quote: "o której mowa w art. 13a ust. 1 wymienionej ustawy, w roku 2027 wynosi 12 039,60 zł"
+        - title: Dz.U. 2026 poz. 91, tekst jednolity ustawy o indywidualnych kontach emerytalnych oraz indywidualnych kontach zabezpieczenia emerytalnego (podstawa, prowadzący działalność)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/91/text.pdf
+          article: art. 13a ust. 1a
+          quote: "Wpłaty dokonywane na IKZE w roku kalendarzowym przez osobę prowadzącą pozarolniczą działalność"
+        - title: Dz.U. 2026 poz. 91, tekst jednolity ustawy o indywidualnych kontach emerytalnych oraz indywidualnych kontach zabezpieczenia emerytalnego (podstawa, pozostali)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/91/text.pdf
+          article: art. 13a ust. 1
+          quote: "Wpłaty dokonywane na IKZE w roku kalendarzowym nie mogą przekroczyć kwoty odpowiadającej 1,2-krotności"
+        - title: analizy.pl, Znamy limity wpłat na IKE i IKZE w 2027 roku
+          url: https://www.analizy.pl/puls-rynku/41139/wiecej-pieniedzy-bez-podatku-znamy-limity-wplat-na-ike-i-ikze-w-2027-roku
+          kind: control
+          quote: "IKZE – działalność gospodarcza: 18 059,40 zł"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}

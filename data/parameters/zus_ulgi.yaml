@@ -1,0 +1,283 @@
+# Ulgi w składkach na ubezpieczenia społeczne przedsiębiorcy: Mały ZUS Plus (art. 18c ustawy
+# o systemie ubezpieczeń społecznych) i ulga na start (art. 18 ustawy – Prawo przedsiębiorców).
+# Obie ulgi dotyczą tylko składek na ubezpieczenia społeczne, nie składki zdrowotnej.
+
+- id: zus.maly_zus_plus.limit_przychodu
+  name: Roczny limit przychodu z poprzedniego roku uprawniający do Małego ZUS Plus
+  unit: PLN/rok
+  applies_to: {zus: [maly_zus_plus]}
+  versions:
+    - valid_from: 2026-01-01
+      value: 120000
+      note: >-
+        Kwota wpisana w ustawie, bez corocznej waloryzacji. Przy rozpoczęciu, zakończeniu albo zawieszeniu działalności
+        w poprzednim roku limit zmniejsza się proporcjonalnie do liczby dni jej prowadzenia (zasada.maly_zus_plus).
+        Wersja zaczyna się 1 stycznia 2026 r. Ta kwota obowiązuje wcześniej, ale okresu sprzed 2026 r. ta wersja nie obejmuje;
+        tekst jednolity potwierdza brzmienie przepisu według stanu prawnego na 4 października 2026 r.
+      sources:
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 18c ust. 1
+          quote: "którego roczny przychód z pozarolniczej działalności gospodarczej uzyskany w poprzednim roku kalendarzowym nie przekroczył kwoty 120 000 złotych"
+        - title: ZUS, „Składki przedsiębiorców w 2026 roku”
+          url: https://www.zus.pl/documents/10182/13364587/Sk%C5%82adki+przedsi%C4%99biorc%C3%B3w+w+2026+roku_DFF.pdf/c8d4e1dc-c80b-91d6-7453-02309976f713?t=1772712579703
+          independent: true
+          quote: "dla przedsiębiorców, których przychód w poprzednim roku nie przekroczył 120 tys. zł"
+          as_of: 2026-11-26
+        - title: biznes.gov.pl, Mały ZUS Plus, aktualizacja 31.12.2025
+          url: https://www.biznes.gov.pl/pl/portal/00284
+          kind: control
+          quote: "twoje przychody z pozarolniczej działalności gospodarczej prowadzonej przez cały poprzedni rok kalendarzowy nie przekroczyły 120 000 zł"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: zus.maly_zus_plus.okres_korzystania
+  name: Najdłuższy okres korzystania z Małego ZUS Plus w każdym okresie prowadzenia działalności
+  unit: miesiące kalendarzowe
+  applies_to: {zus: [maly_zus_plus]}
+  versions:
+    - valid_from: 2026-01-01
+      value: {months: 36, period_months: 60}
+      note: >-
+        Najwyżej 36 miesięcy w każdym okresie 60 miesięcy kalendarzowych prowadzenia działalności. Pierwszy okres 60 miesięcy
+        zaczyna się od pierwszego miesiąca, w którym podstawę ustalono według art. 18c; każdy miesiąc z choćby jednym dniem
+        ulgi albo działalności liczy się jako pełny. Brzmienie z art. 11 ustawy Dz.U. 2025 poz. 769, które obowiązuje
+        od 1 stycznia 2026 r. (art. 48 pkt 1 tej ustawy). Wcześniejszej wersji tego parametru w danych nie ma: wcześniejszy limit z art. 18c ust. 11 pkt 6 istniał, uchylił go
+        art. 11 pkt 1 tej ustawy. Czy miesiące sprzed 2026 r. wliczają się
+        do tych okresów, opisuje zasada.maly_zus_plus.
+      sources:
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 18c ust. 11a–11c
+          quote: "maksymalnie przez 36 miesięcy kalendarzowych w każdym okresie 60 miesięcy kalendarzowych prowadzenia pozarolniczej działalności gospodarczej"
+        - title: Dz.U. 2025 poz. 769, ustawa z 21 maja 2025 r. o zmianie niektórych ustaw w celu deregulacji prawa gospodarczego i administracyjnego (wejście w życie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/769/text.pdf
+          article: art. 11 i art. 48 pkt 1
+          quote: "art. 6, art. 11, art. 18, art. 22, art. 24 pkt 4, 7 i 9, art. 38 oraz art. 40 ust. 1 i 2, które wchodzą w życie z dniem 1 stycznia 2026 r."
+          as_of: 2025-06-12
+        - title: ZUS, „Mały ZUS plus” – nowe zasady od 2026 r. (22 grudnia 2025 r.)
+          url: https://www.zus.pl/-/%E2%80%9Ema%C5%82y-zus-plus-nowe-zasady-od-2026-r.
+          independent: true
+          quote: "możesz począwszy od stycznia 2026 r. w każdym okresie 60 miesięcy kalendarzowych prowadzenia pozarolniczej działalności gospodarczej płacić mniejsze składki przez 36 miesięcy kalendarzowych"
+          as_of: 2026-11-26
+        - title: biznes.gov.pl, Mały ZUS Plus, aktualizacja 31.12.2025
+          url: https://www.biznes.gov.pl/pl/portal/00284
+          kind: control
+          quote: "Niższe składki na ubezpieczenia społeczne będzie można płacić maksymalnie przez 36 miesięcy w każdym okresie 60 miesięcy kalendarzowych prowadzenia działalności gospodarczej"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: zasada.maly_zus_plus
+  name: Mały ZUS Plus, czyli podstawa składek społecznych zależna od dochodu z poprzedniego roku
+  kind: rule
+  applies_to: {zus: [maly_zus_plus]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Z ulgi możesz skorzystać, jeżeli roczny przychód z działalności w poprzednim roku kalendarzowym nie przekroczył limitu. Jeżeli w poprzednim roku działalność rozpoczęto, zakończono albo zawieszono, limit zmniejsza się proporcjonalnie do liczby dni prowadzenia działalności w tym roku; wynik zaokrąglasz do pełnych groszy.
+            uses: [zus.maly_zus_plus.limit_przychodu]
+            basis: art. 18c ust. 1 i 7 ustawy o systemie ubezpieczeń społecznych
+          - text: Ulga nie przysługuje, jeżeli w poprzednim roku działalność trwała krócej niż 60 dni kalendarzowych, jeżeli w poprzednim roku miałeś kartę podatkową razem ze zwolnieniem z VAT z art. 113 ust. 1 i 9 ustawy o VAT, jeżeli w poprzednim roku prowadziłeś także inną pozarolniczą działalność z art. 8 ust. 6 pkt 2–5 (na przykład jako twórca, wspólnik spółki jawnej), jeżeli wykonujesz działalność na rzecz byłego pracodawcy w zakresie czynności wykonywanych dla niego na etacie w bieżącym lub poprzednim roku, ani wtedy, gdy spełniasz warunki podstawy preferencyjnej z art. 18a.
+            uses: [zus.podstawa_preferencyjna]
+            basis: art. 18c ust. 11 ustawy o systemie ubezpieczeń społecznych
+          - text: Z ulgi korzystasz najwyżej przez określoną liczbę miesięcy w każdym okresie prowadzenia działalności. Pierwszy okres zaczyna się od pierwszego miesiąca, w którym podstawę ustalono według tej ulgi, a kolejne od pierwszego miesiąca działalności po upływie poprzedniego. Każdy miesiąc, w którym choć jeden dzień korzystałeś z ulgi albo prowadziłeś działalność, liczy się jako pełny. Czy do tych okresów wlicza się miesiące sprzed 1 stycznia 2026 r., ustawa nie mówi wprost (otwarte pytanie do eksperta).
+            uses: [zus.maly_zus_plus.okres_korzystania]
+            basis: art. 18c ust. 11a–11c ustawy o systemie ubezpieczeń społecznych
+          - text: Prawo do dodatkowych 12 miesięcy ulgi dla osób, które korzystały z niej w 2023 r., ocenia się według art. 18c w brzmieniu sprzed 1 stycznia 2026 r. Jak te miesiące mają się do nowego limitu, ustawa nie mówi wprost (otwarte pytanie do eksperta).
+            uses: []
+            basis: art. 112a ustawy o systemie ubezpieczeń społecznych; art. 38 ustawy z 21 maja 2025 r. (Dz.U. 2025 poz. 769)
+          - text: Ustal przeciętny miesięczny dochód z działalności z poprzedniego roku. Roczny dochód w rozumieniu przepisów o PIT, powiększony o składki na ubezpieczenia społeczne (własne i osób współpracujących) zaliczone do kosztów, dzielisz przez liczbę dni prowadzenia działalności w poprzednim roku i mnożysz przez 30. Wynik zaokrąglasz do pełnych groszy.
+            uses: []
+            basis: art. 18c ust. 4 i 4a ustawy o systemie ubezpieczeń społecznych
+          - text: Przy ryczałcie od przychodów ewidencjonowanych w poprzednim roku za roczny dochód przyjmujesz roczny przychód z działalności pomnożony przez 0,5. Przy karcie podatkowej bez zwolnienia z VAT za przychód przyjmujesz wartość sprzedaży opodatkowanej VAT bez kwoty podatku, a za dochód tę wartość pomnożoną przez 0,5. Wynik zaokrąglasz do pełnych groszy.
+            uses: []
+            basis: art. 18c ust. 12 i 13 ustawy o systemie ubezpieczeń społecznych
+          - text: Podstawa wymiaru składek emerytalnej i rentowej na dany rok to przeciętny miesięczny dochód pomnożony przez 0,5 i zaokrąglony do pełnych groszy. Podstawa nie może być wyższa niż 60% prognozowanego przeciętnego wynagrodzenia na dany rok ani niższa niż 30% minimalnego wynagrodzenia obowiązującego w styczniu tego roku.
+            uses: [zus.prognozowane_wynagrodzenie, wynagrodzenie.minimalne]
+            basis: art. 18c ust. 2 i 3 ustawy o systemie ubezpieczeń społecznych
+          - text: Ta sama podstawa jest podstawą składek chorobowej i wypadkowej. Możesz zadeklarować podstawę wyższą niż ustalona według ulgi.
+            uses: [zus.stawka.emerytalna, zus.stawka.rentowa, zus.stawka.chorobowa, zus.stawka.wypadkowa_do_9]
+            basis: art. 20 ust. 1 i art. 18c ust. 8 ustawy o systemie ubezpieczeń społecznych
+          - text: Z ulgi możesz zrezygnować. Wtedy od miesiąca rezygnacji do końca roku kalendarzowego podstawę ustalasz na zasadach ogólnych.
+            uses: [zus.podstawa_minimalna]
+            basis: art. 18c ust. 10 ustawy o systemie ubezpieczeń społecznych
+          - text: Formy opodatkowania, roczny przychód i dochód z poprzedniego roku oraz ustaloną podstawę na dany rok wykazujesz w imiennym raporcie miesięcznym albo, jeżeli płatnik opłaca składki wyłącznie za siebie i składa tylko deklarację rozliczeniową (art. 47 ust. 2), w tej deklaracji; składa się je za styczeń albo za pierwszy miesiąc rozpoczęcia lub wznowienia działalności w danym roku.
+            uses: [termin.zus]
+            basis: art. 18c ust. 9 i art. 47 ust. 2 ustawy o systemie ubezpieczeń społecznych
+          - text: Jeżeli rozpoczynasz albo wznawiasz działalność w styczniu, zgłaszasz się do ubezpieczeń społecznych do końca stycznia, a jeżeli zostaje mniej niż 7 dni, w ciągu 7 dni od powstania obowiązku ubezpieczenia. Zmianę tytułu ubezpieczenia związaną z ulgą zgłaszasz przez wyrejestrowanie i ponowne zgłoszenie do końca stycznia, gdy zmiana następuje w styczniu (z tym samym minimum 7 dni), a w pozostałych przypadkach w ciągu 7 dni od zmiany. Skutki zgłoszenia po terminie są niewyjaśnione (otwarte pytanie do eksperta).
+            uses: []
+            basis: art. 36 ust. 4b i 14a ustawy o systemie ubezpieczeń społecznych
+      note: >-
+        Wersja zaczyna się 1 stycznia 2026 r., od kiedy obowiązuje limit okresu korzystania z ust. 11a–11c (Dz.U. 2025 poz. 769,
+        art. 11 i art. 48 pkt 1). Tekst jednolity potwierdza brzmienie art. 18c i art. 36 według stanu prawnego na 4 października 2026 r.;
+        ustawa Dz.U. 2025 poz. 1413 (ujęta w tym tekście, wchodzi w życie 1 listopada 2026 r.) zmienia tylko art. 45 i 50,
+        a późniejsza nowelizacja Dz.U. 2026 poz. 1556 (art. 112) zmienia tylko art. 4, 6 i 13 tej ustawy.
+        Ulga dotyczy tylko podstawy składek emerytalnej i rentowej (a przez nią chorobowej i wypadkowej).
+      sources:
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (warunek przychodu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 18c ust. 1
+          quote: "którego roczny przychód z pozarolniczej działalności gospodarczej uzyskany w poprzednim roku kalendarzowym nie przekroczył kwoty 120 000 złotych, uzależniona jest od dochodu z pozarolniczej działalności gospodarczej"
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (granice podstawy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 18c ust. 2
+          quote: "nie może przekroczyć 60 % prognozowanego przeciętnego wynagrodzenia ogłoszonego w trybie art. 19 ust. 10 na dany rok kalendarzowy i nie może być niższa niż 30 % kwoty minimalnego wynagrodzenia obowiązującego w styczniu danego roku"
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (współczynnik)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 18c ust. 3
+          quote: "mnożąc przeciętny miesięczny dochód z pozarolniczej działalności gospodarczej uzyskany w poprzednim roku kalendarzowym, obliczony zgodnie z ust. 4, przez współczynnik 0,5"
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (ryczałt)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 18c ust. 12 pkt 2
+          quote: "ryczałtu od przychodów ewidencjonowanych, przez roczny dochód z pozarolniczej działalności gospodarczej uzyskany w poprzednim roku kalendarzowym, o którym mowa w ust. 4, należy rozumieć roczny przychód z pozarolniczej działalności gospodarczej, o którym mowa w ust. 1, pomnożony przez współczynnik 0,5"
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (wyłączenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 18c ust. 11 pkt 3
+          quote: "w poprzednim roku kalendarzowym prowadziły pozarolniczą działalność gospodarczą przez mniej niż 60 dni kalendarzowych"
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (rezygnacja)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 18c ust. 10
+          quote: "oraz pozostałe miesiące kalendarzowe do końca danego roku kalendarzowego ustala podstawę wymiaru składek na ubezpieczenia emerytalne i rentowe na zasadach określonych w art. 18 ust. 8"
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (termin zgłoszenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 36 ust. 4b
+          quote: "który rozpoczął lub wznowił prowadzenie pozarolniczej działalności gospodarczej w styczniu danego roku kalendarzowego, dokonuje zgłoszenia do ubezpieczeń społecznych w terminie do końca tego miesiąca"
+        - title: Dz.U. 2025 poz. 769, ustawa z 21 maja 2025 r. o zmianie niektórych ustaw w celu deregulacji prawa gospodarczego i administracyjnego (przepis przejściowy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/769/text.pdf
+          article: art. 38 i art. 48 pkt 1
+          quote: "Do praw, o których mowa w art. 112a ust. 1 i 2 ustawy zmienianej w art. 11, stosuje się przepis art. 18c ustawy zmienianej w art. 11, w brzmieniu dotychczasowym."
+          as_of: 2025-06-12
+        - title: ZUS, Wysokość składek na ubezpieczenia społeczne (granice podstawy)
+          url: https://www.zus.pl/baza-wiedzy/skladki-wskazniki-odsetki/skladki/wysokosc-skladek-na-ubezpieczenia-spoleczne
+          independent: true
+          quote: "Podstawa wymiaru tych składek nie może być niższa niż 30% kwoty minimalnego wynagrodzenia i nie wyższa niż 60% prognozowanego przeciętnego wynagrodzenia miesięcznego"
+          as_of: 2026-11-26
+        - title: biznes.gov.pl, Mały ZUS Plus, aktualizacja 31.12.2025 (warunki i wyłączenia)
+          url: https://www.biznes.gov.pl/pl/portal/00284
+          kind: control
+          quote: "prowadziłeś działalność gospodarczą w poprzednim roku kalendarzowym przez nie mniej niż 60 dni kalendarzowych"
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          Art. 36 ust. 4b i 14a ustawy o systemie ubezpieczeń społecznych określają terminy zgłoszenia, ale nie mówią wprost,
+          co oznacza zgłoszenie po terminie. ZUS („Mały ZUS plus” – nowe zasady od 2026 r.) uznaje wtedy rezygnację z ulgi
+          do końca roku, a biznes.gov.pl pisze, że z ulgi nie można skorzystać przez cały rok. Ustawa Dz.U. 2025 poz. 769 nie ma
+          przepisu przejściowego o tym, czy miesiące korzystania z ulgi i prowadzenia działalności sprzed 2026 r. wliczają się
+          do okresów 36 i 60 miesięcy (art. 18c ust. 11a–11c), ani o tym, jak dodatkowe 12 miesięcy z art. 112a mają się do
+          nowego limitu. ZUS i biznes.gov.pl podają, że od stycznia 2026 r. limit 36 miesięcy liczy się od nowa; sam ZUS
+          dodaje, że pozostałe dodatkowe miesiące można wykorzystać dopiero po 36 miesiącach. Pytanie do eksperta: docs/pytania-do-eksperta.md, P10.
+
+- id: zus.ulga_na_start.okres
+  name: Okres bez obowiązkowych ubezpieczeń społecznych w ramach ulgi na start
+  unit: miesiące
+  applies_to: {zus: [ulga_na_start]}
+  versions:
+    - valid_from: 2026-01-01
+      value: 6
+      note: >-
+        Ustawa mówi o okresie 6 miesięcy od dnia podjęcia działalności. Materiały ZUS i biznes.gov.pl podają tę samą liczbę
+        miesięcy, ale liczą je jako miesiące kalendarzowe albo pełne, co jest interpretacją (otwarte pytanie P9). Materiał ZUS nie
+        jest więc oznaczony jako niezależny dowód, a biznes.gov.pl jest źródłem kontrolnym tylko dla samej liczby miesięcy. Wersja zaczyna się 1 stycznia 2026 r. Przepis obowiązuje wcześniej
+        (art. 18 ust. 1 i 3 w tekście jednolitym Dz.U. 2025 poz. 1480 brzmią tak samo, poza adresem publikacyjnym ustawy
+        o ubezpieczeniu społecznym rolników), ale okresu sprzed 2026 r. ta wersja nie obejmuje; tekst jednolity poz. 1484
+        potwierdza brzmienie według stanu prawnego na 28 października 2026 r.
+      sources:
+        - title: Dz.U. 2026 poz. 1484, tekst jednolity ustawy – Prawo przedsiębiorców
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1484/text.pdf
+          article: art. 18 ust. 1
+          quote: "nie podlega obowiązkowym ubezpieczeniom społecznym przez okres 6 miesięcy od dnia podjęcia działalności gospodarczej"
+        - title: ZUS, Ulga na start, preferencyjna podstawa, działalność nieewidencjonowana. Jakie są warunki, uprawnienia i skutki?
+          url: https://www.zus.pl/-/ulga-na-start-preferencyjna-podstawa-dzialalnosc-nieewidencjonowana-jakie-sa-warunki-uprawnienia-i-skutk-1
+          quote: "Możesz skorzystać z ulgi na start, czyli przez 6 miesięcy kalendarzowych nie płacić składek na ubezpieczenia społeczne"
+          as_of: 2026-11-26
+        - title: biznes.gov.pl, Ulga na start, aktualizacja 29.01.2026
+          url: https://www.biznes.gov.pl/pl/portal/00285
+          kind: control
+          quote: "Ulga zwalnia przez sześć pełnych miesięcy od rozpoczęcia działalności z płacenia składek"
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          Art. 18 ust. 1 Prawa przedsiębiorców mówi o „okresie 6 miesięcy od dnia podjęcia działalności gospodarczej”. ZUS podaje
+          „6 miesięcy kalendarzowych”, a biznes.gov.pl „sześć pełnych miesięcy”, i oba nie wliczają miesiąca rozpoczęcia działalności
+          w trakcie miesiąca. Te źródła potwierdzają liczbę 6 tylko w swojej interpretacji. Pytanie do eksperta:
+          docs/pytania-do-eksperta.md, P9.
+
+- id: zasada.ulga_na_start
+  name: Ulga na start, czyli zwolnienie z obowiązkowych ubezpieczeń społecznych na początku działalności
+  kind: rule
+  applies_to: {zus: [ulga_na_start]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Z ulgi korzysta przedsiębiorca będący osobą fizyczną, który podejmuje działalność po raz pierwszy albo ponownie po upływie co najmniej 60 miesięcy od jej ostatniego zawieszenia lub zakończenia i nie wykonuje jej na rzecz byłego pracodawcy w zakresie czynności wykonywanych dla niego na etacie w bieżącym lub poprzednim roku kalendarzowym.
+            uses: []
+            basis: art. 18 ust. 1 ustawy – Prawo przedsiębiorców
+          - text: Ulgi nie stosuje się do przedsiębiorcy, który spełnia warunki z art. 5a ustawy o ubezpieczeniu społecznym rolników.
+            uses: []
+            basis: art. 18 ust. 3 ustawy – Prawo przedsiębiorców
+          - text: Przez okres ulgi, liczony od dnia podjęcia działalności, nie podlegasz obowiązkowym ubezpieczeniom społecznym. Jak liczyć ten okres, gdy działalność zaczyna się w trakcie miesiąca, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [zus.ulga_na_start.okres]
+            basis: art. 18 ust. 1 ustawy – Prawo przedsiębiorców
+          - text: Ulga nie obejmuje ubezpieczenia zdrowotnego. W okresie ulgi podlegasz obowiązkowo ubezpieczeniu zdrowotnemu, chyba że zawiesiłeś wykonywanie działalności gospodarczej na podstawie Prawa przedsiębiorców.
+            uses: []
+            basis: art. 66 ust. 1 pkt 1a ustawy o świadczeniach opieki zdrowotnej
+          - text: Z ulgi możesz zrezygnować, zgłaszając się do ubezpieczeń społecznych. Objęcie ubezpieczeniami następuje od dnia wskazanego we wniosku, nie wcześniej niż od dnia jego zgłoszenia. Podstawę preferencyjną możesz wtedy stosować przez 24 miesiące kalendarzowe liczone od dnia objęcia ubezpieczeniami. Jak liczyć te 24 miesiące, gdy objęcie następuje w trakcie miesiąca, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [zus.podstawa_preferencyjna]
+            basis: art. 18 ust. 2 ustawy – Prawo przedsiębiorców; art. 18aa ust. 1 i 2 ustawy o systemie ubezpieczeń społecznych
+          - text: Jeżeli kontynuujesz działalność po upływie okresu ulgi, możesz stosować podstawę preferencyjną przez 24 miesiące kalendarzowe liczone od dnia objęcia ubezpieczeniami. Jak liczyć ten okres, jest niewyjaśnione tak jak w poprzednim kroku (otwarte pytanie do eksperta).
+            uses: [zus.podstawa_preferencyjna]
+            basis: art. 18aa ust. 3 ustawy o systemie ubezpieczeń społecznych
+      note: >-
+        Wersja zaczyna się 1 stycznia 2026 r. Przepisy obowiązują wcześniej, ale okresu sprzed 2026 r. ta wersja nie obejmuje.
+        Tekst jednolity Prawa przedsiębiorców (Dz.U. 2026 poz. 1484) potwierdza brzmienie art. 18 według stanu prawnego na
+        28 października 2026 r.; późniejsza nowelizacja (Dz.U. 2026 poz. 1542, art. 19) zmienia w nim tylko art. 47. Brzmienie art. 18aa
+        potwierdza tekst jednolity ustawy o systemie ubezpieczeń społecznych (stan prawny na 4 października 2026 r.), a art. 66
+        tekst jednolity ustawy o świadczeniach opieki zdrowotnej (Dz.U. 2025 poz. 1461).
+      sources:
+        - title: Dz.U. 2026 poz. 1484, tekst jednolity ustawy – Prawo przedsiębiorców (warunki i okres)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1484/text.pdf
+          article: art. 18 ust. 1
+          quote: "który podejmuje działalność gospodarczą po raz pierwszy albo podejmuje ją ponownie po upływie co najmniej 60 miesięcy od dnia jej ostatniego zawieszenia lub zakończenia"
+        - title: Dz.U. 2026 poz. 1484, tekst jednolity ustawy – Prawo przedsiębiorców (rezygnacja)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1484/text.pdf
+          article: art. 18 ust. 2
+          quote: "Przedsiębiorca może zrezygnować z uprawnienia, o którym mowa w ust. 1, przez dokonanie zgłoszenia do ubezpieczeń społecznych."
+        - title: Dz.U. 2026 poz. 1484, tekst jednolity ustawy – Prawo przedsiębiorców (wyłączenie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1484/text.pdf
+          article: art. 18 ust. 3
+          quote: "Przepisu ust. 1 nie stosuje się do przedsiębiorców spełniających warunki określone w art. 5a ustawy z dnia 20 grudnia 1990 r. o ubezpieczeniu społecznym rolników"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 66 ust. 1 pkt 1a
+          quote: "osoby, o których mowa w art. 18 ust. 1 ustawy z dnia 6 marca 2018 r. – Prawo przedsiębiorców, oraz osoby z nimi współpracujące, z wyłączeniem osób, które zawiesiły wykonywanie działalności gospodarczej na podstawie przepisów ustawy z dnia 6 marca 2018 r. – Prawo przedsiębiorców"
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 18aa ust. 1 i 3
+          quote: "Przepis art. 18a ust. 1 stosuje się również do przedsiębiorców będących osobami fizycznymi, którzy kontynuują działalność gospodarczą po upływie okresu, o którym mowa w art. 18 ust. 1 ustawy z dnia 6 marca 2018 r. – Prawo przedsiębiorców"
+        - title: ZUS, Ulga na start, preferencyjna podstawa, działalność nieewidencjonowana. Jakie są warunki, uprawnienia i skutki?
+          url: https://www.zus.pl/-/ulga-na-start-preferencyjna-podstawa-dzialalnosc-nieewidencjonowana-jakie-sa-warunki-uprawnienia-i-skutk-1
+          independent: true
+          quote: "W okresie korzystania z ulgi na start podlegasz obowiązkowo ubezpieczeniu zdrowotnemu. Opłacasz składki tylko na to ubezpieczenie."
+          as_of: 2026-11-26
+        - title: biznes.gov.pl, Ulga na start, aktualizacja 29.01.2026
+          url: https://www.biznes.gov.pl/pl/portal/00285
+          kind: control
+          quote: "Ulga na start nie dotyczy ubezpieczenia zdrowotnego."
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          Art. 18 ust. 1 Prawa przedsiębiorców mówi o „okresie 6 miesięcy od dnia podjęcia działalności gospodarczej”. ZUS i
+          biznes.gov.pl podają, że przy rozpoczęciu działalności w trakcie miesiąca tego miesiąca nie wlicza się do okresu ulgi,
+          czyli okres kończy się z końcem szóstego pełnego miesiąca. Przepis tego wprost nie mówi. Art. 18aa ust. 1 i 3 ustawy
+          o systemie ubezpieczeń społecznych liczy 24 miesiące podstawy preferencyjnej „od dnia objęcia ubezpieczeniami”.
+          biznes.gov.pl podaje, że po rezygnacji w połowie miesiąca okres zaczyna się „dopiero od kolejnego miesiąca”, a ZUS,
+          że po rezygnacji liczy się go od dnia objęcia ubezpieczeniami, a po upływie ulgi od dnia następnego po upływie
+          6 miesięcy kalendarzowych. Pytanie do eksperta: docs/pytania-do-eksperta.md, P9.
