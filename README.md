@@ -106,28 +106,39 @@ Są:
   - stawka podatku liniowego i limit odliczenia składki zdrowotnej;
   - progi i stawki skali podatkowej;
   - zasady ustalenia podatku i zaliczek miesięcznych dla każdej z trzech form;
+  - zaliczki kwartalne i uproszczone, kwartalne opłacanie ryczałtu i limity w euro, od których zależą;
+  - ulgi i odliczenia dla każdej z trzech form, z limitami (internet, dzieci, termomodernizacja, darowizny,
+    ulga rehabilitacyjna, IKZE);
+  - wspólne opodatkowanie małżonków i opodatkowanie osoby samotnie wychowującej dzieci, z wyłączeniami;
 - terminy:
-  - zaliczek i zeznań rocznych;
+  - zaliczek miesięcznych i kwartalnych oraz zeznań rocznych;
   - JPK_V7M i JPK_V7K;
   - składek ZUS i rocznego rozliczenia składki zdrowotnej;
   - zasada przesunięcia terminu;
   - dni wolne na 2026 i 2027 rok;
+- JPK:
+  - schematy JPK_V7M, JPK_V7K i JPK_PKPIR (narzędzie `get_schema`);
+  - zasady przesyłania księgi i ewidencji na ryczałcie w formie JPK;
 - składki społeczne:
   - stopy składek, Fundusz Pracy i Fundusz Solidarnościowy;
   - podstawa pełna i preferencyjna, limit rocznej podstawy;
+  - ulga na start i Mały ZUS Plus;
   - minimalne i prognozowane przeciętne wynagrodzenie;
 - składka zdrowotna:
   - progi i kwoty na ryczałcie;
   - stopy i zasady obliczenia na podatku liniowym i skali, z rozliczeniem rocznym;
   - minimalna składka.
 
+Wartości na 2027 rok są tam, gdzie urząd już je ogłosił. Pozostałe wersje kończą się z końcem okresu, na który je
+ogłoszono, a zapytanie o późniejszy dzień daje `found: false`.
+
 Brakuje między innymi:
 
-- Małego ZUS Plus i ulgi na start;
-- zaliczek kwartalnych i uproszczonych;
-- ulg i odliczeń innych niż składki;
-- wspólnego rozliczenia małżonków;
-- schematów JPK.
+- VAT poza schematami i terminami JPK (stawki, limit zwolnienia podmiotowego);
+- karty podatkowej;
+- amortyzacji;
+- IP Box i kwot ulg na badania i rozwój, robotyzację i ekspansję (zasady ulg tylko je wymieniają);
+- zwolnienia z zaliczek dla rozpoczynających działalność i zaliczek w okresie zawieszenia działalności.
 
 Każda zasada wymienia przepisy, których nie opisuje. Pytania, których źródła nie rozstrzygają, są w [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md).
 
