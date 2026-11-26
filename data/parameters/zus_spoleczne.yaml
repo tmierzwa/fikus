@@ -20,6 +20,24 @@
           quote: "Prognozowane przeciętne miesięczne wynagrodzenie brutto w gospodarce narodowej wynosi 9 420 zł"
           article: art. 24
       verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+    - valid_from: 2027-01-01
+      valid_to: 2027-12-31
+      value: 10033
+      note: >-
+        Ustawa budżetowa na rok 2027 nie jest jeszcze uchwalona; projekt (druk nr 3150) podaje tę samą kwotę.
+        Po ogłoszeniu ustawy budżetowej w Dz.U. dopisz ją jako źródło niezależne.
+      sources:
+        - title: M.P. 2026 poz. 1098, obwieszczenie MRPiPS z 3 listopada 2026 r.
+          url: https://api.sejm.gov.pl/eli/acts/MP/2026/1098/text.pdf
+          quote: "kwota prognozowanego przeciętnego wynagrodzenia wynosi 10 033 zł"
+          article: art. 19 ust. 10 ustawy o systemie ubezpieczeń społecznych
+        - title: Sejm RP, druk nr 3150, rządowy projekt ustawy budżetowej na rok 2027 (29 września 2026 r.)
+          url: https://api.sejm.gov.pl/sejm/term10/prints/3150/3150-ustawa%20i%20za%C5%82%C4%85czniki%20do%20ustawy.pdf
+          kind: control
+          quote: "Prognozowane przeciętne miesięczne wynagrodzenie brutto w gospodarce narodowej wynosi 10 033 zł"
+          article: art. 24 projektu
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: zus.podstawa_minimalna
   name: Najniższa miesięczna podstawa wymiaru składek społecznych przedsiębiorcy
@@ -60,6 +78,21 @@
           url: https://www.zus.pl/-/nowe-wysoko%C5%9Bci-sk%C5%82adek-na-ubezpieczenia-spo%C5%82eczne-w-2026-r.
           independent: true
       verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+    - valid_from: 2027-01-01
+      valid_to: 2027-12-31
+      value: 300990
+      note: Komunikat ZUS o wysokości składek w 2027 r. zwykle ukazuje się pod koniec grudnia; po publikacji dopisz go jako źródło niezależne.
+      sources:
+        - title: M.P. 2026 poz. 1098, obwieszczenie MRPiPS z 3 listopada 2026 r.
+          url: https://api.sejm.gov.pl/eli/acts/MP/2026/1098/text.pdf
+          quote: "w roku 2027 wynosi 300 990 zł"
+          article: art. 19 ust. 1 i 10 ustawy o systemie ubezpieczeń społecznych
+        - title: Bezprawnik, ZUS od stycznia 2027
+          url: https://bezprawnik.pl/zus-od-stycznia/
+          kind: control
+          quote: "Ta wynosi w 2027 roku 300 990 zł."
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: zus.stawka.emerytalna
   name: Stopa składki na ubezpieczenie emerytalne
