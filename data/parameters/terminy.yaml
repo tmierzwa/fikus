@@ -182,6 +182,59 @@
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
+- id: termin.zeznanie_liniowy
+  name: Zeznanie roczne PIT-36L i wpłata różnicy podatku
+  kind: deadline
+  applies_to: {tax_form: [liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value: {day_of_month: 30, month: 4}
+      note: >-
+        Zeznanie za rok podatkowy składa się od 15 lutego do 30 kwietnia następnego roku; złożone wcześniej uznaje się
+        za złożone 15 lutego. Różnicę między podatkiem z zeznania a zapłaconymi zaliczkami wpłaca się przed upływem
+        terminu złożenia zeznania. Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku
+        obowiązywania (2026-01-01) nie jest potwierdzona źródłem.
+        Ustawa nie nazywa formularza; nazwa PIT-36L pochodzi ze źródła kontrolnego.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (termin zeznania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 45 ust. 1 i 1a pkt 2
+          quote: "w terminie od dnia 15 lutego do dnia 30 kwietnia roku następującego po roku podatkowym"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wpłata)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 45 ust. 4
+          quote: "Przed upływem terminu określonego na złożenie zeznania podatnicy są obowiązani wpłacić"
+        - title: biznes.gov.pl, Podatek liniowy, aktualizacja 18.02.2026 (zeznanie PIT-36L)
+          url: https://www.biznes.gov.pl/pl/portal/00253
+          kind: control
+          quote: "Zeznanie trzeba złożyć do 30 kwietnia po roku podatkowym, którego dotyczy."
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: termin.zeznanie_ryczalt
+  name: Zeznanie roczne PIT-28
+  kind: deadline
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2026-01-01
+      value: {day_of_month: 30, month: 4}
+      note: >-
+        Zeznanie za rok podatkowy składa się od 15 lutego do 30 kwietnia następnego roku; złożone wcześniej uznaje się
+        za złożone 15 lutego. Tekst jednolity uwzględnia zmiany ogłoszone przed 2025-06-12; data początku obowiązywania
+        (2026-01-01) nie jest potwierdzona źródłem. Ustawa nie nazywa formularza; nazwa PIT-28 pochodzi ze źródła
+        kontrolnego.
+      sources:
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 21 ust. 2 pkt 2
+          quote: "należnego ryczałtu od przychodów ewidencjonowanych – w terminie od dnia 15 lutego do dnia 30 kwietnia roku następującego po roku podatkowym"
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (zeznanie roczne)
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          quote: "rozliczają w terminie od 15 lutego do końca kwietnia następnego roku"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
 - id: termin.zaliczka_skala
   name: Zaliczka na PIT według skali za miesiąc
   kind: deadline
