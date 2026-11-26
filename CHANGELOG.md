@@ -23,6 +23,9 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 - Parametry VAT w nowym pliku `data/parameters/vat.yaml`: `vat.stawki` (stawka podstawowa i obniżone
   w okresie z art. 146ef ustawy o VAT), `vat.limit_zwolnienia` (limit zwolnienia podmiotowego z art. 113
   ust. 1) i zasada `zasada.vat_odliczenie` (prawo do odliczenia, moment i korekta, samochody, wyłączenia).
+- Zasady `zasada.dra_obowiazek` (deklaracja ZUS DRA za siebie) i `zasada.roczne_rozliczenie_zdrowotnej`
+  oraz wzór formularza `schemat.zus_dra` (od 1 maja 2026 r., według dnia złożenia) w nowym pliku
+  `data/parameters/zus_dra.yaml`. `get_schema("ZUS_DRA")` zwraca wzór DRA.
 
 ### Zmienione
 
