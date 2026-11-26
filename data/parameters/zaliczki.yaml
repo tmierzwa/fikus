@@ -1,0 +1,379 @@
+# Zaliczki kwartalne i uproszczone na PIT oraz kwartalne wpłaty ryczałtu.
+# Zaliczki miesięczne opisują zasada.liniowy_podatek, zasada.skala_podatek, termin.zaliczka_liniowy,
+# termin.zaliczka_skala i termin.zaliczka_ryczalt.
+# Limity są w euro; zasadę przeliczenia na złote opisują kroki zasad. Serwer niczego nie liczy, liczy klient.
+
+- id: pit.maly_podatnik.limit_euro
+  name: Limit przychodu ze sprzedaży małego podatnika PIT (w euro, za poprzedni rok podatkowy)
+  unit: EUR/rok
+  applies_to: {tax_form: [skala, liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value: 2000000
+      note: >-
+        Mały podatnik to podatnik, u którego przychód ze sprzedaży razem z należnym VAT nie przekroczył
+        w poprzednim roku podatkowym równowartości tej kwoty; przy przedsiębiorstwie w spadku wlicza się też przychód
+        ze sprzedaży u zmarłego przedsiębiorcy. Kwotę przelicza się na złote według średniego kursu euro NBP
+        z pierwszego dnia roboczego października poprzedniego roku podatkowego, w zaokrągleniu do 1000 zł.
+        Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.;
+        data początku obowiązywania (2026-01-01) nie jest potwierdzona źródłem. Nowelizacje ogłoszone później
+        (Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1541, 1542 i 1556) nie zmieniają art. 5a pkt 20.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 5a pkt 20
+          quote: "nie przekroczyła w poprzednim roku podatkowym wyrażonej w złotych kwoty odpowiadającej równowartości 2 000 000 euro"
+        - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym, aktualizacja 24.06.2026
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
+          kind: control
+          quote: "nie przekroczyła w poprzednim roku podatkowym wyrażonej w złotych kwoty odpowiadającej równowartości 2 000 000 euro"
+          as_of: 2026-11-26
+        - title: biznes.gov.pl, Skala podatkowa, aktualizacja 07.01.2026
+          url: https://www.biznes.gov.pl/pl/portal/00264
+          kind: control
+          quote: "Mały podatnik – podatnik, którego przychody ze sprzedaży wraz z podatkiem VAT nie przekroczyły w poprzednim roku podatkowym 2 mln euro"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: ryczalt.kwartalnie.limit_euro
+  name: Limit przychodu za poprzedni rok uprawniający do kwartalnego opłacania ryczałtu (w euro)
+  unit: EUR/rok
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2026-01-01
+      value: 200000
+      note: >-
+        Przychody z działalności prowadzonej samodzielnie albo przychody spółki w roku poprzedzającym rok podatkowy.
+        Do limitu nie wlicza się kwot, o które podatnik zmniejszył albo zwiększył przychody na podstawie art. 11 ust. 4,
+        5, 8 i 9 albo podstawę obliczenia podatku na podstawie art. 26i ustawy o PIT. Kwotę przelicza się na złote
+        według średniego kursu euro NBP z pierwszego dnia roboczego października roku poprzedzającego rok podatkowy
+        (art. 4 ust. 2). Tekst jednolity uwzględnia zmiany ogłoszone
+        przed 2025-06-12; data początku obowiązywania (2026-01-01) nie jest potwierdzona źródłem. Nowelizacje ogłoszone
+        później (Dz.U. 2026 poz. 779, 1098 i 1541) nie zmieniają art. 4, 7 ani 21 ust. 1a–1c.
+      sources:
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 21 ust. 1b
+          quote: "w roku poprzedzającym rok podatkowy – nie przekroczyły kwoty stanowiącej równowartość 200 000 euro"
+        - title: podatki.gov.pl (MF), Opodatkowanie ryczałtem od przychodów ewidencjonowanych, aktualizacja 16.02.2026
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-ryczaltem-od-przychodow-ewidencjonowanych
+          kind: control
+          quote: "Twoje przychody z działalności prowadzonej samodzielnie albo przychody spółki - w roku poprzedzającym rok podatkowy - nie przekroczyły kwoty stanowiącej równowartość 200 000 euro"
+          as_of: 2026-11-26
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          quote: "w poprzednim roku, w ramach działalności prowadzonej samodzielnie albo w formie spółki, osiągnąłeś przychody nieprzekraczające 200 tys. euro"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: termin.zaliczka_kwartalna_pit
+  name: Zaliczka kwartalna na PIT (skala albo liniowy) za kwartał
+  kind: deadline
+  applies_to: {tax_form: [skala, liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value: {day_of_month: 20, months: [1, 4, 7, 10]}
+      note: >-
+        Dotyczy tylko podatników, którzy wybrali zaliczki kwartalne (zasada.zaliczki_kwartalne_pit). Termin w miesiącu
+        po kwartale; za ostatni kwartał roku do 20 stycznia następnego roku. Tekst jednolity uwzględnia stan prawny
+        na 1 kwietnia 2026 r.; data początku obowiązywania (2026-01-01) nie jest potwierdzona źródłem.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 6 zdanie drugie i trzecie
+          quote: "Zaliczki kwartalne podatnicy wpłacają w terminie do 20 dnia każdego miesiąca następującego po kwartale, za który wpłacana jest zaliczka. Zaliczkę za ostatni miesiąc lub ostatni kwartał roku podatkowego podatnik wpłaca w terminie do 20 stycznia następnego roku podatkowego"
+        - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym, aktualizacja 24.06.2026
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
+          kind: control
+          quote: "do 20. dnia każdego miesiąca następującego po kwartale, za który wpłacasz zaliczkę, a za ostatni kwartał roku podatkowego – do 20 stycznia następnego roku"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: termin.ryczalt_kwartal
+  name: Ryczałt za kwartał
+  kind: deadline
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2026-01-01
+      value: {day_of_month: 20, months: [1, 4, 7, 10]}
+      note: >-
+        Dotyczy tylko podatników, którzy wybrali kwartalne opłacanie ryczałtu (zasada.ryczalt_kwartalnie). Termin
+        w miesiącu po kwartale; za ostatni kwartał roku do 20 stycznia następnego roku. Tekst jednolity uwzględnia
+        zmiany ogłoszone przed 2025-06-12; data początku obowiązywania (2026-01-01) nie jest potwierdzona źródłem.
+      sources:
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 21 ust. 1a
+          quote: "w terminie do dnia 20 następnego miesiąca po upływie kwartału, za który ryczałt ma być opłacony, a za ostatni kwartał roku podatkowego – w terminie do dnia 20 stycznia następnego roku podatkowego"
+        - title: podatki.gov.pl (MF), Opodatkowanie ryczałtem od przychodów ewidencjonowanych, aktualizacja 16.02.2026
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-ryczaltem-od-przychodow-ewidencjonowanych
+          kind: control
+          quote: "do 20. dnia każdego miesiąca następującego po kwartale, za który wpłacasz ryczałt, a za ostatni kwartał roku podatkowego – do 20 stycznia następnego roku"
+          as_of: 2026-11-26
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          quote: "za dany kwartał - do 20. dnia następującego po upływie kwartału za ostatni kwartał roku podatkowego - do 20 stycznia następnego roku podatkowego"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: zasada.zaliczki_kwartalne_pit
+  name: Zaliczki kwartalne na PIT (skala i podatek liniowy)
+  kind: rule
+  applies_to: {tax_form: [skala, liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Zaliczki kwartalne zamiast miesięcznych może wpłacać podatnik z działalności gospodarczej, który jest małym podatnikiem, czyli jego przychód ze sprzedaży razem z należnym VAT nie przekroczył w poprzednim roku podatkowym limitu małego podatnika. Limit w euro przelicza się na złote według średniego kursu euro NBP z pierwszego dnia roboczego października poprzedniego roku podatkowego, w zaokrągleniu do 1000 zł.
+            uses: [pit.maly_podatnik.limit_euro]
+            basis: art. 44 ust. 3g i 3h oraz art. 5a pkt 20 ustawy o podatku dochodowym od osób fizycznych
+          - text: Zaliczki kwartalne może też wpłacać podatnik rozpoczynający prowadzenie działalności gospodarczej, chyba że w roku jej rozpoczęcia albo w ciągu dwóch lat liczonych od końca roku poprzedzającego rok rozpoczęcia prowadził działalność samodzielnie albo jako wspólnik spółki niebędącej osobą prawną, albo prowadził ją jego małżonek, jeżeli istniała między nimi wspólność majątkowa. Jak długo podatnik pozostaje rozpoczynającym działalność w rozumieniu tego przepisu, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: []
+            basis: art. 44 ust. 3g i 3h w zw. z art. 22k ust. 7 i 11 ustawy o podatku dochodowym od osób fizycznych
+          - text: Na skali podatkowej obowiązek wpłacania zaliczki powstaje od kwartału, w którym dochody przekroczyły iloraz kwoty zmniejszającej podatek i najniższej stawki z pierwszego przedziału skali. Zaliczka za ten kwartał to podatek od tego dochodu obliczony według art. 26 i 27 ustawy o PIT, a za kolejne kwartały różnica między podatkiem należnym od dochodu osiągniętego od początku roku a sumą zaliczek za poprzednie kwartały.
+            uses: [zasada.skala_podatek, podatek.skala]
+            basis: art. 44 ust. 3g pkt 1–3 ustawy o podatku dochodowym od osób fizycznych
+          - text: Przy podatku liniowym zaliczka za kwartał to różnica między podatkiem należnym od dochodu osiągniętego od początku roku, obliczonym tak jak podatek liniowy, a sumą należnych zaliczek za poprzednie kwartały.
+            uses: [zasada.liniowy_podatek, podatek.liniowy.stawka]
+            basis: art. 44 ust. 3h ustawy o podatku dochodowym od osób fizycznych
+          - text: Zaliczki kwartalnej można nie wpłacać, jeżeli podatek należny od dochodu od początku roku pomniejszony o sumę zaliczek wpłaconych od początku roku nie przekracza 1000 zł. Gdy ta kwota przekroczy 1000 zł, wpłać różnicę między podatkiem należnym od dochodu od początku roku a sumą zaliczek wpłaconych od początku roku.
+            uses: []
+            basis: art. 44 ust. 15 ustawy o podatku dochodowym od osób fizycznych
+          - text: Zaliczkę za kwartał wpłacasz do 20 dnia miesiąca po kwartale, a za ostatni kwartał roku do 20 stycznia następnego roku.
+            uses: [termin.zaliczka_kwartalna_pit]
+            basis: art. 44 ust. 6 zdanie drugie i trzecie ustawy o podatku dochodowym od osób fizycznych
+          - text: O wyborze zaliczek kwartalnych informujesz w zeznaniu rocznym za rok, w którym wpłacałeś zaliczki kwartalne.
+            uses: []
+            basis: art. 44 ust. 3i ustawy o podatku dochodowym od osób fizycznych
+          - text: Ta zasada nie opisuje zwolnienia z obowiązku wpłacania zaliczek dla podatnika, który po raz pierwszy rozpoczął działalność (art. 44 ust. 7a–7l, tylko przy opodatkowaniu według skali), zaliczek przedsiębiorstwa w spadku (art. 44 ust. 6aa i 6ab), braku zaliczek w okresie zawieszenia działalności i zaliczek po jej wznowieniu (art. 44 ust. 10 i 13), działów specjalnych produkcji rolnej (art. 44 ust. 14) ani korekty dochodu przy niezapłaconych należnościach i zobowiązaniach (art. 44 ust. 17–26).
+            uses: []
+            basis: art. 44 ust. 6aa, 6ab, 7a–7l, 10, 13, 14 i 17–26 ustawy o podatku dochodowym od osób fizycznych
+      note: >-
+        Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku obowiązywania (2026-01-01) nie jest
+        potwierdzona źródłem. Nowelizacje ogłoszone później (Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287, 1347,
+        1354, 1371, 1541, 1542 i 1556) nie zmieniają art. 5a pkt 20, art. 22k ani art. 44 ust. 3f–3i, 6, 15.
+        Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (kto może, skala)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 3g
+          quote: "będący małymi podatnikami oraz podatnicy rozpoczynający prowadzenie działalności gospodarczej, o których mowa w art. 22k ust. 11, mogą wpłacać zaliczki kwartalne"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (początek obowiązku na skali)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 3g pkt 1
+          quote: "obowiązek wpłacania zaliczki powstaje, poczynając od kwartału, w którym dochody przekroczyły kwotę stanowiącą iloraz kwoty zmniejszającej podatek"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (przeliczenie limitu małego podatnika)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 5a pkt 20
+          quote: "przeliczenia kwot wyrażonych w euro dokonuje się według średniego kursu euro ogłaszanego przez Narodowy Bank Polski na pierwszy dzień roboczy października poprzedniego roku podatkowego, w zaokrągleniu do 1000 zł"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (podatek liniowy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 3h
+          quote: "mogą wpłacać na rachunek urzędu skarbowego zaliczki kwartalne w wysokości różnicy między podatkiem należnym od dochodu osiągniętego od początku roku, obliczonym zgodnie z art. 30c, a sumą należnych zaliczek za poprzednie kwartały"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (rozpoczynający działalność)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22k ust. 11
+          quote: "w roku rozpoczęcia tej działalności, a także w okresie dwóch lat, licząc od końca roku poprzedzającego rok jej rozpoczęcia, prowadził działalność gospodarczą samodzielnie"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (informacja w zeznaniu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 3i
+          quote: "podatnicy informują w zeznaniu, o którym mowa w art. 45 ust. 1 lub ust. 1a pkt 2, składanym za rok podatkowy, w którym stosowali kwartalny sposób wpłacania zaliczek"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (zaliczka do 1000 zł)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 15
+          quote: "mogą nie wpłacać zaliczki obliczonej według zasad określonych w ust. 3 i ust. 3f–3h"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (termin)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 6
+          quote: "Zaliczki kwartalne podatnicy wpłacają w terminie do 20 dnia każdego miesiąca następującego po kwartale, za który wpłacana jest zaliczka"
+        - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym, aktualizacja 24.06.2026 (kroki 1 i 2)
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
+          kind: control
+          quote: "Zaliczki kwartalne możesz wpłacać tylko wtedy, gdy: rozpoczynasz prowadzenie działalności gospodarczej albo jesteś małym podatnikiem"
+          as_of: 2026-11-26
+        - title: biznes.gov.pl, Skala podatkowa, aktualizacja 07.01.2026 (krok 7)
+          url: https://www.biznes.gov.pl/pl/portal/00264
+          kind: control
+          quote: "Wyboru kwartalnej formy wpłacania zaliczek nie musisz zgłaszać do urzędu skarbowego. Wskazujesz ich wybór w zeznaniu rocznym za rok, w którym stosowałeś kwartalne zaliczki"
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          Art. 44 ust. 3g wymienia „podatnicy rozpoczynający prowadzenie działalności gospodarczej, o których mowa
+          w art. 22k ust. 11”, a ust. 3h „podatnicy rozpoczynający prowadzenie działalności gospodarczej” i każe stosować
+          art. 22k ust. 11 odpowiednio. Żaden z tych przepisów nie mówi, jak długo podatnik jest rozpoczynającym
+          działalność; art. 22k ust. 7 mówi o roku podatkowym, w którym rozpoczęli działalność, a ust. 11 wyłącza
+          podatnika, który prowadził działalność w roku rozpoczęcia albo w dwóch latach przed nim. Strony MF i biznes.gov.pl
+          tego nie rozstrzygają. Pytanie do eksperta: docs/pytania-do-eksperta.md, P11.
+
+- id: zasada.zaliczki_uproszczone
+  name: Zaliczki uproszczone na PIT (skala i podatek liniowy)
+  kind: rule
+  applies_to: {tax_form: [skala, liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Zaliczki uproszczone może wybrać podatnik z działalności gospodarczej, z wyjątkiem przedsiębiorstwa w spadku. Nie może ich wybrać podatnik, który po raz pierwszy podjął działalność w roku podatkowym albo w roku poprzedzającym rok podatkowy. Zaliczki uproszczone są zawsze miesięczne.
+            uses: []
+            basis: art. 44 ust. 6b i 6e ustawy o podatku dochodowym od osób fizycznych
+          - text: Podstawą jest dochód z działalności gospodarczej wykazany w zeznaniu rocznym (według skali albo w odrębnym zeznaniu przy podatku liniowym) złożonym w roku poprzedzającym dany rok podatkowy. Jeżeli w tym zeznaniu nie wykazano dochodu z działalności albo wykazano dochód nie wyższy niż iloraz kwoty zmniejszającej podatek i najniższej stawki z pierwszego przedziału skali, podstawą jest dochód z zeznania złożonego dwa lata przed danym rokiem podatkowym. Jeżeli i w tym zeznaniu nie ma takiego dochodu albo nie przekracza on tego ilorazu, zaliczek uproszczonych nie można wpłacać. Jak postąpić, gdy w którymś z tych lat podatnik nie złożył takiego zeznania (na przykład był na ryczałcie), jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: []
+            basis: art. 44 ust. 6b pkt 1 i 2 ustawy o podatku dochodowym od osób fizycznych
+          - text: Na skali podatkowej zaliczka za miesiąc to 1/12 podatku obliczonego od tego dochodu według skali obowiązującej w danym roku podatkowym.
+            uses: [podatek.skala]
+            basis: art. 44 ust. 6b ustawy o podatku dochodowym od osób fizycznych
+          - text: Przy podatku liniowym zaliczka za miesiąc to 1/12 kwoty obliczonej od tego dochodu przy stawce 19% wskazanej wprost w art. 44 ust. 6h. Zaliczkę możesz obniżyć o 19% składki zdrowotnej zapłaconej w danym miesiącu z tytułu działalności opodatkowanej podatkiem liniowym i za osoby współpracujące; wysokość składek ustala się na podstawie dokumentów stwierdzających ich zapłatę. Składki, od których liczysz obniżkę, wliczasz do rocznego limitu składki zdrowotnej przy podatku liniowym.
+            uses: [podatek.liniowy.limit_skladki_zdrowotnej]
+            basis: art. 44 ust. 6b, 6h i 6j w zw. z art. 30c ust. 2 pkt 2 i ust. 2a–2c ustawy o podatku dochodowym od osób fizycznych
+          - text: Zaliczki uproszczone stosujesz przez cały rok podatkowy i wpłacasz w terminach zaliczek miesięcznych (do 20 dnia każdego miesiąca za miesiąc poprzedni, za grudzień do 20 stycznia następnego roku). Po końcu roku rozliczasz podatek w zeznaniu rocznym na zwykłych zasadach.
+            uses: [termin.zaliczka_liniowy, termin.zaliczka_skala]
+            basis: art. 44 ust. 6 i 6c pkt 2–4 ustawy o podatku dochodowym od osób fizycznych
+          - text: O wyborze zaliczek uproszczonych informujesz w zeznaniu rocznym za rok, w którym wpłacałeś zaliczki uproszczone.
+            uses: []
+            basis: art. 44 ust. 6d ustawy o podatku dochodowym od osób fizycznych
+          - text: Jeżeli korekta zeznania, z którego wzięto dochód, zmienia podstawę zaliczek, zaliczki zmieniają się odpowiednio od początku roku, gdy korektę złożono do końca roku poprzedzającego rok wpłat; od miesiąca po złożeniu korekty, gdy złożono ją w roku wpłat; później korekta ich nie zmienia. Tak samo jest, gdy organ podatkowy stwierdzi inny dochód z działalności niż wykazany w zeznaniu.
+            uses: []
+            basis: art. 44 ust. 6f i 6g ustawy o podatku dochodowym od osób fizycznych
+          - text: Ta zasada nie opisuje zwolnienia z obowiązku wpłacania zaliczek dla podatnika, który po raz pierwszy rozpoczął działalność (art. 44 ust. 7a–7l, tylko przy opodatkowaniu według skali; może przypadać na rok, w którym zaliczki uproszczone nie są już wyłączone), braku zaliczek w okresie zawieszenia działalności i zaliczek po jej wznowieniu (art. 44 ust. 10 i 13) ani działów specjalnych produkcji rolnej (art. 44 ust. 14).
+            uses: []
+            basis: art. 44 ust. 7a–7l, 10, 13 i 14 ustawy o podatku dochodowym od osób fizycznych
+      note: >-
+        Termin wpłat na skali jest taki sam jak przy podatku liniowym (art. 44 ust. 6); opisują go termin.zaliczka_skala
+        i termin.zaliczka_liniowy. Art. 44 ust. 6i jest uchylony. Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data
+        początku obowiązywania (2026-01-01) nie jest potwierdzona źródłem. Nowelizacje ogłoszone później (Dz.U. 2026
+        poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1541, 1542 i 1556) nie zmieniają art. 44 ust. 6–6j.
+        Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (kto może, 1/12)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 6b
+          quote: "z wyłączeniem przedsiębiorstw w spadku, mogą wpłacać zaliczki miesięczne w danym roku podatkowym w uproszczonej formie w wysokości 1/12 kwoty obliczonej"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (brak dochodu w obu zeznaniach)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 6b pkt 2
+          quote: "nie są możliwe wpłaty zaliczek w uproszczonej formie"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (cały rok)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 6c
+          quote: "stosować uproszczoną formę wpłacania zaliczek przez cały rok podatkowy"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (informacja w zeznaniu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 6d
+          quote: "składanym za rok podatkowy, w którym wpłacali zaliczki w uproszczonej formie"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (rozpoczynający działalność)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 6e
+          quote: "nie mają zastosowania do podatników, którzy po raz pierwszy podjęli działalność w roku podatkowym albo w roku poprzedzającym rok podatkowy"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (korekta zeznania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 6f
+          quote: "ulega zwiększeniu lub zmniejszeniu, odpowiednio do zmiany wysokości podstawy ich obliczenia"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (podatek liniowy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 6h
+          quote: "kwotę zaliczek obliczają od dochodu, o którym mowa w ust. 6b, przy zastosowaniu stawki podatku w wysokości 19 %"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (obniżka o składkę zdrowotną)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 6j
+          quote: "Zaliczkę obliczoną zgodnie z ust. 6h podatnik może obniżyć o kwotę stanowiącą 19 % składki na ubezpieczenie zdrowotne"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (składki objęte obniżką i dokumenty)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30c ust. 2 pkt 2 i ust. 2a
+          quote: "Wysokość składek i wpłat, o których mowa w ust. 2, ustala się na podstawie dokumentów stwierdzających ich poniesienie"
+        - title: biznes.gov.pl, Skala podatkowa, aktualizacja 07.01.2026 (kroki 1 i 2)
+          url: https://www.biznes.gov.pl/pl/portal/00264
+          kind: control
+          quote: "nie wykazali dochodu z działalności gospodarczej albo wykazali dochód w wysokości nieprzekraczającej kwoty 30 tys. zł). Uproszczonej formy wpłacania zaliczek nie mogą wybrać podatnicy, którzy rozpoczęli działalność gospodarczą w tym samym bądź w poprzednim roku"
+          as_of: 2026-11-26
+        - title: biznes.gov.pl, Podatek liniowy, aktualizacja 18.02.2026 (krok 4 bez obniżki o składkę zdrowotną)
+          url: https://www.biznes.gov.pl/pl/portal/00253
+          kind: control
+          quote: "opłacają zaliczki na podatek dochodowy w wysokości 1/12 kwoty podatku ustalonego według 19% stawki wynikającej z zeznania rocznego"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym, aktualizacja 24.06.2026 (krok 5)
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
+          kind: control
+          quote: "Jeżeli chcesz wpłacać zaliczki uproszczone, obliczone od dochodu z pozarolniczej działalności gospodarczej wykazanego przez Ciebie w latach ubiegłych, wpłacasz je w terminie do 20. dnia każdego miesiąca za miesiąc poprzedni"
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          Art. 44 ust. 6b pkt 2 każe sięgnąć do zeznania sprzed dwóch lat, gdy „w zeznaniu, o którym mowa w pkt 1”
+          nie wykazano dochodu z działalności albo wykazano dochód nie wyższy od ilorazu kwoty zmniejszającej podatek
+          i najniższej stawki. Przepis nie mówi, co gdy w roku poprzedzającym podatnik nie złożył zeznania z art. 45 ust. 1
+          ani ust. 1a pkt 2 (na przykład rozliczał się ryczałtem). Pytanie do eksperta: docs/pytania-do-eksperta.md, P12.
+
+- id: zasada.ryczalt_kwartalnie
+  name: Kwartalne opłacanie ryczałtu od przychodów ewidencjonowanych
+  kind: rule
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Ryczałt kwartalnie zamiast co miesiąc może opłacać podatnik, którego przychody z działalności prowadzonej samodzielnie albo przychody spółki w roku poprzedzającym rok podatkowy nie przekroczyły limitu. Do limitu nie wliczasz kwot, o które zmniejszyłeś albo zwiększyłeś przychody na podstawie art. 11 ust. 4, 5, 8 i 9 ustawy o ryczałcie albo podstawę obliczenia podatku na podstawie art. 26i ustawy o PIT. Limit w euro przelicza się na złote według średniego kursu euro NBP z pierwszego dnia roboczego października roku poprzedzającego rok podatkowy.
+            uses: [ryczalt.kwartalnie.limit_euro]
+            basis: art. 21 ust. 1b i art. 4 ust. 2 ustawy o zryczałtowanym podatku dochodowym
+          - text: Ryczałt kwartalnie może też opłacać podatnik rozpoczynający działalność w roku podatkowym, który w poprzednim roku podatkowym nie prowadził działalności. W nowo utworzonej spółce za rozpoczęcie działalności uważa się dzień uzyskania pierwszego przychodu przez spółkę. Rozpoczęciem działalności nie jest zmiana branży lub przedmiotu działalności, zmiana umowy spółki lub wspólnika ani powstanie przedsiębiorstwa w spadku. Czy to prawo dotyczy tylko roku rozpoczęcia, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: []
+            basis: art. 21 ust. 1b w zw. z art. 7 ust. 1 i 2 ustawy o zryczałtowanym podatku dochodowym
+          - text: Ryczałt za kwartał obliczasz od przychodów tego kwartału według zasady podstawy opodatkowania ryczałtem i wpłacasz do 20 dnia miesiąca po kwartale, a za ostatni kwartał roku do 20 stycznia następnego roku.
+            uses: [zasada.ryczalt_podstawa, termin.ryczalt_kwartal]
+            basis: art. 21 ust. 1a ustawy o zryczałtowanym podatku dochodowym
+          - text: O wyborze kwartalnego opłacania ryczałtu informujesz w zeznaniu rocznym za rok, w którym opłacałeś ryczałt kwartalnie.
+            uses: []
+            basis: art. 21 ust. 1c ustawy o zryczałtowanym podatku dochodowym
+          - text: Ta zasada nie opisuje kwartalnego opłacania ryczałtu przez przedsiębiorstwo w spadku i jego pierwszego ryczałtu (art. 21 ust. 1aa, 1ba i 5a) ani ryczałtu za okres zawieszenia działalności i terminów jego wpłaty po wznowieniu (art. 21 ust. 1d–1k).
+            uses: []
+            basis: art. 21 ust. 1aa, 1ba, 1d–1k i 5a ustawy o zryczałtowanym podatku dochodowym
+      note: >-
+        Tekst jednolity uwzględnia zmiany ogłoszone przed 2025-06-12; data początku obowiązywania (2026-01-01) nie jest
+        potwierdzona źródłem. Nowelizacje ogłoszone później (Dz.U. 2026 poz. 779, 1098 i 1541) nie zmieniają art. 4, 7
+        ani 21 ust. 1a–1k. Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (kto może)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 21 ust. 1b
+          quote: "mogą stosować wyłącznie podatnicy rozpoczynający prowadzenie działalności, o których mowa w art. 7, oraz podatnicy, których otrzymane przychody z działalności prowadzonej samodzielnie albo przychody spółki"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (kwoty poza limitem)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 21 ust. 1b zdanie drugie
+          quote: "nie uwzględnia się kwot, o które podatnik odpowiednio zmniejszył albo zwiększył przychody na podstawie art. 11 ust. 4, 5, 8 i 9"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (rozpoczęcie działalności)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 7 ust. 1
+          quote: "Do podatników rozpoczynających działalność w roku podatkowym, którzy w poprzednim roku podatkowym nie prowadzili działalności"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (termin)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 21 ust. 1a
+          quote: "w terminie do dnia 20 następnego miesiąca po upływie kwartału, za który ryczałt ma być opłacony"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (informacja w zeznaniu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 21 ust. 1c
+          quote: "O wyborze kwartalnego sposobu opłacania ryczałtu podatnicy informują w zeznaniu"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (przeliczenie euro)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 4 ust. 2
+          quote: "Kwoty wyrażone w euro przelicza się na walutę polską według średniego kursu euro ogłaszanego przez Narodowy Bank Polski na pierwszy dzień roboczy października roku poprzedzającego rok podatkowy"
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (kroki 1, 2 i 4)
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          quote: "O wyborze kwartalnego sposobu rozliczania ryczałtu informujesz w zeznaniu PIT-28/PIT-28S za rok, w którym opłacałeś ryczałt kwartalnie"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Opodatkowanie ryczałtem od przychodów ewidencjonowanych, aktualizacja 16.02.2026 (kroki 1–3)
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-ryczaltem-od-przychodow-ewidencjonowanych
+          kind: control
+          quote: "Ryczałt kwartalny możesz wpłacać tylko wtedy, gdy: rozpoczynasz prowadzenie działalności gospodarczej albo Twoje przychody z działalności prowadzonej samodzielnie albo przychody spółki"
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          Art. 21 ust. 1b pozwala na kwartalne opłacanie ryczałtu „podatnikom rozpoczynającym prowadzenie działalności,
+          o których mowa w art. 7”; art. 7 ust. 1 mówi o rozpoczęciu działalności w roku podatkowym. Przepis nie mówi
+          wprost, czy prawo to dotyczy tylko roku rozpoczęcia. Pytanie do eksperta: docs/pytania-do-eksperta.md, P11.
