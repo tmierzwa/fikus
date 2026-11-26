@@ -6,4 +6,45 @@
 #   act: identyfikator ELI nowelizacji, np. DU/2026/986
 #   checked_at: data przejrzenia
 #   note: co zmienia i dlaczego nie dotyczy naszych parametrów, np. "zmienia tylko art. 15"
-[]
+- act: DU/2025/1537
+  checked_at: 2026-11-26
+  note: "ustawa o świadczeniach: zmienia art. 19a, 20, 23c, 23h i 47c (kolejki, świadczenia); nie dotyka art. 79–82"
+- act: DU/2025/1739
+  checked_at: 2026-11-26
+  note: "ustawa o świadczeniach (art. 2 ustawy o Funduszu Medycznym): zmienia art. 97, 116, 132c, 132d, 137; nie dotyka art. 79–82"
+- act: DU/2026/203
+  checked_at: 2026-11-26
+  note: "ustawa o świadczeniach (art. 7): zmienia art. 8, 12, 50, 87, 112c; nie dotyka art. 79–82"
+- act: DU/2026/791
+  checked_at: 2026-11-26
+  note: "ustawa o świadczeniach (art. 3): zmienia art. 7, 49, 50, 51, 188e, 240; nie dotyka art. 79–82"
+- act: DU/2026/972
+  checked_at: 2026-11-26
+  note: "ustawa o świadczeniach: zmienia art. 27a, 31lc, 31n, 31o; nie dotyka art. 79–82"
+- act: DU/2026/986
+  checked_at: 2026-11-26
+  note: "ustawa o świadczeniach (art. 34 ustawy o opiece długoterminowej): zmienia art. 8, 42b, 159a, 189a, 189b; nie dotyka art. 79–82"
+- act: DU/2026/1007
+  checked_at: 2026-11-26
+  note: "ustawa o świadczeniach (art. 2): zmienia art. 3, 22, 23e, 40, 97, 102, 190; nie dotyka art. 79–82"
+- act: DU/2026/779
+  checked_at: 2026-11-26
+  note: "ustawa o ryczałcie: dodaje ust. w art. 15 (ewidencja); ustawa o PIT: zmienia art. 24a (księgi i ich przesyłanie); nie dotyka art. 11, 12 i 21 ustawy o ryczałcie ani art. 44 ustawy o PIT"
+- act: DU/2026/1446
+  checked_at: 2026-11-26
+  note: "ustawa o VAT: zmienia art. 2, 33, 33a, 33b, 34, 41, 52, 138i (eksport, import, stawki); nie dotyka art. 99, 103 i 109"
+- act: DU/2026/1079
+  checked_at: 2026-11-26
+  note: "ustawa o PIT: zmienia tylko art. 21 (zwolnienia); nie dotyka art. 44"
+- act: DU/2026/1287
+  checked_at: 2026-11-26
+  note: "ustawa o PIT (art. 12): dodaje art. 52zu; nie dotyka art. 44"
+- act: DU/2026/1371
+  checked_at: 2026-11-26
+  note: "ustawa o PIT: zmienia m.in. art. 14, 22p, 23q (koszty, amortyzacja); nie dotyka art. 44"
+- act: DU/2026/825
+  checked_at: 2026-11-26
+  note: "Ordynacja podatkowa: dodaje § 6 i 7 w art. 14i; nie dotyka art. 12"
+- act: DU/2026/1154
+  checked_at: 2026-11-26
+  note: "Ordynacja podatkowa (art. 2): zmienia art. 299 § 3 (tajemnica skarbowa); nie dotyka art. 12"
