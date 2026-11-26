@@ -6,6 +6,8 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ## [Niewydane]
 
+## [0.3.0] - 2026-11-26
+
 ### Dodane
 
 - Wersje na 2027 r.: prognozowane przeciętne wynagrodzenie i limit rocznej podstawy składek
@@ -19,6 +21,7 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
   ustawy, pobiera metadane każdego aktu raz, a przejrzaną nowelizację można przypisać do jednego
   aktu (pole `for` w `data/zmiany_sprawdzone.yaml`); 18 przejrzanych nowelizacji.
 - Treść danych po polsku, bez nazw pól w zdaniach; notatki tylko o zmianach widocznych dla klienta.
+- README: instalacja z PyPI przez `uvx fikus@latest`, jaśniejsze logo.
 
 ## [0.2.0] - 2026-11-26
 
@@ -50,6 +53,7 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
   cytaty w oficjalnych tekstach.
 - Licencje: kod Apache 2.0, dane CC BY 4.0.
 
-[Niewydane]: https://github.com/tmierzwa/fikus/compare/v0.2.0...HEAD
+[Niewydane]: https://github.com/tmierzwa/fikus/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/tmierzwa/fikus/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/tmierzwa/fikus/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/tmierzwa/fikus/releases/tag/v0.1.0
