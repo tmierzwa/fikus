@@ -84,6 +84,46 @@ def test_citing_base_act_instead_of_consolidated_text_is_reported():
     assert [x.kind for x in out] == ["nowy_tekst"] and "DU/2025/1461" in out[0].detail
 
 
+def test_older_consolidated_text_cited_next_to_newer_one_is_skipped():
+    v = _param("p", "https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf", "2020-01-01")
+    v["versions"][0]["sources"].append({"title": "stary tekst", "url": "https://api.sejm.gov.pl/eli/acts/DU/2019/1387/text.pdf"})
+    old = {"inForce": "NOT_IN_FORCE", "status": "wygaśnięcie aktu",
+           "references": {"Tekst jednolity dla aktu": [{"id": "DU/1991/350"}]}}
+    new = {"inForce": "IN_FORCE", "references": {"Tekst jednolity dla aktu": [{"id": "DU/1991/350"}]}}
+    base = {"inForce": "IN_FORCE", "references": {"Inf. o tekście jednolitym": [{"id": "DU/2019/1387"}, {"id": "DU/2026/592"}]}}
+    f = _fake({"DU/2026/592": new, "DU/2019/1387": old, "DU/1991/350": base})
+    assert detect(_store(v), TODAY, fetch=f) == []
+    assert f.calls.count("DU/2026/592") == 1        # metadane aktu pobierane raz
+
+
+def test_old_consolidated_text_cited_alone_is_still_reported():
+    old = {"inForce": "NOT_IN_FORCE", "status": "wygaśnięcie aktu",
+           "references": {"Tekst jednolity dla aktu": [{"id": "DU/1991/350"}]}}
+    base = {"inForce": "IN_FORCE", "references": {"Inf. o tekście jednolitym": [{"id": "DU/2019/1387"}, {"id": "DU/2026/592"}]}}
+    out = detect(_store(_param("p", "https://api.sejm.gov.pl/eli/acts/DU/2019/1387/text.pdf")), TODAY,
+                 fetch=_fake({"DU/2019/1387": old, "DU/1991/350": base}))
+    assert [f.kind for f in out] == ["nie_obowiazuje", "nowy_tekst"]
+
+
+def test_amendment_cited_in_the_same_version_is_handled():
+    v = _param("p", "https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf", "2026-10-01")
+    v["versions"][0]["sources"].append({"title": "nowelizacja", "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/986/text.pdf"})
+    amend = {"inForce": "IN_FORCE", "references": {}}
+    f = _fake({"DU/2025/1461": TJ_CURRENT, "DU/2004/2135": BASE, "DU/2026/986": amend})
+    out = detect(_store(v), TODAY, fetch=f)
+    assert [(x.act, x.detail) for x in out if x.kind == "nowelizacja"] == [
+        ("DU/2025/1461", "DU/2025/1739, wchodzi w życie 2025-11-21")]
+
+
+def test_reviewed_entry_can_be_scoped_to_one_act(tmp_path):
+    p = tmp_path / "z.yaml"
+    p.write_text("- {act: DU/2026/986, for: DU/2025/1461, checked_at: 2026-11-26, note: x}\n", encoding="utf-8")
+    reviewed = load_reviewed(p)
+    assert reviewed == {"DU/2026/986@DU/2025/1461"}
+    out = check_act("DU/2025/1461", {"p"}, _fake({"DU/2025/1461": TJ_CURRENT, "DU/2004/2135": BASE}), reviewed)
+    assert [x.detail for x in out] == ["DU/2025/1739, wchodzi w życie 2025-11-21"]
+
+
 def test_versions_ending_without_successor():
     s = _store(_param("konczy", "https://eli.gov.pl/eli/DU/2025/1/ogl", valid_to="2026-12-31"),
                _param("daleko", "https://eli.gov.pl/eli/DU/2025/1/ogl", valid_to="2027-12-31"),

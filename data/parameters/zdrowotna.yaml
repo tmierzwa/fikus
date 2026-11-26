@@ -12,8 +12,6 @@
       value: 314.96
       note: >-
         9% podstawy równej 75% minimalnego wynagrodzenia obowiązującego 1 lutego 2025 r. (3499,50 zł z 4666 zł); 75% tylko w roku składkowym 2025/2026.
-        Uzupełnienie dowodów 2026-11-26: źródło kontrolne za cały okres luty 2025 – styczeń 2026 rozstrzyga pytanie P2, open_issue usunięty.
-        Tego samego dnia portal Podatnik.info zastąpiony materiałem ZUS opublikowanym na gov.pl.
       sources:
         - title: Komunikat ZUS z 30 stycznia 2025 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2025 r. dla niektórych grup ubezpieczonych
           url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2025-r.-dla-niekt%C3%B3rych-grup-ubezpieczonych
@@ -46,9 +44,6 @@
       value: 432.54
       note: >-
         9% podstawy równej minimalnemu wynagrodzeniu obowiązującemu 1 lutego 2026 r. (4806 zł).
-        Poprawka: wcześniej jako źródło pierwotne podano kalkulator ZUS, a jako kontrolne artykuł ifirma o 2024 r.
-        Uzupełnienie dowodów 2026-11-26: źródło kontrolne za cały okres luty 2026 – styczeń 2027 rozstrzyga pytanie P3, open_issue usunięty.
-        Tego samego dnia portale (ifirma, Poradnik Przedsiębiorcy) zastąpione stroną biznes.gov.pl.
       sources:
         - title: Komunikat ZUS z 2 lutego 2026 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r.
           url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2026-r.
@@ -83,7 +78,6 @@
       value: {do_60000: 461.66, do_300000: 769.43, powyzej_300000: 1384.97}
       note: >-
         9% podstawy 60/100/180% przeciętnego wynagrodzenia z IV kw. 2024 (8549,18 zł).
-        Uzupełnienie dowodów 2026-11-26: komunikat ZUS z 2025 r. sam podaje wszystkie trzy kwoty (independent).
       sources:
         - title: M.P. 2025 poz. 84, obwieszczenie Prezesa GUS z 22 stycznia 2025 r.
           url: https://api.sejm.gov.pl/eli/acts/MP/2025/84/text.pdf
@@ -104,7 +98,6 @@
       note: >-
         9% podstawy 60/100/180% przeciętnego wynagrodzenia z IV kw. 2025 (9228,64 zł).
         Poprawka: wcześniej wpisany okres 2026-02-01 – 2027-01-31 dotyczy skali i liniowego, nie ryczałtu.
-        Uzupełnienie dowodów 2026-11-26: kalkulator Fakturowni (bez cytatu) zastąpiony komunikatem ZUS i stroną biznes.gov.pl.
       sources:
         - title: M.P. 2026 poz. 117, obwieszczenie Prezesa GUS z 22 stycznia 2026 r.
           url: https://api.sejm.gov.pl/eli/acts/MP/2026/117/text.pdf

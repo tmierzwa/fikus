@@ -1,5 +1,6 @@
 # Terminy. day_of_month to dzień miesiąca następującego po okresie rozliczeniowym.
-# Gdy termin wypada w sobotę lub dzień wolny, przesuwa się według zasada.przesuniecie_terminu.
+# Gdy termin wypada w sobotę lub dzień wolny, zasadę przesunięcia opisuje zasada.przesuniecie_terminu
+# (od 2026-10-01 z otwartą kwestią, czy obejmuje terminy zapłaty; zob. otwarte pytanie przy tej zasadzie).
 # Datę liczy klient, nie serwer.
 
 - id: termin.zus
@@ -9,8 +10,8 @@
     - valid_from: 2022-01-01
       value: {day_of_month: 20}
       note: >-
-        Poprawka źródła (wcześniej link-zaślepka). Tekst jednolity potwierdza stan prawny na 2026-10-04;
-        valid_from 2022-01-01 nie jest potwierdzony źródłem.
+        Tekst jednolity potwierdza stan prawny na 2026-10-04;
+        data początku obowiązywania (2022-01-01) nie jest potwierdzona źródłem.
       sources:
         - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
@@ -31,9 +32,8 @@
     - valid_from: 2020-10-01
       value: {day_of_month: 25}
       note: >-
-        Poprawka źródła (wcześniej link-zaślepka). Tekst jednolity potwierdza stan prawny na 2026-08-26;
-        valid_from 2020-10-01 nie jest potwierdzony źródłem.
-        Uzupełnienie dowodów 2026-11-26: cytat z art. 103 ust. 1 (wpłata) i źródło kontrolne biznes.gov.pl, które samo podaje 25. dzień dla deklaracji i zapłaty.
+        Tekst jednolity potwierdza stan prawny na 2026-08-26;
+        data początku obowiązywania (2020-10-01) nie jest potwierdzona źródłem.
       sources:
         - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
@@ -59,9 +59,9 @@
       value: {day_of_month: 20}
       note: >-
         Wpłata miesięczna. Kwartalny sposób (art. 21 ust. 1a) wymaga osobnego parametru.
-        Poprawka źródła (wcześniej link-zaślepka) i valid_from (wcześniej 2020-01-01; termin za grudzień
+        Poprawka daty początku obowiązywania (wcześniej 2020-01-01; termin za grudzień
         przed 2022 r. mógł być inny). Tekst jednolity uwzględnia zmiany ogłoszone przed 2025-06-12;
-        valid_from 2022-01-01 nie jest potwierdzony źródłem.
+        data początku obowiązywania (2022-01-01) nie jest potwierdzona źródłem.
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
@@ -83,8 +83,7 @@
       value: {day_of_month: 20}
       note: >-
         Wpłata miesięczna; za grudzień do 20 stycznia (art. 44 ust. 6 zd. 3). Kwartalny sposób wymaga
-        osobnego parametru. Poprawka 2026-11-26: link-zaślepka zastąpiony tekstem jednolitym z cytatem.
-        Poprawka 2026-11-26: tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r. (wcześniej błędnie 2026-04-17, data obwieszczenia).
+        osobnego parametru. Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.
         Teksty jednolite poz. 1387 (przepisy ogłoszone przed 3 lipca 2019 r.) i poz. 1426 (przed 24 lipca 2020 r.) mają to samo
         brzmienie art. 44 ust. 6, więc potwierdzają, że ten termin obowiązywał 1 stycznia 2020 r. (nie że wtedy zaczął obowiązywać).
         Obecne brzmienie obowiązuje od 1 stycznia 2019 r.: przypis 268 w poz. 1387 wskazuje skreślenie zdania czwartego
@@ -94,12 +93,12 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
           quote: "Zaliczki miesięczne od dochodów wymienionych w ust. 1, wpłaca się w terminie do 20 dnia każdego miesiąca za miesiąc poprzedni"
           article: art. 44 ust. 6
-        - title: Dz.U. 2019 poz. 1387, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dla valid_from)
+        - title: Dz.U. 2019 poz. 1387, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dla daty początku obowiązywania)
           url: https://api.sejm.gov.pl/eli/acts/DU/2019/1387/text.pdf
           quote: "Zaliczkę za ostatni miesiąc lub ostatni kwartał roku podatkowego podatnik wpłaca w terminie do 20 stycznia następnego roku podatkowego. 6a. (uchylony)"
           article: art. 44 ust. 6
           as_of: 2019-07-02
-        - title: Dz.U. 2020 poz. 1426, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dla valid_from)
+        - title: Dz.U. 2020 poz. 1426, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dla daty początku obowiązywania)
           url: https://api.sejm.gov.pl/eli/acts/DU/2020/1426/text.pdf
           quote: "Zaliczki miesięczne od dochodów wymienionych w ust. 1, wpłaca się w terminie do 20 dnia każdego miesiąca za miesiąc poprzedni"
           article: art. 44 ust. 6
@@ -120,8 +119,8 @@
       note: >-
         Rozliczenie roczne w dokumencie rozliczeniowym za miesiąc, w którym upływa termin zeznania
         rocznego (kwiecień); dopłata w terminie składek za ten miesiąc, czyli do 20 maja.
-        Poprawka: wcześniej powołany art. 81 ust. 9 nie dotyczy rozliczenia rocznego; link-zaślepka zastąpiony.
-        valid_from 2023-01-01 nie jest potwierdzony źródłem.
+        Poprawka: wcześniej powołany art. 81 ust. 9 nie dotyczy rozliczenia rocznego.
+        data początku obowiązywania (2023-01-01) nie jest potwierdzona źródłem.
       sources:
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
@@ -145,7 +144,7 @@
   versions:
     - valid_from: 2026-01-01
       value: {day_of_month: 25, months: [1, 4, 7, 10]}
-      note: termin w miesiącu po kwartale; tekst jednolity potwierdza stan prawny na 2026-08-26, valid_from 2026-01-01 nie jest potwierdzony źródłem
+      note: termin w miesiącu po kwartale; tekst jednolity potwierdza stan prawny na 2026-08-26, data początku obowiązywania (2026-01-01) nie jest potwierdzona źródłem
       sources:
         - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług
           url: https://eli.gov.pl/eli/DU/2026/1263/ogl
@@ -170,7 +169,7 @@
   versions:
     - valid_from: 2026-01-01
       value: {day_of_month: 25, months: [2, 3, 5, 6, 8, 9, 11, 12]}
-      note: termin w miesiącu po miesiącu, którego dotyczy ewidencja; tekst jednolity potwierdza stan prawny na 2026-08-26, valid_from 2026-01-01 nie jest potwierdzony źródłem
+      note: termin w miesiącu po miesiącu, którego dotyczy ewidencja; tekst jednolity potwierdza stan prawny na 2026-08-26, data początku obowiązywania (2026-01-01) nie jest potwierdzona źródłem
       sources:
         - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług
           url: https://eli.gov.pl/eli/DU/2026/1263/ogl

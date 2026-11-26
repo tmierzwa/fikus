@@ -156,10 +156,7 @@
         Rok składkowy 2025/2026. 50% najwyższej stopy dla grup działalności (3,33% w załączniku nr 2
         w brzmieniu od 1 kwietnia 2024 r.), czyli 1,665, zaokrąglone do 0,01 zgodnie z § 6 ust. 2 rozporządzenia.
         Zmiana rozporządzenia Dz.U. 2025 poz. 1292 nie zmienia stóp.
-        Uzupełnienie dowodów 2026-11-26: poradnik ZUS (stan prawny na 1 stycznia 2026 r.) podaje 1,67% dla płatników do 9 ubezpieczonych
-        nieprzerwanie od 1 kwietnia 2018 r.; stopa jest ustalana na cały rok składkowy (art. 28 ust. 1). Zastępuje portal PIT.pl.
-        Poprawka 2026-11-26: usunięty agent_check wpisany przed raportem weryfikatora; raport wskazał, że wartość
-        nie wynika z żadnego pojedynczego cytatu ze źródła pierwotnego (open_issue).
+        Stopa jest ustalana na cały rok składkowy (art. 28 ust. 1).
       sources:
         - title: Dz.U. 2025 poz. 1644, tekst jednolity ustawy o ubezpieczeniu społecznym z tytułu wypadków przy pracy i chorób zawodowych
           url: https://eli.gov.pl/eli/DU/2025/1644/ogl
@@ -192,9 +189,6 @@
         Okres to rok składkowy z art. 2 pkt 8; rozporządzenie nie ma daty końcowej (załącznik nr 2
         obowiązuje od 1 kwietnia 2024 r.; według obwieszczenia poz. 1874 jedyną późniejszą zmianą jest
         rozporządzenie z 18 września 2025 r., Dz.U. 2025 poz. 1292).
-        Uzupełnienie dowodów 2026-11-26: artykuł Fakturowni (bez cytatu) zastąpiony komunikatem ZUS o roku składkowym 2026/2027.
-        Poprawka 2026-11-26: data zmiany rozporządzenia poprawiona według poz. 1874 (było: 10 października 2025 r.);
-        usunięty agent_check wpisany przed raportem weryfikatora (open_issue).
       sources:
         - title: Dz.U. 2025 poz. 1644, tekst jednolity ustawy o ubezpieczeniu społecznym z tytułu wypadków przy pracy i chorób zawodowych
           url: https://eli.gov.pl/eli/DU/2025/1644/ogl

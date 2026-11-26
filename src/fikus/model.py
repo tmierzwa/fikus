@@ -56,7 +56,7 @@ class Version(BaseModel):
     @model_validator(mode="after")
     def _check(self) -> "Version":
         if self.valid_to and self.valid_to < self.valid_from:
-            raise ValueError("valid_to przed valid_from")
+            raise ValueError("koniec obowiązywania wersji jest wcześniejszy niż jej początek")
         if not any(s.kind == "primary" for s in self.sources):
             raise ValueError("każda wersja potrzebuje źródła pierwotnego")
         return self

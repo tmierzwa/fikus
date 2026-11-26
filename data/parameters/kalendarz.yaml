@@ -10,7 +10,7 @@
       valid_to: 2026-12-31
       value: [2026-01-01, 2026-01-06, 2026-04-05, 2026-04-06, 2026-05-01, 2026-05-03, 2026-05-24,
               2026-06-04, 2026-08-15, 2026-11-01, 2026-11-11, 2026-12-24, 2026-12-25, 2026-12-26]
-      note: lista zgodna z art. 1 pkt 1 (bez niedziel z pkt 2); poprawka źródła (wcześniej link-zaślepka)
+      note: lista zgodna z art. 1 pkt 1 (bez niedziel z pkt 2)
       sources:
         - title: Dz.U. 2025 poz. 296, tekst jednolity ustawy o dniach wolnych od pracy
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/296/text.pdf
@@ -26,7 +26,7 @@
       valid_to: 2027-12-31
       value: [2027-01-01, 2027-01-06, 2027-03-28, 2027-03-29, 2027-05-01, 2027-05-03, 2027-05-16,
               2027-05-27, 2027-08-15, 2027-11-01, 2027-11-11, 2027-12-24, 2027-12-25, 2027-12-26]
-      note: lista zgodna z art. 1 pkt 1 (bez niedziel z pkt 2); poprawka źródła (wcześniej link-zaślepka)
+      note: lista zgodna z art. 1 pkt 1 (bez niedziel z pkt 2)
       sources:
         - title: Dz.U. 2025 poz. 296, tekst jednolity ustawy o dniach wolnych od pracy
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/296/text.pdf

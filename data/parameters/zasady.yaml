@@ -6,6 +6,7 @@
   kind: rule
   versions:
     - valid_from: 2020-01-01
+      valid_to: 2026-09-30
       value:
         steps:
           - text: Jeżeli ostatni dzień terminu przypada na sobotę lub dzień ustawowo wolny od pracy (w tym niedzielę), termin upływa następnego dnia, który nie jest sobotą ani dniem wolnym, chyba że ustawa podatkowa stanowi inaczej.
@@ -15,8 +16,9 @@
             uses: [termin.zus]
             basis: art. 31 ustawy o systemie ubezpieczeń społecznych
       note: >-
-        Poprawka źródeł (wcześniej link-zaślepka) i dodany krok o składkach ZUS.
-        valid_from 2020-01-01 nie jest potwierdzony źródłem.
+        Poprawka: dodany krok o składkach ZUS.
+        data początku obowiązywania (2020-01-01) nie jest potwierdzona źródłem.
+        Zamknięta 2026-09-30: od 1 października 2026 r. art. 12 § 5 ma brzmienie nadane ustawą Dz.U. 2026 poz. 846 (następna wersja).
       sources:
         - title: Dz.U. 2026 poz. 622, tekst jednolity Ordynacji podatkowej
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/622/text.pdf
@@ -41,6 +43,52 @@
           quote: "Jeżeli koniec tego terminu przypada w święto (dzień ustawowo wolny od pracy), sobotę lub niedzielę, to za ostatni dzień terminu uważa się następny dzień roboczy"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+    - valid_from: 2026-10-01
+      value:
+        steps:
+          - text: Jeżeli ostatni dzień terminu do wykonania czynności przypada na sobotę lub dzień ustawowo wolny od pracy (w tym niedzielę), termin upływa następnego dnia, który nie jest sobotą ani dniem wolnym, chyba że ustawa podatkowa stanowi inaczej.
+            uses: [kalendarz.dni_wolne]
+            basis: art. 12 § 5 Ordynacji podatkowej w brzmieniu od 1 października 2026 r.; art. 1 pkt 1 i 2 ustawy o dniach wolnych od pracy
+          - text: Do należności z tytułu składek ZUS art. 12 Ordynacji podatkowej stosuje się odpowiednio. Czy obejmuje to termin opłacenia składek, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [termin.zus]
+            basis: art. 31 ustawy o systemie ubezpieczeń społecznych
+      note: >-
+        Od 1 października 2026 r. art. 12 § 5 mówi o „ostatnim dniu terminu do wykonania czynności” (art. 1 pkt 1 ustawy
+        Dz.U. 2026 poz. 846, wejście w życie według art. 35). Tekstu jednolitego z tą zmianą jeszcze nie ma: brzmienie wynika
+        z tekstu jednolitego poz. 622 i ustawy zmieniającej; późniejsze zmiany Ordynacji (poz. 875, 1098, 1154, 1206) nie dotyczą art. 12. Uzasadnienie projektu (druk sejmowy nr 2287, https://api.sejm.gov.pl/sejm/term10/prints/2287/2287-uzasadnienie.docx): zmiana wyłącza
+        przesunięcie końca terminu przedawnienia; przykłady terminów do wykonania czynności to złożenie deklaracji
+        i wniesienie odwołania.
+      sources:
+        - title: Dz.U. 2026 poz. 846, ustawa z 29 maja 2026 r. o zmianie ustawy – Ordynacja podatkowa oraz niektórych innych ustaw (nowe brzmienie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/846/text.pdf
+          quote: "w art. 12 w § 5 wyrazy „ostatni dzień terminu przypada” zastępuje się wyrazami „ostatni dzień terminu do wykonania czynności przypada”"
+          article: art. 1 pkt 1
+          as_of: 2026-06-25
+        - title: Dz.U. 2026 poz. 846 (wejście w życie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/846/text.pdf
+          quote: "Ustawa wchodzi w życie z dniem 1 października 2026 r., z wyjątkiem"
+          article: art. 35
+          as_of: 2026-06-25
+        - title: Dz.U. 2026 poz. 622, tekst jednolity Ordynacji podatkowej (pozostała część § 5)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/622/text.pdf
+          quote: "za ostatni dzień terminu uważa się następny dzień po dniu lub dniach wolnych od pracy"
+          article: art. 12 § 5
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          quote: "Do należności z tytułu składek stosuje się odpowiednio: art. 7a, art. 12"
+          article: art. 31
+        - title: Dz.U. 2025 poz. 296, tekst jednolity ustawy o dniach wolnych od pracy
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/296/text.pdf
+          quote: "drugi dzień Bożego Narodzenia; 2) niedziele"
+          article: art. 1 pkt 1 i 2
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          Czy art. 12 § 5 w brzmieniu od 1 października 2026 r. („terminu do wykonania czynności”) obejmuje termin zapłaty
+          podatku, a przez art. 31 ustawy o systemie ubezpieczeń społecznych termin opłacenia składek? Uzasadnienie (druk 2287)
+          wymienia złożenie deklaracji i wniesienie odwołania, zapłaty nie wymienia. Brak drugiego źródła urzędowego po zmianie.
+          Pytanie do eksperta: docs/pytania-do-eksperta.md, P5.
 
 - id: zasada.ryczalt_zdrowotna_prog
   name: Wybór progu składki zdrowotnej na ryczałcie
@@ -161,7 +209,7 @@
       note: >-
         Poprawka: krok o składce zdrowotnej powoływał art. 11 ust. 1c (różnice kursowe), właściwy jest ust. 1a;
         dodany krok o proporcji z ust. 3, który w obecnym brzmieniu dotyczy przychodów od 1 stycznia 2024 r.,
-        stąd valid_from 2024-01-01 (wcześniej 2022-01-01); link-zaślepka zastąpiony.
+        stąd początek obowiązywania 2024-01-01 (wcześniej 2022-01-01).
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf

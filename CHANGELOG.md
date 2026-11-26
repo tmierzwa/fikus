@@ -6,6 +6,20 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ## [Niewydane]
 
+### Dodane
+
+- Wersje na 2027 r.: prognozowane przeciętne wynagrodzenie i limit rocznej podstawy składek
+  emerytalnej i rentowych (M.P. 2026 poz. 1098).
+- Nowa wersja `zasada.przesuniecie_terminu` od 1 października 2026 r. (art. 12 § 5 Ordynacji
+  podatkowej w brzmieniu z Dz.U. 2026 poz. 846), z otwartym pytaniem P5 o terminy zapłaty.
+
+### Zmienione
+
+- `wykryj_zmiany.py` pomija starsze teksty jednolite cytowane obok nowszego tekstu tej samej
+  ustawy, pobiera metadane każdego aktu raz, a przejrzaną nowelizację można przypisać do jednego
+  aktu (pole `for` w `data/zmiany_sprawdzone.yaml`); 18 przejrzanych nowelizacji.
+- Treść danych po polsku, bez nazw pól w zdaniach; notatki tylko o zmianach widocznych dla klienta.
+
 ## [0.2.0] - 2026-11-26
 
 ### Dodane
