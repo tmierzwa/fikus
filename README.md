@@ -118,3 +118,5 @@ Nie odpowiadamy na pytania o sytuację konkretnego podatnika. Nie publikuj w zg�
 - Kod: [Apache 2.0](LICENSE).
 - Dane w `data/`: [CC BY 4.0](data/LICENSE). Podaj źródło: „Fikus, https://github.com/tmierzwa/fikus”.
 - Cytaty w polach `quote` nie są objęte CC BY 4.0, zobacz [NOTICE](NOTICE).
+
+<!-- mcp-name: io.github.tmierzwa/fikus -->
