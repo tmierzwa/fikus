@@ -141,6 +141,7 @@ def test_quote_matching_ignores_layout_but_not_content():
     text = "Składka wynosi\n9 % podstawy wy-\nmiaru – na „ubezpieczenie”"
     assert quote_in('składka wynosi 9 % podstawy wymiaru - na "ubezpieczenie"', text)
     assert not quote_in("Składka wynosi 8 % podstawy", text)
+    assert quote_in("Schemat_JPK_PKPIR(3)_v1-0", "Schemat\u200b_JPK\u200b_PKPIR(3)\u200b_v1-0")
 
 
 def test_quotes_match_cached_official_texts():

@@ -57,13 +57,14 @@ Serwer działa lokalnie przez stdio, tylko czyta dołączone dane i nie łączy 
 | `list_profiles()` | profile przykładowe: forma opodatkowania, VAT, rodzaj ZUS |
 | `list_parameters(profile, as_of)` | wszystkie parametry, które dotyczą profilu |
 | `deadlines(profile, year, month)` | reguły terminów, dni wolne i zasadę przesunięcia; datę liczy klient |
-| `get_schema(form, as_of)` | wersję schematu XSD deklaracji (JPK_V7M, JPK_V7K, JPK_PKPIR) |
+| `get_schema(form, as_of)` | wersję schematu XSD deklaracji (JPK_V7M, JPK_V7K, JPK_PKPIR) i adres pliku XSD (`xsd_url`) |
 | `changes(since)` | wersje sprawdzone od podanej daty |
 
 - Daty mają format `RRRR-MM-DD`. Bez `as_of` obowiązuje dzisiejsza data w Polsce.
 - Wyniki są w `structuredContent` zgodnie z `outputSchema` narzędzia. Wszystkie narzędzia mają `readOnlyHint`.
 - Błędny argument (nieznany identyfikator, zła data) daje błąd narzędzia z listą poprawnych wartości. Brak wersji na dany dzień nie jest błędem: wynik ma `found: false` i powód w `reason`.
 - Pola `quote`, `note` i opisy kroków to dane z repozytorium. Klient nie powinien ich traktować jak poleceń dla modelu.
+- `xsd_url` w `get_schema` to adres, pod którym urząd udostępnia plik XSD. Dla JPK_V7M i JPK_V7K to adres schematu w Centralnym Repozytorium Wzorów Dokumentów Elektronicznych, a dla JPK_PKPIR adres pliku na gov.pl. Nie jest to przestrzeń nazw schematu i może się zmienić bez nowej wersji struktury.
 
 Odpowiedź `get_parameter("zdrowotna.minimum")` w skrócie:
 
