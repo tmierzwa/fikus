@@ -66,6 +66,17 @@ def test_amendments_after_current_consolidated_text_are_reported_except_reviewed
     assert [(x.kind, x.detail) for x in out] == [("nowelizacja", "DU/2026/986, wchodzi w życie 2026-06-11")]
 
 
+def test_amendments_listed_only_on_base_act_are_reported():
+    base = {"inForce": "IN_FORCE", "references": {
+        "Inf. o tekście jednolitym": [{"id": "DU/2025/1461"}],
+        "Akty zmieniające": [{"id": "DU/2026/1542", "date": "2027-01-01"},
+                             {"id": "DU/2026/986", "date": "2026-08-07"},
+                             {"id": "DU/2025/1000", "date": "2025-08-01"}]}}
+    out = check_act("DU/2025/1461", {"p"}, _fake({"DU/2025/1461": TJ_CURRENT, "DU/2004/2135": base}),
+                    reviewed={"DU/2025/1739"})
+    assert [x.detail.split(",")[0] for x in out] == ["DU/2026/986", "DU/2026/1542"]
+
+
 def test_newer_consolidated_text_replaces_amendment_list():
     base = {"inForce": "IN_FORCE", "references": {"Inf. o tekście jednolitym": [{"id": "DU/2026/50"}]}}
     out = check_act("DU/2025/1461", {"p"}, _fake({"DU/2025/1461": TJ_CURRENT, "DU/2004/2135": base}), set())
