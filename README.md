@@ -97,9 +97,39 @@ Pewność jest `wysoka`, gdy wersja ma cytat i co najmniej dwa inne dowody, a ż
 
 ## Zakres
 
-Są: składki ZUS i zdrowotna, terminy ZUS, zaliczek na ryczałt i podatek liniowy oraz JPK_V7M i JPK_V7K, dni wolne na 2026 i 2027 rok, zasady przesunięcia terminu i wyliczenia składki zdrowotnej na ryczałcie.
+Dane obejmują trzy formy opodatkowania: ryczałt od przychodów ewidencjonowanych, podatek liniowy i skalę podatkową.
 
-Brakuje między innymi: stawek ryczałtu i podatku liniowego, limitu odliczenia składki zdrowotnej i schematów JPK. Pytania, których źródła nie rozstrzygają, są w [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md).
+Są:
+
+- podatek dochodowy:
+  - stawki ryczałtu;
+  - stawka podatku liniowego i limit odliczenia składki zdrowotnej;
+  - progi i stawki skali podatkowej;
+  - zasady ustalenia podatku i zaliczek miesięcznych dla każdej z trzech form;
+- terminy:
+  - zaliczek i zeznań rocznych;
+  - JPK_V7M i JPK_V7K;
+  - składek ZUS i rocznego rozliczenia składki zdrowotnej;
+  - zasada przesunięcia terminu;
+  - dni wolne na 2026 i 2027 rok;
+- składki społeczne:
+  - stopy składek, Fundusz Pracy i Fundusz Solidarnościowy;
+  - podstawa pełna i preferencyjna, limit rocznej podstawy;
+  - minimalne i prognozowane przeciętne wynagrodzenie;
+- składka zdrowotna:
+  - progi i kwoty na ryczałcie;
+  - stopy i zasady obliczenia na podatku liniowym i skali, z rozliczeniem rocznym;
+  - minimalna składka.
+
+Brakuje między innymi:
+
+- Małego ZUS Plus i ulgi na start;
+- zaliczek kwartalnych i uproszczonych;
+- ulg i odliczeń innych niż składki;
+- wspólnego rozliczenia małżonków;
+- schematów JPK.
+
+Każda zasada wymienia przepisy, których nie opisuje. Pytania, których źródła nie rozstrzygają, są w [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md).
 
 ## Dane
 
