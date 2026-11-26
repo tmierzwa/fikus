@@ -15,6 +15,8 @@ DATA = _REPO_DATA if (_REPO_DATA / "parameters").is_dir() else _PKG_DATA
 
 
 class Store:
+    """Wszystkie parametry i profile wczytane z YAML. Błąd w danych zatrzymuje start serwera."""
+
     def __init__(self, data_dir: Path = DATA):
         self.params: dict[str, Parameter] = {}
         for f in sorted((data_dir / "parameters").glob("*.yaml")):
@@ -24,6 +26,9 @@ class Store:
                     raise ValueError(f"zduplikowany parametr {p.id} ({f.name})")
                 self.params[p.id] = p
         self._check_rule_refs()
+        for required in ("kalendarz.dni_wolne", "zasada.przesuniecie_terminu"):   # potrzebne w deadlines()
+            if required not in self.params:
+                raise ValueError(f"w danych brakuje parametru {required}")
         raw_profiles = yaml.safe_load((data_dir / "profiles.yaml").read_text(encoding="utf-8"))
         self.profiles = {r["id"]: Profile.model_validate(r) for r in raw_profiles}
 
@@ -38,6 +43,7 @@ class Store:
                             raise ValueError(f"{p.id}: krok odwołuje się do nieznanego parametru {ref}")
 
     def get(self, pid: str, d: date) -> dict:
+        """Wersja parametru obowiązująca w dniu d albo found=False z powodem."""
         p = self.params[pid]
         v = p.at(d)
         if v is None:
@@ -58,12 +64,14 @@ class Store:
                 "known": sorted(self.profiles)}
 
     def for_profile(self, profile_id: str, d: date) -> list[dict]:
+        """Parametry, których applies_to pasuje do profilu, w wersji na dzień d."""
         if err := self.unknown_profile(profile_id):
             return [err]
         prof = self.profiles[profile_id].as_dict()
         return [self.get(p.id, d) for p in self.params.values() if p.matches(prof)]
 
     def changes(self, since: date) -> list[dict]:
+        """Wersje sprawdzone (checked_at) w dniu since lub później, od najnowszych."""
         out = []
         for p in self.params.values():
             for v in p.versions:

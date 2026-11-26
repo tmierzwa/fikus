@@ -10,7 +10,10 @@
     - valid_from: 2025-02-01
       valid_to: 2026-01-31
       value: 314.96
-      note: 9% podstawy równej 75% minimalnego wynagrodzenia obowiązującego 1 lutego 2025 r. (3499,50 zł z 4666 zł); 75% tylko w roku składkowym 2025/2026.
+      note: >-
+        9% podstawy równej 75% minimalnego wynagrodzenia obowiązującego 1 lutego 2025 r. (3499,50 zł z 4666 zł); 75% tylko w roku składkowym 2025/2026.
+        Uzupełnienie dowodów 2026-11-26: źródło kontrolne za cały okres luty 2025 – styczeń 2026 rozstrzyga pytanie P2, open_issue usunięty.
+        Tego samego dnia portal Podatnik.info zastąpiony materiałem ZUS opublikowanym na gov.pl.
       sources:
         - title: Komunikat ZUS z 30 stycznia 2025 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2025 r. dla niektórych grup ubezpieczonych
           url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2025-r.-dla-niekt%C3%B3rych-grup-ubezpieczonych
@@ -30,17 +33,22 @@
           article: § 1
           quote: "Od dnia 1 stycznia 2025 r. ustala się minimalne wynagrodzenie za pracę w wysokości 4666 zł."
           as_of: 2024-09-13
+        - title: gov.pl (Starostwo Powiatowe w Hajnówce), Zmiany w składce zdrowotnej. Kto skorzysta na nowych przepisach? (informacja regionalnej rzeczniczki prasowej ZUS)
+          url: https://samorzad.gov.pl/web/powiat-hajnowski/zmiany-w-skladce-zdrowotnej-kto-skorzysta-na-nowych-przepisach
+          kind: control
+          quote: "w okresie od lutego 2025 roku do stycznia 2026 roku składka ta nie może być niższa niż 314,96 zł"
+          as_of: 2026-11-26
       verification:
         checked_at: 2026-11-26
-        open_issue: >-
-          Brak drugiego niezależnego źródła, które samo podaje 314,96 zł za cały okres luty 2025 – styczeń 2026.
-          Komunikat ZUS z 2026 r. i ifirma podają tę kwotę tylko za styczeń 2026; PITax podaje błędny okres (do grudnia 2026).
+        agent_check: 2026-11-26
     - valid_from: 2026-02-01
       valid_to: 2027-01-31
       value: 432.54
       note: >-
         9% podstawy równej minimalnemu wynagrodzeniu obowiązującemu 1 lutego 2026 r. (4806 zł).
         Poprawka: wcześniej jako źródło pierwotne podano kalkulator ZUS, a jako kontrolne artykuł ifirma o 2024 r.
+        Uzupełnienie dowodów 2026-11-26: źródło kontrolne za cały okres luty 2026 – styczeń 2027 rozstrzyga pytanie P3, open_issue usunięty.
+        Tego samego dnia portale (ifirma, Poradnik Przedsiębiorcy) zastąpione stroną biznes.gov.pl.
       sources:
         - title: Komunikat ZUS z 2 lutego 2026 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r.
           url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2026-r.
@@ -56,12 +64,14 @@
           article: § 1
           quote: "Od dnia 1 stycznia 2026 r. ustala się minimalne wynagrodzenie za pracę w wysokości 4806 zł."
           as_of: 2025-09-15
-        - title: ifirma.pl, składki ZUS 2026 (podaje kwotę za luty–grudzień 2026)
-          url: https://www.ifirma.pl/blog/skladki-zus-2026-ile-wynosza-aktualne-skladki-zus-dla-przedsiebiorcow/
+        - title: biznes.gov.pl, Ile wynosi składka zdrowotna
+          url: https://www.biznes.gov.pl/pl/portal/001052
           kind: control
+          quote: "minimalna składka zdrowotna za każdy miesiąc roku składkowego, od 1 lutego 2026 roku do 31 stycznia 2027 roku wynosi 432,54 zł"
+          as_of: 2026-11-26
       verification:
         checked_at: 2026-11-26
-        open_issue: Źródło kontrolne potwierdza kwotę tylko za luty–grudzień 2026; styczeń 2027 potwierdza wyłącznie komunikat ZUS.
+        agent_check: 2026-11-26
 
 - id: zdrowotna.ryczalt.skladka
   name: Miesięczna składka zdrowotna na ryczałcie wg progu przychodu
@@ -71,7 +81,9 @@
     - valid_from: 2025-01-01
       valid_to: 2025-12-31
       value: {do_60000: 461.66, do_300000: 769.43, powyzej_300000: 1384.97}
-      note: 9% podstawy 60/100/180% przeciętnego wynagrodzenia z IV kw. 2024 (8549,18 zł)
+      note: >-
+        9% podstawy 60/100/180% przeciętnego wynagrodzenia z IV kw. 2024 (8549,18 zł).
+        Uzupełnienie dowodów 2026-11-26: komunikat ZUS z 2025 r. sam podaje wszystkie trzy kwoty (independent).
       sources:
         - title: M.P. 2025 poz. 84, obwieszczenie Prezesa GUS z 22 stycznia 2025 r.
           url: https://api.sejm.gov.pl/eli/acts/MP/2025/84/text.pdf
@@ -80,13 +92,19 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
           quote: "Składka na ubezpieczenie zdrowotne wynosi 9 % podstawy wymiaru składki"
           article: art. 81 ust. 2f, art. 79 ust. 1
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+        - title: Komunikat ZUS z 30 stycznia 2025 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2025 r. (ryczałt; podaje wszystkie trzy kwoty, cytat dla progu powyżej 300 000 zł)
+          url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2025-r.-dla-niekt%C3%B3rych-grup-ubezpieczonych
+          independent: true
+          quote: "Składka na ubezpieczenie zdrowotne wynosi 1.384,97 zł"
+          as_of: 2025-01-30
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
     - valid_from: 2026-01-01
       valid_to: 2026-12-31
       value: {do_60000: 498.35, do_300000: 830.58, powyzej_300000: 1495.04}
       note: >-
         9% podstawy 60/100/180% przeciętnego wynagrodzenia z IV kw. 2025 (9228,64 zł).
         Poprawka: wcześniej wpisany okres 2026-02-01 – 2027-01-31 dotyczy skali i liniowego, nie ryczałtu.
+        Uzupełnienie dowodów 2026-11-26: kalkulator Fakturowni (bez cytatu) zastąpiony komunikatem ZUS i stroną biznes.gov.pl.
       sources:
         - title: M.P. 2026 poz. 117, obwieszczenie Prezesa GUS z 22 stycznia 2026 r.
           url: https://api.sejm.gov.pl/eli/acts/MP/2026/117/text.pdf
@@ -95,10 +113,17 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
           quote: "Składka na ubezpieczenie zdrowotne wynosi 9 % podstawy wymiaru składki"
           article: art. 81 ust. 2f, art. 79 ust. 1
-        - title: Fakturownia, kalkulator ZUS
-          url: https://fakturownia.pl/kalkulator-zus
+        - title: Komunikat ZUS z 2 lutego 2026 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r. (ryczałt; podaje wszystkie trzy kwoty, cytat dla progu powyżej 300 000 zł)
+          url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2026-r.
+          independent: true
+          quote: "Składka na ubezpieczenie zdrowotne wynosi 1.495,04 zł"
+          as_of: 2026-02-02
+        - title: biznes.gov.pl, Ile wynosi składka zdrowotna (tabela dla ryczałtu)
+          url: https://www.biznes.gov.pl/pl/portal/001052
           kind: control
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25, filed_documents: kwota zgodna z deklaracją ZUS DRA za 10/2026}
+          quote: "poniżej 60 tys. zł 498,35 zł 5980,16 zł od 60 tys. zł do 300 tys. zł 830,58 zł 9966,96 zł powyżej 300 tys. zł 1495,04 zł"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: zdrowotna.ryczalt.progi
   name: Progi przychodu dla składki zdrowotnej na ryczałcie

@@ -12,6 +12,7 @@ import os
 import re
 import subprocess
 import tempfile
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -19,6 +20,8 @@ _REPO = Path(__file__).resolve().parents[2]
 CACHE = Path(os.environ.get("FIKUS_CACHE") or (
     _REPO / ".cache" / "zrodla" if (_REPO / "pyproject.toml").is_file()
     else Path.home() / ".cache" / "fikus" / "zrodla"))
+
+MAX_BYTES = 50 * 1024 * 1024    # górny limit pobieranego pliku, żeby zły adres nie zapchał dysku i pamięci
 
 _ELI_PAGE = re.compile(r"^https://eli\.gov\.pl/eli/(DU|MP)/(\d{4})/(\d+)/ogl/?$")
 
@@ -31,7 +34,17 @@ def text_url(url: str) -> str:
     return url
 
 
+class _HttpsOnlyRedirects(urllib.request.HTTPRedirectHandler):
+    """Przekierowanie tylko na inny adres https://. Bez tego serwer mógłby odesłać na http://."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if not newurl.startswith("https://"):
+            raise urllib.error.URLError(f"przekierowanie poza https: {newurl}")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
 def normalize(s: str) -> str:
+    """Sprowadza tekst do postaci, w której liczy się tylko treść, a nie układ strony."""
     s = s.replace("­", "")
     s = re.sub(r"-\s*\n\s*", "", s)                  # przeniesienie wyrazu
     s = s.translate(str.maketrans({"„": '"', "”": '"', "“": '"', "«": '"', "»": '"',
@@ -62,13 +75,17 @@ def fetch_text(url: str) -> str:
     except ImportError:
         pass
     req = urllib.request.Request(turl, headers={"User-Agent": "fikus-sprawdz-cytaty/0.1"})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        body, ctype = r.read(), r.headers.get("Content-Type", "")
+    # Opener powstaje dopiero tutaj, po truststore: HTTPSHandler tworzy kontekst SSL przy budowie.
+    opener = urllib.request.build_opener(_HttpsOnlyRedirects)
+    with opener.open(req, timeout=60) as r:
+        body, ctype = r.read(MAX_BYTES + 1), r.headers.get("Content-Type", "")
+    if len(body) > MAX_BYTES:
+        raise ValueError(f"tekst spod {turl} ma ponad {MAX_BYTES // 2**20} MB")
     if body[:5] == b"%PDF-" or "pdf" in ctype:
         with tempfile.NamedTemporaryFile(suffix=".pdf") as f:
             f.write(body)
             f.flush()
-            text = subprocess.run(["pdftotext", f.name, "-"], check=True,
+            text = subprocess.run(["pdftotext", f.name, "-"], check=True, timeout=120,
                                   capture_output=True).stdout.decode("utf-8", "replace")
     else:
         raw = body.decode("utf-8", "replace")
@@ -82,4 +99,5 @@ def fetch_text(url: str) -> str:
 
 
 def quote_in(quote: str, text: str) -> bool:
+    """Czy cytat jest w tekście, po sprowadzeniu obu do tej samej postaci (patrz normalize)."""
     return normalize(quote) in normalize(text)

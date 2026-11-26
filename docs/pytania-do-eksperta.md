@@ -31,8 +31,21 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   przez cały rok, „za wyjątkiem przypadków, w których zakończysz działalność gospodarczą, a następnie
   podejmiesz nową” (przykład 17).
 - Pytanie: czy wyjątek z poradnika ZUS wynika z przepisu (którego?) i czy należy go dopisać do zasady?
+- Przeszukane źródła publiczne (2026-11-26), bez rozstrzygnięcia:
+  - Druk sejmowy nr 838 (10. kadencja), który uchylał art. 81 ust. 2b–2h: weto Prezydenta z 7 maja 2025 r.,
+    bez ponownego uchwalenia. Ust. 2h obowiązuje (tekst jednolity Dz.U. 2025 poz. 1461).
+  - Interpretacje indywidualne ZUS w BIP (https://bip.zus.pl/inne/interpretacje), kategorie „Podstawa
+    wymiaru składek na ubezpieczenie zdrowotne” i „Składka na ubezpieczenie zdrowotne”, 358 decyzji
+    z lat 2022–2026. Art. 81 ust. 2h omawia tylko DI/200000/43/1233/2023 (zmiana formy opodatkowania
+    na ryczałt; podstawę stosuje się „przez cały rok”). Żadna decyzja nie dotyczy zakończenia
+    i ponownego podjęcia działalności w ciągu roku.
+  - FAQ ZUS („Zmiany od 2022 r.”): przy zawieszeniu działalności w poprzednim roku ust. 2h nie ma
+    zastosowania. To przypadek pokrewny, nie ten z pytania.
+  - Niesprawdzone: decyzje Prezesa NFZ (art. 109a), orzeczenia sądów administracyjnych (CBOSA).
 
-## P2. Minimalna składka zdrowotna na skali i liniowym w roku składkowym 2025/2026
+## P2. Minimalna składka zdrowotna na skali i liniowym w roku składkowym 2025/2026 (rozstrzygnięte 2026-11-26, bez eksperta)
+
+- Rozstrzygnięcie: informacja ZUS na samorzad.gov.pl (18 lutego 2025 r.) sama podaje, że od lutego 2025 r. do stycznia 2026 r. składka nie może być niższa niż 314,96 zł; dodana jako źródło kontrolne, `open_issue` usunięty. Styczeń 2026 potwierdza też komunikat ZUS z 2026 r.
 
 - Wpis: `zdrowotna.minimum` (2025-02-01 – 2026-01-31, 314,96 zł).
 - Zgłoszone: 2026-11-26.
@@ -42,10 +55,10 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   podają ją tylko za styczeń 2026, a PITax podaje okres do grudnia 2026.
 - Pytanie: czy minimalna miesięczna składka zdrowotna przedsiębiorcy na skali i na podatku liniowym
   wynosiła 314,96 zł za każdy miesiąc od lutego 2025 r. do stycznia 2026 r.?
-- Zamiast eksperta wystarczą też deklaracje DRA za ten okres (podatnika na liniowym), jeśli w którymś
-  miesiącu składka była minimalna. Wtedy wpis dostaje `filed_documents`.
 
-## P3. Minimalna składka zdrowotna na skali i liniowym za styczeń 2027
+## P3. Minimalna składka zdrowotna na skali i liniowym za styczeń 2027 (rozstrzygnięte 2026-11-26, bez eksperta)
+
+- Rozstrzygnięcie: biznes.gov.pl sam podaje 432,54 zł za okres od 1 lutego 2026 r. do 31 stycznia 2027 r., tak jak komunikat ZUS z 2 lutego 2026 r.; dodany jako źródło kontrolne, `open_issue` usunięty.
 
 - Wpis: `zdrowotna.minimum` (2026-02-01 – 2027-01-31, 432,54 zł).
 - Zgłoszone: 2026-11-26.
@@ -53,3 +66,15 @@ wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską.
   (9% z 4806 zł, art. 81 ust. 2d). Źródło kontrolne (ifirma) potwierdza kwotę tylko za luty–grudzień 2026.
 - Pytanie: czy minimalna składka za styczeń 2027 r. (ostatni miesiąc roku składkowego) wynosi 432,54 zł,
   mimo że od 1 stycznia 2027 r. obowiązuje nowe minimalne wynagrodzenie?
+
+## P4. Zryczałtowana stopa składki wypadkowej dla płatnika do 9 ubezpieczonych
+
+- Wpis: `zus.stawka.wypadkowa_do_9` (2025-04-01 – 2026-03-31 i 2026-04-01 – 2027-03-31, 1,67%).
+- Zgłoszone: 2026-11-26.
+- Ustawa wypadkowa, art. 28 ust. 1: stopa wynosi 50% najwyższej stopy ustalonej na dany rok składkowy
+  dla grup działalności. Najwyższa stopa w tabeli z załącznika nr 2 rozporządzenia (Dz.U. 2025
+  poz. 1874) to 3,33, a § 6 ust. 2 każe zaokrąglać według zasady matematycznej. Kwotę 1,67% podają
+  wprost tylko materiały ZUS (poradnik i strona o informacji ZUS IWA).
+- Pytanie: czy dla płatnika zgłaszającego nie więcej niż 9 ubezpieczonych stopa w latach składkowych
+  2025/2026 i 2026/2027 wynosi 1,67%, i czy istnieje urzędowe źródło poza materiałami ZUS, które
+  podaje tę stopę wprost?

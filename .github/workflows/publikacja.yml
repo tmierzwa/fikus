@@ -1,0 +1,76 @@
+name: publikacja
+
+# Paczka trafia na PyPI tylko po opublikowaniu wydania na GitHubie (tag vX.Y.Z).
+# Logowanie przez Trusted Publishing (OIDC), bez tokenów w sekretach. Trusted publisher
+# konfiguruje opiekun w panelu PyPI: repozytorium tmierzwa/fikus, workflow publikacja.yml,
+# środowisko pypi.
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write       # podpis atestacji pochodzenia (Sigstore)
+      attestations: write   # zapis atestacji w GitHubie
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0  # v7.1.0
+        with:
+          python-version: "3.13"
+      - run: pip install "build==1.6.1"
+      - run: python -m build
+      - name: Wersja z tagu, pyproject.toml i server.json jest ta sama, README ma mcp-name
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          python - <<'EOF'
+          import email, json, os, pathlib, sys, tomllib, zipfile
+          version = tomllib.loads(pathlib.Path("pyproject.toml").read_text())["project"]["version"]
+          server = json.loads(pathlib.Path("server.json").read_text())
+          errors = []
+          if os.environ["TAG"] != f"v{version}":
+              errors.append(f"tag {os.environ['TAG']} nie pasuje do wersji {version} z pyproject.toml")
+          if server["version"] != version or any(p.get("version") != version for p in server["packages"]):
+              errors.append(f"wersje w server.json nie są równe {version}")
+          wheel = next(pathlib.Path("dist").glob("*.whl"))
+          with zipfile.ZipFile(wheel) as z:
+              meta = next(n for n in z.namelist() if n.endswith(".dist-info/METADATA"))
+              description = email.message_from_bytes(z.read(meta)).get_payload()
+          if f"mcp-name: {server['name']}" not in description:
+              errors.append("opis paczki (README) nie zawiera linii mcp-name, MCP Registry odrzuci wpis")
+          for e in errors:
+              print(f"::error::{e}")
+          sys.exit(1 if errors else 0)
+          EOF
+      - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8  # v4.2.2
+        with:
+          subject-path: dist/*
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7.0.2
+        with:
+          name: dist
+          path: dist/
+          if-no-files-found: error
+
+  pypi:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/project/fikus/
+    permissions:
+      id-token: write       # Trusted Publishing; atestacje PEP 740 dodaje akcja
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333  # v8.0.2
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@7245906fb61fa33a13554f9d5fb856fe61758086  # v1.14.3
