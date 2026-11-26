@@ -11,3 +11,8 @@
   tax_form: liniowy
   vat: czynny_miesiecznie
   zus: preferencyjny
+
+- id: przyklad_skala
+  tax_form: skala
+  vat: czynny_miesiecznie
+  zus: pelny

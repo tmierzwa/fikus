@@ -6,8 +6,8 @@ bo ich źródła mają prawo być nieaktualne. Zgłasza:
 
 - akt, który przestał obowiązywać;
 - nowszy tekst jednolity niż cytowany;
-- nowelizacje opublikowane po cytowanym tekście jednolitym (albo zmiany aktu, który tekstu
-  jednolitego nie ma), z pominięciem tych, które ktoś już przejrzał i zapisał w
+- nowelizacje opublikowane po cytowanym tekście jednolitym (z obu list ELI: nowelizacji po tym
+  tekście i aktów zmieniających akt bazowy) albo zmiany aktu, który tekstu jednolitego nie ma, z pominięciem tych, które ktoś już przejrzał i zapisał w
   data/zmiany_sprawdzone.yaml;
 - wersje parametrów, które kończą się w ciągu `horizon` dni i nie mają następczyni.
 
@@ -105,12 +105,17 @@ def check_act(act: str, params: set[str], fetch: Fetch, reviewed: set[str]) -> l
 
     base = [r["id"] for r in refs.get("Tekst jednolity dla aktu", [])]
     if base:                                   # cytujemy tekst jednolity: czy jest nowszy?
-        texts = [r["id"] for r in fetch(base[0]).get("references", {}).get("Inf. o tekście jednolitym", [])]
+        base_refs = fetch(base[0]).get("references", {})
+        texts = [r["id"] for r in base_refs.get("Inf. o tekście jednolitym", [])]
         newest = max(texts, key=_order, default=act)
         if _order(newest) > _order(act):
             out.append(Finding("nowy_tekst", act, ps, f"nowszy tekst jednolity: {newest}"))
             return out                         # nowelizacje i tak trzeba czytać w nowym tekście
-        changes = refs.get("Nowelizacje po tekście jednolitym", [])
+        # ELI nie zawsze dopisuje nowelizację do „Nowelizacje po tekście jednolitym” tekstu;
+        # pewniejsza jest lista „Akty zmieniające” aktu bazowego. Pozycje w Dz.U. rosną z datą
+        # ogłoszenia, więc nowelizacja o pozycji późniejszej niż tekst jednolity nie jest w nim ujęta.
+        later = [r for r in base_refs.get("Akty zmieniające", []) if _order(r["id"]) > _order(act)]
+        changes = list({r["id"]: r for r in later + refs.get("Nowelizacje po tekście jednolitym", [])}.values())
     else:
         if refs.get("Inf. o tekście jednolitym"):
             newest = max((r["id"] for r in refs["Inf. o tekście jednolitym"]), key=_order)

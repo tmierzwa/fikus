@@ -24,6 +24,7 @@
   checked_at: 2026-11-26
   note: "ustawa o świadczeniach: zmienia art. 31lc, 31n i 31o (art. 27a zmieniany tą ustawą należy do ustawy o działalności leczniczej); nie dotyka art. 79–82"
 - act: DU/2026/986
+  for: DU/2025/1461
   checked_at: 2026-11-26
   note: "ustawa o świadczeniach (art. 34 ustawy o opiece długoterminowej): zmienia art. 42b i 159a, dodaje art. 189b; nie dotyka art. 79–82"
 - act: DU/2026/1007
@@ -133,3 +134,29 @@
   for: DU/2026/1474
   checked_at: 2026-11-26
   note: "ustawa o systemie ubezpieczeń społecznych (art. 112): dodaje art. 4 pkt 2 lit. zf, art. 6 ust. 4d i art. 13 pkt 2b i 2c (asystenci osobiści); nie dotyka art. 18, 22, 31 ani 47"
+- act: DU/2026/986
+  for: DU/2024/1848
+  checked_at: 2026-11-26
+  note: "ustawa o Funduszu Solidarnościowym (art. 39): dodaje ust. 7 w art. 7 (współpraca z koordynatorem opieki długoterminowej); nie dotyka art. 4 i 5"
+- act: DU/2025/1746
+  checked_at: 2026-11-26
+  note: "ustawa o rynku pracy: zmienia tylko art. 26 ust. 5 pkt 1 (systemy teleinformatyczne); nie dotyka art. 259–261"
+- act: DU/2025/1794
+  checked_at: 2026-11-26
+  note: "ustawa o rynku pracy: zmienia tylko art. 1 ust. 3 pkt 5 (cudzoziemcy); nie dotyka art. 259–261"
+- act: DU/2026/451
+  checked_at: 2026-11-26
+  note: "ustawa o rynku pracy: zmienia tylko art. 8 (zadania samorządu województwa); nie dotyka art. 259–261"
+- act: DU/2026/507
+  checked_at: 2026-11-26
+  note: "ustawa o rynku pracy: zmienia art. 2 pkt 1 i art. 232 (CEIDG, zawieszenie działalności); nie dotyka art. 259–261"
+- act: DU/2026/734
+  checked_at: 2026-11-26
+  note: "ustawa o rynku pracy: zmienia art. 26 ust. 1 pkt 7 i art. 300 (eUmowy); nie dotyka art. 259–261"
+- act: DU/2026/1123
+  checked_at: 2026-11-26
+  note: "ustawa o rynku pracy: zmienia art. 153, 154, 155, 156, 172, 182 i 292 (żłobki, dofinansowania); nie dotyka art. 259–261"
+- act: DU/2026/1556
+  for: DU/2024/1848
+  checked_at: 2026-11-26
+  note: "ustawa o Funduszu Solidarnościowym (art. 118): dodaje art. 1 ust. 2b, art. 6ab, art. 8 ust. 1 pkt 7 oraz art. 16a i 16b (asystencja osobista, rejestr); nie dotyka art. 4 ani 5"

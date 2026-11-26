@@ -90,12 +90,178 @@
           wymienia złożenie deklaracji i wniesienie odwołania, zapłaty nie wymienia. Brak drugiego źródła urzędowego po zmianie.
           Pytanie do eksperta: docs/pytania-do-eksperta.md, P5.
 
+- id: zasada.liniowy_podatek
+  name: Podatek liniowy i zaliczki miesięczne
+  kind: rule
+  applies_to: {tax_form: [liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Ustal dochód z działalności według art. 9 ust. 1, 2–3b i 5, art. 24 ust. 1, 2, 3b–3e i ust. 4 zdanie pierwsze albo art. 24b ust. 1 i 2, albo art. 23o ustawy o PIT, z uwzględnieniem obniżenia o straty z lat poprzednich na zasadach art. 9 ust. 3. Przy podatkowej księdze przychodów i rozchodów dochodem jest różnica między przychodem a kosztami jego uzyskania, powiększona albo pomniejszona o różnicę między wartością remanentu końcowego i początkowego (art. 24 ust. 2 zdanie pierwsze). Ta zasada nie opisuje ustalania dochodu przy księgach rachunkowych (art. 24 ust. 1) ani dochodu z odpłatnego zbycia składników majątku (art. 24 ust. 2 zdanie drugie).
+            uses: []
+            basis: art. 30c ust. 2 zdanie pierwsze oraz art. 24 ust. 2 ustawy o podatku dochodowym od osób fizycznych
+          - text: Dochód możesz pomniejszyć o składki na ubezpieczenia społeczne z art. 26 ust. 1 pkt 2 lit. a i pkt 2a ustawy o PIT zapłacone w roku podatkowym, na warunkach z tych przepisów (przy pkt 2 bez składek, których podstawą są dochody zwolnione albo dochody, od których zaniechano poboru podatku; przy pkt 2a z zastrzeżeniem art. 26 ust. 13a–13c), jeżeli nie zostały zaliczone do kosztów, odliczone od dochodów opodatkowanych według skali ani od przychodów na ryczałcie i nie zostały zwrócone.
+            uses: [zus.stawka.emerytalna, zus.stawka.rentowa, zus.stawka.chorobowa, zus.stawka.wypadkowa_do_9]
+            basis: art. 30c ust. 2 pkt 1, ust. 3 i 3a w zw. z art. 26 ust. 1 pkt 2 lit. a i pkt 2a oraz ust. 13a–13c ustawy o podatku dochodowym od osób fizycznych
+          - text: Dochód możesz pomniejszyć o składki zdrowotne zapłacone w roku podatkowym z tytułu tej działalności i za osoby współpracujące, z tymi samymi warunkami z art. 30c ust. 3. Składki zdrowotne zaliczone do kosztów i odliczone od dochodu łącznie nie mogą przekroczyć rocznego limitu.
+            uses: [podatek.liniowy.limit_skladki_zdrowotnej]
+            basis: art. 30c ust. 2 pkt 2, ust. 2b, 2c i 3 oraz art. 23 ust. 1 pkt 58 ustawy o podatku dochodowym od osób fizycznych
+          - text: Dochód możesz też pomniejszyć o wpłaty na indywidualne konto zabezpieczenia emerytalnego do wysokości określonej w przepisach o tych kontach (to odliczenie tylko w zeznaniu) oraz o darowiznę na cele kształcenia zawodowego z art. 26 ust. 1 pkt 9 lit. d ustawy o PIT, nie więcej niż 6% dochodu. Do obu stosuje się warunki z art. 30c ust. 3.
+            uses: []
+            basis: art. 30c ust. 2 pkt 3 i 4, ust. 3, 3a i 3b oraz art. 26 ust. 1 pkt 2b ustawy o podatku dochodowym od osób fizycznych
+          - text: Podatek to podstawa pomnożona przez stawkę podatku liniowego. Podstawę opodatkowania i kwotę podatku zaokrąglij do pełnych złotych; końcówki poniżej 50 groszy pomiń, a od 50 groszy podwyższ do pełnego złotego. Ta zasada nie opisuje odliczeń od podstawy obliczenia podatku z art. 26e, 26ga, 26gb, 26h–26he, 26i, 52jb, 52n i 52x ustawy o PIT ani odliczenia podatku zapłaconego za granicą z art. 30c ust. 4.
+            uses: [podatek.liniowy.stawka]
+            basis: art. 30c ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 63 § 1 Ordynacji podatkowej
+          - text: Przy zaliczkach miesięcznych zaliczka za miesiąc to różnica między podatkiem od dochodu osiągniętego od początku roku, obliczonym według kroków powyżej, a sumą należnych zaliczek za poprzednie miesiące. Przy podatkowej księdze przychodów i rozchodów dochodem do zaliczki jest różnica między przychodem a kosztami wynikającymi z księgi, a różnicę remanentową uwzględniasz tylko wtedy, gdy sporządzasz remanent na koniec miesiąca albo zarządzi to naczelnik urzędu skarbowego (art. 44 ust. 2). Zaliczki można nie wpłacać, jeżeli podatek od dochodu od początku roku pomniejszony o sumę wpłaconych zaliczek nie przekracza 1000 zł. Gdy ta kwota przekroczy 1000 zł, wpłać różnicę między podatkiem od dochodu od początku roku a sumą zaliczek wpłaconych od początku roku. Zamiast tego mały podatnik i podatnik rozpoczynający działalność mogą wpłacać zaliczki kwartalne (art. 44 ust. 3h i 3i), a podatnik może wybrać zaliczki uproszczone (art. 44 ust. 6b–6e i 6h, z obniżeniem o część składki zdrowotnej według art. 44 ust. 6j); ta zasada tych sposobów nie opisuje. Zwolnienie z zaliczek dla podatnika, który po raz pierwszy rozpoczął działalność (art. 44 ust. 7a), nie przysługuje w roku opodatkowania podatkiem liniowym (art. 44 ust. 7c pkt 5). Ta zasada nie opisuje też braku zaliczek w okresie zawieszenia działalności (art. 44 ust. 10) ani korekty dochodu przy niezapłaconych należnościach i zobowiązaniach (art. 44 ust. 17–26).
+            uses: [podatek.liniowy.stawka, termin.zaliczka_liniowy]
+            basis: art. 44 ust. 2, 3f, 7c pkt 5 i 15 ustawy o podatku dochodowym od osób fizycznych
+          - text: Po końcu roku dochód z działalności opodatkowanej podatkiem liniowym wykazujesz w odrębnym zeznaniu rocznym. Przed upływem terminu złożenia zeznania wpłacasz podatek należny wynikający z zeznania albo różnicę między nim a sumą zapłaconych za ten rok zaliczek. Ta zasada nie opisuje doliczania do dochodu części dochodu z roku zwolnienia z zaliczek ani skutków utraty prawa do tego zwolnienia (art. 44 ust. 7f, 7i i 7j).
+            uses: []
+            basis: art. 45 ust. 1a pkt 2 i ust. 4 pkt 3 oraz art. 44 ust. 7f, 7i i 7j ustawy o podatku dochodowym od osób fizycznych
+      note: >-
+        Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku obowiązywania (2026-01-01)
+        nie jest potwierdzona źródłem. Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (zwolnienie z zaliczek tylko na skali)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 7c pkt 5
+          quote: "w roku korzystania ze zwolnienia są opodatkowani na zasadach określonych w art. 27"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dochód przy księdze przychodów i rozchodów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 24 ust. 2
+          quote: "dochodem z działalności jest różnica pomiędzy przychodem w rozumieniu art. 14 a kosztami uzyskania powiększona o różnicę"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dochód do zaliczki przy księdze)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 2
+          quote: "jest różnica pomiędzy wynikającym z tych ksiąg przychodem i kosztami jego uzyskania"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wpłata po zeznaniu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 45 ust. 4 pkt 3
+          quote: "należny podatek dochodowy wynikający z zeznania, o którym mowa w ust. 1a pkt 2, albo różnicę pomiędzy podatkiem"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (podstawa i odliczenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30c ust. 2
+          quote: "Dochód ten podatnicy mogą pomniejszyć o: 1) składki na ubezpieczenia społeczne określone w art. 26 ust. 1 pkt 2 lit. a i pkt 2a"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (stawka)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30c ust. 1
+          quote: "z zastrzeżeniem art. 29 i art. 30, wynosi 19 % podstawy obliczenia podatku"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (zaliczki)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 3f
+          quote: "wpłacać na rachunek urzędu skarbowego zaliczki miesięczne w wysokości różnicy między podatkiem należnym od dochodu osiągniętego od początku roku, obliczonym zgodnie z art. 30c"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (zaliczka do 1000 zł)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 15
+          quote: "mogą nie wpłacać zaliczki obliczonej według zasad określonych w ust. 3 i ust. 3f–3h"
+        - title: Dz.U. 2026 poz. 622, tekst jednolity Ordynacji podatkowej (zaokrąglenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/622/text.pdf
+          article: art. 63 § 1
+          quote: "Podstawy opodatkowania, kwoty podatków, odsetki za zwłokę, opłaty prolongacyjne, oprocentowanie nadpłat oraz wynagrodzenia przysługujące płatnikom i inkasentom zaokrągla się do pełnych złotych"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (zaliczki uproszczone)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 6j
+          quote: "Zaliczkę obliczoną zgodnie z ust. 6h podatnik może obniżyć o kwotę stanowiącą 19 % składki na ubezpieczenie zdrowotne"
+        - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym, aktualizacja 24.06.2026
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
+          kind: control
+          quote: "możesz zaliczać do kosztów uzyskania przychodów lub odliczać od dochodu składki na ubezpieczenie zdrowotne (do wysokości limitu)"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Odliczenie składek na ubezpieczenie zdrowotne PIT, aktualizacja 23.11.2026 (podatek liniowy)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/odliczenie-skladek-na-ubezpieczenie-zdrowotne-pit
+          kind: control
+          quote: "Odliczasz składki na ubezpieczenie zdrowotne, które zapłaciłeś(-aś) w danym roku podatkowym"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: zasada.skala_podatek
+  name: Podatek według skali i zaliczki miesięczne
+  kind: rule
+  applies_to: {tax_form: [skala]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Ustal dochód z działalności według art. 9, art. 23o, art. 23u, art. 24 ust. 1, 2, 3b–3e, 4–4e, 6 i 21 albo art. 24b ust. 1 i 2 ustawy o PIT, z uwzględnieniem obniżenia o straty z lat poprzednich na zasadach art. 9 ust. 3. Przy podatkowej księdze przychodów i rozchodów dochodem jest różnica między przychodem a kosztami jego uzyskania, powiększona albo pomniejszona o różnicę między wartością remanentu końcowego i początkowego (art. 24 ust. 2 zdanie pierwsze). Ta zasada nie opisuje ustalania dochodu przy księgach rachunkowych (art. 24 ust. 1) ani dochodu z odpłatnego zbycia składników majątku (art. 24 ust. 2 zdanie drugie).
+            uses: []
+            basis: art. 26 ust. 1 zdanie pierwsze, art. 9 ust. 2 i 3 oraz art. 24 ust. 2 ustawy o podatku dochodowym od osób fizycznych
+          - text: Od dochodu odlicz składki na ubezpieczenia społeczne z art. 26 ust. 1 pkt 2 lit. a i pkt 2a ustawy o PIT zapłacone w roku podatkowym, na warunkach z tych przepisów (przy pkt 2 bez składek, których podstawą są dochody zwolnione albo dochody, od których zaniechano poboru podatku; przy pkt 2a z zastrzeżeniem art. 26 ust. 13b i 13c). Odliczasz tylko składki, które nie zostały zaliczone do kosztów uzyskania przychodów, odliczone od dochodów opodatkowanych na zasadach art. 30c ani od przychodu na podstawie ustawy o zryczałtowanym podatku dochodowym i nie zostały zwrócone w jakiejkolwiek formie (art. 26 ust. 13a).
+            uses: [zus.stawka.emerytalna, zus.stawka.rentowa, zus.stawka.chorobowa, zus.stawka.wypadkowa_do_9]
+            basis: art. 26 ust. 1 pkt 2 lit. a i pkt 2a oraz ust. 13a–13c ustawy o podatku dochodowym od osób fizycznych
+          - text: Od podstawy obliczenia podatku do progu podatek to podstawa pomnożona przez stawkę niższą, pomniejszona o kwotę zmniejszającą podatek. Od podstawy ponad próg podatek to kwota podatku od progu powiększona o stawkę wyższą od nadwyżki ponad próg.
+            uses: [podatek.skala]
+            basis: art. 27 ust. 1 ustawy o podatku dochodowym od osób fizycznych
+          - text: Podstawę opodatkowania i kwotę podatku zaokrąglij do pełnych złotych; końcówki poniżej 50 groszy pomiń, a od 50 groszy podwyższ do pełnego złotego.
+            uses: []
+            basis: art. 63 § 1 Ordynacji podatkowej
+          - text: Ta zasada nie opisuje pozostałych odliczeń od dochodu i od podatku (między innymi z art. 26 ust. 1 pkt 2b–9, art. 26e–26i, art. 27f i art. 52jb–52x ustawy o PIT), wspólnego opodatkowania małżonków i osób samotnie wychowujących dzieci (art. 6), łączenia dochodu z działalności z innymi dochodami opodatkowanymi według skali ani dochodów i podatku zagranicznego (metoda z art. 27 ust. 8 i odliczenie podatku zapłaconego za granicą z art. 27 ust. 9 i 9a).
+            uses: []
+            basis: art. 6, art. 26, art. 27 i art. 27f ustawy o podatku dochodowym od osób fizycznych
+          - text: Przy zaliczkach miesięcznych obowiązek zaliczki powstaje od miesiąca, w którym dochody przekroczyły iloraz kwoty zmniejszającej podatek i stawki niższej (art. 44 ust. 3 pkt 1). Zaliczka za ten miesiąc to podatek od tego dochodu obliczony według kroków powyżej, z tym że przy podatkowej księdze przychodów i rozchodów dochodem do zaliczki jest różnica między przychodem a kosztami wynikającymi z księgi, a różnicę remanentową uwzględniasz tylko wtedy, gdy sporządzasz remanent na koniec miesiąca albo zarządzi to naczelnik urzędu skarbowego (art. 44 ust. 2); a za dalsze miesiące różnica między podatkiem od dochodu od początku roku a sumą zaliczek za miesiące poprzedzające. Zaliczki można nie wpłacać, jeżeli podatek od dochodu od początku roku pomniejszony o sumę wpłaconych zaliczek nie przekracza 1000 zł. Gdy ta kwota przekroczy 1000 zł, wpłać różnicę między podatkiem od dochodu od początku roku a sumą zaliczek wpłaconych od początku roku. Mały podatnik i podatnik rozpoczynający działalność mogą zamiast tego wpłacać zaliczki kwartalne (art. 44 ust. 3g i 3i), a podatnik może wybrać zaliczki uproszczone (art. 44 ust. 6b–6e); ta zasada tych sposobów nie opisuje. Nie opisuje też zwolnienia z zaliczek podatnika, który po raz pierwszy rozpoczął działalność (art. 44 ust. 7a–7k), braku zaliczek w okresie zawieszenia działalności (art. 44 ust. 10) ani korekty dochodu przy niezapłaconych należnościach i zobowiązaniach (art. 44 ust. 17–26).
+            uses: [podatek.skala, termin.zaliczka_skala]
+            basis: art. 44 ust. 2, ust. 3 pkt 1–3 i ust. 15 ustawy o podatku dochodowym od osób fizycznych
+          - text: Po końcu roku podatek należny wykazujesz w zeznaniu rocznym. Przed upływem terminu złożenia zeznania wpłacasz różnicę między podatkiem należnym wynikającym z zeznania a sumą zapłaconych za ten rok zaliczek.
+            uses: [termin.zeznanie_skala]
+            basis: art. 45 ust. 1 i ust. 4 pkt 1 ustawy o podatku dochodowym od osób fizycznych
+      note: >-
+        Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku obowiązywania (2026-01-01)
+        nie jest potwierdzona źródłem. Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (podstawa)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 1
+          quote: "zapłaconych w roku podatkowym bezpośrednio na własne ubezpieczenia emerytalne, rentowe, chorobowe oraz wypadkowe podatnika oraz osób z nim współpracujących"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (skala)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 27 ust. 1
+          quote: "pobiera się od podstawy jego obliczenia według następującej skali podatkowej"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (zaliczki)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 3
+          quote: "zaliczkę za dalsze miesiące ustala się w wysokości różnicy pomiędzy podatkiem należnym od dochodu osiągniętego od początku roku a sumą zaliczek za miesiące poprzedzające"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (zaliczka do 1000 zł)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 15
+          quote: "pomniejszony o sumę zaliczek wpłaconych od początku roku nie przekracza 1000 zł"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dochód przy księdze przychodów i rozchodów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 24 ust. 2
+          quote: "dochodem z działalności jest różnica pomiędzy przychodem w rozumieniu art. 14 a kosztami uzyskania powiększona o różnicę"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (początek obowiązku zaliczki)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 3 pkt 1
+          quote: "obowiązek wpłacania zaliczki powstaje, poczynając od miesiąca, w którym dochody te przekroczyły kwotę stanowiącą"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (warunki odliczenia składek)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 13a
+          quote: "Wydatki na cele określone w ust. 1 podlegają odliczeniu od dochodu, jeżeli nie zostały zaliczone do kosztów uzyskania przychodów"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dochód do zaliczki przy księdze)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 2
+          quote: "jest różnica pomiędzy wynikającym z tych ksiąg przychodem i kosztami jego uzyskania"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wpłata różnicy po zeznaniu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 45 ust. 4 pkt 1
+          quote: "różnicę między podatkiem należnym wynikającym z zeznania, o którym mowa w ust. 1, a sumą zapłaconych za dany rok zaliczek"
+        - title: Dz.U. 2026 poz. 622, tekst jednolity Ordynacji podatkowej (zaokrąglenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/622/text.pdf
+          article: art. 63 § 1
+          quote: "Podstawy opodatkowania, kwoty podatków, odsetki za zwłokę, opłaty prolongacyjne, oprocentowanie nadpłat oraz wynagrodzenia przysługujące płatnikom i inkasentom zaokrągla się do pełnych złotych"
+        - title: biznes.gov.pl, Najważniejsze zasady opodatkowania według skali podatkowej, aktualizacja 07.01.2026
+          url: https://www.biznes.gov.pl/pl/portal/00264
+          kind: control
+          quote: "Składki na ubezpieczenia społeczne możesz odliczyć od dochodu tylko wtedy, gdy nie zostały zaliczone do kosztów uzyskania przychodów albo nie zostały ci zwrócone w jakiejkolwiek formie."
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
 - id: zasada.ryczalt_zdrowotna_prog
   name: Wybór progu składki zdrowotnej na ryczałcie
   kind: rule
   applies_to: {tax_form: [ryczalt]}
   versions:
     - valid_from: 2025-01-01
+      valid_to: 2026-12-31
       note: >-
         Poprawka: wcześniej wpisany okres 2026-02-01 – 2027-01-31 dotyczy skali i liniowego, nie ryczałtu,
         a krok 4 powoływał art. 81 ust. 2h, który dotyczy wyboru przychodu z poprzedniego roku.
@@ -137,6 +303,60 @@
           kind: control
           quote: "jeśli przekroczysz kwotę przychodów w danym miesiącu, za ten miesiąc musisz rozliczyć składkę od podstawy wymiaru obowiązującej dla kolejnego progu przychodów"
           as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, open_issue: "Ustawa Dz.U. 2026 poz. 1542 zmienia art. 81 ust. 2zd pkt 2 od 1 stycznia 2027 r. bez przepisu przejściowego. Od którego miesiąca składkowego albo dla przychodów i dochodów z jakiego okresu stosuje się nowe brzmienie? Pytanie do eksperta: docs/pytania-do-eksperta.md, P8."}
+    - valid_from: 2027-01-01
+      note: >-
+        Zmiana względem poprzedniej wersji: od 1 stycznia 2027 r. art. 81 ust. 2zd pkt 2 nie wymienia już art. 21 ust. 1
+        pkt 63a ustawy o PIT (Dz.U. 2026 poz. 1542, art. 12); ta sama ustawa uchyla ten punkt w ustawie o PIT (art. 4
+        pkt 1). Pozostałe kroki się nie zmieniają. Nowego brzmienia nie ma jeszcze w tekście jednolitym, więc źródłem jest ustawa zmieniająca.
+      value:
+        steps:
+          - text: Ustal przychód z działalności osiągnięty od początku roku kalendarzowego, pomniejszony o opłacone składki emerytalną, rentową, chorobową i wypadkową, jeżeli nie zostały zaliczone do kosztów ani odliczone od dochodu. Funduszu Pracy nie odejmuj. Zamiast tego możesz przyjąć przychód z poprzedniego roku (zasada.ryczalt_zdrowotna_prog_poprzedni_rok).
+            uses: [zasada.ryczalt_zdrowotna_prog_poprzedni_rok]
+            basis: art. 81 ust. 2f i 2g ustawy o świadczeniach opieki zdrowotnej
+          - text: Do przychodu nie wliczaj przychodów wyłączonych przez art. 81 ust. 2zd, czyli osiągniętych w okresie zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, oraz osiągniętych w miesiącu, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a).
+            uses: []
+            basis: art. 81 ust. 2zd ustawy o świadczeniach opieki zdrowotnej
+          - text: Porównaj tę kwotę z progami. Składka za miesiąc to kwota z parametru dla progu, w którym się mieści.
+            uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka]
+            basis: art. 81 ust. 2f ustawy o świadczeniach opieki zdrowotnej
+          - text: Po przekroczeniu progu w trakcie roku płać kwotę wyższego progu od miesiąca przekroczenia.
+            uses: [zdrowotna.ryczalt.skladka]
+            basis: art. 81 ust. 2f ustawy o świadczeniach opieki zdrowotnej
+          - text: Po końcu roku ustal roczną składkę według progu dla rocznego przychodu, pomnożonej przez liczbę miesięcy podlegania ubezpieczeniu (bez miesięcy zwolnienia ze składki). Porównaj z sumą wpłat. Nadwyżkę odbierz, niedopłatę dopłać w rozliczeniu rocznym.
+            uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka, termin.roczne_rozliczenie_zdrowotnej]
+            basis: art. 81 ust. 2e, 2ea, 2i, 2j, 2k i 2l ustawy o świadczeniach opieki zdrowotnej
+      sources:
+        - title: Dz.U. 2026 poz. 1542, ustawa z 22 października 2026 r. o zmianie ustawy o wspieraniu nowych inwestycji oraz niektórych innych ustaw (zmiana art. 81 ust. 2zd)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1542/text.pdf
+          article: art. 12
+          quote: "w art. 81 w ust. 2zd w pkt 2 skreśla się wyrazy „63a,”"
+        - title: Dz.U. 2026 poz. 1542, ustawa z 22 października 2026 r. o zmianie ustawy o wspieraniu nowych inwestycji oraz niektórych innych ustaw (wejście w życie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1542/text.pdf
+          article: art. 30
+          quote: "Ustawa wchodzi w życie z dniem 1 stycznia 2027 r., z wyjątkiem:"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (dotychczasowe brzmienie art. 81 ust. 2zd pkt 2)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2zd pkt 2
+          quote: "przychodów niepodlegających opodatkowaniu podatkiem dochodowym innych niż określone w art. 21 ust. 1 pkt 63a, 63b i 152–154"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          quote: "osiągnięte od początku roku kalendarzowego, nie przekroczyły kwoty 60 000 zł"
+          article: art. 81 ust. 2e-2l
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          quote: "nie uwzględnia się w tych przychodach i kosztach ich uzyskania: 1) przychodów osiągniętych i kosztów poniesionych w okresie zawieszenia wykonywania działalności gospodarczej"
+          article: art. 81 ust. 2zd
+        - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r. (krok 1)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "Przychody te pomniejsz o kwoty opłaconych składek na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe, jeżeli nie zaliczyłeś ich do kosztów uzyskania przychodów lub odliczyłeś od dochodu"
+          as_of: 2026-11-26
+        - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r. (kroki 2 i 3)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "jeśli przekroczysz kwotę przychodów w danym miesiącu, za ten miesiąc musisz rozliczyć składkę od podstawy wymiaru obowiązującej dla kolejnego progu przychodów"
+          as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: zasada.ryczalt_zdrowotna_prog_poprzedni_rok
@@ -145,6 +365,7 @@
   applies_to: {tax_form: [ryczalt]}
   versions:
     - valid_from: 2025-01-01
+      valid_to: 2026-12-31
       note: >-
         ust. 2h w tym brzmieniu obowiązuje od 1 stycznia 2025 r. (Dz.U. 2024 poz. 1915); tekst jednolity uwzględnia zmiany ogłoszone przed 2025-09-25.
         Poprawka 2026-11-26: dodany krok 3 o wyłączeniach z art. 81 ust. 2zd, którego brakowało (wskazał weryfikator).
@@ -182,6 +403,57 @@
           quote: "Przyjętą kwotę przychodów uzyskanych w poprzednim roku kalendarzowym pomniejszasz o kwotę opłaconych w poprzednim roku kalendarzowym składek na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, open_issue: "ZUS (poradnik, stan na 2025-01-01) dodaje wyjątek: podstawy z poprzedniego roku nie stosuje się przez cały rok, gdy działalność zostanie zakończona i podjęta na nowo; ustawa (art. 81 ust. 2h) go nie wymienia. Pytanie do eksperta: docs/pytania-do-eksperta.md, P1"}
+    - valid_from: 2027-01-01
+      note: >-
+        Zmiana względem poprzedniej wersji: od 1 stycznia 2027 r. art. 81 ust. 2zd pkt 2 nie wymienia już art. 21 ust. 1
+        pkt 63a ustawy o PIT (Dz.U. 2026 poz. 1542, art. 12); ta sama ustawa uchyla ten punkt w ustawie o PIT (art. 4
+        pkt 1). Pozostałe kroki się nie zmieniają. Nowego brzmienia nie ma jeszcze w tekście jednolitym, więc źródłem jest ustawa zmieniająca.
+      value:
+        steps:
+          - text: Ta możliwość dotyczy tylko podatnika, który przez cały poprzedni rok kalendarzowy prowadził działalność opodatkowaną ryczałtem, skalą, liniowym albo IP Box.
+            uses: []
+            basis: art. 81 ust. 2h ustawy o świadczeniach opieki zdrowotnej
+          - text: Weź przychód z poprzedniego roku kalendarzowego pomniejszony o składki emerytalną, rentową, chorobową i wypadkową opłacone w tamtym roku, jeżeli nie zostały odliczone.
+            uses: []
+            basis: art. 81 ust. 2h ustawy o świadczeniach opieki zdrowotnej
+          - text: Do przychodu nie wliczaj przychodów wyłączonych przez art. 81 ust. 2zd, czyli osiągniętych w okresie zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, oraz osiągniętych w miesiącu, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a).
+            uses: []
+            basis: art. 81 ust. 2zd ustawy o świadczeniach opieki zdrowotnej
+          - text: Wybierz próg według tej kwoty. Składka za każdy miesiąc bieżącego roku to kwota z parametru dla tego progu; stosuj ją przez cały rok kalendarzowy.
+            uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka]
+            basis: art. 81 ust. 2h ustawy o świadczeniach opieki zdrowotnej
+      sources:
+        - title: Dz.U. 2026 poz. 1542, ustawa z 22 października 2026 r. o zmianie ustawy o wspieraniu nowych inwestycji oraz niektórych innych ustaw (zmiana art. 81 ust. 2zd)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1542/text.pdf
+          article: art. 12
+          quote: "w art. 81 w ust. 2zd w pkt 2 skreśla się wyrazy „63a,”"
+        - title: Dz.U. 2026 poz. 1542, ustawa z 22 października 2026 r. o zmianie ustawy o wspieraniu nowych inwestycji oraz niektórych innych ustaw (wejście w życie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1542/text.pdf
+          article: art. 30
+          quote: "Ustawa wchodzi w życie z dniem 1 stycznia 2027 r., z wyjątkiem:"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (dotychczasowe brzmienie art. 81 ust. 2zd pkt 2)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2zd pkt 2
+          quote: "przychodów niepodlegających opodatkowaniu podatkiem dochodowym innych niż określone w art. 21 ust. 1 pkt 63a, 63b i 152–154"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          quote: "może przy określaniu miesięcznej podstawy wymiaru składki na ubezpieczenie zdrowotne przyjąć kwotę przychodów uzyskanych w poprzednim roku kalendarzowym"
+          article: art. 81 ust. 2e-2l
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          quote: "nie uwzględnia się w tych przychodach i kosztach ich uzyskania: 1) przychodów osiągniętych i kosztów poniesionych w okresie zawieszenia wykonywania działalności gospodarczej"
+          article: art. 81 ust. 2zd
+        - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r.
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "możesz przyjąć kwotę przychodów uzyskanych w poprzednim roku kalendarzowym, jeśli przez cały poprzedni rok kalendarzowy prowadziłeś działalność gospodarczą"
+          as_of: 2026-11-26
+        - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r.
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "Przyjętą kwotę przychodów uzyskanych w poprzednim roku kalendarzowym pomniejszasz o kwotę opłaconych w poprzednim roku kalendarzowym składek na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, open_issue: "ZUS (poradnik, stan na 2025-01-01) dodaje wyjątek: podstawy z poprzedniego roku nie stosuje się przez cały rok, gdy działalność zostanie zakończona i podjęta na nowo; ustawa (art. 81 ust. 2h) go nie wymienia. Pytanie do eksperta: docs/pytania-do-eksperta.md, P1 Ustawa Dz.U. 2026 poz. 1542 zmienia art. 81 ust. 2zd pkt 2 od 1 stycznia 2027 r. bez przepisu przejściowego. Od którego miesiąca składkowego albo dla przychodów i dochodów z jakiego okresu stosuje się nowe brzmienie? Pytanie do eksperta: docs/pytania-do-eksperta.md, P8."}
 
 - id: zasada.ryczalt_podstawa
   name: Podstawa opodatkowania ryczałtem
@@ -243,3 +515,71 @@
         checked_at: 2026-11-26
         agent_check: 2026-11-26
         open_issue: "Art. 12 ust. 3 zdanie drugie ustawy o zryczałtowanym podatku dochodowym nie mówi wprost, czy stawka podwyższona (np. 17% przy przychodach także z pkt 1) dotyczy tylko przychodów z tego punktu, czy wszystkich przychodów, ani którą stawkę stosuje się przy przychodach z kilku punktów. Pytanie do eksperta: docs/pytania-do-eksperta.md, P6."
+
+- id: zasada.zus_fundusz_pracy
+  name: Obowiązek opłacania składek na Fundusz Pracy i Fundusz Solidarnościowy za siebie
+  kind: rule
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Składkę na Fundusz Pracy liczysz od podstawy wymiaru składek emerytalnej i rentowej bez rocznego ograniczenia tej podstawy. Opłacasz ją, jeżeli ta podstawa w przeliczeniu na miesiąc wynosi co najmniej minimalne wynagrodzenie.
+            uses: [zus.stawka.fundusz_pracy, wynagrodzenie.minimalne]
+            basis: art. 259 ust. 1 pkt 4 ustawy o rynku pracy i służbach zatrudnienia
+          - text: Jeżeli podlegasz obowiązkowym ubezpieczeniom emerytalnemu i rentowym także z innych tytułów, obowiązek powstaje, gdy łączna podstawa ze wszystkich tytułów wynosi co najmniej minimalne wynagrodzenie; wtedy składasz oświadczenie każdemu pracodawcy albo w ZUS.
+            uses: [wynagrodzenie.minimalne]
+            basis: art. 259 ust. 2 i 3 ustawy o rynku pracy i służbach zatrudnienia
+          - text: Przy podstawie preferencyjnej, niższej od minimalnego wynagrodzenia, składki na Fundusz Pracy nie opłacasz, chyba że łączna podstawa z poprzedniego kroku osiąga minimalne wynagrodzenie.
+            uses: [zus.podstawa_preferencyjna, wynagrodzenie.minimalne]
+            basis: art. 259 ust. 1 pkt 4 i ust. 2 ustawy o rynku pracy i służbach zatrudnienia
+          - text: Składki na Fundusz Pracy nie opłaca się za kobietę, która ukończyła 55 lat, ani za mężczyznę, który ukończył 60 lat. Nie opłacasz jej też za miesiąc zwolnienia ze składek na własne ubezpieczenia emerytalne i rentowe na podstawie art. 17a ust. 1 ustawy o systemie ubezpieczeń społecznych.
+            uses: []
+            basis: art. 259 ust. 1 pkt 4 lit. o i art. 261 ustawy o rynku pracy i służbach zatrudnienia
+          - text: Do składki na Fundusz Solidarnościowy stosuje się odpowiednio przepisy o składce na Fundusz Pracy. Obie składki liczysz łącznie, według sumy ich stóp, i wykazujesz w deklaracji rozliczeniowej w jednej kwocie. Za miesiąc zwolnienia na podstawie art. 17a ustawy o systemie ubezpieczeń społecznych nie opłacasz za siebie także składki na Fundusz Solidarnościowy.
+            uses: [zus.stawka.fundusz_pracy, zus.stawka.fundusz_solidarnosciowy]
+            basis: art. 4 ust. 1 i 1a oraz art. 5 ust. 2 ustawy o Funduszu Solidarnościowym
+      note: >-
+        Wersja zaczyna się razem ze stawkami Funduszu Pracy i Funduszu Solidarnościowego na 2026 r. Te przepisy
+        obowiązują wcześniej (ustawa o rynku pracy i służbach zatrudnienia od 1 czerwca 2025 r.), ale okresu sprzed
+        2026 r. ta wersja nie obejmuje. Ustawa o rynku pracy nie ma jeszcze tekstu jednolitego; cytowany jest tekst
+        ogłoszony, a jej nowelizacje nie zmieniają art. 259–261.
+      sources:
+        - title: Dz.U. 2025 poz. 620, ustawa z 20 marca 2025 r. o rynku pracy i służbach zatrudnienia
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/620/text.pdf
+          article: art. 259 ust. 1
+          quote: "wynoszących w przeliczeniu na okres miesiąca co najmniej minimalne wynagrodzenie za pracę, opłacają"
+        - title: Dz.U. 2025 poz. 620, ustawa o rynku pracy i służbach zatrudnienia (różne źródła)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/620/text.pdf
+          article: art. 259 ust. 2
+          quote: "obowiązek opłacania składek na Fundusz Pracy powstaje wtedy, gdy łączna kwota stanowiąca podstawę wymiaru składek, ustalona zgodnie z ust. 1, wynosi co najmniej minimalne wynagrodzenie za pracę"
+        - title: Dz.U. 2025 poz. 620, ustawa o rynku pracy i służbach zatrudnienia (wiek)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/620/text.pdf
+          article: art. 261
+          quote: "które nie osiągnęły wieku wynoszącego co najmniej 55 lat w przypadku kobiet i co najmniej 60 lat w przypadku mężczyzn"
+        - title: Dz.U. 2025 poz. 620, ustawa o rynku pracy i służbach zatrudnienia (miesiąc zwolnienia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/620/text.pdf
+          article: art. 259 ust. 1 pkt 4 lit. o
+          quote: "osób zwolnionych z opłacania składek na własne obowiązkowe ubezpieczenia emerytalne i rentowe, za wskazany jeden miesiąc kalendarzowy"
+        - title: Dz.U. 2024 poz. 1848, tekst jednolity ustawy o Funduszu Solidarnościowym (miesiąc zwolnienia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/1848/text.pdf
+          article: art. 4 ust. 1a
+          quote: "Płatnik składek nie opłaca za siebie składki na Fundusz Solidarnościowy za miesiąc korzystania ze zwolnienia"
+        - title: Dz.U. 2024 poz. 1848, tekst jednolity ustawy o Funduszu Solidarnościowym
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/1848/text.pdf
+          article: art. 4 ust. 1
+          quote: "Do obowiązkowych składek na Fundusz stosuje się odpowiednio przepisy dotyczące obowiązkowych składek na Fundusz Pracy."
+        - title: Dz.U. 2024 poz. 1848, tekst jednolity ustawy o Funduszu Solidarnościowym (łączne rozliczenie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/1848/text.pdf
+          article: art. 5 ust. 2
+          quote: "Składki na Fundusz płatnik składek oblicza łącznie ze składkami na Fundusz Pracy w wysokości sumy stóp procentowych tych składek"
+        - title: ZUS, Składki preferencyjne (Fundusz Pracy i Fundusz Solidarnościowy)
+          url: https://www.zus.pl/firmy/rozliczenia-z-zus/skladki-preferencyjne
+          kind: control
+          quote: "z zasady nie opłacasz składek na Fundusz Pracy i Fundusz Solidarnościowy"
+          as_of: 2026-11-26
+        - title: ZUS, Fundusz Pracy (wiek i próg minimalnego wynagrodzenia)
+          url: https://www.zus.pl/pracujacy/fundusze-pozaubezpieczeniowe/fp
+          kind: control
+          quote: "Nie musisz opłacać składki na FP, jeśli podstawa wymiaru przeliczona na okres miesiąca jest niższa od minimalnego wynagrodzenia za pracę"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
