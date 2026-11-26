@@ -9,6 +9,7 @@ Fikus to serwer MCP z parametrami przepisów dla JDG. To samodzielny projekt spo
 3. Każda wersja ma okres obowiązywania, pole `verification` z dowodami i co najmniej jedno źródło pierwotne z dosłownym cytatem (`quote`), z którego wynika wartość.
 4. Źródło pierwotne to tekst jednolity w ISAP/ELI, obwieszczenie w M.P. albo komunikat ZUS lub MF. Blog, kalkulator i portal mogą być tylko źródłem kontrolnym (`kind: control`).
 5. Bez źródła pierwotnego wartość nie trafia do danych. Lepiej nie mieć wartości niż mieć niepewną.
+6. Serwer opiera się wyłącznie na źródłach publicznych i na wkładzie kontrybutorów.
 
 ## Praca z danymi
 
