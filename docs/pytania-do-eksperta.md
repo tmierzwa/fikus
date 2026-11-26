@@ -586,7 +586,7 @@ przypadku brzegowego, średnią.
   więc wartość nie ma drugiego dowodu.
 - Pytanie: czy limit z art. 30c ust. 2 pkt 2 ustawy o PIT na rok podatkowy 2027 wynosi 15 100 zł?
 
-## P39. Deklaracja ZUS DRA za miesiąc, w którym działalność była zawieszona tylko przez część miesiąca
+## P39. Deklaracja ZUS DRA za miesiąc, w którym działalność zawieszono w trakcie miesiąca
 
 - Wpis: `zasada.dra_obowiazek` (od 2024-11-01), krok o zawieszeniu działalności.
 - Zgłoszone: 2026-11-26.
@@ -595,9 +595,10 @@ przypadku brzegowego, średnią.
   deklaracji rozliczeniowej”. Art. 36a ust. 2: obowiązek ubezpieczeń społecznych ustaje od dnia rozpoczęcia zawieszenia
   do dnia poprzedzającego wznowienie. Art. 46 ust. 1 i art. 47 ust. 1 każą rozliczać składki i przesyłać deklarację
   za każdy miesiąc kalendarzowy.
-- Pytanie: czy za miesiąc, w którym zawieszenie zaczęło się albo skończyło w trakcie miesiąca, płatnik składek wyłącznie
-  za siebie składa deklarację rozliczeniową? Jeżeli tak, czy obejmuje ona tylko dni prowadzenia działalności i jak
-  wykazuje się w niej składkę zdrowotną za ten miesiąc?
-- Przeszukane źródła publiczne (2026-11-26), bez rozstrzygnięcia: zus.pl i biznes.gov.pl („Jak składać deklaracje
-  i raporty ZUS”, https://www.biznes.gov.pl/pl/portal/00287) mówią, że deklaracje składa się co miesiąc także wtedy,
-  gdy „zawieszasz lub wznawiasz działalność gospodarczą”, ale nie opisują miesiąca częściowego zawieszenia.
+- Materiał (portal, nie rozstrzyga): biznes.gov.pl, „Jak składać deklaracje i raporty ZUS”
+  (https://www.biznes.gov.pl/pl/portal/00287): „Jeśli wznawiasz działalność w trakcie miesiąca, deklarację ZUS DRA
+  składasz za niepełny okres rozliczeniowy i drugą - za kolejny pełny miesiąc.” Strona nie opisuje zawieszenia
+  od połowy miesiąca ani składki zdrowotnej za taki miesiąc.
+- Pytanie: czy płatnik składek wyłącznie za siebie, który zawiesza działalność od dnia innego niż pierwszy dzień miesiąca,
+  składa deklarację rozliczeniową za ten miesiąc za dni przed zawieszeniem? Jak wykazuje w niej składkę zdrowotną
+  za ten miesiąc?

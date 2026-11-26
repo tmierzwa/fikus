@@ -18,12 +18,12 @@
           - text: Od 1 stycznia 2022 r. nie obowiązuje zwolnienie osób prowadzących pozarolniczą działalność z deklaracji rozliczeniowej za kolejny miesiąc, gdy zadeklarowały najniższą podstawę wymiaru i nic się nie zmieniło w stosunku do poprzedniego miesiąca (uchylenie art. 47 ust. 2a i 2b). Zwolnienia z art. 47 ust. 2c–2f i 2fb dotyczą tylko wymienionych tam grup, między innymi duchownych i osób ubezpieczonych dobrowolnie na podstawie art. 7.
             uses: []
             basis: art. 47 ust. 2c–2f i 2fb ustawy o systemie ubezpieczeń społecznych; art. 8 pkt 4 lit. b ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105)
-          - text: Za okres zawieszenia wykonywania działalności gospodarczej nie masz obowiązku składania deklaracji rozliczeniowej, jeżeli jesteś płatnikiem składek wyłącznie za siebie. Czy i jak składasz deklarację za miesiąc, w którym działalność była zawieszona tylko przez część miesiąca, jest niewyjaśnione (otwarte pytanie do eksperta).
+          - text: Za okres zawieszenia wykonywania działalności gospodarczej nie masz obowiązku składania deklaracji rozliczeniowej, jeżeli jesteś płatnikiem składek wyłącznie za siebie. Obowiązek ubezpieczeń społecznych ustaje od dnia rozpoczęcia zawieszenia do dnia poprzedzającego wznowienie. Jak rozliczasz w deklaracji miesiąc, w którym zawieszenie zaczęło się w trakcie miesiąca, i jak wykazujesz w niej składkę zdrowotną za taki miesiąc, jest niewyjaśnione (otwarte pytanie do eksperta).
             uses: []
             basis: art. 36a ust. 2 i 3 ustawy o systemie ubezpieczeń społecznych
-          - text: W deklaracji rozliczeniowej za miesiąc, w którym upływa termin złożenia zeznania rocznego, czyli za kwiecień, wykazujesz roczne rozliczenie składki zdrowotnej, jeżeli masz obowiązek je złożyć. Taką deklarację składasz także wtedy, gdy w tym miesiącu nie wykazujesz bieżących składek, bo zawiesiłeś albo zakończyłeś działalność.
+          - text: W deklaracji rozliczeniowej za miesiąc, w którym upływa termin złożenia zeznania rocznego, czyli za kwiecień, wykazujesz roczne rozliczenie składki zdrowotnej, jeżeli masz obowiązek je złożyć. Taką deklarację składasz także wtedy, gdy w tym miesiącu nie wykazujesz bieżących składek, bo zawiesiłeś albo zakończyłeś działalność. Jeżeli opłacasz składki także za inne osoby, rozliczenie roczne wykazujesz w imiennym raporcie ZUS RCA (blok III.F).
             uses: [termin.roczne_rozliczenie_zdrowotnej, zasada.roczne_rozliczenie_zdrowotnej]
-            basis: art. 81 ust. 2k, 2ka i 2l ustawy o świadczeniach opieki zdrowotnej; art. 46 ust. 4 pkt 6aa ustawy o systemie ubezpieczeń społecznych
+            basis: art. 81 ust. 2k, 2ka i 2l ustawy o świadczeniach opieki zdrowotnej; art. 46 ust. 4 pkt 6aa ustawy o systemie ubezpieczeń społecznych; komunikat ZUS „Roczne rozliczenie składki zdrowotnej za 2025 r.”
           - text: Ta zasada nie opisuje deklaracji korygujących (art. 47 ust. 3–3b), deklaracji ZUS DRA cz. II, zawartości poszczególnych bloków deklaracji ani przekazywania dokumentów w formie elektronicznej (art. 47a).
             uses: []
             basis: art. 47 ust. 3–3b i art. 47a ustawy o systemie ubezpieczeń społecznych
@@ -32,7 +32,11 @@
         prawny na 4 października 2026 r.). Art. 47 ust. 2a i 2b uchylił z dniem 1 stycznia 2022 r. art. 8 pkt 4 lit. b
         ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105, wejście w życie według art. 89). Data początku obowiązywania to dzień wejścia w życie ustawy z 9 maja 2024 r.
         (Dz.U. 2024 poz. 863), która dodała art. 47 ust. 2fa (deklaracja i raporty za miesiąc wakacji składkowych).
-        Wcześniejszych wersji nie wprowadzono.
+        Wcześniejszych wersji nie wprowadzono. Portal biznes.gov.pl („Jak składać deklaracje i raporty ZUS”) podaje
+        tylko to, co krok o uchylonym zwolnieniu: od 2022 r. z comiesięcznych deklaracji są zwolnieni wyłącznie duchowni,
+        osoby składające dokumenty za nianie i osoby ubezpieczone dobrowolnie. Żadne źródło poza aktami i komunikatami
+        ZUS, z których każdy potwierdza tylko część kroków, nie podaje całej zasady, więc wersja nie ma drugiego
+        niezależnego dowodu.
       sources:
         - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (deklaracja za dany miesiąc)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
@@ -82,14 +86,8 @@
           url: https://www.zus.pl/-/roczne-rozliczenie-sk%C5%82adki-zdrowotnej-za-2025-r.
           quote: "Wymóg ten dotyczy także osoby, która zawiesiła lub zakończyła działalność w 2025 r., ale była wówczas objęta ubezpieczeniem zdrowotnym – choćby przez jeden dzień."
           as_of: 2026-11-26
-        - title: biznes.gov.pl, Jak składać deklaracje i raporty ZUS (comiesięczne deklaracje od 2022 r.)
-          url: https://www.biznes.gov.pl/pl/portal/00287
-          kind: control
-          quote: "Od 2022 roku z obowiązku składania ZUS DRA, ZUS RCA i ZUS RSA co miesiąc są zwolnieni wyłącznie"
-          as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (deklaracja za kwiecień po zawieszeniu lub zakończeniu działalności)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "Jeżeli zawiesiłeś działalność bądź przestałeś ją prowadzić i nie będziesz wykazywał w deklaracji za kwiecień 2023 r. bieżących składek, to mimo tego masz obowiązek złożyć dokumenty rozliczeniowe za kwiecień 2023 r. z rozliczeniem rocznym."
           as_of: 2026-11-26
       verification:
@@ -97,9 +95,10 @@
         open_issue_scope: edge_case
         open_issue: >-
           Art. 36a ust. 3 ustawy o systemie ubezpieczeń społecznych zwalnia z deklaracji rozliczeniowej „za okres
-          zawieszenia”, a art. 47 ust. 1 i art. 46 ust. 1 każą rozliczać składki za każdy miesiąc kalendarzowy. Przepisy
-          nie mówią wprost, czy za miesiąc, w którym zawieszenie zaczęło się albo skończyło w trakcie miesiąca, składa się
-          deklarację i za jaką część miesiąca. Pytanie do eksperta: docs/pytania-do-eksperta.md, P39.
+          zawieszenia”, a art. 47 ust. 1 i art. 46 ust. 1 każą rozliczać składki za każdy miesiąc kalendarzowy.
+          biznes.gov.pl opisuje deklarację za niepełny okres przy wznowieniu w trakcie miesiąca, ale nie przy zawieszeniu
+          od połowy miesiąca, i nie mówi, jak wykazać za taki miesiąc składkę zdrowotną. Pytanie do eksperta:
+          docs/pytania-do-eksperta.md, P39.
 
 - id: zasada.roczne_rozliczenie_zdrowotnej
   name: Roczne rozliczenie składki zdrowotnej (skala, podatek liniowy, ryczałt)
@@ -124,17 +123,18 @@
           - text: Nadpłata to różnica między sumą składek wpłaconych za poszczególne miesiące a roczną składką. Zwrot następuje na wniosek, który ZUS przygotowuje na Twoim profilu po złożeniu rozliczenia rocznego (RZS-R). Wniosek możesz złożyć tylko elektronicznie, w terminie miesiąca od upływu terminu złożenia zeznania rocznego; wniosek złożony po terminie pozostaje bez rozpoznania. ZUS zwraca nadpłatę, jeżeli nie masz zaległości ze składek ani z nienależnie pobranych świadczeń; zaległości pokrywa się z kwoty zwrotu. Jeżeli nie złożysz wniosku w terminie i nie masz zaległości, nadpłata zostaje rozliczona na Twoim koncie płatnika do końca roku, w którym upływa termin złożenia zeznania.
             uses: []
             basis: art. 81 ust. 2i, 2m–2qa i 2s ustawy o świadczeniach opieki zdrowotnej
-          - text: Rozliczenie składasz, jeżeli w roku, którego ono dotyczy, choćby przez jeden dzień podlegałeś ubezpieczeniu zdrowotnemu z tytułu działalności, także wtedy, gdy w tym roku zawiesiłeś albo zakończyłeś działalność. Rozliczenia nie składasz, jeżeli działalność była zawieszona przez cały ten rok. Na skali podatkowej i podatku liniowym liczy się rok składkowy, więc rozliczenie za poprzedni rok składasz także wtedy, gdy podlegałeś ubezpieczeniu tylko w styczniu roku następnego (na przykład wznowiłeś albo rozpocząłeś działalność w styczniu).
+          - text: Według ZUS rozliczenie składasz, jeżeli w roku, którego ono dotyczy, choćby przez jeden dzień podlegałeś ubezpieczeniu zdrowotnemu z tytułu działalności, także wtedy, gdy w tym roku zawiesiłeś albo zakończyłeś działalność. Rozliczenia nie składasz, jeżeli działalność była zawieszona przez cały ten rok. Na skali podatkowej i podatku liniowym liczy się rok składkowy, więc według ZUS rozliczenie za poprzedni rok składasz także wtedy, gdy podlegałeś ubezpieczeniu tylko w styczniu roku następnego (na przykład wznowiłeś albo rozpocząłeś działalność w styczniu).
             uses: []
-            basis: art. 81 ust. 2, 2ka i 2i ustawy o świadczeniach opieki zdrowotnej
+            basis: art. 81 ust. 2, 2ka i 2i ustawy o świadczeniach opieki zdrowotnej; komunikat ZUS „Roczne rozliczenie składki zdrowotnej za 2025 r.” i ZUS FAQ „Zmiany od 2022 r.”
           - text: Ta zasada nie opisuje korekty rozliczenia rocznego ani rozliczenia przy zmianie formy opodatkowania w trakcie roku (poza tym, że dane wykazujesz odrębnie dla każdej formy), a także rozliczenia osób, które nie stosują skali podatkowej, podatku liniowego ani ryczałtu od przychodów ewidencjonowanych.
             uses: []
-            basis: art. 81 ust. 2r ustawy o świadczeniach opieki zdrowotnej
+            basis: art. 81 ust. 2r i 2y ustawy o świadczeniach opieki zdrowotnej
       note: >-
         Kroki opisują brzmienie z tekstu jednolitego ustawy o świadczeniach opieki zdrowotnej (Dz.U. 2025 poz. 1461).
         Data początku obowiązywania (2025-01-01) to dzień wejścia w życie ustawy z 6 grudnia 2024 r. (Dz.U. 2024
         poz. 1915), która nadała obecne brzmienie art. 81 ust. 2 zdanie pierwsze; dla pozostałych przepisów tej daty
-        źródło nie potwierdza. Wcześniejszych wersji nie wprowadzono.
+        źródło nie potwierdza. Wcześniejszych wersji nie wprowadzono. Komunikaty i poradnik ZUS potwierdzają tylko
+        część kroków, a żadne źródło poza nimi nie podaje całej zasady, więc wersja nie ma drugiego niezależnego dowodu.
       sources:
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (rok składkowy)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
@@ -186,12 +186,10 @@
           as_of: 2026-11-26
         - title: ZUS, FAQ „Zmiany od 2022 r.” (rok składkowy w rozliczeniu rocznym na zasadach ogólnych)
           url: https://www.zus.pl/en/o-zus/o-nas/programy-transformacji-cyfrowej-zus/zmiany-od-2022-r./faq
-          kind: control
           quote: "Rozliczenie roczne za rok 2023 obejmuje okres roku składkowego, który trwa od 1 lutego 2023 do 31 stycznia 2024. Obowiązek jego złożenia dotyczy zatem tych przedsiębiorców, którzy podlegali ubezpieczeniu zdrowotnemu w tym roku składkowym choćby przez 1 dzień."
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (rozliczenie roczne)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "Kwotę dopłaty składek wykazujesz w dokumentach rozliczeniowych, które składasz za kwiecień następnego roku"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26}
@@ -221,7 +219,7 @@
         - title: Dz.U. 2026 poz. 518 (numer pozycji w Dzienniku Ustaw)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/518/text.pdf
           confirms: [legal_act]
-          quote: "Warszawa, dnia 15 kwietnia 2026 r. Poz. 518"
+          quote: "DZIENNIK USTAW RZECZYPOSPOLITEJ POLSKIEJ Warszawa, dnia 15 kwietnia 2026 r. Poz. 518"
         - title: Dz.U. 2026 poz. 518 (wejście w życie wzoru 1 maja 2026 r.)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/518/text.pdf
           article: § 8
@@ -238,7 +236,7 @@
         - title: ZUS, Od 1 maja 2026 r. obowiązują nowe wzory formularzy ZUS DRA i ZUS RCA (data)
           url: https://www.zus.pl/-/od-1-maja-2026-r.-obowi%C4%85zuj%C4%85-nowe-wzory-formularzy-zus-dra-i-zus-rca
           confirms: [form, period]
-          quote: "Począwszy od rozliczenia za kwiecień 2026 r., tj. od 1 maja 2026 r. obowiązują nowe wzory formularzy"
+          quote: "na nowych wzorach formularzy ZUS DRA i/ lub ZUS RCA. Począwszy od rozliczenia za kwiecień 2026 r., tj. od 1 maja 2026 r. obowiązują nowe wzory formularzy"
           as_of: 2026-11-26
         - title: ZUS, Od 1 maja 2026 r. obowiązują nowe wzory formularzy ZUS DRA i ZUS RCA (podstawa prawna)
           url: https://www.zus.pl/-/od-1-maja-2026-r.-obowi%C4%85zuj%C4%85-nowe-wzory-formularzy-zus-dra-i-zus-rca
