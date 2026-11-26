@@ -271,6 +271,11 @@
           url: https://podatki.gov.pl/media/bngboylg/specyfikacja-interfejs%C3%B3w-us%C5%82ug-jpk-wersja-560.pdf
           quote: "JPK_PKPIR(3) PODATKOWA KSIĘGA PRZYCHODÓW I ROZCHODÓW (W FORMIE JEDNOLITEGO PLIKU KONTROLNEGO (3)) (schemat dostępny produkcyjnie od 01.01.2026)"
           as_of: 2026-11-26
+        - title: gov.pl (KAS), Struktury JPK w podatkach dochodowych (data obowiązywania struktury)
+          url: https://www.gov.pl/web/kas/struktury-jpk-w-podatkach-dochodowych
+          quote: "Struktury JPK_PKPIR, JPK_EWP oraz JPK_ST będą obowiązywały od 1 stycznia 2026 r."
+          article: art. 193a § 2 Ordynacji podatkowej, art. 24a ust. 1e ustawy o PIT
+          as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: zasada.jpk_pd_pkpir
@@ -349,9 +354,9 @@
     - valid_from: 2026-01-01
       value:
         steps:
-          - text: Podatnik na ryczałcie prowadzący ewidencję lub wykaz środków trwałych oraz wartości niematerialnych i prawnych prowadzi je przy użyciu programów komputerowych i po zakończeniu roku podatkowego przesyła je naczelnikowi urzędu skarbowego w postaci elektronicznej odpowiadającej strukturze logicznej, do dnia upływu terminu złożenia zeznania rocznego. Czy obowiązek obejmuje też ewidencję przychodów (JPK_EWP), jest niewyjaśnione (otwarte pytanie do eksperta).
+          - text: Podatnik na ryczałcie prowadzący ewidencję przychodów lub wykaz środków trwałych oraz wartości niematerialnych i prawnych prowadzi tę ewidencję i wykaz przy użyciu programów komputerowych i po zakończeniu roku podatkowego przesyła je naczelnikowi urzędu skarbowego w postaci elektronicznej odpowiadającej strukturze logicznej, do dnia upływu terminu złożenia zeznania rocznego. Ustawa nazywa ewidencję przychodów „ewidencją” (art. 15 ust. 1). Ewidencję przychodów przesyła się w strukturze JPK_EWP.
             uses: [termin.zeznanie_ryczalt]
-            basis: art. 15 ust. 12 ustawy o zryczałtowanym podatku dochodowym; art. 193a § 2 Ordynacji podatkowej
+            basis: art. 15 ust. 1 i 12 ustawy o zryczałtowanym podatku dochodowym; art. 193a § 2 Ordynacji podatkowej
           - text: Po raz pierwszy przesyła się je za rok podatkowy rozpoczynający się po 31 grudnia 2025 r., jeżeli podatnik jest obowiązany przesyłać ewidencję VAT za każdy miesiąc łącznie z deklaracją (rozliczenie miesięczne VAT).
             uses: [schemat.jpk_v7m]
             basis: art. 66 ust. 1 pkt 1 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) w brzmieniu nadanym ustawami Dz.U. 2022 poz. 1265 i Dz.U. 2023 poz. 1059; art. 109 ust. 3b ustawy o VAT
@@ -363,11 +368,11 @@
         Art. 66 ust. 1 pkt 1 wszedł w życie 1 stycznia 2026 r., a pkt 2 wchodzi 1 stycznia 2027 r. Ustawa
         z 29 października 2021 r. nie ma tekstu jednolitego, więc brzmienie art. 66 wynika z ustaw zmieniających.
         Inne zmiany tej ustawy wymienione w obwieszczeniu (Dz.U. 2021 poz. 2349 i 2427, Dz.U. 2022 poz. 1301, 1719 i 2180, Dz.U. 2023 poz. 1414, Dz.U. 2024 poz. 1593 i 1685, Dz.U. 2025 poz. 222) ani ustawy Dz.U. 2021 poz. 2469 (zmienia tylko art. 15 pkt 8) i Dz.U. 2023 poz. 1598 (zmienia tylko art. 88 ust. 1) nie zmieniają art. 66 ust. 1 ani art. 89 pkt 7 i 8; brzmienie art. 89 pkt 7 i 8 podaje obwieszczenie do tekstu jednolitego Dz.U. 2025 poz. 843.
-        Broszura MF o strukturze JPK_EWP(4) wskazuje art. 15 ust. 12 jako podstawę obowiązku przesyłania
-        ewidencji przychodów, a strona MF o JPK_PD wymienia JPK_EWP wśród struktur, które JPK_PD obejmie, i mówi
-        o obligatoryjnych plikach JPK_PD. Tekst art. 15 ust. 12 wymienia jednak ewidencję lub wykaz środków
-        trwałych oraz wartości niematerialnych i prawnych. Broszurę cytujemy tylko dla pierwszego roku. Dlatego ta wersja nie przesądza, czy przesyła się JPK_EWP. Przepis nie mówi też,
-        na który dzień ocenia się sposób rozliczania VAT (otwarte pytanie).
+        Poprawka: pierwszy krok obejmuje ewidencję przychodów (wcześniej zostawiał to jako otwarte pytanie).
+        Art. 15 ust. 1 wprowadza dla ewidencji przychodów nazwę „ewidencja”, której używa ust. 12, a broszura MF
+        o strukturze JPK_EWP(4) podaje wprost, że ryczałtowcy prowadzący ewidencję przychodów przesyłają plik
+        JPK_EWP, i wskazuje art. 15 ust. 12 jako podstawę. Przepis nie mówi, na który dzień ocenia się sposób
+        rozliczania VAT (otwarte pytanie).
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
@@ -393,16 +398,25 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
           quote: "są obowiązani przesyłać, na zasadach określonych w art. 99 ust. 11c, za każdy miesiąc do urzędu skarbowego"
           article: art. 109 ust. 3b
-        - title: podatki.gov.pl (MF), Broszura informacyjna dotycząca struktury JPK_EWP(4) (pierwszy rok; dotyczy ewidencji przychodów, sporne)
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (nazwa „ewidencja” dla ewidencji przychodów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "odrębnie za każdy rok podatkowy, ewidencję przychodów, zwaną dalej „ewidencją”"
+          article: art. 15 ust. 1
+        - title: podatki.gov.pl (MF), Broszura informacyjna dotycząca struktury JPK_EWP(4) (pierwszy rok)
           url: https://podatki.gov.pl/media/0qmfysqh/broszura_informacyjna_dot_jpk_ewp-4.pdf
           quote: "31 grudnia 2025 r. - w przypadku podmiotów, które są obowiązane przesyłać ewidencję, o której mowa w art. 109 ust. 3 ustawy VAT, zgodnie z art. 109 ust. 3b tej ustawy[4], tj. podmiotów zobowiązanych przesyłać miesięczne pliki JPK_V7M;"
           as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Broszura informacyjna dotycząca struktury JPK_EWP(4) (obowiązek przesyłania ewidencji przychodów przez podatników na ryczałcie, podstawa art. 15 ust. 12)
+          url: https://podatki.gov.pl/media/0qmfysqh/broszura_informacyjna_dot_jpk_ewp-4.pdf
+          quote: "osoby fizyczne i przedsiębiorstwa w spadku osiągające przychody z pozarolniczej działalności gospodarczej oraz spółki, których wspólnicy są opodatkowani w formie ryczałtu od przychodów ewidencjonowanych – ewidencji przychodów[1]. Wskazane wyżej podmioty będą zobowiązane przesyłać plik XML zgodny ze strukturą JPK_EWP (zwany dalej „plikiem JPK_EWP”) właściwemu naczelnikowi urzędu skarbowego[2]"
+          as_of: 2026-11-26
+        - title: gov.pl (KAS), Struktury JPK w podatkach dochodowych (data obowiązywania struktur dla pozostałych podatników na ryczałcie, krok 3; nie podaje terminu przesłania ani zakresu z kroku 1, więc nie jest dowodem całej zasady)
+          url: https://www.gov.pl/web/kas/struktury-jpk-w-podatkach-dochodowych
+          quote: "1 stycznia 2027 r. w przypadku pozostałych podatników rozliczających się na podstawie ustawy z dnia 26 lipca 1991 r. o podatku dochodowym od osób fizycznych oraz ustawy z dnia 20 listopada 1998 r. o zryczałtowanym podatku dochodowym od niektórych przychodów osiąganych przez osoby fizyczne, w tym podatnicy zobowiązani do składania pliku JPK_V7K"
+          as_of: 2026-11-26
       verification:
         checked_at: 2026-11-26
-        agent_check: 2026-11-26
         open_issue: >-
-          P18: czy art. 15 ust. 12 ustawy o ryczałcie obejmuje ewidencję przychodów (JPK_EWP), jak podają broszura MF
-          o JPK_EWP(4) i strona MF o JPK_PD (JPK_EWP wśród struktur JPK_PD, obligatoryjne pliki JPK_PD), czy tylko ewidencję lub wykaz środków trwałych oraz wartości niematerialnych i prawnych (JPK_ST)?
           P19: na który dzień ocenia się obowiązek przesyłania ewidencji VAT za każdy miesiąc (zmiana rozliczenia
           z kwartalnego na miesięczne w 2026 r., rejestracja jako czynny podatnik VAT w trakcie roku)?
           Zob. docs/pytania-do-eksperta.md.
