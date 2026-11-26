@@ -271,6 +271,9 @@
           - text: Składka za miesiąc to podstawa pomnożona przez stopę składki przy podatku liniowym, nie mniej jednak niż minimalna składka zdrowotna.
             uses: [zdrowotna.liniowy.stawka, zdrowotna.minimum]
             basis: art. 79a ust. 1 pkt 1 ustawy o świadczeniach opieki zdrowotnej w zw. z art. 4 pkt 1 lit. a ustawy z 6 grudnia 2024 r. (Dz.U. 2024 poz. 1915)
+          - text: Za miesiąc, w którym spełniasz warunki zwolnienia z art. 82 ust. 8–9a, składki nie opłacasz.
+            uses: []
+            basis: art. 82 ust. 8–9a ustawy o świadczeniach opieki zdrowotnej
           - text: Po końcu roku ustal roczną podstawę. Jest nią dochód z działalności za rok kalendarzowy, czyli przychody pomniejszone o koszty ich uzyskania w rozumieniu ustawy o PIT (z uwzględnieniem art. 14c, art. 22 ust. 4a i 4b oraz art. 24 ust. 1 i ust. 2 zdanie pierwsze tej ustawy i z wyłączeniami z art. 81 ust. 2zd), pomniejszony o składki emerytalną, rentową, chorobową i wypadkową opłacone w tym roku, jeżeli nie zostały zaliczone do kosztów; składek opłaconych w miesiącu zwolnienia ze składki nie odejmuj. Przychody z art. 14 ust. 2 pkt 1 i 19 ustawy o PIT i koszty z art. 23 ust. 1 pkt 1 tej ustawy możesz w rocznej podstawie uwzględnić; wtedy wykazujesz je w dokumencie rozliczeniowym z rozliczeniem rocznym razem z oświadczeniem. Roczna podstawa dotyczy roku składkowego, który zaczyna się 1 lutego roku, za który ustalasz dochód, i kończy 31 stycznia roku następnego.
             uses: []
             basis: art. 81 ust. 2, 2zd, 2ze i 2zf ustawy o świadczeniach opieki zdrowotnej
@@ -386,6 +389,9 @@
           - text: Składka za miesiąc to podstawa pomnożona przez stopę składki przy podatku liniowym, nie mniej jednak niż minimalna składka zdrowotna.
             uses: [zdrowotna.liniowy.stawka, zdrowotna.minimum]
             basis: art. 79a ust. 1 pkt 1 ustawy o świadczeniach opieki zdrowotnej
+          - text: Za miesiąc, w którym spełniasz warunki zwolnienia z art. 82 ust. 8–9a, składki nie opłacasz.
+            uses: []
+            basis: art. 82 ust. 8–9a ustawy o świadczeniach opieki zdrowotnej
           - text: Po końcu roku ustal roczną podstawę. Jest nią dochód z działalności za rok kalendarzowy, czyli przychody pomniejszone o koszty ich uzyskania w rozumieniu ustawy o PIT (z uwzględnieniem art. 14c, art. 22 ust. 4a i 4b oraz art. 24 ust. 1 i ust. 2 zdanie pierwsze tej ustawy i z wyłączeniami z art. 81 ust. 2zd), pomniejszony o składki emerytalną, rentową, chorobową i wypadkową opłacone w tym roku, jeżeli nie zostały zaliczone do kosztów; składek opłaconych w miesiącu zwolnienia ze składki nie odejmuj. Przychody z art. 14 ust. 2 pkt 1 i 19 ustawy o PIT i koszty z art. 23 ust. 1 pkt 1 tej ustawy możesz w rocznej podstawie uwzględnić; wtedy wykazujesz je w dokumencie rozliczeniowym z rozliczeniem rocznym razem z oświadczeniem. Roczna podstawa dotyczy roku składkowego, który zaczyna się 1 lutego roku, za który ustalasz dochód, i kończy 31 stycznia roku następnego.
             uses: []
             basis: art. 81 ust. 2, 2zd, 2ze i 2zf ustawy o świadczeniach opieki zdrowotnej
