@@ -113,9 +113,9 @@
           - text: Podatek to podstawa pomnożona przez stawkę podatku liniowego. Podstawę opodatkowania i kwotę podatku zaokrąglij do pełnych złotych; końcówki poniżej 50 groszy pomiń, a od 50 groszy podwyższ do pełnego złotego. Ta zasada nie opisuje odliczeń od podstawy obliczenia podatku z art. 26e, 26ga, 26gb, 26h–26he, 26i, 52jb, 52n i 52x ustawy o PIT ani odliczenia podatku zapłaconego za granicą z art. 30c ust. 4.
             uses: [podatek.liniowy.stawka]
             basis: art. 30c ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 63 § 1 Ordynacji podatkowej
-          - text: Przy zaliczkach miesięcznych zaliczka za miesiąc to różnica między podatkiem od dochodu osiągniętego od początku roku, obliczonym według kroków powyżej, a sumą należnych zaliczek za poprzednie miesiące. Zamiast tego mały podatnik i podatnik rozpoczynający działalność mogą wpłacać zaliczki kwartalne (art. 44 ust. 3h i 3i), a podatnik może wybrać zaliczki uproszczone (art. 44 ust. 6b–6e i 6h, z obniżeniem o część składki zdrowotnej według art. 44 ust. 6j); ta zasada tych sposobów nie opisuje.
+          - text: Przy zaliczkach miesięcznych zaliczka za miesiąc to różnica między podatkiem od dochodu osiągniętego od początku roku, obliczonym według kroków powyżej, a sumą należnych zaliczek za poprzednie miesiące. Zaliczki można nie wpłacać, jeżeli podatek od dochodu od początku roku pomniejszony o sumę wpłaconych zaliczek nie przekracza 1000 zł. Gdy ta kwota przekroczy 1000 zł, wpłać różnicę między podatkiem od dochodu od początku roku a sumą zaliczek wpłaconych od początku roku. Zamiast tego mały podatnik i podatnik rozpoczynający działalność mogą wpłacać zaliczki kwartalne (art. 44 ust. 3h i 3i), a podatnik może wybrać zaliczki uproszczone (art. 44 ust. 6b–6e i 6h, z obniżeniem o część składki zdrowotnej według art. 44 ust. 6j); ta zasada tych sposobów nie opisuje.
             uses: [podatek.liniowy.stawka, termin.zaliczka_liniowy]
-            basis: art. 44 ust. 3f ustawy o podatku dochodowym od osób fizycznych
+            basis: art. 44 ust. 3f i 15 ustawy o podatku dochodowym od osób fizycznych
       note: >-
         Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku obowiązywania (2026-01-01)
         nie jest potwierdzona źródłem. Wcześniejszych wersji nie wprowadzono.
@@ -132,6 +132,10 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
           article: art. 44 ust. 3f
           quote: "wpłacać na rachunek urzędu skarbowego zaliczki miesięczne w wysokości różnicy między podatkiem należnym od dochodu osiągniętego od początku roku, obliczonym zgodnie z art. 30c"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (zaliczka do 1000 zł)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 15
+          quote: "mogą nie wpłacać zaliczki obliczonej według zasad określonych w ust. 3 i ust. 3f–3h"
         - title: Dz.U. 2026 poz. 622, tekst jednolity Ordynacji podatkowej (zaokrąglenia)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/622/text.pdf
           article: art. 63 § 1
