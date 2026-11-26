@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Korzystając z danych Fikusa, podaj źródło: „Fikus, https://github.com/tmierzwa/fikus”."
+title: "Fikus: parametry przepisów dla JDG w Polsce"
+type: software
+authors:
+  - name: "Autorzy projektu Fikus"
+version: 0.1.0
+date-released: 2026-11-26
+repository-code: "https://github.com/tmierzwa/fikus"
+license:
+  - Apache-2.0
+  - CC-BY-4.0
+keywords:
+  - mcp
+  - jdg
+  - podatki
+  - zus

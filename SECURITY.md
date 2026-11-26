@@ -20,3 +20,9 @@ w repozytorium, więc nowe adresy w PR warto obejrzeć przed uruchomieniem skryp
 
 Sprawy poufne, w tym naruszenia kodeksu postępowania, zgłaszaj prywatnie przez „Report a vulnerability”
 w zakładce Security repozytorium. W tytule napisz „Kodeks postępowania”. Zgłoszenie widzą tylko opiekunowie.
+
+## Wersje i czas odpowiedzi
+
+Poprawki bezpieczeństwa wydajemy tylko dla najnowszej wersji z gałęzi `main`. Na zgłoszenie
+luki odpowiadamy w ciągu 7 dni. Po wydaniu poprawki opisujemy lukę w publicznym komunikacie
+(GitHub Security Advisory) i podziękujemy zgłaszającemu, jeśli się na to zgodzi.
