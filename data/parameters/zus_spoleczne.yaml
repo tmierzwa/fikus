@@ -81,7 +81,6 @@
     - valid_from: 2027-01-01
       valid_to: 2027-12-31
       value: 300990
-      note: Komunikat ZUS o wysokości składek w 2027 r. zwykle ukazuje się pod koniec grudnia; po publikacji dopisz go jako źródło niezależne.
       sources:
         - title: M.P. 2026 poz. 1098, obwieszczenie MRPiPS z 3 listopada 2026 r.
           url: https://api.sejm.gov.pl/eli/acts/MP/2026/1098/text.pdf
@@ -177,9 +176,15 @@
           independent: true
           quote: "podlegasz wpisowi do rejestru REGON i zgłaszasz do ubezpieczenia wypadkowego nie więcej niż 9 ubezpieczonych, • nie podlegasz wpisowi do rejestru REGON (bez znaczenia jest w tym przypadku, ilu ubezpieczonych zgłaszasz do ubezpieczenia wypadkowego), obowiązuje Cię stopa zryczałtowana, która od 1 kwietnia 2018 r. wynosi 1,67%"
           as_of: 2026-01-01
+        - title: biznes.gov.pl, Jakie składki na ubezpieczenia społeczne płaci przedsiębiorca do ZUS, aktualizacja 11.02.2026
+          url: https://www.biznes.gov.pl/pl/portal/00274
+          kind: control
+          quote: "Składka wypadkowa od 1.04.2024 (1,67%)"
+          as_of: 2026-02-11
       verification:
         checked_at: 2026-11-26
-        open_issue: "Żaden cytat ze źródła pierwotnego nie podaje 1,67 wprost: wartość wynika z połączenia art. 28 ust. 1, najwyższej stopy 3,33 z tabeli w załączniku nr 2 i § 6 ust. 2; dosłownie podają ją tylko materiały ZUS. Potrzebny drugi dowód poza materiałem ZUS albo cytat, który sam daje najwyższą stopę."
+        agent_check: 2026-11-26
+        open_issue: "Żaden cytat ze źródła pierwotnego nie podaje 1,67 wprost: wartość wynika z połączenia art. 28 ust. 1, najwyższej stopy 3,33 z tabeli w załączniku nr 2 i § 6 ust. 2. Poza materiałami ZUS podaje ją biznes.gov.pl (stopa od 1 kwietnia 2024 r. w stanie na luty 2026 r.), ale bez wskazania roku składkowego i z drugą datą początku stopy (1 kwietnia 2021 r.) na tej samej stronie. Potrzebny cytat, który sam daje najwyższą stopę, albo ocena eksperta (P4)."
     - valid_from: 2026-04-01
       valid_to: 2027-03-31
       value: 1.67
@@ -203,8 +208,14 @@
           independent: true
           quote: "Dla płatników zgłaszających do ubezpieczenia wypadkowego do 9 ubezpieczonych stopa procentowa składki na ubezpieczenie wypadkowe wynosi 50% najwyższej stopy procentowej ustalonej na dany rok składkowy dla grup działalności, tj. 1,67%"
           as_of: 2026-11-26
+        - title: Starostwo Powiatowe w Hajnówce (samorzad.gov.pl), przedruk wypowiedzi regionalnej rzeczniczki prasowej ZUS z 1 kwietnia 2026 r., rok składkowy 2026/2027 (materiał ZUS)
+          url: https://samorzad.gov.pl/web/powiat-hajnowski/stopy-procentowe
+          kind: control
+          quote: "płatnicy składek, którzy zgłaszają do ubezpieczenia wypadkowego nie więcej niż 9 ubezpieczonych oraz płatnicy niewpisani do rejestru REGON, w dalszym ciągu będą naliczać składkę na ubezpieczenie wypadkowe w wysokości 1,67%, czyli 50% najwyższej stopy procentowej"
+          as_of: 2026-04-01
       verification:
         checked_at: 2026-11-26
+        agent_check: 2026-11-26
         open_issue: "Żaden cytat ze źródła pierwotnego nie podaje 1,67 wprost: wartość wynika z połączenia art. 28 ust. 1, najwyższej stopy 3,33 z tabeli w załączniku nr 2 i § 6 ust. 2; dosłownie podają ją tylko materiały ZUS. Potrzebny drugi dowód poza materiałem ZUS albo cytat, który sam daje najwyższą stopę."
 
 - id: zus.stawka.fundusz_pracy
@@ -220,7 +231,12 @@
           url: https://eli.gov.pl/eli/DU/2026/62/ogl
           quote: "obowiązkowej składki na Fundusz Pracy, która wynosi 1,0 % podstawy wymiaru składek"
           article: art. 25 (na podstawie art. 260 ustawy o rynku pracy i służbach zatrudnienia)
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+        - title: Wortal Publicznych Służb Zatrudnienia (MRPiPS), Stawki, kwoty, wskaźniki obowiązujące od 1 września 2026 r.
+          url: https://psz.praca.gov.pl/rynek-pracy/stawki-kwoty-wskazniki
+          kind: control
+          quote: "Składka na Fundusz Pracy (od 1 stycznia 2021 roku). 1,00%"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: zus.stawka.fundusz_solidarnosciowy
   name: Stopa składki na Fundusz Solidarnościowy
@@ -235,7 +251,12 @@
           url: https://eli.gov.pl/eli/DU/2026/62/ogl
           quote: "obowiązkowej składki na Fundusz Solidarnościowy, która wynosi 1,45 % podstawy wymiaru"
           article: art. 26 (na podstawie art. 4 ust. 2 ustawy o Funduszu Solidarnościowym)
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+        - title: Wortal Publicznych Służb Zatrudnienia (MRPiPS), Stawki, kwoty, wskaźniki obowiązujące od 1 września 2026 r.
+          url: https://psz.praca.gov.pl/rynek-pracy/stawki-kwoty-wskazniki
+          kind: control
+          quote: "Składka na Fundusz Solidarnościowy (od 1 stycznia 2021 roku) 1,45%"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: wynagrodzenie.minimalne
   name: Minimalne wynagrodzenie za pracę
@@ -257,6 +278,23 @@
           independent: true
           quote: "minimalne wynagrodzenie za pracę wynosi 4.806 zł"
           as_of: 2025-12-30
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+    - valid_from: 2027-01-01
+      valid_to: 2027-12-31
+      value: 4950
+      note: >-
+        Kwota obowiązująca w całym 2027 r. Rozporządzenie wchodzi w życie 1 stycznia 2027 r.
+      sources:
+        - title: Dz.U. 2026 poz. 1213, rozporządzenie Rady Ministrów z 14 września 2026 r. w sprawie wysokości minimalnego wynagrodzenia za pracę oraz wysokości minimalnej stawki godzinowej w 2027 r.
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1213/text.pdf
+          article: § 1
+          quote: "Od dnia 1 stycznia 2027 r. ustala się minimalne wynagrodzenie za pracę w wysokości 4950 zł."
+          as_of: 2026-09-15
+        - title: gov.pl, Ministerstwo Rodziny, Pracy i Polityki Społecznej, Równe traktowanie w zatrudnieniu
+          url: https://www.gov.pl/web/rodzina/rowne-traktowanie-w-zatrudnieniu
+          kind: control
+          quote: "od 1 stycznia 2027 r. - 4950 zł"
+          as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: zus.podstawa_preferencyjna

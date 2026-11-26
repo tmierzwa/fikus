@@ -44,7 +44,7 @@
   note: "ustawa o PIT (art. 12): dodaje art. 52zu; nie dotyka art. 44"
 - act: DU/2026/1371
   checked_at: 2026-11-26
-  note: "ustawa o PIT: zmienia m.in. art. 14, 22p, 23q (koszty, amortyzacja); nie dotyka art. 44"
+  note: "ustawa o PIT (art. 1): zmienia art. 14 ust. 2h i 2i, art. 22p, art. 23q pkt 4 i art. 23zf; nie dotyka art. 44"
 - act: DU/2026/825
   checked_at: 2026-11-26
   note: "Ordynacja podatkowa: dodaje § 6 i 7 w art. 14i, zmienia art. 14j § 3; nie dotyka art. 12"
@@ -176,3 +176,7 @@
   for: DU/2023/1059
   checked_at: 2026-11-26
   note: "ustawa o rynku finansowym: zmienia art. 4 pkt 12, art. 5 pkt 2, art. 7 (dodaje pkt 4a), art. 29 i art. 35 pkt 5 ustawy Dz.U. 2023 poz. 1059; nie dotyka art. 13 (art. 66 i 89 ustawy Dz.U. 2021 poz. 2105)"
+- act: DU/2026/1542
+  for: DU/2026/1484
+  checked_at: 2026-11-26
+  note: "Prawo przedsiębiorców (art. 19): dodaje art. 47 ust. 1c (analiza prawdopodobieństwa naruszenia prawa przy kontroli warunków decyzji o wsparciu); nie dotyka art. 18"
