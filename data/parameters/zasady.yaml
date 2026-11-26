@@ -583,3 +583,397 @@
           quote: "Nie musisz opłacać składki na FP, jeśli podstawa wymiaru przeliczona na okres miesiąca jest niższa od minimalnego wynagrodzenia za pracę"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: zasada.liniowy_zdrowotna
+  name: Składka zdrowotna przy podatku liniowym
+  kind: rule
+  applies_to: {tax_form: [liniowy]}
+  versions:
+    - valid_from: 2025-02-01
+      valid_to: 2026-01-31
+      value:
+        steps:
+          - text: Składka jest miesięczna i niepodzielna, z zastrzeżeniem art. 79a oraz rocznej podstawy i rocznego rozliczenia opisanych w dalszych krokach (art. 81 ust. 2). Jeżeli prowadzisz więcej niż jedną pozarolniczą działalność, składkę opłacasz od sumy dochodów z nich, a tak ustalona podstawa nie może być niższa niż minimalna roczna podstawa z kroku o niej.
+            uses: []
+            basis: art. 79 ust. 2 i art. 82 ust. 2a ustawy o świadczeniach opieki zdrowotnej
+          - text: Miesięczną podstawą jest dochód z działalności z miesiąca poprzedzającego miesiąc, za który płacisz składkę. Za pierwszy miesiąc podlegania ubezpieczeniu w roku składkowym to przychody pomniejszone o koszty ich uzyskania w rozumieniu ustawy o PIT. Za kolejne miesiące to przychody pomniejszone o koszty od początku roku, pomniejszone o sumę dochodów ustalonych za miesiące poprzedzające.
+            uses: []
+            basis: art. 81 ust. 2c pkt 1, 3 i 4 ustawy o świadczeniach opieki zdrowotnej
+          - text: Dochód za pierwszy miesiąc pomniejsz o składki emerytalną, rentową, chorobową i wypadkową opłacone w tym miesiącu, a dochód za kolejne miesiące o różnicę między tymi składkami zapłaconymi od początku roku a składkami odliczonymi w poprzednich miesiącach. Nie odejmuj składek zaliczonych do kosztów uzyskania przychodów ani składek opłaconych w miesiącu, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a).
+            uses: []
+            basis: art. 81 ust. 2c pkt 2 i 4 oraz ust. 2zf ustawy o świadczeniach opieki zdrowotnej
+          - text: Przy ustalaniu dochodu stosuj art. 24 ust. 1 i ust. 2 zdanie pierwsze oraz uwzględnij art. 14c i art. 22 ust. 4a i 4b ustawy o PIT; przy podatkowej księdze przychodów i rozchodów ustal dochód z uwzględnieniem art. 44 ust. 2 zdanie drugie tej ustawy.
+            uses: []
+            basis: art. 81 ust. 2c pkt 5 ustawy o świadczeniach opieki zdrowotnej
+          - text: Do przychodów i kosztów nie wliczaj tych, które wyłącza art. 81 ust. 2zd, czyli przychodów i kosztów z okresu zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), przychodów niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63a, 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, i kosztów, o których mowa w art. 23 ust. 1 pkt 1 tej ustawy, oraz przychodów i kosztów z miesiąca, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a). Wyjątek dla rocznej podstawy opisuje krok o rocznej podstawie.
+            uses: []
+            basis: art. 81 ust. 2zd ustawy o świadczeniach opieki zdrowotnej
+          - text: Jeżeli tak ustalona miesięczna podstawa jest niższa od 75% minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego, podstawą za ten miesiąc jest ta kwota.
+            uses: []
+            basis: art. 81 ust. 2d ustawy o świadczeniach opieki zdrowotnej w zw. z art. 4 pkt 2 lit. a ustawy z 6 grudnia 2024 r. (Dz.U. 2024 poz. 1915)
+          - text: Składka za miesiąc to podstawa pomnożona przez stopę składki przy podatku liniowym, nie mniej jednak niż minimalna składka zdrowotna.
+            uses: [zdrowotna.liniowy.stawka, zdrowotna.minimum]
+            basis: art. 79a ust. 1 pkt 1 ustawy o świadczeniach opieki zdrowotnej w zw. z art. 4 pkt 1 lit. a ustawy z 6 grudnia 2024 r. (Dz.U. 2024 poz. 1915)
+          - text: Za miesiąc, w którym spełniasz warunki zwolnienia z art. 82 ust. 8–9a, składki nie opłacasz.
+            uses: []
+            basis: art. 82 ust. 8–9a ustawy o świadczeniach opieki zdrowotnej
+          - text: Po końcu roku ustal roczną podstawę. Jest nią dochód z działalności za rok kalendarzowy, czyli przychody pomniejszone o koszty ich uzyskania w rozumieniu ustawy o PIT (z uwzględnieniem art. 14c, art. 22 ust. 4a i 4b oraz art. 24 ust. 1 i ust. 2 zdanie pierwsze tej ustawy i z wyłączeniami z art. 81 ust. 2zd), pomniejszony o składki emerytalną, rentową, chorobową i wypadkową opłacone w tym roku, jeżeli nie zostały zaliczone do kosztów; składek opłaconych w miesiącu zwolnienia ze składki nie odejmuj. Przychody z art. 14 ust. 2 pkt 1 i 19 ustawy o PIT i koszty z art. 23 ust. 1 pkt 1 tej ustawy możesz w rocznej podstawie uwzględnić; wtedy wykazujesz je w dokumencie rozliczeniowym z rozliczeniem rocznym razem z oświadczeniem. Roczna podstawa dotyczy roku składkowego, który zaczyna się 1 lutego roku, za który ustalasz dochód, i kończy 31 stycznia roku następnego.
+            uses: []
+            basis: art. 81 ust. 2, 2zd, 2ze i 2zf ustawy o świadczeniach opieki zdrowotnej
+          - text: Jeżeli roczna podstawa jest niższa od iloczynu liczby miesięcy podlegania ubezpieczeniu zdrowotnemu w roku, za który ustalono dochód (bez miesięcy, w których przysługiwało zwolnienie ze składki), i 75% minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego, podstawą jest ten iloczyn.
+            uses: []
+            basis: art. 81 ust. 2b i 2ba ustawy o świadczeniach opieki zdrowotnej w zw. z art. 4 pkt 1 lit. c ustawy z 6 grudnia 2024 r. (Dz.U. 2024 poz. 1915)
+          - text: Roczna składka to roczna podstawa pomnożona przez stopę składki przy podatku liniowym, nie mniej jednak niż 9% iloczynu liczby miesięcy w roku składkowym i 75% minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego. Którą liczbę miesięcy przyjąć, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [zdrowotna.liniowy.stawka]
+            basis: art. 79a ust. 1 pkt 2 ustawy o świadczeniach opieki zdrowotnej w zw. z art. 4 pkt 1 lit. b ustawy z 6 grudnia 2024 r. (Dz.U. 2024 poz. 1915)
+          - text: Porównaj roczną składkę ze składkami za poszczególne miesiące roku składkowego. Nadpłatę ustalasz względem sumy składek wpłaconych (art. 81 ust. 2i), a niedopłatę względem sumy składek wynikającej ze złożonych dokumentów (art. 81 ust. 2j). Niedopłatę wykaż w dokumencie rozliczeniowym za miesiąc, w którym upływa termin złożenia zeznania rocznego, i dopłać w terminie płatności składek za ten miesiąc. Nadpłata jest zwracana na wniosek złożony w terminie miesiąca od upływu terminu złożenia zeznania; pozostałe warunki zwrotu określają art. 81 ust. 2m–2qa.
+            uses: [termin.roczne_rozliczenie_zdrowotnej]
+            basis: art. 81 ust. 2i–2qa ustawy o świadczeniach opieki zdrowotnej
+      note: >-
+        Rok składkowy od 1 lutego 2025 r. do 31 stycznia 2026 r. Art. 81 ust. 2 zdanie pierwsze, ust. 2c pkt 5 i ust. 2zd pkt 3 w brzmieniu
+        z ustawy z 6 grudnia 2024 r. (Dz.U. 2024 poz. 1915) oraz ust. 2ze stosuje się do składek należnych od 1 lutego 2025 r. (art. 2
+        tej ustawy); ust. 2zf obowiązuje od 1 stycznia 2025 r. W tym roku składkowym minimalne podstawy, także roczne, liczy się
+        od 75% minimalnego wynagrodzenia (art. 4 tej ustawy). Okres wersji to rok składkowy, którego dotyczą składki i ich
+        rozliczenie roczne, a nie dzień obliczenia: rozliczenie roczne tego roku składkowego, składane w 2026 r., liczy się
+        według tej wersji.
+        Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (art. 2 ustawy Dz.U. 2024 poz. 1915, stosowanie od lutego 2025 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 2 ustawy z 6 grudnia 2024 r. (obwieszczenie, ust. 2 pkt 5)
+          quote: "stosuje się do rozliczenia składek na ubezpieczenie zdrowotne należnych za okres od dnia 1 lutego 2025 r."
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (art. 4 ustawy Dz.U. 2024 poz. 1915, 75% w roku składkowym 2025/2026)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 4 ustawy z 6 grudnia 2024 r. (obwieszczenie, ust. 2 pkt 5)
+          quote: "za rok składkowy obejmujący okres od dnia 1 lutego 2025 r. do dnia 31 stycznia 2026 r."
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (art. 4 pkt 1 lit. a ustawy Dz.U. 2024 poz. 1915)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 4 pkt 1 lit. a ustawy z 6 grudnia 2024 r.
+          quote: "nie może być niższa niż kwota 75 % minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego"
+        - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (75% w roku składkowym 2025/2026)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "Podstawa w tej wysokości obowiązuje w odniesieniu do składek należnych za rok składkowy obejmujący okres od 1 lutego 2025 r. do 31 stycznia 2026 r."
+          as_of: 2026-11-26
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (podstawa miesięczna)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2c
+          quote: "wpłaca składkę na ubezpieczenie zdrowotne od miesięcznej podstawy wymiaru składki na ubezpieczenie zdrowotne stanowiącej dochód z działalności gospodarczej uzyskany w miesiącu poprzedzającym miesiąc, za który opłacana jest składka"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (stopa i minimum)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 79a ust. 1
+          quote: "wynosi 4,9 % podstawy wymiaru składki, jednak nie mniej niż kwota odpowiadająca 9 %"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (przychody ze zbycia w rocznej podstawie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2ze
+          quote: "może uwzględnić osiągnięte przychody, o których mowa w art. 14 ust. 2 pkt 1"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (składki z miesiąca zwolnienia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2zf
+          quote: "nie uwzględnia się w ich kwotach składek opłaconych w miesiącu, w którym ubezpieczony spełniał warunki do zwolnienia"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (składka miesięczna i niepodzielna)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 79 ust. 2
+          quote: "Składka jest miesięczna i niepodzielna, z zastrzeżeniem art. 79a oraz art. 81 ust. 2 i 2e."
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (kilka działalności)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 82 ust. 2a
+          quote: "Jeżeli ubezpieczony prowadzi więcej niż jedną pozarolniczą działalność, o której mowa w art. 81 ust. 2, składka na ubezpieczenie zdrowotne jest opłacana od sumy dochodów"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (nadpłata w rozliczeniu rocznym)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2i
+          quote: "suma wpłaconych za poszczególne miesiące roku składkowego albo roku kalendarzowego składek na ubezpieczenie zdrowotne"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (termin dopłaty)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2l
+          quote: "Dopłata, o której mowa w ust. 2j, następuje w terminie płatności składek za miesiąc, o którym mowa w ust. 2k."
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (rozliczenie roczne)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2j
+          quote: "wpłaca kwotę stanowiącą różnicę między roczną składką na ubezpieczenie zdrowotne ustaloną od rocznej podstawy"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (termin wniosku o zwrot)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2n
+          quote: "w terminie miesiąca od upływu terminu do złożenia zeznania"
+        - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (podstawa miesięczna)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "stanowi dochód uzyskany w miesiącu poprzedzającym miesiąc, za który opłacasz składkę"
+          as_of: 2026-11-26
+        - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (zmiana formy opodatkowania za 2022 r. a składki za rok składkowy od 1 lutego 2022 r.)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "w przypadku wstecznej zmiany zgłaszanej w terminie składania zeznania podatkowego za 2022 r., miesięczne składki na ubezpieczenie zdrowotne należne za rok składkowy rozpoczynający się 1 lutego 2022 r."
+          as_of: 2026-11-26
+        - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (roczna składka za ten sam rok składkowy)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "Natomiast roczną składkę na ubezpieczenie zdrowotne należną za rok składkowy rozpoczynający się 1 lutego 2022 r. ustalisz na podstawie zasad obowiązujących dla zmienionej formy opodatkowania"
+          as_of: 2026-11-26
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (minimalna podstawa roczna)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2b
+          quote: "iloczyn liczby miesięcy podlegania ubezpieczeniu zdrowotnemu w roku kalendarzowym, za który ustalany był dochód"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (dokument z rozliczeniem rocznym)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2k
+          quote: "wykazywana jest w dokumencie rozliczeniowym składanym za miesiąc, w którym upływa termin złożenia zeznania"
+        - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (rozliczenie roczne)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "obliczona składka roczna będzie wyższa lub niższa. Tym samym będziesz zobowiązany dopłacić powstałą różnicę lub wystąpić o zwrot nadpłaty"
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: "Art. 79a ust. 1 pkt 2 ustawy o świadczeniach opieki zdrowotnej liczy minimum rocznej składki od liczby miesięcy w roku składkowym, a poradnik ZUS w przykładzie liczy je od liczby miesięcy podlegania ubezpieczeniu. Którą liczbę miesięcy przyjąć? Pytanie do eksperta: docs/pytania-do-eksperta.md, P7."
+    - valid_from: 2026-02-01
+      valid_to: 2027-01-31
+      value:
+        steps:
+          - text: Składka jest miesięczna i niepodzielna, z zastrzeżeniem art. 79a oraz rocznej podstawy i rocznego rozliczenia opisanych w dalszych krokach (art. 81 ust. 2). Jeżeli prowadzisz więcej niż jedną pozarolniczą działalność, składkę opłacasz od sumy dochodów z nich, a tak ustalona podstawa nie może być niższa niż minimalna roczna podstawa z kroku o niej.
+            uses: []
+            basis: art. 79 ust. 2 i art. 82 ust. 2a ustawy o świadczeniach opieki zdrowotnej
+          - text: Miesięczną podstawą jest dochód z działalności z miesiąca poprzedzającego miesiąc, za który płacisz składkę. Za pierwszy miesiąc podlegania ubezpieczeniu w roku składkowym to przychody pomniejszone o koszty ich uzyskania w rozumieniu ustawy o PIT. Za kolejne miesiące to przychody pomniejszone o koszty od początku roku, pomniejszone o sumę dochodów ustalonych za miesiące poprzedzające.
+            uses: []
+            basis: art. 81 ust. 2c pkt 1, 3 i 4 ustawy o świadczeniach opieki zdrowotnej
+          - text: Dochód za pierwszy miesiąc pomniejsz o składki emerytalną, rentową, chorobową i wypadkową opłacone w tym miesiącu, a dochód za kolejne miesiące o różnicę między tymi składkami zapłaconymi od początku roku a składkami odliczonymi w poprzednich miesiącach. Nie odejmuj składek zaliczonych do kosztów uzyskania przychodów ani składek opłaconych w miesiącu, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a).
+            uses: []
+            basis: art. 81 ust. 2c pkt 2 i 4 oraz ust. 2zf ustawy o świadczeniach opieki zdrowotnej
+          - text: Przy ustalaniu dochodu stosuj art. 24 ust. 1 i ust. 2 zdanie pierwsze oraz uwzględnij art. 14c i art. 22 ust. 4a i 4b ustawy o PIT; przy podatkowej księdze przychodów i rozchodów ustal dochód z uwzględnieniem art. 44 ust. 2 zdanie drugie tej ustawy.
+            uses: []
+            basis: art. 81 ust. 2c pkt 5 ustawy o świadczeniach opieki zdrowotnej
+          - text: Do przychodów i kosztów nie wliczaj tych, które wyłącza art. 81 ust. 2zd, czyli przychodów i kosztów z okresu zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), przychodów niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63a, 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, i kosztów, o których mowa w art. 23 ust. 1 pkt 1 tej ustawy, oraz przychodów i kosztów z miesiąca, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a). Wyjątek dla rocznej podstawy opisuje krok o rocznej podstawie.
+            uses: []
+            basis: art. 81 ust. 2zd ustawy o świadczeniach opieki zdrowotnej
+          - text: Jeżeli tak ustalona miesięczna podstawa jest niższa od minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego, podstawą za ten miesiąc jest ta kwota.
+            uses: []
+            basis: art. 81 ust. 2d ustawy o świadczeniach opieki zdrowotnej
+          - text: Składka za miesiąc to podstawa pomnożona przez stopę składki przy podatku liniowym, nie mniej jednak niż minimalna składka zdrowotna.
+            uses: [zdrowotna.liniowy.stawka, zdrowotna.minimum]
+            basis: art. 79a ust. 1 pkt 1 ustawy o świadczeniach opieki zdrowotnej
+          - text: Za miesiąc, w którym spełniasz warunki zwolnienia z art. 82 ust. 8–9a, składki nie opłacasz.
+            uses: []
+            basis: art. 82 ust. 8–9a ustawy o świadczeniach opieki zdrowotnej
+          - text: Po końcu roku ustal roczną podstawę. Jest nią dochód z działalności za rok kalendarzowy, czyli przychody pomniejszone o koszty ich uzyskania w rozumieniu ustawy o PIT (z uwzględnieniem art. 14c, art. 22 ust. 4a i 4b oraz art. 24 ust. 1 i ust. 2 zdanie pierwsze tej ustawy i z wyłączeniami z art. 81 ust. 2zd), pomniejszony o składki emerytalną, rentową, chorobową i wypadkową opłacone w tym roku, jeżeli nie zostały zaliczone do kosztów; składek opłaconych w miesiącu zwolnienia ze składki nie odejmuj. Przychody z art. 14 ust. 2 pkt 1 i 19 ustawy o PIT i koszty z art. 23 ust. 1 pkt 1 tej ustawy możesz w rocznej podstawie uwzględnić; wtedy wykazujesz je w dokumencie rozliczeniowym z rozliczeniem rocznym razem z oświadczeniem. Roczna podstawa dotyczy roku składkowego, który zaczyna się 1 lutego roku, za który ustalasz dochód, i kończy 31 stycznia roku następnego.
+            uses: []
+            basis: art. 81 ust. 2, 2zd, 2ze i 2zf ustawy o świadczeniach opieki zdrowotnej
+          - text: Jeżeli roczna podstawa jest niższa od iloczynu liczby miesięcy podlegania ubezpieczeniu zdrowotnemu w roku, za który ustalono dochód (bez miesięcy, w których przysługiwało zwolnienie ze składki), i minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego, podstawą jest ten iloczyn.
+            uses: []
+            basis: art. 81 ust. 2b i 2ba ustawy o świadczeniach opieki zdrowotnej
+          - text: Roczna składka to roczna podstawa pomnożona przez stopę składki przy podatku liniowym, nie mniej jednak niż 9% iloczynu liczby miesięcy w roku składkowym i minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego. Którą liczbę miesięcy przyjąć, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [zdrowotna.liniowy.stawka]
+            basis: art. 79a ust. 1 pkt 2 ustawy o świadczeniach opieki zdrowotnej
+          - text: Porównaj roczną składkę ze składkami za poszczególne miesiące roku składkowego. Nadpłatę ustalasz względem sumy składek wpłaconych (art. 81 ust. 2i), a niedopłatę względem sumy składek wynikającej ze złożonych dokumentów (art. 81 ust. 2j). Niedopłatę wykaż w dokumencie rozliczeniowym za miesiąc, w którym upływa termin złożenia zeznania rocznego, i dopłać w terminie płatności składek za ten miesiąc. Nadpłata jest zwracana na wniosek złożony w terminie miesiąca od upływu terminu złożenia zeznania; pozostałe warunki zwrotu określają art. 81 ust. 2m–2qa.
+            uses: [termin.roczne_rozliczenie_zdrowotnej]
+            basis: art. 81 ust. 2i–2qa ustawy o świadczeniach opieki zdrowotnej
+      note: >-
+        Od roku składkowego zaczynającego się 1 lutego 2026 r. przepis przejściowy o 75% minimalnego wynagrodzenia (art. 4 ustawy
+        Dz.U. 2024 poz. 1915) już nie obowiązuje, a minimalne podstawy liczy się od pełnego minimalnego wynagrodzenia. Tekst jednolity
+        uwzględnia zmiany ogłoszone przed 2025-09-25. Okres wersji to rok składkowy, którego dotyczą składki i ich rozliczenie
+        roczne: kroki o rozliczeniu rocznym tej wersji stosuje się od rozliczenia roku składkowego zaczynającego się 1 lutego 2026 r.
+      sources:
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (minimalna podstawa miesięczna)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2d
+          quote: "jest niższa od kwoty minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego, podstawę wymiaru składki na ubezpieczenie zdrowotne za ten miesiąc stanowi ta kwota"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (podstawa miesięczna)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2c
+          quote: "wpłaca składkę na ubezpieczenie zdrowotne od miesięcznej podstawy wymiaru składki na ubezpieczenie zdrowotne stanowiącej dochód z działalności gospodarczej uzyskany w miesiącu poprzedzającym miesiąc, za który opłacana jest składka"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (stopa i minimum)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 79a ust. 1
+          quote: "wynosi 4,9 % podstawy wymiaru składki, jednak nie mniej niż kwota odpowiadająca 9 %"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (przychody ze zbycia w rocznej podstawie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2ze
+          quote: "może uwzględnić osiągnięte przychody, o których mowa w art. 14 ust. 2 pkt 1"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (składki z miesiąca zwolnienia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2zf
+          quote: "nie uwzględnia się w ich kwotach składek opłaconych w miesiącu, w którym ubezpieczony spełniał warunki do zwolnienia"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (składka miesięczna i niepodzielna)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 79 ust. 2
+          quote: "Składka jest miesięczna i niepodzielna, z zastrzeżeniem art. 79a oraz art. 81 ust. 2 i 2e."
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (kilka działalności)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 82 ust. 2a
+          quote: "Jeżeli ubezpieczony prowadzi więcej niż jedną pozarolniczą działalność, o której mowa w art. 81 ust. 2, składka na ubezpieczenie zdrowotne jest opłacana od sumy dochodów"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (nadpłata w rozliczeniu rocznym)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2i
+          quote: "suma wpłaconych za poszczególne miesiące roku składkowego albo roku kalendarzowego składek na ubezpieczenie zdrowotne"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (termin dopłaty)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2l
+          quote: "Dopłata, o której mowa w ust. 2j, następuje w terminie płatności składek za miesiąc, o którym mowa w ust. 2k."
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (rozliczenie roczne)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2j
+          quote: "wpłaca kwotę stanowiącą różnicę między roczną składką na ubezpieczenie zdrowotne ustaloną od rocznej podstawy"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (termin wniosku o zwrot)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2n
+          quote: "w terminie miesiąca od upływu terminu do złożenia zeznania"
+        - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (podstawa miesięczna)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "stanowi dochód uzyskany w miesiącu poprzedzającym miesiąc, za który opłacasz składkę"
+          as_of: 2026-11-26
+        - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (zmiana formy opodatkowania za 2022 r. a składki za rok składkowy od 1 lutego 2022 r.)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "w przypadku wstecznej zmiany zgłaszanej w terminie składania zeznania podatkowego za 2022 r., miesięczne składki na ubezpieczenie zdrowotne należne za rok składkowy rozpoczynający się 1 lutego 2022 r."
+          as_of: 2026-11-26
+        - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (roczna składka za ten sam rok składkowy)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "Natomiast roczną składkę na ubezpieczenie zdrowotne należną za rok składkowy rozpoczynający się 1 lutego 2022 r. ustalisz na podstawie zasad obowiązujących dla zmienionej formy opodatkowania"
+          as_of: 2026-11-26
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (minimalna podstawa roczna)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2b
+          quote: "iloczyn liczby miesięcy podlegania ubezpieczeniu zdrowotnemu w roku kalendarzowym, za który ustalany był dochód"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (dokument z rozliczeniem rocznym)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2k
+          quote: "wykazywana jest w dokumencie rozliczeniowym składanym za miesiąc, w którym upływa termin złożenia zeznania"
+        - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (rozliczenie roczne)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "obliczona składka roczna będzie wyższa lub niższa. Tym samym będziesz zobowiązany dopłacić powstałą różnicę lub wystąpić o zwrot nadpłaty"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, open_issue: "Art. 79a ust. 1 pkt 2 ustawy o świadczeniach opieki zdrowotnej liczy minimum rocznej składki od liczby miesięcy w roku składkowym, a poradnik ZUS w przykładzie liczy je od liczby miesięcy podlegania ubezpieczeniu. Którą liczbę miesięcy przyjąć? Pytanie do eksperta: docs/pytania-do-eksperta.md, P7. Ustawa Dz.U. 2026 poz. 1542 zmienia art. 81 ust. 2zd pkt 2 od 1 stycznia 2027 r. bez przepisu przejściowego. Od którego miesiąca składkowego albo dla przychodów i dochodów z jakiego okresu stosuje się nowe brzmienie? Pytanie do eksperta: docs/pytania-do-eksperta.md, P8."}
+    - valid_from: 2027-02-01
+      note: >-
+        Zmiana względem poprzedniej wersji: od 1 stycznia 2027 r. art. 81 ust. 2zd pkt 2 nie wymienia już art. 21 ust. 1
+        pkt 63a ustawy o PIT (Dz.U. 2026 poz. 1542, art. 12); ta sama ustawa uchyla ten punkt w ustawie o PIT (art. 4
+        pkt 1). Pozostałe kroki się nie zmieniają. Wersja zaczyna się od roku składkowego 2027/2028 (od 1 lutego 2027 r.), bo okres
+        wersji to rok składkowy. Składkę za styczeń 2027 r. i roczne rozliczenie roku składkowego 2026/2027
+        opisuje wersja poprzednia; czy stosuje się do nich już nowe brzmienie, jest pytaniem P8. Nowego brzmienia nie ma jeszcze w tekście jednolitym, więc źródłem jest ustawa zmieniająca.
+      value:
+        steps:
+          - text: Składka jest miesięczna i niepodzielna, z zastrzeżeniem art. 79a oraz rocznej podstawy i rocznego rozliczenia opisanych w dalszych krokach (art. 81 ust. 2). Jeżeli prowadzisz więcej niż jedną pozarolniczą działalność, składkę opłacasz od sumy dochodów z nich, a tak ustalona podstawa nie może być niższa niż minimalna roczna podstawa z kroku o niej.
+            uses: []
+            basis: art. 79 ust. 2 i art. 82 ust. 2a ustawy o świadczeniach opieki zdrowotnej
+          - text: Miesięczną podstawą jest dochód z działalności z miesiąca poprzedzającego miesiąc, za który płacisz składkę. Za pierwszy miesiąc podlegania ubezpieczeniu w roku składkowym to przychody pomniejszone o koszty ich uzyskania w rozumieniu ustawy o PIT. Za kolejne miesiące to przychody pomniejszone o koszty od początku roku, pomniejszone o sumę dochodów ustalonych za miesiące poprzedzające.
+            uses: []
+            basis: art. 81 ust. 2c pkt 1, 3 i 4 ustawy o świadczeniach opieki zdrowotnej
+          - text: Dochód za pierwszy miesiąc pomniejsz o składki emerytalną, rentową, chorobową i wypadkową opłacone w tym miesiącu, a dochód za kolejne miesiące o różnicę między tymi składkami zapłaconymi od początku roku a składkami odliczonymi w poprzednich miesiącach. Nie odejmuj składek zaliczonych do kosztów uzyskania przychodów ani składek opłaconych w miesiącu, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a).
+            uses: []
+            basis: art. 81 ust. 2c pkt 2 i 4 oraz ust. 2zf ustawy o świadczeniach opieki zdrowotnej
+          - text: Przy ustalaniu dochodu stosuj art. 24 ust. 1 i ust. 2 zdanie pierwsze oraz uwzględnij art. 14c i art. 22 ust. 4a i 4b ustawy o PIT; przy podatkowej księdze przychodów i rozchodów ustal dochód z uwzględnieniem art. 44 ust. 2 zdanie drugie tej ustawy.
+            uses: []
+            basis: art. 81 ust. 2c pkt 5 ustawy o świadczeniach opieki zdrowotnej
+          - text: Do przychodów i kosztów nie wliczaj tych, które wyłącza art. 81 ust. 2zd, czyli przychodów i kosztów z okresu zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), przychodów niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, i kosztów, o których mowa w art. 23 ust. 1 pkt 1 tej ustawy, oraz przychodów i kosztów z miesiąca, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a). Wyjątek dla rocznej podstawy opisuje krok o rocznej podstawie.
+            uses: []
+            basis: art. 81 ust. 2zd ustawy o świadczeniach opieki zdrowotnej
+          - text: Jeżeli tak ustalona miesięczna podstawa jest niższa od minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego, podstawą za ten miesiąc jest ta kwota.
+            uses: []
+            basis: art. 81 ust. 2d ustawy o świadczeniach opieki zdrowotnej
+          - text: Składka za miesiąc to podstawa pomnożona przez stopę składki przy podatku liniowym, nie mniej jednak niż minimalna składka zdrowotna.
+            uses: [zdrowotna.liniowy.stawka, zdrowotna.minimum]
+            basis: art. 79a ust. 1 pkt 1 ustawy o świadczeniach opieki zdrowotnej
+          - text: Za miesiąc, w którym spełniasz warunki zwolnienia z art. 82 ust. 8–9a, składki nie opłacasz.
+            uses: []
+            basis: art. 82 ust. 8–9a ustawy o świadczeniach opieki zdrowotnej
+          - text: Po końcu roku ustal roczną podstawę. Jest nią dochód z działalności za rok kalendarzowy, czyli przychody pomniejszone o koszty ich uzyskania w rozumieniu ustawy o PIT (z uwzględnieniem art. 14c, art. 22 ust. 4a i 4b oraz art. 24 ust. 1 i ust. 2 zdanie pierwsze tej ustawy i z wyłączeniami z art. 81 ust. 2zd), pomniejszony o składki emerytalną, rentową, chorobową i wypadkową opłacone w tym roku, jeżeli nie zostały zaliczone do kosztów; składek opłaconych w miesiącu zwolnienia ze składki nie odejmuj. Przychody z art. 14 ust. 2 pkt 1 i 19 ustawy o PIT i koszty z art. 23 ust. 1 pkt 1 tej ustawy możesz w rocznej podstawie uwzględnić; wtedy wykazujesz je w dokumencie rozliczeniowym z rozliczeniem rocznym razem z oświadczeniem. Roczna podstawa dotyczy roku składkowego, który zaczyna się 1 lutego roku, za który ustalasz dochód, i kończy 31 stycznia roku następnego.
+            uses: []
+            basis: art. 81 ust. 2, 2zd, 2ze i 2zf ustawy o świadczeniach opieki zdrowotnej
+          - text: Jeżeli roczna podstawa jest niższa od iloczynu liczby miesięcy podlegania ubezpieczeniu zdrowotnemu w roku, za który ustalono dochód (bez miesięcy, w których przysługiwało zwolnienie ze składki), i minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego, podstawą jest ten iloczyn.
+            uses: []
+            basis: art. 81 ust. 2b i 2ba ustawy o świadczeniach opieki zdrowotnej
+          - text: Roczna składka to roczna podstawa pomnożona przez stopę składki przy podatku liniowym, nie mniej jednak niż 9% iloczynu liczby miesięcy w roku składkowym i minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego. Którą liczbę miesięcy przyjąć, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [zdrowotna.liniowy.stawka]
+            basis: art. 79a ust. 1 pkt 2 ustawy o świadczeniach opieki zdrowotnej
+          - text: Porównaj roczną składkę ze składkami za poszczególne miesiące roku składkowego. Nadpłatę ustalasz względem sumy składek wpłaconych (art. 81 ust. 2i), a niedopłatę względem sumy składek wynikającej ze złożonych dokumentów (art. 81 ust. 2j). Niedopłatę wykaż w dokumencie rozliczeniowym za miesiąc, w którym upływa termin złożenia zeznania rocznego, i dopłać w terminie płatności składek za ten miesiąc. Nadpłata jest zwracana na wniosek złożony w terminie miesiąca od upływu terminu złożenia zeznania; pozostałe warunki zwrotu określają art. 81 ust. 2m–2qa.
+            uses: [termin.roczne_rozliczenie_zdrowotnej]
+            basis: art. 81 ust. 2i–2qa ustawy o świadczeniach opieki zdrowotnej
+      sources:
+        - title: Dz.U. 2026 poz. 1542, ustawa z 22 października 2026 r. o zmianie ustawy o wspieraniu nowych inwestycji oraz niektórych innych ustaw (zmiana art. 81 ust. 2zd)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1542/text.pdf
+          article: art. 12
+          quote: "w art. 81 w ust. 2zd w pkt 2 skreśla się wyrazy „63a,”"
+        - title: Dz.U. 2026 poz. 1542, ustawa z 22 października 2026 r. o zmianie ustawy o wspieraniu nowych inwestycji oraz niektórych innych ustaw (wejście w życie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1542/text.pdf
+          article: art. 30
+          quote: "Ustawa wchodzi w życie z dniem 1 stycznia 2027 r., z wyjątkiem:"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (dotychczasowe brzmienie art. 81 ust. 2zd pkt 2)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2zd pkt 2
+          quote: "przychodów niepodlegających opodatkowaniu podatkiem dochodowym innych niż określone w art. 21 ust. 1 pkt 63a, 63b i 152–154"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (minimalna podstawa miesięczna)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2d
+          quote: "jest niższa od kwoty minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego, podstawę wymiaru składki na ubezpieczenie zdrowotne za ten miesiąc stanowi ta kwota"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (podstawa miesięczna)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2c
+          quote: "wpłaca składkę na ubezpieczenie zdrowotne od miesięcznej podstawy wymiaru składki na ubezpieczenie zdrowotne stanowiącej dochód z działalności gospodarczej uzyskany w miesiącu poprzedzającym miesiąc, za który opłacana jest składka"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (stopa i minimum)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 79a ust. 1
+          quote: "wynosi 4,9 % podstawy wymiaru składki, jednak nie mniej niż kwota odpowiadająca 9 %"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (przychody ze zbycia w rocznej podstawie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2ze
+          quote: "może uwzględnić osiągnięte przychody, o których mowa w art. 14 ust. 2 pkt 1"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (składki z miesiąca zwolnienia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2zf
+          quote: "nie uwzględnia się w ich kwotach składek opłaconych w miesiącu, w którym ubezpieczony spełniał warunki do zwolnienia"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (składka miesięczna i niepodzielna)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 79 ust. 2
+          quote: "Składka jest miesięczna i niepodzielna, z zastrzeżeniem art. 79a oraz art. 81 ust. 2 i 2e."
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (kilka działalności)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 82 ust. 2a
+          quote: "Jeżeli ubezpieczony prowadzi więcej niż jedną pozarolniczą działalność, o której mowa w art. 81 ust. 2, składka na ubezpieczenie zdrowotne jest opłacana od sumy dochodów"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (nadpłata w rozliczeniu rocznym)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2i
+          quote: "suma wpłaconych za poszczególne miesiące roku składkowego albo roku kalendarzowego składek na ubezpieczenie zdrowotne"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (termin dopłaty)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2l
+          quote: "Dopłata, o której mowa w ust. 2j, następuje w terminie płatności składek za miesiąc, o którym mowa w ust. 2k."
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (rozliczenie roczne)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2j
+          quote: "wpłaca kwotę stanowiącą różnicę między roczną składką na ubezpieczenie zdrowotne ustaloną od rocznej podstawy"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (termin wniosku o zwrot)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2n
+          quote: "w terminie miesiąca od upływu terminu do złożenia zeznania"
+        - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (podstawa miesięczna)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "stanowi dochód uzyskany w miesiącu poprzedzającym miesiąc, za który opłacasz składkę"
+          as_of: 2026-11-26
+        - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (zmiana formy opodatkowania za 2022 r. a składki za rok składkowy od 1 lutego 2022 r.)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "w przypadku wstecznej zmiany zgłaszanej w terminie składania zeznania podatkowego za 2022 r., miesięczne składki na ubezpieczenie zdrowotne należne za rok składkowy rozpoczynający się 1 lutego 2022 r."
+          as_of: 2026-11-26
+        - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (roczna składka za ten sam rok składkowy)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "Natomiast roczną składkę na ubezpieczenie zdrowotne należną za rok składkowy rozpoczynający się 1 lutego 2022 r. ustalisz na podstawie zasad obowiązujących dla zmienionej formy opodatkowania"
+          as_of: 2026-11-26
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (minimalna podstawa roczna)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2b
+          quote: "iloczyn liczby miesięcy podlegania ubezpieczeniu zdrowotnemu w roku kalendarzowym, za który ustalany był dochód"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (dokument z rozliczeniem rocznym)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2k
+          quote: "wykazywana jest w dokumencie rozliczeniowym składanym za miesiąc, w którym upływa termin złożenia zeznania"
+        - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (rozliczenie roczne)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "obliczona składka roczna będzie wyższa lub niższa. Tym samym będziesz zobowiązany dopłacić powstałą różnicę lub wystąpić o zwrot nadpłaty"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, open_issue: "Art. 79a ust. 1 pkt 2 ustawy o świadczeniach opieki zdrowotnej liczy minimum rocznej składki od liczby miesięcy w roku składkowym, a poradnik ZUS w przykładzie liczy je od liczby miesięcy podlegania ubezpieczeniu. Którą liczbę miesięcy przyjąć? Pytanie do eksperta: docs/pytania-do-eksperta.md, P7."}
