@@ -203,18 +203,32 @@
           - text: Przy przychodach opodatkowanych różnymi stawkami odliczenia dziel w proporcji do tych przychodów.
             uses: []
             basis: art. 11 ust. 3 ustawy o zryczałtowanym podatku dochodowym
-          - text: Pomnóż wynik przez stawkę ryczałtu właściwą dla rodzaju przychodu.
-            uses: []
-            basis: art. 12 ust. 1 ustawy o zryczałtowanym podatku dochodowym
+          - text: Jeżeli ewidencja przychodów pozwala ustalić przychody z każdego rodzaju działalności, pomnóż wynik dla każdego rodzaju przychodu przez stawkę z punktu art. 12 ust. 1, który obejmuje ten przychód.
+            uses: [ryczalt.stawki]
+            basis: art. 12 ust. 1 i ust. 3 zdanie pierwsze ustawy o zryczałtowanym podatku dochodowym
+          - text: Jeżeli ewidencja tego nie pozwala, ryczałt wynosi 8,5% przychodów, z tym że przy osiąganiu również przychodów z pkt 1, 2, 2a, 2b, 3 albo 4 art. 12 ust. 1 wynosi stawkę wskazaną dla tego punktu w art. 12 ust. 3 zdanie drugie (dla pkt 1–3 taką samą jak w ust. 1, dla pkt 4 wyższą stawkę tego punktu). Do jakich przychodów stosuje się tę stawkę i którą wybrać przy przychodach z kilku takich punktów, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [ryczalt.stawki]
+            basis: art. 12 ust. 3 zdanie drugie ustawy o zryczałtowanym podatku dochodowym
       note: >-
         Poprawka: krok o składce zdrowotnej powoływał art. 11 ust. 1c (różnice kursowe), właściwy jest ust. 1a;
         dodany krok o proporcji z ust. 3, który w obecnym brzmieniu dotyczy przychodów od 1 stycznia 2024 r.,
         stąd początek obowiązywania 2024-01-01 (wcześniej 2022-01-01).
+        Poprawka 2026-11-26: krok o stawce pomijał warunek z art. 12 ust. 3 zdanie pierwsze (stawki według rodzaju
+        przychodu tylko przy ewidencji, która pozwala ustalić przychody z każdego rodzaju działalności); dodany krok
+        o stawce bez takiej ewidencji (ust. 3 zdanie drugie), a oba kroki wskazują parametr ze stawkami ryczałtu.
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           quote: "mogą być pomniejszone o 50 % składek na ubezpieczenie zdrowotne zapłaconych w roku podatkowym"
           article: art. 11 ust. 1, 1a i 3, art. 12 ust. 1
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (stawki przy różnych rodzajach przychodów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "pod warunkiem, że ewidencja przychodów jest prowadzona w sposób umożliwiający określenie przychodów z każdego rodzaju działalności"
+          article: art. 12 ust. 3 zdanie pierwsze
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (stawka bez takiej ewidencji)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "ryczałt od przychodów ewidencjonowanych wynosi 8,5 % przychodów, z tym że w przypadku osiągania również przychodów"
+          article: art. 12 ust. 3 zdanie drugie
         - title: biznes.gov.pl, Jak odliczyć składki ZUS przy rozliczaniu podatków, aktualizacja 23.04.2026 (krok 2)
           url: https://www.biznes.gov.pl/pl/portal/00230
           kind: control
@@ -225,4 +239,7 @@
           kind: control
           quote: "możesz od nich odliczyć 50% zapłaconych składek zdrowotnych . Ważne! Jeżeli osiągasz przychody opodatkowane różnymi stawkami, składki zdrowotne odliczasz proporcjonalnie"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: "Art. 12 ust. 3 zdanie drugie ustawy o zryczałtowanym podatku dochodowym nie mówi wprost, czy stawka podwyższona (np. 17% przy przychodach także z pkt 1) dotyczy tylko przychodów z tego punktu, czy wszystkich przychodów, ani którą stawkę stosuje się przy przychodach z kilku punktów. Pytanie do eksperta: docs/pytania-do-eksperta.md, P6."
