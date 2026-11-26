@@ -123,7 +123,8 @@
         Rok składkowy 2025/2026. 50% najwyższej stopy dla grup działalności (3,33% w załączniku nr 2
         w brzmieniu od 1 kwietnia 2024 r.), czyli 1,665, zaokrąglone do 0,01 zgodnie z § 6 ust. 2 rozporządzenia.
         Zmiana rozporządzenia Dz.U. 2025 poz. 1292 nie zmienia stóp.
-        Uzupełnienie dowodów 2026-11-26: źródło kontrolne PIT.pl za cały rok składkowy.
+        Uzupełnienie dowodów 2026-11-26: poradnik ZUS (stan prawny na 1 stycznia 2026 r.) podaje 1,67% dla płatników do 9 ubezpieczonych
+        nieprzerwanie od 1 kwietnia 2018 r.; stopa jest ustalana na cały rok składkowy (art. 28 ust. 1). Zastępuje portal PIT.pl.
       sources:
         - title: Dz.U. 2025 poz. 1644, tekst jednolity ustawy o ubezpieczeniu społecznym z tytułu wypadków przy pracy i chorób zawodowych
           url: https://eli.gov.pl/eli/DU/2025/1644/ogl
@@ -139,11 +140,11 @@
           article: § 6 ust. 2
         - title: Dz.U. 2025 poz. 1292, rozporządzenie MRPiPS z 18 września 2025 r.
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1292/text.pdf
-        - title: PIT.pl, Składka wypadkowa – stopy procentowe (podaje stopę dla płatników do 9 ubezpieczonych na rok składkowy 2025/2026)
-          url: https://www.pit.pl/?p=9018
-          kind: control
-          quote: "od 1 kwietnia 2025 r. do 31 marca 2026 r. takich płatników obowiązuje stopa procentowa składki wypadkowej w wysokości 1,67%"
-          as_of: 2026-11-26
+        - title: ZUS, poradnik „Ustalanie stopy procentowej składki na ubezpieczenie wypadkowe”, stan prawny na 1 stycznia 2026 r.
+          url: https://www.zus.pl/documents/10182/167567/poradnik_wypadkowe.pdf/15281e1b-c3f3-472a-81b3-7d10e1a434c8
+          independent: true
+          quote: "podlegasz wpisowi do rejestru REGON i zgłaszasz do ubezpieczenia wypadkowego nie więcej niż 9 ubezpieczonych, • nie podlegasz wpisowi do rejestru REGON (bez znaczenia jest w tym przypadku, ilu ubezpieczonych zgłaszasz do ubezpieczenia wypadkowego), obowiązuje Cię stopa zryczałtowana, która od 1 kwietnia 2018 r. wynosi 1,67%"
+          as_of: 2026-01-01
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
     - valid_from: 2026-04-01
       valid_to: 2027-03-31
@@ -153,6 +154,7 @@
         zaokrąglone do 0,01 zgodnie z § 6 ust. 2 rozporządzenia.
         Okres to rok składkowy z art. 2 pkt 8; rozporządzenie nie ma daty końcowej (załącznik nr 2
         obowiązuje od 1 kwietnia 2024 r.; zmiana z 10 października 2025 r. dotyczy tylko kodów PKD).
+        Uzupełnienie dowodów 2026-11-26: artykuł Fakturowni (bez cytatu) zastąpiony komunikatem ZUS o roku składkowym 2026/2027.
       sources:
         - title: Dz.U. 2025 poz. 1644, tekst jednolity ustawy o ubezpieczeniu społecznym z tytułu wypadków przy pracy i chorób zawodowych
           url: https://eli.gov.pl/eli/DU/2025/1644/ogl
@@ -162,10 +164,12 @@
           url: https://eli.gov.pl/eli/DU/2025/1874/ogl
           quote: "Wartości stóp procentowych składki, kategorii ryzyka i wskaźników częstości zaokrągla się zgodnie z zasadą matematyczną"
           article: załącznik nr 2, § 6 ust. 2
-        - title: Fakturownia, składka wypadkowa 2026
-          url: https://fakturownia.pl/aktualnosci/skadka-wypadkowa-2026-nowe-stawki-i-jak-ja-ustalic
-          kind: control
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25, filed_documents: kwota zgodna z deklaracją ZUS DRA za 10/2026}
+        - title: ZUS, Złóż informację ZUS IWA o danych do ustalenia stopy procentowej składki na ubezpieczenie wypadkowe (rok składkowy 2026/2027)
+          url: https://www.zus.pl/-/z%C5%82%C3%B3%C5%BC-informacj%C4%99-zus-iwa-o-danych-do-ustalenia-stopy-procentowej-sk%C5%82adki-na-ubezpieczenie-wypadkowe
+          independent: true
+          quote: "Dla płatników zgłaszających do ubezpieczenia wypadkowego do 9 ubezpieczonych stopa procentowa składki na ubezpieczenie wypadkowe wynosi 50% najwyższej stopy procentowej ustalonej na dany rok składkowy dla grup działalności, tj. 1,67%"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, filed_documents: kwota zgodna z deklaracją ZUS DRA za 10/2026}
 
 - id: zus.stawka.fundusz_pracy
   name: Stopa składki na Fundusz Pracy
