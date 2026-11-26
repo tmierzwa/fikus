@@ -100,6 +100,15 @@ Brakuje między innymi: stawek ryczałtu i podatku liniowego, limitu odliczenia 
 
 Dane są w [`data/parameters/`](data/parameters), jeden plik YAML na obszar przepisów. Parametr to lista wersji o rozłącznych okresach i jednym z rodzajów: `value`, `deadline`, `rule` albo `calendar`. Profile w [`data/profiles.yaml`](data/profiles.yaml) są przykładowe i służą tylko do wybierania parametrów. Z danych można korzystać bez serwera.
 
+## Przegląd źródeł
+
+Co tydzień CI uruchamia dwa skrypty, które niczego nie zmieniają w danych:
+
+- `scripts/sprawdz_cytaty.py` sprawdza, czy każdy cytat nadal jest w oficjalnym tekście;
+- `scripts/wykryj_zmiany.py` pyta [API ELI Sejmu](https://api.sejm.gov.pl/eli) o cytowane akty i zgłasza akty uchylone, nowsze teksty jednolite, nowelizacje po cytowanym tekście oraz wersje, które kończą się w ciągu 60 dni bez następczyni.
+
+Gdy skrypt coś znajdzie, zadanie kończy się na czerwono, a lista jest w podsumowaniu zadania. Nowelizację, która zmienia wartość, obsługujemy nową wersją parametru. Przejrzaną nowelizację bez wpływu na wartości wpisz do [`data/zmiany_sprawdzone.yaml`](data/zmiany_sprawdzone.yaml) z uzasadnieniem.
+
 ## Rozwój
 
 ```bash
@@ -107,6 +116,7 @@ git clone https://github.com/tmierzwa/fikus.git && cd fikus
 pip install -e ".[dev]"
 pytest
 python scripts/sprawdz_cytaty.py   # wymaga pdftotext (poppler)
+python scripts/wykryj_zmiany.py    # czy cytowane akty się zmieniły (API ELI Sejmu)
 ```
 
 Najbardziej potrzebne są zgłoszenia błędów w danych i drugie źródła dla wpisów z pewnością `niska`. Zasady, w tym podpis DCO, są w [CONTRIBUTING.md](CONTRIBUTING.md). Obowiązuje [kodeks postępowania](CODE_OF_CONDUCT.md), a luki bezpieczeństwa zgłaszaj według [SECURITY.md](SECURITY.md).

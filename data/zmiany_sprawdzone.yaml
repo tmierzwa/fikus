@@ -1,0 +1,9 @@
+# Nowelizacje przejrzane przez człowieka albo agenta, które nie zmieniają żadnej wartości w danych.
+# scripts/wykryj_zmiany.py ich nie zgłasza. Nowelizację, która zmienia wartość, obsługujemy nową
+# wersją parametru, a nie wpisem tutaj.
+#
+# Każdy wpis potrzebuje trzech pól:
+#   act: identyfikator ELI nowelizacji, np. DU/2026/986
+#   checked_at: data przejrzenia
+#   note: co zmienia i dlaczego nie dotyczy naszych parametrów, np. "zmienia tylko art. 15"
+[]
