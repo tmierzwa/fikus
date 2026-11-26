@@ -30,7 +30,7 @@
           kind: control
           quote: "Zapisy w ewidencji należy prowadzić chronologicznie, nie później niż do 20. dnia każdego miesiąca za miesiąc poprzedni."
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26}
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: zasada.ewidencja_przychodow
   name: Prowadzenie ewidencji przychodów na ryczałcie
@@ -159,6 +159,7 @@
           as_of: 2026-11-26
       verification:
         checked_at: 2026-11-26
+        agent_check: 2026-11-26
         open_issue: >-
           P32: w którym okresie i w jaki sposób wpisuje się do ewidencji korektę przychodu wynikającą z błędu rachunkowego
           lub innej oczywistej omyłki, do której nie stosuje się art. 14 ust. 1m ustawy o PIT, i jak wpisuje się korektę
@@ -248,6 +249,7 @@
           article: art. 21 ust. 3e
       verification:
         checked_at: 2026-11-26
+        agent_check: 2026-11-26
         open_issue: >-
           P33: który dzień jest dniem uzyskania przychodu (i dniem, od którego liczy się kurs waluty), gdy fakturę wystawiono
           przed wykonaniem usługi albo wydaniem rzeczy, skoro art. 14 ust. 1c ustawy o PIT wskazuje dzień wystawienia faktury
@@ -305,6 +307,7 @@
           article: art. 6 ust. 1c
       verification:
         checked_at: 2026-11-26
+        agent_check: 2026-11-26
         open_issue: >-
           P34: czy podatnik na ryczałcie przelicza przychód w walucie obcej według art. 11a ust. 1 ustawy o PIT, skoro ustawa
           o ryczałcie do niego wprost nie odsyła? P33: od którego dnia liczy się kurs, gdy fakturę wystawiono przed wykonaniem

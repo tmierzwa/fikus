@@ -370,7 +370,7 @@
           quote: "Nagłówek JPK_EWP"
           confirms: [form]
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26}
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: zasada.jpk_pd_pkpir
   name: Przesyłanie podatkowej księgi przychodów i rozchodów w formie JPK (JPK_PKPIR)
