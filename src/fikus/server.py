@@ -188,10 +188,11 @@ def get_schema(
     form: Annotated[str, Field(description="Symbol deklaracji, np. JPK_V7M.")],
     as_of: AsOf = None,
 ) -> ParameterResult:
-    """Zwraca wersję schematu XSD deklaracji obowiązującą w danym dniu.
+    """Zwraca wersję schematu XSD deklaracji albo wzór formularza obowiązujący w danym dniu.
 
     Dla JPK_V7M i JPK_V7K dniem jest pierwszy dzień okresu rozliczeniowego, za który składa się plik.
-    Są dane dla JPK_V7M, JPK_V7K i JPK_PKPIR; dla innych symboli wynik ma found=false.
+    Dla ZUS_DRA (wzór formularza, bez schematu XSD) dniem jest dzień złożenia dokumentu.
+    Są dane dla JPK_V7M, JPK_V7K, JPK_PKPIR i ZUS_DRA; dla innych symboli wynik ma found=false.
     """
     pid = f"schemat.{form.lower()}"
     if pid not in store.params:

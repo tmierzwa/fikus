@@ -18,7 +18,7 @@
           - text: Od 1 stycznia 2022 r. nie obowiązuje zwolnienie osób prowadzących pozarolniczą działalność z deklaracji rozliczeniowej za kolejny miesiąc, gdy zadeklarowały najniższą podstawę wymiaru i nic się nie zmieniło w stosunku do poprzedniego miesiąca (uchylenie art. 47 ust. 2a i 2b). Zwolnienia z art. 47 ust. 2c–2f i 2fb dotyczą tylko wymienionych tam grup, między innymi duchownych i osób ubezpieczonych dobrowolnie na podstawie art. 7.
             uses: []
             basis: art. 47 ust. 2c–2f i 2fb ustawy o systemie ubezpieczeń społecznych; art. 8 pkt 4 lit. b ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105)
-          - text: Za okres zawieszenia wykonywania działalności gospodarczej nie masz obowiązku składania deklaracji rozliczeniowej, jeżeli jesteś płatnikiem składek wyłącznie za siebie. Obowiązek ubezpieczeń społecznych ustaje od dnia rozpoczęcia zawieszenia do dnia poprzedzającego wznowienie. Jak rozliczasz w deklaracji miesiąc, w którym zawieszenie zaczęło się w trakcie miesiąca, i jak wykazujesz w niej składkę zdrowotną za taki miesiąc, jest niewyjaśnione (otwarte pytanie do eksperta).
+          - text: Za okres zawieszenia wykonywania działalności gospodarczej nie masz obowiązku składania deklaracji rozliczeniowej, jeżeli jesteś płatnikiem składek wyłącznie za siebie. Obowiązek ubezpieczeń społecznych ustaje od dnia rozpoczęcia zawieszenia do dnia poprzedzającego wznowienie. Czy i jak składasz deklarację za miesiąc, w którym zawieszenie zaczyna się w trakcie miesiąca, w tym jak wykazujesz w niej składkę zdrowotną za taki miesiąc, jest niewyjaśnione (otwarte pytanie do eksperta).
             uses: []
             basis: art. 36a ust. 2 i 3 ustawy o systemie ubezpieczeń społecznych
           - text: W deklaracji rozliczeniowej za miesiąc, w którym upływa termin złożenia zeznania rocznego, czyli za kwiecień, wykazujesz roczne rozliczenie składki zdrowotnej, jeżeli masz obowiązek je złożyć. Taką deklarację składasz także wtedy, gdy w tym miesiącu nie wykazujesz bieżących składek, bo zawiesiłeś albo zakończyłeś działalność. Jeżeli opłacasz składki także za inne osoby, rozliczenie roczne wykazujesz w imiennym raporcie ZUS RCA (blok III.F).
@@ -74,6 +74,14 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2021/423/text.pdf
           article: art. 47 ust. 2a
           quote: "Osoby prowadzące pozarolniczą działalność, opłacające składki wyłącznie za siebie lub osoby z nimi współpracujące, są zwolnione z obowiązku składania deklaracji rozliczeniowej lub imiennych raportów miesięcznych za kolejny miesiąc"
+        - title: Dz.U. 2021 poz. 2105, ustawa z 29 października 2021 r. o zmianie ustawy o podatku dochodowym od osób fizycznych, ustawy o podatku dochodowym od osób prawnych oraz niektórych innych ustaw (uchylenie art. 47 ust. 2a i 2b)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2021/2105/text.pdf
+          article: art. 8 pkt 4 lit. b
+          quote: "b) uchyla się ust. 2a i 2b"
+        - title: Dz.U. 2021 poz. 2105 (wejście w życie 1 stycznia 2022 r.; art. 8 nie jest wśród wyjątków)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2021/2105/text.pdf
+          article: art. 89
+          quote: "Ustawa wchodzi w życie z dniem 1 stycznia 2022 r., z wyjątkiem:"
         - title: Dz.U. 2024 poz. 863, ustawa z 9 maja 2024 r. o zmianie ustawy o systemie ubezpieczeń społecznych oraz niektórych innych ustaw (dodanie art. 47 ust. 2fa)
           url: https://api.sejm.gov.pl/eli/acts/DU/2024/863/text.pdf
           article: art. 1 pkt 6 lit. b i art. 9
@@ -96,8 +104,9 @@
         open_issue: >-
           Art. 36a ust. 3 ustawy o systemie ubezpieczeń społecznych zwalnia z deklaracji rozliczeniowej „za okres
           zawieszenia”, a art. 47 ust. 1 i art. 46 ust. 1 każą rozliczać składki za każdy miesiąc kalendarzowy.
-          biznes.gov.pl opisuje deklarację za niepełny okres przy wznowieniu w trakcie miesiąca, ale nie przy zawieszeniu
-          od połowy miesiąca, i nie mówi, jak wykazać za taki miesiąc składkę zdrowotną. Pytanie do eksperta:
+          biznes.gov.pl podaje, że deklaracje składasz co miesiąc, także gdy „zawieszasz lub wznawiasz działalność
+          gospodarczą”, i opisuje deklarację za niepełny okres przy wznowieniu w trakcie miesiąca, ale nie przy
+          zawieszeniu od połowy miesiąca, i nie mówi, jak wykazać za taki miesiąc składkę zdrowotną. Pytanie do eksperta:
           docs/pytania-do-eksperta.md, P39.
 
 - id: zasada.roczne_rozliczenie_zdrowotnej
@@ -207,8 +216,10 @@
         (Dz.U. 2026 poz. 518); ten sam wzór stosuje się do deklaracji korygującej. Okres obowiązywania liczy się według dnia
         złożenia dokumentu: od 1 maja 2026 r. stosuje się nowy wzór także do dokumentów za okresy wcześniejsze (§ 6),
         a 30 kwietnia 2026 r. stosowało się przejściowo wzór z załącznika nr 26 (§ 4 ust. 2). ZUS podaje, że wzór
-        obowiązuje od rozliczeń za kwiecień 2026 r. (aktualizacja formularza 30 kwietnia 2026 r.); rozliczenie za kwiecień
-        złożone na starym wzorze wymaga korekty. Wzór nie ma osobnego numeru wersji. Wersji sprzed 1 maja 2026 r.
+        obowiązuje od rozliczeń za kwiecień 2026 r. (aktualizacja formularza 30 kwietnia 2026 r.), a według ZUS rozliczenie
+        za kwiecień złożone na starym wzorze wymaga korekty. Rozporządzenie (§ 4 ust. 2) każe 30 kwietnia 2026 r. stosować
+        załącznik nr 26, więc dla dokumentu złożonego tego dnia stanowisko ZUS i brzmienie rozporządzenia się różnią
+        (otwarte pytanie do eksperta). Wzór nie ma osobnego numeru wersji. Wersji sprzed 1 maja 2026 r.
         nie wprowadzono.
       sources:
         - title: Dz.U. 2026 poz. 518, rozporządzenie MRPiPS z 9 kwietnia 2026 r. w sprawie wzorów dokumentów ubezpieczeniowych (wzór ZUS DRA)
@@ -249,7 +260,14 @@
           as_of: 2026-11-26
         - title: ZUS, Formularz ZUS DRA (aktualizacja formularza)
           url: https://www.zus.pl/wzory-formularzy/firmy/dokumenty-zgloszeniowe-i-rozliczeniowe/-/asset_publisher/7uG0nTlZ0aFc/content/dra-deklaracja-rozliczeniowa
-          kind: control
           quote: "Aktualizacja formularza 30 kwietnia 2026 r. Obowiązuje od rozliczeń za kwiecień 2026 r."
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26}
+      verification:
+        checked_at: 2026-11-26
+        open_issue_scope: edge_case
+        open_issue: >-
+          Rozporządzenie (Dz.U. 2026 poz. 518, § 4 ust. 2) każe 30 kwietnia 2026 r. stosować wzór z załącznika nr 26,
+          a ZUS podaje, że rozliczenie za kwiecień 2026 r. trzeba sporządzić na wzorze obowiązującym od 1 maja i że
+          rozliczenie na starym formularzu wymaga korekty. Który wzór stosuje się do deklaracji za kwiecień 2026 r.
+          złożonej 30 kwietnia 2026 r.? Nie dotyczy wartości ani okresu tej wersji. Pytanie do eksperta:
+          docs/pytania-do-eksperta.md, P40.

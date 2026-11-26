@@ -596,9 +596,27 @@ przypadku brzegowego, średnią.
   do dnia poprzedzającego wznowienie. Art. 46 ust. 1 i art. 47 ust. 1 każą rozliczać składki i przesyłać deklarację
   za każdy miesiąc kalendarzowy.
 - Materiał (portal, nie rozstrzyga): biznes.gov.pl, „Jak składać deklaracje i raporty ZUS”
-  (https://www.biznes.gov.pl/pl/portal/00287): „Jeśli wznawiasz działalność w trakcie miesiąca, deklarację ZUS DRA
+  (https://www.biznes.gov.pl/pl/portal/00287): „Co do zasady deklaracje ZUS DRA i raporty imienne: ZUS RCA i ZUS RSA
+  składasz co miesiąc. Dotyczy to cię, jeżeli: […] zawieszasz lub wznawiasz działalność gospodarczą.” Ta sama strona:
+  „Jeśli wznawiasz działalność w trakcie miesiąca, deklarację ZUS DRA
   składasz za niepełny okres rozliczeniowy i drugą - za kolejny pełny miesiąc.” Strona nie opisuje zawieszenia
   od połowy miesiąca ani składki zdrowotnej za taki miesiąc.
 - Pytanie: czy płatnik składek wyłącznie za siebie, który zawiesza działalność od dnia innego niż pierwszy dzień miesiąca,
   składa deklarację rozliczeniową za ten miesiąc za dni przed zawieszeniem? Jak wykazuje w niej składkę zdrowotną
   za ten miesiąc?
+
+## P40. Wzór ZUS DRA dla deklaracji za kwiecień 2026 r. złożonej 30 kwietnia 2026 r.
+
+- Wpis: `schemat.zus_dra` (od 2026-05-01), notatka.
+- Zgłoszone: 2026-11-26.
+- Rozporządzenie Ministra Rodziny, Pracy i Polityki Społecznej z 9 kwietnia 2026 r. (Dz.U. 2026 poz. 518): weszło w życie
+  30 kwietnia 2026 r. (§ 8, 14 dni od ogłoszenia 15 kwietnia), a § 4 ust. 2 stanowi: „W okresie od dnia wejścia w życie
+  rozporządzenia do dnia 30 kwietnia 2026 r. w przypadku przekazywania deklaracji rozliczeniowej – o symbolu ZUS DRA,
+  stosuje się dokument, którego wzór stanowi załącznik nr 26 do rozporządzenia.” Wzór z załącznika nr 16 obowiązuje
+  od 1 maja 2026 r. (§ 8), także dla dokumentów za wcześniejsze okresy (§ 6).
+- Komunikat ZUS „Od 1 maja 2026 r. obowiązują nowe wzory formularzy ZUS DRA i ZUS RCA”
+  (https://www.zus.pl/-/od-1-maja-2026-r.-obowi%C4%85zuj%C4%85-nowe-wzory-formularzy-zus-dra-i-zus-rca): rozliczenia
+  na nowych wzorach można przekazać przed 1 maja, ale „Rozliczenie składek za kwiecień 2026 r. przekazane na „starych”
+  formularzach będą wymagały skorygowania.”
+- Pytanie: który wzór stosuje się do deklaracji rozliczeniowej za kwiecień 2026 r. złożonej 30 kwietnia 2026 r.:
+  z załącznika nr 26 (brzmienie § 4 ust. 2) czy z załącznika nr 16 (stanowisko ZUS)?
