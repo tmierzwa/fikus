@@ -217,9 +217,11 @@
         złożenia dokumentu: od 1 maja 2026 r. stosuje się nowy wzór także do dokumentów za okresy wcześniejsze (§ 6),
         a 30 kwietnia 2026 r. stosowało się przejściowo wzór z załącznika nr 26 (§ 4 ust. 2). ZUS podaje, że wzór
         obowiązuje od rozliczeń za kwiecień 2026 r. (aktualizacja formularza 30 kwietnia 2026 r.), a według ZUS rozliczenie
-        za kwiecień złożone na starym wzorze wymaga korekty. Rozporządzenie (§ 4 ust. 2) każe 30 kwietnia 2026 r. stosować
-        załącznik nr 26, więc dla dokumentu złożonego tego dnia stanowisko ZUS i brzmienie rozporządzenia się różnią
-        (otwarte pytanie do eksperta). Wzór nie ma osobnego numeru wersji. Wersji sprzed 1 maja 2026 r.
+        za kwiecień złożone na starym wzorze wymaga korekty; nowe wzory były w programie Płatnik od 24 kwietnia 2026 r.
+        i według ZUS można było na nich przekazać rozliczenie za kwiecień przed 1 maja. Według rozporządzenia do
+        29 kwietnia 2026 r. obowiązywało rozporządzenie z 20 grudnia 2020 r. (uchylone w § 7), a 30 kwietnia 2026 r.
+        załącznik nr 26 (§ 4 ust. 2), więc dla deklaracji za kwiecień złożonej przed 1 maja 2026 r. stanowisko ZUS
+        i brzmienie rozporządzenia się różnią (otwarte pytanie do eksperta). Wzór nie ma osobnego numeru wersji. Wersji sprzed 1 maja 2026 r.
         nie wprowadzono.
       sources:
         - title: Dz.U. 2026 poz. 518, rozporządzenie MRPiPS z 9 kwietnia 2026 r. w sprawie wzorów dokumentów ubezpieczeniowych (wzór ZUS DRA)
@@ -266,8 +268,9 @@
         checked_at: 2026-11-26
         open_issue_scope: edge_case
         open_issue: >-
-          Rozporządzenie (Dz.U. 2026 poz. 518, § 4 ust. 2) każe 30 kwietnia 2026 r. stosować wzór z załącznika nr 26,
-          a ZUS podaje, że rozliczenie za kwiecień 2026 r. trzeba sporządzić na wzorze obowiązującym od 1 maja i że
-          rozliczenie na starym formularzu wymaga korekty. Który wzór stosuje się do deklaracji za kwiecień 2026 r.
-          złożonej 30 kwietnia 2026 r.? Nie dotyczy wartości ani okresu tej wersji. Pytanie do eksperta:
+          Według rozporządzenia Dz.U. 2026 poz. 518 do 29 kwietnia 2026 r. obowiązywały wzory z rozporządzenia
+          z 20 grudnia 2020 r. (uchylonego w § 7), a 30 kwietnia 2026 r. wzór z załącznika nr 26 (§ 4 ust. 2). ZUS podaje,
+          że nowe wzory były w programie Płatnik od 24 kwietnia, że rozliczenie za kwiecień 2026 r. można było przekazać
+          na nich przed 1 maja i że rozliczenie na starych formularzach wymaga korekty. Który wzór stosuje się
+          do deklaracji za kwiecień 2026 r. złożonej przed 1 maja 2026 r.? Nie dotyczy wartości ani okresu tej wersji. Pytanie do eksperta:
           docs/pytania-do-eksperta.md, P40.

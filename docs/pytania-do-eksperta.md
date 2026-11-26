@@ -605,7 +605,7 @@ przypadku brzegowego, średnią.
   składa deklarację rozliczeniową za ten miesiąc za dni przed zawieszeniem? Jak wykazuje w niej składkę zdrowotną
   za ten miesiąc?
 
-## P40. Wzór ZUS DRA dla deklaracji za kwiecień 2026 r. złożonej 30 kwietnia 2026 r.
+## P40. Wzór ZUS DRA dla deklaracji za kwiecień 2026 r. złożonej przed 1 maja 2026 r.
 
 - Wpis: `schemat.zus_dra` (od 2026-05-01), notatka.
 - Zgłoszone: 2026-11-26.
@@ -613,10 +613,13 @@ przypadku brzegowego, średnią.
   30 kwietnia 2026 r. (§ 8, 14 dni od ogłoszenia 15 kwietnia), a § 4 ust. 2 stanowi: „W okresie od dnia wejścia w życie
   rozporządzenia do dnia 30 kwietnia 2026 r. w przypadku przekazywania deklaracji rozliczeniowej – o symbolu ZUS DRA,
   stosuje się dokument, którego wzór stanowi załącznik nr 26 do rozporządzenia.” Wzór z załącznika nr 16 obowiązuje
-  od 1 maja 2026 r. (§ 8), także dla dokumentów za wcześniejsze okresy (§ 6).
+  od 1 maja 2026 r. (§ 8), także dla dokumentów za wcześniejsze okresy (§ 6). Do 29 kwietnia 2026 r. obowiązywało
+  rozporządzenie z 20 grudnia 2020 r. (Dz.U. 2025 poz. 1036 i 1781), które § 7 uchyla.
 - Komunikat ZUS „Od 1 maja 2026 r. obowiązują nowe wzory formularzy ZUS DRA i ZUS RCA”
-  (https://www.zus.pl/-/od-1-maja-2026-r.-obowi%C4%85zuj%C4%85-nowe-wzory-formularzy-zus-dra-i-zus-rca): rozliczenia
-  na nowych wzorach można przekazać przed 1 maja, ale „Rozliczenie składek za kwiecień 2026 r. przekazane na „starych”
+  (https://www.zus.pl/-/od-1-maja-2026-r.-obowi%C4%85zuj%C4%85-nowe-wzory-formularzy-zus-dra-i-zus-rca): nową metrykę
+  programu Płatnik z nowymi wzorami ZUS udostępnił 24 kwietnia 2026 r.; „Możliwe jest sporządzanie i przekazanie rozliczeń
+  na nowych wzorach formularzy przed ich oficjalnym terminem obowiązywania tj. 1 maja 2026 r.”, a „Rozliczenie składek za kwiecień 2026 r. przekazane na „starych”
   formularzach będą wymagały skorygowania.”
-- Pytanie: który wzór stosuje się do deklaracji rozliczeniowej za kwiecień 2026 r. złożonej 30 kwietnia 2026 r.:
-  z załącznika nr 26 (brzmienie § 4 ust. 2) czy z załącznika nr 16 (stanowisko ZUS)?
+- Pytanie: który wzór stosuje się do deklaracji rozliczeniowej za kwiecień 2026 r. złożonej przed 1 maja 2026 r.:
+  do 29 kwietnia wzór z rozporządzenia z 2020 r., a 30 kwietnia wzór z załącznika nr 26 (brzmienie rozporządzenia), czy
+  wzór z załącznika nr 16 (stanowisko ZUS)?
