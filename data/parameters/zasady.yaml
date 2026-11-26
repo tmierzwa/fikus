@@ -253,6 +253,9 @@
       valid_to: 2026-01-31
       value:
         steps:
+          - text: Składka jest miesięczna i niepodzielna, z zastrzeżeniem art. 79a oraz rocznej podstawy i rocznego rozliczenia opisanych w dalszych krokach (art. 81 ust. 2). Jeżeli prowadzisz więcej niż jedną pozarolniczą działalność, składkę opłacasz od sumy dochodów z nich, a tak ustalona podstawa nie może być niższa niż minimalna roczna podstawa z kroku o niej.
+            uses: []
+            basis: art. 79 ust. 2 i art. 82 ust. 2a ustawy o świadczeniach opieki zdrowotnej
           - text: Miesięczną podstawą jest dochód z działalności z miesiąca poprzedzającego miesiąc, za który płacisz składkę. Za pierwszy miesiąc podlegania ubezpieczeniu w roku składkowym to przychody pomniejszone o koszty ich uzyskania w rozumieniu ustawy o PIT. Za kolejne miesiące to przychody pomniejszone o koszty od początku roku, pomniejszone o sumę dochodów ustalonych za miesiące poprzedzające.
             uses: []
             basis: art. 81 ust. 2c pkt 1, 3 i 4 ustawy o świadczeniach opieki zdrowotnej
@@ -283,7 +286,7 @@
           - text: Roczna składka to roczna podstawa pomnożona przez stopę składki przy podatku liniowym, nie mniej jednak niż 9% iloczynu liczby miesięcy w roku składkowym i 75% minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego. Którą liczbę miesięcy przyjąć, jest niewyjaśnione (otwarte pytanie do eksperta).
             uses: [zdrowotna.liniowy.stawka]
             basis: art. 79a ust. 1 pkt 2 ustawy o świadczeniach opieki zdrowotnej w zw. z art. 4 pkt 1 lit. b ustawy z 6 grudnia 2024 r. (Dz.U. 2024 poz. 1915)
-          - text: Porównaj roczną składkę z sumą składek za poszczególne miesiące roku składkowego. Niedopłatę wykaż w dokumencie rozliczeniowym za miesiąc, w którym upływa termin złożenia zeznania rocznego, i dopłać w terminie płatności składek za ten miesiąc. Nadpłata jest zwracana na wniosek złożony w terminie miesiąca od upływu terminu złożenia zeznania; pozostałe warunki zwrotu określają art. 81 ust. 2m–2qa.
+          - text: Porównaj roczną składkę ze składkami za poszczególne miesiące roku składkowego. Nadpłatę ustalasz względem sumy składek wpłaconych (art. 81 ust. 2i), a niedopłatę względem sumy składek wynikającej ze złożonych dokumentów (art. 81 ust. 2j). Niedopłatę wykaż w dokumencie rozliczeniowym za miesiąc, w którym upływa termin złożenia zeznania rocznego, i dopłać w terminie płatności składek za ten miesiąc. Nadpłata jest zwracana na wniosek złożony w terminie miesiąca od upływu terminu złożenia zeznania; pozostałe warunki zwrotu określają art. 81 ust. 2m–2qa.
             uses: [termin.roczne_rozliczenie_zdrowotnej]
             basis: art. 81 ust. 2i–2qa ustawy o świadczeniach opieki zdrowotnej
       note: >-
@@ -328,6 +331,22 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
           article: art. 81 ust. 2zf
           quote: "nie uwzględnia się w ich kwotach składek opłaconych w miesiącu, w którym ubezpieczony spełniał warunki do zwolnienia"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (składka miesięczna i niepodzielna)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 79 ust. 2
+          quote: "Składka jest miesięczna i niepodzielna, z zastrzeżeniem art. 79a oraz art. 81 ust. 2 i 2e."
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (kilka działalności)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 82 ust. 2a
+          quote: "Jeżeli ubezpieczony prowadzi więcej niż jedną pozarolniczą działalność, o której mowa w art. 81 ust. 2, składka na ubezpieczenie zdrowotne jest opłacana od sumy dochodów"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (nadpłata w rozliczeniu rocznym)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2i
+          quote: "suma wpłaconych za poszczególne miesiące roku składkowego albo roku kalendarzowego składek na ubezpieczenie zdrowotne"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (termin dopłaty)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2l
+          quote: "Dopłata, o której mowa w ust. 2j, następuje w terminie płatności składek za miesiąc, o którym mowa w ust. 2k."
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (rozliczenie roczne)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
           article: art. 81 ust. 2j
@@ -371,6 +390,9 @@
     - valid_from: 2026-02-01
       value:
         steps:
+          - text: Składka jest miesięczna i niepodzielna, z zastrzeżeniem art. 79a oraz rocznej podstawy i rocznego rozliczenia opisanych w dalszych krokach (art. 81 ust. 2). Jeżeli prowadzisz więcej niż jedną pozarolniczą działalność, składkę opłacasz od sumy dochodów z nich, a tak ustalona podstawa nie może być niższa niż minimalna roczna podstawa z kroku o niej.
+            uses: []
+            basis: art. 79 ust. 2 i art. 82 ust. 2a ustawy o świadczeniach opieki zdrowotnej
           - text: Miesięczną podstawą jest dochód z działalności z miesiąca poprzedzającego miesiąc, za który płacisz składkę. Za pierwszy miesiąc podlegania ubezpieczeniu w roku składkowym to przychody pomniejszone o koszty ich uzyskania w rozumieniu ustawy o PIT. Za kolejne miesiące to przychody pomniejszone o koszty od początku roku, pomniejszone o sumę dochodów ustalonych za miesiące poprzedzające.
             uses: []
             basis: art. 81 ust. 2c pkt 1, 3 i 4 ustawy o świadczeniach opieki zdrowotnej
@@ -401,7 +423,7 @@
           - text: Roczna składka to roczna podstawa pomnożona przez stopę składki przy podatku liniowym, nie mniej jednak niż 9% iloczynu liczby miesięcy w roku składkowym i minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego. Którą liczbę miesięcy przyjąć, jest niewyjaśnione (otwarte pytanie do eksperta).
             uses: [zdrowotna.liniowy.stawka]
             basis: art. 79a ust. 1 pkt 2 ustawy o świadczeniach opieki zdrowotnej
-          - text: Porównaj roczną składkę z sumą składek za poszczególne miesiące roku składkowego. Niedopłatę wykaż w dokumencie rozliczeniowym za miesiąc, w którym upływa termin złożenia zeznania rocznego, i dopłać w terminie płatności składek za ten miesiąc. Nadpłata jest zwracana na wniosek złożony w terminie miesiąca od upływu terminu złożenia zeznania; pozostałe warunki zwrotu określają art. 81 ust. 2m–2qa.
+          - text: Porównaj roczną składkę ze składkami za poszczególne miesiące roku składkowego. Nadpłatę ustalasz względem sumy składek wpłaconych (art. 81 ust. 2i), a niedopłatę względem sumy składek wynikającej ze złożonych dokumentów (art. 81 ust. 2j). Niedopłatę wykaż w dokumencie rozliczeniowym za miesiąc, w którym upływa termin złożenia zeznania rocznego, i dopłać w terminie płatności składek za ten miesiąc. Nadpłata jest zwracana na wniosek złożony w terminie miesiąca od upływu terminu złożenia zeznania; pozostałe warunki zwrotu określają art. 81 ust. 2m–2qa.
             uses: [termin.roczne_rozliczenie_zdrowotnej]
             basis: art. 81 ust. 2i–2qa ustawy o świadczeniach opieki zdrowotnej
       note: >-
@@ -430,6 +452,22 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
           article: art. 81 ust. 2zf
           quote: "nie uwzględnia się w ich kwotach składek opłaconych w miesiącu, w którym ubezpieczony spełniał warunki do zwolnienia"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (składka miesięczna i niepodzielna)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 79 ust. 2
+          quote: "Składka jest miesięczna i niepodzielna, z zastrzeżeniem art. 79a oraz art. 81 ust. 2 i 2e."
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (kilka działalności)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 82 ust. 2a
+          quote: "Jeżeli ubezpieczony prowadzi więcej niż jedną pozarolniczą działalność, o której mowa w art. 81 ust. 2, składka na ubezpieczenie zdrowotne jest opłacana od sumy dochodów"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (nadpłata w rozliczeniu rocznym)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2i
+          quote: "suma wpłaconych za poszczególne miesiące roku składkowego albo roku kalendarzowego składek na ubezpieczenie zdrowotne"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (termin dopłaty)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2l
+          quote: "Dopłata, o której mowa w ust. 2j, następuje w terminie płatności składek za miesiąc, o którym mowa w ust. 2k."
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (rozliczenie roczne)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
           article: art. 81 ust. 2j
