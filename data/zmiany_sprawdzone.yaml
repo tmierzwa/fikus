@@ -69,3 +69,51 @@
 - act: DU/2026/26
   checked_at: 2026-11-26
   note: "ustawa o świadczeniach (art. 21): zmienia tylko art. 87a ust. 1 pkt 4 lit. b, wchodzi w życie 2027-01-01; nie dotyka art. 79–82. ELI nie wymienia jej wśród nowelizacji po tekście jednolitym poz. 1461, więc skrypt jej nie zgłasza; wpis dokumentuje przegląd"
+- act: DU/2026/1098
+  for: DU/2026/592
+  checked_at: 2026-11-26
+  note: "ustawa o PIT (art. 32): dodaje art. 2 ust. 1 pkt 10, zmienia art. 45ba, art. 45c ust. 3d i art. 45cd, uchyla art. 45ce i 45cf; nie dotyka art. 44 ani art. 45 ust. 1, 1a i 4"
+- act: DU/2026/1098
+  for: DU/2025/843
+  checked_at: 2026-11-26
+  note: "ustawa o ryczałcie (art. 37): zmienia art. 21c i uchyla art. 21d; nie dotyka art. 11, 12 i 21"
+- act: DU/2026/1541
+  for: DU/2026/592
+  checked_at: 2026-11-26
+  note: "ustawa o PIT (art. 1): w art. 26 uchyla ust. 1 pkt 6a i ust. 6h, zmienia ust. 1 pkt 9 lit. c; uchyla art. 26gb; zmienia art. 26i ust. 1 i art. 52jb (dodaje ust. 2a, zmienia ust. 5, uchyla ust. 5a); nie dotyka art. 44"
+- act: DU/2026/1541
+  for: DU/2025/843
+  checked_at: 2026-11-26
+  note: "ustawa o ryczałcie (art. 3): zmienia w art. 11 ust. 1 i 2 odesłania do art. 26 ustawy o PIT (bez pkt 6a i ust. 6h); odesłanie do art. 26 ust. 1 pkt 2 zostaje; nie dotyka art. 11 ust. 1a i 3, art. 12 i 21"
+- act: DU/2026/1542
+  for: DU/2026/592
+  checked_at: 2026-11-26
+  note: "ustawa o PIT (art. 4): zmienia art. 21 (uchyla ust. 1 pkt 63a, zmienia pkt 63b i ust. 5a–5cc), art. 23b ust. 2, art. 23z, art. 26e ust. 6 i art. 26ga ust. 10; nie dotyka art. 44. Uchylenie art. 21 ust. 1 pkt 63a zmienia wyliczenie, które zasady składki zdrowotnej przepisują z art. 81 ust. 2zd pkt 2 ustawy o świadczeniach (art. 12 tej nowelizacji); obsłużą to nowe wersje tych zasad od 2027-01-01, poza tym wpisem"
+- act: DU/2026/1542
+  for: DU/2026/622
+  checked_at: 2026-11-26
+  note: "Ordynacja podatkowa (art. 9): dodaje art. 299 § 3 pkt 22; nie dotyka art. 12"
+- act: DU/2026/1556
+  for: DU/2026/592
+  checked_at: 2026-11-26
+  note: "ustawa o PIT (art. 109): dodaje art. 21 ust. 1 pkt 114a; nie dotyka art. 44"
+- act: DU/2026/1556
+  for: DU/2025/1461
+  checked_at: 2026-11-26
+  note: "ustawa o świadczeniach (art. 115): dodaje art. 66 ust. 1 pkt 28e, art. 73 pkt 10d, art. 75 ust. 11b, art. 81 ust. 8 pkt 9e i art. 86 ust. 1 pkt 9b (asystenci osobiści); nie dotyka art. 79, 79a, art. 81 ust. 2–2zf ani art. 82"
+- act: DU/2026/1540
+  for: DU/2025/1461
+  checked_at: 2026-11-26
+  note: "ustawa o świadczeniach (art. 2): dodaje art. 97 ust. 8aa i zmienia art. 131d ust. 1; nie dotyka art. 79–82"
+- act: DU/2026/1354
+  for: DU/2026/592
+  checked_at: 2026-11-26
+  note: "ustawa o PIT (art. 2): zmienia art. 14 ust. 2 pkt 10 lit. a; nie dotyka art. 44"
+- act: DU/2026/1347
+  for: DU/2026/592
+  checked_at: 2026-11-26
+  note: "ustawa o PIT (art. 2): uchyla art. 14 ust. 2 pkt 14 lit. b; nie dotyka art. 44"
+- act: DU/2026/1123
+  for: DU/2026/592
+  checked_at: 2026-11-26
+  note: "ustawa o PIT (art. 4): zmienia art. 21 ust. 1 pkt 67b i art. 22 ust. 1p pkt 2 lit. b; nie dotyka art. 44"
