@@ -1,0 +1,180 @@
+# Zasady obliczeń: kroki słowne z odwołaniami do parametrów i podstawą prawną.
+# Serwer ich nie wykonuje. Liczy klient.
+
+- id: zasada.przesuniecie_terminu
+  name: Przesunięcie terminu na dzień roboczy
+  kind: rule
+  versions:
+    - valid_from: 2020-01-01
+      value:
+        steps:
+          - text: Jeżeli ostatni dzień terminu przypada na sobotę lub dzień ustawowo wolny od pracy (w tym niedzielę), termin upływa następnego dnia, który nie jest sobotą ani dniem wolnym, chyba że ustawa podatkowa stanowi inaczej.
+            uses: [kalendarz.dni_wolne]
+            basis: art. 12 § 5 Ordynacji podatkowej; art. 1 pkt 1 i 2 ustawy o dniach wolnych od pracy
+          - text: Tę samą zasadę stosuje się do terminów składek ZUS.
+            uses: [termin.zus]
+            basis: art. 31 ustawy o systemie ubezpieczeń społecznych
+      note: >-
+        Poprawka źródeł (wcześniej link-zaślepka) i dodany krok o składkach ZUS.
+        valid_from 2020-01-01 nie jest potwierdzony źródłem.
+      sources:
+        - title: Dz.U. 2026 poz. 622, tekst jednolity Ordynacji podatkowej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/622/text.pdf
+          quote: "Jeżeli ostatni dzień terminu przypada na sobotę lub dzień ustawowo wolny od pracy, za ostatni dzień terminu uważa się następny dzień po dniu lub dniach wolnych od pracy"
+          article: art. 12 § 5
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          quote: "Do należności z tytułu składek stosuje się odpowiednio: art. 7a, art. 12"
+          article: art. 31
+        - title: Dz.U. 2025 poz. 296, tekst jednolity ustawy o dniach wolnych od pracy
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/296/text.pdf
+          quote: "drugi dzień Bożego Narodzenia; 2) niedziele"
+          article: art. 1 pkt 1 i 2
+        - title: biznes.gov.pl, Jak składać JPK_VAT z deklaracją, aktualizacja 03.07.2026 (krok 1, na przykładzie VAT)
+          url: https://www.biznes.gov.pl/pl/portal/00237
+          kind: control
+          quote: "Jeśli 25. dzień miesiąca wypada w sobotę lub dzień ustawowo wolny od pracy, wtedy masz czas do pierwszego dnia roboczego przypadającego po tych dniach"
+          as_of: 2026-11-26
+        - title: ZUS, Termin składania dokumentów i opłacania składek (krok 2)
+          url: https://www.zus.pl/en/firmy/rozliczenia-z-zus/dokumenty-rozliczeniowe/termin-skladania-dokumentow-i-oplacania-skladek
+          kind: control
+          quote: "Jeżeli koniec tego terminu przypada w święto (dzień ustawowo wolny od pracy), sobotę lub niedzielę, to za ostatni dzień terminu uważa się następny dzień roboczy"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: zasada.ryczalt_zdrowotna_prog
+  name: Wybór progu składki zdrowotnej na ryczałcie
+  kind: rule
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2025-01-01
+      note: >-
+        Poprawka: wcześniej wpisany okres 2026-02-01 – 2027-01-31 dotyczy skali i liniowego, nie ryczałtu,
+        a krok 4 powoływał art. 81 ust. 2h, który dotyczy wyboru przychodu z poprzedniego roku.
+        Ust. 2e-2i w tym brzmieniu obowiązują od 1 stycznia 2025 r. (Dz.U. 2024 poz. 1915).
+        Poprawka 2026-11-26: dodany krok 2 o wyłączeniach z art. 81 ust. 2zd, którego brakowało (wskazał weryfikator).
+      value:
+        steps:
+          - text: Ustal przychód z działalności osiągnięty od początku roku kalendarzowego, pomniejszony o opłacone składki emerytalną, rentową, chorobową i wypadkową, jeżeli nie zostały zaliczone do kosztów ani odliczone od dochodu. Funduszu Pracy nie odejmuj. Zamiast tego możesz przyjąć przychód z poprzedniego roku (zasada.ryczalt_zdrowotna_prog_poprzedni_rok).
+            uses: [zasada.ryczalt_zdrowotna_prog_poprzedni_rok]
+            basis: art. 81 ust. 2f i 2g ustawy o świadczeniach opieki zdrowotnej
+          - text: Do przychodu nie wliczaj przychodów wyłączonych przez art. 81 ust. 2zd, czyli osiągniętych w okresie zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63a, 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, oraz osiągniętych w miesiącu, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a).
+            uses: []
+            basis: art. 81 ust. 2zd ustawy o świadczeniach opieki zdrowotnej
+          - text: Porównaj tę kwotę z progami. Składka za miesiąc to kwota z parametru dla progu, w którym się mieści.
+            uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka]
+            basis: art. 81 ust. 2f ustawy o świadczeniach opieki zdrowotnej
+          - text: Po przekroczeniu progu w trakcie roku płać kwotę wyższego progu od miesiąca przekroczenia.
+            uses: [zdrowotna.ryczalt.skladka]
+            basis: art. 81 ust. 2f ustawy o świadczeniach opieki zdrowotnej
+          - text: Po końcu roku ustal roczną składkę według progu dla rocznego przychodu, pomnożonej przez liczbę miesięcy podlegania ubezpieczeniu (bez miesięcy zwolnienia ze składki). Porównaj z sumą wpłat. Nadwyżkę odbierz, niedopłatę dopłać w rozliczeniu rocznym.
+            uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka, termin.roczne_rozliczenie_zdrowotnej]
+            basis: art. 81 ust. 2e, 2ea, 2i, 2j, 2k i 2l ustawy o świadczeniach opieki zdrowotnej
+      sources:
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          quote: "osiągnięte od początku roku kalendarzowego, nie przekroczyły kwoty 60 000 zł"
+          article: art. 81 ust. 2e-2l
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          quote: "nie uwzględnia się w tych przychodach i kosztach ich uzyskania: 1) przychodów osiągniętych i kosztów poniesionych w okresie zawieszenia wykonywania działalności gospodarczej"
+          article: art. 81 ust. 2zd
+        - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r. (krok 1)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "Przychody te pomniejsz o kwoty opłaconych składek na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe, jeżeli nie zaliczyłeś ich do kosztów uzyskania przychodów lub odliczyłeś od dochodu"
+          as_of: 2026-11-26
+        - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r. (kroki 2 i 3)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "jeśli przekroczysz kwotę przychodów w danym miesiącu, za ten miesiąc musisz rozliczyć składkę od podstawy wymiaru obowiązującej dla kolejnego progu przychodów"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: zasada.ryczalt_zdrowotna_prog_poprzedni_rok
+  name: Składka zdrowotna na ryczałcie według przychodu z poprzedniego roku
+  kind: rule
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2025-01-01
+      note: >-
+        ust. 2h w tym brzmieniu obowiązuje od 1 stycznia 2025 r. (Dz.U. 2024 poz. 1915); tekst jednolity uwzględnia zmiany ogłoszone przed 2025-09-25.
+        Poprawka 2026-11-26: dodany krok 3 o wyłączeniach z art. 81 ust. 2zd, którego brakowało (wskazał weryfikator).
+      value:
+        steps:
+          - text: Ta możliwość dotyczy tylko podatnika, który przez cały poprzedni rok kalendarzowy prowadził działalność opodatkowaną ryczałtem, skalą, liniowym albo IP Box.
+            uses: []
+            basis: art. 81 ust. 2h ustawy o świadczeniach opieki zdrowotnej
+          - text: Weź przychód z poprzedniego roku kalendarzowego pomniejszony o składki emerytalną, rentową, chorobową i wypadkową opłacone w tamtym roku, jeżeli nie zostały odliczone.
+            uses: []
+            basis: art. 81 ust. 2h ustawy o świadczeniach opieki zdrowotnej
+          - text: Do przychodu nie wliczaj przychodów wyłączonych przez art. 81 ust. 2zd, czyli osiągniętych w okresie zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63a, 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, oraz osiągniętych w miesiącu, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a).
+            uses: []
+            basis: art. 81 ust. 2zd ustawy o świadczeniach opieki zdrowotnej
+          - text: Wybierz próg według tej kwoty. Składka za każdy miesiąc bieżącego roku to kwota z parametru dla tego progu; stosuj ją przez cały rok kalendarzowy.
+            uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka]
+            basis: art. 81 ust. 2h ustawy o świadczeniach opieki zdrowotnej
+      sources:
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          quote: "może przy określaniu miesięcznej podstawy wymiaru składki na ubezpieczenie zdrowotne przyjąć kwotę przychodów uzyskanych w poprzednim roku kalendarzowym"
+          article: art. 81 ust. 2e-2l
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          quote: "nie uwzględnia się w tych przychodach i kosztach ich uzyskania: 1) przychodów osiągniętych i kosztów poniesionych w okresie zawieszenia wykonywania działalności gospodarczej"
+          article: art. 81 ust. 2zd
+        - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r.
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "możesz przyjąć kwotę przychodów uzyskanych w poprzednim roku kalendarzowym, jeśli przez cały poprzedni rok kalendarzowy prowadziłeś działalność gospodarczą"
+          as_of: 2026-11-26
+        - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r.
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "Przyjętą kwotę przychodów uzyskanych w poprzednim roku kalendarzowym pomniejszasz o kwotę opłaconych w poprzednim roku kalendarzowym składek na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, open_issue: "ZUS (poradnik, stan na 2025-01-01) dodaje wyjątek: podstawy z poprzedniego roku nie stosuje się przez cały rok, gdy działalność zostanie zakończona i podjęta na nowo; ustawa (art. 81 ust. 2h) go nie wymienia. Pytanie do eksperta: docs/pytania-do-eksperta.md, P1"}
+
+- id: zasada.ryczalt_podstawa
+  name: Podstawa opodatkowania ryczałtem
+  kind: rule
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2024-01-01
+      value:
+        steps:
+          - text: Weź przychód z ewidencji przychodów za okres.
+            uses: []
+            basis: art. 6 ustawy o zryczałtowanym podatku dochodowym
+          - text: Odejmij zapłacone składki społeczne (emerytalna, rentowa, chorobowa, wypadkowa), jeżeli nie zostały odliczone gdzie indziej. Funduszu Pracy i Funduszu Solidarnościowego nie odejmuj.
+            uses: [zus.stawka.emerytalna, zus.stawka.rentowa, zus.stawka.chorobowa, zus.stawka.wypadkowa_do_9]
+            basis: art. 11 ust. 1 ustawy o zryczałtowanym podatku dochodowym w zw. z art. 26 ust. 1 pkt 2 ustawy o podatku dochodowym od osób fizycznych
+          - text: Odejmij 50% składki zdrowotnej zapłaconej w roku podatkowym, jeżeli nie została zwrócona.
+            uses: [zdrowotna.ryczalt.skladka]
+            basis: art. 11 ust. 1a ustawy o zryczałtowanym podatku dochodowym
+          - text: Przy przychodach opodatkowanych różnymi stawkami odliczenia dziel w proporcji do tych przychodów.
+            uses: []
+            basis: art. 11 ust. 3 ustawy o zryczałtowanym podatku dochodowym
+          - text: Pomnóż wynik przez stawkę ryczałtu właściwą dla rodzaju przychodu.
+            uses: []
+            basis: art. 12 ust. 1 ustawy o zryczałtowanym podatku dochodowym
+      note: >-
+        Poprawka: krok o składce zdrowotnej powoływał art. 11 ust. 1c (różnice kursowe), właściwy jest ust. 1a;
+        dodany krok o proporcji z ust. 3, który w obecnym brzmieniu dotyczy przychodów od 1 stycznia 2024 r.,
+        stąd valid_from 2024-01-01 (wcześniej 2022-01-01); link-zaślepka zastąpiony.
+      sources:
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "mogą być pomniejszone o 50 % składek na ubezpieczenie zdrowotne zapłaconych w roku podatkowym"
+          article: art. 11 ust. 1, 1a i 3, art. 12 ust. 1
+        - title: biznes.gov.pl, Jak odliczyć składki ZUS przy rozliczaniu podatków, aktualizacja 23.04.2026 (krok 2)
+          url: https://www.biznes.gov.pl/pl/portal/00230
+          kind: control
+          quote: "Jeśli rozliczasz się ryczałtem, składki na własne ubezpieczenia społeczne możesz odliczyć wyłącznie od przychodu"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Odliczenie składek na ubezpieczenie zdrowotne PIT, aktualizacja 23.11.2026 (kroki 3 i 4)
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/odliczenie-skladek-na-ubezpieczenie-zdrowotne-pit
+          kind: control
+          quote: "możesz od nich odliczyć 50% zapłaconych składek zdrowotnych . Ważne! Jeżeli osiągasz przychody opodatkowane różnymi stawkami, składki zdrowotne odliczasz proporcjonalnie"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}

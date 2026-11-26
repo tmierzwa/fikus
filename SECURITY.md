@@ -1,0 +1,16 @@
+# Bezpieczeństwo i kontakt
+
+## Błędy w danych
+
+Błędną wartość, termin albo zasadę zgłoś jako issue z szablonem „Błąd w danych”. To najważniejsze
+zgłoszenia w projekcie, bo ktoś może się na tych danych oprzeć przy płaceniu podatku.
+
+## Luki bezpieczeństwa
+
+Lukę w kodzie (na przykład w pobieraniu i przetwarzaniu źródeł) zgłoś prywatnie przez
+„Report a vulnerability” w zakładce Security repozytorium. Nie opisuj jej w publicznym issue.
+
+## Kontakt
+
+Sprawy poufne, w tym naruszenia kodeksu postępowania, zgłaszaj prywatnie przez „Report a vulnerability”
+w zakładce Security repozytorium. W tytule napisz „Kodeks postępowania”. Zgłoszenie widzą tylko opiekunowie.

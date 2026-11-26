@@ -1,0 +1,13 @@
+# Profile przykładowe. Profil wybiera parametry, które dotyczą danej formy opodatkowania,
+# rozliczenia VAT i rodzaju składek ZUS (pole applies_to w parametrach).
+# To nie są dane konkretnych podatników.
+
+- id: przyklad_ryczalt
+  tax_form: ryczalt
+  vat: czynny_kwartalnie
+  zus: pelny
+
+- id: przyklad_liniowy
+  tax_form: liniowy
+  vat: czynny_miesiecznie
+  zus: preferencyjny

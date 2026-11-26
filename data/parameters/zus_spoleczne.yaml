@@ -1,0 +1,192 @@
+# Składki na ubezpieczenia społeczne, Fundusz Pracy i Fundusz Solidarnościowy przedsiębiorcy.
+# Stawki emerytalna, rentowa, chorobowa, FP i FS obowiązują w roku kalendarzowym.
+# Stawka wypadkowa obowiązuje w roku składkowym: od 1 kwietnia do 31 marca następnego roku.
+
+- id: zus.prognozowane_wynagrodzenie
+  name: Prognozowane przeciętne wynagrodzenie miesięczne w gospodarce narodowej
+  unit: PLN/miesiąc
+  versions:
+    - valid_from: 2026-01-01
+      valid_to: 2026-12-31
+      value: 9420
+      sources:
+        - title: M.P. 2025 poz. 1206, obwieszczenie MRPiPS z 19 listopada 2025 r.
+          url: https://api.sejm.gov.pl/eli/acts/MP/2025/1206/text.pdf
+          quote: "kwota prognozowanego przeciętnego wynagrodzenia wynosi 9420 zł"
+          article: art. 19 ust. 10 ustawy o systemie ubezpieczeń społecznych
+        - title: Dz.U. 2026 poz. 62, ustawa budżetowa na rok 2026
+          url: https://eli.gov.pl/eli/DU/2026/62/ogl
+          independent: true
+          quote: "Prognozowane przeciętne miesięczne wynagrodzenie brutto w gospodarce narodowej wynosi 9 420 zł"
+          article: art. 24
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+
+- id: zus.podstawa_minimalna
+  name: Najniższa miesięczna podstawa wymiaru składek społecznych przedsiębiorcy
+  unit: PLN/miesiąc
+  applies_to: {zus: [pelny]}
+  versions:
+    - valid_from: 2026-01-01
+      valid_to: 2026-12-31
+      value: 5652.00
+      note: 60% prognozowanego przeciętnego wynagrodzenia (zus.prognozowane_wynagrodzenie)
+      sources:
+        - title: Komunikat ZUS z 30 grudnia 2025 r., nowe wysokości składek na ubezpieczenia społeczne w 2026 r.
+          url: https://www.zus.pl/-/nowe-wysoko%C5%9Bci-sk%C5%82adek-na-ubezpieczenia-spo%C5%82eczne-w-2026-r.
+          independent: true
+          article: art. 18 ust. 8 ustawy o systemie ubezpieczeń społecznych (Dz.U. 2026 poz. 1474)
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 18 ust. 8
+          quote: "nie niższa jednak niż 60 % prognozowanego przeciętnego wynagrodzenia miesięcznego"
+        - title: Symfonia, składki ZUS w 2026 r. dla przedsiębiorców
+          url: https://symfonia.pl/blog/firmy/male-firmy/skladki-zus-w-2026-r-dla-przedsiebiorcow-ile-wyniosa/
+          kind: control
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25, filed_documents: kwota zgodna z deklaracją ZUS DRA za 10/2026}
+
+- id: zus.limit_rocznej_podstawy
+  name: Roczny limit podstawy wymiaru składek emerytalnej i rentowej
+  unit: PLN/rok
+  versions:
+    - valid_from: 2026-01-01
+      valid_to: 2026-12-31
+      value: 282600
+      sources:
+        - title: M.P. 2025 poz. 1206, obwieszczenie MRPiPS z 19 listopada 2025 r.
+          url: https://api.sejm.gov.pl/eli/acts/MP/2025/1206/text.pdf
+          quote: "w roku 2026 wynosi 282 600 zł"
+          article: art. 19 ust. 1 i 10 ustawy o systemie ubezpieczeń społecznych
+        - title: Komunikat ZUS z 30 grudnia 2025 r., nowe wysokości składek na ubezpieczenia społeczne w 2026 r.
+          url: https://www.zus.pl/-/nowe-wysoko%C5%9Bci-sk%C5%82adek-na-ubezpieczenia-spo%C5%82eczne-w-2026-r.
+          independent: true
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+
+- id: zus.stawka.emerytalna
+  name: Stopa składki na ubezpieczenie emerytalne
+  unit: "% podstawy"
+  versions:
+    - valid_from: 2026-01-01
+      value: 19.52
+      note: wcześniejszych wersji nie wprowadzono
+      sources:
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych
+          url: https://eli.gov.pl/eli/DU/2026/1474/ogl
+          quote: "19,52 % podstawy wymiaru – na ubezpieczenie emerytalne"
+          article: art. 22 ust. 1 pkt 1
+        - title: Komunikat ZUS z 30 grudnia 2025 r., nowe wysokości składek na ubezpieczenia społeczne w 2026 r.
+          url: https://www.zus.pl/-/nowe-wysoko%C5%9Bci-sk%C5%82adek-na-ubezpieczenia-spo%C5%82eczne-w-2026-r.
+          independent: true
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25, filed_documents: kwota zgodna z deklaracją ZUS DRA za 10/2026}
+
+- id: zus.stawka.rentowa
+  name: Stopa składki na ubezpieczenia rentowe
+  unit: "% podstawy"
+  versions:
+    - valid_from: 2026-01-01
+      value: 8.00
+      note: wcześniejszych wersji nie wprowadzono
+      sources:
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych
+          url: https://eli.gov.pl/eli/DU/2026/1474/ogl
+          quote: "8,00 % podstawy wymiaru – na ubezpieczenia rentowe"
+          article: art. 22 ust. 1 pkt 2
+        - title: Komunikat ZUS z 30 grudnia 2025 r., nowe wysokości składek na ubezpieczenia społeczne w 2026 r.
+          url: https://www.zus.pl/-/nowe-wysoko%C5%9Bci-sk%C5%82adek-na-ubezpieczenia-spo%C5%82eczne-w-2026-r.
+          independent: true
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25, filed_documents: kwota zgodna z deklaracją ZUS DRA za 10/2026}
+
+- id: zus.stawka.chorobowa
+  name: Stopa składki na ubezpieczenie chorobowe (dobrowolne dla przedsiębiorcy)
+  unit: "% podstawy"
+  versions:
+    - valid_from: 2026-01-01
+      value: 2.45
+      note: wcześniejszych wersji nie wprowadzono
+      sources:
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych
+          url: https://eli.gov.pl/eli/DU/2026/1474/ogl
+          quote: "2,45 % podstawy wymiaru – na ubezpieczenie chorobowe"
+          article: art. 22 ust. 1 pkt 3
+        - title: Komunikat ZUS z 30 grudnia 2025 r., nowe wysokości składek na ubezpieczenia społeczne w 2026 r.
+          url: https://www.zus.pl/-/nowe-wysoko%C5%9Bci-sk%C5%82adek-na-ubezpieczenia-spo%C5%82eczne-w-2026-r.
+          independent: true
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25, filed_documents: kwota zgodna z deklaracją ZUS DRA za 10/2026}
+
+- id: zus.stawka.wypadkowa_do_9
+  name: Stopa składki wypadkowej płatnika zgłaszającego nie więcej niż 9 ubezpieczonych
+  unit: "% podstawy"
+  versions:
+    - valid_from: 2025-04-01
+      valid_to: 2026-03-31
+      value: 1.67
+      note: >-
+        Rok składkowy 2025/2026. 50% najwyższej stopy dla grup działalności (3,33% w załączniku nr 2
+        w brzmieniu od 1 kwietnia 2024 r.), czyli 1,665, zaokrąglone do 0,01 zgodnie z § 6 ust. 2 rozporządzenia.
+        Zmiana rozporządzenia Dz.U. 2025 poz. 1292 nie zmienia stóp.
+      sources:
+        - title: Dz.U. 2025 poz. 1644, tekst jednolity ustawy o ubezpieczeniu społecznym z tytułu wypadków przy pracy i chorób zawodowych
+          url: https://eli.gov.pl/eli/DU/2025/1644/ogl
+          quote: "nie więcej niż 9 ubezpieczonych wynosi 50 % najwyższej stopy procentowej ustalonej na dany rok składkowy dla grup działalności"
+          article: art. 28 ust. 1, art. 2 pkt 8
+        - title: Dz.U. 2024 poz. 451, rozporządzenie MRPiPS z 25 marca 2024 r. zmieniające rozporządzenie w sprawie różnicowania stopy procentowej składki wypadkowej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/451/text.pdf
+          quote: "Rozporządzenie wchodzi w życie z dniem 1 kwietnia 2024 r."
+          article: załącznik nr 2, § 2
+        - title: Dz.U. 2025 poz. 1874, tekst jednolity rozporządzenia w sprawie różnicowania stopy procentowej składki wypadkowej
+          url: https://eli.gov.pl/eli/DU/2025/1874/ogl
+          quote: "Wartości stóp procentowych składki, kategorii ryzyka i wskaźników częstości zaokrągla się zgodnie z zasadą matematyczną"
+          article: § 6 ust. 2
+        - title: Dz.U. 2025 poz. 1292, rozporządzenie MRPiPS z 18 września 2025 r.
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1292/text.pdf
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+    - valid_from: 2026-04-01
+      valid_to: 2027-03-31
+      value: 1.67
+      note: >-
+        50% najwyższej stopy dla grup działalności (3,33% w załączniku nr 2 rozporządzenia), czyli 1,665,
+        zaokrąglone do 0,01 zgodnie z § 6 ust. 2 rozporządzenia.
+        Okres to rok składkowy z art. 2 pkt 8; rozporządzenie nie ma daty końcowej (załącznik nr 2
+        obowiązuje od 1 kwietnia 2024 r.; zmiana z 10 października 2025 r. dotyczy tylko kodów PKD).
+      sources:
+        - title: Dz.U. 2025 poz. 1644, tekst jednolity ustawy o ubezpieczeniu społecznym z tytułu wypadków przy pracy i chorób zawodowych
+          url: https://eli.gov.pl/eli/DU/2025/1644/ogl
+          quote: "nie więcej niż 9 ubezpieczonych wynosi 50 % najwyższej stopy procentowej ustalonej na dany rok składkowy dla grup działalności"
+          article: art. 28 ust. 1, art. 2 pkt 8
+        - title: Dz.U. 2025 poz. 1874, tekst jednolity rozporządzenia w sprawie różnicowania stopy procentowej składki wypadkowej
+          url: https://eli.gov.pl/eli/DU/2025/1874/ogl
+          quote: "Wartości stóp procentowych składki, kategorii ryzyka i wskaźników częstości zaokrągla się zgodnie z zasadą matematyczną"
+          article: załącznik nr 2, § 6 ust. 2
+        - title: Fakturownia, składka wypadkowa 2026
+          url: https://fakturownia.pl/aktualnosci/skadka-wypadkowa-2026-nowe-stawki-i-jak-ja-ustalic
+          kind: control
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25, filed_documents: kwota zgodna z deklaracją ZUS DRA za 10/2026}
+
+- id: zus.stawka.fundusz_pracy
+  name: Stopa składki na Fundusz Pracy
+  unit: "% podstawy"
+  versions:
+    - valid_from: 2026-01-01
+      valid_to: 2026-12-31
+      value: 1.0
+      note: łącznie z Funduszem Solidarnościowym 2,45%
+      sources:
+        - title: Dz.U. 2026 poz. 62, ustawa budżetowa na rok 2026
+          url: https://eli.gov.pl/eli/DU/2026/62/ogl
+          quote: "obowiązkowej składki na Fundusz Pracy, która wynosi 1,0 % podstawy wymiaru składek"
+          article: art. 25 (na podstawie art. 260 ustawy o rynku pracy i służbach zatrudnienia)
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25, filed_documents: suma FP i FS zgodna z deklaracją ZUS DRA za 10/2026}
+
+- id: zus.stawka.fundusz_solidarnosciowy
+  name: Stopa składki na Fundusz Solidarnościowy
+  unit: "% podstawy"
+  versions:
+    - valid_from: 2026-01-01
+      valid_to: 2026-12-31
+      value: 1.45
+      note: łącznie z Funduszem Pracy 2,45%
+      sources:
+        - title: Dz.U. 2026 poz. 62, ustawa budżetowa na rok 2026
+          url: https://eli.gov.pl/eli/DU/2026/62/ogl
+          quote: "obowiązkowej składki na Fundusz Solidarnościowy, która wynosi 1,45 % podstawy wymiaru"
+          article: art. 26 (na podstawie art. 4 ust. 2 ustawy o Funduszu Solidarnościowym)
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25, filed_documents: suma FP i FS zgodna z deklaracją ZUS DRA za 10/2026}

@@ -1,0 +1,34 @@
+name: Błąd w danych
+description: Wartość, termin, zasada albo kalendarz niezgodne ze źródłem
+labels: [dane]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Nie wpisuj swoich danych podatkowych (kwot z deklaracji, NIP, PESEL). Zgłoszenie jest publiczne.
+  - type: input
+    id: parametr
+    attributes:
+      label: Identyfikator parametru
+      placeholder: np. zdrowotna.ryczalt.skladka
+    validations:
+      required: true
+  - type: input
+    id: dzien
+    attributes:
+      label: Dzień, którego dotyczy błąd
+      placeholder: RRRR-MM-DD
+  - type: textarea
+    id: opis
+    attributes:
+      label: Co jest nie tak
+      description: Jaka wartość jest w danych, a jaka powinna być.
+    validations:
+      required: true
+  - type: textarea
+    id: zrodlo
+    attributes:
+      label: Źródło
+      description: Link do aktu prawnego, obwieszczenia albo komunikatu urzędu i dosłowny fragment, z którego wynika poprawna wartość.
+    validations:
+      required: true

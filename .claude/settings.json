@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(~/jdg-dane/**)",
+      "Edit(~/jdg-dane/**)",
+      "Write(~/jdg-dane/**)",
+      "Bash(git push --force*)",
+      "Bash(git push origin main*)"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && .venv/bin/python -m pytest -q 1>&2 || exit 2"
+          }
+        ]
+      }
+    ]
+  }
+}

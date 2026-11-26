@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "fikus": {
+      "command": ".venv/bin/fikus",
+      "args": []
+    }
+  }
+}

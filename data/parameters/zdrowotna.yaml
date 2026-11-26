@@ -1,0 +1,128 @@
+# Składka zdrowotna przedsiębiorcy.
+# Skala i liniowy: rok składkowy od lutego do stycznia następnego roku (art. 81 ust. 2).
+# Ryczałt: rok kalendarzowy, kwoty od przeciętnego wynagrodzenia z IV kw. roku poprzedniego (art. 81 ust. 2e i 2f).
+
+- id: zdrowotna.minimum
+  name: Minimalna miesięczna składka zdrowotna (skala, liniowy)
+  unit: PLN/miesiąc
+  applies_to: {tax_form: [skala, liniowy]}
+  versions:
+    - valid_from: 2025-02-01
+      valid_to: 2026-01-31
+      value: 314.96
+      note: 9% podstawy równej 75% minimalnego wynagrodzenia obowiązującego 1 lutego 2025 r. (3499,50 zł z 4666 zł); 75% tylko w roku składkowym 2025/2026.
+      sources:
+        - title: Komunikat ZUS z 30 stycznia 2025 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2025 r. dla niektórych grup ubezpieczonych
+          url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2025-r.-dla-niekt%C3%B3rych-grup-ubezpieczonych
+          quote: "314,96 zł (za miesiące od lutego 2025 r. do stycznia 2026 r."
+          as_of: 2025-01-30
+        - title: Komunikat ZUS z 2 lutego 2026 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r.
+          url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2026-r.
+          quote: "314,96 zł (za styczeń 2026 r. – ostatni miesiąc roku składkowego"
+          as_of: 2026-02-02
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 79 ust. 1, art. 81 ust. 2 i 2d; art. 4 pkt 1 lit. a i pkt 2 lit. a ustawy z 6 grudnia 2024 r. (Dz.U. 2024 poz. 1915), przytoczony w obwieszczeniu jako przepis nieobjęty tekstem jednolitym
+          quote: "w art. 81 ust. 2d ustawy zmienianej w art. 1, stanowi kwota 75 % minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego"
+          as_of: 2025-09-26
+        - title: Dz.U. 2024 poz. 1362, rozporządzenie Rady Ministrów z 12 września 2024 r. w sprawie minimalnego wynagrodzenia w 2025 r.
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/1362/text.pdf
+          article: § 1
+          quote: "Od dnia 1 stycznia 2025 r. ustala się minimalne wynagrodzenie za pracę w wysokości 4666 zł."
+          as_of: 2024-09-13
+      verification:
+        checked_at: 2026-11-26
+        open_issue: >-
+          Brak drugiego niezależnego źródła, które samo podaje 314,96 zł za cały okres luty 2025 – styczeń 2026.
+          Komunikat ZUS z 2026 r. i ifirma podają tę kwotę tylko za styczeń 2026; PITax podaje błędny okres (do grudnia 2026).
+    - valid_from: 2026-02-01
+      valid_to: 2027-01-31
+      value: 432.54
+      note: >-
+        9% podstawy równej minimalnemu wynagrodzeniu obowiązującemu 1 lutego 2026 r. (4806 zł).
+        Poprawka: wcześniej jako źródło pierwotne podano kalkulator ZUS, a jako kontrolne artykuł ifirma o 2024 r.
+      sources:
+        - title: Komunikat ZUS z 2 lutego 2026 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r.
+          url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2026-r.
+          quote: "432,54 zł (za miesiące od lutego 2026 r. do stycznia 2027 r."
+          as_of: 2026-02-02
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 79 ust. 1, art. 79a ust. 1 pkt 1, art. 81 ust. 2 i 2d
+          quote: "jest niższa od kwoty minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego, podstawę wymiaru składki na ubezpieczenie zdrowotne za ten miesiąc stanowi ta kwota"
+          as_of: 2025-09-26
+        - title: Dz.U. 2025 poz. 1242, rozporządzenie Rady Ministrów z 11 września 2025 r. w sprawie minimalnego wynagrodzenia w 2026 r.
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1242/text.pdf
+          article: § 1
+          quote: "Od dnia 1 stycznia 2026 r. ustala się minimalne wynagrodzenie za pracę w wysokości 4806 zł."
+          as_of: 2025-09-15
+        - title: ifirma.pl, składki ZUS 2026 (podaje kwotę za luty–grudzień 2026)
+          url: https://www.ifirma.pl/blog/skladki-zus-2026-ile-wynosza-aktualne-skladki-zus-dla-przedsiebiorcow/
+          kind: control
+      verification:
+        checked_at: 2026-11-26
+        open_issue: Źródło kontrolne potwierdza kwotę tylko za luty–grudzień 2026; styczeń 2027 potwierdza wyłącznie komunikat ZUS.
+
+- id: zdrowotna.ryczalt.skladka
+  name: Miesięczna składka zdrowotna na ryczałcie wg progu przychodu
+  unit: PLN/miesiąc
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2025-01-01
+      valid_to: 2025-12-31
+      value: {do_60000: 461.66, do_300000: 769.43, powyzej_300000: 1384.97}
+      note: 9% podstawy 60/100/180% przeciętnego wynagrodzenia z IV kw. 2024 (8549,18 zł)
+      sources:
+        - title: M.P. 2025 poz. 84, obwieszczenie Prezesa GUS z 22 stycznia 2025 r.
+          url: https://api.sejm.gov.pl/eli/acts/MP/2025/84/text.pdf
+          quote: "w czwartym kwartale w 2024 r. wyniosło 8549,18 zł"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          quote: "Składka na ubezpieczenie zdrowotne wynosi 9 % podstawy wymiaru składki"
+          article: art. 81 ust. 2f, art. 79 ust. 1
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+    - valid_from: 2026-01-01
+      valid_to: 2026-12-31
+      value: {do_60000: 498.35, do_300000: 830.58, powyzej_300000: 1495.04}
+      note: >-
+        9% podstawy 60/100/180% przeciętnego wynagrodzenia z IV kw. 2025 (9228,64 zł).
+        Poprawka: wcześniej wpisany okres 2026-02-01 – 2027-01-31 dotyczy skali i liniowego, nie ryczałtu.
+      sources:
+        - title: M.P. 2026 poz. 117, obwieszczenie Prezesa GUS z 22 stycznia 2026 r.
+          url: https://api.sejm.gov.pl/eli/acts/MP/2026/117/text.pdf
+          quote: "w czwartym kwartale w 2025 r. wyniosło 9228,64 zł"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          quote: "Składka na ubezpieczenie zdrowotne wynosi 9 % podstawy wymiaru składki"
+          article: art. 81 ust. 2f, art. 79 ust. 1
+        - title: Fakturownia, kalkulator ZUS
+          url: https://fakturownia.pl/kalkulator-zus
+          kind: control
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25, filed_documents: kwota zgodna z deklaracją ZUS DRA za 10/2026}
+
+- id: zdrowotna.ryczalt.progi
+  name: Progi przychodu dla składki zdrowotnej na ryczałcie
+  unit: PLN
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2025-01-01
+      value: {do_60000: 60000, do_300000: 300000}
+      note: >-
+        Przychód (od początku roku albo roczny) pomniejszony o składki społeczne bez FP.
+        Klucze odpowiadają kluczom w zdrowotna.ryczalt.skladka. Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          quote: "przekroczyły w tym okresie kwotę 60 000 zł i nie przekroczyły kwoty 300 000 zł"
+          article: art. 81 ust. 2e, 2f i 2g
+        - title: ZUS, Informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r.
+          url: https://www.zus.pl/en/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2026-r.
+          kind: control
+          quote: "osiągnięte od początku roku kalendarzowego, przekroczyły kwotę 60 000 zł i nie przekroczyły kwoty 300 000 zł"
+          as_of: 2026-11-26
+        - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r.
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "przekroczyły 60 000 zł, ale nie przekroczyły 300 000 zł"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}

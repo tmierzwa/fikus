@@ -1,0 +1,160 @@
+# Terminy. day_of_month to dzień miesiąca następującego po okresie rozliczeniowym.
+# Gdy termin wypada w sobotę lub dzień wolny, przesuwa się według zasada.przesuniecie_terminu.
+# Datę liczy klient, nie serwer.
+
+- id: termin.zus
+  name: Składki ZUS za siebie (DRA i wpłata)
+  kind: deadline
+  versions:
+    - valid_from: 2022-01-01
+      value: {day_of_month: 20}
+      note: >-
+        Poprawka źródła (wcześniej link-zaślepka). Tekst jednolity potwierdza stan prawny na 2026-10-04;
+        valid_from 2022-01-01 nie jest potwierdzony źródłem.
+      sources:
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          quote: "do 20 dnia następnego miesiąca – dla pozostałych płatników składek"
+          article: art. 47 ust. 1 pkt 4 i ust. 2
+        - title: "ZUS, FAQ: zmiany od 2022 r."
+          url: https://www.zus.pl/en/o-zus/o-nas/programy-transformacji-cyfrowej-zus/zmiany-od-2022-r./faq
+          kind: control
+          quote: "do 20. dnia każdego miesiąca – dla pozostałych płatników składek"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: termin.jpk_v7m
+  name: JPK_V7M i wpłata VAT za miesiąc
+  kind: deadline
+  applies_to: {vat: [czynny_miesiecznie]}
+  versions:
+    - valid_from: 2020-10-01
+      value: {day_of_month: 25}
+      note: >-
+        Poprawka źródła (wcześniej link-zaślepka). Tekst jednolity potwierdza stan prawny na 2026-08-26;
+        valid_from 2020-10-01 nie jest potwierdzony źródłem.
+      sources:
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "za okresy miesięczne w terminie do 25. dnia miesiąca następującego po każdym kolejnym miesiącu"
+          article: art. 99 ust. 1, art. 103 ust. 1, art. 109 ust. 3b
+      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+
+- id: termin.zaliczka_ryczalt
+  name: Ryczałt za miesiąc
+  kind: deadline
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2022-01-01
+      value: {day_of_month: 20}
+      note: >-
+        Wpłata miesięczna. Kwartalny sposób (art. 21 ust. 1a) wymaga osobnego parametru.
+        Poprawka źródła (wcześniej link-zaślepka) i valid_from (wcześniej 2020-01-01; termin za grudzień
+        przed 2022 r. mógł być inny). Tekst jednolity uwzględnia zmiany ogłoszone przed 2025-06-12;
+        valid_from 2022-01-01 nie jest potwierdzony źródłem.
+      sources:
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "wpłacać go na rachunek urzędu skarbowego w terminie do dnia 20 następnego miesiąca"
+          article: art. 21 ust. 1
+        - title: podatki.gov.pl (MF), Opodatkowanie ryczałtem od przychodów ewidencjonowanych
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-ryczaltem-od-przychodow-ewidencjonowanych
+          kind: control
+          quote: "Ryczałt wpłacasz w terminie: do 20. dnia każdego miesiąca za miesiąc poprzedni, a za grudzień – do 20 stycznia następnego roku"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: termin.zaliczka_liniowy
+  name: Zaliczka na PIT liniowy za miesiąc
+  kind: deadline
+  applies_to: {tax_form: [liniowy]}
+  versions:
+    - valid_from: 2020-01-01
+      value: {day_of_month: 20}
+      note: >-
+        Wpłata miesięczna; za grudzień do 20 stycznia (art. 44 ust. 6 zd. 3). Kwartalny sposób wymaga
+        osobnego parametru. Poprawka 2026-11-26: link-zaślepka zastąpiony tekstem jednolitym z cytatem.
+        Tekst jednolity potwierdza stan prawny na 2026-04-17; valid_from 2020-01-01 nie jest potwierdzony źródłem.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "Zaliczki miesięczne od dochodów wymienionych w ust. 1, wpłaca się w terminie do 20 dnia każdego miesiąca za miesiąc poprzedni"
+          article: art. 44 ust. 6
+        - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym, aktualizacja 24.06.2026
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
+          kind: control
+          quote: "Zaliczki wpłacasz w terminie: do 20. dnia każdego miesiąca za miesiąc poprzedni, a za grudzień – do 20 stycznia następnego roku"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26}
+
+- id: termin.roczne_rozliczenie_zdrowotnej
+  name: Roczne rozliczenie składki zdrowotnej (w DRA za kwiecień)
+  kind: deadline
+  versions:
+    - valid_from: 2023-01-01
+      value: {day_of_month: 20, month: 5}
+      note: >-
+        Rozliczenie roczne w dokumencie rozliczeniowym za miesiąc, w którym upływa termin zeznania
+        rocznego (kwiecień); dopłata w terminie składek za ten miesiąc, czyli do 20 maja.
+        Poprawka: wcześniej powołany art. 81 ust. 9 nie dotyczy rozliczenia rocznego; link-zaślepka zastąpiony.
+        valid_from 2023-01-01 nie jest potwierdzony źródłem.
+      sources:
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          quote: "Dopłata, o której mowa w ust. 2j, następuje w terminie płatności składek za miesiąc, o którym mowa w ust. 2k"
+          article: art. 81 ust. 2k, 2ka i 2l
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          quote: "do 20 dnia następnego miesiąca – dla pozostałych płatników składek"
+          article: art. 47 ust. 1 pkt 4
+        - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r.
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "Tę różnicę powinieneś dopłacić w terminie opłacania składek za kwiecień, czyli do 20 maja danego roku"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: termin.jpk_v7k_kwartal
+  name: JPK_V7K za kwartał (część deklaracyjna, ewidencja za 3. miesiąc kwartału) i wpłata VAT za kwartał
+  kind: deadline
+  applies_to: {vat: [czynny_kwartalnie]}
+  versions:
+    - valid_from: 2026-01-01
+      value: {day_of_month: 25, months: [1, 4, 7, 10]}
+      note: termin w miesiącu po kwartale; tekst jednolity potwierdza stan prawny na 2026-08-26, valid_from 2026-01-01 nie jest potwierdzony źródłem
+      sources:
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług
+          url: https://eli.gov.pl/eli/DU/2026/1263/ogl
+          quote: "deklaracje podatkowe za okresy kwartalne w terminie do 25. dnia miesiąca następującego po każdym kolejnym kwartale"
+          article: art. 99 ust. 2 i 3, art. 103 ust. 2, art. 109 ust. 3c pkt 2
+        - title: podatki.gov.pl (MF), JPK_VAT z deklaracją, aktualizacja 13.10.2026
+          url: https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat-z-deklaracja/jpk_vat-z-deklaracja
+          kind: control
+          quote: "JPK_VAT część ewidencyjną za marzec oraz część deklaracyjną za styczeń, luty i marzec – przedsiębiorca wyśle do 25 kwietnia"
+          as_of: 2026-11-26
+        - title: biznes.gov.pl, Jak prawidłowo rozliczyć VAT, aktualizacja 02.11.2026 (złożenie i wpłata, miesiące)
+          url: https://www.biznes.gov.pl/pl/portal/00232
+          kind: control
+          quote: "Musisz złożyć deklarację i zapłacić wynikający z niej podatek: przy rozliczeniu miesięcznym – do 25. dnia następnego miesiąca , na przykład za maj do 25 czerwca, a za czerwiec do 25 lipca przy rozliczeniu kwartalnym – do 25. dnia miesiąca następującego po każdym kolejnym kwartale (25 kwietnia, 25 lipca, 25 października, 25 stycznia)"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: termin.jpk_v7k_ewidencja
+  name: JPK_V7K, ewidencja za 1. i 2. miesiąc kwartału
+  kind: deadline
+  applies_to: {vat: [czynny_kwartalnie]}
+  versions:
+    - valid_from: 2026-01-01
+      value: {day_of_month: 25, months: [2, 3, 5, 6, 8, 9, 11, 12]}
+      note: termin w miesiącu po miesiącu, którego dotyczy ewidencja; tekst jednolity potwierdza stan prawny na 2026-08-26, valid_from 2026-01-01 nie jest potwierdzony źródłem
+      sources:
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług
+          url: https://eli.gov.pl/eli/DU/2026/1263/ogl
+          quote: "za pierwszy i drugi miesiąc danego kwartału – w terminie do 25. dnia miesiąca następującego odpowiednio po każdym z tych miesięcy"
+          article: art. 109 ust. 3c pkt 1
+        - title: biznes.gov.pl, Jak składać JPK_VAT z deklaracją, aktualizacja 03.07.2026
+          url: https://www.biznes.gov.pl/pl/portal/00237
+          kind: control
+          quote: "Przy rozliczeniu kwartalnym wypełniasz tylko część ewidencyjną za pierwsze 2 miesiące każdego kwartału. Wysyłasz je do 25. dnia każdego miesiąca za miesiąc poprzedni"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}

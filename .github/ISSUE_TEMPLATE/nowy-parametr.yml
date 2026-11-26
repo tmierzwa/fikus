@@ -1,0 +1,16 @@
+name: Brakujący parametr
+description: Parametr albo wersja na nowy okres, których nie ma w danych
+labels: [dane, nowy]
+body:
+  - type: textarea
+    id: opis
+    attributes:
+      label: Czego brakuje
+      description: Nazwa parametru, okres i dla jakiej formy opodatkowania lub rodzaju ZUS.
+    validations:
+      required: true
+  - type: textarea
+    id: zrodlo
+    attributes:
+      label: Źródło, jeśli znasz
+      description: Link do źródła pierwotnego (ISAP/ELI, M.P., komunikat ZUS lub MF).

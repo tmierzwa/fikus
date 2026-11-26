@@ -1,0 +1,13 @@
+Fikus
+Copyright 2026 autorzy projektu Fikus (https://github.com/tmierzwa/fikus)
+
+Kod jest udostępniony na licencji Apache License 2.0 (plik LICENSE).
+Dane w katalogu data/ są udostępnione na licencji CC BY 4.0 (plik data/LICENSE).
+
+Licencja CC BY 4.0 nie obejmuje cytatów w polach `quote`. Pochodzą one ze źródeł
+wskazanych przy każdym parametrze:
+- teksty aktów prawnych oraz urzędowe dokumenty i materiały (Dziennik Ustaw, Monitor Polski,
+  komunikaty i poradniki ZUS, strony Ministerstwa Finansów i administracji rządowej) nie są
+  przedmiotem prawa autorskiego (art. 4 pkt 1 i 2 ustawy o prawie autorskim i prawach pokrewnych);
+- krótkie fragmenty innych stron są przytoczone z podaniem źródła w ramach prawa cytatu
+  (art. 29 tej ustawy) i należą do ich autorów.
