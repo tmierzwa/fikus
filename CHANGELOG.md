@@ -10,6 +10,9 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 - Parametr `ryczalt.stawki`: stawki ryczałtu od przychodów ewidencjonowanych według punktów
   art. 12 ust. 1 ustawy o zryczałtowanym podatku dochodowym (nowy plik `data/parameters/podatek.yaml`).
+- Parametr `ryczalt.zakres_uslug`: dosłowne brzmienie liter art. 12 ust. 1 ustawy o zryczałtowanym podatku
+  dochodowym, które wymieniają usługi informatyczne i inżynierskie, z symbolami PKWiU 2015 i wyłączeniami
+  (pkt 2 lit. a, e, i; pkt 2a lit. b, c; pkt 2b lit. a, b; pkt 4 lit. e). Nie przypisuje stawki do przychodu.
 - Schematy `schemat.jpk_v7m`, `schemat.jpk_v7k` i `schemat.jpk_pkpir` oraz zasady przesyłania ksiąg
   w formie JPK (`zasada.jpk_pd_pkpir`, `zasada.jpk_pd_ryczalt`) w nowym pliku `data/parameters/jpk.yaml`.
   `get_schema` zwraca teraz dane dla tych symboli.
@@ -17,6 +20,9 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 - Nowy plik `data/parameters/ewidencja.yaml`: termin `termin.ewidencja_przychodow_wpis` (wpis przychodów
   za miesiąc na ryczałcie; `deadlines` zwraca go dla profili na ryczałcie) oraz zasady `zasada.ewidencja_przychodow`,
   `zasada.przychod_data_uzyskania` i `zasada.przychod_w_walucie`.
+- Parametry VAT w nowym pliku `data/parameters/vat.yaml`: `vat.stawki` (stawka podstawowa i obniżone
+  w okresie z art. 146ef ustawy o VAT), `vat.limit_zwolnienia` (limit zwolnienia podmiotowego z art. 113
+  ust. 1) i zasada `zasada.vat_odliczenie` (prawo do odliczenia, moment i korekta, samochody, wyłączenia).
 
 ### Zmienione
 

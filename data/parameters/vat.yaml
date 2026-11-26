@@ -1,0 +1,256 @@
+# Podatek od towarów i usług: stawki, limit zwolnienia podmiotowego i zasada odliczenia podatku naliczonego.
+# Schematy i terminy JPK_V7 są w jpk.yaml i terminy.yaml. Serwer nie przypisuje stawek do towarów i usług:
+# zakres każdej stawki wynika z ustawy, jej załączników i rozporządzeń.
+
+- id: vat.stawki
+  name: Stawki VAT, podstawowa i obniżone
+  unit: "%"
+  applies_to: {vat: [czynny_miesiecznie, czynny_kwartalnie]}
+  versions:
+    - valid_from: 2024-01-01
+      value:
+        podstawowa: 23
+        obnizona_8: 8
+        obnizona_5: 5
+      note: >-
+        Art. 41 ust. 1 i 2 ustawy o VAT określają stawki 22% i 7%, ale w okresie z art. 146ef ust. 1 stawki z art. 41
+        ust. 1 i 2 wynoszą 23% i 8% (art. 146ef ust. 1 pkt 1 i 2). Stawka 5% wynika wprost z art. 41 ust. 2a; art. 146ef
+        jej nie zmienia. Okres z art. 146ef ust. 1 zaczyna się 1 stycznia 2024 r. i trwa do końca roku, w którym spełni się
+        warunek dotyczący wydatków na obronność określony w tym przepisie. Koniec okresu ogłasza minister właściwy do spraw
+        finansów publicznych w obwieszczeniu w Monitorze Polskim do 31 października tego roku (art. 146ef ust. 2). Do 26 listopada
+        2026 r. w Monitorze Polskim nie ma takiego obwieszczenia (wyszukiwanie w API ELI), dlatego wersja nie ma daty końca;
+        po ogłoszeniu końca okresu dodamy nową wersję. Wcześniejsze okresy podwyższonych stawek (art. 146aa) ta wersja nie obejmuje.
+        Wartość nie obejmuje stawki 0% (między innymi wewnątrzwspólnotowa dostawa i eksport towarów), stawek z art. 146ef ust. 1
+        pkt 3 i 4 (zryczałtowany zwrot dla rolników i ryczałt dla taksówek) ani stawek obniżonych rozporządzeniem dla
+        niektórych towarów i usług (art. 146ej). Tekst jednolity Dz.U. 2025 poz. 775 ma tę samą treść art. 41 ust. 1, 2 i 2a
+        oraz art. 146ef ust. 1 (stawki i warunek); różni się tylko publikator ustawy o obronie Ojczyzny, do której odsyła art. 146ef. Nowelizacje po tekście jednolitym Dz.U. 2026 poz. 1263 nie zmieniają tych stawek: ustawa
+        Dz.U. 2026 poz. 1270 zmienia w art. 41 ust. 1 tylko listę zastrzeżeń (od 1 stycznia 2027 r.) i dodaje ust. 14i (kaucja),
+        ustawa Dz.U. 2026 poz. 1446 zmienia art. 41 ust. 4–11 (eksport), a ustawy Dz.U. 2026 poz. 1509 i 1556 nie zmieniają art. 41 ani 146ef.
+      sources:
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (stawka podstawowa w art. 41)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "Stawka podatku wynosi 22 %, z zastrzeżeniem ust. 2–12c"
+          article: art. 41 ust. 1
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (stawka obniżona w art. 41 ust. 2)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "stawka podatku wynosi 7 %, z zastrzeżeniem art. 114 ust. 1 i art. 138i ust. 4"
+          article: art. 41 ust. 2
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (stawka 5%)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "Dla towarów i usług wymienionych w załączniku nr 10 do ustawy, innych niż klasyfikowane według Polskiej Klasyfikacji Wyrobów i Usług w grupowaniu usługi związane z wyżywieniem (PKWiU 56), stawka podatku wynosi 5 %"
+          article: art. 41 ust. 2a
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (okres podwyższonych stawek)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "Art. 146ef. 1. W okresie od dnia 1 stycznia 2024 r. do końca roku"
+          article: art. 146ef ust. 1
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (23% w okresie z art. 146ef)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "stawka podatku, o której mowa w art. 41 ust. 1 i 13, art. 109 ust. 2, art. 110, art. 120 ust. 3a i art. 138i ust. 4, wynosi 23 %"
+          article: art. 146ef ust. 1 pkt 1
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (8% w okresie z art. 146ef)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "stawka podatku, o której mowa w art. 41 ust. 2, art. 120 ust. 2 i 3 oraz tytule załącznika nr 3 do ustawy, wynosi 8 %"
+          article: art. 146ef ust. 1 pkt 2
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (ogłoszenie końca okresu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "koniec okresu obowiązywania stawek podatku, o których mowa w ust. 1, w terminie do dnia 31 października roku"
+          article: art. 146ef ust. 2
+        - title: Dz.U. 2025 poz. 775, tekst jednolity ustawy o podatku od towarów i usług (ta sama treść, dla daty początku obowiązywania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/775/text.pdf
+          quote: "Art. 146ef. 1. W okresie od dnia 1 stycznia 2024 r. do końca roku"
+          article: art. 146ef ust. 1
+          as_of: 2025-06-16
+        - title: podatki.gov.pl (MF), Stawki i limity (VAT), aktualizacja 15.12.2025 (podaje 23%, 8% i 5%)
+          url: https://www.podatki.gov.pl/podatki-firmowe/vat/stawki-i-limity
+          kind: control
+          quote: "Podstawowa stawka podatku VAT wynosi 22% (od 1 stycznia 2011 r. - stawka ta wynosi 23%) . Stawki obniżone 5% i 7% (obecnie 8%)"
+          as_of: 2026-11-26
+        - title: biznes.gov.pl, Jak prawidłowo rozliczyć VAT, aktualizacja 02.11.2026 (podaje 23%, 8% i 5%)
+          url: https://www.biznes.gov.pl/pl/portal/00232
+          kind: control
+          quote: "23% – tyle wynosi podstawowa stawka podatku od towarów i usług 8% – stawka obniżona, dotyczy m.in. budownictwa objętego społecznym programem mieszkaniowym, niektórych usług związanych z kulturą, sportem, rekreacją 5% – stawka obniżona, obejmuje m.in. podstawowe produkty żywnościowe (np. pieczywo, nabiał), niektóre artykuły dla niemowląt, książki i e-booki"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: vat.limit_zwolnienia
+  name: Limit wartości sprzedaży dla zwolnienia podmiotowego z VAT
+  unit: PLN/rok
+  versions:
+    - valid_from: 2026-01-01
+      value: 240000
+      note: >-
+        Zwolnienie przysługuje podatnikowi z siedzibą działalności gospodarczej w kraju, u którego wartość sprzedaży bez
+        podatku nie przekroczyła tej kwoty w poprzednim ani w bieżącym roku podatkowym (art. 113 ust. 1). Co nie wlicza się do
+        wartości sprzedaży, określa art. 113 ust. 2; przy rozpoczęciu działalności w trakcie roku kwotę stosuje się w proporcji
+        do okresu prowadzonej działalności (art. 113 ust. 9). Kogo zwolnienie nie dotyczy niezależnie od wartości sprzedaży,
+        określa art. 113 ust. 13; ta wartość tego nie opisuje, podobnie jak zwolnienia w procedurze SME (art. 113a).
+        Kwota 240 000 zł obowiązuje od 1 stycznia 2026 r. (odnośnik do art. 113 ust. 1 w tekście jednolitym); wcześniej było to
+        200 000 zł, czego ta wersja nie obejmuje. Ustawa Dz.U. 2026 poz. 1270 dodaje od 1 stycznia 2027 r. art. 113 ust. 1a
+        (do wartości sprzedaży wlicza się również czynności z art. 13 ust. 3), a do wartości sprzedaży za 2026 r. każe stosować
+        przepisy dotychczasowe (art. 5); kwoty nie zmienia. Ustawy Dz.U. 2026 poz. 1446, 1509 i 1556 nie zmieniają art. 113.
+      sources:
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "nie przekroczyła w poprzednim ani bieżącym roku podatkowym kwoty 240 000 zł"
+          article: art. 113 ust. 1
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (odnośnik 29, data początku obowiązywania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "Ze zmianą wprowadzoną przez art. 1 ustawy z dnia 24 czerwca 2025 r. o zmianie ustawy o podatku od towarów i usług (Dz. U. poz. 896), która weszła w życie z dniem 1 stycznia 2026 r."
+          article: art. 113 ust. 1, odnośnik 29
+        - title: biznes.gov.pl, Kto musi płacić VAT, aktualizacja 30.10.2026
+          url: https://www.biznes.gov.pl/pl/portal/00246
+          kind: control
+          quote: "Od 1 stycznia 2026 roku limit sprzedaży wzrósł z 200 tys. zł do 240 tys. zł rocznie."
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Stawki i limity (VAT), aktualizacja 15.12.2025
+          url: https://www.podatki.gov.pl/podatki-firmowe/vat/stawki-i-limity
+          kind: control
+          quote: "nie przekroczyła łącznie w poprzednim ani w bieżącym roku podatkowym kwoty 240 000 zł"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: zasada.vat_odliczenie
+  name: Odliczenie podatku naliczonego VAT, moment, korekta, samochody i wyłączenia
+  kind: rule
+  applies_to: {vat: [czynny_miesiecznie, czynny_kwartalnie]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: W zakresie, w jakim nabyte towary i usługi wykorzystujesz do wykonywania czynności opodatkowanych, jako podatnik masz prawo obniżyć kwotę podatku należnego o kwotę podatku naliczonego, z zastrzeżeniem przepisów o procedurach szczególnych wymienionych w art. 86 ust. 1.
+            uses: []
+            basis: art. 86 ust. 1 ustawy o VAT
+          - text: Podatek naliczony to przede wszystkim suma kwot podatku z otrzymanych faktur za nabyte towary i usługi oraz za zapłatę całości lub części ceny przed nabyciem towaru lub wykonaniem usługi, kwota podatku z dokumentu celnego, deklaracji importowej albo decyzji przy imporcie towarów oraz podatek należny, który rozliczasz jako nabywca (usługi i dostawy towarów, dla których podatnikiem jest nabywca, wewnątrzwspólnotowe nabycie towarów). Pełny wykaz jest w art. 86 ust. 2.
+            uses: []
+            basis: art. 86 ust. 2 ustawy o VAT
+          - text: Prawo do odliczenia powstaje w rozliczeniu za okres, w którym w odniesieniu do nabytych lub importowanych towarów i usług powstał obowiązek podatkowy; tak samo przy zapłacie przed dostawą towaru lub wykonaniem usługi. Podatek z faktury albo dokumentu celnego możesz odliczyć nie wcześniej niż w rozliczeniu za okres, w którym otrzymałeś fakturę albo dokument celny.
+            uses: []
+            basis: art. 86 ust. 10, 10b pkt 1 i ust. 10c ustawy o VAT
+          - text: Przy podatku należnym, który rozliczasz jako nabywca (usługi i dostawy towarów, dla których podatnikiem jest nabywca, wewnątrzwspólnotowe nabycie towarów), prawo do odliczenia powstaje w tym samym okresie, pod warunkiem że ten podatek należny wykażesz w deklaracji, w której musisz go rozliczyć.
+            uses: []
+            basis: art. 86 ust. 10b pkt 2 i 3 ustawy o VAT
+          - text: Jeżeli jako mały podatnik stosujesz metodę kasową, prawo do odliczenia podatku od nabytych towarów i usług powstaje nie wcześniej niż w rozliczeniu za okres, w którym za nie zapłaciłeś.
+            uses: []
+            basis: art. 86 ust. 10e ustawy o VAT
+          - text: Jeżeli nie odliczysz podatku w okresie, w którym powstało prawo, możesz to zrobić w deklaracji za jeden z trzech następnych okresów rozliczeniowych, a jeżeli składasz deklaracje za okresy kwartalne (art. 99 ust. 2 i 3) – za jeden z dwóch następnych okresów.
+            uses: []
+            basis: art. 86 ust. 11 ustawy o VAT
+          - text: Jeżeli nie odliczysz podatku także w tych terminach, możesz to zrobić przez korektę deklaracji za okres, w którym powstało prawo, albo za jeden z trzech następnych okresów (przy deklaracjach kwartalnych – dwóch), nie później niż w ciągu 5 lat, licząc od początku roku, w którym powstało prawo. Przy wewnątrzwspólnotowym nabyciu towarów oraz dostawach i usługach, dla których podatnikiem jest nabywca, korektę składasz za okres, w którym powstało prawo, nie później niż w ciągu 5 lat, licząc od końca roku, w którym ono powstało.
+            uses: []
+            basis: art. 86 ust. 13 i 13a ustawy o VAT
+          - text: Przy wydatkach związanych z pojazdami samochodowymi (pojazdy o dopuszczalnej masie całkowitej nieprzekraczającej 3,5 tony) podatkiem naliczonym jest 50% kwoty podatku z faktury, dokumentu celnego, deklaracji importowej albo decyzji, podatku należnego, który rozliczasz jako nabywca, oraz podatku należnego przy imporcie rozliczanym w deklaracji (art. 33a). Dotyczy to wydatków na nabycie, import lub wytworzenie pojazdu i jego części, na używanie pojazdu na podstawie najmu, dzierżawy, leasingu lub podobnej umowy oraz na paliwo, naprawy, konserwację i inne towary i usługi związane z eksploatacją lub używaniem pojazdu.
+            uses: []
+            basis: art. 86a ust. 1 i 2 oraz art. 2 pkt 34 ustawy o VAT
+          - text: Ograniczenia do 50% nie stosujesz, gdy pojazd jest wykorzystywany wyłącznie do Twojej działalności gospodarczej albo jest konstrukcyjnie przeznaczony do przewozu co najmniej 10 osób łącznie z kierowcą, jeżeli wynika to z dokumentów wydanych na podstawie przepisów o ruchu drogowym. Nie stosujesz go też do towarów montowanych w pojeździe i związanych z nimi usług montażu, naprawy i konserwacji, jeżeli przeznaczenie tych towarów obiektywnie wskazuje na możliwość wykorzystywania ich wyłącznie do działalności gospodarczej.
+            uses: []
+            basis: art. 86a ust. 3 ustawy o VAT
+          - text: Pojazd jest wykorzystywany wyłącznie do działalności gospodarczej, jeżeli sposób jego wykorzystywania, zwłaszcza określony w ustalonych przez Ciebie zasadach używania i dodatkowo potwierdzony ewidencją przebiegu pojazdu, wyklucza jego użycie do celów niezwiązanych z działalnością, albo jeżeli jego konstrukcja wyklucza takie użycie lub powoduje, że jest ono nieistotne. Pojazdy, których konstrukcja spełnia ten warunek, i dokumenty, które to potwierdzają, wymienia art. 86a ust. 9 i 10; przypadki, w których nie musisz prowadzić ewidencji przebiegu pojazdu, wymienia art. 86a ust. 5.
+            uses: []
+            basis: art. 86a ust. 4, 5, 9 i 10 ustawy o VAT
+          - text: Jeżeli wykorzystujesz pojazd wyłącznie do działalności gospodarczej i musisz prowadzić dla niego ewidencję przebiegu, składasz naczelnikowi urzędu skarbowego informację o tym pojeździe do 25. dnia miesiąca następującego po miesiącu, w którym poniesiesz pierwszy wydatek z nim związany, nie później jednak niż w dniu przesłania ewidencji VAT. Jeżeli nie złożysz jej w terminie, pojazd uznaje się za wykorzystywany wyłącznie do działalności gospodarczej dopiero od pierwszego dnia miesiąca, w którym ją złożysz. Gdy zmienisz sposób wykorzystywania pojazdu, aktualizujesz informację najpóźniej do końca miesiąca, w którym dokonałeś zmiany.
+            uses: []
+            basis: art. 86a ust. 12–14 ustawy o VAT
+          - text: Nie odliczasz podatku od nabytych usług noclegowych i gastronomicznych, z wyjątkami wymienionymi w art. 88 ust. 1 pkt 4, ani od wydatków poniesionych w imieniu i na rzecz nabywcy, których zwrot nie wchodzi do podstawy opodatkowania (art. 29a ust. 7 pkt 3).
+            uses: []
+            basis: art. 88 ust. 1 pkt 4 i ust. 1a ustawy o VAT
+          - text: Faktura ani dokument celny nie dają prawa do odliczenia ani do zwrotu podatku między innymi wtedy, gdy sprzedaż udokumentowano fakturą wystawioną przez podmiot nieistniejący, gdy transakcja udokumentowana fakturą nie podlega opodatkowaniu albo jest zwolniona od podatku, gdy faktura stwierdza czynności, które nie zostały dokonane, albo podaje kwoty niezgodne z rzeczywistością (w części, której to dotyczy), gdy faktury wystawionej przez nabywcę nie zaakceptował sprzedający oraz gdy na fakturze wykazano podatek od czynności, dla której nie wykazuje się kwoty podatku na fakturze (w tej części). Pozostałe przypadki wymienia art. 88 ust. 3a. To samo dotyczy duplikatów i kolejnych egzemplarzy faktur.
+            uses: []
+            basis: art. 88 ust. 3a i 3b ustawy o VAT
+          - text: Nie odliczasz podatku, jeżeli nie jesteś zarejestrowany jako podatnik VAT czynny, z wyjątkiem przypadku z art. 86 ust. 2 pkt 7 (wewnątrzwspólnotowa dostawa nowego środka transportu przez podatnika z art. 16).
+            uses: []
+            basis: art. 88 ust. 4 ustawy o VAT
+          - text: Ta zasada nie opisuje odliczenia przy towarach i usługach wykorzystywanych także do celów innych niż działalność gospodarcza (art. 86 ust. 2a–2h), odliczenia przy sprzedaży zwolnionej i korekt z tym związanych (art. 90 i 91), zwrotu nadwyżki podatku naliczonego (art. 87), korekt przy nieuregulowanych fakturach (art. 89a i 89b), odliczenia w imporcie rozliczanym w procedurach uproszczonych (art. 86 ust. 10d), wewnątrzwspólnotowego nabycia opodatkowanego z powodu podania numeru VAT (art. 88 ust. 6) ani pojazdów i przypadków określonych w rozporządzeniach (art. 86a ust. 16 i 17).
+            uses: []
+            basis: art. 86 ust. 2a i 10d, art. 86a ust. 16 i 17, art. 87, art. 88 ust. 6, art. 89a, 89b, 90 i 91 ustawy o VAT
+      note: >-
+        Data początku obowiązywania (2026-01-01) to ostrożnie wybrana data wewnątrz okresu, w którym teksty jednolite
+        Dz.U. 2025 poz. 775 i Dz.U. 2026 poz. 1263 (stan prawny na 26 sierpnia 2026 r.) mają tę samą treść cytowanych przepisów
+        (różnią się tylko pisownią, na przykład „nie wcześniej” i „niewcześniej”), a nie dzień wejścia tych przepisów w życie. Strona biznes.gov.pl „Odliczenie i zwrot podatku od towarów i usług”
+        (https://www.biznes.gov.pl/pl/portal/00249, aktualizacja 13.03.2026) potwierdza kroki 5 i 6 i część kroku 3, a korektę
+        (krok 7) opisuje inaczej, więc nie jest drugim źródłem zasady. Ustawa Dz.U. 2026
+        poz. 1270 nadaje od 1 stycznia 2027 r. nowe brzmienie art. 88 ust. 3a pkt 4 lit. c (czynności dokonane w warunkach nadużycia
+        prawa zamiast czynności z art. 58 i 83 Kodeksu cywilnego); kroki tego przypadku nie opisują. Nie zmienia art. 86 ani 86a.
+        Ustawy Dz.U. 2026 poz. 1446, 1509 i 1556 nie zmieniają art. 86, 86a ani 88.
+      sources:
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 1)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "W zakresie, w jakim towary i usługi są wykorzystywane do wykonywania czynności opodatkowanych, podatnikowi, o którym mowa w art. 15, przysługuje prawo do obniżenia kwoty podatku należnego o kwotę podatku naliczonego"
+          article: art. 86 ust. 1
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 2)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "suma kwot podatku wynikających z faktur otrzymanych przez podatnika z tytułu: a) nabycia towarów i usług, b) dokonania całości lub części zapłaty przed nabyciem towaru lub wykonaniem usługi"
+          article: art. 86 ust. 2 pkt 1
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 3, moment)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "Prawo do obniżenia kwoty podatku należnego o kwotę podatku naliczonego powstaje w rozliczeniu za okres, w którym w odniesieniu do nabytych lub importowanych przez podatnika towarów i usług powstał obowiązek podatkowy."
+          article: art. 86 ust. 10
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 3, otrzymanie faktury)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "ust. 2 pkt 1 oraz pkt 2 lit. a – powstaje niewcześniej niż w rozliczeniu za okres, w którym podatnik otrzymał fakturę lub dokument celny"
+          article: art. 86 ust. 10b pkt 1
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 4)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "ust. 2 pkt 4 lit. a, b i d – powstaje zgodnie z ust. 10, pod warunkiem że podatnik uwzględni kwotę podatku należnego z tytułu tych transakcji w deklaracji podatkowej, w której jest on obowiązany rozliczyć ten podatek"
+          article: art. 86 ust. 10b pkt 3
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 5)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "w okresie stosowania przez niego metody kasowej, powstaje niewcześniej niż w rozliczeniu za okres, w którym podatnik dokonał zapłaty za te towary i usługi"
+          article: art. 86 ust. 10e
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 6)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "może obniżyć kwotę podatku należnego w deklaracji podatkowej za jeden z trzech następnych okresów rozliczeniowych, a w przypadku podatnika, o którym mowa w art. 99 ust. 2 i 3, w deklaracji podatkowej za jeden z dwóch następnych okresów rozliczeniowych"
+          article: art. 86 ust. 11
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 7, korekta)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "niepóźniej jednak niż w ciągu 5 lat, licząc od początku roku, w którym powstało prawo do obniżenia kwoty podatku należnego"
+          article: art. 86 ust. 13
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 7, nabywca jako podatnik)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "niepóźniej jednak niż w ciągu 5 lat, licząc od końca roku, w którym powstało prawo do obniżenia kwoty podatku należnego"
+          article: art. 86 ust. 13a
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 8)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "W przypadku wydatków związanych z pojazdami samochodowymi kwotę podatku naliczonego, o której mowa w art. 86 ust. 2, stanowi 50 % kwoty podatku"
+          article: art. 86a ust. 1
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 8, definicja pojazdu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "pojazdach samochodowych – rozumie się przez to pojazdy samochodowe w rozumieniu przepisów o ruchu drogowym o dopuszczalnej masie całkowitej nieprzekraczającej 3,5 tony"
+          article: art. 2 pkt 34
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 9)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "wykorzystywane wyłącznie do działalności gospodarczej podatnika lub b) konstrukcyjnie przeznaczone do przewozu co najmniej 10 osób łącznie z kierowcą"
+          article: art. 86a ust. 3 pkt 1
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 10)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "dodatkowo potwierdzony prowadzoną przez podatnika dla tych pojazdów ewidencją przebiegu pojazdu, wyklucza ich użycie do celów niezwiązanych z działalnością gospodarczą"
+          article: art. 86a ust. 4 pkt 1
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 11, termin informacji)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "w terminie do 25. dnia miesiąca następującego po miesiącu, w którym poniosą pierwszy wydatek związany z tymi pojazdami"
+          article: art. 86a ust. 12
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 11, informacja po terminie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "uznaje się, że pojazd samochodowy jest wykorzystywany wyłącznie do działalności gospodarczej podatnika dopiero od pierwszego dnia miesiąca, w którym podatnik złoży tę informację"
+          article: art. 86a ust. 13
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 12)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "usług noclegowych i gastronomicznych, z wyjątkiem"
+          article: art. 88 ust. 1 pkt 4
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 13)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "Nie stanowią podstawy do obniżenia podatku należnego oraz zwrotu różnicy podatku lub zwrotu podatku naliczonego faktury i dokumenty celne w przypadku gdy"
+          article: art. 88 ust. 3a
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 13, czynności niedokonane)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "stwierdzają czynności, które nie zostały dokonane – w części dotyczącej tych czynności"
+          article: art. 88 ust. 3a pkt 4 lit. a
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 14)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "Obniżenia kwoty lub zwrotu różnicy podatku należnego nie stosuje się również do podatników, którzy nie są zarejestrowani jako podatnicy VAT czynni, zgodnie z art. 96"
+          article: art. 88 ust. 4
+        - title: Dz.U. 2025 poz. 775, tekst jednolity ustawy o podatku od towarów i usług (ta sama treść art. 86 ust. 11)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/775/text.pdf
+          quote: "może obniżyć kwotę podatku należnego w deklaracji podatkowej za jeden z trzech następnych okresów rozliczeniowych, a w przypadku podatnika, o którym mowa w art. 99 ust. 2 i 3, w deklaracji podatkowej za jeden z dwóch następnych okresów rozliczeniowych"
+          article: art. 86 ust. 11
+          as_of: 2025-06-16
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
