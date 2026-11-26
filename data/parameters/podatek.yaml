@@ -330,7 +330,7 @@
             pozostałych w zakresie informacji, gdzie indziej niesklasyfikowanych (PKWiU 63.99)
           as_of: 2026-11-26
           confirms: [pkt_2_lit_i]
-      verification: {checked_at: 2026-11-26}
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: podatek.liniowy.stawka
   name: Stawka podatku liniowego od dochodów z działalności gospodarczej
