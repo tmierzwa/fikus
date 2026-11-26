@@ -70,7 +70,7 @@
           kind: control
           quote: "23% – tyle wynosi podstawowa stawka podatku od towarów i usług 8% – stawka obniżona, dotyczy m.in. budownictwa objętego społecznym programem mieszkaniowym, niektórych usług związanych z kulturą, sportem, rekreacją 5% – stawka obniżona, obejmuje m.in. podstawowe produkty żywnościowe (np. pieczywo, nabiał), niektóre artykuły dla niemowląt, książki i e-booki"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26}
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: vat.limit_zwolnienia
   name: Limit wartości sprzedaży dla zwolnienia podmiotowego z VAT
@@ -107,7 +107,7 @@
           kind: control
           quote: "nie przekroczyła łącznie w poprzednim ani w bieżącym roku podatkowym kwoty 240 000 zł"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26}
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: zasada.vat_odliczenie
   name: Odliczenie podatku naliczonego VAT, moment, korekta, samochody i wyłączenia
@@ -253,4 +253,4 @@
           quote: "może obniżyć kwotę podatku należnego w deklaracji podatkowej za jeden z trzech następnych okresów rozliczeniowych, a w przypadku podatnika, o którym mowa w art. 99 ust. 2 i 3, w deklaracji podatkowej za jeden z dwóch następnych okresów rozliczeniowych"
           article: art. 86 ust. 11
           as_of: 2025-06-16
-      verification: {checked_at: 2026-11-26}
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
