@@ -14,6 +14,10 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
   w formie JPK (`zasada.jpk_pd_pkpir`, `zasada.jpk_pd_ryczalt`) w nowym pliku `data/parameters/jpk.yaml`.
   `get_schema` zwraca teraz dane dla tych symboli.
 
+### Zmienione
+
+- Sprawdzanie cytatów pomija znaki zerowej szerokości, którymi strony gov.pl dzielą nazwy plików.
+
 ## [0.3.0] - 2026-11-26
 
 ### Dodane

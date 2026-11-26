@@ -241,14 +241,21 @@
         variant: 3
         system_code: JPK_PKPIR (3)
         schema_version: "1-0"
+        xsd_url: https://www.gov.pl/attachment/70b78fa0-9183-400d-a967-eeacdcb87e57
       note: >-
         Broszura MF podaje, że struktura „będzie obowiązywać od 01.01.2026 r.”. Obowiązek przesłania księgi i pierwszy rok, za który się ją
         przesyła, opisuje zasada.jpk_pd_pkpir. Broszura podaje, że struktura logiczna jest dostępna
         w Biuletynie Informacji Publicznej na stronie podmiotowej urzędu obsługującego ministra właściwego do spraw
-        finansów publicznych; adresu pliku XSD w urzędowym źródle nie ustalono, więc go nie podajemy.
-        Całą wartość (wariant, kod systemowy, wersję schematu 1-0 i datę) podaje sama tylko broszura MF. Strona MF
+        finansów publicznych. Adres pliku XSD pochodzi ze strony KAS „Struktury JPK w podatkach dochodowych”
+        w Biuletynie Informacji Publicznej serwisu Ministerstwa Finansów – Krajowej Administracji Skarbowej
+        (gov.pl/web/kas), która udostępnia go jako „Schemat_JPK_PKPIR(3)_v1-0”, plik Struktura_Schemat_JPK_PKPIR(3)_v1-0.xsd.
+        Plik spod tego adresu ma przestrzeń nazw http://jpk.mf.gov.pl/wzor/2024/10/30/10302/
+        oraz stałe wartości kodu systemowego „JPK_PKPIR (3)” i wersji schematu „1-0”; te wartości są w atrybutach pliku,
+        więc nie da się ich zacytować.
+        Wariant, kod systemowy, wersję schematu 1-0 i datę podaje razem tylko broszura MF, a adres pliku XSD tylko strona KAS. Strona MF
         o JPK_PD podaje tylko wariant 3, a specyfikacja interfejsów usług JPK wariant i datę, bez wersji schematu,
         więc żadna z nich nie jest drugim niezależnym dowodem.
+        Poprawka: dodany adres pliku XSD (wcześniej wartość go nie miała, bo nie ustalono go w urzędowym źródle).
       sources:
         - title: podatki.gov.pl (MF), Broszura informacyjna dotycząca struktury JPK_PKPIR(3)
           url: https://podatki.gov.pl/media/pbqdgqcp/broszura_informacyjna_dot_jpk_pkpir-3.pdf
@@ -275,6 +282,14 @@
           url: https://www.gov.pl/web/kas/struktury-jpk-w-podatkach-dochodowych
           quote: "Struktury JPK_PKPIR, JPK_EWP oraz JPK_ST będą obowiązywały od 1 stycznia 2026 r."
           article: art. 193a § 2 Ordynacji podatkowej, art. 24a ust. 1e ustawy o PIT
+          as_of: 2026-11-26
+        - title: gov.pl (KAS), Struktury JPK w podatkach dochodowych (plik XSD do pobrania; adres pliku to adres linku przy tej nazwie)
+          url: https://www.gov.pl/web/kas/struktury-jpk-w-podatkach-dochodowych
+          quote: "Schemat_JPK_PKPIR(3)_v1-0 Struktura_Schemat_JPK_PKPIR(3)_v1-0.xsd"
+          as_of: 2026-11-26
+        - title: gov.pl (MF), plik XSD spod adresu schematu (przestrzeń nazw, kod systemowy i wersja schematu są w atrybutach; cytat potwierdza tylko, że to schemat JPK_PKPIR)
+          url: https://www.gov.pl/attachment/70b78fa0-9183-400d-a967-eeacdcb87e57
+          quote: "Nagłówek JPK_PKPIR"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
