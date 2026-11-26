@@ -243,3 +243,71 @@
         checked_at: 2026-11-26
         agent_check: 2026-11-26
         open_issue: "Art. 12 ust. 3 zdanie drugie ustawy o zryczałtowanym podatku dochodowym nie mówi wprost, czy stawka podwyższona (np. 17% przy przychodach także z pkt 1) dotyczy tylko przychodów z tego punktu, czy wszystkich przychodów, ani którą stawkę stosuje się przy przychodach z kilku punktów. Pytanie do eksperta: docs/pytania-do-eksperta.md, P6."
+
+- id: zasada.zus_fundusz_pracy
+  name: Obowiązek opłacania składek na Fundusz Pracy i Fundusz Solidarnościowy za siebie
+  kind: rule
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Składkę na Fundusz Pracy liczysz od podstawy wymiaru składek emerytalnej i rentowej bez rocznego ograniczenia tej podstawy. Opłacasz ją, jeżeli ta podstawa w przeliczeniu na miesiąc wynosi co najmniej minimalne wynagrodzenie.
+            uses: [zus.stawka.fundusz_pracy, wynagrodzenie.minimalne]
+            basis: art. 259 ust. 1 pkt 4 ustawy o rynku pracy i służbach zatrudnienia
+          - text: Jeżeli podlegasz obowiązkowym ubezpieczeniom emerytalnemu i rentowym także z innych tytułów, obowiązek powstaje, gdy łączna podstawa ze wszystkich tytułów wynosi co najmniej minimalne wynagrodzenie; wtedy składasz oświadczenie każdemu pracodawcy albo w ZUS.
+            uses: [wynagrodzenie.minimalne]
+            basis: art. 259 ust. 2 i 3 ustawy o rynku pracy i służbach zatrudnienia
+          - text: Przy podstawie preferencyjnej, niższej od minimalnego wynagrodzenia, składki na Fundusz Pracy nie opłacasz, chyba że łączna podstawa z poprzedniego kroku osiąga minimalne wynagrodzenie.
+            uses: [zus.podstawa_preferencyjna, wynagrodzenie.minimalne]
+            basis: art. 259 ust. 1 pkt 4 i ust. 2 ustawy o rynku pracy i służbach zatrudnienia
+          - text: Składki na Fundusz Pracy nie opłaca się za kobietę, która ukończyła 55 lat, ani za mężczyznę, który ukończył 60 lat. Nie opłacasz jej też za miesiąc zwolnienia ze składek na własne ubezpieczenia emerytalne i rentowe na podstawie art. 17a ust. 1 ustawy o systemie ubezpieczeń społecznych.
+            uses: []
+            basis: art. 259 ust. 1 pkt 4 lit. o i art. 261 ustawy o rynku pracy i służbach zatrudnienia
+          - text: Do składki na Fundusz Solidarnościowy stosuje się odpowiednio przepisy o składce na Fundusz Pracy. Obie składki liczysz łącznie, według sumy ich stóp, i wykazujesz w deklaracji rozliczeniowej w jednej kwocie. Za miesiąc zwolnienia na podstawie art. 17a ustawy o systemie ubezpieczeń społecznych nie opłacasz za siebie także składki na Fundusz Solidarnościowy.
+            uses: [zus.stawka.fundusz_pracy, zus.stawka.fundusz_solidarnosciowy]
+            basis: art. 4 ust. 1 i 1a oraz art. 5 ust. 2 ustawy o Funduszu Solidarnościowym
+      note: >-
+        Wersja zaczyna się razem ze stawkami Funduszu Pracy i Funduszu Solidarnościowego na 2026 r. Te przepisy
+        obowiązują wcześniej (ustawa o rynku pracy i służbach zatrudnienia od 1 czerwca 2025 r.), ale okresu sprzed
+        2026 r. ta wersja nie obejmuje. Ustawa o rynku pracy nie ma jeszcze tekstu jednolitego; cytowany jest tekst
+        ogłoszony, a jej nowelizacje nie zmieniają art. 259–261.
+      sources:
+        - title: Dz.U. 2025 poz. 620, ustawa z 20 marca 2025 r. o rynku pracy i służbach zatrudnienia
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/620/text.pdf
+          article: art. 259 ust. 1
+          quote: "wynoszących w przeliczeniu na okres miesiąca co najmniej minimalne wynagrodzenie za pracę, opłacają"
+        - title: Dz.U. 2025 poz. 620, ustawa o rynku pracy i służbach zatrudnienia (różne źródła)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/620/text.pdf
+          article: art. 259 ust. 2
+          quote: "obowiązek opłacania składek na Fundusz Pracy powstaje wtedy, gdy łączna kwota stanowiąca podstawę wymiaru składek, ustalona zgodnie z ust. 1, wynosi co najmniej minimalne wynagrodzenie za pracę"
+        - title: Dz.U. 2025 poz. 620, ustawa o rynku pracy i służbach zatrudnienia (wiek)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/620/text.pdf
+          article: art. 261
+          quote: "które nie osiągnęły wieku wynoszącego co najmniej 55 lat w przypadku kobiet i co najmniej 60 lat w przypadku mężczyzn"
+        - title: Dz.U. 2025 poz. 620, ustawa o rynku pracy i służbach zatrudnienia (miesiąc zwolnienia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/620/text.pdf
+          article: art. 259 ust. 1 pkt 4 lit. o
+          quote: "osób zwolnionych z opłacania składek na własne obowiązkowe ubezpieczenia emerytalne i rentowe, za wskazany jeden miesiąc kalendarzowy"
+        - title: Dz.U. 2024 poz. 1848, tekst jednolity ustawy o Funduszu Solidarnościowym (miesiąc zwolnienia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/1848/text.pdf
+          article: art. 4 ust. 1a
+          quote: "Płatnik składek nie opłaca za siebie składki na Fundusz Solidarnościowy za miesiąc korzystania ze zwolnienia"
+        - title: Dz.U. 2024 poz. 1848, tekst jednolity ustawy o Funduszu Solidarnościowym
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/1848/text.pdf
+          article: art. 4 ust. 1
+          quote: "Do obowiązkowych składek na Fundusz stosuje się odpowiednio przepisy dotyczące obowiązkowych składek na Fundusz Pracy."
+        - title: Dz.U. 2024 poz. 1848, tekst jednolity ustawy o Funduszu Solidarnościowym (łączne rozliczenie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/1848/text.pdf
+          article: art. 5 ust. 2
+          quote: "Składki na Fundusz płatnik składek oblicza łącznie ze składkami na Fundusz Pracy w wysokości sumy stóp procentowych tych składek"
+        - title: ZUS, Składki preferencyjne (Fundusz Pracy i Fundusz Solidarnościowy)
+          url: https://www.zus.pl/firmy/rozliczenia-z-zus/skladki-preferencyjne
+          kind: control
+          quote: "z zasady nie opłacasz składek na Fundusz Pracy i Fundusz Solidarnościowy"
+          as_of: 2026-11-26
+        - title: ZUS, Fundusz Pracy (wiek i próg minimalnego wynagrodzenia)
+          url: https://www.zus.pl/pracujacy/fundusze-pozaubezpieczeniowe/fp
+          kind: control
+          quote: "Nie musisz opłacać składki na FP, jeśli podstawa wymiaru przeliczona na okres miesiąca jest niższa od minimalnego wynagrodzenia za pracę"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}

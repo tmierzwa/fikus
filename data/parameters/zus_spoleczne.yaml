@@ -236,3 +236,54 @@
           quote: "obowiązkowej składki na Fundusz Solidarnościowy, która wynosi 1,45 % podstawy wymiaru"
           article: art. 26 (na podstawie art. 4 ust. 2 ustawy o Funduszu Solidarnościowym)
       verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+
+- id: wynagrodzenie.minimalne
+  name: Minimalne wynagrodzenie za pracę
+  unit: PLN/miesiąc
+  versions:
+    - valid_from: 2026-01-01
+      valid_to: 2026-12-31
+      value: 4806
+      note: >-
+        Kwota obowiązująca w całym 2026 r. Od niej liczy się podstawę preferencyjną składek społecznych i próg obowiązku
+        opłacania Funduszu Pracy. Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2025 poz. 1242, rozporządzenie Rady Ministrów z 11 września 2025 r. w sprawie minimalnego wynagrodzenia w 2026 r.
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1242/text.pdf
+          article: § 1
+          quote: "Od dnia 1 stycznia 2026 r. ustala się minimalne wynagrodzenie za pracę w wysokości 4806 zł."
+        - title: Komunikat ZUS z 30 grudnia 2025 r., nowe wysokości składek na ubezpieczenia społeczne w 2026 r.
+          url: https://www.zus.pl/-/nowe-wysoko%C5%9Bci-sk%C5%82adek-na-ubezpieczenia-spo%C5%82eczne-w-2026-r.
+          independent: true
+          quote: "minimalne wynagrodzenie za pracę wynosi 4.806 zł"
+          as_of: 2025-12-30
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: zus.podstawa_preferencyjna
+  name: Najniższa miesięczna podstawa preferencyjnych składek społecznych przedsiębiorcy
+  unit: PLN/miesiąc
+  applies_to: {zus: [preferencyjny]}
+  versions:
+    - valid_from: 2026-01-01
+      valid_to: 2026-12-31
+      value: 1441.80
+      note: >-
+        30% minimalnego wynagrodzenia (wynagrodzenie.minimalne). Podstawa preferencyjna dotyczy składek emerytalnej
+        i rentowej (a przez nie chorobowej i wypadkowej) przez 24 miesiące kalendarzowe: od rozpoczęcia działalności
+        (art. 18a ust. 1), a po uldze na start albo po rezygnacji z niej od dnia objęcia ubezpieczeniami społecznymi
+        (art. 18aa). Nie przysługuje osobom wymienionym w art. 18a ust. 2 ustawy o systemie ubezpieczeń społecznych.
+      sources:
+        - title: Komunikat ZUS z 30 grudnia 2025 r., nowe wysokości składek na ubezpieczenia społeczne w 2026 r. (grupa I)
+          url: https://www.zus.pl/-/nowe-wysoko%C5%9Bci-sk%C5%82adek-na-ubezpieczenia-spo%C5%82eczne-w-2026-r.
+          independent: true
+          quote: "nie niższa niż 1441,80 zł (30% kwoty minimalnego wynagrodzenia obowiązującej w okresie od 1 stycznia do 31 grudnia 2026 r.)"
+          as_of: 2025-12-30
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 18a ust. 1
+          quote: "w okresie pierwszych 24 miesięcy kalendarzowych od dnia rozpoczęcia wykonywania działalności gospodarczej stanowi zadeklarowana kwota, nieniższa jednak niż 30 % kwoty minimalnego wynagrodzenia"
+        - title: Dz.U. 2025 poz. 1242, rozporządzenie w sprawie minimalnego wynagrodzenia w 2026 r.
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1242/text.pdf
+          article: § 1
+          quote: "Od dnia 1 stycznia 2026 r. ustala się minimalne wynagrodzenie za pracę w wysokości 4806 zł."
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
