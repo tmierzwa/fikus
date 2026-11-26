@@ -98,9 +98,9 @@
     - valid_from: 2026-01-01
       value:
         steps:
-          - text: Ustal dochód z działalności według art. 9 ust. 1, 2–3b i 5, art. 24 ust. 1, 2, 3b–3e i ust. 4 zdanie pierwsze albo art. 24b ust. 1 i 2, albo art. 23o ustawy o PIT, czyli przychody pomniejszone o koszty ich uzyskania, z uwzględnieniem obniżenia o straty z lat poprzednich na zasadach art. 9 ust. 3.
+          - text: Ustal dochód z działalności według art. 9 ust. 1, 2–3b i 5, art. 24 ust. 1, 2, 3b–3e i ust. 4 zdanie pierwsze albo art. 24b ust. 1 i 2, albo art. 23o ustawy o PIT, z uwzględnieniem obniżenia o straty z lat poprzednich na zasadach art. 9 ust. 3. Przy podatkowej księdze przychodów i rozchodów dochodem jest różnica między przychodem a kosztami jego uzyskania, powiększona albo pomniejszona o różnicę między wartością remanentu końcowego i początkowego (art. 24 ust. 2 zdanie pierwsze). Ta zasada nie opisuje ustalania dochodu przy księgach rachunkowych (art. 24 ust. 1) ani dochodu z odpłatnego zbycia składników majątku (art. 24 ust. 2 zdanie drugie).
             uses: []
-            basis: art. 30c ust. 2 zdanie pierwsze ustawy o podatku dochodowym od osób fizycznych
+            basis: art. 30c ust. 2 zdanie pierwsze oraz art. 24 ust. 2 ustawy o podatku dochodowym od osób fizycznych
           - text: Dochód możesz pomniejszyć o składki na ubezpieczenia społeczne z art. 26 ust. 1 pkt 2 lit. a i pkt 2a ustawy o PIT zapłacone w roku podatkowym, na warunkach z tych przepisów (przy pkt 2 bez składek, których podstawą są dochody zwolnione albo dochody, od których zaniechano poboru podatku; przy pkt 2a z zastrzeżeniem art. 26 ust. 13a–13c), jeżeli nie zostały zaliczone do kosztów, odliczone od dochodów opodatkowanych według skali ani od przychodów na ryczałcie i nie zostały zwrócone.
             uses: [zus.stawka.emerytalna, zus.stawka.rentowa, zus.stawka.chorobowa, zus.stawka.wypadkowa_do_9]
             basis: art. 30c ust. 2 pkt 1, ust. 3 i 3a w zw. z art. 26 ust. 1 pkt 2 lit. a i pkt 2a oraz ust. 13a–13c ustawy o podatku dochodowym od osób fizycznych
@@ -113,13 +113,32 @@
           - text: Podatek to podstawa pomnożona przez stawkę podatku liniowego. Podstawę opodatkowania i kwotę podatku zaokrąglij do pełnych złotych; końcówki poniżej 50 groszy pomiń, a od 50 groszy podwyższ do pełnego złotego. Ta zasada nie opisuje odliczeń od podstawy obliczenia podatku z art. 26e, 26ga, 26gb, 26h–26he, 26i, 52jb, 52n i 52x ustawy o PIT ani odliczenia podatku zapłaconego za granicą z art. 30c ust. 4.
             uses: [podatek.liniowy.stawka]
             basis: art. 30c ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 63 § 1 Ordynacji podatkowej
-          - text: Przy zaliczkach miesięcznych zaliczka za miesiąc to różnica między podatkiem od dochodu osiągniętego od początku roku, obliczonym według kroków powyżej, a sumą należnych zaliczek za poprzednie miesiące. Zaliczki można nie wpłacać, jeżeli podatek od dochodu od początku roku pomniejszony o sumę wpłaconych zaliczek nie przekracza 1000 zł. Gdy ta kwota przekroczy 1000 zł, wpłać różnicę między podatkiem od dochodu od początku roku a sumą zaliczek wpłaconych od początku roku. Zamiast tego mały podatnik i podatnik rozpoczynający działalność mogą wpłacać zaliczki kwartalne (art. 44 ust. 3h i 3i), a podatnik może wybrać zaliczki uproszczone (art. 44 ust. 6b–6e i 6h, z obniżeniem o część składki zdrowotnej według art. 44 ust. 6j); ta zasada tych sposobów nie opisuje.
+          - text: Przy zaliczkach miesięcznych zaliczka za miesiąc to różnica między podatkiem od dochodu osiągniętego od początku roku, obliczonym według kroków powyżej, a sumą należnych zaliczek za poprzednie miesiące. Przy podatkowej księdze przychodów i rozchodów dochodem do zaliczki jest różnica między przychodem a kosztami wynikającymi z księgi, a różnicę remanentową uwzględniasz tylko wtedy, gdy sporządzasz remanent na koniec miesiąca albo zarządzi to naczelnik urzędu skarbowego (art. 44 ust. 2). Zaliczki można nie wpłacać, jeżeli podatek od dochodu od początku roku pomniejszony o sumę wpłaconych zaliczek nie przekracza 1000 zł. Gdy ta kwota przekroczy 1000 zł, wpłać różnicę między podatkiem od dochodu od początku roku a sumą zaliczek wpłaconych od początku roku. Zamiast tego mały podatnik i podatnik rozpoczynający działalność mogą wpłacać zaliczki kwartalne (art. 44 ust. 3h i 3i), a podatnik może wybrać zaliczki uproszczone (art. 44 ust. 6b–6e i 6h, z obniżeniem o część składki zdrowotnej według art. 44 ust. 6j); ta zasada tych sposobów nie opisuje. Zwolnienie z zaliczek dla podatnika, który po raz pierwszy rozpoczął działalność (art. 44 ust. 7a), nie przysługuje w roku opodatkowania podatkiem liniowym (art. 44 ust. 7c pkt 5). Ta zasada nie opisuje też braku zaliczek w okresie zawieszenia działalności (art. 44 ust. 10) ani korekty dochodu przy niezapłaconych należnościach i zobowiązaniach (art. 44 ust. 17–26).
             uses: [podatek.liniowy.stawka, termin.zaliczka_liniowy]
-            basis: art. 44 ust. 3f i 15 ustawy o podatku dochodowym od osób fizycznych
+            basis: art. 44 ust. 2, 3f, 7c pkt 5 i 15 ustawy o podatku dochodowym od osób fizycznych
+          - text: Po końcu roku dochód z działalności opodatkowanej podatkiem liniowym wykazujesz w odrębnym zeznaniu rocznym. Przed upływem terminu złożenia zeznania wpłacasz podatek należny wynikający z zeznania albo różnicę między nim a sumą zapłaconych za ten rok zaliczek. Ta zasada nie opisuje doliczania do dochodu części dochodu z roku zwolnienia z zaliczek ani skutków utraty prawa do tego zwolnienia (art. 44 ust. 7f, 7i i 7j).
+            uses: []
+            basis: art. 45 ust. 1a pkt 2 i ust. 4 pkt 3 oraz art. 44 ust. 7f, 7i i 7j ustawy o podatku dochodowym od osób fizycznych
       note: >-
         Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku obowiązywania (2026-01-01)
         nie jest potwierdzona źródłem. Wcześniejszych wersji nie wprowadzono.
       sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (zwolnienie z zaliczek tylko na skali)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 7c pkt 5
+          quote: "w roku korzystania ze zwolnienia są opodatkowani na zasadach określonych w art. 27"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dochód przy księdze przychodów i rozchodów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 24 ust. 2
+          quote: "dochodem z działalności jest różnica pomiędzy przychodem w rozumieniu art. 14 a kosztami uzyskania powiększona o różnicę"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dochód do zaliczki przy księdze)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 44 ust. 2
+          quote: "jest różnica pomiędzy wynikającym z tych ksiąg przychodem i kosztami jego uzyskania"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wpłata po zeznaniu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 45 ust. 4 pkt 3
+          quote: "należny podatek dochodowy wynikający z zeznania, o którym mowa w ust. 1a pkt 2, albo różnicę pomiędzy podatkiem"
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (podstawa i odliczenia)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
           article: art. 30c ust. 2
