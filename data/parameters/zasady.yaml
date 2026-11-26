@@ -96,6 +96,7 @@
   applies_to: {tax_form: [ryczalt]}
   versions:
     - valid_from: 2025-01-01
+      valid_to: 2026-12-31
       note: >-
         Poprawka: wcześniej wpisany okres 2026-02-01 – 2027-01-31 dotyczy skali i liniowego, nie ryczałtu,
         a krok 4 powoływał art. 81 ust. 2h, który dotyczy wyboru przychodu z poprzedniego roku.
@@ -137,6 +138,60 @@
           kind: control
           quote: "jeśli przekroczysz kwotę przychodów w danym miesiącu, za ten miesiąc musisz rozliczyć składkę od podstawy wymiaru obowiązującej dla kolejnego progu przychodów"
           as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, open_issue: "Ustawa Dz.U. 2026 poz. 1542 zmienia art. 81 ust. 2zd pkt 2 od 1 stycznia 2027 r. bez przepisu przejściowego. Od którego miesiąca składkowego albo dla przychodów i dochodów z jakiego okresu stosuje się nowe brzmienie? Pytanie do eksperta: docs/pytania-do-eksperta.md, P8."}
+    - valid_from: 2027-01-01
+      note: >-
+        Zmiana względem poprzedniej wersji: od 1 stycznia 2027 r. art. 81 ust. 2zd pkt 2 nie wymienia już art. 21 ust. 1
+        pkt 63a ustawy o PIT (Dz.U. 2026 poz. 1542, art. 12); ta sama ustawa uchyla ten punkt w ustawie o PIT (art. 4
+        pkt 1). Pozostałe kroki się nie zmieniają. Nowego brzmienia nie ma jeszcze w tekście jednolitym, więc źródłem jest ustawa zmieniająca.
+      value:
+        steps:
+          - text: Ustal przychód z działalności osiągnięty od początku roku kalendarzowego, pomniejszony o opłacone składki emerytalną, rentową, chorobową i wypadkową, jeżeli nie zostały zaliczone do kosztów ani odliczone od dochodu. Funduszu Pracy nie odejmuj. Zamiast tego możesz przyjąć przychód z poprzedniego roku (zasada.ryczalt_zdrowotna_prog_poprzedni_rok).
+            uses: [zasada.ryczalt_zdrowotna_prog_poprzedni_rok]
+            basis: art. 81 ust. 2f i 2g ustawy o świadczeniach opieki zdrowotnej
+          - text: Do przychodu nie wliczaj przychodów wyłączonych przez art. 81 ust. 2zd, czyli osiągniętych w okresie zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, oraz osiągniętych w miesiącu, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a).
+            uses: []
+            basis: art. 81 ust. 2zd ustawy o świadczeniach opieki zdrowotnej
+          - text: Porównaj tę kwotę z progami. Składka za miesiąc to kwota z parametru dla progu, w którym się mieści.
+            uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka]
+            basis: art. 81 ust. 2f ustawy o świadczeniach opieki zdrowotnej
+          - text: Po przekroczeniu progu w trakcie roku płać kwotę wyższego progu od miesiąca przekroczenia.
+            uses: [zdrowotna.ryczalt.skladka]
+            basis: art. 81 ust. 2f ustawy o świadczeniach opieki zdrowotnej
+          - text: Po końcu roku ustal roczną składkę według progu dla rocznego przychodu, pomnożonej przez liczbę miesięcy podlegania ubezpieczeniu (bez miesięcy zwolnienia ze składki). Porównaj z sumą wpłat. Nadwyżkę odbierz, niedopłatę dopłać w rozliczeniu rocznym.
+            uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka, termin.roczne_rozliczenie_zdrowotnej]
+            basis: art. 81 ust. 2e, 2ea, 2i, 2j, 2k i 2l ustawy o świadczeniach opieki zdrowotnej
+      sources:
+        - title: Dz.U. 2026 poz. 1542, ustawa z 22 października 2026 r. o zmianie ustawy o wspieraniu nowych inwestycji oraz niektórych innych ustaw (zmiana art. 81 ust. 2zd)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1542/text.pdf
+          article: art. 12
+          quote: "w art. 81 w ust. 2zd w pkt 2 skreśla się wyrazy „63a,”"
+        - title: Dz.U. 2026 poz. 1542, ustawa z 22 października 2026 r. o zmianie ustawy o wspieraniu nowych inwestycji oraz niektórych innych ustaw (wejście w życie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1542/text.pdf
+          article: art. 30
+          quote: "Ustawa wchodzi w życie z dniem 1 stycznia 2027 r., z wyjątkiem:"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (dotychczasowe brzmienie art. 81 ust. 2zd pkt 2)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2zd pkt 2
+          quote: "przychodów niepodlegających opodatkowaniu podatkiem dochodowym innych niż określone w art. 21 ust. 1 pkt 63a, 63b i 152–154"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          quote: "osiągnięte od początku roku kalendarzowego, nie przekroczyły kwoty 60 000 zł"
+          article: art. 81 ust. 2e-2l
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          quote: "nie uwzględnia się w tych przychodach i kosztach ich uzyskania: 1) przychodów osiągniętych i kosztów poniesionych w okresie zawieszenia wykonywania działalności gospodarczej"
+          article: art. 81 ust. 2zd
+        - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r. (krok 1)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "Przychody te pomniejsz o kwoty opłaconych składek na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe, jeżeli nie zaliczyłeś ich do kosztów uzyskania przychodów lub odliczyłeś od dochodu"
+          as_of: 2026-11-26
+        - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r. (kroki 2 i 3)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "jeśli przekroczysz kwotę przychodów w danym miesiącu, za ten miesiąc musisz rozliczyć składkę od podstawy wymiaru obowiązującej dla kolejnego progu przychodów"
+          as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: zasada.ryczalt_zdrowotna_prog_poprzedni_rok
@@ -145,6 +200,7 @@
   applies_to: {tax_form: [ryczalt]}
   versions:
     - valid_from: 2025-01-01
+      valid_to: 2026-12-31
       note: >-
         ust. 2h w tym brzmieniu obowiązuje od 1 stycznia 2025 r. (Dz.U. 2024 poz. 1915); tekst jednolity uwzględnia zmiany ogłoszone przed 2025-09-25.
         Poprawka 2026-11-26: dodany krok 3 o wyłączeniach z art. 81 ust. 2zd, którego brakowało (wskazał weryfikator).
@@ -182,6 +238,57 @@
           quote: "Przyjętą kwotę przychodów uzyskanych w poprzednim roku kalendarzowym pomniejszasz o kwotę opłaconych w poprzednim roku kalendarzowym składek na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, open_issue: "ZUS (poradnik, stan na 2025-01-01) dodaje wyjątek: podstawy z poprzedniego roku nie stosuje się przez cały rok, gdy działalność zostanie zakończona i podjęta na nowo; ustawa (art. 81 ust. 2h) go nie wymienia. Pytanie do eksperta: docs/pytania-do-eksperta.md, P1"}
+    - valid_from: 2027-01-01
+      note: >-
+        Zmiana względem poprzedniej wersji: od 1 stycznia 2027 r. art. 81 ust. 2zd pkt 2 nie wymienia już art. 21 ust. 1
+        pkt 63a ustawy o PIT (Dz.U. 2026 poz. 1542, art. 12); ta sama ustawa uchyla ten punkt w ustawie o PIT (art. 4
+        pkt 1). Pozostałe kroki się nie zmieniają. Nowego brzmienia nie ma jeszcze w tekście jednolitym, więc źródłem jest ustawa zmieniająca.
+      value:
+        steps:
+          - text: Ta możliwość dotyczy tylko podatnika, który przez cały poprzedni rok kalendarzowy prowadził działalność opodatkowaną ryczałtem, skalą, liniowym albo IP Box.
+            uses: []
+            basis: art. 81 ust. 2h ustawy o świadczeniach opieki zdrowotnej
+          - text: Weź przychód z poprzedniego roku kalendarzowego pomniejszony o składki emerytalną, rentową, chorobową i wypadkową opłacone w tamtym roku, jeżeli nie zostały odliczone.
+            uses: []
+            basis: art. 81 ust. 2h ustawy o świadczeniach opieki zdrowotnej
+          - text: Do przychodu nie wliczaj przychodów wyłączonych przez art. 81 ust. 2zd, czyli osiągniętych w okresie zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, oraz osiągniętych w miesiącu, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a).
+            uses: []
+            basis: art. 81 ust. 2zd ustawy o świadczeniach opieki zdrowotnej
+          - text: Wybierz próg według tej kwoty. Składka za każdy miesiąc bieżącego roku to kwota z parametru dla tego progu; stosuj ją przez cały rok kalendarzowy.
+            uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka]
+            basis: art. 81 ust. 2h ustawy o świadczeniach opieki zdrowotnej
+      sources:
+        - title: Dz.U. 2026 poz. 1542, ustawa z 22 października 2026 r. o zmianie ustawy o wspieraniu nowych inwestycji oraz niektórych innych ustaw (zmiana art. 81 ust. 2zd)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1542/text.pdf
+          article: art. 12
+          quote: "w art. 81 w ust. 2zd w pkt 2 skreśla się wyrazy „63a,”"
+        - title: Dz.U. 2026 poz. 1542, ustawa z 22 października 2026 r. o zmianie ustawy o wspieraniu nowych inwestycji oraz niektórych innych ustaw (wejście w życie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1542/text.pdf
+          article: art. 30
+          quote: "Ustawa wchodzi w życie z dniem 1 stycznia 2027 r., z wyjątkiem:"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (dotychczasowe brzmienie art. 81 ust. 2zd pkt 2)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2zd pkt 2
+          quote: "przychodów niepodlegających opodatkowaniu podatkiem dochodowym innych niż określone w art. 21 ust. 1 pkt 63a, 63b i 152–154"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          quote: "może przy określaniu miesięcznej podstawy wymiaru składki na ubezpieczenie zdrowotne przyjąć kwotę przychodów uzyskanych w poprzednim roku kalendarzowym"
+          article: art. 81 ust. 2e-2l
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          quote: "nie uwzględnia się w tych przychodach i kosztach ich uzyskania: 1) przychodów osiągniętych i kosztów poniesionych w okresie zawieszenia wykonywania działalności gospodarczej"
+          article: art. 81 ust. 2zd
+        - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r.
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "możesz przyjąć kwotę przychodów uzyskanych w poprzednim roku kalendarzowym, jeśli przez cały poprzedni rok kalendarzowy prowadziłeś działalność gospodarczą"
+          as_of: 2026-11-26
+        - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r.
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          kind: control
+          quote: "Przyjętą kwotę przychodów uzyskanych w poprzednim roku kalendarzowym pomniejszasz o kwotę opłaconych w poprzednim roku kalendarzowym składek na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, open_issue: "ZUS (poradnik, stan na 2025-01-01) dodaje wyjątek: podstawy z poprzedniego roku nie stosuje się przez cały rok, gdy działalność zostanie zakończona i podjęta na nowo; ustawa (art. 81 ust. 2h) go nie wymienia. Pytanie do eksperta: docs/pytania-do-eksperta.md, P1 Ustawa Dz.U. 2026 poz. 1542 zmienia art. 81 ust. 2zd pkt 2 od 1 stycznia 2027 r. bez przepisu przejściowego. Od którego miesiąca składkowego albo dla przychodów i dochodów z jakiego okresu stosuje się nowe brzmienie? Pytanie do eksperta: docs/pytania-do-eksperta.md, P8."}
 
 - id: zasada.ryczalt_podstawa
   name: Podstawa opodatkowania ryczałtem
