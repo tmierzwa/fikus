@@ -32,19 +32,36 @@ Każda wersja parametru musi mieć:
 3. pole `verification` z datą sprawdzenia.
 
 Portale, blogi i kalkulatory mogą być tylko źródłem kontrolnym (`kind: control`). Bez źródła
-pierwotnego wartość nie trafia do danych. Starych wersji nie zmieniamy; dodaj nową. Notatka opisuje
+pierwotnego wartość nie trafia do danych. Drugie źródło (`kind: control` albo `independent: true`)
+liczy się jako dowód tylko z własnym dosłownym cytatem i tylko wtedy, gdy jest innym dokumentem
+(adresem) niż źródło pierwotne z cytatem. Starych wersji nie zmieniamy; dodaj nową. Notatka opisuje
 obecny stan wersji, bez historii edycji. Poprawkę błędu w starej wersji opisz w PR. Gdy zmienia wartość,
 okres, podstawę prawną albo kroki zasady, dopisz w notatce jedno krótkie zdanie, na przykład „Korekta
 z 27 listopada 2026 r.: zmienione kroki 2 i 4.”, bez opisu poprzedniego błędu.
 
 Gdy źródła się różnią albo przepis wymaga interpretacji, nie zgaduj. Wpisz `open_issue` i dopisz
 pytanie w [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md). Gdy pytanie dotyczy tylko przypadku
-brzegowego, a nie samej wartości, dopisz `open_issue_scope: edge_case`; w razie wątpliwości go nie wpisuj.
-Odpowiedź eksperta zapisujemy
-w `verification.expert` z datą i podstawą. Imię i nazwisko eksperta wpisujemy tylko za jego zgodą
-na publikację; bez zgody wpisujemy samą kwalifikację, na przykład „doradca podatkowy”.
+brzegowego, a nie samej wartości ani rdzenia zasady, a krok opisuje ten przypadek jako niewyjaśniony, dopisz `open_issue_scope: edge_case`; w razie wątpliwości go nie wpisuj.
+Odpowiedź eksperta zapisujemy w `verification.expert` z datą i podstawą. Imię i nazwisko eksperta
+wpisujemy tylko za jego zgodą na publikację; bez zgody wpisujemy samą kwalifikację, na przykład „doradca podatkowy”.
 
-Szczegółowy opis pól jest w [README.md](README.md), a procedura dla agentów w
+## Odpowiedzi ekspertów
+
+Otwarte pytania mają dyskusje w kategorii
+[Pytania do ekspertów](https://github.com/tmierzwa/fikus/discussions/categories/pytania-do-ekspert%C3%B3w),
+jedna dyskusja na jedno pytanie z [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md). Jeśli jesteś
+doradcą podatkowym, księgową albo prawnikiem, odpowiedz w dyskusji i podaj podstawę prawną: przepis,
+interpretację, wyrok albo komunikat urzędu.
+
+Sama odpowiedź w dyskusji nie jest jeszcze dowodem. Opiekun potwierdza Twoją kwalifikację i to, że
+odpowiedź podaje podstawę, a potem oznacza ją jako odpowiedź. Wtedy trafia do danych z datą, podstawą
+i linkiem do Twojego komentarza. Twoje imię i nazwisko wpiszemy tylko wtedy, gdy napiszesz w dyskusji,
+że się na to zgadzasz. Login na GitHubie nie jest taką zgodą. Bez niej wpisujemy samą kwalifikację.
+
+W dyskusjach obowiązują te same zasady co w zgłoszeniach: nie wpisujemy kwot z deklaracji, NIP, PESEL
+ani informacji o tym, kto jak się rozlicza, a pytania o własne rozliczenie zamykamy.
+
+Szczegółowy opis pól jest w [src/fikus/model.py](src/fikus/model.py), a procedura dla agentów w
 [CLAUDE.md](CLAUDE.md) i `.claude/skills/dodaj-parametr/`.
 
 ## Jak przygotować zmianę

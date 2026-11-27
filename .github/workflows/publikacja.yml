@@ -51,6 +51,18 @@ jobs:
               print(f"::error::{e}")
           sys.exit(1 if errors else 0)
           EOF
+      - name: Zainstalowana paczka wczytuje swoje dane
+        run: |
+          python -m venv "$RUNNER_TEMP/wheel"
+          "$RUNNER_TEMP/wheel/bin/pip" install dist/*.whl
+          cd "$RUNNER_TEMP"
+          "$RUNNER_TEMP/wheel/bin/python" - <<'EOF'
+          import fikus.store as s
+          assert s.DATA == s._PKG_DATA, f"dane spoza paczki: {s.DATA}"
+          store = s.Store()
+          assert store.params and store.profiles, "paczka nie ma parametrów albo profili"
+          print(f"{len(store.params)} parametrów, {len(store.profiles)} profili z {s.DATA}")
+          EOF
       - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8  # v4.2.2
         with:
           subject-path: dist/*

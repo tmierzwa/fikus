@@ -179,8 +179,8 @@
         dopóki przepisy nie określą, której klasyfikacji używać. Teksty jednolite Dz.U. 2024 poz. 776 (przepisy
         ogłoszone przed 11 kwietnia 2024 r.) i Dz.U. 2025 poz. 843 (przed 12 czerwca 2025 r.) mają to samo brzmienie
         tych liter; nowelizacje ogłoszone po tekście jednolitym poz. 843 (Dz.U. 2026 poz. 779, 1098 i 1541) nie
-        zmieniają art. 4 ani art. 12. Data początku obowiązywania (2024-01-01) to początek okresu, który potwierdzają
-        te teksty, tak jak w ryczalt.stawki, a nie dzień wejścia przepisów w życie; żaden cytat nie podaje tej daty, więc okres wersji nie jest potwierdzony dwoma dokumentami.
+        zmieniają art. 4 ani art. 12. Data początku obowiązywania (2024-01-01) to data odcięcia danych, a nie dzień wejścia przepisów w życie.
+        Koniec wersji (31 grudnia 2028 r.) podają rozporządzenie Dz.U. 2025 poz. 1829 i strona GUS.
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 2 lit. a)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
@@ -251,7 +251,7 @@
             do dnia 31 grudnia 2028 r. – stosuje się Polską Klasyfikację Wyrobów i Usług (PKWiU) wprowadzoną
             rozporządzeniem Rady Ministrów z dnia 4 września 2015 r. w sprawie Polskiej Klasyfikacji Wyrobów i Usług
             (PKWiU) (Dz. U. poz. 1676
-          confirms: [klasyfikacja]
+          confirms: [klasyfikacja, period]
         - title: GUS, Urząd Statystyczny w Łodzi, Ośrodek Klasyfikacji i Nomenklatur, Zadania (stosowanie PKWiU 2015 do celów podatkowych)
           url: https://lodz.new.stat.gov.pl/o-nas-lodz/informacje-ogolne/osrodki/osrodek-klasyfikacji-i-nomenklatur-urzedu-statystycznego-w-lodzi/zadania
           kind: control
@@ -259,8 +259,8 @@
             zryczałtowanym podatkiem dochodowym w formie ryczałtu od przychodów ewidencjonowanych oraz karty podatkowej –
             do dnia 31 grudnia 2028 r. – stosuje się Polską Klasyfikację Wyrobów i Usług (PKWiU 2015)
           as_of: 2026-11-26
-          confirms: [klasyfikacja]
-        - title: Dz.U. 2024 poz. 776, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (to samo brzmienie, dla daty początku obowiązywania)
+          confirms: [klasyfikacja, period]
+        - title: Dz.U. 2024 poz. 776, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (to samo brzmienie)
           url: https://api.sejm.gov.pl/eli/acts/DU/2024/776/text.pdf
           article: art. 12 ust. 1 pkt 2b lit. b
           quote: >-
@@ -329,7 +329,7 @@
             pozostałych w zakresie informacji, gdzie indziej niesklasyfikowanych (PKWiU 63.99)
           as_of: 2026-11-26
           confirms: [pkt_2_lit_i]
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: podatek.liniowy.stawka
   name: Stawka podatku liniowego od dochodów z działalności gospodarczej

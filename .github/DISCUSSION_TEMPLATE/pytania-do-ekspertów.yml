@@ -1,0 +1,43 @@
+title: "Pytanie: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ta kategoria służy pytaniom o parametry Fikusa, których źródła nie rozstrzygają. Odpowiadają na nie doradcy
+        podatkowi, księgowi i inni eksperci. Lista otwartych pytań jest w
+        [docs/pytania-do-eksperta.md](https://github.com/tmierzwa/fikus/blob/main/docs/pytania-do-eksperta.md).
+
+        Nie odpowiadamy na pytania o sytuację konkretnego podatnika. Dyskusja jest publiczna, więc nie wpisuj
+        kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się rozlicza.
+
+        Opiekun nada pytaniu numer P i dopisze je do listy. Odpowiedź w dyskusji staje się dowodem w danych
+        dopiero wtedy, gdy opiekun ją potwierdzi i oznaczy jako odpowiedź.
+  - type: input
+    id: parametr
+    attributes:
+      label: Identyfikator parametru
+      description: Wpis w danych, którego dotyczy pytanie.
+      placeholder: np. zdrowotna.ryczalt.skladka
+    validations:
+      required: true
+  - type: textarea
+    id: przepisy
+    attributes:
+      label: Przepisy i źródła
+      description: Akty, artykuły i komunikaty urzędów, które już sprawdzono, z dosłownymi fragmentami i linkami.
+    validations:
+      required: true
+  - type: textarea
+    id: pytanie
+    attributes:
+      label: Pytanie
+      description: Czego źródła nie rozstrzygają. Pytanie dotyczy przepisu, a nie czyjegoś rozliczenia.
+    validations:
+      required: true
+  - type: checkboxes
+    id: bez-danych
+    attributes:
+      label: Dane podatnika
+      options:
+        - label: Pytanie nie zawiera kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się rozlicza.
+          required: true

@@ -3,13 +3,16 @@ from __future__ import annotations
 
 import re
 from datetime import date, timedelta
-from typing import Literal
+from typing import Literal, get_args
 
 from pydantic import BaseModel, Field, PrivateAttr, field_validator, model_validator
 
 from .cytaty import normalize
 
 PERIOD = "period"   # w confirms: okres obowiązywania wersji
+# Data odcięcia danych (decyzja z 27 listopada 2026 r.). Wersja, która zaczyna się tego dnia, zaczyna się
+# umownie; początku nie potwierdza się dokumentami, a period w confirms dotyczy wtedy tylko końca wersji.
+DATA_CUTOFF = date(2024, 1, 1)
 XSD_URL = "xsd_url"     # w schemacie: adres pliku XSD
 SYSTEM_CODE = "system_code"
 SCHEMA_VERSION = "schema_version"
@@ -47,7 +50,7 @@ class Source(BaseModel):
     independent: bool = False
     # Pola wartości złożonej (klucze value i "period" dla okresu obowiązywania), które to źródło
     # samo podaje. Pozwala potwierdzić drugie źródło pole po polu (Version.confidence).
-    confirms: list[str] | None = None
+    confirms: list[str] | None = None   # pola wartości złożonej, period albo kroki zasady (step_N)
 
     @field_validator("url")
     @classmethod
@@ -62,6 +65,14 @@ class Expert(BaseModel):
     name: str                       # imię i nazwisko tylko za zgodą na publikację; inaczej kwalifikacja
     answered_at: date
     basis: str                      # co ekspert potwierdził i na jakiej podstawie
+    url: str | None = None          # link do odpowiedzi (komentarz w GitHub Discussions)
+
+    @field_validator("url")
+    @classmethod
+    def _https(cls, v: str | None) -> str | None:
+        if v is not None and not v.startswith("https://"):
+            raise ValueError("adres odpowiedzi eksperta musi zaczynać się od https://")
+        return v
 
 
 class Verification(BaseModel):
@@ -97,6 +108,14 @@ class Version(BaseModel):
     see_also: list[str] = Field(default_factory=list)   # parametry, które opisują to, czego wersja nie rozstrzyga
     # Początek następnej wersji tego samego parametru, gdy jej okres jest potwierdzony (ustawia Parameter).
     _next_confirmed_from: date | None = PrivateAttr(default=None)
+
+    @field_validator("value", mode="before")
+    @classmethod
+    def _no_bool(cls, v):
+        # Bez tego true z YAML staje się po cichu liczbą 1.0.
+        if isinstance(v, bool):
+            raise ValueError("wartość nie może być logiczna (true/false); zapisz ją jako liczbę albo tekst")
+        return v
 
     @model_validator(mode="after")
     def _check(self) -> "Version":
@@ -145,6 +164,8 @@ class Version(BaseModel):
         missing = [f for f in fields if not self._two_documents(f)]
         if not is_rule:
             missing = [f for f in missing if f not in self._crwde_confirmed(missing)]
+        if PERIOD in missing and self.valid_from == DATA_CUTOFF and self.valid_to is None:
+            missing.remove(PERIOD)      # umowny początek, bez końca: nie ma czego potwierdzać
         return missing
 
     def _two_documents(self, field: str) -> bool:
@@ -176,6 +197,14 @@ class Version(BaseModel):
             ok.add(PERIOD)
         return ok
 
+    def _second_source(self) -> bool:
+        """Drugie źródło: źródło kontrolne albo niezależne z własnym cytatem, które jest innym dokumentem
+        (adresem) niż źródło pierwotne z cytatem. Bez cytatu nie wiadomo, że podaje tę samą wartość,
+        a źródło, które dało cytat, nie potwierdza samego siebie."""
+        primary = {s.url for s in self.sources if s.kind == "primary" and s.quote}
+        return any(s.quote and (s.kind == "control" or s.independent) and primary - {s.url}
+                   for s in self.sources)
+
     def confidence(self) -> dict:
         """Wysoka: cytat ze źródła pierwotnego i co najmniej dwa inne dowody, bez otwartych pytań.
         Średnia: ten sam komplet dowodów, a otwarte pytanie dotyczy tylko przypadku brzegowego.
@@ -186,8 +215,7 @@ class Version(BaseModel):
             evidence.append("cytat")
         # Gdy wersja potwierdza pola osobno, liczy się tylko ta ścieżka.
         unconfirmed = self._unconfirmed_fields()
-        if (unconfirmed is None and any(s.kind == "control" or s.independent for s in self.sources)) \
-                or unconfirmed == []:
+        if (unconfirmed is None and self._second_source()) or unconfirmed == []:
             evidence.append("drugie_zrodlo")
         if ver.agent_check:
             evidence.append("agent")
@@ -220,6 +248,20 @@ class Parameter(BaseModel):
     unit: str | None = None
     applies_to: dict[str, list[str]] = Field(default_factory=dict)  # {} = wszystkie profile
     versions: list[Version]
+
+    @model_validator(mode="after")
+    def _known_profile_fields(self) -> "Parameter":
+        """Literówka w applies_to po cichu wyłączyłaby parametr ze wszystkich profili."""
+        allowed = _profile_values()
+        for key, values in self.applies_to.items():
+            if key not in allowed:
+                raise ValueError(f"{self.id}: applies_to ma nieznane pole profilu {key!r} "
+                                 f"(znane: {', '.join(sorted(allowed))})")
+            unknown = [v for v in values if v not in allowed[key]]
+            if unknown:
+                raise ValueError(f"{self.id}: applies_to.{key} ma nieznane wartości {', '.join(unknown)} "
+                                 f"(znane: {', '.join(allowed[key])})")
+        return self
 
     @model_validator(mode="after")
     def _no_overlap(self) -> "Parameter":
@@ -269,3 +311,8 @@ class Profile(BaseModel):
 
     def as_dict(self) -> dict[str, str]:
         return {"tax_form": self.tax_form, "vat": self.vat, "zus": self.zus}
+
+
+def _profile_values() -> dict[str, tuple[str, ...]]:
+    """Pola profilu, po których applies_to wybiera parametry, i ich dozwolone wartości."""
+    return {name: get_args(f.annotation) for name, f in Profile.model_fields.items() if name != "id"}

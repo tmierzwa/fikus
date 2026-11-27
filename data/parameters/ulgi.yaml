@@ -218,16 +218,16 @@
       valid_to: 2026-12-31
       value:
         steps:
-          - text: Dochód z działalności opodatkowanej podatkiem liniowym możesz pomniejszyć tylko o pozycje wymienione w art. 30c ust. 2 ustawy o PIT. Odliczenie składek społecznych i zdrowotnych opisuje zasada podatku liniowego.
+          - text: Dochód z działalności opodatkowanej podatkiem liniowym możesz pomniejszyć tylko o pozycje wymienione w art. 30c ust. 2 ustawy o PIT.
             uses: [zasada.liniowy_podatek]
             basis: art. 30c ust. 2 ustawy o podatku dochodowym od osób fizycznych
           - text: Wpłaty na indywidualne konto zabezpieczenia emerytalnego odliczasz do wysokości rocznego limitu wpłat z ustawy o tych kontach, wyłącznie w zeznaniu, jeżeli nie zostały zaliczone do kosztów, odliczone od dochodów opodatkowanych według skali ani od przychodów na ryczałcie i nie zostały zwrócone.
             uses: [ikze.limit_wplat]
             basis: art. 30c ust. 2 pkt 3, ust. 3 i 3b ustawy o podatku dochodowym od osób fizycznych; art. 13a ustawy o indywidualnych kontach emerytalnych oraz indywidualnych kontach zabezpieczenia emerytalnego
-          - text: Z darowizn odliczasz tylko darowiznę na cele kształcenia zawodowego z art. 26 ust. 1 pkt 9 lit. d (materiały dydaktyczne lub środki trwałe dla publicznych szkół, placówek i centrów kształcenia zawodowego, na warunkach art. 26 ust. 6ea i 6eb), w wysokości darowizny, nie więcej niż limit procentowy dochodu. Pozostałych odliczeń z art. 26 ust. 1, na przykład wydatków na Internet i na cele rehabilitacyjne, art. 30c ust. 2 nie wymienia.
+          - text: Spośród darowizn z art. 26 ust. 1 pkt 9 odliczasz tylko darowiznę na cele kształcenia zawodowego z art. 26 ust. 1 pkt 9 lit. d (materiały dydaktyczne lub środki trwałe dla publicznych szkół, placówek i centrów kształcenia zawodowego, na warunkach art. 26 ust. 6ea i 6eb), w wysokości darowizny, nie więcej niż limit procentowy dochodu. Pozostałych odliczeń z art. 26 ust. 1, na przykład wydatków na Internet i na cele rehabilitacyjne, art. 30c ust. 2 nie wymienia. Czy przy podatku liniowym przysługuje wyłączenie z podstawy opodatkowania darowizn na kościelną działalność charytatywno-opiekuńczą z ustaw o stosunku Państwa do kościołów, jest niewyjaśnione (otwarte pytanie do eksperta, P67); art. 30c ust. 2 stanowi, że dochód ten podatnicy mogą pomniejszyć o pozycje z pkt 1–4, wśród których tych darowizn nie ma, a art. 30c ust. 3a stosuje odpowiednio art. 26 ust. 6b, który wspomina odliczenie darowizn wynikające z odrębnych ustaw.
             uses: [ulga.darowizny.limit]
-            basis: art. 30c ust. 2 pkt 4, ust. 3 i 3a ustawy o podatku dochodowym od osób fizycznych; art. 26 ust. 1 pkt 9 lit. d, ust. 6ea i 6eb tej ustawy
-          - text: Od podstawy obliczenia podatku ustalonej według art. 30c ust. 2 możesz odliczyć wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, do limitu na wszystkie przedsięwzięcia. Do tej podstawy odnoszą się też odliczenia z art. 26e, 26ga, 26gb, 26ha, 26hb, 26hc, 26hd i 26he ustawy o PIT, art. 52jb (ulga na robotyzację, 50% kosztów poniesionych na robotyzację, nie więcej niż dochód z działalności, dla kosztów poniesionych w latach 2022–2026; przedłużenie do lat 2022–2036 z ustawy Dz.U. 2026 poz. 1541 stosuje się do dochodów uzyskanych od 1 stycznia 2027 r.) oraz art. 52n (darowizny na przeciwdziałanie COVID-19) i art. 52x (darowizny rzeczowe laptopów i tabletów dla organów prowadzących placówki oświatowe albo dla organizacji, o których mowa w art. 3 ust. 2 i 3 ustawy o działalności pożytku publicznego, prowadzących działalność pożytku publicznego w sferze zadań publicznych, lub operatora OSE, z przeznaczeniem na dalsze nieodpłatne przekazanie), w obu przypadkach przekazane od 1 stycznia 2020 r. do końca miesiąca odwołania stanu epidemii; ta zasada ich nie opisuje. Podstawę po odliczeniach z art. 26e, 26ga, 26gb, 26h–26he i 52jb można zmniejszyć o wartość nieuregulowanych wierzytelności, a trzeba zwiększyć o wartość nieuregulowanych zobowiązań, na zasadach art. 26i (ulga na złe długi); ta zasada tego nie opisuje. Ta lista obejmuje odliczenia i zmiany tej podstawy, które przepisy ustawy o PIT (tekst jednolity Dz.U. 2026 poz. 592) wiążą z podstawą ustaloną według art. 26 ust. 1 lub art. 30c ust. 2; odliczeń przewidzianych w odrębnych ustawach (art. 26 ust. 6b) nie sprawdzono, więc lista nie musi być pełna.
+            basis: art. 30c ust. 2 pkt 4, ust. 3 i 3a ustawy o podatku dochodowym od osób fizycznych; art. 26 ust. 1 pkt 9 lit. d, ust. 6b, 6ea i 6eb tej ustawy; art. 55 ust. 7 ustawy o stosunku Państwa do Kościoła Katolickiego i odpowiednie przepisy innych ustaw o stosunku Państwa do kościołów
+          - text: Od podstawy obliczenia podatku ustalonej według art. 30c ust. 2 możesz odliczyć wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, do limitu na wszystkie przedsięwzięcia. Do tej podstawy odnoszą się też odliczenia z art. 26e, 26ga, 26gb, 26ha, 26hb, 26hc, 26hd i 26he ustawy o PIT, art. 52jb (ulga na robotyzację, 50% kosztów poniesionych na robotyzację, nie więcej niż dochód z działalności, dla kosztów poniesionych w latach 2022–2026; przedłużenie do lat 2022–2036 z ustawy Dz.U. 2026 poz. 1541 stosuje się do dochodów uzyskanych od 1 stycznia 2027 r.) oraz art. 52n (darowizny na przeciwdziałanie COVID-19) i art. 52x (darowizny rzeczowe laptopów i tabletów dla organów prowadzących placówki oświatowe albo dla organizacji, o których mowa w art. 3 ust. 2 i 3 ustawy o działalności pożytku publicznego, prowadzących działalność pożytku publicznego w sferze zadań publicznych, lub operatora OSE, z przeznaczeniem na dalsze nieodpłatne przekazanie), w obu przypadkach przekazane od 1 stycznia 2020 r. do końca miesiąca odwołania stanu epidemii. Podstawę po odliczeniach z art. 26e, 26ga, 26gb, 26h–26he i 52jb można zmniejszyć o wartość nieuregulowanych wierzytelności, a trzeba zwiększyć o wartość nieuregulowanych zobowiązań, na zasadach art. 26i (ulga na złe długi).
             uses: [ulga.termomodernizacja.limit]
             basis: art. 26h ust. 1 i 2, art. 26i ust. 1, art. 52jb ust. 1 i 5, art. 52n ust. 1 i art. 52x ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 1 pkt 4 lit. b i art. 4 ust. 1 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1541)
           - text: Ulgi na dzieci nie odliczasz od podatku liniowego, bo art. 27f ustawy o PIT dotyczy podatku obliczonego według skali (art. 27). Dochody opodatkowane podatkiem liniowym wlicza się jednak do dochodów, od których zależy prawo do ulgi na jedno dziecko. Jeżeli masz też dochody opodatkowane według skali, ulgę wykazujesz w zeznaniu, w którym rozliczasz te dochody.
@@ -240,6 +240,16 @@
         31 grudnia 2026 r. (poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1556) art. 26, 26h, 27f i 30c nie zmieniają;
         ustawa Dz.U. 2026 poz. 1542 od 1 stycznia 2027 r. zmienia art. 21, 23b i 23z, a z przepisów o odliczeniach
         tylko warunki art. 26e ust. 6 i art. 26ga ust. 10 przy zwolnieniu z art. 21 ust. 1 pkt 63b. Wcześniejszych wersji nie wprowadzono.
+        Korekta z 27 listopada 2026 r.: zmienione kroki 1, 3 i 4.
+      not_covered: >-
+        Odliczenia składek na ubezpieczenia społeczne i zdrowotne (opisuje je zasada podatku liniowego).
+        Warunków i sposobu odliczeń od podstawy obliczenia podatku z art. 26e, 26ga, 26gb, 26ha–26he, 52jb, 52n i 52x
+        ustawy o podatku dochodowym od osób fizycznych oraz ulgi na złe długi (art. 26i) poza tym, co podaje krok
+        o podstawie obliczenia podatku.
+        Ulgi odsetkowej z art. 9 ustawy z 16 listopada 2006 r. o zmianie ustawy o podatku dochodowym od osób fizycznych
+        oraz o zmianie niektórych innych ustaw (Dz.U. 2006 nr 217 poz. 1588) ani odliczeń z odrębnych ustaw innych niż ustawy o stosunku Państwa do
+        kościołów, o które pyta krok o darowiznach.
+      see_also: [zasada.liniowy_podatek]
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (IKZE)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -315,20 +325,42 @@
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
           quote: "Jeżeli oprócz tych dochodów lub przychodów uzyskujesz również dochody opodatkowane według skali podatkowej, możesz skorzystać z ulgi na dziecko."
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (darowizny z odrębnych ustaw w zeznaniu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 6b
+          quote: "Podatnicy korzystający z odliczenia darowizn, o którym mowa w ust. 1 pkt 9 oraz wynikającego z odrębnych ustaw"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (odpowiednie stosowanie przy podatku liniowym)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30c ust. 3a
+          quote: "Przepisy art. 26 ust. 5, 6, 6b, 6c, 6ea, 6eb, 6f, 7, 13b, 13c i 15 stosuje się odpowiednio"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (pomniejszenia dochodu przy podatku liniowym)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30c ust. 2
+          quote: "Dochód ten podatnicy mogą pomniejszyć o"
+        - title: Dz.U. 2023 poz. 1966, tekst jednolity ustawy o stosunku Państwa do Kościoła Katolickiego w Rzeczypospolitej Polskiej (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/1966/text.pdf
+          article: art. 55 ust. 7
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym i podatkiem wyrównawczym"
+      verification:
+        checked_at: 2026-11-27
+        open_issue: >-
+          Krok o darowiznach: czy przy podatku liniowym przysługuje wyłączenie z podstawy opodatkowania darowizn na kościelną
+          działalność charytatywno-opiekuńczą z ustaw o stosunku Państwa do kościołów (art. 30c ust. 2 ustawy o PIT stanowi, że dochód
+          ten można pomniejszyć o pozycje z pkt 1–4, wśród których tych darowizn nie ma, a art. 30c ust. 3a stosuje odpowiednio art. 26 ust. 6b). Pytanie do eksperta:
+          docs/pytania-do-eksperta.md, P67.
     - valid_from: 2027-01-01
       value:
         steps:
-          - text: Dochód z działalności opodatkowanej podatkiem liniowym możesz pomniejszyć tylko o pozycje wymienione w art. 30c ust. 2 ustawy o PIT. Odliczenie składek społecznych i zdrowotnych opisuje zasada podatku liniowego.
+          - text: Dochód z działalności opodatkowanej podatkiem liniowym możesz pomniejszyć tylko o pozycje wymienione w art. 30c ust. 2 ustawy o PIT.
             uses: [zasada.liniowy_podatek]
             basis: art. 30c ust. 2 ustawy o podatku dochodowym od osób fizycznych
           - text: Wpłaty na indywidualne konto zabezpieczenia emerytalnego odliczasz do wysokości rocznego limitu wpłat z ustawy o tych kontach, wyłącznie w zeznaniu, jeżeli nie zostały zaliczone do kosztów, odliczone od dochodów opodatkowanych według skali ani od przychodów na ryczałcie i nie zostały zwrócone.
             uses: [ikze.limit_wplat]
             basis: art. 30c ust. 2 pkt 3, ust. 3 i 3b ustawy o podatku dochodowym od osób fizycznych; art. 13a ustawy o indywidualnych kontach emerytalnych oraz indywidualnych kontach zabezpieczenia emerytalnego
-          - text: Z darowizn odliczasz tylko darowiznę na cele kształcenia zawodowego z art. 26 ust. 1 pkt 9 lit. d (materiały dydaktyczne lub środki trwałe dla publicznych szkół, placówek i centrów kształcenia zawodowego, na warunkach art. 26 ust. 6ea i 6eb), w wysokości darowizny, nie więcej niż limit procentowy dochodu. Pozostałych odliczeń z art. 26 ust. 1, na przykład wydatków na cele rehabilitacyjne, art. 30c ust. 2 nie wymienia.
+          - text: Spośród darowizn z art. 26 ust. 1 pkt 9 odliczasz tylko darowiznę na cele kształcenia zawodowego z art. 26 ust. 1 pkt 9 lit. d (materiały dydaktyczne lub środki trwałe dla publicznych szkół, placówek i centrów kształcenia zawodowego, na warunkach art. 26 ust. 6ea i 6eb), w wysokości darowizny, nie więcej niż limit procentowy dochodu. Pozostałych odliczeń z art. 26 ust. 1, na przykład wydatków na cele rehabilitacyjne, art. 30c ust. 2 nie wymienia. Czy przy podatku liniowym przysługuje wyłączenie z podstawy opodatkowania darowizn na kościelną działalność charytatywno-opiekuńczą z ustaw o stosunku Państwa do kościołów, jest niewyjaśnione (otwarte pytanie do eksperta, P67); art. 30c ust. 2 stanowi, że dochód ten podatnicy mogą pomniejszyć o pozycje z pkt 1–4, wśród których tych darowizn nie ma, a art. 30c ust. 3a stosuje odpowiednio art. 26 ust. 6b, który wspomina odliczenie darowizn wynikające z odrębnych ustaw.
             uses: [ulga.darowizny.limit]
-            basis: art. 30c ust. 2 pkt 4, ust. 3 i 3a ustawy o podatku dochodowym od osób fizycznych; art. 26 ust. 1 pkt 9 lit. d, ust. 6ea i 6eb tej ustawy
-          - text: Od podstawy obliczenia podatku ustalonej według art. 30c ust. 2 możesz odliczyć wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, do limitu na wszystkie przedsięwzięcia. Do tej podstawy odnoszą się też odliczenia z art. 26e, 26ga, 26ha, 26hb, 26hc, 26hd i 26he ustawy o PIT, art. 52jb (ulga na robotyzację, 50% kosztów poniesionych na robotyzację, nie więcej niż dochód z działalności, dla kosztów poniesionych w latach 2022–2036; od 1 stycznia 2027 r. przy środkach trwałych i wartościach niematerialnych i prawnych podlegających amortyzacji za koszty poniesione na robotyzację uznaje się dokonywane w danym roku podatkowym i zaliczane do kosztów odpisy amortyzacyjne od nich (ust. 2a), a wyłączenie z ust. 5a uchylono, z tym że do kosztów poniesionych przed tym dniem nadal się je stosuje; jak ust. 2a stosuje się do odpisów od aktywów nabytych przed 2027 r., jest niewyjaśnione (otwarte pytanie do eksperta)) oraz art. 52n (darowizny na przeciwdziałanie COVID-19) i art. 52x (darowizny rzeczowe laptopów i tabletów dla organów prowadzących placówki oświatowe albo dla organizacji, o których mowa w art. 3 ust. 2 i 3 ustawy o działalności pożytku publicznego, prowadzących działalność pożytku publicznego w sferze zadań publicznych, lub operatora OSE, z przeznaczeniem na dalsze nieodpłatne przekazanie), w obu przypadkach przekazane od 1 stycznia 2020 r. do końca miesiąca odwołania stanu epidemii; ta zasada ich nie opisuje. Podstawę po odliczeniach z art. 26e, 26ga, 26h–26he i 52jb można zmniejszyć o wartość nieuregulowanych wierzytelności, a trzeba zwiększyć o wartość nieuregulowanych zobowiązań, na zasadach art. 26i (ulga na złe długi; od 1 stycznia 2027 r. bez odesłania do uchylonego art. 26gb); ta zasada tego nie opisuje. Ta lista obejmuje odliczenia i zmiany tej podstawy, które przepisy ustawy o PIT (tekst jednolity Dz.U. 2026 poz. 592) wiążą z podstawą ustaloną według art. 26 ust. 1 lub art. 30c ust. 2; odliczeń przewidzianych w odrębnych ustawach (art. 26 ust. 6b) nie sprawdzono, więc lista nie musi być pełna. Art. 26gb (ulga na ekspansję) uchylono od 1 stycznia 2027 r.; według art. 6 ust. 1 ustawy Dz.U. 2026 poz. 1541 do kosztów poniesionych przed tym dniem stosuje się przepisy dotychczasowe, więc odliczenia z art. 26gb za takie koszty mogą trwać po 2026 r. (w tym odliczenie nieodliczonej części w zeznaniach za kolejne sześć lat z art. 26gb ust. 9 i doliczenie z ust. 6). W jakiej kolejności stosuje się je wobec art. 26i, który od 1 stycznia 2027 r. nie odsyła do art. 26gb, jest niewyjaśnione (otwarte pytanie do eksperta).
+            basis: art. 30c ust. 2 pkt 4, ust. 3 i 3a ustawy o podatku dochodowym od osób fizycznych; art. 26 ust. 1 pkt 9 lit. d, ust. 6b, 6ea i 6eb tej ustawy; art. 55 ust. 7 ustawy o stosunku Państwa do Kościoła Katolickiego i odpowiednie przepisy innych ustaw o stosunku Państwa do kościołów
+          - text: Od podstawy obliczenia podatku ustalonej według art. 30c ust. 2 możesz odliczyć wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, do limitu na wszystkie przedsięwzięcia. Do tej podstawy odnoszą się też odliczenia z art. 26e, 26ga, 26ha, 26hb, 26hc, 26hd i 26he ustawy o PIT, art. 52jb (ulga na robotyzację, 50% kosztów poniesionych na robotyzację, nie więcej niż dochód z działalności, dla kosztów poniesionych w latach 2022–2036; od 1 stycznia 2027 r. przy środkach trwałych i wartościach niematerialnych i prawnych podlegających amortyzacji za koszty poniesione na robotyzację uznaje się dokonywane w danym roku podatkowym i zaliczane do kosztów odpisy amortyzacyjne od nich (ust. 2a), a wyłączenie z ust. 5a uchylono, z tym że do kosztów poniesionych przed tym dniem nadal się je stosuje; jak ust. 2a stosuje się do odpisów od aktywów nabytych przed 2027 r., jest niewyjaśnione (otwarte pytanie do eksperta)) oraz art. 52n (darowizny na przeciwdziałanie COVID-19) i art. 52x (darowizny rzeczowe laptopów i tabletów dla organów prowadzących placówki oświatowe albo dla organizacji, o których mowa w art. 3 ust. 2 i 3 ustawy o działalności pożytku publicznego, prowadzących działalność pożytku publicznego w sferze zadań publicznych, lub operatora OSE, z przeznaczeniem na dalsze nieodpłatne przekazanie), w obu przypadkach przekazane od 1 stycznia 2020 r. do końca miesiąca odwołania stanu epidemii. Podstawę po odliczeniach z art. 26e, 26ga, 26h–26he i 52jb można zmniejszyć o wartość nieuregulowanych wierzytelności, a trzeba zwiększyć o wartość nieuregulowanych zobowiązań, na zasadach art. 26i (ulga na złe długi; od 1 stycznia 2027 r. bez odesłania do uchylonego art. 26gb). Art. 26gb (ulga na ekspansję) uchylono od 1 stycznia 2027 r.; według art. 6 ust. 1 ustawy Dz.U. 2026 poz. 1541 do kosztów poniesionych przed tym dniem stosuje się przepisy dotychczasowe, więc odliczenia z art. 26gb za takie koszty mogą trwać po 2026 r. (w tym odliczenie nieodliczonej części w zeznaniach za kolejne sześć lat z art. 26gb ust. 9 i doliczenie z ust. 6). W jakiej kolejności stosuje się je wobec art. 26i, który od 1 stycznia 2027 r. nie odsyła do art. 26gb, jest niewyjaśnione (otwarte pytanie do eksperta).
             uses: [ulga.termomodernizacja.limit]
             basis: art. 26h ust. 1 i 2, art. 26i ust. 1, art. 52jb, art. 52n ust. 1 i art. 52x ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 1 pkt 2, 3 i 4, art. 4 ust. 1, art. 6 ust. 1, art. 7 ust. 1 i art. 8 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1541)
           - text: Ulgi na dzieci nie odliczasz od podatku liniowego, bo art. 27f ustawy o PIT dotyczy podatku obliczonego według skali (art. 27). Dochody opodatkowane podatkiem liniowym wlicza się jednak do dochodów, od których zależy prawo do ulgi na jedno dziecko. Jeżeli masz też dochody opodatkowane według skali, ulgę wykazujesz w zeznaniu, w którym rozliczasz te dochody.
@@ -344,6 +376,16 @@
         na robotyzację), uchyla ust. 5a (do kosztów poniesionych przed tym dniem stosuje się go nadal, art. 7 ust. 1)
         i przedłuża okres w ust. 5 do lat 2022–2036 (art. 1 pkt 4 lit. b wchodzi w życie 31 grudnia 2026 r., ale według
         art. 4 ust. 1 dotyczy dochodów od 1 stycznia 2027 r.), a w art. 26i ust. 1 skreśla odesłanie do art. 26gb.
+        Korekta z 27 listopada 2026 r.: zmienione kroki 1, 3 i 4.
+      not_covered: >-
+        Odliczenia składek na ubezpieczenia społeczne i zdrowotne (opisuje je zasada podatku liniowego).
+        Warunków i sposobu odliczeń od podstawy obliczenia podatku z art. 26e, 26ga, 26ha–26he, 52jb, 52n i 52x
+        ustawy o podatku dochodowym od osób fizycznych oraz ulgi na złe długi (art. 26i) poza tym, co podaje krok
+        o podstawie obliczenia podatku.
+        Ulgi odsetkowej z art. 9 ustawy z 16 listopada 2006 r. o zmianie ustawy o podatku dochodowym od osób fizycznych
+        oraz o zmianie niektórych innych ustaw (Dz.U. 2006 nr 217 poz. 1588) ani odliczeń z odrębnych ustaw innych niż ustawy o stosunku Państwa do
+        kościołów, o które pyta krok o darowiznach.
+      see_also: [zasada.liniowy_podatek]
       sources:
         - title: Dz.U. 2026 poz. 1541, ustawa z 22 października 2026 r. o zmianie ustawy o PIT, ustawy o CIT oraz ustawy o ryczałcie (uchylenie ulgi na ekspansję)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
@@ -422,10 +464,24 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
           article: art. 27f ust. 1 i 2a
           quote: "do których mają zastosowanie zasady opodatkowania określone w art. 27, art. 30b i art. 30c"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (darowizny z odrębnych ustaw w zeznaniu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 6b
+          quote: "Podatnicy korzystający z odliczenia darowizn, o którym mowa w ust. 1 pkt 9 oraz wynikającego z odrębnych ustaw"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (odpowiednie stosowanie przy podatku liniowym)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30c ust. 3a
+          quote: "Przepisy art. 26 ust. 5, 6, 6b, 6c, 6ea, 6eb, 6f, 7, 13b, 13c i 15 stosuje się odpowiednio"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (pomniejszenia dochodu przy podatku liniowym)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30c ust. 2
+          quote: "Dochód ten podatnicy mogą pomniejszyć o"
+        - title: Dz.U. 2023 poz. 1966, tekst jednolity ustawy o stosunku Państwa do Kościoła Katolickiego w Rzeczypospolitej Polskiej (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/1966/text.pdf
+          article: art. 55 ust. 7
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym i podatkiem wyrównawczym"
       verification:
-        checked_at: 2026-11-26
-        agent_check: 2026-11-26
-        open_issue_scope: edge_case
+        checked_at: 2026-11-27
         open_issue: >-
           Krok o odliczeniach od podstawy: art. 52jb ust. 2a (od 1 stycznia 2027 r.) uznaje za koszty poniesione
           na robotyzację odpisy amortyzacyjne dokonywane w danym roku. Nie wiadomo, czy dotyczy to także odpisów od
@@ -433,6 +489,10 @@
           ustawy Dz.U. 2026 poz. 1541. Nie wiadomo też, w jakiej kolejności po 2026 r. stosuje się odliczenia i doliczenia
           z art. 26gb (ust. 9 i 6) za koszty sprzed 2027 r. (art. 6 ust. 1 tej ustawy) wobec art. 26i, który od 1 stycznia 2027 r. nie odsyła do
           art. 26gb. Pytanie do eksperta: docs/pytania-do-eksperta.md, P20.
+          Krok o darowiznach: czy przy podatku liniowym przysługuje wyłączenie z podstawy opodatkowania darowizn na kościelną
+          działalność charytatywno-opiekuńczą z ustaw o stosunku Państwa do kościołów (art. 30c ust. 2 ustawy o PIT stanowi, że dochód
+          ten można pomniejszyć o pozycje z pkt 1–4, wśród których tych darowizn nie ma, a art. 30c ust. 3a stosuje odpowiednio art. 26 ust. 6b). Pytanie do eksperta:
+          docs/pytania-do-eksperta.md, P67.
 
 - id: zasada.ulgi_skala
   name: Ulgi i odliczenia przy opodatkowaniu według skali podatkowej
@@ -443,7 +503,7 @@
       valid_to: 2026-12-31
       value:
         steps:
-          - text: Od dochodu (art. 26 ust. 1 ustawy o PIT) odliczasz wydatki na cele z art. 26 ust. 1, jeżeli nie zostały zaliczone do kosztów, odliczone od dochodów opodatkowanych podatkiem liniowym ani od przychodów na ryczałcie i nie zostały zwrócone. Ta zasada nie opisuje odliczenia składek społecznych (pkt 2 i 2a) ani zwrotu nienależnych świadczeń (pkt 5).
+          - text: Od dochodu (art. 26 ust. 1 ustawy o PIT) odliczasz wydatki na cele z art. 26 ust. 1, jeżeli nie zostały zaliczone do kosztów, odliczone od dochodów opodatkowanych podatkiem liniowym ani od przychodów na ryczałcie i nie zostały zwrócone.
             uses: []
             basis: art. 26 ust. 1 i 13a ustawy o podatku dochodowym od osób fizycznych
           - text: Wpłaty na indywidualne konto zabezpieczenia emerytalnego odliczasz do wysokości rocznego limitu wpłat z ustawy o tych kontach, a składki członkowskie na związki zawodowe do kwoty rocznej z art. 26 ust. 1 pkt 2c; oba odliczenia tylko w zeznaniu.
@@ -455,10 +515,10 @@
           - text: Wydatki na cele rehabilitacyjne i na ułatwienie wykonywania czynności życiowych odliczasz według katalogu z art. 26 ust. 7a; część pozycji ma roczny limit, a wydatki na leki odliczasz w części przekraczającej kwotę miesięczną. Warunki są w art. 26 ust. 7b–7g.
             uses: [ulga.rehabilitacyjna.limity]
             basis: art. 26 ust. 1 pkt 6 i ust. 7a–7g ustawy o podatku dochodowym od osób fizycznych
-          - text: Darowizny na cele z art. 26 ust. 1 pkt 9 odliczasz łącznie do limitu procentowego dochodu. Nie odliczysz darowizn na rzecz osób fizycznych ani podmiotów wymienionych w art. 26 ust. 5 pkt 2, ani darowizn zaliczonych do kosztów. Darowiznę na kształcenie zawodowe (pkt 9 lit. d) odlicza tylko podatnik z przychodami z działalności gospodarczej.
+          - text: Darowizny na cele z art. 26 ust. 1 pkt 9 odliczasz łącznie do limitu procentowego dochodu. Nie odliczysz darowizn na rzecz osób fizycznych ani podmiotów wymienionych w art. 26 ust. 5 pkt 2, ani darowizn zaliczonych do kosztów. Darowiznę na kształcenie zawodowe (pkt 9 lit. d) odlicza tylko podatnik z przychodami z działalności gospodarczej. Darowizny na kościelną działalność charytatywno-opiekuńczą odrębne ustawy o stosunku Państwa do kościołów (wymienione w podstawie prawnej) wyłączają z podstawy opodatkowania podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz, w okresie dwóch lat od dnia przekazania darowizny, sprawozdanie o przeznaczeniu jej na tę działalność; w większości tych ustaw wyłączenie dotyczy darowizn pochodzących od osób fizycznych. Darowiznę, kwotę odliczenia i dane obdarowanego wykazujesz w zeznaniu (art. 26 ust. 6b). Darowiznę dokumentujesz tak, jak wymaga art. 26 ust. 7 (art. 26 ust. 6d).
             uses: [ulga.darowizny.limit]
-            basis: art. 26 ust. 1 pkt 9, ust. 5, 6, 6eb, 6f i 7 ustawy o podatku dochodowym od osób fizycznych
-          - text: Od podstawy obliczenia podatku możesz odliczyć wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, do limitu na wszystkie przedsięwzięcia. Do tej podstawy odnoszą się też odliczenia z art. 26e, 26ga, 26gb, 26ha, 26hb, 26hc, 26hd i 26he, art. 52jb (ulga na robotyzację, 50% kosztów poniesionych na robotyzację, nie więcej niż dochód z działalności, dla kosztów poniesionych w latach 2022–2026; przedłużenie do lat 2022–2036 z ustawy Dz.U. 2026 poz. 1541 stosuje się do dochodów uzyskanych od 1 stycznia 2027 r.) oraz art. 52n (darowizny na przeciwdziałanie COVID-19) i art. 52x (darowizny rzeczowe laptopów i tabletów dla organów prowadzących placówki oświatowe albo dla organizacji, o których mowa w art. 3 ust. 2 i 3 ustawy o działalności pożytku publicznego, prowadzących działalność pożytku publicznego w sferze zadań publicznych, lub operatora OSE, z przeznaczeniem na dalsze nieodpłatne przekazanie), w obu przypadkach przekazane od 1 stycznia 2020 r. do końca miesiąca odwołania stanu epidemii; ta zasada ich nie opisuje. Podstawę po odliczeniach z art. 26e, 26ga, 26gb, 26h–26he i 52jb można zmniejszyć o wartość nieuregulowanych wierzytelności, a trzeba zwiększyć o wartość nieuregulowanych zobowiązań, na zasadach art. 26i (ulga na złe długi); ta zasada tego nie opisuje. Ta lista obejmuje odliczenia i zmiany tej podstawy, które przepisy ustawy o PIT (tekst jednolity Dz.U. 2026 poz. 592) wiążą z podstawą ustaloną według art. 26 ust. 1 lub art. 30c ust. 2; odliczeń przewidzianych w odrębnych ustawach (art. 26 ust. 6b) nie sprawdzono, więc lista nie musi być pełna.
+            basis: art. 26 ust. 1 pkt 9, ust. 5, 6, 6b, 6d, 6eb, 6f i 7 ustawy o podatku dochodowym od osób fizycznych; art. 55 ust. 7 ustawy o stosunku Państwa do Kościoła Katolickiego, art. 40 ust. 7 ustawy o stosunku Państwa do Polskiego Autokefalicznego Kościoła Prawosławnego oraz przepisy o darowiznach na działalność charytatywno-opiekuńczą w ustawach o stosunku Państwa do Kościołów Ewangelicko-Augsburskiego (art. 34 ust. 2), Ewangelicko-Reformowanego (art. 19 ust. 2), Ewangelicko-Metodystycznego (art. 29 ust. 5), Chrześcijan Baptystów (art. 33 ust. 5), Adwentystów Dnia Siódmego (art. 28 ust. 5), Polskokatolickiego (art. 27 ust. 5), Katolickiego Mariawitów (art. 24 ust. 5), Starokatolickiego Mariawitów (art. 26 ust. 5) i Zielonoświątkowego (art. 29 ust. 5)
+          - text: Od podstawy obliczenia podatku możesz odliczyć wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, do limitu na wszystkie przedsięwzięcia. Do tej podstawy odnoszą się też odliczenia z art. 26e, 26ga, 26gb, 26ha, 26hb, 26hc, 26hd i 26he, art. 52jb (ulga na robotyzację, 50% kosztów poniesionych na robotyzację, nie więcej niż dochód z działalności, dla kosztów poniesionych w latach 2022–2026; przedłużenie do lat 2022–2036 z ustawy Dz.U. 2026 poz. 1541 stosuje się do dochodów uzyskanych od 1 stycznia 2027 r.) oraz art. 52n (darowizny na przeciwdziałanie COVID-19) i art. 52x (darowizny rzeczowe laptopów i tabletów dla organów prowadzących placówki oświatowe albo dla organizacji, o których mowa w art. 3 ust. 2 i 3 ustawy o działalności pożytku publicznego, prowadzących działalność pożytku publicznego w sferze zadań publicznych, lub operatora OSE, z przeznaczeniem na dalsze nieodpłatne przekazanie), w obu przypadkach przekazane od 1 stycznia 2020 r. do końca miesiąca odwołania stanu epidemii. Podstawę po odliczeniach z art. 26e, 26ga, 26gb, 26h–26he i 52jb można zmniejszyć o wartość nieuregulowanych wierzytelności, a trzeba zwiększyć o wartość nieuregulowanych zobowiązań, na zasadach art. 26i (ulga na złe długi).
             uses: [ulga.termomodernizacja.limit]
             basis: art. 26h ust. 1 i 2, art. 26i ust. 1, art. 52jb ust. 1 i 5, art. 52n ust. 1 i art. 52x ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 1 pkt 4 lit. b i art. 4 ust. 1 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1541)
           - text: Od podatku obliczonego według skali odliczasz ulgę na dzieci, za każdy miesiąc wykonywania władzy rodzicielskiej, pełnienia funkcji opiekuna prawnego albo rodziny zastępczej, w kwotach zależnych od liczby dzieci. Przy jednym dziecku ulga przysługuje tylko wtedy, gdy dochody nie przekroczyły limitu (z wyjątkiem dziecka z orzeczeniem albo decyzją z art. 26 ust. 7d); przy dwojgu i więcej dzieciach limitu dochodów nie ma. Na pełnoletnie dzieci ulga przysługuje na warunkach art. 27f ust. 6.
@@ -471,8 +531,21 @@
         Tekst jednolity Dz.U. 2026 poz. 592 uwzględnia stan prawny na 1 kwietnia 2026 r.; zmiany ustawy o PIT, które
         weszły w życie między 1 stycznia a 1 kwietnia 2026 r. (Dz.U. 2025 poz. 1795, Dz.U. 2026 poz. 203 i 424), zmieniają
         tylko art. 21 i 52zr, a zmiana z Dz.U. 2025 poz. 1301 (tylko art. 52zo–52zr) weszła w życie w 2025 r., więc to brzmienie obowiązywało od 1 stycznia 2026 r. Późniejsze nowelizacje do
-        31 grudnia 2026 r. (poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1556) art. 26, 26h i 27f nie zmieniają. Zasada nie opisuje skali podatkowej ani innych odliczeń od
-        podatku. Wcześniejszych wersji nie wprowadzono.
+        31 grudnia 2026 r. (poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1556) art. 26, 26h i 27f nie zmieniają. Wcześniejszych
+        wersji nie wprowadzono.
+        Korekta z 27 listopada 2026 r.: zmienione kroki 1, 5 i 6.
+      not_covered: >-
+        Odliczenia składek na ubezpieczenia społeczne z art. 26 ust. 1 pkt 2 i 2a ustawy o podatku dochodowym od osób
+        fizycznych (składki z pkt 2 lit. a i pkt 2a opisuje zasada podatku według skali) i zwrotu nienależnie pobranych świadczeń (art. 26 ust. 1
+        pkt 5). Skali podatkowej (opisuje ją zasada podatku według skali) i odliczeń od podatku innych niż ulga na
+        dzieci.
+        Warunków i sposobu odliczeń od podstawy obliczenia podatku z art. 26e, 26ga, 26gb, 26ha–26he, 52jb, 52n i 52x
+        ustawy o podatku dochodowym od osób fizycznych oraz ulgi na złe długi (art. 26i) poza tym, co podaje krok
+        o podstawie obliczenia podatku.
+        Ulgi odsetkowej z art. 9 ustawy z 16 listopada 2006 r. o zmianie ustawy o podatku dochodowym od osób fizycznych
+        oraz o zmianie niektórych innych ustaw (Dz.U. 2006 nr 217 poz. 1588) ani odliczeń z odrębnych ustaw innych niż ustawy o stosunku Państwa do
+        kościołów wymienione w kroku o darowiznach.
+      see_also: [zasada.skala_podatek]
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (warunek odliczeń z art. 26 ust. 1)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -556,11 +629,72 @@
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
           quote: "112 000 zł - jeśli przez cały rok pozostajesz w związku małżeńskim"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (darowizny z odrębnych ustaw w zeznaniu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 6b
+          quote: "Podatnicy korzystający z odliczenia darowizn, o którym mowa w ust. 1 pkt 9 oraz wynikającego z odrębnych ustaw, są obowiązani wykazać w zeznaniu, o którym mowa w art. 45 ust. 1, kwotę przekazanej darowizny, kwotę dokonanego odliczenia oraz dane pozwalające na identyfikację obdarowanego"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dokumentowanie darowizn z odrębnych ustaw)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 6d
+          quote: "Przepis ust. 7 stosuje się odpowiednio do darowizn odliczanych na podstawie odrębnych ustaw."
+        - title: Dz.U. 2023 poz. 1966, tekst jednolity ustawy o stosunku Państwa do Kościoła Katolickiego w Rzeczypospolitej Polskiej (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/1966/text.pdf
+          article: art. 55 ust. 7
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym i podatkiem wyrównawczym"
+        - title: Dz.U. 2023 poz. 1966, tekst jednolity ustawy o stosunku Państwa do Kościoła Katolickiego w Rzeczypospolitej Polskiej (warunki wyłączenia darowizn)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/1966/text.pdf
+          article: art. 55 ust. 7
+          quote: "jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2023 poz. 544, tekst jednolity ustawy o stosunku Państwa do Polskiego Autokefalicznego Kościoła Prawosławnego (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/544/text.pdf
+          article: art. 40 ust. 7
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym i podatkiem wyrównawczym"
+        - title: Dz.U. 2023 poz. 544, tekst jednolity ustawy o stosunku Państwa do Polskiego Autokefalicznego Kościoła Prawosławnego (warunki wyłączenia darowizn)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/544/text.pdf
+          article: art. 40 ust. 7
+          quote: "jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz w okresie dwóch lat od dnia przekazania darowizny sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2023 poz. 509, tekst jednolity ustawy o stosunku Państwa do Kościoła Ewangelicko-Augsburskiego (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/509/text.pdf
+          article: art. 34 ust. 2
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2015 poz. 483, tekst jednolity ustawy o stosunku Państwa do Kościoła Ewangelicko-Reformowanego (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2015/483/text.pdf
+          article: art. 19 ust. 2
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz w – okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2023 poz. 85, tekst jednolity ustawy o stosunku Państwa do Kościoła Ewangelicko-Metodystycznego (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/85/text.pdf
+          article: art. 29 ust. 5
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2023 poz. 1874, tekst jednolity ustawy o stosunku Państwa do Kościoła Chrześcijan Baptystów (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/1874/text.pdf
+          article: art. 33 ust. 5
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2022 poz. 2616, tekst jednolity ustawy o stosunku Państwa do Kościoła Adwentystów Dnia Siódmego (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2022/2616/text.pdf
+          article: art. 28 ust. 5
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2023 poz. 51, tekst jednolity ustawy o stosunku Państwa do Kościoła Polskokatolickiego (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/51/text.pdf
+          article: art. 27 ust. 5
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2023 poz. 8, tekst jednolity ustawy o stosunku Państwa do Kościoła Katolickiego Mariawitów (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/8/text.pdf
+          article: art. 24 ust. 5
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2023 poz. 47, tekst jednolity ustawy o stosunku Państwa do Kościoła Starokatolickiego Mariawitów (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/47/text.pdf
+          article: art. 26 ust. 5
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2015 poz. 13, tekst jednolity ustawy o stosunku Państwa do Kościoła Zielonoświątkowego (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2015/13/text.pdf
+          article: art. 29 ust. 5
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+      verification:
+        checked_at: 2026-11-27
     - valid_from: 2027-01-01
       value:
         steps:
-          - text: Od dochodu (art. 26 ust. 1 ustawy o PIT) odliczasz wydatki na cele z art. 26 ust. 1, jeżeli nie zostały zaliczone do kosztów, odliczone od dochodów opodatkowanych podatkiem liniowym ani od przychodów na ryczałcie i nie zostały zwrócone. Ta zasada nie opisuje odliczenia składek społecznych (pkt 2 i 2a) ani zwrotu nienależnych świadczeń (pkt 5).
+          - text: Od dochodu (art. 26 ust. 1 ustawy o PIT) odliczasz wydatki na cele z art. 26 ust. 1, jeżeli nie zostały zaliczone do kosztów, odliczone od dochodów opodatkowanych podatkiem liniowym ani od przychodów na ryczałcie i nie zostały zwrócone.
             uses: []
             basis: art. 26 ust. 1 i 13a ustawy o podatku dochodowym od osób fizycznych
           - text: Wpłaty na indywidualne konto zabezpieczenia emerytalnego odliczasz do wysokości rocznego limitu wpłat z ustawy o tych kontach, a składki członkowskie na związki zawodowe do kwoty rocznej z art. 26 ust. 1 pkt 2c; oba odliczenia tylko w zeznaniu.
@@ -572,10 +706,10 @@
           - text: Wydatki na cele rehabilitacyjne i na ułatwienie wykonywania czynności życiowych odliczasz według katalogu z art. 26 ust. 7a; część pozycji ma roczny limit, a wydatki na leki odliczasz w części przekraczającej kwotę miesięczną. Warunki są w art. 26 ust. 7b–7g.
             uses: [ulga.rehabilitacyjna.limity]
             basis: art. 26 ust. 1 pkt 6 i ust. 7a–7g ustawy o podatku dochodowym od osób fizycznych
-          - text: Darowizny na cele z art. 26 ust. 1 pkt 9 odliczasz łącznie do limitu procentowego dochodu. Nie odliczysz darowizn na rzecz osób fizycznych ani podmiotów wymienionych w art. 26 ust. 5 pkt 2, ani darowizn zaliczonych do kosztów. Darowiznę na kształcenie zawodowe (pkt 9 lit. d) odlicza tylko podatnik z przychodami z działalności gospodarczej. Darowiznę na krwiodawstwo liczy się według podwojonej kwoty rekompensaty.
+          - text: Darowizny na cele z art. 26 ust. 1 pkt 9 odliczasz łącznie do limitu procentowego dochodu. Nie odliczysz darowizn na rzecz osób fizycznych ani podmiotów wymienionych w art. 26 ust. 5 pkt 2, ani darowizn zaliczonych do kosztów. Darowiznę na kształcenie zawodowe (pkt 9 lit. d) odlicza tylko podatnik z przychodami z działalności gospodarczej. Darowiznę na krwiodawstwo liczy się według podwojonej kwoty rekompensaty. Darowizny na kościelną działalność charytatywno-opiekuńczą odrębne ustawy o stosunku Państwa do kościołów (wymienione w podstawie prawnej) wyłączają z podstawy opodatkowania podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz, w okresie dwóch lat od dnia przekazania darowizny, sprawozdanie o przeznaczeniu jej na tę działalność; w większości tych ustaw wyłączenie dotyczy darowizn pochodzących od osób fizycznych. Darowiznę, kwotę odliczenia i dane obdarowanego wykazujesz w zeznaniu (art. 26 ust. 6b). Darowiznę dokumentujesz tak, jak wymaga art. 26 ust. 7 (art. 26 ust. 6d).
             uses: [ulga.darowizny.limit]
-            basis: art. 26 ust. 1 pkt 9 (lit. c w brzmieniu od 1 stycznia 2027 r.), ust. 5, 6, 6eb, 6f i 7 ustawy o podatku dochodowym od osób fizycznych
-          - text: Od podstawy obliczenia podatku możesz odliczyć wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, do limitu na wszystkie przedsięwzięcia. Do tej podstawy odnoszą się też odliczenia z art. 26e, 26ga, 26ha, 26hb, 26hc, 26hd i 26he, art. 52jb (ulga na robotyzację, 50% kosztów poniesionych na robotyzację, nie więcej niż dochód z działalności, dla kosztów poniesionych w latach 2022–2036; od 1 stycznia 2027 r. przy środkach trwałych i wartościach niematerialnych i prawnych podlegających amortyzacji za koszty poniesione na robotyzację uznaje się dokonywane w danym roku podatkowym i zaliczane do kosztów odpisy amortyzacyjne od nich (ust. 2a), a wyłączenie z ust. 5a uchylono, z tym że do kosztów poniesionych przed tym dniem nadal się je stosuje; jak ust. 2a stosuje się do odpisów od aktywów nabytych przed 2027 r., jest niewyjaśnione (otwarte pytanie do eksperta)) oraz art. 52n (darowizny na przeciwdziałanie COVID-19) i art. 52x (darowizny rzeczowe laptopów i tabletów dla organów prowadzących placówki oświatowe albo dla organizacji, o których mowa w art. 3 ust. 2 i 3 ustawy o działalności pożytku publicznego, prowadzących działalność pożytku publicznego w sferze zadań publicznych, lub operatora OSE, z przeznaczeniem na dalsze nieodpłatne przekazanie), w obu przypadkach przekazane od 1 stycznia 2020 r. do końca miesiąca odwołania stanu epidemii; ta zasada ich nie opisuje. Podstawę po odliczeniach z art. 26e, 26ga, 26h–26he i 52jb można zmniejszyć o wartość nieuregulowanych wierzytelności, a trzeba zwiększyć o wartość nieuregulowanych zobowiązań, na zasadach art. 26i (ulga na złe długi; od 1 stycznia 2027 r. bez odesłania do uchylonego art. 26gb); ta zasada tego nie opisuje. Ta lista obejmuje odliczenia i zmiany tej podstawy, które przepisy ustawy o PIT (tekst jednolity Dz.U. 2026 poz. 592) wiążą z podstawą ustaloną według art. 26 ust. 1 lub art. 30c ust. 2; odliczeń przewidzianych w odrębnych ustawach (art. 26 ust. 6b) nie sprawdzono, więc lista nie musi być pełna. Art. 26gb (ulga na ekspansję) uchylono od 1 stycznia 2027 r.; według art. 6 ust. 1 ustawy Dz.U. 2026 poz. 1541 do kosztów poniesionych przed tym dniem stosuje się przepisy dotychczasowe, więc odliczenia z art. 26gb za takie koszty mogą trwać po 2026 r. (w tym odliczenie nieodliczonej części w zeznaniach za kolejne sześć lat z art. 26gb ust. 9 i doliczenie z ust. 6). W jakiej kolejności stosuje się je wobec art. 26i, który od 1 stycznia 2027 r. nie odsyła do art. 26gb, jest niewyjaśnione (otwarte pytanie do eksperta).
+            basis: art. 26 ust. 1 pkt 9 (lit. c w brzmieniu od 1 stycznia 2027 r.), ust. 5, 6, 6b, 6d, 6eb, 6f i 7 ustawy o podatku dochodowym od osób fizycznych; art. 55 ust. 7 ustawy o stosunku Państwa do Kościoła Katolickiego, art. 40 ust. 7 ustawy o stosunku Państwa do Polskiego Autokefalicznego Kościoła Prawosławnego oraz przepisy o darowiznach na działalność charytatywno-opiekuńczą w ustawach o stosunku Państwa do Kościołów Ewangelicko-Augsburskiego (art. 34 ust. 2), Ewangelicko-Reformowanego (art. 19 ust. 2), Ewangelicko-Metodystycznego (art. 29 ust. 5), Chrześcijan Baptystów (art. 33 ust. 5), Adwentystów Dnia Siódmego (art. 28 ust. 5), Polskokatolickiego (art. 27 ust. 5), Katolickiego Mariawitów (art. 24 ust. 5), Starokatolickiego Mariawitów (art. 26 ust. 5) i Zielonoświątkowego (art. 29 ust. 5)
+          - text: Od podstawy obliczenia podatku możesz odliczyć wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, do limitu na wszystkie przedsięwzięcia. Do tej podstawy odnoszą się też odliczenia z art. 26e, 26ga, 26ha, 26hb, 26hc, 26hd i 26he, art. 52jb (ulga na robotyzację, 50% kosztów poniesionych na robotyzację, nie więcej niż dochód z działalności, dla kosztów poniesionych w latach 2022–2036; od 1 stycznia 2027 r. przy środkach trwałych i wartościach niematerialnych i prawnych podlegających amortyzacji za koszty poniesione na robotyzację uznaje się dokonywane w danym roku podatkowym i zaliczane do kosztów odpisy amortyzacyjne od nich (ust. 2a), a wyłączenie z ust. 5a uchylono, z tym że do kosztów poniesionych przed tym dniem nadal się je stosuje; jak ust. 2a stosuje się do odpisów od aktywów nabytych przed 2027 r., jest niewyjaśnione (otwarte pytanie do eksperta)) oraz art. 52n (darowizny na przeciwdziałanie COVID-19) i art. 52x (darowizny rzeczowe laptopów i tabletów dla organów prowadzących placówki oświatowe albo dla organizacji, o których mowa w art. 3 ust. 2 i 3 ustawy o działalności pożytku publicznego, prowadzących działalność pożytku publicznego w sferze zadań publicznych, lub operatora OSE, z przeznaczeniem na dalsze nieodpłatne przekazanie), w obu przypadkach przekazane od 1 stycznia 2020 r. do końca miesiąca odwołania stanu epidemii. Podstawę po odliczeniach z art. 26e, 26ga, 26h–26he i 52jb można zmniejszyć o wartość nieuregulowanych wierzytelności, a trzeba zwiększyć o wartość nieuregulowanych zobowiązań, na zasadach art. 26i (ulga na złe długi; od 1 stycznia 2027 r. bez odesłania do uchylonego art. 26gb). Art. 26gb (ulga na ekspansję) uchylono od 1 stycznia 2027 r.; według art. 6 ust. 1 ustawy Dz.U. 2026 poz. 1541 do kosztów poniesionych przed tym dniem stosuje się przepisy dotychczasowe, więc odliczenia z art. 26gb za takie koszty mogą trwać po 2026 r. (w tym odliczenie nieodliczonej części w zeznaniach za kolejne sześć lat z art. 26gb ust. 9 i doliczenie z ust. 6). W jakiej kolejności stosuje się je wobec art. 26i, który od 1 stycznia 2027 r. nie odsyła do art. 26gb, jest niewyjaśnione (otwarte pytanie do eksperta).
             uses: [ulga.termomodernizacja.limit]
             basis: art. 26h ust. 1 i 2, art. 26i ust. 1, art. 52jb, art. 52n ust. 1 i art. 52x ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 1 pkt 2, 3 i 4, art. 4 ust. 1, art. 6 ust. 1, art. 7 ust. 1 i art. 8 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1541)
           - text: Od podatku obliczonego według skali odliczasz ulgę na dzieci, za każdy miesiąc wykonywania władzy rodzicielskiej, pełnienia funkcji opiekuna prawnego albo rodziny zastępczej, w kwotach zależnych od liczby dzieci. Przy jednym dziecku ulga przysługuje tylko wtedy, gdy dochody nie przekroczyły limitu (z wyjątkiem dziecka z orzeczeniem albo decyzją z art. 26 ust. 7d); przy dwojgu i więcej dzieciach limitu dochodów nie ma. Na pełnoletnie dzieci ulga przysługuje na warunkach art. 27f ust. 6.
@@ -593,7 +727,20 @@
         na robotyzację), uchyla ust. 5a (do kosztów poniesionych przed tym dniem stosuje się go nadal, art. 7 ust. 1)
         i przedłuża okres w ust. 5 do lat 2022–2036 (art. 1 pkt 4 lit. b wchodzi w życie 31 grudnia 2026 r., ale według
         art. 4 ust. 1 dotyczy dochodów od 1 stycznia 2027 r.), a w art. 26i ust. 1 skreśla odesłanie do art. 26gb.
-        Korekty z 26 i 27 listopada 2026 r.: zmieniony krok 3.
+        Korekta z 26 listopada 2026 r.: zmieniony krok 3.
+        Korekta z 27 listopada 2026 r.: zmienione kroki 1, 3, 5 i 6.
+      not_covered: >-
+        Odliczenia składek na ubezpieczenia społeczne z art. 26 ust. 1 pkt 2 i 2a ustawy o podatku dochodowym od osób
+        fizycznych (składki z pkt 2 lit. a i pkt 2a opisuje zasada podatku według skali) i zwrotu nienależnie pobranych świadczeń (art. 26 ust. 1
+        pkt 5).
+        Skali podatkowej (opisuje ją zasada podatku według skali) i odliczeń od podatku innych niż ulga na dzieci.
+        Warunków i sposobu odliczeń od podstawy obliczenia podatku z art. 26e, 26ga, 26ha–26he, 52jb, 52n i 52x
+        ustawy o podatku dochodowym od osób fizycznych oraz ulgi na złe długi (art. 26i) poza tym, co podaje krok
+        o podstawie obliczenia podatku.
+        Ulgi odsetkowej z art. 9 ustawy z 16 listopada 2006 r. o zmianie ustawy o podatku dochodowym od osób fizycznych
+        oraz o zmianie niektórych innych ustaw (Dz.U. 2006 nr 217 poz. 1588) ani odliczeń z odrębnych ustaw innych niż ustawy o stosunku Państwa do
+        kościołów wymienione w kroku o darowiznach.
+      see_also: [zasada.skala_podatek]
       sources:
         - title: Dz.U. 2026 poz. 1541, ustawa z 22 października 2026 r. o zmianie ustawy o PIT, ustawy o CIT oraz ustawy o ryczałcie (uchylenie ulgi internetowej)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
@@ -674,9 +821,68 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
           article: art. 27f ust. 1
           quote: "Od podatku dochodowego obliczonego zgodnie z art. 27 podatnik ma prawo odliczyć kwotę obliczoną zgodnie z ust. 2"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (darowizny z odrębnych ustaw w zeznaniu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 6b
+          quote: "Podatnicy korzystający z odliczenia darowizn, o którym mowa w ust. 1 pkt 9 oraz wynikającego z odrębnych ustaw, są obowiązani wykazać w zeznaniu, o którym mowa w art. 45 ust. 1, kwotę przekazanej darowizny, kwotę dokonanego odliczenia oraz dane pozwalające na identyfikację obdarowanego"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dokumentowanie darowizn z odrębnych ustaw)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26 ust. 6d
+          quote: "Przepis ust. 7 stosuje się odpowiednio do darowizn odliczanych na podstawie odrębnych ustaw."
+        - title: Dz.U. 2023 poz. 1966, tekst jednolity ustawy o stosunku Państwa do Kościoła Katolickiego w Rzeczypospolitej Polskiej (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/1966/text.pdf
+          article: art. 55 ust. 7
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym i podatkiem wyrównawczym"
+        - title: Dz.U. 2023 poz. 1966, tekst jednolity ustawy o stosunku Państwa do Kościoła Katolickiego w Rzeczypospolitej Polskiej (warunki wyłączenia darowizn)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/1966/text.pdf
+          article: art. 55 ust. 7
+          quote: "jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2023 poz. 544, tekst jednolity ustawy o stosunku Państwa do Polskiego Autokefalicznego Kościoła Prawosławnego (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/544/text.pdf
+          article: art. 40 ust. 7
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym i podatkiem wyrównawczym"
+        - title: Dz.U. 2023 poz. 544, tekst jednolity ustawy o stosunku Państwa do Polskiego Autokefalicznego Kościoła Prawosławnego (warunki wyłączenia darowizn)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/544/text.pdf
+          article: art. 40 ust. 7
+          quote: "jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz w okresie dwóch lat od dnia przekazania darowizny sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2023 poz. 509, tekst jednolity ustawy o stosunku Państwa do Kościoła Ewangelicko-Augsburskiego (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/509/text.pdf
+          article: art. 34 ust. 2
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2015 poz. 483, tekst jednolity ustawy o stosunku Państwa do Kościoła Ewangelicko-Reformowanego (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2015/483/text.pdf
+          article: art. 19 ust. 2
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz w – okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2023 poz. 85, tekst jednolity ustawy o stosunku Państwa do Kościoła Ewangelicko-Metodystycznego (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/85/text.pdf
+          article: art. 29 ust. 5
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2023 poz. 1874, tekst jednolity ustawy o stosunku Państwa do Kościoła Chrześcijan Baptystów (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/1874/text.pdf
+          article: art. 33 ust. 5
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2022 poz. 2616, tekst jednolity ustawy o stosunku Państwa do Kościoła Adwentystów Dnia Siódmego (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2022/2616/text.pdf
+          article: art. 28 ust. 5
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2023 poz. 51, tekst jednolity ustawy o stosunku Państwa do Kościoła Polskokatolickiego (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/51/text.pdf
+          article: art. 27 ust. 5
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2023 poz. 8, tekst jednolity ustawy o stosunku Państwa do Kościoła Katolickiego Mariawitów (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/8/text.pdf
+          article: art. 24 ust. 5
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2023 poz. 47, tekst jednolity ustawy o stosunku Państwa do Kościoła Starokatolickiego Mariawitów (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2023/47/text.pdf
+          article: art. 26 ust. 5
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
+        - title: Dz.U. 2015 poz. 13, tekst jednolity ustawy o stosunku Państwa do Kościoła Zielonoświątkowego (darowizny na działalność charytatywno-opiekuńczą)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2015/13/text.pdf
+          article: art. 29 ust. 5
+          quote: "Darowizny na kościelną działalność charytatywno-opiekuńczą pochodzące od osób fizycznych są wyłączone z podstawy opodatkowania darczyńców podatkiem dochodowym, jeżeli kościelna osoba prawna przedstawi darczyńcy pokwitowanie odbioru oraz – w okresie dwóch lat od dnia przekazania darowizny – sprawozdanie o przeznaczeniu jej na tę działalność"
       verification:
         checked_at: 2026-11-27
-        agent_check: 2026-11-27
         open_issue: >-
           Krok o Internecie: art. 5 ust. 2 ustawy Dz.U. 2026 poz. 1541 stosuje przepis przejściowy do ryczałtu tylko
           odpowiednio i nie rozstrzyga, czy prawo do odliczenia w zeznaniu za 2027 r. zachowuje podatnik, który zmienił

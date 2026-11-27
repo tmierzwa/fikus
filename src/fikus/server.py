@@ -35,9 +35,9 @@ INSTRUCTIONS = (
     "'wysoka' to cytat ze źródła pierwotnego, co najmniej dwa inne dowody i brak otwartych pytań; "
     "'średnia' to ten sam komplet dowodów, ale z otwartym pytaniem o przypadek brzegowy "
     "(opisuje go confidence.open_issue; sprawdź, czy Cię dotyczy); "
-    "'niska' oznacza niepełny komplet dowodów albo otwarte pytanie o samą wartość; "
+    "'niska' oznacza niepełny komplet dowodów albo otwarte pytanie o samą wartość lub rdzeń zasady; "
     "nie opieraj na niej rozliczeń bez sprawdzenia. "
-"Gdy wynik ma pole not_covered, pewność dotyczy tylko samej wartości; to, czego wartość nie rozstrzyga, "
+    "Gdy wynik ma pole not_covered, pewność dotyczy tylko samej wartości; to, czego wartość nie rozstrzyga, "
     "opisują parametry z see_also, każdy z własnym poziomem pewności. Przy zasadzie obliczeń not_covered "
     "wylicza sprawy, których zasada nie opisuje; tych spraw nie obejmuje ani zasada, ani jej pewność. "
     "Narzędzia deadlines i changes podają sam poziom; pytanie i jego zakres zwraca get_parameter. "
@@ -85,7 +85,7 @@ Level = Literal["wysoka", "średnia", "niska"]
 
 class Confidence(BaseModel):
     level: Level = Field(description="'średnia': pełny komplet dowodów i otwarte pytanie o przypadek brzegowy; "
-                                     "'niska': niepełny komplet dowodów albo otwarte pytanie o samą wartość.")
+                                     "'niska': niepełny komplet dowodów albo otwarte pytanie o samą wartość lub rdzeń zasady.")
     evidence: list[str] = Field(description="Rodzaje dowodów: cytat, drugie_zrodlo, agent, deklaracje, ekspert.")
     open_issue: str | None = Field(description="Otwarte pytanie, które blokuje wysoką pewność.")
     open_issue_scope: Literal["value", "edge_case"] | None = Field(
@@ -93,6 +93,7 @@ class Confidence(BaseModel):
                           "albo edge_case (tylko przypadek brzegowy).")
     unconfirmed_fields: list[str] | None = Field(
         None, description="Przy wartości złożonej potwierdzanej pole po polu: pola (i period, czyli okres), "
+                          "a przy zasadzie potwierdzanej krok po kroku: kroki (step_1, step_2, …), "
                           "których nie podają jeszcze dwa różne dokumenty.")
 
 
@@ -113,7 +114,9 @@ class ParameterResult(BaseModel):
     not_covered: str | None = Field(None, description=(
         "Czego wersja nie rozstrzyga. Przy wartości pewność dotyczy tylko samej wartości; sposób stosowania "
         "i jego pewność podają parametry z see_also. Przy zasadzie to sprawy, których zasada nie opisuje."))
-    see_also: list[str] = Field([], description="Parametry, które opisują to, czego wartość nie rozstrzyga.")
+    see_also: list[str] = Field([], description=(
+        "Parametry, które opisują to, czego wersja nie rozstrzyga (przy wartości sposób stosowania, "
+        "przy zasadzie sprawy z not_covered)."))
 
 
 class DeadlineRule(BaseModel):
@@ -190,20 +193,39 @@ def deadlines(
     return DeadlinesResult.model_validate(store.deadlines(profile, year, month))
 
 
-@mcp.tool(title="Schemat deklaracji", annotations=READ_ONLY)
+def _form_symbol(pid: str) -> str:
+    """schemat.pit_36l → PIT-36L, schemat.jpk_v7m → JPK_V7M."""
+    sym = pid.removeprefix("schemat.").upper()
+    return sym.replace("_", "-", 1) if sym.startswith("PIT_") else sym
+
+
+def _forms_sentence(forms: list[str]) -> str:
+    """Zdanie o symbolach, dla których są dane. Bez schematów w danych serwer i tak startuje."""
+    if not forms:
+        return "Danych schematów jeszcze nie ma; wynik ma zawsze found=false."
+    listed = forms[0] if len(forms) == 1 else ", ".join(forms[:-1]) + " i " + forms[-1]
+    return f"Są dane dla {listed}; dla innych symboli wynik ma found=false."
+
+
+FORMS = sorted(_form_symbol(p) for p in store.params if p.startswith("schemat."))
+
+GET_SCHEMA_DESCRIPTION = f"""Zwraca wersję schematu XSD deklaracji albo wzór formularza obowiązujący w danym dniu.
+
+Symbol można podać z łącznikiem albo podkreśleniem, wielkimi albo małymi literami (PIT-36L, pit_36l).
+Dla JPK_V7M i JPK_V7K dniem jest pierwszy dzień okresu rozliczeniowego, za który składa się plik.
+Dla PIT-36, PIT-36L i PIT-28 dniem jest pierwszy dzień roku podatkowego, za który składa się zeznanie.
+Dla ZUS_DRA (wzór formularza, bez schematu XSD) dniem jest dzień złożenia dokumentu.
+Dla pozostałych symboli (JPK_PKPIR, JPK_EWP, KEDU) to, od kiedy stosuje się wersję, opisuje notatka wersji.
+{_forms_sentence(FORMS)}
+"""
+
+
+@mcp.tool(title="Schemat deklaracji", description=GET_SCHEMA_DESCRIPTION, annotations=READ_ONLY)
 def get_schema(
     form: Annotated[str, Field(description="Symbol deklaracji, np. JPK_V7M albo PIT-36L.")],
     as_of: AsOf = None,
 ) -> ParameterResult:
-    """Zwraca wersję schematu XSD deklaracji albo wzór formularza obowiązujący w danym dniu.
-
-    Symbol można podać z łącznikiem albo podkreśleniem, wielkimi albo małymi literami (PIT-36L, pit_36l).
-    Dla JPK_V7M i JPK_V7K dniem jest pierwszy dzień okresu rozliczeniowego, za który składa się plik.
-    Dla PIT-36, PIT-36L i PIT-28 dniem jest pierwszy dzień roku podatkowego, za który składa się zeznanie.
-    Dla ZUS_DRA (wzór formularza, bez schematu XSD) dniem jest dzień złożenia dokumentu.
-    Są dane dla JPK_V7M, JPK_V7K, JPK_PKPIR, JPK_EWP, ZUS_DRA, PIT-36, PIT-36L i PIT-28;
-    dla innych symboli wynik ma found=false.
-    """
+    # Opis narzędzia: GET_SCHEMA_DESCRIPTION (lista symboli pochodzi z danych).
     pid = "schemat." + form.strip().lower().replace("-", "_")
     if pid not in store.params:
         return ParameterResult(id=pid, found=False, reason=f"brak schematu {form} w danych")

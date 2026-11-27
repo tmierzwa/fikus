@@ -14,13 +14,34 @@ _PKG_DATA = Path(__file__).resolve().parent / "data"        # paczka zainstalowa
 DATA = _REPO_DATA if (_REPO_DATA / "parameters").is_dir() else _PKG_DATA
 
 
+class _StrictLoader(yaml.SafeLoader):
+    """SafeLoader, który odrzuca powtórzony klucz w mapie (safe_load bierze po cichu ostatni)."""
+
+
+def _no_duplicates(loader, node, deep=False):
+    seen = set()
+    for key_node, _ in node.value:
+        key = loader.construct_object(key_node, deep=deep)
+        if key in seen:
+            raise ValueError(f"powtórzony klucz {key!r} w {node.start_mark.name}, wiersz {key_node.start_mark.line + 1}")
+        seen.add(key)
+    return loader.construct_mapping(node, deep=deep)
+
+
+_StrictLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, _no_duplicates)
+
+
+def load_yaml(f: Path):
+    return yaml.load(f.read_text(encoding="utf-8"), Loader=_StrictLoader)
+
+
 class Store:
     """Wszystkie parametry i profile wczytane z YAML. Błąd w danych zatrzymuje start serwera."""
 
     def __init__(self, data_dir: Path = DATA):
         self.params: dict[str, Parameter] = {}
         for f in sorted((data_dir / "parameters").glob("*.yaml")):
-            for raw in yaml.safe_load(f.read_text(encoding="utf-8")) or []:
+            for raw in load_yaml(f) or []:
                 p = Parameter.model_validate(raw)
                 if p.id in self.params:
                     raise ValueError(f"zduplikowany parametr {p.id} ({f.name})")
@@ -29,7 +50,7 @@ class Store:
         for required in ("kalendarz.dni_wolne", "zasada.przesuniecie_terminu"):   # potrzebne w deadlines()
             if required not in self.params:
                 raise ValueError(f"w danych brakuje parametru {required}")
-        raw_profiles = yaml.safe_load((data_dir / "profiles.yaml").read_text(encoding="utf-8"))
+        raw_profiles = load_yaml(data_dir / "profiles.yaml")
         self.profiles = {r["id"]: Profile.model_validate(r) for r in raw_profiles}
 
     def _check_rule_refs(self) -> None:
@@ -63,17 +84,15 @@ class Store:
             "not_covered": v.not_covered, "see_also": v.see_also,
         }
 
-    def unknown_profile(self, profile_id: str) -> dict | None:
-        if profile_id in self.profiles:
-            return None
-        return {"profile": profile_id, "found": False, "reason": "nieznany profil",
-                "known": sorted(self.profiles)}
+    def _profile(self, profile_id: str) -> dict[str, str]:
+        """Pola profilu do wybierania parametrów. Nieznany profil to błąd: serwer sprawdza go wcześniej."""
+        if profile_id not in self.profiles:
+            raise ValueError(f"nieznany profil {profile_id!r} (znane: {', '.join(sorted(self.profiles))})")
+        return self.profiles[profile_id].as_dict()
 
     def for_profile(self, profile_id: str, d: date) -> list[dict]:
         """Parametry, których applies_to pasuje do profilu, w wersji na dzień d."""
-        if err := self.unknown_profile(profile_id):
-            return [err]
-        prof = self.profiles[profile_id].as_dict()
+        prof = self._profile(profile_id)
         return [self.get(p.id, d) for p in self.params.values() if p.matches(prof)]
 
     def changes(self, since: date) -> list[dict]:
@@ -89,12 +108,8 @@ class Store:
 
     def deadlines(self, profile_id: str, year: int, month: int) -> dict:
         """Reguły terminów przypadających w miesiącu i dni wolne tego miesiąca. Bez wyliczania dat."""
-        if err := self.unknown_profile(profile_id):
-            return err
-        if not (1 <= month <= 12 and 1 <= year <= 9999):
-            return {"year": year, "month": month, "found": False, "reason": "niepoprawny rok lub miesiąc"}
-        prof = self.profiles[profile_id].as_dict()
-        d = date(year, month, 1)
+        prof = self._profile(profile_id)
+        d = date(year, month, 1)        # zły rok albo miesiąc: ValueError z datetime
         last = date(year, month, calendar.monthrange(year, month)[1])
         rules = []
         for p in self.params.values():

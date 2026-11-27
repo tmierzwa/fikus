@@ -86,7 +86,7 @@ def _version(**ver):
     return Version.model_validate({
         "valid_from": "2026-01-01", "value": 1,
         "sources": [{"title": "akt", "url": "https://example.org/1", "quote": "wynosi 1 %"},
-                    {"title": "komunikat", "url": "https://example.org/2", "kind": "control"}],
+                    {"title": "komunikat", "url": "https://example.org/2", "quote": "1 %", "kind": "control"}],
         "verification": {"checked_at": "2026-01-01", **ver}})
 
 
@@ -157,10 +157,13 @@ def test_quotes_match_cached_official_texts():
         pytest.skip("brak tekstów źródeł w .cache/zrodla (uruchom scripts/sprawdz_cytaty.py)")
 
 
-def test_unknown_profile_and_bad_month_return_reasons():
-    assert store.for_profile("nie_ma", date(2026, 6, 1))[0]["known"] == sorted(store.profiles)
-    assert store.deadlines("nie_ma", 2026, 6)["found"] is False
-    assert store.deadlines("przyklad_ryczalt", 2026, 13)["found"] is False
+def test_unknown_profile_and_bad_month_raise():
+    with pytest.raises(ValueError, match="nieznany profil"):
+        store.for_profile("nie_ma", date(2026, 6, 1))
+    with pytest.raises(ValueError, match="nieznany profil"):
+        store.deadlines("nie_ma", 2026, 6)
+    with pytest.raises(ValueError):
+        store.deadlines("przyklad_ryczalt", 2026, 13)
 
 
 def test_source_url_must_be_https():
@@ -324,3 +327,80 @@ def test_notes_describe_current_state_not_edit_history():
     bad = [f"{p.id} {v.valid_from}: {m[0]}" for p in Store().params.values() for v in p.versions
            if v.note and (m := history.search(v.note))]
     assert not bad, "historia edycji w notatkach (opisz ją w PR, w notatce zostaw „Korekta z …: zmienione …”):\n" + "\n".join(bad)
+
+
+def _second(*sources):
+    return Version.model_validate({
+        "valid_from": "2026-01-01", "value": 1, "sources": list(sources),
+        "verification": {"checked_at": "2026-01-01", "agent_check": "2026-01-02"}})
+
+
+def test_second_source_needs_its_own_quote_and_another_document():
+    act = {"title": "akt", "url": "https://example.org/1", "quote": "wynosi 1 %"}
+    assert "drugie_zrodlo" not in _second(              # komunikat bez cytatu
+        act, {"title": "komunikat", "url": "https://example.org/2", "kind": "control"}).confidence()["evidence"]
+    assert "drugie_zrodlo" not in _second(              # to samo źródło, które dało cytat
+        {**act, "independent": True}).confidence()["evidence"]
+    assert "drugie_zrodlo" not in _second(              # ten sam dokument drugi raz
+        act, {"title": "akt", "url": "https://example.org/1", "quote": "1 %", "kind": "control"}
+    ).confidence()["evidence"]
+    assert _second(act, {"title": "ustawa", "url": "https://example.org/3", "quote": "1 %",
+                         "independent": True}).confidence()["level"] == "wysoka"
+    assert _second(act, {"title": "komunikat", "url": "https://example.org/2", "quote": "1 %",
+                         "kind": "control"}).confidence()["level"] == "wysoka"
+
+
+def _applies(applies_to):
+    return Parameter.model_validate({"id": "p.x", "name": "x", "applies_to": applies_to, "versions": [
+        {"valid_from": "2026-01-01", "value": 1, "sources": [{"title": "akt", "url": "https://example.org/1"}],
+         "verification": {"checked_at": "2026-01-01"}}]})
+
+
+def test_applies_to_must_name_profile_fields_and_their_values():
+    _applies({"tax_form": ["ryczalt"], "zus": ["pelny"]})
+    with pytest.raises(ValueError, match="tax_fom"):
+        _applies({"tax_fom": ["ryczalt"]})
+    with pytest.raises(ValueError, match="ryczal"):
+        _applies({"tax_form": ["ryczal"]})
+
+
+def test_duplicate_yaml_key_is_rejected(tmp_path):
+    from fikus.store import load_yaml
+    f = tmp_path / "x.yaml"
+    f.write_text("- id: a\n  name: b\n  name: c\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="powtórzony klucz 'name'"):
+        load_yaml(f)
+
+
+def test_boolean_value_is_rejected():
+    with pytest.raises(ValueError, match="logiczna"):
+        _version().model_validate({"valid_from": "2026-01-01", "value": True,
+                                   "sources": [{"title": "x", "url": "https://example.org/a"}],
+                                   "verification": {"checked_at": "2026-01-01"}})
+
+
+def test_expert_answer_link_must_be_https():
+    from fikus.model import Expert
+    e = Expert.model_validate({"name": "doradca podatkowy", "answered_at": "2026-11-27", "basis": "art. 1",
+                               "url": "https://github.com/tmierzwa/fikus/discussions/1"})
+    assert e.url.startswith("https://")
+    with pytest.raises(ValueError, match="https"):
+        Expert.model_validate({"name": "x", "answered_at": "2026-11-27", "basis": "b", "url": "http://x"})
+
+
+def _cutoff(valid_to=None, end_docs=0):
+    act = {"title": "akt", "url": "https://example.org/akt", "quote": "q", "confirms": ["a"]}
+    mf = {"title": "MF", "url": "https://example.org/mf", "quote": "q", "kind": "control", "confirms": ["a"]}
+    ends = [{"title": f"r{i}", "url": f"https://example.org/r{i}", "quote": "do dnia", "confirms": ["period"]}
+            for i in range(end_docs)]
+    return Version.model_validate({"valid_from": "2024-01-01", "valid_to": valid_to, "value": {"a": 1},
+                                   "sources": [act, mf, *ends],
+                                   "verification": {"checked_at": "2026-01-01", "agent_check": "2026-01-02"}})
+
+
+def test_cutoff_start_needs_no_confirmation_but_end_does():
+    assert _cutoff()._unconfirmed_fields() == []
+    assert _cutoff("2028-12-31")._unconfirmed_fields() == ["period"]
+    assert _cutoff("2028-12-31", end_docs=2)._unconfirmed_fields() == []
+    later = Version.model_validate({**_cutoff().model_dump(mode="json"), "valid_from": "2024-01-02"})
+    assert later._unconfirmed_fields() == ["period"]
