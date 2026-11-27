@@ -2,26 +2,35 @@
 
 Użycie: python scripts/sprawdz_cytaty.py [--offline]
 --offline: tylko teksty już zapisane w pamięci podręcznej (bez pobierania).
+Najpierw pobiera równolegle teksty, których brakuje w pamięci podręcznej (najwyżej dwa połączenia
+z jednym serwerem), potem sprawdza cytaty po kolei, więc komunikaty mają zawsze tę samą kolejność.
 Kończy się kodem 1, jeśli któryś cytat nie zgadza się z tekstem, tekstu nie da się pobrać
 albo któraś wersja nie ma sprawdzonego cytatu ze źródła pierwotnego. W trybie --offline
 brak tekstu w pamięci nie jest błędem, ale jest liczony osobno.
 """
 import sys
 
-from fikus.cytaty import cached_text, fetch_text, quote_in
+from fikus.cytaty import cached_text, fetch_text, prefetch, quote_in, text_url
 from fikus.store import Store
 
 
 def main() -> int:
     offline = "--offline" in sys.argv
     bad = missing = ok = absent = 0
-    for p in Store().params.values():
+    params = list(Store().params.values())
+    errors: dict[str, Exception] = {}
+    if not offline:
+        urls = [text_url(s.url) for p in params for v in p.versions for s in v.sources if s.quote]
+        errors = prefetch(u for u in dict.fromkeys(urls) if cached_text(u) is None)
+    for p in params:
         for v in p.versions:
             primary_quoted = False
             for s in v.sources:
                 if not s.quote:
                     continue
                 try:
+                    if (err := errors.get(text_url(s.url))) is not None:
+                        raise err
                     text = cached_text(s.url) if offline else fetch_text(s.url)
                 except Exception as e:      # noqa: BLE001
                     print(f"BŁĄD   {p.id} {v.valid_from}: nie da się pobrać {s.url}: {e}")
