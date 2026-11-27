@@ -57,14 +57,15 @@ Serwer działa lokalnie przez stdio, tylko czyta dołączone dane i nie łączy 
 | `list_profiles()` | profile przykładowe: forma opodatkowania, VAT, rodzaj ZUS |
 | `list_parameters(profile, as_of)` | wszystkie parametry, które dotyczą profilu |
 | `deadlines(profile, year, month)` | reguły terminów, dni wolne i zasadę przesunięcia; datę liczy klient |
-| `get_schema(form, as_of)` | wersję schematu XSD deklaracji (JPK_V7M, JPK_V7K, JPK_PKPIR) i adres pliku XSD (`xsd_url`) |
+| `get_schema(form, as_of)` | wersję schematu XSD deklaracji (JPK_V7M, JPK_V7K, JPK_PKPIR, JPK_EWP, PIT-36, PIT-36L, PIT-28) z adresem pliku XSD (`xsd_url`) albo wzór formularza (ZUS_DRA) |
 | `changes(since)` | wersje sprawdzone od podanej daty |
 
 - Daty mają format `RRRR-MM-DD`. Bez `as_of` obowiązuje dzisiejsza data w Polsce.
 - Wyniki są w `structuredContent` zgodnie z `outputSchema` narzędzia. Wszystkie narzędzia mają `readOnlyHint`.
 - Błędny argument (nieznany identyfikator, zła data) daje błąd narzędzia z listą poprawnych wartości. Brak wersji na dany dzień nie jest błędem: wynik ma `found: false` i powód w `reason`.
 - Pola `quote`, `note` i opisy kroków to dane z repozytorium. Klient nie powinien ich traktować jak poleceń dla modelu.
-- `xsd_url` w `get_schema` to adres, pod którym urząd udostępnia plik XSD. Dla JPK_V7M i JPK_V7K to adres schematu w Centralnym Repozytorium Wzorów Dokumentów Elektronicznych, a dla JPK_PKPIR adres pliku na gov.pl. Nie jest to przestrzeń nazw schematu i może się zmienić bez nowej wersji struktury.
+- `get_schema` przyjmuje symbol z łącznikiem albo podkreśleniem, wielkimi albo małymi literami (PIT-36L, pit_36l). Dla JPK_V7M i JPK_V7K dniem jest pierwszy dzień okresu rozliczeniowego, dla zeznań PIT pierwszy dzień roku podatkowego, a dla ZUS_DRA dzień złożenia dokumentu.
+- `xsd_url` w `get_schema` to adres, pod którym urząd udostępnia plik XSD. Dla JPK_V7M, JPK_V7K i zeznań PIT to adres schematu w Centralnym Repozytorium Wzorów Dokumentów Elektronicznych, a dla JPK_PKPIR i JPK_EWP adres pliku na gov.pl. Nie jest to przestrzeń nazw schematu i może się zmienić bez nowej wersji struktury.
 
 Odpowiedź `get_parameter("zdrowotna.minimum")` w skrócie:
 
@@ -110,29 +111,49 @@ Dane obejmują trzy formy opodatkowania: ryczałt od przychodów ewidencjonowany
 
 Są:
 
+- forma opodatkowania:
+  - limit przychodów uprawniający do ryczałtu, wyłączenia z ryczałtu i z podatku liniowego;
+  - wybór formy opodatkowania: termin i sposób złożenia oświadczenia, kontynuacja i rezygnacja;
 - podatek dochodowy:
-  - stawki ryczałtu;
+  - stawki ryczałtu i dosłowny zakres usług informatycznych i inżynierskich według PKWiU (bez przypisania stawki do przychodu);
   - stawka podatku liniowego i limit odliczenia składki zdrowotnej;
   - progi i stawki skali podatkowej;
   - zasady ustalenia podatku i zaliczek miesięcznych dla każdej z trzech form;
   - zaliczki kwartalne i uproszczone, kwartalne opłacanie ryczałtu i limity w euro, od których zależą;
+  - zaliczki i ryczałt w okresie zawieszenia działalności;
+  - data uzyskania przychodu i przeliczenie przychodu w walucie obcej;
   - ulgi i odliczenia dla każdej z trzech form, z limitami (internet, dzieci, termomodernizacja, darowizny,
     ulga rehabilitacyjna, IKZE);
+  - IP Box (stawka i zasada) i ulga badawczo-rozwojowa (procent odliczenia i zasada);
   - wspólne opodatkowanie małżonków i opodatkowanie osoby samotnie wychowującej dzieci, z wyłączeniami;
+- koszty na skali i podatku liniowym:
+  - limity wydatków na samochody osobowe;
+  - próg środka niskocennego, jednorazowa amortyzacja i zasady amortyzacji (bez tabeli stawek);
+  - wyłączenie z kosztów płatności poza rachunkiem płatniczym;
+- ewidencja i zeznania:
+  - zasady ewidencji przychodów na ryczałcie i termin wpisu;
+  - schematy zeznań PIT-36, PIT-36L i PIT-28;
+  - dane autoryzujące do podpisu deklaracji, zeznań i plików JPK;
+- VAT:
+  - stawka podstawowa i obniżone, limit zwolnienia podmiotowego, zasada odliczenia;
+  - obowiązek wystawiania faktur w KSeF;
+  - limit zwolnienia z kasy rejestrującej;
 - terminy:
   - zaliczek miesięcznych i kwartalnych oraz zeznań rocznych;
   - JPK_V7M i JPK_V7K;
+  - wpisu do ewidencji przychodów;
   - składek ZUS i rocznego rozliczenia składki zdrowotnej;
   - zasada przesunięcia terminu;
   - dni wolne na 2026 i 2027 rok;
 - JPK:
-  - schematy JPK_V7M, JPK_V7K i JPK_PKPIR (narzędzie `get_schema`);
+  - schematy JPK_V7M, JPK_V7K, JPK_PKPIR i JPK_EWP (narzędzie `get_schema`);
   - zasady przesyłania księgi i ewidencji na ryczałcie w formie JPK;
 - składki społeczne:
   - stopy składek, Fundusz Pracy i Fundusz Solidarnościowy;
   - podstawa pełna i preferencyjna, limit rocznej podstawy;
   - ulga na start i Mały ZUS Plus;
   - minimalne i prognozowane przeciętne wynagrodzenie;
+  - obowiązek składania deklaracji ZUS DRA i wzór formularza DRA;
 - składka zdrowotna:
   - progi i kwoty na ryczałcie;
   - stopy i zasady obliczenia na podatku liniowym i skali, z rozliczeniem rocznym;
@@ -143,11 +164,10 @@ ogłoszono, a zapytanie o późniejszy dzień daje `found: false`.
 
 Brakuje między innymi:
 
-- VAT poza schematami i terminami JPK (stawki, limit zwolnienia podmiotowego);
-- karty podatkowej;
-- amortyzacji;
-- IP Box i kwot ulg na badania i rozwój, robotyzację i ekspansję (zasady ulg tylko je wymieniają);
-- zwolnienia z zaliczek dla rozpoczynających działalność i zaliczek w okresie zawieszenia działalności.
+- karty podatkowej (poza wyłączeniami, w których jest wymieniona);
+- tabeli stawek amortyzacyjnych i amortyzacji poza zasadami ogólnymi;
+- kwot ulg na robotyzację, ekspansję i innych ulg innowacyjnych (zasady ulg tylko je wymieniają);
+- specyfikacji technicznych (EWD i KEDU w ZUS, interfejsy JPK i e-Deklaracji).
 
 Każda zasada wymienia przepisy, których nie opisuje. Pytania, których źródła nie rozstrzygają, są w [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md).
 
