@@ -48,7 +48,7 @@ wpisujemy tylko za jego zgodą na publikację; bez zgody wpisujemy samą kwalifi
 ## Odpowiedzi ekspertów
 
 Otwarte pytania mają dyskusje w kategorii
-[Pytania do eksperta](https://github.com/tmierzwa/fikus/discussions/categories/pytania-do-eksperta),
+[Pytania do ekspertów](https://github.com/tmierzwa/fikus/discussions/categories/pytania-do-ekspert%C3%B3w),
 jedna dyskusja na jedno pytanie z [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md). Jeśli jesteś
 doradcą podatkowym, księgową albo prawnikiem, odpowiedz w dyskusji i podaj podstawę prawną: przepis,
 interpretację, wyrok albo komunikat urzędu.

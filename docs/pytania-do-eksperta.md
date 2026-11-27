@@ -4,7 +4,7 @@ Pytania, na które źródła nie dają jednoznacznej odpowiedzi. Do czasu odpowi
 i pewność niską albo, gdy pytanie dotyczy tylko przypadku brzegowego, średnią.
 
 Każde otwarte pytanie oprócz P0 ma dyskusję w kategorii
-[Pytania do eksperta](https://github.com/tmierzwa/fikus/discussions/categories/pytania-do-eksperta)
+[Pytania do ekspertów](https://github.com/tmierzwa/fikus/discussions/categories/pytania-do-ekspert%C3%B3w)
 o tym samym tytule. Link jest w linii „Dyskusja” pod pytaniem. Doradców podatkowych, księgowych i innych
 ekspertów prosimy o odpowiedź w dyskusji, z podstawą prawną.
 
