@@ -150,7 +150,7 @@
         rozliczenia (art. 81 ust. 2r i 2y ustawy o świadczeniach opieki zdrowotnej). Rozliczenia przy zmianie formy
         opodatkowania w trakcie roku poza tym, co podaje krok o dokumencie rozliczeniowym. Rozliczenia osób, które nie
         stosują skali podatkowej, podatku liniowego ani ryczałtu od przychodów ewidencjonowanych.
-      see_also: [zasada.skala_zdrowotna, zasada.liniowy_zdrowotna, zasada.ryczalt_zdrowotna_prog, zasada.ryczalt_zdrowotna_prog_poprzedni_rok]
+      see_also: [zasada.skala_zdrowotna, zasada.liniowy_zdrowotna, zasada.ryczalt_zdrowotna_prog]
       sources:
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (rok składkowy)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
