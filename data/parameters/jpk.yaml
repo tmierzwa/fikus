@@ -65,9 +65,9 @@
         dotychczasowe. Rozporządzenie bazowe (Dz.U. 2019 poz. 1988) nie ma tekstu jednolitego w ELI.
         Kod systemowy i wersję schematu 1-0E podaje broszura MF z 2026 r. i atrybuty pliku XSD spod adresu
         schematu (wersję 1-0E także zestawienie zmian MF), a adres schematu wyróżnik wzoru i sam plik. Okres
-        rozliczeniowy od lutego 2026 r. podaje w cytacie tylko broszura MF z 2026 r.; strony MF i KAS piszą
-        o strukturze „obowiązującej od 1 lutego 2026 roku” i nie mówią, czy chodzi o okres rozliczeniowy.
-        Dlatego okres nie ma drugiego dokumentu i wersja nie ma drugiego niezależnego dowodu.
+        rozliczeniowy od lutego 2026 r. podają broszura MF z 2026 r. i artykuł firmy doradztwa podatkowego MDDP
+        z 31 marca 2026 r. (źródło kontrolne); strony MF i KAS piszą o strukturze „obowiązującej od 1 lutego
+        2026 roku” i nie mówią, czy chodzi o okres rozliczeniowy.
       sources:
         - title: podatki.gov.pl (MF), JPK_VAT z deklaracją – pliki do pobrania
           url: https://podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat-z-deklaracja/pliki-do-pobrania
@@ -110,6 +110,12 @@
           confirms: [variant, period]
           quote: "Wzór w wersji (3) należy stosować za okresy rozliczeniowe od lutego 2026 roku."
           as_of: 2026-11-26
+        - title: MDDP (firma doradztwa podatkowego), Nowe struktury JPK_V7(3) od rozliczenia za luty 2026 r., 31 marca 2026 r. (okres rozliczeniowy)
+          url: https://www.mddp.pl/nowe-struktury-jpk_v73-od-rozliczenia-za-luty-2026-r/
+          kind: control
+          confirms: [form, variant, period]
+          quote: "Od rozliczenia za luty 2026 r. obowiązuje schema JPK_V7M(3) dla deklaracji miesięcznych"
+          as_of: 2026-11-27
         - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (wzór dokumentu elektronicznego)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
           quote: "Minister właściwy do spraw finansów publicznych określi i udostępni na elektronicznej platformie usług administracji publicznej wzór dokumentu, o którym mowa w ust. 11c."
