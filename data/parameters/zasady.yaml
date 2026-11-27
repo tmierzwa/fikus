@@ -32,14 +32,8 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/296/text.pdf
           quote: "drugi dzień Bożego Narodzenia; 2) niedziele"
           article: art. 1 pkt 1 i 2
-        - title: biznes.gov.pl, Jak składać JPK_VAT z deklaracją, aktualizacja 03.07.2026 (krok 1, na przykładzie VAT)
-          url: https://www.biznes.gov.pl/pl/portal/00237
-          kind: control
-          quote: "Jeśli 25. dzień miesiąca wypada w sobotę lub dzień ustawowo wolny od pracy, wtedy masz czas do pierwszego dnia roboczego przypadającego po tych dniach"
-          as_of: 2026-11-26
         - title: ZUS, Termin składania dokumentów i opłacania składek (krok 2)
           url: https://www.zus.pl/en/firmy/rozliczenia-z-zus/dokumenty-rozliczeniowe/termin-skladania-dokumentow-i-oplacania-skladek
-          kind: control
           quote: "Jeżeli koniec tego terminu przypada w święto (dzień ustawowo wolny od pracy), sobotę lub niedzielę, to za ostatni dzień terminu uważa się następny dzień roboczy"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
@@ -165,12 +159,10 @@
           quote: "Zaliczkę obliczoną zgodnie z ust. 6h podatnik może obniżyć o kwotę stanowiącą 19 % składki na ubezpieczenie zdrowotne"
         - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym, aktualizacja 24.06.2026
           url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
-          kind: control
           quote: "możesz zaliczać do kosztów uzyskania przychodów lub odliczać od dochodu składki na ubezpieczenie zdrowotne (do wysokości limitu)"
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Odliczenie składek na ubezpieczenie zdrowotne PIT, aktualizacja 23.11.2026 (podatek liniowy)
           url: https://podatki.gov.pl/ulgi-i-odliczenia/odliczenie-skladek-na-ubezpieczenie-zdrowotne-pit
-          kind: control
           quote: "Odliczasz składki na ubezpieczenie zdrowotne, które zapłaciłeś(-aś) w danym roku podatkowym"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
@@ -248,11 +240,6 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/622/text.pdf
           article: art. 63 § 1
           quote: "Podstawy opodatkowania, kwoty podatków, odsetki za zwłokę, opłaty prolongacyjne, oprocentowanie nadpłat oraz wynagrodzenia przysługujące płatnikom i inkasentom zaokrągla się do pełnych złotych"
-        - title: biznes.gov.pl, Najważniejsze zasady opodatkowania według skali podatkowej, aktualizacja 07.01.2026
-          url: https://www.biznes.gov.pl/pl/portal/00264
-          kind: control
-          quote: "Składki na ubezpieczenia społeczne możesz odliczyć od dochodu tylko wtedy, gdy nie zostały zaliczone do kosztów uzyskania przychodów albo nie zostały ci zwrócone w jakiejkolwiek formie."
-          as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: zasada.ryczalt_zdrowotna_prog
@@ -296,12 +283,10 @@
           article: art. 81 ust. 2zd
         - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r. (krok 1)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "Przychody te pomniejsz o kwoty opłaconych składek na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe, jeżeli nie zaliczyłeś ich do kosztów uzyskania przychodów lub odliczyłeś od dochodu"
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r. (kroki 2 i 3)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "jeśli przekroczysz kwotę przychodów w danym miesiącu, za ten miesiąc musisz rozliczyć składkę od podstawy wymiaru obowiązującej dla kolejnego progu przychodów"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, open_issue: "Ustawa Dz.U. 2026 poz. 1542 zmienia art. 81 ust. 2zd pkt 2 od 1 stycznia 2027 r. bez przepisu przejściowego. Od którego miesiąca składkowego albo dla przychodów i dochodów z jakiego okresu stosuje się nowe brzmienie? Pytanie do eksperta: docs/pytania-do-eksperta.md, P8."}
@@ -350,12 +335,10 @@
           article: art. 81 ust. 2zd
         - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r. (krok 1)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "Przychody te pomniejsz o kwoty opłaconych składek na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe, jeżeli nie zaliczyłeś ich do kosztów uzyskania przychodów lub odliczyłeś od dochodu"
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r. (kroki 2 i 3)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "jeśli przekroczysz kwotę przychodów w danym miesiącu, za ten miesiąc musisz rozliczyć składkę od podstawy wymiaru obowiązującej dla kolejnego progu przychodów"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
@@ -396,12 +379,10 @@
           article: art. 81 ust. 2zd
         - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r.
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "możesz przyjąć kwotę przychodów uzyskanych w poprzednim roku kalendarzowym, jeśli przez cały poprzedni rok kalendarzowy prowadziłeś działalność gospodarczą"
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r.
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "Przyjętą kwotę przychodów uzyskanych w poprzednim roku kalendarzowym pomniejszasz o kwotę opłaconych w poprzednim roku kalendarzowym składek na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, open_issue: "ZUS (poradnik, stan na 2025-01-01) dodaje wyjątek: podstawy z poprzedniego roku nie stosuje się przez cały rok, gdy działalność zostanie zakończona i podjęta na nowo; ustawa (art. 81 ust. 2h) go nie wymienia. Pytanie do eksperta: docs/pytania-do-eksperta.md, P1"}
@@ -448,12 +429,10 @@
           article: art. 81 ust. 2zd
         - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r.
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "możesz przyjąć kwotę przychodów uzyskanych w poprzednim roku kalendarzowym, jeśli przez cały poprzedni rok kalendarzowy prowadziłeś działalność gospodarczą"
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład. Co zmienia się w przepisach dotyczących rozliczania składki na ubezpieczenie zdrowotne”, stan prawny na 1 stycznia 2025 r.
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "Przyjętą kwotę przychodów uzyskanych w poprzednim roku kalendarzowym pomniejszasz o kwotę opłaconych w poprzednim roku kalendarzowym składek na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, open_issue: "ZUS (poradnik, stan na 2025-01-01) dodaje wyjątek: podstawy z poprzedniego roku nie stosuje się przez cały rok, gdy działalność zostanie zakończona i podjęta na nowo; ustawa (art. 81 ust. 2h) go nie wymienia. Pytanie do eksperta: docs/pytania-do-eksperta.md, P1. Ustawa Dz.U. 2026 poz. 1542 zmienia art. 81 ust. 2zd pkt 2 od 1 stycznia 2027 r. bez przepisu przejściowego. Od którego miesiąca składkowego albo dla przychodów i dochodów z jakiego okresu stosuje się nowe brzmienie? Pytanie do eksperta: docs/pytania-do-eksperta.md, P8."}
@@ -504,14 +483,8 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           quote: "ryczałt od przychodów ewidencjonowanych wynosi 8,5 % przychodów, z tym że w przypadku osiągania również przychodów"
           article: art. 12 ust. 3 zdanie drugie
-        - title: biznes.gov.pl, Jak odliczyć składki ZUS przy rozliczaniu podatków, aktualizacja 23.04.2026 (krok 2)
-          url: https://www.biznes.gov.pl/pl/portal/00230
-          kind: control
-          quote: "Jeśli rozliczasz się ryczałtem, składki na własne ubezpieczenia społeczne możesz odliczyć wyłącznie od przychodu"
-          as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Odliczenie składek na ubezpieczenie zdrowotne PIT, aktualizacja 23.11.2026 (kroki 3 i 4)
           url: https://podatki.gov.pl/ulgi-i-odliczenia/odliczenie-skladek-na-ubezpieczenie-zdrowotne-pit
-          kind: control
           quote: "możesz od nich odliczyć 50% zapłaconych składek zdrowotnych . Ważne! Jeżeli osiągasz przychody opodatkowane różnymi stawkami, składki zdrowotne odliczasz proporcjonalnie"
           as_of: 2026-11-26
       verification:
@@ -578,12 +551,10 @@
           quote: "Składki na Fundusz płatnik składek oblicza łącznie ze składkami na Fundusz Pracy w wysokości sumy stóp procentowych tych składek"
         - title: ZUS, Składki preferencyjne (Fundusz Pracy i Fundusz Solidarnościowy)
           url: https://www.zus.pl/firmy/rozliczenia-z-zus/skladki-preferencyjne
-          kind: control
           quote: "z zasady nie opłacasz składek na Fundusz Pracy i Fundusz Solidarnościowy"
           as_of: 2026-11-26
         - title: ZUS, Fundusz Pracy (wiek i próg minimalnego wynagrodzenia)
           url: https://www.zus.pl/pracujacy/fundusze-pozaubezpieczeniowe/fp
-          kind: control
           quote: "Nie musisz opłacać składki na FP, jeśli podstawa wymiaru przeliczona na okres miesiąca jest niższa od minimalnego wynagrodzenia za pracę"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
@@ -656,7 +627,6 @@
           quote: "nie może być niższa niż kwota 75 % minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego"
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (75% w roku składkowym 2025/2026)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "Podstawa w tej wysokości obowiązuje w odniesieniu do składek należnych za rok składkowy obejmujący okres od 1 lutego 2025 r. do 31 stycznia 2026 r."
           as_of: 2026-11-26
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (podstawa miesięczna)
@@ -701,17 +671,14 @@
           quote: "w terminie miesiąca od upływu terminu do złożenia zeznania"
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (podstawa miesięczna)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "stanowi dochód uzyskany w miesiącu poprzedzającym miesiąc, za który opłacasz składkę"
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (zmiana formy opodatkowania za 2022 r. a składki za rok składkowy od 1 lutego 2022 r.)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "w przypadku wstecznej zmiany zgłaszanej w terminie składania zeznania podatkowego za 2022 r., miesięczne składki na ubezpieczenie zdrowotne należne za rok składkowy rozpoczynający się 1 lutego 2022 r."
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (roczna składka za ten sam rok składkowy)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "Natomiast roczną składkę na ubezpieczenie zdrowotne należną za rok składkowy rozpoczynający się 1 lutego 2022 r. ustalisz na podstawie zasad obowiązujących dla zmienionej formy opodatkowania"
           as_of: 2026-11-26
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (minimalna podstawa roczna)
@@ -724,7 +691,6 @@
           quote: "wykazywana jest w dokumencie rozliczeniowym składanym za miesiąc, w którym upływa termin złożenia zeznania"
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (rozliczenie roczne)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "obliczona składka roczna będzie wyższa lub niższa. Tym samym będziesz zobowiązany dopłacić powstałą różnicę lub wystąpić o zwrot nadpłaty"
           as_of: 2026-11-26
       verification:
@@ -824,17 +790,14 @@
           quote: "w terminie miesiąca od upływu terminu do złożenia zeznania"
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (podstawa miesięczna)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "stanowi dochód uzyskany w miesiącu poprzedzającym miesiąc, za który opłacasz składkę"
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (zmiana formy opodatkowania za 2022 r. a składki za rok składkowy od 1 lutego 2022 r.)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "w przypadku wstecznej zmiany zgłaszanej w terminie składania zeznania podatkowego za 2022 r., miesięczne składki na ubezpieczenie zdrowotne należne za rok składkowy rozpoczynający się 1 lutego 2022 r."
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (roczna składka za ten sam rok składkowy)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "Natomiast roczną składkę na ubezpieczenie zdrowotne należną za rok składkowy rozpoczynający się 1 lutego 2022 r. ustalisz na podstawie zasad obowiązujących dla zmienionej formy opodatkowania"
           as_of: 2026-11-26
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (minimalna podstawa roczna)
@@ -847,7 +810,6 @@
           quote: "wykazywana jest w dokumencie rozliczeniowym składanym za miesiąc, w którym upływa termin złożenia zeznania"
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (rozliczenie roczne)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "obliczona składka roczna będzie wyższa lub niższa. Tym samym będziesz zobowiązany dopłacić powstałą różnicę lub wystąpić o zwrot nadpłaty"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, open_issue: "Art. 79a ust. 1 pkt 2 ustawy o świadczeniach opieki zdrowotnej liczy minimum rocznej składki od liczby miesięcy w roku składkowym, a ZUS (przykład w poradniku i wyjaśnienie z 17 lutego 2023 r.) liczy je od liczby miesięcy podlegania ubezpieczeniu; biznes.gov.pl powtarza brzmienie ustawy. Którą liczbę miesięcy przyjąć? Pytanie do eksperta: docs/pytania-do-eksperta.md, P7. Ustawa Dz.U. 2026 poz. 1542 zmienia art. 81 ust. 2zd pkt 2 od 1 stycznia 2027 r. bez przepisu przejściowego. Od którego miesiąca składkowego albo dla przychodów i dochodów z jakiego okresu stosuje się nowe brzmienie? Pytanie do eksperta: docs/pytania-do-eksperta.md, P8."}
@@ -955,17 +917,14 @@
           quote: "w terminie miesiąca od upływu terminu do złożenia zeznania"
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (podstawa miesięczna)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "stanowi dochód uzyskany w miesiącu poprzedzającym miesiąc, za który opłacasz składkę"
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (zmiana formy opodatkowania za 2022 r. a składki za rok składkowy od 1 lutego 2022 r.)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "w przypadku wstecznej zmiany zgłaszanej w terminie składania zeznania podatkowego za 2022 r., miesięczne składki na ubezpieczenie zdrowotne należne za rok składkowy rozpoczynający się 1 lutego 2022 r."
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (roczna składka za ten sam rok składkowy)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "Natomiast roczną składkę na ubezpieczenie zdrowotne należną za rok składkowy rozpoczynający się 1 lutego 2022 r. ustalisz na podstawie zasad obowiązujących dla zmienionej formy opodatkowania"
           as_of: 2026-11-26
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (minimalna podstawa roczna)
@@ -978,7 +937,6 @@
           quote: "wykazywana jest w dokumencie rozliczeniowym składanym za miesiąc, w którym upływa termin złożenia zeznania"
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (rozliczenie roczne)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "obliczona składka roczna będzie wyższa lub niższa. Tym samym będziesz zobowiązany dopłacić powstałą różnicę lub wystąpić o zwrot nadpłaty"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, open_issue: "Art. 79a ust. 1 pkt 2 ustawy o świadczeniach opieki zdrowotnej liczy minimum rocznej składki od liczby miesięcy w roku składkowym, a ZUS (przykład w poradniku i wyjaśnienie z 17 lutego 2023 r.) liczy je od liczby miesięcy podlegania ubezpieczeniu; biznes.gov.pl powtarza brzmienie ustawy. Którą liczbę miesięcy przyjąć? Pytanie do eksperta: docs/pytania-do-eksperta.md, P7."}
@@ -1055,7 +1013,6 @@
           quote: "w art. 81 ust. 2d ustawy zmienianej w art. 1, stanowi kwota 75 % minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego"
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (75% w roku składkowym 2025/2026)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "Podstawa w tej wysokości obowiązuje w odniesieniu do składek należnych za rok składkowy obejmujący okres od 1 lutego 2025 r. do 31 stycznia 2026 r."
           as_of: 2026-11-26
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (kilka działalności)
@@ -1104,17 +1061,14 @@
           quote: "w terminie miesiąca od upływu terminu do złożenia zeznania"
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (podstawa miesięczna)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "stanowi dochód uzyskany w miesiącu poprzedzającym miesiąc, za który opłacasz składkę"
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (zgodność roku składkowego z rokiem dochodu, przykład z 2022 r.)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "w przypadku wstecznej zmiany zgłaszanej w terminie składania zeznania podatkowego za 2022 r., miesięczne składki na ubezpieczenie zdrowotne należne za rok składkowy rozpoczynający się 1 lutego 2022 r."
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (zgodność roku składkowego rocznej składki z rokiem dochodu)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "Natomiast roczną składkę na ubezpieczenie zdrowotne należną za rok składkowy rozpoczynający się 1 lutego 2022 r. ustalisz na podstawie zasad obowiązujących dla zmienionej formy opodatkowania"
           as_of: 2026-11-26
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (minimalna podstawa roczna)
@@ -1127,7 +1081,6 @@
           quote: "wykazywana jest w dokumencie rozliczeniowym składanym za miesiąc, w którym upływa termin złożenia zeznania"
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (rozliczenie roczne)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "obliczona składka roczna będzie wyższa lub niższa. Tym samym będziesz zobowiązany dopłacić powstałą różnicę lub wystąpić o zwrot nadpłaty"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
@@ -1226,24 +1179,16 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
           article: art. 81 ust. 2n
           quote: "w terminie miesiąca od upływu terminu do złożenia zeznania"
-        - title: biznes.gov.pl, Ile wynosi składka zdrowotna (rok składkowy 2026/2027)
-          url: https://www.biznes.gov.pl/pl/portal/001052
-          kind: control
-          quote: "minimalna składka zdrowotna za każdy miesiąc roku składkowego, od 1 lutego 2026 roku do 31 stycznia 2027 roku wynosi 432,54 zł"
-          as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (podstawa miesięczna)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "stanowi dochód uzyskany w miesiącu poprzedzającym miesiąc, za który opłacasz składkę"
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (zgodność roku składkowego z rokiem dochodu, przykład z 2022 r.)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "w przypadku wstecznej zmiany zgłaszanej w terminie składania zeznania podatkowego za 2022 r., miesięczne składki na ubezpieczenie zdrowotne należne za rok składkowy rozpoczynający się 1 lutego 2022 r."
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (zgodność roku składkowego rocznej składki z rokiem dochodu)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "Natomiast roczną składkę na ubezpieczenie zdrowotne należną za rok składkowy rozpoczynający się 1 lutego 2022 r. ustalisz na podstawie zasad obowiązujących dla zmienionej formy opodatkowania"
           as_of: 2026-11-26
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (minimalna podstawa roczna)
@@ -1256,7 +1201,6 @@
           quote: "wykazywana jest w dokumencie rozliczeniowym składanym za miesiąc, w którym upływa termin złożenia zeznania"
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (rozliczenie roczne)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "obliczona składka roczna będzie wyższa lub niższa. Tym samym będziesz zobowiązany dopłacić powstałą różnicę lub wystąpić o zwrot nadpłaty"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, open_issue: "Ustawa Dz.U. 2026 poz. 1542 zmienia art. 81 ust. 2zd pkt 2 od 1 stycznia 2027 r. bez przepisu przejściowego. Od którego miesiąca składkowego albo dla przychodów i dochodów z jakiego okresu stosuje się nowe brzmienie? Pytanie do eksperta: docs/pytania-do-eksperta.md, P8."}
@@ -1368,17 +1312,14 @@
           quote: "w terminie miesiąca od upływu terminu do złożenia zeznania"
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (podstawa miesięczna)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "stanowi dochód uzyskany w miesiącu poprzedzającym miesiąc, za który opłacasz składkę"
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (zgodność roku składkowego z rokiem dochodu, przykład z 2022 r.)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "w przypadku wstecznej zmiany zgłaszanej w terminie składania zeznania podatkowego za 2022 r., miesięczne składki na ubezpieczenie zdrowotne należne za rok składkowy rozpoczynający się 1 lutego 2022 r."
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (zgodność roku składkowego rocznej składki z rokiem dochodu)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "Natomiast roczną składkę na ubezpieczenie zdrowotne należną za rok składkowy rozpoczynający się 1 lutego 2022 r. ustalisz na podstawie zasad obowiązujących dla zmienionej formy opodatkowania"
           as_of: 2026-11-26
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (minimalna podstawa roczna)
@@ -1391,7 +1332,6 @@
           quote: "wykazywana jest w dokumencie rozliczeniowym składanym za miesiąc, w którym upływa termin złożenia zeznania"
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (rozliczenie roczne)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          kind: control
           quote: "obliczona składka roczna będzie wyższa lub niższa. Tym samym będziesz zobowiązany dopłacić powstałą różnicę lub wystąpić o zwrot nadpłaty"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}

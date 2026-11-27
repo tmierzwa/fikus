@@ -152,7 +152,6 @@
           article: art. 99 ust. 2 i 3, art. 103 ust. 2, art. 109 ust. 3c pkt 2
         - title: podatki.gov.pl (MF), JPK_VAT z deklaracją, aktualizacja 13.10.2026
           url: https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat-z-deklaracja/jpk_vat-z-deklaracja
-          kind: control
           quote: "JPK_VAT część ewidencyjną za marzec oraz część deklaracyjną za styczeń, luty i marzec – przedsiębiorca wyśle do 25 kwietnia"
           as_of: 2026-11-26
         - title: biznes.gov.pl, Jak prawidłowo rozliczyć VAT, aktualizacja 02.11.2026 (złożenie i wpłata, miesiące)

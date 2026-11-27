@@ -430,7 +430,6 @@
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), JPK_PD (kto przekazuje)
           url: https://podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_pd/jpk_pd
-          kind: control
           quote: "31 grudnia 2025 r. – pozostali podatnicy CIT i PIT zobowiązani do składania JPK_VAT za okresy miesięczne, 31 grudnia 2026 r. – pozostali podatnicy, w tym podatnicy zobowiązani do składania JPK_VAT za okresy kwartalne."
           as_of: 2026-11-26
       verification:

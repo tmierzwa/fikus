@@ -75,27 +75,22 @@
           quote: "Od podatku dochodowego obliczonego zgodnie z art. 27 podatnik ma prawo odliczyć kwotę obliczoną zgodnie z ust. 2"
         - title: podatki.gov.pl (MF), Ulga na Internet PIT, aktualizacja 9.10.2026 (krok 3)
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-internet-pit
-          kind: control
           quote: "dochody opodatkowane skalą podatkową lub przychody opodatkowane ryczałtem od przychodów ewidencjonowanych"
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Ulga rehabilitacyjna PIT, aktualizacja 26.10.2026 (krok 4)
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-rehabilitacyjna-pit
-          kind: control
           quote: "Ulgę odliczasz od: dochodu opodatkowanego według skali podatkowej lub przychodu opodatkowanego ryczałtem od przychodów ewidencjonowanych"
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Ulga termomodernizacyjna PIT, aktualizacja 12.10.2026 (krok 6)
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-termomodernizacyjna-pit
-          kind: control
           quote: "od przychodu podlegającego opodatkowaniu ryczałtem od przychodów ewidencjonowanych"
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (krok 8)
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
-          kind: control
           quote: "Nie możesz skorzystać z ulgi, jeżeli uzyskujesz wyłącznie dochody (przychody) opodatkowane: podatkiem liniowym z tytułu prowadzonej działalności gospodarczej lub działów specjalnych produkcji rolnej, ryczałtem ewidencjonowanym"
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Ulga na IKZE PIT, aktualizacja 23.10.2026 (krok 2)
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-ikze-pit
-          kind: control
           quote: "Ulgi na IKZE nie możesz uwzględnić przy obliczaniu zaliczek na podatek dochodowy. Odliczenia dokonujesz w zeznaniu rocznym."
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
@@ -294,22 +289,18 @@
           quote: "do których mają zastosowanie zasady opodatkowania określone w art. 27, art. 30b i art. 30c"
         - title: podatki.gov.pl (MF), Ulga na IKZE PIT, aktualizacja 23.10.2026 (krok 2)
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-ikze-pit
-          kind: control
           quote: "dochodu opodatkowanego 19% podatkiem liniowym"
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Darowizny na kształcenie zawodowe PIT, aktualizacja 23.11.2026 (krok 3)
           url: https://podatki.gov.pl/ulgi-i-odliczenia/darowizny-na-ksztalcenie-zawodowe-pit
-          kind: control
           quote: "dochody opodatkowane według skali podatkowej lub dochody opodatkowane 19% podatkiem liniowym lub przychody opodatkowane ryczałtem od przychodów ewidencjonowanych"
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Ulga termomodernizacyjna PIT, aktualizacja 12.10.2026 (krok 4)
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-termomodernizacyjna-pit
-          kind: control
           quote: "od dochodu opodatkowanego 19% podatkiem liniowym"
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (krok 5)
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
-          kind: control
           quote: "Jeżeli oprócz tych dochodów lub przychodów uzyskujesz również dochody opodatkowane według skali podatkowej, możesz skorzystać z ulgi na dziecko."
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
@@ -419,11 +410,6 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
           article: art. 27f ust. 1 i 2a
           quote: "do których mają zastosowanie zasady opodatkowania określone w art. 27, art. 30b i art. 30c"
-        - title: ifirma.pl, Zmiany w ulgach podatkowych od 2027 (krok 4, tylko likwidacja ulgi na ekspansję i przedłużenie ulgi na robotyzację do 2036 r.)
-          url: https://www.ifirma.pl/blog/zmiany-w-ulgach-podatkowych-od-2027-koniec-ulgi-na-internet-i-ekspansje-wyzsza-ulga-dla-krwiodawcow/
-          kind: control
-          quote: "Ulga na ekspansję zlikwidowana, a ulga na robotyzację przedłużona – ulga na robotyzację ma obowiązywać do 2036 r."
-          as_of: 2026-11-26
       verification:
         checked_at: 2026-11-26
         agent_check: 2026-11-26
@@ -548,17 +534,14 @@
           quote: "Kwota stanowiąca różnicę, o której mowa w ust. 8, nie może przekroczyć sumy"
         - title: podatki.gov.pl (MF), Ulga na Internet PIT, aktualizacja 9.10.2026 (krok 3)
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-internet-pit
-          kind: control
           quote: "Ulgę na Internet możesz odliczyć wyłącznie w dwóch kolejno po sobie następujących latach podatkowych."
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Darowizny na cele pożytku publicznego PIT, aktualizacja 6.10.2026 (krok 5)
           url: https://podatki.gov.pl/ulgi-i-odliczenia/darowizny-na-cele-pozytku-publicznego-pit
-          kind: control
           quote: "Odliczasz kwotę faktycznie przekazanej darowizny, nie więcej jednak niż 6% Twojego dochodu (przychodu)."
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (krok 7)
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
-          kind: control
           quote: "112 000 zł - jeśli przez cały rok pozostajesz w związku małżeńskim"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
@@ -679,11 +662,6 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
           article: art. 27f ust. 1
           quote: "Od podatku dochodowego obliczonego zgodnie z art. 27 podatnik ma prawo odliczyć kwotę obliczoną zgodnie z ust. 2"
-        - title: ifirma.pl, Zmiany w ulgach podatkowych od 2027 (krok 3, przepis przejściowy; strona nie podaje limitu na 2027 r.)
-          url: https://www.ifirma.pl/blog/zmiany-w-ulgach-podatkowych-od-2027-koniec-ulgi-na-internet-i-ekspansje-wyzsza-ulga-dla-krwiodawcow/
-          kind: control
-          quote: "Osoby, które po raz pierwszy skorzystają z ulgi w rozliczeniu za 2026 r., będą mogły odliczyć ją również za 2027 zachowując obecny dwuletni okres korzystania z ulgi."
-          as_of: 2026-11-26
       verification:
         checked_at: 2026-11-26
         agent_check: 2026-11-26
@@ -795,21 +773,11 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
           article: art. 27f ust. 2 pkt 3
           quote: "92,67 zł odpowiednio na pierwsze i drugie dziecko, b) 166,67 zł na trzecie dziecko, c) 225 zł na czwarte i każde kolejne dziecko"
-        - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (trzecie dziecko)
+        - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (miesięczne kwoty na kolejne dzieci)
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
           kind: control
-          quote: "166,67 zł – na trzecie dziecko (rocznie 2000,04 zł)"
-          as_of: 2026-11-26
-        - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (czwarte dziecko)
-          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
-          kind: control
-          quote: "225,00 zł – na czwarte i każde kolejne dziecko"
-          as_of: 2026-11-26
-        - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (pierwsze dziecko)
-          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
-          kind: control
-          quote: "92,67 zł – na pierwsze dziecko (rocznie 1112,04 zł)"
-          as_of: 2026-11-26
+          quote: "92,67 zł – na pierwsze dziecko (rocznie 1112,04 zł), 92,67 zł – na drugie dziecko (rocznie 1112,04 zł), 166,67 zł – na trzecie dziecko (rocznie 2000,04 zł), 225,00 zł – na czwarte i każde kolejne dziecko"
+          as_of: 2026-11-27
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: ulga.dzieci.limit_dochodow
@@ -840,21 +808,11 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
           article: art. 27f ust. 2a
           quote: "do których mają zastosowanie zasady opodatkowania określone w art. 27, art. 30b i art. 30c, pomniejszone o kwotę składek"
-        - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (małżonkowie)
+        - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (limity dochodów przy jednym dziecku)
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
           kind: control
-          quote: "112 000 zł - jeśli przez cały rok pozostajesz w związku małżeńskim"
-          as_of: 2026-11-26
-        - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (samotnie wychowujący)
-          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
-          kind: control
-          quote: "112 000 zł - jeśli jesteś osobą samotnie wychowującą dziecko"
-          as_of: 2026-11-26
-        - title: podatki.gov.pl (MF), Ulga na dziecko PIT, aktualizacja 13.10.2026 (pozostali)
-          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
-          kind: control
-          quote: "56 000 zł - jeśli nie pozostajesz w związku małżeńskim, w tym również przez część roku, a nie jesteś osobą samotnie wychowującą dziecko"
-          as_of: 2026-11-26
+          quote: "112 000 zł - jeśli przez cały rok pozostajesz w związku małżeńskim; w tym przypadku bierzesz pod uwagę łączne dochody Twoje i Twojego męża lub Twojej żony, 112 000 zł - jeśli jesteś osobą samotnie wychowującą dziecko, 56 000 zł - jeśli nie pozostajesz w związku małżeńskim, w tym również przez część roku, a nie jesteś osobą samotnie wychowującą dziecko"
+          as_of: 2026-11-27
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: ulga.termomodernizacja.limit
@@ -1008,16 +966,11 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
           article: art. 26 ust. 7a pkt 12
           quote: "w wysokości stanowiącej różnicę pomiędzy faktycznie poniesionymi wydatkami w danym miesiącu a kwotą 100 zł"
-        - title: podatki.gov.pl (MF), Ulga rehabilitacyjna PIT, aktualizacja 26.10.2026 (limity roczne)
+        - title: podatki.gov.pl (MF), Ulga rehabilitacyjna PIT, aktualizacja 26.10.2026 (limity roczne i leki)
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-rehabilitacyjna-pit
           kind: control
-          quote: "utrzymanie psa asystującego , o którym mowa w ustawie o rehabilitacji zawodowej, nie więcej niż 2280 zł w roku podatkowym"
-          as_of: 2026-11-26
-        - title: podatki.gov.pl (MF), Ulga rehabilitacyjna PIT, aktualizacja 26.10.2026 (leki)
-          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-rehabilitacyjna-pit
-          kind: control
-          quote: "możesz odliczyć różnicę między wydatkami poniesionymi w danym miesiącu, a kwotą 100 zł"
-          as_of: 2026-11-26
+          quote: "pieluchomajtki, pieluchy anatomiczne, chłonne majtki, podkłady, wkłady anatomiczne , nie więcej niż 2280 zł w roku podatkowym, opłacenie przewodników osób niewidomych I lub II grupy inwalidztwa oraz osób z niepełnosprawnością narządu ruchu zaliczonych do I grupy inwalidztwa , nie więcej niż 2280 zł w roku podatkowym, utrzymanie psa asystującego , o którym mowa w ustawie o rehabilitacji zawodowej, nie więcej niż 2280 zł w roku podatkowym, używanie samochodu osobowego , stanowiącego własność (współwłasność) osoby niepełnosprawnej lub podatnika mającego na utrzymaniu osobę niepełnosprawną albo dziecko niepełnosprawne, które nie ukończyło 16 roku życia, nie więcej niż 2280 zł w roku podatkowym, zakup leków , o których mowa w ustawie z dnia 6 września 2001 r. – Prawo farmaceutyczne– w wysokości stanowiącej różnicę pomiędzy faktycznie poniesionymi wydatkami w danym miesiącu a kwotą 100 zł"
+          as_of: 2026-11-27
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
 - id: ikze.limit_wplat
@@ -1089,6 +1042,6 @@
         - title: analizy.pl, Znamy limity wpłat na IKE i IKZE w 2027 roku
           url: https://www.analizy.pl/puls-rynku/41139/wiecej-pieniedzy-bez-podatku-znamy-limity-wplat-na-ike-i-ikze-w-2027-roku
           kind: control
-          quote: "IKZE – działalność gospodarcza: 18 059,40 zł"
+          quote: "IKZE: 12 039,60 zł IKZE – działalność gospodarcza: 18 059,40 zł"
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
