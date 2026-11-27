@@ -703,13 +703,6 @@
           quote: "Składek na Fundusz Pracy nie opłaca się za kobiety, które skończyły 55 lat, i mężczyzn, którzy skończyli 60 lat."
           as_of: 2026-11-27
           confirms: [step_5]
-        - title: ZUS, poradnik „Zasady opłacania składek na Fundusz Pracy…”, stan prawny na 1 czerwca 2025 r. (miesiąc zwolnienia)
-          url: https://www.zus.pl/documents/10182/167567/Zasady+op%C5%82acania+sk%C5%82adek+na+Fundusz+Pracy%2C+Fundusz+Gwarantowanych+%C5%9Awiadcze%C5%84+Pracowniczych+oraz+Fundusz+Emerytur+Pomostowych.pdf/92a5c5b1-cf05-4869-8845-538a48fd5129
-          quote: >-
-            osób zwolnionych z opłacania składek na własne obowiązkowe ubezpieczenia emerytalne i rentowe, za wskazany
-            miesiąc kalendarzowy w danym roku kalendarzowym, o których mowa w art. 17a ust. 1 ustawy o s.u.s.
-          as_of: 2026-11-27
-          confirms: [step_6]
         - title: ZUS, poradnik „Zasady opłacania składek na Fundusz Pracy…”, stan prawny na 1 czerwca 2025 r. (Fundusz Solidarnościowy)
           url: https://www.zus.pl/documents/10182/167567/Zasady+op%C5%82acania+sk%C5%82adek+na+Fundusz+Pracy%2C+Fundusz+Gwarantowanych+%C5%9Awiadcze%C5%84+Pracowniczych+oraz+Fundusz+Emerytur+Pomostowych.pdf/92a5c5b1-cf05-4869-8845-538a48fd5129
           quote: "Do obowiązkowych składek na FS należy stosować zasady dotyczące obowiązkowych składek na Fundusz Pracy."
@@ -742,7 +735,7 @@
             z opłacenia składek na: własne obowiązkowe ubezpieczenia społeczne: emerytalne, rentowe i wypadkowe; własne
             dobrowolne ubezpieczenie chorobowe; Fundusz Pracy i Fundusz Solidarnościowy.
           as_of: 2026-11-27
-          confirms: [step_9]
+          confirms: [step_6, step_9]
       verification: {checked_at: 2026-11-27}
 
 - id: zasada.liniowy_zdrowotna
