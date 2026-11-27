@@ -118,6 +118,58 @@
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
 
+- id: zdrowotna.ryczalt.podstawa
+  name: Miesięczna podstawa wymiaru składki zdrowotnej na ryczałcie wg progu przychodu
+  unit: PLN/miesiąc
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2025-01-01
+      valid_to: 2025-12-31
+      value: {do_60000: 5129.51, do_300000: 8549.18, powyzej_300000: 15388.52}
+      note: >-
+        60, 100 i 180% przeciętnego miesięcznego wynagrodzenia w sektorze przedsiębiorstw w IV kw. 2024 r.
+        (8549,18 zł). Klucze odpowiadają kluczom w zdrowotna.ryczalt.skladka i zdrowotna.ryczalt.progi.
+        Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: M.P. 2025 poz. 84, obwieszczenie Prezesa GUS z 22 stycznia 2025 r.
+          url: https://api.sejm.gov.pl/eli/acts/MP/2025/84/text.pdf
+          quote: "w czwartym kwartale w 2024 r. wyniosło 8549,18 zł"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (podstawa wymiaru na ryczałcie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2f
+          quote: "kwota odpowiadająca 180 % przeciętnego miesięcznego wynagrodzenia w sektorze przedsiębiorstw w czwartym kwartale roku poprzedniego"
+        - title: Komunikat ZUS z 30 stycznia 2025 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2025 r. (ryczałt; podaje wszystkie trzy podstawy, cytat dla progu powyżej 300 000 zł)
+          url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2025-r.-dla-niekt%C3%B3rych-grup-ubezpieczonych
+          independent: true
+          quote: "15.388,52 zł (180% przeciętnego miesięcznego wynagrodzenia)"
+          as_of: 2025-01-30
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
+    - valid_from: 2026-01-01
+      valid_to: 2026-12-31
+      value: {do_60000: 5537.18, do_300000: 9228.64, powyzej_300000: 16611.55}
+      note: >-
+        60, 100 i 180% przeciętnego miesięcznego wynagrodzenia w sektorze przedsiębiorstw w IV kw. 2025 r.
+        (9228,64 zł). Klucze odpowiadają kluczom w zdrowotna.ryczalt.skladka i zdrowotna.ryczalt.progi.
+      sources:
+        - title: M.P. 2026 poz. 117, obwieszczenie Prezesa GUS z 22 stycznia 2026 r.
+          url: https://api.sejm.gov.pl/eli/acts/MP/2026/117/text.pdf
+          quote: "w czwartym kwartale w 2025 r. wyniosło 9228,64 zł"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (podstawa wymiaru na ryczałcie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2f
+          quote: "kwota odpowiadająca 180 % przeciętnego miesięcznego wynagrodzenia w sektorze przedsiębiorstw w czwartym kwartale roku poprzedniego"
+        - title: Komunikat ZUS z 2 lutego 2026 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r. (ryczałt; podaje wszystkie trzy podstawy, cytat dla progu powyżej 300 000 zł)
+          url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2026-r.
+          independent: true
+          quote: "16.611,55 zł (180% przeciętnego miesięcznego wynagrodzenia)"
+          as_of: 2026-02-02
+        - title: ZUS, poradnik „ZUS DRA. Deklaracja rozliczeniowa. Jak wypełnić i skorygować”, maj 2026 (podaje wszystkie trzy podstawy, cytat dla progu do 60 000 zł)
+          url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
+          kind: control
+          quote: "60% przeciętnego miesięcznego wynagrodzenia (5537,18 zł), jeżeli osiągnięte od początku roku przychody z działalności gospodarczej nie przekroczyły 60 tys. zł"
+          as_of: 2026-05-01
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
+
 - id: zdrowotna.ryczalt.progi
   name: Progi przychodu dla składki zdrowotnej na ryczałcie
   unit: PLN
