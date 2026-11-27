@@ -44,7 +44,7 @@
         Dz.U. 2026 poz. 203 i 424), zmieniają tylko art. 21 i 52zr, a zmiana z Dz.U. 2025 poz. 1301 (tylko art. 52zo–52zr)
         weszła w życie w 2025 r., więc to brzmienie obowiązywało od 1 stycznia
         2026 r. Wcześniejszych wersji nie wprowadzono.
-        Poprawka 2026-11-27: krok o darowiznach mówi, że podstawa limitu na ryczałcie jest niewyjaśniona (P13); wcześniej zastrzegała to tylko wartość ulga.darowizny.limit_ryczalt.
+        Korekta z 27 listopada 2026 r.: zmieniony krok o darowiznach (P13).
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (katalog odliczeń)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
@@ -135,8 +135,7 @@
         a w ustawie o PIT uchylono art. 26 ust. 1 pkt 6a i ust. 6h. Tekstu jednolitego z tą zmianą jeszcze nie ma:
         brzmienie wynika z tekstu jednolitego Dz.U. 2025 poz. 843 i ustawy zmieniającej. Nowe brzmienie art. 11 ust. 2 nie
         obejmuje art. 26 ust. 6a (uchylonego już wcześniej) i ust. 6h; art. 26 ust. 5 nadal stosuje się odpowiednio.
-        Poprawka 2026-11-26: krok o Internecie mówi, że limit w zeznaniu za 2027 r. i prawo podatnika, który zmienił formę opodatkowania, są niewyjaśnione (P14); wcześniej tego nie zastrzegał.
-        Poprawka 2026-11-27: krok o darowiznach mówi, że podstawa limitu na ryczałcie jest niewyjaśniona (P13); wcześniej zastrzegała to tylko wartość ulga.darowizny.limit_ryczalt.
+        Korekty z 26 i 27 listopada 2026 r.: zmienione kroki o Internecie (P14) i o darowiznach (P13).
       sources:
         - title: Dz.U. 2026 poz. 1541, ustawa z 22 października 2026 r. o zmianie ustawy o PIT, ustawy o CIT oraz ustawy o ryczałcie (nowy katalog odliczeń)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
@@ -594,7 +593,7 @@
         na robotyzację), uchyla ust. 5a (do kosztów poniesionych przed tym dniem stosuje się go nadal, art. 7 ust. 1)
         i przedłuża okres w ust. 5 do lat 2022–2036 (art. 1 pkt 4 lit. b wchodzi w życie 31 grudnia 2026 r., ale według
         art. 4 ust. 1 dotyczy dochodów od 1 stycznia 2027 r.), a w art. 26i ust. 1 skreśla odesłanie do art. 26gb.
-        Poprawka 2026-11-26: krok o Internecie mówi, że limit w zeznaniu za 2027 r. i prawo podatnika, który zmienił formę opodatkowania, są niewyjaśnione (P14); wcześniej przesądzał, że obowiązuje dotychczasowy limit.
+        Korekta z 26 listopada 2026 r.: zmieniony krok o Internecie (P14).
       sources:
         - title: Dz.U. 2026 poz. 1541, ustawa z 22 października 2026 r. o zmianie ustawy o PIT, ustawy o CIT oraz ustawy o ryczałcie (uchylenie ulgi internetowej)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
@@ -734,7 +733,6 @@
         (https://www.ifirma.pl/blog/zmiany-w-ulgach-podatkowych-od-2027-koniec-ulgi-na-internet-i-ekspansje-wyzsza-ulga-dla-krwiodawcow/),
         ale nie podaje kwoty limitu na 2027 r. Strona MF „Ulga na Internet PIT” (aktualizacja 9.10.2026) powstała
         przed ogłoszeniem ustawy i opisuje tylko regułę dwóch lat z art. 26 ust. 6h.
-        Poprawka 2026-11-26: notatka nie przesądza już, że w zeznaniu za 2027 r. obowiązuje ten sam limit (P14).
       sources:
         - title: Dz.U. 2026 poz. 1541, ustawa z 22 października 2026 r. o zmianie ustawy o PIT, ustawy o CIT oraz ustawy o ryczałcie (przepis przejściowy)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf

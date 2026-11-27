@@ -278,7 +278,7 @@
         z pliku podaje je razem z nazwami atrybutów. Wariant podają broszura MF, strona MF o JPK_PD, specyfikacja
         interfejsów usług JPK, strona KAS (nazwa pliku) i plik XSD; kod systemowy i wersję schematu broszura MF i plik XSD; adres pliku strona
         KAS (adres linku) i sam plik; datę obowiązywania broszura MF i strona KAS.
-        Poprawka: dodany adres pliku XSD (wcześniej wartość go nie miała, bo nie ustalono go w urzędowym źródle).
+        Korekta: dodany adres pliku XSD.
       sources:
         - title: podatki.gov.pl (MF), Broszura informacyjna dotycząca struktury JPK_PKPIR(3)
           url: https://podatki.gov.pl/media/pbqdgqcp/broszura_informacyjna_dot_jpk_pkpir-3.pdf
@@ -429,8 +429,7 @@
         dzień ocenia się sposób rozliczania VAT; MF wyjaśnia na stronie pytań i odpowiedzi o JPK_PD (pytanie 134,
         dodane 12.11.2025), że ocenia się go w dniu zaprowadzenia ksiąg. Termin zeznania z art. 45 ust. 1 opisują parametry
         termin.zeznanie_skala (art. 45 ust. 1) i termin.zeznanie_liniowy (art. 45 ust. 1 i 1a pkt 2).
-        Poprawka 2026-11-26: kroki o pierwszym roku przesłania zaczęły mówić, że nie wiadomo, na który dzień ocenia się sposób rozliczania VAT (P19); wcześniej zastrzegała to tylko notatka.
-        Poprawka 2026-11-27: krok 2 mówi, że sposób rozliczania VAT ocenia się w dniu zaprowadzenia księgi, a gdy w tym dniu nie ma obowiązku prowadzenia jej przy użyciu programów komputerowych, za ten rok się jej nie przesyła (wyjaśnienie MF); wcześniej kroki 2 i 3 opisywały dzień oceny jako niewyjaśniony. Krok 2 podaje też dzień założenia księgi z § 19 rozporządzenia w sprawie prowadzenia podatkowej księgi przychodów i rozchodów, dodany do podstawy kroku. Krok 3 nie zastrzega już osobno, jak zakwalifikować podatnika, który w 2026 r. zmienił sposób rozliczania VAT albo zarejestrował się jako czynny podatnik VAT: obejmuje podatników, których nie obejmuje krok 2, więc dotyczy go to, co krok 2 zostawia otwarte. Otwarte zostaje pytanie, czy dzień założenia księgi to dzień zaprowadzenia ksiąg w rozumieniu MF, kiedy za zaprowadzoną uważa się ewidencję środków trwałych oraz wartości niematerialnych i prawnych, i który sposób rozliczania VAT liczy się przy rozpoczęciu działalności w trakcie roku, gdy rejestracja jako czynny podatnik VAT zaczyna działać w innym dniu niż założenie księgi (P19).
+        Korekty z 26 i 27 listopada 2026 r.: zmienione kroki 2 i 3. Krok 3 obejmuje podatników, których nie obejmuje krok 2, więc dotyczy go to, co krok 2 zostawia otwarte. Otwarte zostaje pytanie, czy dzień założenia księgi to dzień zaprowadzenia ksiąg w rozumieniu MF, kiedy za zaprowadzoną uważa się ewidencję środków trwałych oraz wartości niematerialnych i prawnych, i który sposób rozliczania VAT liczy się przy rozpoczęciu działalności w trakcie roku, gdy rejestracja jako czynny podatnik VAT zaczyna działać w innym dniu niż założenie księgi (P19).
       sources:
         - title: Dz.U. 2026 poz. 779, ustawa z 15 maja 2026 r. o zmianie ustawy o PIT, ustawy o CIT i ustawy o ryczałcie
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/779/text.pdf
@@ -504,14 +503,13 @@
         Art. 66 ust. 1 pkt 1 wszedł w życie 1 stycznia 2026 r., a pkt 2 wchodzi 1 stycznia 2027 r. Ustawa
         z 29 października 2021 r. nie ma tekstu jednolitego, więc brzmienie art. 66 wynika z ustaw zmieniających.
         Inne zmiany tej ustawy wymienione w obwieszczeniu (Dz.U. 2021 poz. 2349 i 2427, Dz.U. 2022 poz. 1301, 1719 i 2180, Dz.U. 2023 poz. 1414, Dz.U. 2024 poz. 1593 i 1685, Dz.U. 2025 poz. 222) ani ustawy Dz.U. 2021 poz. 2469 (zmienia tylko art. 15 pkt 8) i Dz.U. 2023 poz. 1598 (zmienia tylko art. 88 ust. 1) nie zmieniają art. 66 ust. 1 ani art. 89 pkt 7 i 8; brzmienie art. 89 pkt 7 i 8 podaje obwieszczenie do tekstu jednolitego Dz.U. 2025 poz. 843.
-        Poprawka: pierwszy krok obejmuje ewidencję przychodów (wcześniej zostawiał to jako otwarte pytanie).
+        Korekta: krok 1 obejmuje ewidencję przychodów.
         Art. 15 ust. 1 wprowadza dla ewidencji przychodów nazwę „ewidencja”, której używa ust. 12, a broszura MF
         o strukturze JPK_EWP(4) podaje wprost, że ryczałtowcy prowadzący ewidencję przychodów przesyłają plik
         JPK_EWP, i wskazuje art. 15 ust. 12 jako podstawę. Przepis nie mówi, na który dzień ocenia się sposób
         rozliczania VAT; MF wyjaśnia na stronie pytań i odpowiedzi o JPK_PD (pytanie 134, dodane 12.11.2025), że ocenia
         się go w dniu zaprowadzenia ksiąg.
-        Poprawka 2026-11-26: kroki o pierwszym roku przesłania zaczęły mówić, że nie wiadomo, na który dzień ocenia się sposób rozliczania VAT (P19); wcześniej zastrzegała to tylko notatka.
-        Poprawka 2026-11-27: krok 2 mówi, że sposób rozliczania VAT ocenia się w dniu zaprowadzenia ewidencji przychodów, a gdy w tym dniu nie ma obowiązku prowadzenia jej przy użyciu programów komputerowych, za ten rok się jej nie przesyła (wyjaśnienie MF); wcześniej kroki 2 i 3 opisywały dzień oceny jako niewyjaśniony. Krok 2 podaje też, że ewidencję prowadzi się odrębnie za każdy rok podatkowy i od kiedy powstaje obowiązek jej prowadzenia (art. 15 ust. 1 i 2 ustawy o ryczałcie, dodane do podstawy kroku). Krok 3 nie zastrzega już osobno, jak zakwalifikować podatnika, który w 2026 r. zmienił sposób rozliczania VAT albo zarejestrował się jako czynny podatnik VAT: obejmuje podatników, których nie obejmuje krok 2, więc dotyczy go to, co krok 2 zostawia otwarte. Otwarte zostaje pytanie, czy dniem zaprowadzenia ewidencji przychodów jest dzień z art. 15 ust. 2, także przy rozpoczęciu działalności w trakcie roku (rozporządzenie w sprawie prowadzenia ewidencji przychodów, Dz.U. 2025 poz. 1294, dnia zaprowadzenia nie podaje), kiedy za zaprowadzony uważa się wykaz środków trwałych oraz wartości niematerialnych i prawnych, i który sposób rozliczania VAT liczy się przy rozpoczęciu działalności w trakcie roku, gdy rejestracja jako czynny podatnik VAT zaczyna działać w innym dniu niż zaprowadzenie ewidencji (P19).
+        Korekty z 26 i 27 listopada 2026 r.: zmienione kroki 2 i 3. Krok 3 obejmuje podatników, których nie obejmuje krok 2, więc dotyczy go to, co krok 2 zostawia otwarte. Otwarte zostaje pytanie, czy dniem zaprowadzenia ewidencji przychodów jest dzień z art. 15 ust. 2, także przy rozpoczęciu działalności w trakcie roku (rozporządzenie w sprawie prowadzenia ewidencji przychodów, Dz.U. 2025 poz. 1294, dnia zaprowadzenia nie podaje), kiedy za zaprowadzony uważa się wykaz środków trwałych oraz wartości niematerialnych i prawnych, i który sposób rozliczania VAT liczy się przy rozpoczęciu działalności w trakcie roku, gdy rejestracja jako czynny podatnik VAT zaczyna działać w innym dniu niż zaprowadzenie ewidencji (P19).
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf

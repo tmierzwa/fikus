@@ -278,3 +278,14 @@ def test_rule_describes_what_it_leaves_out_without_confirming_it():
         {**v.model_dump(mode="json"), "not_covered": "korekt deklaracji (art. 3)"}]})
     level = p.versions[0].confidence()
     assert level["level"] == "wysoka" and level["unconfirmed_fields"] == []
+
+
+def test_notes_describe_current_state_not_edit_history():
+    """Notatka opisuje obecny stan wersji; historia edycji danych idzie do PR (CLAUDE.md)."""
+    import re
+    history = re.compile(r"\bpoprawk[aię]\b|weryfikator|agent_check|notatk\w* (?:błędnie|nie przesądza już)"
+                         r"|wcześniej (?:zastrzega\w*|przesądza\w*|opisywa\w*|powoływa\w*|wpisan\w*)"
+                         r"|nie zastrzega już", re.I)
+    bad = [f"{p.id} {v.valid_from}: {m[0]}" for p in Store().params.values() for v in p.versions
+           if v.note and (m := history.search(v.note))]
+    assert not bad, "historia edycji w notatkach (opisz ją w PR, w notatce zostaw „Korekta z …: zmienione …”):\n" + "\n".join(bad)
