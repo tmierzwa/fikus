@@ -40,6 +40,11 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
   `amortyzacja.jednorazowa.limit_nowe_srodki` (art. 22k ust. 14) oraz zasady `zasada.amortyzacja`
   (metody, początek odpisów, odpisy jednorazowe, odesłanie do Wykazu stawek) i `zasada.platnosci_gotowkowe_koszty`
   (art. 22p, z nową wersją od 2027 r.).
+- Nowy plik `data/parameters/ksef_kasy.yaml`: zasada `zasada.ksef_obowiazek` (obowiązek wystawiania faktur
+  w KSeF, przepisy przejściowe na 2026 r., wyłączenia, kary od 2027 r.) i wartość `vat.kasa_fiskalna.limit_zwolnienia`
+  (limit sprzedaży na rzecz osób fizycznych zwalniający z kasy rejestrującej, do końca 2027 r.).
+- Zasada `zasada.zaliczki_zawieszenie` w `data/parameters/zaliczki.yaml`: zaliczki na PIT i ryczałt w okresie
+  zawieszenia działalności i po jej wznowieniu.
 
 ### Zmienione
 

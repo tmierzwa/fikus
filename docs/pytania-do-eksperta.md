@@ -757,3 +757,47 @@ przypadku brzegowego, średnią.
   do podatku liniowego (art. 9a ust. 3 ustawy o PIT), jest w następnym roku opodatkowany tą formą bez nowego oświadczenia,
   jeżeli spełnia jej warunki? Czy musi złożyć oświadczenie o wyborze ponownie w terminie z art. 9 ust. 1 ustawy
   o ryczałcie albo art. 9a ust. 2 ustawy o PIT?
+
+## P56. Zaliczki i ryczałt za miesiąc lub kwartał, w którego trakcie zawieszono albo wznowiono działalność
+
+- Wpis: `zasada.zaliczki_zawieszenie` (od 2026-01-01), kroki o zaliczkach na PIT i o okresie częściowym.
+- Zgłoszone: 2026-11-26.
+- Ustawa o PIT (Dz.U. 2026 poz. 592), art. 44 ust. 10: podatnik, który zawiesił działalność, „jest zwolniony, w zakresie
+  tej działalności, z obowiązków wynikających z ust. 1 pkt 1, ust. 3, 3f, 3g, 6 i 6b za okres objęty zawieszeniem”;
+  ust. 13: po zawieszeniu podatnicy „wpłacają zaliczki według zasad, o których mowa w ust. 3, 3f, 3g, 6 i 6b”.
+  Oba przepisy nie wymieniają ust. 3h (zaliczki kwartalne przy podatku liniowym).
+- Ustawa o ryczałcie (Dz.U. 2025 poz. 843), art. 21 ust. 1d: zwolnienie z obowiązków z ust. 1 lub 1a „za okres objęty
+  zawieszeniem”; ust. 1g: ryczałt „dotyczący okresu zawieszenia” wpłaca się po wznowieniu.
+- Prawo przedsiębiorców (Dz.U. 2026 poz. 1484), art. 24 ust. 7: wobec zobowiązań publicznoprawnych zawieszenie działa
+  od dnia rozpoczęcia zawieszenia do dnia poprzedzającego dzień wznowienia, a więc może obejmować część miesiąca.
+- biznes.gov.pl (Podatki przy zawieszeniu, wznowieniu i likwidacji działalności, aktualizacja 04.05.2026) podaje w przykładzie,
+  że przy zawieszeniu od 16 marca zaliczkę za przychody sprzed zawieszenia wpłaca się w zwykłym terminie; strona portalu
+  nie rozstrzyga tej kwestii.
+- Pytania: jak ustala się i kiedy wpłaca zaliczkę na PIT (skala, podatek liniowy) oraz ryczałt za miesiąc albo kwartał,
+  w którego trakcie zawieszenie się zaczęło albo skończyło? Czy przychód z części miesiąca sprzed zawieszenia rozlicza się
+  w zwykłym terminie, a na ryczałcie przychód z części okresu objętej zawieszeniem dopiero po wznowieniu? Czy zwolnienie
+  z art. 44 ust. 10 obejmuje zaliczki kwartalne przy podatku liniowym (ust. 3h), skoro przepis wymienia ust. 1 pkt 1,
+  ale nie ust. 3h?
+
+## P57. Faktury poza KSeF do 10 000 zł miesięcznie w 2026 r.: czy prawo wraca w kolejnym miesiącu
+
+- Wpis: `zasada.ksef_obowiazek` (2026-02-01 – 2026-12-31), krok o art. 145m.
+- Zgłoszone: 2026-11-26.
+- Ustawa o VAT (Dz.U. 2026 poz. 1263), art. 145m ust. 1: od 1 kwietnia do 31 grudnia 2026 r. podatnik może wystawiać
+  faktury elektroniczne lub papierowe, jeżeli łączna wartość sprzedaży z podatkiem „udokumentowana tymi fakturami
+  wystawionymi w danym miesiącu jest mniejsza lub równa 10 000 zł”; ust. 2: podatnik „traci prawo do wystawiania faktur
+  elektronicznych oraz faktur w postaci papierowej począwszy od faktury, którą przekroczono wartość”.
+- Uzasadnienie projektu ustawy Dz.U. 2025 poz. 1203 (druk sejmowy nr 1407, w projekcie art. 145o): „jeżeli w danym miesiącu
+  faktury nie spełnią wskazanego wyżej warunku, podatnik nie może ponownie skorzystać z możliwości wystawiania faktur
+  w postaci papierowej lub faktur elektronicznych”. Uzasadnienie nie jest źródłem prawa.
+- Strona MF ksef.podatki.gov.pl „Zakres obowiązkowego KSeF”
+  (https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/zakres-obowiazkowego-ksef/) podaje próg w dwóch ujęciach.
+  W opisie terminów: podatnicy, u których „wartość sprzedaży dokumentowana fakturami za okresy miesięczne nie przekracza
+  kwoty 10 000 zł (brutto)”, do końca 2026 r. „nie mają obowiązku wystawiania faktur w KSeF”. W punkcie o przepisach
+  epizodycznych powtarza prawie dosłownie art. 145m ust. 1 (podatnicy „mogą wystawiać faktury elektroniczne lub faktury
+  w postaci papierowej”). Art. 145m ust. 2 (utrata prawa od faktury, którą przekroczono wartość) strona pomija.
+  Komunikat MF z 26.03.2026 (https://www.podatki.gov.pl/aktualnosci/drugi-etap-wdrozenia-krajowego-systemu-e-faktur-260326/) podaje, że tacy podatnicy „Będą oni wystawiać faktury w KSeF dopiero od 1 stycznia
+  2027 r.”. Źródła się różnią.
+- Pytania: czy podatnik, który w danym miesiącu 2026 r. przekroczył 10 000 zł, może w kolejnym miesiącu znów wystawiać
+  faktury poza KSeF, jeżeli w tym miesiącu nie przekroczy tej wartości? Czy po przekroczeniu traci prawo od faktury, którą
+  przekroczono wartość (art. 145m ust. 2), czy, jak opisuje strona MF, próg oznacza brak obowiązku do końca 2026 r.?
