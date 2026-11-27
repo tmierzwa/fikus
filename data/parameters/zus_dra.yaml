@@ -1,0 +1,278 @@
+# Deklaracja rozliczeniowa ZUS DRA za siebie, roczne rozliczenie składki zdrowotnej i wzór formularza.
+# Wzór ZUS DRA obowiązuje według dnia złożenia dokumentu, a nie miesiąca, za który się go składa
+# (§ 4, § 6 i § 8 rozporządzenia Dz.U. 2026 poz. 518). Narzędzie get_schema szuka parametru schemat.zus_dra.
+
+- id: zasada.dra_obowiazek
+  name: Obowiązek składania deklaracji ZUS DRA za siebie
+  kind: rule
+  versions:
+    - valid_from: 2024-11-01
+      value:
+        steps:
+          - text: Jako osoba prowadząca działalność jesteś płatnikiem składek na własne ubezpieczenia. Za każdy miesiąc kalendarzowy rozliczasz należne składki w deklaracji rozliczeniowej ZUS DRA. Deklarację za dany miesiąc przesyłasz w tym samym terminie, w którym opłacasz składki za ten miesiąc.
+            uses: [termin.zus, schemat.zus_dra]
+            basis: art. 4 pkt 2 lit. d, art. 46 ust. 1 i 2, art. 47 ust. 1 pkt 4 i ust. 14 ustawy o systemie ubezpieczeń społecznych
+          - text: Jeżeli opłacasz składki wyłącznie za siebie, przesyłasz tylko deklarację rozliczeniową, bez imiennych raportów miesięcznych. Wyjątkiem jest miesiąc objęty zwolnieniem z opłacenia składek z art. 17a (wakacje składkowe); za ten miesiąc w tym samym terminie przesyłasz deklarację rozliczeniową i dwa imienne raporty miesięczne, o których mowa w art. 47 ust. 2fa pkt 2 i 3. Jeżeli zgłaszasz do ubezpieczeń także inne osoby, przesyłasz deklarację rozliczeniową i imienne raporty miesięczne.
+            uses: [termin.zus]
+            basis: art. 47 ust. 1, 2 i 2fa ustawy o systemie ubezpieczeń społecznych
+          - text: Od 1 stycznia 2022 r. nie obowiązuje zwolnienie osób prowadzących pozarolniczą działalność z deklaracji rozliczeniowej za kolejny miesiąc, gdy zadeklarowały najniższą podstawę wymiaru i nic się nie zmieniło w stosunku do poprzedniego miesiąca (uchylenie art. 47 ust. 2a i 2b). Zwolnienia z art. 47 ust. 2c–2f i 2fb dotyczą tylko wymienionych tam grup, między innymi duchownych i osób ubezpieczonych dobrowolnie na podstawie art. 7.
+            uses: []
+            basis: art. 47 ust. 2c–2f i 2fb ustawy o systemie ubezpieczeń społecznych; art. 8 pkt 4 lit. b ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105)
+          - text: Za okres zawieszenia wykonywania działalności gospodarczej nie masz obowiązku składania deklaracji rozliczeniowej, jeżeli jesteś płatnikiem składek wyłącznie za siebie. Obowiązek ubezpieczeń społecznych ustaje od dnia rozpoczęcia zawieszenia do dnia poprzedzającego wznowienie. Czy i jak składasz deklarację za miesiąc, w którym zawieszenie zaczyna się w trakcie miesiąca, w tym jak wykazujesz w niej składkę zdrowotną za taki miesiąc, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: []
+            basis: art. 36a ust. 2 i 3 ustawy o systemie ubezpieczeń społecznych
+          - text: W deklaracji rozliczeniowej za miesiąc, w którym upływa termin złożenia zeznania rocznego, czyli za kwiecień, wykazujesz roczne rozliczenie składki zdrowotnej, jeżeli masz obowiązek je złożyć. Taką deklarację składasz także wtedy, gdy w tym miesiącu nie wykazujesz bieżących składek, bo zawiesiłeś albo zakończyłeś działalność. Jeżeli opłacasz składki także za inne osoby, rozliczenie roczne wykazujesz w imiennym raporcie ZUS RCA (blok III.F).
+            uses: [termin.roczne_rozliczenie_zdrowotnej, zasada.roczne_rozliczenie_zdrowotnej]
+            basis: art. 81 ust. 2k, 2ka i 2l ustawy o świadczeniach opieki zdrowotnej; art. 46 ust. 4 pkt 6aa ustawy o systemie ubezpieczeń społecznych; komunikat ZUS „Roczne rozliczenie składki zdrowotnej za 2025 r.”
+          - text: Ta zasada nie opisuje deklaracji korygujących (art. 47 ust. 3–3b), deklaracji ZUS DRA cz. II, zawartości poszczególnych bloków deklaracji ani przekazywania dokumentów w formie elektronicznej (art. 47a).
+            uses: []
+            basis: art. 47 ust. 3–3b i art. 47a ustawy o systemie ubezpieczeń społecznych
+      note: >-
+        Kroki opisują stan z tekstu jednolitego ustawy o systemie ubezpieczeń społecznych (Dz.U. 2026 poz. 1474, stan
+        prawny na 4 października 2026 r.). Art. 47 ust. 2a i 2b uchylił z dniem 1 stycznia 2022 r. art. 8 pkt 4 lit. b
+        ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105, wejście w życie według art. 89). Data początku obowiązywania to dzień wejścia w życie ustawy z 9 maja 2024 r.
+        (Dz.U. 2024 poz. 863), która dodała art. 47 ust. 2fa (deklaracja i raporty za miesiąc wakacji składkowych).
+        Wcześniejszych wersji nie wprowadzono. Portal biznes.gov.pl („Jak składać deklaracje i raporty ZUS”) podaje
+        tylko to, co krok o uchylonym zwolnieniu: od 2022 r. z comiesięcznych deklaracji są zwolnieni wyłącznie duchowni,
+        osoby składające dokumenty za nianie i osoby ubezpieczone dobrowolnie. Żadne źródło poza aktami i komunikatami
+        ZUS, z których każdy potwierdza tylko część kroków, nie podaje całej zasady, więc wersja nie ma drugiego
+        niezależnego dowodu.
+      sources:
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (deklaracja za dany miesiąc)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 47 ust. 1
+          quote: "Płatnik składek przesyła w tym samym terminie deklarację rozliczeniową, imienne raporty miesięczne oraz opłaca składki za dany miesiąc"
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (płatnik tylko za siebie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 47 ust. 2
+          quote: "Płatnik składek, który opłaca składki wyłącznie za siebie, przesyła jedynie deklarację rozliczeniową, z zastrzeżeniem ust. 2fa pkt 1–3."
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (miesiąc wakacji składkowych)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 47 ust. 2fa
+          quote: "Za miesiąc kalendarzowy objęty zwolnieniem z opłacenia składek, o których mowa w art. 17a, płatnik składek przesyła w terminie, o którym mowa w ust. 1 pkt 4"
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (płatnik na własne ubezpieczenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 4 pkt 2 lit. d
+          quote: "ubezpieczony zobowiązany do opłacenia składek na własne ubezpieczenia społeczne"
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (rozliczenie za każdy miesiąc)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 46 ust. 1
+          quote: "rozliczać oraz opłacać należne składki za każdy miesiąc kalendarzowy"
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (zawieszenie działalności)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 36a ust. 3
+          quote: "Za okres zawieszenia wykonywania działalności gospodarczej przedsiębiorca będący płatnikiem składek wyłącznie za siebie nie ma obowiązku składania deklaracji rozliczeniowej"
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (dopłata z rozliczenia rocznego w deklaracji)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 46 ust. 4 pkt 6aa
+          quote: "informację o kwocie różnicy między roczną składką na ubezpieczenie zdrowotne a sumą składek na ubezpieczenie zdrowotne za poszczególne miesiące roku kalendarzowego albo roku składkowego"
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (uchylone zwolnienie z comiesięcznej deklaracji)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 47 ust. 2a i 2b
+          quote: "2a. (uchylony) 2b. (uchylony)"
+        - title: Dz.U. 2021 poz. 423, tekst jednolity ustawy o systemie ubezpieczeń społecznych (brzmienie art. 47 ust. 2a przed uchyleniem)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2021/423/text.pdf
+          article: art. 47 ust. 2a
+          quote: "Osoby prowadzące pozarolniczą działalność, opłacające składki wyłącznie za siebie lub osoby z nimi współpracujące, są zwolnione z obowiązku składania deklaracji rozliczeniowej lub imiennych raportów miesięcznych za kolejny miesiąc"
+        - title: Dz.U. 2021 poz. 2105, ustawa z 29 października 2021 r. o zmianie ustawy o podatku dochodowym od osób fizycznych, ustawy o podatku dochodowym od osób prawnych oraz niektórych innych ustaw (uchylenie art. 47 ust. 2a i 2b)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2021/2105/text.pdf
+          article: art. 8 pkt 4 lit. b
+          quote: "b) uchyla się ust. 2a i 2b"
+        - title: Dz.U. 2021 poz. 2105 (wejście w życie 1 stycznia 2022 r.; art. 8 nie jest wśród wyjątków)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2021/2105/text.pdf
+          article: art. 89
+          quote: "Ustawa wchodzi w życie z dniem 1 stycznia 2022 r., z wyjątkiem:"
+        - title: Dz.U. 2024 poz. 863, ustawa z 9 maja 2024 r. o zmianie ustawy o systemie ubezpieczeń społecznych oraz niektórych innych ustaw (dodanie art. 47 ust. 2fa)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/863/text.pdf
+          article: art. 1 pkt 6 lit. b i art. 9
+          quote: "Ustawa wchodzi w życie pierwszego dnia miesiąca następującego po upływie 4 miesięcy od dnia ogłoszenia"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (dokument z rozliczeniem rocznym)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2k
+          quote: "wykazywana jest w dokumencie rozliczeniowym składanym za miesiąc, w którym upływa termin złożenia zeznania"
+        - title: ZUS, Roczne rozliczenie składki zdrowotnej za 2025 r. (zawieszenie lub zakończenie działalności)
+          url: https://www.zus.pl/-/roczne-rozliczenie-sk%C5%82adki-zdrowotnej-za-2025-r.
+          quote: "Wymóg ten dotyczy także osoby, która zawiesiła lub zakończyła działalność w 2025 r., ale była wówczas objęta ubezpieczeniem zdrowotnym – choćby przez jeden dzień."
+          as_of: 2026-11-26
+        - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (deklaracja za kwiecień po zawieszeniu lub zakończeniu działalności)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          quote: "Jeżeli zawiesiłeś działalność bądź przestałeś ją prowadzić i nie będziesz wykazywał w deklaracji za kwiecień 2023 r. bieżących składek, to mimo tego masz obowiązek złożyć dokumenty rozliczeniowe za kwiecień 2023 r. z rozliczeniem rocznym."
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue_scope: edge_case
+        open_issue: >-
+          Art. 36a ust. 3 ustawy o systemie ubezpieczeń społecznych zwalnia z deklaracji rozliczeniowej „za okres
+          zawieszenia”, a art. 47 ust. 1 i art. 46 ust. 1 każą rozliczać składki za każdy miesiąc kalendarzowy.
+          biznes.gov.pl podaje, że deklaracje składasz co miesiąc, także gdy „zawieszasz lub wznawiasz działalność
+          gospodarczą”, i opisuje deklarację za niepełny okres przy wznowieniu w trakcie miesiąca, ale nie przy
+          zawieszeniu od połowy miesiąca, i nie mówi, jak wykazać za taki miesiąc składkę zdrowotną. Pytanie do eksperta:
+          docs/pytania-do-eksperta.md, P39.
+
+- id: zasada.roczne_rozliczenie_zdrowotnej
+  name: Roczne rozliczenie składki zdrowotnej (skala, podatek liniowy, ryczałt)
+  kind: rule
+  applies_to: {tax_form: [skala, liniowy, ryczalt]}
+  versions:
+    - valid_from: 2025-01-01
+      value:
+        steps:
+          - text: Po końcu roku ustalasz roczną składkę zdrowotną od rocznej podstawy i porównujesz ją ze składkami za poszczególne miesiące. Roczną podstawę i roczną składkę opisują zasady składki zdrowotnej dla Twojej formy opodatkowania.
+            uses: [zasada.skala_zdrowotna, zasada.liniowy_zdrowotna, zasada.ryczalt_zdrowotna_prog, zasada.ryczalt_zdrowotna_prog_poprzedni_rok]
+            basis: art. 81 ust. 2, 2b, 2e, 2i i 2j ustawy o świadczeniach opieki zdrowotnej
+          - text: Na skali podatkowej i podatku liniowym rozliczenie dotyczy roku składkowego, który trwa od 1 lutego roku, za który ustalasz dochód, do 31 stycznia roku następnego. Na ryczałcie rozliczenie dotyczy roku kalendarzowego.
+            uses: []
+            basis: art. 81 ust. 2, 2e i 2i ustawy o świadczeniach opieki zdrowotnej
+          - text: Rozliczenie roczne wykazujesz w dokumencie rozliczeniowym za miesiąc, w którym upływa termin złożenia zeznania rocznego, czyli za kwiecień następnego roku. Jeżeli opłacasz składki wyłącznie za siebie, jest to deklaracja ZUS DRA (blok XII); jeżeli opłacasz składki także za inne osoby, wykazujesz je w imiennym raporcie ZUS RCA (blok III.F). Dane wykazujesz odrębnie dla każdej formy opodatkowania, którą stosowałeś.
+            uses: [termin.roczne_rozliczenie_zdrowotnej, schemat.zus_dra, zasada.dra_obowiazek]
+            basis: art. 81 ust. 2k i 2ka ustawy o świadczeniach opieki zdrowotnej; art. 46 ust. 4 pkt 6aa i art. 47 ust. 2 ustawy o systemie ubezpieczeń społecznych
+          - text: Niedopłata to różnica między roczną składką a sumą składek wynikającą ze złożonych dokumentów za poszczególne miesiące. Wykazujesz ją w dokumencie z rozliczeniem rocznym i dopłacasz w terminie płatności składek za ten miesiąc.
+            uses: [termin.roczne_rozliczenie_zdrowotnej]
+            basis: art. 81 ust. 2j, 2k i 2l ustawy o świadczeniach opieki zdrowotnej
+          - text: Nadpłata to różnica między sumą składek wpłaconych za poszczególne miesiące a roczną składką. Zwrot następuje na wniosek, który ZUS przygotowuje na Twoim profilu po złożeniu rozliczenia rocznego (RZS-R). Wniosek możesz złożyć tylko elektronicznie, w terminie miesiąca od upływu terminu złożenia zeznania rocznego; wniosek złożony po terminie pozostaje bez rozpoznania. ZUS zwraca nadpłatę, jeżeli nie masz zaległości ze składek ani z nienależnie pobranych świadczeń; zaległości pokrywa się z kwoty zwrotu. Jeżeli nie złożysz wniosku w terminie i nie masz zaległości, nadpłata zostaje rozliczona na Twoim koncie płatnika do końca roku, w którym upływa termin złożenia zeznania.
+            uses: []
+            basis: art. 81 ust. 2i, 2m–2qa i 2s ustawy o świadczeniach opieki zdrowotnej
+          - text: Według ZUS rozliczenie składasz, jeżeli w roku, którego ono dotyczy, choćby przez jeden dzień podlegałeś ubezpieczeniu zdrowotnemu z tytułu działalności, także wtedy, gdy w tym roku zawiesiłeś albo zakończyłeś działalność. Rozliczenia nie składasz, jeżeli działalność była zawieszona przez cały ten rok. Na skali podatkowej i podatku liniowym liczy się rok składkowy, więc według ZUS rozliczenie za poprzedni rok składasz także wtedy, gdy podlegałeś ubezpieczeniu tylko w styczniu roku następnego (na przykład wznowiłeś albo rozpocząłeś działalność w styczniu).
+            uses: []
+            basis: art. 81 ust. 2, 2ka i 2i ustawy o świadczeniach opieki zdrowotnej; komunikat ZUS „Roczne rozliczenie składki zdrowotnej za 2025 r.” i ZUS FAQ „Zmiany od 2022 r.”
+          - text: Ta zasada nie opisuje korekty rozliczenia rocznego ani rozliczenia przy zmianie formy opodatkowania w trakcie roku (poza tym, że dane wykazujesz odrębnie dla każdej formy), a także rozliczenia osób, które nie stosują skali podatkowej, podatku liniowego ani ryczałtu od przychodów ewidencjonowanych.
+            uses: []
+            basis: art. 81 ust. 2r i 2y ustawy o świadczeniach opieki zdrowotnej
+      note: >-
+        Kroki opisują brzmienie z tekstu jednolitego ustawy o świadczeniach opieki zdrowotnej (Dz.U. 2025 poz. 1461).
+        Data początku obowiązywania (2025-01-01) to dzień wejścia w życie ustawy z 6 grudnia 2024 r. (Dz.U. 2024
+        poz. 1915), która nadała obecne brzmienie art. 81 ust. 2 zdanie pierwsze; dla pozostałych przepisów tej daty
+        źródło nie potwierdza. Wcześniejszych wersji nie wprowadzono. Komunikaty i poradnik ZUS potwierdzają tylko
+        część kroków, a żadne źródło poza nimi nie podaje całej zasady, więc wersja nie ma drugiego niezależnego dowodu.
+      sources:
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (rok składkowy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2
+          quote: "Podstawa wymiaru składki w nowej wysokości obowiązuje od 1 lutego danego roku do 31 stycznia roku następnego, zwanego dalej „rokiem składkowym”."
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (wejście w życie art. 81 ust. 2 zdanie pierwsze)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2, odnośnik 52
+          quote: "która weszła w życie z dniem 1 stycznia 2025 r."
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (ryczałt, rok kalendarzowy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2e pkt 1
+          quote: "iloczyn liczby miesięcy w roku kalendarzowym podlegania ubezpieczeniu zdrowotnemu"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (nadpłata)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2i
+          quote: "suma wpłaconych za poszczególne miesiące roku składkowego albo roku kalendarzowego"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (niedopłata)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2j
+          quote: "a sumą składek na ubezpieczenie zdrowotne wynikającą ze złożonych dokumentów za poszczególne miesiące roku składkowego albo roku kalendarzowego"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (dokument z rozliczeniem rocznym)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2k i 2ka
+          quote: "przekazuje roczne rozliczenie składek w dokumencie rozliczeniowym, o którym mowa w ust. 2k"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (termin dopłaty)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2l
+          quote: "Dopłata, o której mowa w ust. 2j, następuje w terminie płatności składek za miesiąc, o którym mowa w ust. 2k."
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (wniosek o zwrot)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2m–2o
+          quote: "Wniosek, o którym mowa w ust. 2m, złożony po terminie pozostawia się bez rozpoznania."
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (rozliczenie nadpłaty bez wniosku)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2qa
+          quote: "kwota zwrotu podlega rozliczeniu na koncie płatnika składek do końca roku, w którym upływa termin na złożenie zeznania"
+        - title: ZUS, Roczne rozliczenie składki zdrowotnej za 2025 r. (dokumenty)
+          url: https://www.zus.pl/-/roczne-rozliczenie-sk%C5%82adki-zdrowotnej-za-2025-r.
+          quote: "W polach tych bloków przedsiębiorca powinien wykazać dane do wyliczenia rocznej składki odrębnie dla każdej formy opodatkowania (skala podatkowa, podatek liniowy, ryczałt od przychodów ewidencjonowanych)."
+          as_of: 2026-11-26
+        - title: ZUS, Roczne rozliczenie składki zdrowotnej za 2025 r. (DRA albo RCA)
+          url: https://www.zus.pl/-/roczne-rozliczenie-sk%C5%82adki-zdrowotnej-za-2025-r.
+          quote: "ZUS RCA – jeśli opłaca składki za siebie oraz za inne osoby (np. pracowników, zleceniobiorców)."
+          as_of: 2026-11-26
+        - title: ZUS, Roczne rozliczenie składki zdrowotnej za 2025 r. (kiedy rozliczenia nie ma)
+          url: https://www.zus.pl/-/roczne-rozliczenie-sk%C5%82adki-zdrowotnej-za-2025-r.
+          quote: "Osoby, które miały zawieszoną działalność przez cały rok 2025, nie muszą składać rocznego rozliczenia składki zdrowotnej. Wyjątkiem jest sytuacja, gdy działalność została wznowiona w styczniu 2026 r., a przedsiębiorca rozlicza się na zasadach ogólnych."
+          as_of: 2026-11-26
+        - title: ZUS, FAQ „Zmiany od 2022 r.” (rok składkowy w rozliczeniu rocznym na zasadach ogólnych)
+          url: https://www.zus.pl/en/o-zus/o-nas/programy-transformacji-cyfrowej-zus/zmiany-od-2022-r./faq
+          quote: "Rozliczenie roczne za rok 2023 obejmuje okres roku składkowego, który trwa od 1 lutego 2023 do 31 stycznia 2024. Obowiązek jego złożenia dotyczy zatem tych przedsiębiorców, którzy podlegali ubezpieczeniu zdrowotnemu w tym roku składkowym choćby przez 1 dzień."
+          as_of: 2026-11-26
+        - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (rozliczenie roczne)
+          url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
+          quote: "Kwotę dopłaty składek wykazujesz w dokumentach rozliczeniowych, które składasz za kwiecień następnego roku"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: schemat.zus_dra
+  name: Wzór deklaracji rozliczeniowej ZUS DRA
+  kind: value
+  versions:
+    - valid_from: 2026-05-01
+      value:
+        form: ZUS DRA
+        legal_act: Dz.U. 2026 poz. 518
+      note: >-
+        Wzór określa załącznik nr 16 do rozporządzenia Ministra Rodziny, Pracy i Polityki Społecznej z 9 kwietnia 2026 r.
+        (Dz.U. 2026 poz. 518); ten sam wzór stosuje się do deklaracji korygującej. Okres obowiązywania liczy się według dnia
+        złożenia dokumentu: od 1 maja 2026 r. stosuje się nowy wzór także do dokumentów za okresy wcześniejsze (§ 6),
+        a 30 kwietnia 2026 r. stosowało się przejściowo wzór z załącznika nr 26 (§ 4 ust. 2). ZUS podaje, że wzór
+        obowiązuje od rozliczeń za kwiecień 2026 r. (aktualizacja formularza 30 kwietnia 2026 r.), a według ZUS rozliczenie
+        za kwiecień złożone na starym wzorze wymaga korekty; nowe wzory były w programie Płatnik od 24 kwietnia 2026 r.
+        i według ZUS można było na nich przekazać rozliczenie za kwiecień przed 1 maja. Według rozporządzenia do
+        29 kwietnia 2026 r. obowiązywało rozporządzenie z 20 grudnia 2020 r. (uchylone w § 7), a 30 kwietnia 2026 r.
+        załącznik nr 26 (§ 4 ust. 2), więc dla deklaracji za kwiecień złożonej przed 1 maja 2026 r. stanowisko ZUS
+        i brzmienie rozporządzenia się różnią (otwarte pytanie do eksperta). Wzór nie ma osobnego numeru wersji. Wersji sprzed 1 maja 2026 r.
+        nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 518, rozporządzenie MRPiPS z 9 kwietnia 2026 r. w sprawie wzorów dokumentów ubezpieczeniowych (wzór ZUS DRA)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/518/text.pdf
+          article: § 1 ust. 1 pkt 16 i ust. 3
+          confirms: [form]
+          quote: "deklaracja rozliczeniowa – o symbolu ZUS DRA, stanowiąca załącznik nr 16 do rozporządzenia"
+        - title: Dz.U. 2026 poz. 518 (numer pozycji w Dzienniku Ustaw)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/518/text.pdf
+          confirms: [legal_act]
+          quote: "DZIENNIK USTAW RZECZYPOSPOLITEJ POLSKIEJ Warszawa, dnia 15 kwietnia 2026 r. Poz. 518"
+        - title: Dz.U. 2026 poz. 518 (wejście w życie wzoru 1 maja 2026 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/518/text.pdf
+          article: § 8
+          confirms: [period]
+          quote: "z wyjątkiem § 1 ust. 1 pkt 12 i 16 oraz ust. 3 i § 3 ust. 2, które wchodzą w życie z dniem 1 maja 2026 r."
+        - title: Dz.U. 2026 poz. 518 (wzór przejściowy do 30 kwietnia 2026 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/518/text.pdf
+          article: § 4 ust. 2
+          quote: "W okresie od dnia wejścia w życie rozporządzenia do dnia 30 kwietnia 2026 r. w przypadku przekazywania deklaracji rozliczeniowej – o symbolu ZUS DRA, stosuje się dokument, którego wzór stanowi załącznik nr 26 do rozporządzenia."
+        - title: Dz.U. 2026 poz. 518 (dokumenty za okresy wcześniejsze)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/518/text.pdf
+          article: § 6
+          quote: "stosuje się wzory dokumentów w brzmieniu nadanym niniejszym rozporządzeniem, obowiązujące w dniu składania tych dokumentów"
+        - title: ZUS, Od 1 maja 2026 r. obowiązują nowe wzory formularzy ZUS DRA i ZUS RCA (data)
+          url: https://www.zus.pl/-/od-1-maja-2026-r.-obowi%C4%85zuj%C4%85-nowe-wzory-formularzy-zus-dra-i-zus-rca
+          confirms: [form, period]
+          quote: "na nowych wzorach formularzy ZUS DRA i/ lub ZUS RCA. Począwszy od rozliczenia za kwiecień 2026 r., tj. od 1 maja 2026 r. obowiązują nowe wzory formularzy"
+          as_of: 2026-11-26
+        - title: ZUS, Od 1 maja 2026 r. obowiązują nowe wzory formularzy ZUS DRA i ZUS RCA (podstawa prawna)
+          url: https://www.zus.pl/-/od-1-maja-2026-r.-obowi%C4%85zuj%C4%85-nowe-wzory-formularzy-zus-dra-i-zus-rca
+          confirms: [legal_act]
+          quote: "(D.U. z 2026 r. poz. 518)"
+          as_of: 2026-11-26
+        - title: ZUS, Od 1 maja 2026 r. obowiązują nowe wzory formularzy ZUS DRA i ZUS RCA (rozliczenie na starym wzorze)
+          url: https://www.zus.pl/-/od-1-maja-2026-r.-obowi%C4%85zuj%C4%85-nowe-wzory-formularzy-zus-dra-i-zus-rca
+          quote: "Rozliczenie składek za kwiecień 2026 r. przekazane na „starych” formularzach będą wymagały skorygowania."
+          as_of: 2026-11-26
+        - title: ZUS, Formularz ZUS DRA (aktualizacja formularza)
+          url: https://www.zus.pl/wzory-formularzy/firmy/dokumenty-zgloszeniowe-i-rozliczeniowe/-/asset_publisher/7uG0nTlZ0aFc/content/dra-deklaracja-rozliczeniowa
+          quote: "Aktualizacja formularza 30 kwietnia 2026 r. Obowiązuje od rozliczeń za kwiecień 2026 r."
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue_scope: edge_case
+        open_issue: >-
+          Według rozporządzenia Dz.U. 2026 poz. 518 do 29 kwietnia 2026 r. obowiązywały wzory z rozporządzenia
+          z 20 grudnia 2020 r. (uchylonego w § 7), a 30 kwietnia 2026 r. wzór z załącznika nr 26 (§ 4 ust. 2). ZUS podaje,
+          że nowe wzory były w programie Płatnik od 24 kwietnia, że rozliczenie za kwiecień 2026 r. można było przekazać
+          na nich przed 1 maja i że rozliczenie na starych formularzach wymaga korekty. Który wzór stosuje się
+          do deklaracji za kwiecień 2026 r. złożonej przed 1 maja 2026 r.? Nie dotyczy wartości ani okresu tej wersji. Pytanie do eksperta:
+          docs/pytania-do-eksperta.md, P40.
