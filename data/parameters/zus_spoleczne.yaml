@@ -65,6 +65,24 @@
           quote: "minimalna podstawa dla „dużego ZUS” (60% prognozy) wynosi 5652 zł"
           as_of: 2026-11-27
       verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
+    - valid_from: 2027-01-01
+      valid_to: 2027-12-31
+      value: 6019.80
+      note: >-
+        60% prognozowanego przeciętnego wynagrodzenia na 2027 r. (zus.prognozowane_wynagrodzenie, 10 033 zł
+        z obwieszczenia M.P. 2026 poz. 1098). Kwota wynika z przepisu i z tego obwieszczenia; żaden dokument
+        nie podaje jej jeszcze wprost. Ustawa budżetowa na rok 2027 nie jest jeszcze uchwalona. Komunikat ZUS
+        o wysokości składek w 2027 r. będzie drugim źródłem.
+      sources:
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 18 ust. 8
+          quote: "nie niższa jednak niż 60 % prognozowanego przeciętnego wynagrodzenia miesięcznego"
+        - title: M.P. 2026 poz. 1098, obwieszczenie MRPiPS z 3 listopada 2026 r.
+          url: https://api.sejm.gov.pl/eli/acts/MP/2026/1098/text.pdf
+          article: art. 19 ust. 10 ustawy o systemie ubezpieczeń społecznych
+          quote: "przyjęta do jej ustalenia kwota prognozowanego przeciętnego wynagrodzenia wynosi 10 033 zł"
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: zus.limit_rocznej_podstawy
   name: Roczny limit podstawy wymiaru składek emerytalnej i rentowej
@@ -343,3 +361,24 @@
           article: § 1
           quote: "Od dnia 1 stycznia 2026 r. ustala się minimalne wynagrodzenie za pracę w wysokości 4806 zł."
       verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+    - valid_from: 2027-01-01
+      valid_to: 2027-12-31
+      value: 1485.00
+      note: >-
+        30% minimalnego wynagrodzenia na 2027 r. (wynagrodzenie.minimalne, 4950 zł). Kwota wynika z przepisu
+        i z rozporządzenia o minimalnym wynagrodzeniu; żaden dokument nie podaje jej jeszcze wprost. Komunikat
+        ZUS o wysokości składek w 2027 r. będzie drugim źródłem. Podstawa preferencyjna dotyczy składek
+        emerytalnej i rentowej (a przez nie chorobowej i wypadkowej) przez 24 miesiące kalendarzowe: od
+        rozpoczęcia działalności (art. 18a ust. 1), a po uldze na start albo po rezygnacji z niej od dnia objęcia
+        ubezpieczeniami społecznymi (art. 18aa). Nie przysługuje osobom wymienionym w art. 18a ust. 2 ustawy
+        o systemie ubezpieczeń społecznych.
+      sources:
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 18a ust. 1
+          quote: "w okresie pierwszych 24 miesięcy kalendarzowych od dnia rozpoczęcia wykonywania działalności gospodarczej stanowi zadeklarowana kwota, nieniższa jednak niż 30 % kwoty minimalnego wynagrodzenia"
+        - title: Dz.U. 2026 poz. 1213, rozporządzenie w sprawie minimalnego wynagrodzenia w 2027 r.
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1213/text.pdf
+          article: § 1
+          quote: "Od dnia 1 stycznia 2027 r. ustala się minimalne wynagrodzenie za pracę w wysokości 4950 zł."
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
