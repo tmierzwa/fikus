@@ -336,33 +336,29 @@
   unit: "% podstawy"
   applies_to: {tax_form: [liniowy]}
   versions:
-    - valid_from: 2020-01-01
+    - valid_from: 2024-01-01
       value: 19
       note: >-
-        Teksty jednolite poz. 1387 (przepisy ogłoszone przed 3 lipca 2019 r.), poz. 1426 (przed 24 lipca 2020 r.)
-        i poz. 592 (stan prawny na 1 kwietnia 2026 r.) mają to samo brzmienie art. 30c ust. 1, więc potwierdzają,
-        że ta stawka obowiązywała 1 stycznia 2020 r. (nie że wtedy zaczęła obowiązywać).
+        Data początku obowiązywania (2024-01-01) to data odcięcia danych, a nie dzień wejścia stawki w życie.
+        Teksty jednolite Dz.U. 2024 poz. 226 (przepisy ogłoszone przed 6 lutego 2024 r.) i Dz.U. 2026 poz. 592 (stan prawny na 1 kwietnia
+        2026 r.) mają to samo brzmienie art. 30c ust. 1.
+        Korekta z 27 listopada 2026 r.: zmieniona data początku obowiązywania.
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
           article: art. 30c ust. 1
           quote: "z zastrzeżeniem art. 29 i art. 30, wynosi 19 % podstawy obliczenia podatku"
-        - title: Dz.U. 2019 poz. 1387, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dla daty początku obowiązywania)
-          url: https://api.sejm.gov.pl/eli/acts/DU/2019/1387/text.pdf
+        - title: Dz.U. 2024 poz. 226, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (stawka w dniu odcięcia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/226/text.pdf
           article: art. 30c ust. 1
           quote: "z zastrzeżeniem art. 29 i art. 30, wynosi 19 % podstawy obliczenia podatku"
-          as_of: 2019-07-02
-        - title: Dz.U. 2020 poz. 1426, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dla daty początku obowiązywania)
-          url: https://api.sejm.gov.pl/eli/acts/DU/2020/1426/text.pdf
-          article: art. 30c ust. 1
-          quote: "z zastrzeżeniem art. 29 i art. 30, wynosi 19 % podstawy obliczenia podatku"
-          as_of: 2020-07-23
+          as_of: 2024-02-05
         - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym, aktualizacja 24.06.2026
           url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
           kind: control
           quote: "Podatek wynosi 19% dochodu bez względu na to, jak wysoki dochód osiągasz"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification: {checked_at: 2026-11-27}
 
 - id: podatek.liniowy.limit_skladki_zdrowotnej
   name: Roczny limit składki zdrowotnej odliczanej od dochodu albo zaliczanej do kosztów przy podatku liniowym
