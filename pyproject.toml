@@ -13,7 +13,7 @@ classifiers = [
     "Programming Language :: Python :: 3 :: Only",
     "Topic :: Office/Business :: Financial :: Accounting",
 ]
-version = "0.4.0"
+version = "0.4.5"
 description = "Wersjonowane parametry przepisów dla JDG w Polsce, udostępniane przez MCP"
 license = "Apache-2.0 AND CC-BY-4.0"
 requires-python = ">=3.11"

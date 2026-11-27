@@ -4,7 +4,7 @@ title: "Fikus: parametry przepisów dla JDG w Polsce"
 type: software
 authors:
   - name: "Autorzy projektu Fikus"
-version: 0.4.0
+version: 0.4.5
 date-released: 2026-11-27
 repository-code: "https://github.com/tmierzwa/fikus"
 license:
