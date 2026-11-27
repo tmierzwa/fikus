@@ -16,7 +16,7 @@
           - text: Od 1 lutego do 31 marca 2026 r. możesz zamiast faktur ustrukturyzowanych wystawiać faktury elektroniczne lub papierowe, jeżeli łączna wartość Twojej sprzedaży razem z podatkiem nie przekroczyła w 2024 r. 200 000 000 zł.
             uses: []
             basis: art. 145l ustawy o podatku od towarów i usług
-          - text: Od 1 kwietnia do 31 grudnia 2026 r. możesz wystawiać faktury elektroniczne lub papierowe, jeżeli łączna wartość sprzedaży razem z podatkiem udokumentowana tymi fakturami wystawionymi w danym miesiącu jest mniejsza lub równa 10 000 zł. Prawo to tracisz począwszy od faktury, którą przekroczono tę wartość. Czy po miesiącu, w którym przekroczono tę wartość, prawo wraca w kolejnym miesiącu, jest niewyjaśnione (otwarte pytanie do eksperta).
+          - text: Od 1 kwietnia do 31 grudnia 2026 r. możesz wystawiać faktury elektroniczne lub papierowe, jeżeli łączna wartość sprzedaży razem z podatkiem udokumentowana tymi fakturami wystawionymi w danym miesiącu jest mniejsza lub równa 10 000 zł. Prawo to tracisz począwszy od faktury, którą przekroczono tę wartość, i od tej faktury wystawiasz w KSeF wszystkie kolejne faktury objęte obowiązkiem (wyłączenia z art. 106ga ust. 2 i faktury przy kasach rejestrujących z art. 145n nadal obowiązują). Prawo nie wraca w następnych miesiącach, nawet gdy wartość sprzedaży udokumentowana fakturami jest w nich niższa (tak wyjaśnia MF).
             uses: []
             basis: art. 145m ust. 1 i 2 ustawy o podatku od towarów i usług
           - text: Od 1 lutego do 31 grudnia 2026 r. możesz też wystawiać faktury elektroniczne lub papierowe przy zastosowaniu kas rejestrujących oraz paragony fiskalne uznane za faktury (art. 106e ust. 5 pkt 3).
@@ -45,7 +45,12 @@
         u których wartość sprzedaży dokumentowana fakturami za okresy miesięczne nie przekracza tej kwoty, do końca 2026 r.
         nie mają obowiązku wystawiania faktur w KSeF, a w punkcie o przepisach epizodycznych prawie dosłownie art. 145m ust. 1
         (mogą wystawiać faktury elektroniczne lub papierowe). Strona pomija art. 145m ust. 2 (utratę prawa od faktury,
-        którą przekroczono wartość). Krok opiera się na brzmieniu ustawy; różnicę opisuje pytanie P57.
+        którą przekroczono wartość). Wyjaśnienia MF na ksef.podatki.gov.pl („Co warto wiedzieć przed startem II etapu
+        wdrożenia KSeF” z 31.03.2026 i „Najczęstsze pytania” z 15.04.2026, zmienione 29.04.2026) podają wprost, że po przekroczeniu limitu
+        obowiązek KSeF obejmuje fakturę, którą przekroczono limit, i wszystkie kolejne, a późniejsze nieprzekroczenie
+        limitu nie ma znaczenia. Tak samo opisuje to uzasadnienie projektu (druk sejmowy nr 1407). Poprawka 2026-11-27:
+        krok o art. 145m mówi teraz, że prawo nie wraca w kolejnych miesiącach; wcześniej opisywał to jako niewyjaśnione
+        (pytanie P57, rozstrzygnięte bez eksperta).
       sources:
         - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (obowiązek)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
@@ -103,16 +108,19 @@
           url: https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/podstawy-prawne-oraz-kluczowe-terminy/
           quote: "od 1 lutego 2026 r. dla przedsiębiorców, których wartość sprzedaży (wraz z kwotą podatku) przekroczyła w 2024 r. 200 mln zł, od 1 kwietnia 2026 r. dla pozostałych przedsiębiorców"
           as_of: 2026-11-26
+        - title: Komunikat MF, ksef.podatki.gov.pl, Co warto wiedzieć przed startem II etapu wdrożenia Krajowego Systemu e-Faktur, 31.03.2026 (prawo nie wraca po przekroczeniu limitu)
+          url: https://ksef.podatki.gov.pl/wyjasnienia/co-warto-wiedziec-przed-startem-ii-etapu-wdrozenia-krajowego-systemu-e-faktur/
+          article: art. 145m ust. 1 i 2 ustawy o VAT
+          quote: "Po przekroczeniu limitu nie wracasz już do poprzednich zasad, nawet jeśli w kolejnych miesiącach wartość sprzedaży dokumentowana fakturami będzie niższa."
+          as_of: 2026-11-27
+        - title: Komunikat MF, ksef.podatki.gov.pl, Najczęstsze pytania, pytanie 14, 15.04.2026, zmiana 29.04.2026 (przekroczenie limitu w maju, czerwiec poniżej limitu)
+          url: https://ksef.podatki.gov.pl/ksef-news/najczestsze-pytania/
+          article: art. 145m ust. 1 i 2 ustawy o VAT
+          quote: "W momencie przekroczenia limitu w maju, obowiązek wystawiania faktur w KSeF powstaje od faktury, którą limit został przekroczony, oraz dla wszystkich kolejnych faktur. Późniejsze nieprzekroczenie limitu (np. w czerwcu) nie ma już znaczenia."
+          as_of: 2026-11-27
       verification:
-        checked_at: 2026-11-26
-        agent_check: 2026-11-26
-        open_issue: >-
-          Art. 145m ust. 2 mówi, że podatnik „traci prawo do wystawiania faktur elektronicznych oraz faktur w postaci
-          papierowej począwszy od faktury, którą przekroczono wartość”, a ust. 1 liczy wartość faktur „wystawionymi
-          w danym miesiącu”. Przepis nie mówi, czy prawo wraca w kolejnym miesiącu. Uzasadnienie projektu (druk nr 1407)
-          podaje, że po przekroczeniu podatnik nie może ponownie skorzystać z tej możliwości, ale uzasadnienie nie jest
-          źródłem prawa. Strona MF „Zakres obowiązkowego KSeF” opisuje próg raz jako brak obowiązku do końca 2026 r., a raz
-          prawie dosłownie jak art. 145m ust. 1, i pomija ust. 2 (utratę prawa). Pytanie do eksperta: docs/pytania-do-eksperta.md, P57.
+        checked_at: 2026-11-27
+        agent_check: 2026-11-27
 
     - valid_from: 2027-01-01
       value:

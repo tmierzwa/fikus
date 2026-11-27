@@ -851,7 +851,16 @@ przypadku brzegowego, średnią.
   z art. 44 ust. 10 obejmuje zaliczki kwartalne przy podatku liniowym (ust. 3h), skoro przepis wymienia ust. 1 pkt 1,
   ale nie ust. 3h?
 
-## P57. Faktury poza KSeF do 10 000 zł miesięcznie w 2026 r.: czy prawo wraca w kolejnym miesiącu
+## P57. Faktury poza KSeF do 10 000 zł miesięcznie w 2026 r.: czy prawo wraca w kolejnym miesiącu (rozstrzygnięte 2026-11-27, bez eksperta)
+
+- Rozstrzygnięcie: wyjaśnienia MF na ksef.podatki.gov.pl podają wprost, że prawo nie wraca. Wyjaśnienie „Co warto
+  wiedzieć przed startem II etapu wdrożenia Krajowego Systemu e-Faktur” (31.03.2026): „Po przekroczeniu limitu nie wracasz
+  już do poprzednich zasad, nawet jeśli w kolejnych miesiącach wartość sprzedaży dokumentowana fakturami będzie niższa.”
+  „Najczęstsze pytania”, pytanie 14 (strona opublikowana 15.04.2026, zmieniona 29.04.2026): obowiązek „powstaje od faktury, którą limit został przekroczony, oraz dla
+  wszystkich kolejnych faktur. Późniejsze nieprzekroczenie limitu (np. w czerwcu) nie ma już znaczenia.” Zgadza się to
+  z art. 145m ust. 2 i z uzasadnieniem projektu. Strona „Zakres obowiązkowego KSeF” nadal pomija ust. 2, a komunikat
+  z 26.03.2026 nie mówi nic o przekroczeniu limitu; oba upraszczają, ale nie przeczą wyjaśnieniom. Krok zasady poprawiony,
+  P57 usunięty z otwartych pytań. Opis poniżej to stan sprzed rozstrzygnięcia.
 
 - Wpis: `zasada.ksef_obowiazek` (2026-02-01 – 2026-12-31), krok o art. 145m.
 - Zgłoszone: 2026-11-26.
