@@ -1057,3 +1057,37 @@ przypadku brzegowego, średnią.
     obliczony (obliczone) zgodnie z art. 30ca ust. 4 ustawy”. Objaśnienia nie mówią, czy odliczenie z poz. 19 stosuje się
     przed wskaźnikiem z ust. 4, czy po nim; kolejność wynika tylko z układu pozycji. Na lata 2025 i 2026 MF nie podaje
     wariantu tego formularza.
+
+## P70. Schemat KEDU 5.7: drugi dokument z przestrzenią nazw, wersją, nazwą pliku i datą początku obowiązywania
+
+- Wpis: `schemat.kedu` (od 2026-04-25).
+- Zgłoszone: 2026-11-27.
+- Specyfikacja ZUS „EWD Elektroniczna Wymiana Dokumentów. Specyfikacja wejścia – wyjścia”, wersja 2.27, podaje przestrzeń
+  nazw `http://www.zus.pl/2026/KEDU_5_7` i nową wersję schematu (kedu_5_7.xsd) „w związku ze zmianą struktury” dokumentów
+  ZUS DRA i ZUS RCA. Wersję 5.7 podaje tylko pośrednio, przez te nazwy (jej atrybut `wersja_schematu` ma inną wartość),
+  a daty, od której obowiązuje schemat, nie podaje.
+- Strona ZUS w BIP „Wymagania dla oprogramowania interfejsowego – dokumenty ubezpieczeniowe” podaje plik schematu dla
+  specyfikacji 2.27 i datę 25 kwietnia 2026 r., bez nazwy kedu_5_7.xsd. Plik XSD spod tego adresu ma w atrybutach
+  przestrzeń nazw KEDU_5_7 i wersję 5.7.0, ale nie ma w danych cytatu i nie podaje nazwy pliku ani daty.
+- Brakuje drugiego dokumentu z cytatem dla każdej z tych danych: przestrzeń nazw i nazwę pliku podaje z cytatem tylko
+  specyfikacja 2.27, wersję 5.7 wprost tylko plik XSD, a datę tylko strona w BIP. To pytanie o dokument, a nie
+  o interpretację przepisów.
+- Pytanie: czy od 25 kwietnia 2026 r. dokumenty ubezpieczeniowe przekazuje się do ZUS w schemacie KEDU w wersji 5.7
+  (kedu_5_7.xsd, przestrzeń nazw `http://www.zus.pl/2026/KEDU_5_7`)? Czy jest komunikat ZUS, informacja dla płatników
+  albo dokumentacja programu Płatnik, która podaje wprost wersję, nazwę pliku, przestrzeń nazw i datę?
+
+## P71. Kody tytułu ubezpieczenia z rozporządzenia Dz.U. 2026 poz. 518: drugi dokument z datą początku obowiązywania wykazu
+
+- Wpis: `zus.kod.tytul_ubezpieczenia` (od 2026-04-30).
+- Zgłoszone: 2026-11-27.
+- Rozporządzenie MRPiPS z 9 kwietnia 2026 r. w sprawie wzorów dokumentów ubezpieczeniowych (Dz.U. 2026 poz. 518)
+  podaje wykaz kodów w załączniku nr 24 i wchodzi w życie „po upływie 14 dni od dnia ogłoszenia”, czyli 30 kwietnia 2026 r.
+  Do dokumentów za okresy sprzed tego dnia stosuje się kody z rozporządzenia z 20 grudnia 2020 r. (§ 5).
+- Poza rozporządzeniem wykaz zgodny z nim podaje tylko portal pit.pl (źródło kontrolne), bez daty obowiązywania i bez
+  pozycji rozporządzenia w Dz.U. Poradnik ZUS „Ogólne zasady wypełniania i korygowania dokumentów ubezpieczeniowych”
+  (wydanie z sierpnia 2023 r.) ma wykaz ze stanem na styczeń 2022 r., bez kodów 05 14, 05 74 i 05 94. Specyfikacja ZUS
+  dla oprogramowania interfejsowego (wersja 2.27) nie zawiera wykazu kodów.
+- Brak drugiego dokumentu, który sam podaje, od kiedy obowiązuje wykaz z 2026 r. To pytanie o dokument, a nie
+  o interpretację przepisów.
+- Pytanie: czy wykaz kodów tytułu ubezpieczenia z załącznika nr 24 do rozporządzenia Dz.U. 2026 poz. 518 stosuje się
+  od 30 kwietnia 2026 r.? Czy jest aktualny poradnik albo komunikat ZUS, który podaje ten wykaz i datę wprost?
