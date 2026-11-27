@@ -1,0 +1,624 @@
+# Zeznania roczne PIT: schematy e-Deklaracji i podpis danymi autoryzującymi.
+# Wersja schematu zeznania obowiązuje za rok podatkowy, za który składa się zeznanie (od 1 stycznia tego roku),
+# a nie według daty wysłania. Narzędzie get_schema szuka parametru schemat.<symbol małymi literami, łącznik jako _>.
+# Wzory elektroniczne publikuje Ministerstwo Finansów w Centralnym Repozytorium Wzorów Dokumentów Elektronicznych
+# (CRWDE, ePUAP). Dla tego samego wariantu i roku MF publikuje czasem kilka wzorów z kolejnymi wersjami schematu;
+# wersja podaje wzór opublikowany najpóźniej, a wcześniejsze wymienia w notatce (otwarte pytanie P41).
+
+- id: schemat.pit_36
+  name: Schemat e-Deklaracji PIT-36 (zeznanie roczne na skali podatkowej)
+  kind: value
+  applies_to: {tax_form: [skala]}
+  versions:
+    - valid_from: 2025-01-01
+      valid_to: 2025-12-31
+      value:
+        form: PIT-36
+        variant: 32
+        system_code: PIT-36 (32)
+        schema_version: 2-0E
+        xsd_url: http://crd.gov.pl/wzor/2026/09/11/14368/schemat.xsd
+      note: >-
+        Okres obowiązywania to rok podatkowy 2025 (zeznanie składane od 15 lutego 2026 r.). Wyróżnik wzoru
+        2026/09/11/14368 podaje, że wzór stosuje się do dochodów i strat od 1 stycznia 2025 r. Za ten sam rok
+        i w tym samym wariancie MF opublikowało wcześniej wzór 2025/09/24/13871 z wersją schematu 1-0E
+        (http://crd.gov.pl/wzor/2025/09/24/13871/schemat.xsd). Według wyróżników wzór 13871 podpisano 24 września
+        2025 r., a wzór 14368 (wersja 2-0E) 11 września 2026 r.; oba mają ważność od 24 lipca 2025 r. Pliki XSD obu
+        wzorów różnią się (porównanie plików poleceniem diff) tylko przestrzenią nazw wzoru (adres wzoru), wersją
+        schematu i opisem jednego pola (numery pozycji w opisie obliczonego podatku: 293 i 294 zamiast 283 i 284). Który z nich system e-Deklaracji przyjmuje teraz (na przykład przy korekcie), żadne
+        źródło nie podaje (otwarte pytanie). Wyróżnik podaje tylko początek okresu, a strony MF wariant, nie wersję
+        schematu, więc okresu tej wersji nie potwierdza żaden dokument.
+        Kod systemowy i wersja schematu są stałymi wartościami atrybutów kodSystemowy i wersjaSchemy w pliku XSD,
+        więc skrypt cytatów ich nie sprawdzi; nie podaje ich też żaden inny dokument. Adres schematu pochodzi
+        z wyróżnika wzoru (tak jak w rejestrze, z http). Strona MF z formularzami podaje wariant 32 dla zeznań za 2025
+        i 2026 r.
+      sources:
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2026/09/11/14368, twórca wzoru Ministerstwo Finansów
+          url: https://crd.gov.pl/wzor/2026/09/11/14368/wyroznik.xml
+          confirms: [form, variant]
+          quote: "PIT-36(32) ZEZNANIE O WYSOKOŚCI OSIĄGNIĘTEGO DOCHODU (PONIESIONEJ STRATY) ZA ROK PODATKOWY - wzór stosuje się do uzyskanych dochodów lub poniesionych strat od dnia 1 stycznia 2025 r."
+          article: art. 45b ust. 1 pkt 5 ustawy o PIT
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2026/09/11/14368 (adres schematu)
+          url: https://crd.gov.pl/wzor/2026/09/11/14368/wyroznik.xml
+          confirms: [xsd_url]
+          quote: "http://crd.gov.pl/wzor/2026/09/11/14368/schemat.xsd"
+          as_of: 2026-11-26
+        - title: gov.pl (MF), Formularze podatkowe, PIT-36 (wariant dla lat podatkowych)
+          url: https://www.gov.pl/web/finanse/pit-36
+          confirms: [form, variant]
+          quote: "PIT-36 (32) za 2025 r. i za 2026 r."
+          article: art. 45b ust. 1 pkt 5 ustawy o PIT
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Formularze PIT (aktualny formularz)
+          url: https://podatki.gov.pl/podatki-firmowe/pit/formularze-pit
+          confirms: [form, variant]
+          quote: "Aktualny formularz PIT-36 (32)"
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), plik XSD wzoru 2026/09/11/14368 (kod systemowy „PIT-36 (32)” i wersja schematu „2-0E” są w atrybutach, więc nie da się ich zacytować)
+          url: https://crd.gov.pl/wzor/2026/09/11/14368/schemat.xsd
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wcześniejszego wzoru 2025/09/24/13871 za ten sam rok (wersja schematu 1-0E)
+          url: https://crd.gov.pl/wzor/2025/09/24/13871/wyroznik.xml
+          quote: "PIT-36(32) ZEZNANIE O WYSOKOŚCI OSIĄGNIĘTEGO DOCHODU (PONIESIONEJ STRATY) ZA ROK PODATKOWY - wzór stosuje się do uzyskanych dochodów lub poniesionych strat od dnia 1 stycznia 2025 r. - Wzór dokumentu elektronicznego może być stosowany po upływie dwóch tygodni od daty opublikowania."
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          P41: za 2025 r. MF opublikowało w CRWDE dwa wzory PIT-36(32) (wersje schematu 1-0E i 2-0E); źródła nie podają,
+          który z nich stosuje się teraz. Zob. docs/pytania-do-eksperta.md.
+    - valid_from: 2026-01-01
+      value:
+        form: PIT-36
+        variant: 32
+        system_code: PIT-36 (32)
+        schema_version: 3-1E
+        xsd_url: http://crd.gov.pl/wzor/2026/10/13/14405/schemat.xsd
+      note: >-
+        Okres obowiązywania zaczyna się od roku podatkowego 2026 (zeznanie składane od 15 lutego 2027 r.). Wyróżnik
+        wzoru 2026/10/13/14405 podaje, że wzór stosuje się do dochodów i strat od 1 stycznia 2026 r. Za ten sam rok
+        MF opublikowało wcześniej wzór 2026/09/16/14376 z wersją schematu 3-0E
+        (http://crd.gov.pl/wzor/2026/09/16/14376/schemat.xsd); wzór 14405 ma wersję 3-1E. Pliki XSD obu wzorów różnią
+        się (porównanie plików poleceniem diff) tylko przestrzenią nazw wzoru (adres wzoru), wersją schematu i jednym
+        warunkiem unikalności identyfikatora. Który z nich system
+        e-Deklaracji przyjmuje, żadne źródło nie podaje (otwarte pytanie). Kod systemowy i wersja schematu są stałymi
+        wartościami atrybutów w pliku XSD, więc skrypt cytatów ich nie sprawdzi; nie podaje ich też żaden inny dokument.
+        Adres schematu pochodzi z wyróżnika wzoru (z http).
+      sources:
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2026/10/13/14405, twórca wzoru Ministerstwo Finansów
+          url: https://crd.gov.pl/wzor/2026/10/13/14405/wyroznik.xml
+          confirms: [form, variant, period]
+          quote: "PIT-36(32) ZEZNANIE O WYSOKOŚCI OSIĄGNIĘTEGO DOCHODU (PONIESIONEJ STRATY) ZA ROK PODATKOWY - wzór stosuje się do uzyskanych dochodów lub poniesionych strat od dnia 1 stycznia 2026 r."
+          article: art. 45b ust. 1 pkt 5 ustawy o PIT
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2026/10/13/14405 (adres schematu)
+          url: https://crd.gov.pl/wzor/2026/10/13/14405/wyroznik.xml
+          confirms: [xsd_url]
+          quote: "http://crd.gov.pl/wzor/2026/10/13/14405/schemat.xsd"
+          as_of: 2026-11-26
+        - title: gov.pl (MF), Formularze podatkowe, PIT-36 (wariant dla lat podatkowych)
+          url: https://www.gov.pl/web/finanse/pit-36
+          confirms: [form, variant]
+          quote: "PIT-36 (32) za 2025 r. i za 2026 r."
+          article: art. 45b ust. 1 pkt 5 ustawy o PIT
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), plik XSD wzoru 2026/10/13/14405 (kod systemowy „PIT-36 (32)” i wersja schematu „3-1E” są w atrybutach, więc nie da się ich zacytować)
+          url: https://crd.gov.pl/wzor/2026/10/13/14405/schemat.xsd
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wcześniejszego wzoru 2026/09/16/14376 za ten sam rok (wersja schematu 3-0E)
+          url: https://crd.gov.pl/wzor/2026/09/16/14376/wyroznik.xml
+          quote: "PIT-36(32) ZEZNANIE O WYSOKOŚCI OSIĄGNIĘTEGO DOCHODU (PONIESIONEJ STRATY) ZA ROK PODATKOWY - wzór stosuje się do uzyskanych dochodów lub poniesionych strat od dnia 1 stycznia 2026 r."
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          P41: za 2026 r. MF opublikowało w CRWDE dwa wzory PIT-36(32) (wersje schematu 3-0E i 3-1E); źródła nie podają,
+          który z nich stosuje się przy składaniu zeznania. Zob. docs/pytania-do-eksperta.md.
+
+- id: schemat.pit_36l
+  name: Schemat e-Deklaracji PIT-36L (zeznanie roczne na podatku liniowym)
+  kind: value
+  applies_to: {tax_form: [liniowy]}
+  versions:
+    - valid_from: 2025-01-01
+      valid_to: 2025-12-31
+      value:
+        form: PIT-36L
+        variant: 21
+        system_code: PIT36L (21)
+        schema_version: 1-0E
+        xsd_url: http://crd.gov.pl/wzor/2025/09/25/13874/schemat.xsd
+      note: >-
+        Okres obowiązywania to rok podatkowy 2025. Wyróżnik wzoru 2025/09/25/13874 podaje, że wzór stosuje się do
+        dochodów i strat od 1 stycznia 2025 r.; innego wzoru PIT-36L za 2025 r. w CRWDE nie znaleziono. Wyróżnik podaje tylko początek okresu,
+        a strona MF wariant, nie wersję schematu, więc końca okresu tej wersji nie potwierdza żaden dokument. Kod systemowy
+        w pliku XSD to „PIT36L (21)”, bez łącznika, choć symbol formularza ma łącznik. Kod systemowy i wersja schematu
+        są stałymi wartościami atrybutów w pliku XSD, więc skrypt cytatów ich nie sprawdzi; nie podaje ich też żaden
+        inny dokument. Adres schematu pochodzi z wyróżnika wzoru (z http). Strona MF z formularzami podaje wariant 21
+        dla zeznań za 2025 i 2026 r.
+      sources:
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2025/09/25/13874, twórca wzoru Ministerstwo Finansów
+          url: https://crd.gov.pl/wzor/2025/09/25/13874/wyroznik.xml
+          confirms: [form, variant]
+          quote: "PIT-36L(21) ZEZNANIE O WYSOKOŚCI OSIĄGNIĘTEGO DOCHODU (PONIESIONEJ STRATY) ZA ROK PODATKOWY - wzór stosuje się do uzyskanych dochodów lub poniesionych strat od dnia 1 stycznia 2025 r."
+          article: art. 45b ust. 1 pkt 5 ustawy o PIT
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2025/09/25/13874 (adres schematu)
+          url: https://crd.gov.pl/wzor/2025/09/25/13874/wyroznik.xml
+          confirms: [xsd_url]
+          quote: "http://crd.gov.pl/wzor/2025/09/25/13874/schemat.xsd"
+          as_of: 2026-11-26
+        - title: gov.pl (MF), Formularze podatkowe, PIT-36L (wariant dla lat podatkowych)
+          url: https://www.gov.pl/web/finanse/pit-36l
+          confirms: [form, variant]
+          quote: "PIT-36L (21) za 2025 r. i za 2026 r."
+          article: art. 45b ust. 1 pkt 5 ustawy o PIT
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Formularze PIT (aktualny formularz)
+          url: https://podatki.gov.pl/podatki-firmowe/pit/formularze-pit
+          confirms: [form, variant]
+          quote: "Aktualny formularz PIT-36L (21)"
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), plik XSD wzoru 2025/09/25/13874 (kod systemowy „PIT36L (21)” i wersja schematu „1-0E” są w atrybutach, więc nie da się ich zacytować)
+          url: https://crd.gov.pl/wzor/2025/09/25/13874/schemat.xsd
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+    - valid_from: 2026-01-01
+      value:
+        form: PIT-36L
+        variant: 21
+        system_code: PIT36L (21)
+        schema_version: 2-0E
+        xsd_url: http://crd.gov.pl/wzor/2026/09/17/14379/schemat.xsd
+      note: >-
+        Okres obowiązywania zaczyna się od roku podatkowego 2026. Wyróżnik wzoru 2026/09/17/14379 podaje, że wzór
+        stosuje się do dochodów i strat od 1 stycznia 2026 r.; innego wzoru PIT-36L za 2026 r. w CRWDE nie znaleziono
+        (stan na 26 listopada 2026 r.). Kod systemowy w pliku XSD to „PIT36L (21)”, bez łącznika. Kod systemowy
+        i wersja schematu są stałymi wartościami atrybutów w pliku XSD, więc skrypt cytatów ich nie sprawdzi; nie
+        podaje ich też żaden inny dokument. Adres schematu pochodzi z wyróżnika wzoru (z http).
+      sources:
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2026/09/17/14379, twórca wzoru Ministerstwo Finansów
+          url: https://crd.gov.pl/wzor/2026/09/17/14379/wyroznik.xml
+          confirms: [form, variant, period]
+          quote: "PIT-36L(21) ZEZNANIE O WYSOKOŚCI OSIĄGNIĘTEGO DOCHODU (PONIESIONEJ STRATY) ZA ROK PODATKOWY - wzór stosuje się do uzyskanych dochodów lub poniesionych strat od dnia 1 stycznia 2026 r."
+          article: art. 45b ust. 1 pkt 5 ustawy o PIT
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2026/09/17/14379 (adres schematu)
+          url: https://crd.gov.pl/wzor/2026/09/17/14379/wyroznik.xml
+          confirms: [xsd_url]
+          quote: "http://crd.gov.pl/wzor/2026/09/17/14379/schemat.xsd"
+          as_of: 2026-11-26
+        - title: gov.pl (MF), Formularze podatkowe, PIT-36L (wariant dla lat podatkowych)
+          url: https://www.gov.pl/web/finanse/pit-36l
+          confirms: [form, variant]
+          quote: "PIT-36L (21) za 2025 r. i za 2026 r."
+          article: art. 45b ust. 1 pkt 5 ustawy o PIT
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), plik XSD wzoru 2026/09/17/14379 (kod systemowy „PIT36L (21)” i wersja schematu „2-0E” są w atrybutach, więc nie da się ich zacytować)
+          url: https://crd.gov.pl/wzor/2026/09/17/14379/schemat.xsd
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: schemat.pit_28
+  name: Schemat e-Deklaracji PIT-28 (zeznanie roczne na ryczałcie)
+  kind: value
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2025-01-01
+      valid_to: 2025-12-31
+      value:
+        form: PIT-28
+        variant: 27
+        system_code: PIT-28 (27)
+        schema_version: 1-1E
+        xsd_url: http://crd.gov.pl/wzor/2025/10/10/13916/schemat.xsd
+      note: >-
+        Okres obowiązywania to rok podatkowy 2025. Wyróżnik wzoru PIT-28 nie mówi, za który rok stosuje się wzór;
+        rok podają strona MF z formularzami i archiwum formularzy na podatki.gov.pl, a schemat XSD przyjmuje rok od
+        2025 (atrybut, więc nie da się go zacytować). Za ten sam rok i w tym samym wariancie MF opublikowało wcześniej
+        wzór 2025/09/11/13849 z wersją schematu 1-0E (http://crd.gov.pl/wzor/2025/09/11/13849/schemat.xsd); wzór 13916
+        ma wersję 1-1E. Pliki XSD obu wzorów różnią się (porównanie plików poleceniem diff) tylko przestrzenią nazw wzoru
+        (adres wzoru), wersją schematu, usunięciem dwóch warunków
+        „większe od zera” i najwcześniejszym dopuszczalnym rokiem w jednym polu (2020 zamiast 2018). Który z nich
+        system e-Deklaracji przyjmuje teraz, żadne źródło nie podaje (otwarte pytanie). Źródła podają rok dla wariantu,
+        nie dla wersji schematu, więc okresu tej wersji nie potwierdza żaden dokument. Kod systemowy i wersja schematu są stałymi wartościami
+        atrybutów w pliku XSD, więc skrypt cytatów ich nie sprawdzi; nie podaje ich też żaden inny dokument. Adres
+        schematu pochodzi z wyróżnika wzoru (z http).
+      sources:
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2025/10/10/13916, twórca wzoru Ministerstwo Finansów
+          url: https://crd.gov.pl/wzor/2025/10/10/13916/wyroznik.xml
+          confirms: [form, variant]
+          quote: "PIT-28(27) ZEZNANIE O WYSOKOŚCI UZYSKANEGO PRZYCHODU, WYSOKOŚCI DOKONANYCH ODLICZEŃ I NALEŻNEGO RYCZAŁTU OD PRZYCHODÓW EWIDENCJONOWANYCH"
+          article: art. 52 ust. 1 pkt 1 ustawy o zryczałtowanym podatku dochodowym
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2025/10/10/13916 (adres schematu)
+          url: https://crd.gov.pl/wzor/2025/10/10/13916/wyroznik.xml
+          confirms: [xsd_url]
+          quote: "http://crd.gov.pl/wzor/2025/10/10/13916/schemat.xsd"
+          as_of: 2026-11-26
+        - title: gov.pl (MF), Formularze podatkowe, PIT-28 (wariant dla roku podatkowego)
+          url: https://www.gov.pl/web/finanse/pit-28
+          confirms: [form, variant]
+          quote: "PIT-28 (27) za 2025 r."
+          article: art. 52 ust. 1 pkt 1 ustawy o zryczałtowanym podatku dochodowym
+          as_of: 2026-11-26
+        - title: podatki-arch.mf.gov.pl (MF, archiwum podatki.gov.pl), Formularze archiwalne PIT dla prowadzących działalność (wariant według roku podatkowego)
+          url: https://podatki-arch.mf.gov.pl/e-deklaracje/formularze-archiwalne-pit-prowadzacych-dzialalnosc/
+          confirms: [form, variant]
+          quote: "2025 PIT-28(27) 2024 PIT-28(26)"
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), plik XSD wzoru 2025/10/10/13916 (kod systemowy „PIT-28 (27)” i wersja schematu „1-1E” są w atrybutach, więc nie da się ich zacytować)
+          url: https://crd.gov.pl/wzor/2025/10/10/13916/schemat.xsd
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wcześniejszego wzoru 2025/09/11/13849 w tym samym wariancie (wersja schematu 1-0E)
+          url: https://crd.gov.pl/wzor/2025/09/11/13849/wyroznik.xml
+          quote: "PIT-28(27) ZEZNANIE O WYSOKOŚCI UZYSKANEGO PRZYCHODU, WYSOKOŚCI DOKONANYCH ODLICZEŃ I NALEŻNEGO RYCZAŁTU OD PRZYCHODÓW EWIDENCJONOWANYCH - Wzór dokumentu elektronicznego może być stosowany po upływie dwóch tygodni od daty opublikowania."
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          P41: za 2025 r. MF opublikowało w CRWDE dwa wzory PIT-28(27) (wersje schematu 1-0E i 1-1E); źródła nie podają,
+          który z nich stosuje się teraz. Zob. docs/pytania-do-eksperta.md.
+    - valid_from: 2026-01-01
+      value:
+        form: PIT-28
+        variant: 28
+        system_code: PIT-28 (28)
+        schema_version: 1-1E
+        xsd_url: http://crd.gov.pl/wzor/2026/09/14/14369/schemat.xsd
+      note: >-
+        Okres obowiązywania zaczyna się od roku podatkowego 2026. Wyróżnik wzoru PIT-28 nie mówi, za który rok
+        stosuje się wzór; rok podaje strona MF z formularzami, a schemat XSD przyjmuje rok od 2026 (atrybut, więc nie da
+        się go zacytować). Za ten sam rok MF opublikowało wcześniej wzór 2026/09/10/14364 z wersją schematu 1-0E
+        (http://crd.gov.pl/wzor/2026/09/10/14364/schemat.xsd); wzór 14369 ma wersję 1-1E. Pliki XSD obu wzorów różnią
+        się (porównanie plików poleceniem diff) tylko przestrzenią nazw wzoru (adres wzoru) i wersją schematu. Który z nich system e-Deklaracji przyjmuje, żadne źródło nie
+        podaje (otwarte pytanie). Kod systemowy i wersja schematu są stałymi
+        wartościami atrybutów w pliku XSD, więc skrypt cytatów ich nie sprawdzi; nie podaje ich też żaden inny dokument.
+        Strona MF podaje wariant „za 2026 r.”, co nie obejmuje wersji bez daty końca, więc okresu nie potwierdza
+        żaden dokument. Adres schematu pochodzi z wyróżnika wzoru (z http).
+      sources:
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2026/09/14/14369, twórca wzoru Ministerstwo Finansów
+          url: https://crd.gov.pl/wzor/2026/09/14/14369/wyroznik.xml
+          confirms: [form, variant]
+          quote: "PIT-28(28) ZEZNANIE O WYSOKOŚCI UZYSKANEGO PRZYCHODU, WYSOKOŚCI DOKONANYCH ODLICZEŃ I NALEŻNEGO RYCZAŁTU OD PRZYCHODÓW EWIDENCJONOWANYCH"
+          article: art. 52 ust. 1 pkt 1 ustawy o zryczałtowanym podatku dochodowym
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wzoru 2026/09/14/14369 (adres schematu)
+          url: https://crd.gov.pl/wzor/2026/09/14/14369/wyroznik.xml
+          confirms: [xsd_url]
+          quote: "http://crd.gov.pl/wzor/2026/09/14/14369/schemat.xsd"
+          as_of: 2026-11-26
+        - title: gov.pl (MF), Formularze podatkowe, PIT-28 (wariant dla roku podatkowego)
+          url: https://www.gov.pl/web/finanse/pit-28
+          confirms: [form, variant]
+          quote: "PIT-28 (28) za 2026 r."
+          article: art. 52 ust. 1 pkt 1 ustawy o zryczałtowanym podatku dochodowym
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), plik XSD wzoru 2026/09/14/14369 (kod systemowy „PIT-28 (28)” i wersja schematu „1-1E” są w atrybutach, więc nie da się ich zacytować)
+          url: https://crd.gov.pl/wzor/2026/09/14/14369/schemat.xsd
+          as_of: 2026-11-26
+        - title: CRWDE (ePUAP), wyróżnik wcześniejszego wzoru 2026/09/10/14364 w tym samym wariancie (wersja schematu 1-0E)
+          url: https://crd.gov.pl/wzor/2026/09/10/14364/wyroznik.xml
+          quote: "PIT-28(28) ZEZNANIE O WYSOKOŚCI UZYSKANEGO PRZYCHODU, WYSOKOŚCI DOKONANYCH ODLICZEŃ I NALEŻNEGO RYCZAŁTU OD PRZYCHODÓW EWIDENCJONOWANYCH - Wzór dokumentu elektronicznego może być stosowany po upływie dwóch tygodni od daty opublikowania."
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          P41: za 2026 r. MF opublikowało w CRWDE dwa wzory PIT-28(28) (wersje schematu 1-0E i 1-1E); źródła nie podają,
+          który z nich stosuje się przy składaniu zeznania. Zob. docs/pytania-do-eksperta.md.
+
+- id: zasada.dane_autoryzujace
+  name: Podpis danymi autoryzującymi (zeznania PIT, JPK_V7M, JPK_EWP i JPK_PKPIR)
+  kind: rule
+  versions:
+    - valid_from: 2026-04-01
+      valid_to: 2026-06-15
+      value:
+        steps:
+          - text: >-
+              Dane autoryzujące to podpis elektroniczny zapewniający autentyczność dokumentu, inny niż kwalifikowany.
+              Tworzą go dane podatnika, który przesyła dokument: identyfikator podatkowy NIP albo numer PESEL, imię
+              (pierwsze), nazwisko, data urodzenia i wysokość przychodu wykazanego w zeznaniu PIT-28, PIT-36, PIT-36L,
+              PIT-37, PIT-38 albo PIT-39 lub w rocznym obliczeniu podatku przez organ rentowy (PIT-40A). Ten sam zestaw
+              danych podają przepisy o deklaracjach i przepisy o przesyłaniu ksiąg podatkowych.
+            uses: []
+            basis: § 4 pkt 5 i § 12 ust. 2 rozporządzenia w sprawie sposobu przesyłania deklaracji i podań (Dz.U. 2025 poz. 327); § 2 ust. 2 pkt 3 i ust. 2a rozporządzenia w sprawie sposobu przesyłania ksiąg podatkowych (Dz.U. 2025 poz. 461)
+          - text: >-
+              Kwotę przychodu podajesz z takiego zeznania albo obliczenia za rok podatkowy o dwa lata wcześniejszy niż
+              rok, w którym przesyłasz dokument. Podajesz tylko swoją kwotę przychodu, także gdy rozliczałeś się wspólnie
+              z małżonkiem (MF). Rozporządzenia nie wskazują pozycji zeznania; nie mówią też, którą kwotę podać, gdy za
+              tamten rok złożyłeś kilka z wymienionych zeznań, i to jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [schemat.pit_36, schemat.pit_36l, schemat.pit_28]
+            basis: § 12 ust. 2 pkt 5 rozporządzenia Dz.U. 2025 poz. 327; § 2 ust. 2a pkt 5 rozporządzenia Dz.U. 2025 poz. 461; e-Deklaracje, pytania i odpowiedzi (MF)
+          - text: >-
+              Jeśli za ten rok podatkowy nie złożyłeś żadnego z wymienionych zeznań ani obliczeń, jako kwotę przychodu
+              podajesz wartość „0” (zero). Jeśli za tamten rok nie składałeś zeznania na tym samym formularzu, który
+              składasz teraz, ale złożyłeś jedno inne z wymienionych zeznań, podajesz kwotę z tamtego zeznania, a nie
+              zero (MF). Gdy za tamten rok złożyłeś kilka z wymienionych zeznań, jest to niewyjaśnione (otwarte pytanie
+              do eksperta).
+            uses: []
+            basis: § 12 ust. 2 pkt 5 rozporządzenia Dz.U. 2025 poz. 327; § 2 ust. 2a pkt 5 rozporządzenia Dz.U. 2025 poz. 461; e-Deklaracje, pytania i odpowiedzi (MF)
+          - text: >-
+              Danymi autoryzującymi możesz opatrzyć zeznania PIT-28, PIT-36 i PIT-36L oraz inne deklaracje i podania
+              wymienione w § 11 rozporządzenia o deklaracjach, przesyłane przez oprogramowanie interfejsowe
+              e-Deklaracji albo przez Platformę Usług Elektronicznych Skarbowo-Celnych. Tak samo możesz podpisać plik
+              JPK_V7M (deklaracja z ewidencją VAT), ewidencję przychodów w strukturze JPK_EWP i podatkową księgę
+              przychodów i rozchodów w strukturze JPK_PKPIR, bo przesyła się je na zasadach przesyłania ksiąg
+              podatkowych; kwotę przychodu podajesz wtedy za rok podatkowy o dwa lata wcześniejszy niż rok przesłania
+              pliku. Rozporządzenia o deklaracjach nie stosuje się do przesyłania przez e-Urząd Skarbowy.
+            uses: [schemat.pit_36, schemat.pit_36l, schemat.pit_28, schemat.jpk_v7m, schemat.jpk_pkpir, zasada.jpk_pd_ryczalt, zasada.jpk_pd_pkpir]
+            basis: § 1a, § 4 pkt 5 i § 11 pkt 16 i 18 rozporządzenia Dz.U. 2025 poz. 327 (§ 1a dodany przez Dz.U. 2026 poz. 442); § 2 ust. 1, ust. 2 pkt 3 i ust. 2a rozporządzenia Dz.U. 2025 poz. 461; art. 99 ust. 11c ustawy o VAT; art. 15 ust. 12 ustawy o zryczałtowanym podatku dochodowym; art. 24a ust. 1e ustawy o PIT
+          - text: >-
+              Danymi autoryzującymi nie podpiszesz deklaracji ani podania, których nie przesyła podatnik, płatnik
+              albo podmiot będący osobą fizyczną, ani księgi (także JPK_V7M, JPK_EWP i JPK_PKPIR), której nie przesyła
+              podatnik będący osobą fizyczną. MF podaje, że w niektórych formularzach online, gdy podatnikiem jest osoba
+              fizyczna, a formularz składa osoba niefizyczna albo pełnomocnik osoby fizycznej, nie można użyć danych
+              autoryzujących, a wyłącznie podpisu kwalifikowanego. Deklaracji i podań spoza
+              wykazu w § 11 nie podpiszesz danymi autoryzującymi; kwalifikowanym podpisem elektronicznym możesz opatrzyć
+              wszystkie rodzaje deklaracji i podań.
+            uses: [schemat.jpk_v7m, schemat.jpk_pkpir]
+            basis: § 4 pkt 1 i 5, § 5 ust. 1 i § 11 rozporządzenia Dz.U. 2025 poz. 327; § 2 ust. 2 rozporządzenia Dz.U. 2025 poz. 461; e-Deklaracje, pytania i odpowiedzi (MF); specyfikacja interfejsów usług JPK 5.6.0 (MF)
+      note: >-
+        Data początku obowiązywania to wejście w życie § 1a (wyłączenie e-Urzędu Skarbowego) i § 2 ust. 5 rozporządzenia
+        o deklaracjach, dodanych rozporządzeniem Dz.U. 2026 poz. 442 (§ 2: wejście w życie 1 kwietnia 2026 r.). Okresu
+        wcześniejszego ta wersja nie opisuje. Po tekście jednolitym Dz.U. 2025 poz. 327 rozporządzenie o deklaracjach
+        zmieniły rozporządzenia Dz.U. 2025 poz. 842 (tylko deklaracje akcyzowe AKC-ZC w § 8, 10, 11 i 12 ust. 2),
+        Dz.U. 2026 poz. 442 (§ 1a, § 2 ust. 5, § 4 pkt 2a, § 9a dla GIR-1, § 11 pkt 23); późniejsze zmiany opisuje
+        następna wersja. Podpis zaufany z § 4
+        pkt 2a dotyczy tylko GIR-1 (§ 9a). Art. 24a ust. 1e ustawy o PIT w brzmieniu sprzed 1 lipca 2026 r. (tekst
+        jednolity Dz.U. 2026 poz. 592) odsyła do zasad przesyłania ksiąg podatkowych. Art. 24a ust. 1g ustawy o PIT i art. 15 ust. 13a
+        ustawy o ryczałcie (pełnomocnictwo) weszły w życie 16 czerwca 2026 r. (ustawa ogłoszona 15 czerwca 2026 r.,
+        art. 5), więc opisuje je dopiero następna wersja. Rozporządzenie
+        o księgach (tekst jednolity Dz.U. 2025 poz. 461) nie ma zmian po tym tekście (ELI, akty zmieniające).
+        Pozycje zeznań, z których bierze się kwotę przychodu, MF podaje dla kolejnych wzorów w odpowiedziach na pytania
+        o e-Deklaracje. Specyfikacja interfejsów usług JPK 5.6.0 podaje dane autoryzujące jako metodę uwierzytelnienia dla
+        JPK_V7M, JPK_EWP(4) i JPK_PKPIR(3). Żaden dokument nie podaje sam całej zasady (odpowiedzi MF nie mówią o plikach
+        JPK, a specyfikacja JPK nie podaje zestawu danych), więc wersja nie ma drugiego niezależnego dowodu.
+      sources:
+        - title: Dz.U. 2025 poz. 327, tekst jednolity rozporządzenia w sprawie sposobu przesyłania deklaracji i podań oraz rodzajów podpisu elektronicznego (zestaw danych)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/327/text.pdf
+          quote: "jest oparty na zestawie unikalnych danych w postaci elektronicznej dotyczących podatnika, płatnika lub podmiotu przesyłającego deklarację lub podanie"
+          article: § 12 ust. 2
+        - title: Dz.U. 2025 poz. 327, tekst jednolity rozporządzenia w sprawie sposobu przesyłania deklaracji i podań (rok kwoty przychodu i zero)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/327/text.pdf
+          quote: "za rok podatkowy o dwa lata wcześniejszy niż rok przesyłania deklaracji lub podań albo wartość „0” (zero), gdy za ten rok podatkowy nie złożono żadnego z wymienionych zeznań lub obliczeń"
+          article: § 12 ust. 2 pkt 5
+        - title: Dz.U. 2025 poz. 327, tekst jednolity rozporządzenia w sprawie sposobu przesyłania deklaracji i podań (kto może podpisać)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/327/text.pdf
+          quote: "mogą być opatrywane, odpowiednio, przez podatnika będącego osobą fizyczną, płatnika będącego osobą fizyczną lub podmiot będący osobą fizyczną"
+          article: § 11
+        - title: Dz.U. 2025 poz. 327, tekst jednolity rozporządzenia w sprawie sposobu przesyłania deklaracji i podań (sposób przesyłania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/327/text.pdf
+          quote: "innym podpisem elektronicznym zapewniającym autentyczność deklaracji i podań, jeżeli są przesyłane w sposób, o którym mowa w § 2 ust. 1 pkt 1 i 3"
+          article: § 4 pkt 5
+        - title: Dz.U. 2025 poz. 327, tekst jednolity rozporządzenia w sprawie sposobu przesyłania deklaracji i podań (podpis kwalifikowany)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/327/text.pdf
+          quote: "Podpisem elektronicznym, o którym mowa w § 4 pkt 1, mogą być opatrywane wszystkie rodzaje deklaracji i podań."
+          article: § 5 ust. 1
+        - title: Dz.U. 2026 poz. 442, rozporządzenie MFiG zmieniające rozporządzenie w sprawie sposobu przesyłania deklaracji i podań (e-Urząd Skarbowy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/442/text.pdf
+          quote: "Rozporządzenia nie stosuje się do przesyłania deklaracji i podań za pośrednictwem e-Urzędu Skarbowego."
+          article: § 1 pkt 1 (§ 1a), § 2
+        - title: Dz.U. 2025 poz. 461, tekst jednolity rozporządzenia w sprawie sposobu przesyłania za pomocą środków komunikacji elektronicznej ksiąg podatkowych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/461/text.pdf
+          quote: "innym podpisem elektronicznym zapewniającym autentyczność ksiąg, jeżeli są przesyłane przez podatnika będącego osobą fizyczną"
+          article: § 2 ust. 2 pkt 3
+        - title: Dz.U. 2025 poz. 461, tekst jednolity rozporządzenia w sprawie sposobu przesyłania ksiąg podatkowych (rok kwoty przychodu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/461/text.pdf
+          quote: "za rok podatkowy o dwa lata wcześniejszy niż rok przesyłania księgi albo wartość „0” (zero), gdy za ten rok podatkowy nie złożono żadnego z wymienionych zeznań lub obliczeń"
+          article: § 2 ust. 2a pkt 5
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (sposób przesyłania JPK_V7M)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "Dokument elektroniczny, o którym mowa w zdaniu pierwszym, jest przesyłany w sposób określony w przepisach wydanych na podstawie art. 193a § 3 Ordynacji podatkowej i zgodnie z wymaganiami określonymi w tych przepisach."
+          article: art. 99 ust. 11c
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (sposób przesyłania ewidencji przychodów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "na zasadach dotyczących przesyłania ksiąg podatkowych lub ich części określonych w przepisach wydanych na podstawie art. 193a § 3 ustawy – Ordynacja podatkowa"
+          article: art. 15 ust. 12
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (brzmienie art. 24a ust. 1e przed 1 lipca 2026 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "na zasadach dotyczących przesyłania ksiąg podatkowych lub ich części określonych w przepisach wydanych na podstawie art. 193a § 3 Ordynacji podatkowej"
+          article: art. 24a ust. 1e
+        - title: Dz.U. 2026 poz. 779, wejście w życie
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/779/text.pdf
+          quote: "Ustawa wchodzi w życie z dniem 1 lipca 2026 r., z wyjątkiem art. 1 pkt 7, art. 2 pkt 1 lit. c i art. 3, które wchodzą w życie z dniem następującym po dniu ogłoszenia."
+          article: art. 5
+        - title: podatki.gov.pl (MF), e-Deklaracje, pytania i odpowiedzi (zestaw danych i rok kwoty przychodu)
+          url: https://podatki.gov.pl/e-deklaracje/pytania-i-odpowiedzi
+          quote: "imię (pierwsze), nazwisko, data urodzenia, kwota przychodu, wskazana w zeznaniu lub rocznym obliczeniu podatku za rok podatkowy o dwa lata wcześniejszy niż rok, w którym jest składany dokument elektroniczny"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), e-Deklaracje, pytania i odpowiedzi (zero i inne zeznanie za tamten rok)
+          url: https://podatki.gov.pl/e-deklaracje/pytania-i-odpowiedzi
+          quote: "wpisywanie kwoty 0 (zero), gdy za 2024 r. podatnik nie składał zeznania na analogicznym formularzu, ale rozliczał się na innym formularzu"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), e-Deklaracje, pytania i odpowiedzi (kwota przychodu samego podatnika)
+          url: https://podatki.gov.pl/e-deklaracje/pytania-i-odpowiedzi
+          quote: "w celach autoryzacyjnych powinna być wskazywana tylko i wyłącznie kwota przychodu podatnika"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), e-Deklaracje, pytania i odpowiedzi (pełnomocnik, status 422)
+          url: https://podatki.gov.pl/e-deklaracje/pytania-i-odpowiedzi
+          quote: "Występuje w niektórych formularzach online, kiedy podatnikiem jest osoba fizyczna, a składającym formularz do urzędu skarbowego jest osoba niefizyczna lub pełnomocnik osoby fizycznej. W tym przypadku nie można użyć danych autoryzujących a WYŁĄCZNIE podpisu kwalifikowanego."
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Specyfikacja interfejsów usług JPK wersja 5.6.0 (metody uwierzytelnienia; nie podaje zestawu danych)
+          url: https://podatki.gov.pl/media/bngboylg/specyfikacja-interfejs%C3%B3w-us%C5%82ug-jpk-wersja-560.pdf
+          quote: "dokument złożony z użyciem danych autoryzujących może złożyć wyłącznie podatnik, będący osobą fizyczną"
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          P42: którą kwotę przychodu podaje się w danych autoryzujących, gdy za rok podatkowy o dwa lata wcześniejszy
+          podatnik złożył kilka z wymienionych zeznań (na przykład PIT-36L i PIT-38), także przy podpisywaniu plików
+          JPK? Zob. docs/pytania-do-eksperta.md.
+    - valid_from: 2026-06-16
+      value:
+        steps:
+          - text: >-
+              Dane autoryzujące to podpis elektroniczny zapewniający autentyczność dokumentu, inny niż kwalifikowany.
+              Tworzą go dane podatnika, który przesyła dokument: identyfikator podatkowy NIP albo numer PESEL, imię
+              (pierwsze), nazwisko, data urodzenia i wysokość przychodu wykazanego w zeznaniu PIT-28, PIT-36, PIT-36L,
+              PIT-37, PIT-38 albo PIT-39 lub w rocznym obliczeniu podatku przez organ rentowy (PIT-40A). Ten sam zestaw
+              danych podają przepisy o deklaracjach i przepisy o przesyłaniu ksiąg podatkowych.
+            uses: []
+            basis: § 4 pkt 5 i § 12 ust. 2 rozporządzenia w sprawie sposobu przesyłania deklaracji i podań (Dz.U. 2025 poz. 327); § 2 ust. 2 pkt 3 i ust. 2a rozporządzenia w sprawie sposobu przesyłania ksiąg podatkowych (Dz.U. 2025 poz. 461)
+          - text: >-
+              Kwotę przychodu podajesz z takiego zeznania albo obliczenia za rok podatkowy o dwa lata wcześniejszy niż
+              rok, w którym przesyłasz dokument. Podajesz tylko swoją kwotę przychodu, także gdy rozliczałeś się wspólnie
+              z małżonkiem (MF). Rozporządzenia nie wskazują pozycji zeznania; nie mówią też, którą kwotę podać, gdy za
+              tamten rok złożyłeś kilka z wymienionych zeznań, i to jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [schemat.pit_36, schemat.pit_36l, schemat.pit_28]
+            basis: § 12 ust. 2 pkt 5 rozporządzenia Dz.U. 2025 poz. 327; § 2 ust. 2a pkt 5 rozporządzenia Dz.U. 2025 poz. 461; e-Deklaracje, pytania i odpowiedzi (MF)
+          - text: >-
+              Jeśli za ten rok podatkowy nie złożyłeś żadnego z wymienionych zeznań ani obliczeń, jako kwotę przychodu
+              podajesz wartość „0” (zero). Jeśli za tamten rok nie składałeś zeznania na tym samym formularzu, który
+              składasz teraz, ale złożyłeś jedno inne z wymienionych zeznań, podajesz kwotę z tamtego zeznania, a nie
+              zero (MF). Gdy za tamten rok złożyłeś kilka z wymienionych zeznań, jest to niewyjaśnione (otwarte pytanie
+              do eksperta).
+            uses: []
+            basis: § 12 ust. 2 pkt 5 rozporządzenia Dz.U. 2025 poz. 327; § 2 ust. 2a pkt 5 rozporządzenia Dz.U. 2025 poz. 461; e-Deklaracje, pytania i odpowiedzi (MF)
+          - text: >-
+              Danymi autoryzującymi możesz opatrzyć zeznania PIT-28, PIT-36 i PIT-36L oraz inne deklaracje i podania
+              wymienione w § 11 rozporządzenia o deklaracjach, przesyłane przez oprogramowanie interfejsowe
+              e-Deklaracji albo przez Platformę Usług Elektronicznych Skarbowo-Celnych. Tak samo możesz podpisać plik
+              JPK_V7M (deklaracja z ewidencją VAT), ewidencję przychodów w strukturze JPK_EWP i podatkową księgę
+              przychodów i rozchodów w strukturze JPK_PKPIR, bo przesyła się je na zasadach przesyłania ksiąg
+              podatkowych; kwotę przychodu podajesz wtedy za rok podatkowy o dwa lata wcześniejszy niż rok przesłania
+              pliku. Rozporządzenia o deklaracjach nie stosuje się do przesyłania przez e-Urząd Skarbowy.
+            uses: [schemat.pit_36, schemat.pit_36l, schemat.pit_28, schemat.jpk_v7m, schemat.jpk_pkpir, zasada.jpk_pd_ryczalt, zasada.jpk_pd_pkpir]
+            basis: § 1a, § 4 pkt 5 i § 11 pkt 16 i 18 rozporządzenia Dz.U. 2025 poz. 327 (§ 1a dodany przez Dz.U. 2026 poz. 442); § 2 ust. 1, ust. 2 pkt 3 i ust. 2a rozporządzenia Dz.U. 2025 poz. 461; art. 99 ust. 11c ustawy o VAT; art. 15 ust. 12 ustawy o zryczałtowanym podatku dochodowym; art. 24a ust. 1e ustawy o PIT
+          - text: >-
+              Danymi autoryzującymi nie podpiszesz deklaracji ani podania, których nie przesyła podatnik, płatnik
+              albo podmiot będący osobą fizyczną, ani księgi (także JPK_V7M, JPK_EWP i JPK_PKPIR), której nie przesyła
+              podatnik będący osobą fizyczną. MF podaje, że w niektórych formularzach online, gdy podatnikiem jest osoba
+              fizyczna, a formularz składa osoba niefizyczna albo pełnomocnik osoby fizycznej, nie można użyć danych
+              autoryzujących, a wyłącznie podpisu kwalifikowanego. Pełnomocnictwo do podpisywania deklaracji składanej
+              za pomocą środków komunikacji elektronicznej, udzielone na podstawie działu III rozdziału 9a Ordynacji
+              podatkowej, obejmuje też podpisywanie podatkowej księgi przychodów i rozchodów, ksiąg rachunkowych
+              i ewidencji środków trwałych oraz wartości niematerialnych i prawnych przesyłanych na podstawie art. 24a
+              ust. 1e ustawy o PIT, a na ryczałcie ewidencji i wykazu środków trwałych oraz wartości niematerialnych
+              i prawnych przesyłanych na podstawie art. 15 ust. 12 ustawy o zryczałtowanym podatku dochodowym. Deklaracji i podań spoza
+              wykazu w § 11 nie podpiszesz danymi autoryzującymi; kwalifikowanym podpisem elektronicznym możesz opatrzyć
+              wszystkie rodzaje deklaracji i podań.
+            uses: [schemat.jpk_v7m, schemat.jpk_pkpir]
+            basis: § 4 pkt 1 i 5, § 5 ust. 1 i § 11 rozporządzenia Dz.U. 2025 poz. 327; § 2 ust. 2 rozporządzenia Dz.U. 2025 poz. 461; art. 24a ust. 1g ustawy o PIT i art. 15 ust. 13a ustawy o zryczałtowanym podatku dochodowym (dodane przez Dz.U. 2026 poz. 779); e-Deklaracje, pytania i odpowiedzi (MF); specyfikacja interfejsów usług JPK 5.6.0 (MF)
+      note: >-
+        Nowa wersja od 16 czerwca 2026 r.: tego dnia weszły w życie art. 24a ust. 1g ustawy o PIT i art. 15 ust. 13a
+        ustawy o ryczałcie (pełnomocnictwo obejmuje podpisywanie księgi i ewidencji), dodane przez ustawę Dz.U. 2026
+        poz. 779 ogłoszoną 15 czerwca 2026 r. (art. 5: z dniem następującym po dniu ogłoszenia); poprzednia wersja nie ma
+        zdania o pełnomocnictwie w ostatnim kroku. Pierwsza wersja zaczynała się od wejścia w życie § 1a (wyłączenie
+        e-Urzędu Skarbowego) i § 2 ust. 5 rozporządzenia
+        o deklaracjach, dodanych rozporządzeniem Dz.U. 2026 poz. 442 (§ 2: wejście w życie 1 kwietnia 2026 r.). Okresu
+        wcześniejszego ta wersja nie opisuje. Po tekście jednolitym Dz.U. 2025 poz. 327 rozporządzenie o deklaracjach
+        zmieniły rozporządzenia Dz.U. 2025 poz. 842 (tylko deklaracje akcyzowe AKC-ZC w § 8, 10, 11 i 12 ust. 2),
+        Dz.U. 2026 poz. 442 (§ 1a, § 2 ust. 5, § 4 pkt 2a, § 9a dla GIR-1, § 11 pkt 23) i Dz.U. 2026 poz. 1526.
+        To ostatnie od dnia następującego po ogłoszeniu (ogłoszone 19 listopada 2026 r.) dodaje § 8 pkt 18a i § 10
+        pkt 3 lit. bfa (deklaracja DUSZ), a od 1 stycznia 2027 r. zmienia tytuł, § 1 pkt 2, § 2 ust. 5 i § 9 we
+        wprowadzeniu do wyliczenia, dodaje w przepisach wyrazy „informacje podatkowe” (od 2027 r. przepisy mówią
+        o „deklaracjach, informacjach podatkowych i podaniach”), uchyla § 11 pkt 6 (VAT-23), nadaje nowe brzmienie
+        § 11 pkt 46 (DSF-1), a w § 12 ust. 2 zmienia tylko wprowadzenie do wyliczenia i część wspólną pkt 5. Zestaw
+        danych i rok kwoty przychodu (dwa lata wcześniej niż rok przesyłania) zostają te same. Podpis zaufany z § 4
+        pkt 2a dotyczy tylko GIR-1 (§ 9a). Art. 24a ust. 1e ustawy o PIT w brzmieniu sprzed 1 lipca 2026 r. (tekst
+        jednolity Dz.U. 2026 poz. 592) też odsyła do zasad przesyłania ksiąg podatkowych; nowe brzmienie z ustawy
+        Dz.U. 2026 poz. 779 obowiązuje od 1 lipca 2026 r. (art. 5), a art. 24a ust. 1g ustawy o PIT i art. 15 ust. 13a
+        ustawy o ryczałcie (pełnomocnictwo) od 16 czerwca 2026 r. Rozporządzenie
+        o księgach (tekst jednolity Dz.U. 2025 poz. 461) nie ma zmian po tym tekście (ELI, akty zmieniające).
+        Pozycje zeznań, z których bierze się kwotę przychodu, MF podaje dla kolejnych wzorów w odpowiedziach na pytania
+        o e-Deklaracje. Specyfikacja interfejsów usług JPK 5.6.0 podaje dane autoryzujące jako metodę uwierzytelnienia dla
+        JPK_V7M, JPK_EWP(4) i JPK_PKPIR(3). Żaden dokument nie podaje sam całej zasady (odpowiedzi MF nie mówią o plikach
+        JPK, a specyfikacja JPK nie podaje zestawu danych), więc wersja nie ma drugiego niezależnego dowodu.
+      sources:
+        - title: Dz.U. 2025 poz. 327, tekst jednolity rozporządzenia w sprawie sposobu przesyłania deklaracji i podań oraz rodzajów podpisu elektronicznego (zestaw danych)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/327/text.pdf
+          quote: "jest oparty na zestawie unikalnych danych w postaci elektronicznej dotyczących podatnika, płatnika lub podmiotu przesyłającego deklarację lub podanie"
+          article: § 12 ust. 2
+        - title: Dz.U. 2025 poz. 327, tekst jednolity rozporządzenia w sprawie sposobu przesyłania deklaracji i podań (rok kwoty przychodu i zero)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/327/text.pdf
+          quote: "za rok podatkowy o dwa lata wcześniejszy niż rok przesyłania deklaracji lub podań albo wartość „0” (zero), gdy za ten rok podatkowy nie złożono żadnego z wymienionych zeznań lub obliczeń"
+          article: § 12 ust. 2 pkt 5
+        - title: Dz.U. 2025 poz. 327, tekst jednolity rozporządzenia w sprawie sposobu przesyłania deklaracji i podań (kto może podpisać)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/327/text.pdf
+          quote: "mogą być opatrywane, odpowiednio, przez podatnika będącego osobą fizyczną, płatnika będącego osobą fizyczną lub podmiot będący osobą fizyczną"
+          article: § 11
+        - title: Dz.U. 2025 poz. 327, tekst jednolity rozporządzenia w sprawie sposobu przesyłania deklaracji i podań (sposób przesyłania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/327/text.pdf
+          quote: "innym podpisem elektronicznym zapewniającym autentyczność deklaracji i podań, jeżeli są przesyłane w sposób, o którym mowa w § 2 ust. 1 pkt 1 i 3"
+          article: § 4 pkt 5
+        - title: Dz.U. 2025 poz. 327, tekst jednolity rozporządzenia w sprawie sposobu przesyłania deklaracji i podań (podpis kwalifikowany)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/327/text.pdf
+          quote: "Podpisem elektronicznym, o którym mowa w § 4 pkt 1, mogą być opatrywane wszystkie rodzaje deklaracji i podań."
+          article: § 5 ust. 1
+        - title: Dz.U. 2026 poz. 442, rozporządzenie MFiG zmieniające rozporządzenie w sprawie sposobu przesyłania deklaracji i podań (e-Urząd Skarbowy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/442/text.pdf
+          quote: "Rozporządzenia nie stosuje się do przesyłania deklaracji i podań za pośrednictwem e-Urzędu Skarbowego."
+          article: § 1 pkt 1 (§ 1a), § 2
+        - title: Dz.U. 2026 poz. 1526, rozporządzenie MFiG zmieniające rozporządzenie w sprawie sposobu przesyłania deklaracji i podań (brzmienie od 1 stycznia 2027 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1526/text.pdf
+          quote: "za rok podatkowy o dwa lata wcześniejszy niż rok przesyłania deklaracji, informacji podatkowych lub podań albo wartość „0” (zero), gdy za ten rok podatkowy nie złożono żadnego z wymienionych zeznań lub obliczeń"
+          article: § 1 pkt 9 lit. b, § 2
+        - title: Dz.U. 2025 poz. 461, tekst jednolity rozporządzenia w sprawie sposobu przesyłania za pomocą środków komunikacji elektronicznej ksiąg podatkowych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/461/text.pdf
+          quote: "innym podpisem elektronicznym zapewniającym autentyczność ksiąg, jeżeli są przesyłane przez podatnika będącego osobą fizyczną"
+          article: § 2 ust. 2 pkt 3
+        - title: Dz.U. 2025 poz. 461, tekst jednolity rozporządzenia w sprawie sposobu przesyłania ksiąg podatkowych (rok kwoty przychodu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/461/text.pdf
+          quote: "za rok podatkowy o dwa lata wcześniejszy niż rok przesyłania księgi albo wartość „0” (zero), gdy za ten rok podatkowy nie złożono żadnego z wymienionych zeznań lub obliczeń"
+          article: § 2 ust. 2a pkt 5
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (sposób przesyłania JPK_V7M)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "Dokument elektroniczny, o którym mowa w zdaniu pierwszym, jest przesyłany w sposób określony w przepisach wydanych na podstawie art. 193a § 3 Ordynacji podatkowej i zgodnie z wymaganiami określonymi w tych przepisach."
+          article: art. 99 ust. 11c
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (sposób przesyłania ewidencji przychodów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "na zasadach dotyczących przesyłania ksiąg podatkowych lub ich części określonych w przepisach wydanych na podstawie art. 193a § 3 ustawy – Ordynacja podatkowa"
+          article: art. 15 ust. 12
+        - title: Dz.U. 2026 poz. 779, ustawa zmieniająca ustawę o PIT (sposób przesyłania księgi przychodów i rozchodów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/779/text.pdf
+          quote: "na zasadach dotyczących przesyłania ksiąg podatkowych lub ich części określonych w przepisach wydanych na podstawie art. 193a § 3 Ordynacji podatkowej"
+          article: art. 1 pkt 5 (art. 24a ust. 1e)
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (brzmienie art. 24a ust. 1e przed 1 lipca 2026 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          quote: "na zasadach dotyczących przesyłania ksiąg podatkowych lub ich części określonych w przepisach wydanych na podstawie art. 193a § 3 Ordynacji podatkowej"
+          article: art. 24a ust. 1e
+        - title: Dz.U. 2026 poz. 779, ustawa zmieniająca ustawę o PIT (pełnomocnictwo obejmuje podpisywanie księgi)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/779/text.pdf
+          quote: "obejmuje również upoważnienie do podpisywania podatkowej księgi przychodów i rozchodów, ksiąg rachunkowych i ewidencji środków trwałych oraz wartości niematerialnych i prawnych, przesyłanych na podstawie ust. 1e"
+          article: art. 1 pkt 7 (art. 24a ust. 1g), art. 5
+        - title: Dz.U. 2026 poz. 779, ustawa zmieniająca ustawę o ryczałcie (pełnomocnictwo obejmuje podpisywanie ewidencji)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/779/text.pdf
+          quote: "obejmuje również upoważnienie do podpisywania ewidencji i wykazu środków trwałych oraz wartości niematerialnych i prawnych przesyłanych na podstawie ust. 12"
+          article: art. 3 (art. 15 ust. 13a), art. 5
+        - title: Dz.U. 2026 poz. 779, wejście w życie
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/779/text.pdf
+          quote: "Ustawa wchodzi w życie z dniem 1 lipca 2026 r., z wyjątkiem art. 1 pkt 7, art. 2 pkt 1 lit. c i art. 3, które wchodzą w życie z dniem następującym po dniu ogłoszenia."
+          article: art. 5
+        - title: podatki.gov.pl (MF), e-Deklaracje, pytania i odpowiedzi (zestaw danych i rok kwoty przychodu)
+          url: https://podatki.gov.pl/e-deklaracje/pytania-i-odpowiedzi
+          quote: "imię (pierwsze), nazwisko, data urodzenia, kwota przychodu, wskazana w zeznaniu lub rocznym obliczeniu podatku za rok podatkowy o dwa lata wcześniejszy niż rok, w którym jest składany dokument elektroniczny"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), e-Deklaracje, pytania i odpowiedzi (zero i inne zeznanie za tamten rok)
+          url: https://podatki.gov.pl/e-deklaracje/pytania-i-odpowiedzi
+          quote: "wpisywanie kwoty 0 (zero), gdy za 2024 r. podatnik nie składał zeznania na analogicznym formularzu, ale rozliczał się na innym formularzu"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), e-Deklaracje, pytania i odpowiedzi (kwota przychodu samego podatnika)
+          url: https://podatki.gov.pl/e-deklaracje/pytania-i-odpowiedzi
+          quote: "w celach autoryzacyjnych powinna być wskazywana tylko i wyłącznie kwota przychodu podatnika"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), e-Deklaracje, pytania i odpowiedzi (pełnomocnik, status 422)
+          url: https://podatki.gov.pl/e-deklaracje/pytania-i-odpowiedzi
+          quote: "Występuje w niektórych formularzach online, kiedy podatnikiem jest osoba fizyczna, a składającym formularz do urzędu skarbowego jest osoba niefizyczna lub pełnomocnik osoby fizycznej. W tym przypadku nie można użyć danych autoryzujących a WYŁĄCZNIE podpisu kwalifikowanego."
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Specyfikacja interfejsów usług JPK wersja 5.6.0 (metody uwierzytelnienia; nie podaje zestawu danych)
+          url: https://podatki.gov.pl/media/bngboylg/specyfikacja-interfejs%C3%B3w-us%C5%82ug-jpk-wersja-560.pdf
+          quote: "dokument złożony z użyciem danych autoryzujących może złożyć wyłącznie podatnik, będący osobą fizyczną"
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          P42: którą kwotę przychodu podaje się w danych autoryzujących, gdy za rok podatkowy o dwa lata wcześniejszy
+          podatnik złożył kilka z wymienionych zeznań (na przykład PIT-36L i PIT-38), także przy podpisywaniu plików
+          JPK? Zob. docs/pytania-do-eksperta.md.

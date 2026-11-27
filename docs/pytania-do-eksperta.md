@@ -585,3 +585,46 @@ przypadku brzegowego, średnią.
 - Na 26 listopada 2026 r. żadna strona urzędu (podatki.gov.pl, biznes.gov.pl) nie podaje jeszcze kwoty na 2027 r.,
   więc wartość nie ma drugiego dowodu.
 - Pytanie: czy limit z art. 30c ust. 2 pkt 2 ustawy o PIT na rok podatkowy 2027 wynosi 15 100 zł?
+
+## P41. Który wzór elektroniczny zeznania PIT stosuje się, gdy MF opublikowało kilka wersji schematu za ten sam rok
+
+- Wpisy: `schemat.pit_36` (za 2025 i za 2026 r.), `schemat.pit_28` (za 2025 i za 2026 r.).
+- Zgłoszone: 2026-11-26.
+- W Centralnym Repozytorium Wzorów Dokumentów Elektronicznych (CRWDE, ePUAP) Ministerstwo Finansów opublikowało
+  dla tego samego wariantu i roku podatkowego po dwa wzory z różnymi wersjami schematu:
+  - PIT-36(32) za 2025 r.: wzór 2025/09/24/13871 (wersja schematu 1-0E) i 2026/09/11/14368 (2-0E); oba wyróżniki
+    podają, że wzór „stosuje się do uzyskanych dochodów lub poniesionych strat od dnia 1 stycznia 2025 r.”;
+  - PIT-36(32) za 2026 r.: wzór 2026/09/16/14376 (3-0E) i 2026/10/13/14405 (3-1E);
+  - PIT-28(27): wzór 2025/09/11/13849 (1-0E) i 2025/10/10/13916 (1-1E);
+  - PIT-28(28): wzór 2026/09/10/14364 (1-0E) i 2026/09/14/14369 (1-1E).
+- Porównanie plików XSD (diff), poza przestrzenią nazw wzoru: 14368 różni się od 13871 wersją schematu i opisem
+  jednego pola (numery pozycji 293 i 294 zamiast 283 i 284); 14405 od 14376 wersją schematu i jednym warunkiem
+  unikalności identyfikatora; 13916 od 13849 wersją schematu, usunięciem dwóch warunków „większe od zera”
+  i najwcześniejszym dopuszczalnym rokiem w jednym polu; 14369 od 14364 tylko wersją schematu.
+  Wpisy podają wzór opublikowany najpóźniej.
+- Wyróżniki PIT-36(32) za 2025 r.: wzór 13871 podpisano 24 września 2025 r., a wzór 14368 11 września 2026 r.;
+  oba mają ważność od 24 lipca 2025 r. Nie wiadomo, czy wzór 14368 dotyczy też zeznań i korekt złożonych przed
+  jego publikacją ani według którego wzoru składa się teraz korektę zeznania za 2025 r.
+- Strona MF „Struktury dokumentów XML” (podatki.gov.pl, e-Deklaracje, Dokumentacja IT) odsyła do CRWDE, a wzory
+  zeznań PIT-28, PIT-36 i PIT-36L na jej liście kończą się na latach 2021–2023. Żadne źródło urzędowe nie mówi, który z tych wzorów system e-Deklaracji przyjmuje
+  i czy wcześniejszy przestaje być przyjmowany po publikacji nowszego.
+- Pytanie: który wzór (wersję schematu) stosuje się przy składaniu zeznania i korekty za dany rok, gdy w CRWDE są
+  dwa wzory tego samego wariantu? Czy MF publikuje gdzieś aktualną listę wzorów przyjmowanych przez e-Deklaracje?
+
+## P42. Kwota przychodu w danych autoryzujących przy kilku zeznaniach za rok sprzed dwóch lat
+
+- Wpis: `zasada.dane_autoryzujace` (wersje od 2026-04-01 i od 2026-06-16), kroki 2 i 3.
+- Zgłoszone: 2026-11-26.
+- Rozporządzenie w sprawie sposobu przesyłania deklaracji i podań (Dz.U. 2025 poz. 327, § 12 ust. 2 pkt 5)
+  i rozporządzenie w sprawie sposobu przesyłania ksiąg podatkowych (Dz.U. 2025 poz. 461, § 2 ust. 2a pkt 5):
+  dane autoryzujące obejmują „wysokość przychodu wykazanego odpowiednio w” zeznaniu PIT-28, PIT-36, PIT-36L,
+  PIT-37, PIT-38, PIT-39 albo w rocznym obliczeniu PIT-40A za rok podatkowy o dwa lata wcześniejszy niż rok
+  przesyłania, albo zero, gdy nie złożono żadnego z nich.
+- Odpowiedzi MF o e-Deklaracjach (podatki.gov.pl): gdy za tamten rok nie złożono zeznania „na analogicznym
+  formularzu”, ale rozliczano się na innym z wymienionych, podaje się kwotę z tamtego zeznania, a nie zero. MF podaje też
+  pozycje zeznań, z których bierze się kwotę, dla kolejnych wzorów.
+- Żadne z tych źródeł nie mówi, którą kwotę podać, gdy za tamten rok podatnik złożył kilka z wymienionych zeznań
+  (na przykład PIT-36L i PIT-38 albo PIT-28 i PIT-38). Przy plikach JPK (JPK_V7M, JPK_EWP, JPK_PKPIR) nie ma
+  „analogicznego formularza”.
+- Pytanie: którą kwotę przychodu podaje się w takim przypadku przy zeznaniu PIT i przy plikach JPK? Czy można podać
+  kwotę z dowolnego ze złożonych zeznań?

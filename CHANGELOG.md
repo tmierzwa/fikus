@@ -19,9 +19,15 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 - Parametry VAT w nowym pliku `data/parameters/vat.yaml`: `vat.stawki` (stawka podstawowa i obniżone
   w okresie z art. 146ef ustawy o VAT), `vat.limit_zwolnienia` (limit zwolnienia podmiotowego z art. 113
   ust. 1) i zasada `zasada.vat_odliczenie` (prawo do odliczenia, moment i korekta, samochody, wyłączenia).
+- Schematy e-Deklaracji zeznań rocznych `schemat.pit_36`, `schemat.pit_36l` i `schemat.pit_28` (za 2025 r.
+  i od 2026 r., według wyróżników wzorów w CRWDE) oraz zasada `zasada.dane_autoryzujace` (podpis danymi
+  autoryzującymi zeznań PIT i plików JPK_V7M, JPK_EWP i JPK_PKPIR) w nowym pliku `data/parameters/pit_zeznania.yaml`.
 
 ### Zmienione
 
+- `get_schema` przyjmuje symbol z łącznikiem albo podkreśleniem, wielkimi albo małymi literami
+  (PIT-36L, pit_36l). Opis narzędzia wymienia wszystkie symbole, które mają dane, i dzień, według którego
+  wybiera się wersję.
 - Trzy poziomy pewności zamiast dwóch: `wysoka`, `średnia` i `niska`. `średnia` oznacza pełny komplet
   dowodów i otwarte pytanie tylko o przypadek brzegowy (`verification.open_issue_scope: edge_case`).
   Klient, który porównuje poziom z `niska`, musi obsłużyć nową wartość. Odpowiedź podaje też
