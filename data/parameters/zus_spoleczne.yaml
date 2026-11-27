@@ -52,6 +52,8 @@
         - title: Komunikat ZUS z 30 grudnia 2025 r., nowe wysokości składek na ubezpieczenia społeczne w 2026 r.
           url: https://www.zus.pl/-/nowe-wysoko%C5%9Bci-sk%C5%82adek-na-ubezpieczenia-spo%C5%82eczne-w-2026-r.
           independent: true
+          quote: "Podstawą wymiaru składek na ubezpieczenia społeczne w 2026 r. dla tych osób jest zadeklarowana kwota, nie niższa niż 5652,00 zł (60% prognozowanego przeciętnego wynagrodzenia miesięcznego)"
+          as_of: 2025-12-30
           article: art. 18 ust. 8 ustawy o systemie ubezpieczeń społecznych (Dz.U. 2026 poz. 1474)
         - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
@@ -60,7 +62,9 @@
         - title: Symfonia, składki ZUS w 2026 r. dla przedsiębiorców
           url: https://symfonia.pl/blog/firmy/male-firmy/skladki-zus-w-2026-r-dla-przedsiebiorcow-ile-wyniosa/
           kind: control
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+          quote: "minimalna podstawa dla „dużego ZUS” (60% prognozy) wynosi 5652 zł"
+          as_of: 2026-11-27
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: zus.limit_rocznej_podstawy
   name: Roczny limit podstawy wymiaru składek emerytalnej i rentowej
@@ -77,7 +81,9 @@
         - title: Komunikat ZUS z 30 grudnia 2025 r., nowe wysokości składek na ubezpieczenia społeczne w 2026 r.
           url: https://www.zus.pl/-/nowe-wysoko%C5%9Bci-sk%C5%82adek-na-ubezpieczenia-spo%C5%82eczne-w-2026-r.
           independent: true
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+          quote: "Kwota rocznego ograniczenia podstawy wymiaru składek na ubezpieczenia emerytalne i rentowe w roku 2026 wynosi 282 600 zł"
+          as_of: 2025-12-30
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
     - valid_from: 2027-01-01
       valid_to: 2027-12-31
       value: 300990
@@ -108,7 +114,9 @@
         - title: Komunikat ZUS z 30 grudnia 2025 r., nowe wysokości składek na ubezpieczenia społeczne w 2026 r.
           url: https://www.zus.pl/-/nowe-wysoko%C5%9Bci-sk%C5%82adek-na-ubezpieczenia-spo%C5%82eczne-w-2026-r.
           independent: true
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+          quote: "1103,27 zł /tj. 19,52%/ - na ubezpieczenie emerytalne"
+          as_of: 2025-12-30
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: zus.stawka.rentowa
   name: Stopa składki na ubezpieczenia rentowe
@@ -125,7 +133,9 @@
         - title: Komunikat ZUS z 30 grudnia 2025 r., nowe wysokości składek na ubezpieczenia społeczne w 2026 r.
           url: https://www.zus.pl/-/nowe-wysoko%C5%9Bci-sk%C5%82adek-na-ubezpieczenia-spo%C5%82eczne-w-2026-r.
           independent: true
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+          quote: "452,16 zł /tj. 8%/ - na ubezpieczenia rentowe"
+          as_of: 2025-12-30
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: zus.stawka.chorobowa
   name: Stopa składki na ubezpieczenie chorobowe (dobrowolne dla przedsiębiorcy)
@@ -142,7 +152,9 @@
         - title: Komunikat ZUS z 30 grudnia 2025 r., nowe wysokości składek na ubezpieczenia społeczne w 2026 r.
           url: https://www.zus.pl/-/nowe-wysoko%C5%9Bci-sk%C5%82adek-na-ubezpieczenia-spo%C5%82eczne-w-2026-r.
           independent: true
-      verification: {checked_at: 2026-11-25, agent_check: 2026-11-25}
+          quote: "138,47 zł /tj. 2,45%/ - na ubezpieczenie chorobowe"
+          as_of: 2025-12-30
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: zus.stawka.wypadkowa_do_9
   name: Stopa składki wypadkowej płatnika zgłaszającego nie więcej niż 9 ubezpieczonych
