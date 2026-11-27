@@ -761,8 +761,8 @@ przypadku brzegowego, średnią.
 
 ## P44. Które składki pomniejszają przychód na ryczałcie: zapłacone w okresie czy należne za jego miesiące
 
-- Wpis: `zasada.dra_bloki_zdrowotne` (od 2026-05-01), kroki 3 i 6. Tego samego sformułowania („opłacone składki”)
-  używa krok 1 zasady `zasada.ryczalt_zdrowotna_prog`; odwołanie do tego pytania dopisuje się tam osobno.
+- Wpisy: `zasada.dra_bloki_zdrowotne` (od 2026-05-01), kroki 3 i 6; `zasada.ryczalt_zdrowotna_prog` (wersje
+  od 2025-01-01 i od 2027-01-01), kroki 1 i 5.
 - Zgłoszone: 2026-11-27.
 - Ustawa o świadczeniach opieki zdrowotnej (Dz.U. 2025 poz. 1461): art. 81 ust. 2g pomniejsza przychody
   z ust. 2e (roczne) i 2f (od początku roku) o „kwoty opłaconych składek” bez wskazania, w jakim okresie zostały
@@ -778,7 +778,8 @@ przypadku brzegowego, średnią.
 
 ## P45. Kwota do zwrotu w rocznym rozliczeniu (ZUS DRA, pole XII 27): składki należne czy wpłacone
 
-- Wpis: `zasada.dra_bloki_zdrowotne` (od 2026-05-01), krok 7.
+- Wpisy: `zasada.dra_bloki_zdrowotne` (od 2026-05-01), krok 7; `zasada.ryczalt_zdrowotna_prog` (wersje od 2025-01-01
+  i od 2027-01-01), krok 5.
 - Zgłoszone: 2026-11-27.
 - Ustawa o świadczeniach opieki zdrowotnej (Dz.U. 2025 poz. 1461): niedopłatę liczy się jako różnicę między roczną
   składką „a sumą składek na ubezpieczenie zdrowotne wynikającą ze złożonych dokumentów za poszczególne miesiące”
