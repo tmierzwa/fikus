@@ -132,17 +132,18 @@
         xsd_url: http://crd.gov.pl/wzor/2025/09/25/13874/schemat.xsd
       note: >-
         Okres obowiązywania to rok podatkowy 2025. Wyróżnik wzoru 2025/09/25/13874 podaje, że wzór stosuje się do
-        dochodów i strat od 1 stycznia 2025 r.; innego wzoru PIT-36L za 2025 r. w CRWDE nie znaleziono. Wyróżnik podaje tylko początek okresu,
-        a strona MF wariant, nie wersję schematu, więc końca okresu tej wersji nie potwierdza żaden dokument. Kod systemowy
+        dochodów i strat od 1 stycznia 2025 r.; innego wzoru PIT-36L za 2025 r. w CRWDE nie znaleziono. Wyróżnik podaje tylko początek okresu;
+        koniec wynika z początku następnej wersji (wzór 2026/09/17/14379 stosuje się od 1 stycznia 2026 r.). Kod systemowy
         w pliku XSD to „PIT36L (21)”, bez łącznika, choć symbol formularza ma łącznik. Kod systemowy i wersja schematu
         są stałymi wartościami atrybutów w pliku XSD; cytat z pliku podaje je razem z nazwami atrybutów, ale nie
         podaje ich żaden inny dokument (strony MF i dokumentacja e-Deklaracji nie wymieniają tego wzoru). Adres schematu
-        podają wyróżnik wzoru (z http) i sam plik, którego cytat zawiera kod systemowy. Strona MF z formularzami podaje
+        podają wyróżnik wzoru (z http) i sam plik, którego cytat zawiera kod systemowy. Kod systemowy i wersję schematu
+        potwierdza plik, a okres wyróżnik, według zasady dla schematów z CRWDE. Strona MF z formularzami podaje
         wariant 21 dla zeznań za 2025 i 2026 r.
       sources:
         - title: CRWDE (ePUAP), wyróżnik wzoru 2025/09/25/13874, twórca wzoru Ministerstwo Finansów
           url: https://crd.gov.pl/wzor/2025/09/25/13874/wyroznik.xml
-          confirms: [form, variant]
+          confirms: [form, variant, period]
           quote: "PIT-36L(21) ZEZNANIE O WYSOKOŚCI OSIĄGNIĘTEGO DOCHODU (PONIESIONEJ STRATY) ZA ROK PODATKOWY - wzór stosuje się do uzyskanych dochodów lub poniesionych strat od dnia 1 stycznia 2025 r."
           article: art. 45b ust. 1 pkt 5 ustawy o PIT
           as_of: 2026-11-26
@@ -181,7 +182,8 @@
         (stan na 26 listopada 2026 r.). Kod systemowy w pliku XSD to „PIT36L (21)”, bez łącznika. Kod systemowy
         i wersja schematu są stałymi wartościami atrybutów w pliku XSD; cytat z pliku podaje je razem z nazwami
         atrybutów, ale nie podaje ich żaden inny dokument. Adres schematu podają wyróżnik wzoru (z http) i sam plik, którego cytat
-        zawiera kod systemowy.
+        zawiera kod systemowy. Kod systemowy i wersję schematu potwierdza plik, a okres wyróżnik, według zasady dla
+        schematów z CRWDE.
       sources:
         - title: CRWDE (ePUAP), wyróżnik wzoru 2026/09/17/14379, twórca wzoru Ministerstwo Finansów
           url: https://crd.gov.pl/wzor/2026/09/17/14379/wyroznik.xml
