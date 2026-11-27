@@ -601,7 +601,32 @@ przypadku brzegowego, średnią.
   ewidencję lub wykaz środków trwałych oraz wartości niematerialnych i prawnych (JPK_ST)? Czy ryczałtowiec bez
   środków trwałych przesyła cokolwiek?
 
-## P19. Na który dzień ocenia się rozliczanie VAT miesięcznie przy pierwszym przesłaniu ksiąg w formie JPK
+## P19. Na który dzień ocenia się rozliczanie VAT miesięcznie przy pierwszym przesłaniu ksiąg w formie JPK (częściowo rozstrzygnięte 2026-11-27, bez eksperta)
+
+- Rozstrzygnięcie: MF na stronie „Pytania i odpowiedzi JPK_PD” (podatki.gov.pl, pytanie 134, dodane 12.11.2025)
+  odpowiada na pytanie, na jaki moment ustala się, czy podatnik przesyła JPK_V7M czy JPK_V7K (dla ustalenia obowiązku
+  przesyłania ksiąg w formie JPK). Odpowiedź nie wymienia tych plików, ale mówi, który dzień się liczy: „W dacie zaprowadzenia
+  ksiąg należy zatem sprawdzić, czy księgi te muszą być prowadzone w formie elektronicznej. Jeżeli w dacie zaprowadzenia
+  ksiąg wystąpi obowiązek ich prowadzenia w formie elektronicznej, to po zakończeniu roku podatkowego wystąpi również
+  obowiązek ich przesyłania w formie plików JPK.” Odpowiedź mówi też, że gdy w tym dniu obowiązku nie ma, nie ma go po
+  zakończeniu roku.
+  Kroki obu zasad poprawione.
+- Dzień zaprowadzenia: podatkową księgę przychodów i rozchodów zakłada się „na dzień 1 stycznia roku podatkowego lub na
+  dzień rozpoczęcia działalności w trakcie roku podatkowego” (§ 19 rozporządzenia w sprawie prowadzenia podatkowej księgi
+  przychodów i rozchodów, Dz.U. 2025 poz. 1299). Ewidencję przychodów na ryczałcie prowadzi się „odrębnie za każdy rok
+  podatkowy” (art. 15 ust. 1 ustawy o ryczałcie); rozporządzenie w sprawie prowadzenia ewidencji przychodów (Dz.U. 2025
+  poz. 1294) nie podaje dnia jej zaprowadzenia. Art. 15 ust. 2 ustawy o ryczałcie mówi, że „obowiązek prowadzenia
+  ewidencji powstaje od dnia, od którego ma zastosowanie opodatkowanie w formie ryczałtu od przychodów ewidencjonowanych”.
+  Żadne źródło nie mówi wprost, że dzień założenia księgi z § 19 ani dzień z art. 15 ust. 2 to dzień zaprowadzenia ksiąg,
+  o którym mówi MF. Rozstrzygnięta jest więc zasada (liczy się dzień zaprowadzenia ksiąg),
+  a nie to, który to dzień.
+- Otwarte zostaje: czy dzień zaprowadzenia ksiąg w rozumieniu MF to dzień założenia księgi z § 19 rozporządzenia
+  (1 stycznia albo dzień rozpoczęcia działalności)? Kiedy za zaprowadzoną uważa się ewidencję lub wykaz środków trwałych
+  oraz wartości niematerialnych i prawnych? Pytanie 134 wymienia w tytule JPK_ST i JPK_ST_KR,
+  ale odpowiedź tego nie mówi. Czy dniem zaprowadzenia ewidencji przychodów na ryczałcie jest dzień z art. 15 ust. 2, zarówno przy działalności
+  prowadzonej od lat, jak i przy rozpoczęciu działalności w trakcie roku? Który sposób rozliczania VAT liczy się przy rozpoczęciu działalności w trakcie roku, gdy rejestracja jako czynny
+  podatnik VAT zaczyna działać w innym dniu niż założenie księgi lub ewidencji? Odpowiedź MF tych
+  przypadków nie omawia.
 
 - Wpisy: `zasada.jpk_pd_pkpir` (od 2026-07-01) i `zasada.jpk_pd_ryczalt` (od 2026-01-01).
 - Dotyczy też `schemat.jpk_ewp` (od 2026-01-01), ale tylko pośrednio: od odpowiedzi zależy, za który rok po raz
@@ -612,11 +637,12 @@ przypadku brzegowego, średnią.
   31 grudnia 2025 r. „w przypadku podmiotów, które są obowiązane przesyłać ewidencję”, o której mowa w art. 109
   ust. 3 ustawy o VAT, zgodnie z art. 109 ust. 3b (rozliczenie miesięczne), a pozostali za rok rozpoczynający się
   po 31 grudnia 2026 r. Przepis nie mówi, na który dzień albo za który okres ocenia się ten obowiązek.
-- Pytania: czy obowiązek przesłania księgi lub ewidencji za 2026 r. ma podatnik, który w 2026 r. zmienił rozliczenie
+- Pytania pierwotne (stan sprzed rozstrzygnięcia; otwarte zostają tylko pytania z punktu „Otwarte zostaje”): czy obowiązek
+  przesłania księgi lub ewidencji za 2026 r. ma podatnik, który w 2026 r. zmienił rozliczenie
   VAT z kwartalnego na miesięczne (albo odwrotnie)? Czy ma go podatnik, który w trakcie 2026 r. zarejestrował się
   jako czynny podatnik VAT rozliczający się miesięcznie? Czy liczy się stan na początek roku, na koniec roku, czy
   którykolwiek miesiąc roku?
-- Przeszukane źródła (2026-11-26), bez rozstrzygnięcia: broszury MF o JPK_PKPIR(3) i JPK_EWP(4), strony MF o JPK_PD
+- Przeszukane źródła (2026-11-26), bez rozstrzygnięcia: broszury MF o JPK_PKPIR(3) i JPK_EWP(4), strona MF o JPK_PD (kto przekazuje; bez strony pytań i odpowiedzi)
   i KAS „Struktury JPK w podatkach dochodowych”, uzasadnienie projektu ustawy z 9 czerwca 2022 r. (druk sejmowy nr 2186,
   IX kadencja). Żadne z nich nie mówi, na który dzień ocenia się obowiązek. Pierwotne brzmienie art. 66 ust. 1 (Dz.U. 2022
   poz. 1265) mówiło o „okresach rozliczeniowych rozpoczynających się” po danym dniu; ustawa Dz.U. 2023 poz. 1059 zastąpiła je

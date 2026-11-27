@@ -407,10 +407,10 @@
           - text: Podatnik prowadzący podatkową księgę przychodów i rozchodów lub ewidencję środków trwałych oraz wartości niematerialnych i prawnych prowadzi je przy użyciu programów komputerowych i po zakończeniu roku podatkowego przesyła je naczelnikowi urzędu skarbowego w postaci elektronicznej odpowiadającej strukturze logicznej, do dnia upływu terminu złożenia zeznania, o którym mowa w art. 45 ust. 1 ustawy o PIT.
             uses: [schemat.jpk_pkpir, termin.zeznanie_skala, termin.zeznanie_liniowy]
             basis: art. 24a ust. 1e pkt 1 ustawy o PIT w brzmieniu od 1 lipca 2026 r.; art. 193a § 2 Ordynacji podatkowej
-          - text: Po raz pierwszy księgę przesyła się za rok podatkowy rozpoczynający się po 31 grudnia 2025 r., jeżeli podatnik jest obowiązany przesyłać ewidencję VAT za każdy miesiąc łącznie z deklaracją (rozliczenie miesięczne VAT). Na który dzień albo za który okres ocenia się, czy podatnik rozlicza VAT miesięcznie (na przykład przy zmianie rozliczenia z kwartalnego na miesięczne albo odwrotnie w 2026 r. albo przy rejestracji jako czynny podatnik VAT w trakcie roku), jest niewyjaśnione (otwarte pytanie do eksperta, P19).
+          - text: Po raz pierwszy księgę przesyła się za rok podatkowy rozpoczynający się po 31 grudnia 2025 r., jeżeli podatnik jest obowiązany przesyłać ewidencję VAT za każdy miesiąc łącznie z deklaracją (rozliczenie miesięczne VAT). Sposób rozliczania VAT ocenia się w dniu zaprowadzenia księgi. Jeżeli w tym dniu księgę trzeba prowadzić przy użyciu programów komputerowych, po zakończeniu roku podatkowego księgę się przesyła; jeżeli w tym dniu takiego obowiązku nie ma, za ten rok się jej nie przesyła (tak wyjaśnia MF, wymieniając w pytaniu także JPK_ST). Księgę zakłada się na dzień 1 stycznia roku podatkowego albo na dzień rozpoczęcia działalności w trakcie roku podatkowego; żadne źródło nie mówi wprost, że to ten sam dzień, który MF nazywa dniem zaprowadzenia ksiąg. Czy to ten sam dzień, kiedy za zaprowadzoną uważa się ewidencję środków trwałych oraz wartości niematerialnych i prawnych i który sposób rozliczania VAT liczy się przy rozpoczęciu działalności w trakcie roku, gdy rejestracja jako czynny podatnik VAT zaczyna działać w innym dniu niż założenie księgi, MF nie wyjaśnia; to jest niewyjaśnione (otwarte pytanie do eksperta, P19).
             uses: [schemat.jpk_v7m]
-            basis: art. 66 ust. 1 pkt 1 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) w brzmieniu nadanym ustawami Dz.U. 2022 poz. 1265 i Dz.U. 2023 poz. 1059; art. 109 ust. 3b ustawy o VAT
-          - text: Pozostali podatnicy (w tym rozliczający VAT kwartalnie i niebędący czynnymi podatnikami VAT) przesyłają księgę po raz pierwszy za rok podatkowy rozpoczynający się po 31 grudnia 2026 r. Jak zakwalifikować podatnika, który w 2026 r. zmienił sposób rozliczania VAT albo zarejestrował się jako czynny podatnik VAT, jest niewyjaśnione (otwarte pytanie do eksperta, P19).
+            basis: art. 66 ust. 1 pkt 1 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) w brzmieniu nadanym ustawami Dz.U. 2022 poz. 1265 i Dz.U. 2023 poz. 1059; art. 109 ust. 3b ustawy o VAT; § 19 rozporządzenia w sprawie prowadzenia podatkowej księgi przychodów i rozchodów (Dz.U. 2025 poz. 1299)
+          - text: Pozostali podatnicy (w tym rozliczający VAT kwartalnie i niebędący czynnymi podatnikami VAT) przesyłają księgę po raz pierwszy za rok podatkowy rozpoczynający się po 31 grudnia 2026 r.
             uses: []
             basis: art. 66 ust. 1 pkt 2 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) w brzmieniu nadanym ustawami Dz.U. 2022 poz. 1265 i Dz.U. 2023 poz. 1059
       note: >-
@@ -420,9 +420,11 @@
         wszedł w życie 1 stycznia 2026 r., a pkt 2 wchodzi 1 stycznia 2027 r. (art. 89 pkt 7 i 8 ustawy
         z 29 października 2021 r. w brzmieniu nadanym ustawą Dz.U. 2023 poz. 1059). Ustawa z 29 października 2021 r.
         nie ma tekstu jednolitego, więc brzmienie art. 66 wynika z ustaw zmieniających. Inne zmiany tej ustawy wymienione w obwieszczeniu (Dz.U. 2021 poz. 2349 i 2427, Dz.U. 2022 poz. 1301, 1719 i 2180, Dz.U. 2023 poz. 1414, Dz.U. 2024 poz. 1593 i 1685, Dz.U. 2025 poz. 222) ani ustawy Dz.U. 2021 poz. 2469 (zmienia tylko art. 15 pkt 8) i Dz.U. 2023 poz. 1598 (zmienia tylko art. 88 ust. 1) nie zmieniają art. 66 ust. 1 ani art. 89 pkt 7 i 8; brzmienie art. 89 pkt 7 i 8 podaje obwieszczenie do tekstu jednolitego Dz.U. 2025 poz. 843. Przepis nie mówi, na który
-        dzień ocenia się sposób rozliczania VAT (otwarte pytanie). Termin zeznania z art. 45 ust. 1 opisują parametry
+        dzień ocenia się sposób rozliczania VAT; MF wyjaśnia na stronie pytań i odpowiedzi o JPK_PD (pytanie 134,
+        dodane 12.11.2025), że ocenia się go w dniu zaprowadzenia ksiąg. Termin zeznania z art. 45 ust. 1 opisują parametry
         termin.zeznanie_skala (art. 45 ust. 1) i termin.zeznanie_liniowy (art. 45 ust. 1 i 1a pkt 2).
-        Poprawka 2026-11-26: kroki o pierwszym roku przesłania mówią, że nie wiadomo, na który dzień ocenia się sposób rozliczania VAT (P19); wcześniej zastrzegała to tylko notatka.
+        Poprawka 2026-11-26: kroki o pierwszym roku przesłania zaczęły mówić, że nie wiadomo, na który dzień ocenia się sposób rozliczania VAT (P19); wcześniej zastrzegała to tylko notatka.
+        Poprawka 2026-11-27: krok 2 mówi, że sposób rozliczania VAT ocenia się w dniu zaprowadzenia księgi, a gdy w tym dniu nie ma obowiązku prowadzenia jej przy użyciu programów komputerowych, za ten rok się jej nie przesyła (wyjaśnienie MF); wcześniej kroki 2 i 3 opisywały dzień oceny jako niewyjaśniony. Krok 2 podaje też dzień założenia księgi z § 19 rozporządzenia w sprawie prowadzenia podatkowej księgi przychodów i rozchodów, dodany do podstawy kroku. Krok 3 nie zastrzega już osobno, jak zakwalifikować podatnika, który w 2026 r. zmienił sposób rozliczania VAT albo zarejestrował się jako czynny podatnik VAT: obejmuje podatników, których nie obejmuje krok 2, więc dotyczy go to, co krok 2 zostawia otwarte. Otwarte zostaje pytanie, czy dzień założenia księgi to dzień zaprowadzenia ksiąg w rozumieniu MF, kiedy za zaprowadzoną uważa się ewidencję środków trwałych oraz wartości niematerialnych i prawnych, i który sposób rozliczania VAT liczy się przy rozpoczęciu działalności w trakcie roku, gdy rejestracja jako czynny podatnik VAT zaczyna działać w innym dniu niż założenie księgi (P19).
       sources:
         - title: Dz.U. 2026 poz. 779, ustawa z 15 maja 2026 r. o zmianie ustawy o PIT, ustawy o CIT i ustawy o ryczałcie
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/779/text.pdf
@@ -456,13 +458,23 @@
           url: https://podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_pd/jpk_pd
           quote: "31 grudnia 2025 r. – pozostali podatnicy CIT i PIT zobowiązani do składania JPK_VAT za okresy miesięczne, 31 grudnia 2026 r. – pozostali podatnicy, w tym podatnicy zobowiązani do składania JPK_VAT za okresy kwartalne."
           as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Pytania i odpowiedzi JPK_PD, pytanie 134, dodane 12.11.2025 (dzień, na który ocenia się rozliczanie VAT miesięcznie)
+          url: https://podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_pd/pytania-i-odpowiedzi-jpk_pd
+          quote: "W dacie zaprowadzenia ksiąg należy zatem sprawdzić, czy księgi te muszą być prowadzone w formie elektronicznej. Jeżeli w dacie zaprowadzenia ksiąg wystąpi obowiązek ich prowadzenia w formie elektronicznej, to po zakończeniu roku podatkowego wystąpi również obowiązek ich przesyłania w formie plików JPK. Jeżeli taki obowiązek nie wystąpi w dacie zaprowadzenia ksiąg podatkowych, to konsekwentnie, nie będzie też obowiązku ich przesyłania w formie plików JPK po zakończeniu roku podatkowego."
+          as_of: 2026-11-27
+        - title: Dz.U. 2025 poz. 1299, rozporządzenie w sprawie prowadzenia podatkowej księgi przychodów i rozchodów (dzień założenia księgi)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1299/text.pdf
+          quote: "Podatnik jest obowiązany założyć księgę, a w razie obowiązku prowadzenia zestawienia sprzedaży (ewidencji sprzedaży) – również to zestawienie, na dzień 1 stycznia roku podatkowego lub na dzień rozpoczęcia działalności w trakcie roku podatkowego."
+          article: § 19
       verification:
-        checked_at: 2026-11-26
-        agent_check: 2026-11-26
+        checked_at: 2026-11-27
+        agent_check: 2026-11-27
         open_issue: >-
-          P19: przepis nie mówi, na który dzień ocenia się obowiązek przesyłania ewidencji VAT za każdy miesiąc
-          (na przykład przy zmianie rozliczenia z kwartalnego na miesięczne w 2026 r. albo rejestracji jako
-          czynny podatnik VAT w trakcie roku). Zob. docs/pytania-do-eksperta.md.
+          P19: MF wyjaśnia, że obowiązek ocenia się w dniu zaprowadzenia ksiąg, i wymienia w pytaniu JPK_ST, ale nie mówi,
+          czy to dzień założenia księgi z § 19 rozporządzenia, kiedy za zaprowadzoną uważa się ewidencję środków trwałych
+          oraz wartości niematerialnych i prawnych, ani który sposób rozliczania VAT liczy się przy rozpoczęciu działalności
+          w trakcie roku, gdy rejestracja jako czynny podatnik VAT zaczyna działać w innym dniu niż założenie księgi.
+          Zob. docs/pytania-do-eksperta.md.
 
 - id: zasada.jpk_pd_ryczalt
   name: Przesyłanie ewidencji na ryczałcie w formie JPK
@@ -475,10 +487,10 @@
           - text: Podatnik na ryczałcie prowadzący ewidencję przychodów lub wykaz środków trwałych oraz wartości niematerialnych i prawnych prowadzi tę ewidencję i wykaz przy użyciu programów komputerowych i po zakończeniu roku podatkowego przesyła je naczelnikowi urzędu skarbowego w postaci elektronicznej odpowiadającej strukturze logicznej, do dnia upływu terminu złożenia zeznania rocznego. Ustawa nazywa ewidencję przychodów „ewidencją” (art. 15 ust. 1). Ewidencję przychodów przesyła się w strukturze JPK_EWP.
             uses: [termin.zeznanie_ryczalt]
             basis: art. 15 ust. 1 i 12 ustawy o zryczałtowanym podatku dochodowym; art. 193a § 2 Ordynacji podatkowej
-          - text: Po raz pierwszy przesyła się je za rok podatkowy rozpoczynający się po 31 grudnia 2025 r., jeżeli podatnik jest obowiązany przesyłać ewidencję VAT za każdy miesiąc łącznie z deklaracją (rozliczenie miesięczne VAT). Na który dzień albo za który okres ocenia się, czy podatnik rozlicza VAT miesięcznie (na przykład przy zmianie rozliczenia z kwartalnego na miesięczne albo odwrotnie w 2026 r. albo przy rejestracji jako czynny podatnik VAT w trakcie roku), jest niewyjaśnione (otwarte pytanie do eksperta, P19).
+          - text: Po raz pierwszy przesyła się je za rok podatkowy rozpoczynający się po 31 grudnia 2025 r., jeżeli podatnik jest obowiązany przesyłać ewidencję VAT za każdy miesiąc łącznie z deklaracją (rozliczenie miesięczne VAT). Sposób rozliczania VAT ocenia się w dniu zaprowadzenia ewidencji przychodów. Jeżeli w tym dniu ewidencję trzeba prowadzić przy użyciu programów komputerowych, po zakończeniu roku podatkowego przesyła się ją; jeżeli w tym dniu takiego obowiązku nie ma, za ten rok się jej nie przesyła (tak wyjaśnia MF, wymieniając w pytaniu także JPK_ST). Ewidencję przychodów prowadzi się odrębnie za każdy rok podatkowy, a obowiązek jej prowadzenia powstaje od dnia, od którego ma zastosowanie opodatkowanie ryczałtem; żadne źródło nie mówi wprost, że to dzień zaprowadzenia ksiąg, o którym mówi MF. Czy dniem zaprowadzenia ewidencji przychodów jest ten dzień (także przy rozpoczęciu działalności w trakcie roku), kiedy za zaprowadzony uważa się wykaz środków trwałych oraz wartości niematerialnych i prawnych i który sposób rozliczania VAT liczy się przy rozpoczęciu działalności w trakcie roku, gdy rejestracja jako czynny podatnik VAT zaczyna działać w innym dniu niż zaprowadzenie ewidencji, MF nie wyjaśnia; to jest niewyjaśnione (otwarte pytanie do eksperta, P19).
             uses: [schemat.jpk_v7m]
-            basis: art. 66 ust. 1 pkt 1 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) w brzmieniu nadanym ustawami Dz.U. 2022 poz. 1265 i Dz.U. 2023 poz. 1059; art. 109 ust. 3b ustawy o VAT
-          - text: Pozostali podatnicy (w tym rozliczający VAT kwartalnie i niebędący czynnymi podatnikami VAT) przesyłają je po raz pierwszy za rok podatkowy rozpoczynający się po 31 grudnia 2026 r. Jak zakwalifikować podatnika, który w 2026 r. zmienił sposób rozliczania VAT albo zarejestrował się jako czynny podatnik VAT, jest niewyjaśnione (otwarte pytanie do eksperta, P19).
+            basis: art. 66 ust. 1 pkt 1 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) w brzmieniu nadanym ustawami Dz.U. 2022 poz. 1265 i Dz.U. 2023 poz. 1059; art. 109 ust. 3b ustawy o VAT; art. 15 ust. 1 i 2 ustawy o zryczałtowanym podatku dochodowym
+          - text: Pozostali podatnicy (w tym rozliczający VAT kwartalnie i niebędący czynnymi podatnikami VAT) przesyłają je po raz pierwszy za rok podatkowy rozpoczynający się po 31 grudnia 2026 r.
             uses: []
             basis: art. 66 ust. 1 pkt 2 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) w brzmieniu nadanym ustawami Dz.U. 2022 poz. 1265 i Dz.U. 2023 poz. 1059
       note: >-
@@ -490,8 +502,10 @@
         Art. 15 ust. 1 wprowadza dla ewidencji przychodów nazwę „ewidencja”, której używa ust. 12, a broszura MF
         o strukturze JPK_EWP(4) podaje wprost, że ryczałtowcy prowadzący ewidencję przychodów przesyłają plik
         JPK_EWP, i wskazuje art. 15 ust. 12 jako podstawę. Przepis nie mówi, na który dzień ocenia się sposób
-        rozliczania VAT (otwarte pytanie).
-        Poprawka 2026-11-26: kroki o pierwszym roku przesłania mówią, że nie wiadomo, na który dzień ocenia się sposób rozliczania VAT (P19); wcześniej zastrzegała to tylko notatka.
+        rozliczania VAT; MF wyjaśnia na stronie pytań i odpowiedzi o JPK_PD (pytanie 134, dodane 12.11.2025), że ocenia
+        się go w dniu zaprowadzenia ksiąg.
+        Poprawka 2026-11-26: kroki o pierwszym roku przesłania zaczęły mówić, że nie wiadomo, na który dzień ocenia się sposób rozliczania VAT (P19); wcześniej zastrzegała to tylko notatka.
+        Poprawka 2026-11-27: krok 2 mówi, że sposób rozliczania VAT ocenia się w dniu zaprowadzenia ewidencji przychodów, a gdy w tym dniu nie ma obowiązku prowadzenia jej przy użyciu programów komputerowych, za ten rok się jej nie przesyła (wyjaśnienie MF); wcześniej kroki 2 i 3 opisywały dzień oceny jako niewyjaśniony. Krok 2 podaje też, że ewidencję prowadzi się odrębnie za każdy rok podatkowy i od kiedy powstaje obowiązek jej prowadzenia (art. 15 ust. 1 i 2 ustawy o ryczałcie, dodane do podstawy kroku). Krok 3 nie zastrzega już osobno, jak zakwalifikować podatnika, który w 2026 r. zmienił sposób rozliczania VAT albo zarejestrował się jako czynny podatnik VAT: obejmuje podatników, których nie obejmuje krok 2, więc dotyczy go to, co krok 2 zostawia otwarte. Otwarte zostaje pytanie, czy dniem zaprowadzenia ewidencji przychodów jest dzień z art. 15 ust. 2, także przy rozpoczęciu działalności w trakcie roku (rozporządzenie w sprawie prowadzenia ewidencji przychodów, Dz.U. 2025 poz. 1294, dnia zaprowadzenia nie podaje), kiedy za zaprowadzony uważa się wykaz środków trwałych oraz wartości niematerialnych i prawnych, i który sposób rozliczania VAT liczy się przy rozpoczęciu działalności w trakcie roku, gdy rejestracja jako czynny podatnik VAT zaczyna działać w innym dniu niż zaprowadzenie ewidencji (P19).
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
@@ -521,6 +535,10 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           quote: "odrębnie za każdy rok podatkowy, ewidencję przychodów, zwaną dalej „ewidencją”"
           article: art. 15 ust. 1
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (dzień powstania obowiązku prowadzenia ewidencji)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          quote: "Obowiązek prowadzenia ewidencji powstaje od dnia, od którego ma zastosowanie opodatkowanie w formie ryczałtu od przychodów ewidencjonowanych."
+          article: art. 15 ust. 2
         - title: podatki.gov.pl (MF), Broszura informacyjna dotycząca struktury JPK_EWP(4) (pierwszy rok)
           url: https://podatki.gov.pl/media/0qmfysqh/broszura_informacyjna_dot_jpk_ewp-4.pdf
           quote: "31 grudnia 2025 r. - w przypadku podmiotów, które są obowiązane przesyłać ewidencję, o której mowa w art. 109 ust. 3 ustawy VAT, zgodnie z art. 109 ust. 3b tej ustawy[4], tj. podmiotów zobowiązanych przesyłać miesięczne pliki JPK_V7M;"
@@ -533,9 +551,17 @@
           url: https://www.gov.pl/web/kas/struktury-jpk-w-podatkach-dochodowych
           quote: "1 stycznia 2027 r. w przypadku pozostałych podatników rozliczających się na podstawie ustawy z dnia 26 lipca 1991 r. o podatku dochodowym od osób fizycznych oraz ustawy z dnia 20 listopada 1998 r. o zryczałtowanym podatku dochodowym od niektórych przychodów osiąganych przez osoby fizyczne, w tym podatnicy zobowiązani do składania pliku JPK_V7K"
           as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Pytania i odpowiedzi JPK_PD, pytanie 134, dodane 12.11.2025 (dzień, na który ocenia się rozliczanie VAT miesięcznie)
+          url: https://podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_pd/pytania-i-odpowiedzi-jpk_pd
+          quote: "W dacie zaprowadzenia ksiąg należy zatem sprawdzić, czy księgi te muszą być prowadzone w formie elektronicznej. Jeżeli w dacie zaprowadzenia ksiąg wystąpi obowiązek ich prowadzenia w formie elektronicznej, to po zakończeniu roku podatkowego wystąpi również obowiązek ich przesyłania w formie plików JPK. Jeżeli taki obowiązek nie wystąpi w dacie zaprowadzenia ksiąg podatkowych, to konsekwentnie, nie będzie też obowiązku ich przesyłania w formie plików JPK po zakończeniu roku podatkowego."
+          as_of: 2026-11-27
       verification:
-        checked_at: 2026-11-26
+        checked_at: 2026-11-27
+        agent_check: 2026-11-27
         open_issue: >-
-          P19: na który dzień ocenia się obowiązek przesyłania ewidencji VAT za każdy miesiąc (zmiana rozliczenia
-          z kwartalnego na miesięczne w 2026 r., rejestracja jako czynny podatnik VAT w trakcie roku)?
-          Zob. docs/pytania-do-eksperta.md.
+          P19: MF wyjaśnia, że obowiązek ocenia się w dniu zaprowadzenia ksiąg, i wymienia w pytaniu JPK_ST, ale nie mówi,
+          czy dniem zaprowadzenia ewidencji przychodów jest dzień, od którego według art. 15 ust. 2 powstaje obowiązek
+          jej prowadzenia (dotyczy to także rozpoczęcia działalności w trakcie roku), kiedy za zaprowadzony
+          uważa się wykaz środków trwałych oraz wartości niematerialnych i prawnych, ani który sposób rozliczania VAT liczy
+          się przy rozpoczęciu działalności w trakcie roku, gdy rejestracja jako czynny podatnik VAT zaczyna działać
+          w innym dniu niż zaprowadzenie ewidencji. Zob. docs/pytania-do-eksperta.md.
