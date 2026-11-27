@@ -131,7 +131,9 @@ class Version(BaseModel):
         if not isinstance(self.value, dict) or not any(s.confirms for s in self.sources):
             return None
         missing = []
-        for field in [*_fields(self.value), PERIOD]:
+        # Okresu zasady nie potwierdza się osobno: wersje często zaczynają się na początku zakresu danych.
+        is_rule = isinstance(self.value.get("steps"), list)
+        for field in [*_fields(self.value), *([] if is_rule else [PERIOD])]:
             docs = {s.url for s in self.sources if s.quote and field in (s.confirms or [])}
             primary = {s.url for s in self.sources
                        if s.quote and s.kind == "primary" and field in (s.confirms or [])}

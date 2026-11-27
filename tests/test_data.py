@@ -253,7 +253,7 @@ def _rule(*sources):
 def test_rule_can_be_confirmed_step_by_step():
     act = {"title": "akt", "url": "https://example.org/akt", "quote": "q",
            "confirms": ["step_1", "step_2", "period"]}
-    mf = {"title": "MF", "url": "https://example.org/mf", "quote": "q", "confirms": ["step_1", "period"]}
+    mf = {"title": "MF", "url": "https://example.org/mf", "quote": "q", "confirms": ["step_1"]}
     zus = {"title": "ZUS", "url": "https://example.org/zus", "quote": "q", "confirms": ["step_2"]}
     partial = _rule(act, mf)
     assert partial.confidence()["level"] == "niska"
