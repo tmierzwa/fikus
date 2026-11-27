@@ -84,7 +84,19 @@ przypadku brzegowego, średnią.
 - Pytanie: czy minimalna składka za styczeń 2027 r. (ostatni miesiąc roku składkowego) wynosi 432,54 zł,
   mimo że od 1 stycznia 2027 r. obowiązuje nowe minimalne wynagrodzenie?
 
-## P4. Zryczałtowana stopa składki wypadkowej dla płatnika do 9 ubezpieczonych
+## P4. Zryczałtowana stopa składki wypadkowej dla płatnika do 9 ubezpieczonych (rok 2025/2026 rozstrzygnięty 2026-11-27, bez eksperta; rok 2026/2027 otwarty)
+
+- Rozstrzygnięcie częściowe, tylko za rok 2025/2026: poradnik ZUS „Ustalanie stopy procentowej składki na ubezpieczenie
+  wypadkowe” (stan prawny na 1 stycznia 2026 r.) sam podaje stopę zryczałtowaną 1,67% dla płatnika zgłaszającego nie więcej
+  niż 9 ubezpieczonych. Spoza ZUS podaje ją biznes.gov.pl (aktualizacja 11 lutego 2026 r.: składkę 1,67% opłacają firmy, które
+  zgłosiły przeciętnie nie więcej niż 9 osób). Podaje ją też materiał ZUS województwa opolskiego przedrukowany przez Zieloną Linię
+  (stan prawny na 26 listopada 2025 r.). Zastrzeżenie wobec biznes.gov.pl opisane niżej nie przeszkadza: obie daty początku
+  stopy na tej stronie (1 kwietnia 2021 r. i 1 kwietnia 2024 r.) są wcześniejsze niż 1 kwietnia 2025 r., a cytowany przypis
+  podaje stopę i grupę płatników w stanie na 11 lutego 2026 r., czyli w trakcie roku 2025/2026; stopę ustala się na cały rok
+  składkowy (art. 27 ust. 1 ustawy wypadkowej). `open_issue` usunięty z wersji 2025/2026.
+- Za rok 2026/2027 pytanie pozostaje otwarte: stopę na ten rok podają tylko komunikat ZUS z 12 stycznia 2026 r. (w części o tym roku)
+  i przedruk wypowiedzi rzeczniczki ZUS z 1 kwietnia 2026 r. Załącznik nr 2 rozporządzenia nie nazywa najwyższej stopy,
+  podaje tylko tabelę.
 
 - Wpis: `zus.stawka.wypadkowa_do_9` (2025-04-01 – 2026-03-31 i 2026-04-01 – 2027-03-31, 1,67%).
 - Zgłoszone: 2026-11-26.
@@ -92,11 +104,11 @@ przypadku brzegowego, średnią.
   dla grup działalności. Najwyższa stopa w tabeli z załącznika nr 2 rozporządzenia (Dz.U. 2025
   poz. 1874) to 3,33, a § 6 ust. 2 każe zaokrąglać według zasady matematycznej. Kwotę 1,67% podają
   wprost materiały ZUS (poradnik i strona o informacji ZUS IWA), a za rok 2025/2026 także biznes.gov.pl, choć bez wskazania roku składkowego (niżej).
-- Pytanie: czy dla płatnika zgłaszającego nie więcej niż 9 ubezpieczonych stopa w latach składkowych
-  2025/2026 i 2026/2027 wynosi 1,67%, i czy istnieje urzędowe źródło poza materiałami ZUS, które
+- Pytanie (po rozstrzygnięciu za 2025/2026 dotyczy już tylko roku 2026/2027): czy dla płatnika zgłaszającego nie więcej
+  niż 9 ubezpieczonych stopa w roku składkowym 2026/2027 wynosi 1,67%, i czy istnieje urzędowe źródło poza materiałami ZUS, które
   podaje tę stopę wprost?
 
-- Materiały znalezione 2026-11-26 (nie rozstrzygają pytania):
+- Materiały znalezione 2026-11-26 (historia; rok 2025/2026 rozstrzyga przypis z tej samej strony biznes.gov.pl, opisany wyżej):
   - Za rok 2026/2027: przedruk wypowiedzi regionalnej rzeczniczki prasowej ZUS z 1 kwietnia 2026 r. na stronie Starostwa
     Powiatowego w Hajnówce (https://samorzad.gov.pl/web/powiat-hajnowski/stopy-procentowe) podaje 1,67% i najwyższą stopę
     3,33% od 1 kwietnia 2026 r. To nadal materiał ZUS, nie źródło spoza ZUS.
