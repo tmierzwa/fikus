@@ -98,8 +98,17 @@
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (wyłączenia)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
-          article: art. 8 ust. 1
-          quote: "Opodatkowania w formie ryczałtu od przychodów ewidencjonowanych, z zastrzeżeniem art. 6 ust. 1b, nie stosuje się do podatników"
+          article: art. 8 ust. 1 pkt 1–4
+          quote: >-
+            Opodatkowania w formie ryczałtu od przychodów ewidencjonowanych, z zastrzeżeniem art. 6 ust. 1b, nie stosuje
+            się do podatników: 1) opłacających podatek w formie karty podatkowej na zasadach określonych w rozdziale 3;
+            2) korzystających, na podstawie odrębnych przepisów, z okresowego zwolnienia od podatku dochodowego;
+            3) osiągających w całości lub w części przychody z tytułu: a) prowadzenia aptek, b) (uchylona)
+            c) działalności w zakresie kupna i sprzedaży wartości dewizowych, d) (uchylona) e) (uchylona)
+            f) działalności w zakresie handlu częściami i akcesoriami do pojazdów mechanicznych; 4) wytwarzających
+            wyroby opodatkowane podatkiem akcyzowym, na podstawie odrębnych przepisów, z wyjątkiem wytwarzania energii
+            elektrycznej z odnawialnych źródeł energii;
+          confirms: [step_2]
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (części do pojazdów)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           article: art. 8 ust. 1 pkt 3 lit. f
@@ -132,11 +141,17 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           article: art. 6 ust. 1b
           quote: "Do przychodów, o których mowa w ust. 1a, nie ma zastosowania przepis art. 8 ust. 1."
-        - title: podatki.gov.pl (MF), Opodatkowanie ryczałtem od przychodów ewidencjonowanych (komunikat MF; potwierdza kroki 1–2 i części kroków 3–5, bez kroków 6–7)
+        - title: podatki.gov.pl (MF), Opodatkowanie ryczałtem od przychodów ewidencjonowanych (komunikat MF; wyłączenia z art. 8 ust. 1 pkt 1–4)
           url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-ryczaltem-od-przychodow-ewidencjonowanych
-          quote: "osiągasz w całości lub w części przychody z tytułu: prowadzenia aptek, działalności w zakresie kupna i sprzedaży wartości dewizowych, działalności w zakresie handlu częściami i akcesoriami do pojazdów mechanicznych"
-          as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+          quote: >-
+            Ponadto nie możesz być opodatkowany ryczałtem ewidencjonowanym, jeśli: opłacasz podatek w formie karty
+            podatkowej; korzystasz z okresowego zwolnienia od podatku dochodowego; osiągasz w całości lub w części
+            przychody z tytułu: prowadzenia aptek, działalności w zakresie kupna i sprzedaży wartości dewizowych,
+            działalności w zakresie handlu częściami i akcesoriami do pojazdów mechanicznych; wytwarzasz wyroby
+            opodatkowane podatkiem akcyzowym, z wyjątkiem wytwarzania energii elektrycznej z odnawialnych źródeł energii;
+          as_of: 2026-11-27
+          confirms: [step_2]
+      verification: {checked_at: 2026-11-27}
 
 - id: zasada.liniowy_wylaczenia
   name: Warunki podatku liniowego i utrata prawa do niego
