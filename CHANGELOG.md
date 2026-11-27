@@ -23,6 +23,10 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 - Parametry VAT w nowym pliku `data/parameters/vat.yaml`: `vat.stawki` (stawka podstawowa i obniżone
   w okresie z art. 146ef ustawy o VAT), `vat.limit_zwolnienia` (limit zwolnienia podmiotowego z art. 113
   ust. 1) i zasada `zasada.vat_odliczenie` (prawo do odliczenia, moment i korekta, samochody, wyłączenia).
+- Nowy plik `data/parameters/forma_opodatkowania.yaml`: limit przychodów uprawniający do ryczałtu
+  (`ryczalt.limit_przychodow_euro`, art. 6 ust. 4 ustawy o zryczałtowanym podatku dochodowym) oraz zasady
+  `zasada.ryczalt_wylaczenia` (art. 8), `zasada.liniowy_wylaczenia` (art. 9a ust. 3 i 5 ustawy o PIT)
+  i `zasada.wybor_formy_opodatkowania` (termin i sposób wyboru ryczałtu i podatku liniowego, kontynuacja, rezygnacja).
 
 ### Zmienione
 

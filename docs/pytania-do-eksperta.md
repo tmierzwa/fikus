@@ -646,3 +646,24 @@ przypadku brzegowego, średnią.
   przychodów ewidencjonowanych, broszura MF o JPK_EWP(4) (pole kwoty przychodu w PLN, bez zasady przeliczenia).
 - Pytanie: czy podatnik na ryczałcie przelicza przychód w walucie obcej według art. 11a ust. 1 ustawy o PIT? Jeżeli tak,
   na jakiej podstawie (art. 6 ust. 1 ustawy o ryczałcie)?
+
+## P46. Wybór ryczałtu albo podatku liniowego w roku po utracie prawa do tej formy
+
+- Wpis: `zasada.wybor_formy_opodatkowania` (od 2026-01-01), krok o roku po utracie prawa.
+- Zgłoszone: 2026-11-26.
+- Ustawa o ryczałcie (Dz.U. 2025 poz. 843), art. 9 ust. 1b: wybór ryczałtu „dotyczy również lat następnych”, chyba że
+  podatnik w terminie złoży oświadczenie o rezygnacji albo o wyborze podatku liniowego. Art. 8 ust. 2: podatnik, który
+  uzyska przychód od byłego lub obecnego pracodawcy, „traci w roku podatkowym prawo” do ryczałtu i do końca roku
+  podatkowego opłaca podatek na ogólnych zasadach. Art. 8 ust. 3 mówi tak samo o utracie prawa w roku podatkowym.
+- Ustawa o PIT (Dz.U. 2026 poz. 592), art. 9a ust. 2b: wybór podatku liniowego „dotyczy również lat następnych”;
+  art. 9a ust. 3: podatnik „traci w roku podatkowym prawo” do podatku liniowego.
+- Przepisy nie mówią wprost, czy wybór sprzed utraty prawa obowiązuje w następnym roku bez nowego oświadczenia.
+  Przeszukane źródła urzędowe (2026-11-26), bez rozstrzygnięcia: strony podatki.gov.pl i biznes.gov.pl o ryczałcie
+  i o podatku liniowym.
+- Materiał (bez rozstrzygnięcia): biznes.gov.pl, Podatek liniowy (portal 00253) podaje, że wybór podatku liniowego
+  „jest możliwy dopiero od roku następującego po roku podatkowym”, w którym podatnik pracował na rzecz byłego pracodawcy.
+  Strona nie mówi, czy w tym następnym roku trzeba złożyć nowe oświadczenie.
+- Pytanie: czy podatnik, który stracił w roku podatkowym prawo do ryczałtu (art. 8 ust. 2 lub 3 ustawy o ryczałcie) albo
+  do podatku liniowego (art. 9a ust. 3 ustawy o PIT), jest w następnym roku opodatkowany tą formą bez nowego oświadczenia,
+  jeżeli spełnia jej warunki? Czy musi złożyć oświadczenie o wyborze ponownie w terminie z art. 9 ust. 1 ustawy
+  o ryczałcie albo art. 9a ust. 2 ustawy o PIT?
