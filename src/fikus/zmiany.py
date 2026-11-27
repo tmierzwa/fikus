@@ -23,7 +23,7 @@ from pathlib import Path
 from typing import Callable
 
 from .cytaty import fetch_bytes
-from .store import Store, load_yaml
+from .store import Store, load_yaml    # load_yaml odrzuca powtórzony klucz
 
 API = "https://api.sejm.gov.pl/eli/acts/"
 MAX_BYTES = 5 * 1024 * 1024        # metadane aktu mają kilkadziesiąt kB

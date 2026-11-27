@@ -28,15 +28,15 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
   limicie 120 s, a po przekroczeniu tego limitu nie ma ponownej próby. Nieudany zapis do pamięci
   podręcznej nie zostawia pliku `.tmp`.
 - Opis narzędzia `get_schema` wylicza symbole deklaracji z danych (doszedł KEDU).
+- Odpowiedź eksperta (`verification.expert`) ma pole `url` na link do odpowiedzi w GitHub Discussions.
 - Powtórzony klucz w pliku YAML z danymi zatrzymuje ładowanie danych. Dotąd brany był po cichu ostatni.
-
 - Schemat z CRWDE: plik schematu, którego adres podają już dwa dokumenty, sam potwierdza kod systemowy
   i wersję schematu, a wyróżnik wzoru o tym samym numerze sam potwierdza okres. Koniec okresu zamkniętej
   wersji wynika z potwierdzonego początku następnej (decyzja z 27 listopada 2026 r.).
 - Zasada obliczeń może mieć `not_covered` bez `see_also`. Wylicza wtedy sprawy, których zasada nie opisuje
   (dawne zdania „Ta zasada nie opisuje…” w krokach), a `see_also` opcjonalnie wskazuje parametry, które
   te sprawy opisują (dawne odesłania „…opisuje zasada …”). Tego opisu nie potwierdza się dokumentami, więc nie
-  blokuje pewności zasady. Przy wartości `not_covered` nadal wymaga `see_also` (decyzja z 27 listopada 2026 r.).
+  blokuje pewności zasady. Przy wartości `not_covered` nadal wymaga `see_also`, a `see_also` bez `not_covered` jest odrzucane przy obu rodzajach parametru. Instrukcje serwera i opis pól `not_covered` i `see_also` w wyniku `get_parameter` mówią, co znaczą przy zasadzie (decyzja z 27 listopada 2026 r.).
 - Notatki wersji opisują tylko obecny stan. Historię edycji danych w 23 notatkach (zdania „Poprawka…”,
   opis poprzednich błędów, wzmianki o weryfikatorze) zastąpiło krótkie zdanie „Korekta z …: zmienione …”
   albo usunięto ją, gdy poprawka dotyczyła samej notatki. Wartości, okresy, źródła i kroki się nie zmieniają.

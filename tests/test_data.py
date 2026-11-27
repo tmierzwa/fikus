@@ -377,3 +377,12 @@ def test_boolean_value_is_rejected():
         _version().model_validate({"valid_from": "2026-01-01", "value": True,
                                    "sources": [{"title": "x", "url": "https://example.org/a"}],
                                    "verification": {"checked_at": "2026-01-01"}})
+
+
+def test_expert_answer_link_must_be_https():
+    from fikus.model import Expert
+    e = Expert.model_validate({"name": "doradca podatkowy", "answered_at": "2026-11-27", "basis": "art. 1",
+                               "url": "https://github.com/tmierzwa/fikus/discussions/1"})
+    assert e.url.startswith("https://")
+    with pytest.raises(ValueError, match="https"):
+        Expert.model_validate({"name": "x", "answered_at": "2026-11-27", "basis": "b", "url": "http://x"})
