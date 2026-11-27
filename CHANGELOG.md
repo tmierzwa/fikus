@@ -45,6 +45,9 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
   (limit sprzedaży na rzecz osób fizycznych zwalniający z kasy rejestrującej, do końca 2027 r.).
 - Zasada `zasada.zaliczki_zawieszenie` w `data/parameters/zaliczki.yaml`: zaliczki na PIT i ryczałt w okresie
   zawieszenia działalności i po jej wznowieniu.
+- IP Box i ulga badawczo-rozwojowa w nowym pliku `data/parameters/ip_box_br.yaml` (skala i podatek liniowy):
+  stawka `ip_box.stawka` (art. 30ca ust. 1), najwyższe procenty kosztów kwalifikowanych `ulga.br.odliczenie` (art. 26e ust. 7 pkt 3)
+  oraz zasady `zasada.ip_box` i `zasada.ulga_br`.
 
 ### Zmienione
 
