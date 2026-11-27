@@ -202,7 +202,7 @@ python scripts/sprawdz_cytaty.py   # wymaga pdftotext (poppler)
 python scripts/wykryj_zmiany.py    # czy cytowane akty się zmieniły (API ELI Sejmu)
 ```
 
-Najbardziej potrzebne są zgłoszenia błędów w danych i drugie źródła dla wpisów z pewnością `niska`. Zasady, w tym podpis DCO, są w [CONTRIBUTING.md](CONTRIBUTING.md). Obowiązuje [kodeks postępowania](CODE_OF_CONDUCT.md), a luki bezpieczeństwa zgłaszaj według [SECURITY.md](SECURITY.md).
+Najbardziej potrzebne są zgłoszenia błędów w danych i drugie źródła dla wpisów z pewnością `niska`. Doradców podatkowych i księgowych prosimy o odpowiedzi na [pytania do eksperta](https://github.com/tmierzwa/fikus/discussions/categories/pytania-do-eksperta). Zasady, w tym podpis DCO, są w [CONTRIBUTING.md](CONTRIBUTING.md). Obowiązuje [kodeks postępowania](CODE_OF_CONDUCT.md), a luki bezpieczeństwa zgłaszaj według [SECURITY.md](SECURITY.md).
 
 Nie odpowiadamy na pytania o sytuację konkretnego podatnika. Nie publikuj w zgłoszeniach swoich danych podatkowych.
 
