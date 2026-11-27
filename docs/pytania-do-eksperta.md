@@ -684,3 +684,26 @@ przypadku brzegowego, średnią.
 - Pytanie: który wzór stosuje się do deklaracji rozliczeniowej za kwiecień 2026 r. złożonej przed 1 maja 2026 r.:
   do 29 kwietnia wzór z rozporządzenia z 2020 r., a 30 kwietnia wzór z załącznika nr 26 (brzmienie rozporządzenia), czy
   wzór z załącznika nr 16 (stanowisko ZUS)?
+
+## P64. IP Box: odliczenie kosztów kwalifikowanych od dochodu z kwalifikowanego prawa (art. 30ca ust. 9a)
+
+- Wpis: `zasada.ip_box` (od 2026-01-01), krok o odliczeniu kosztów kwalifikowanych; `zasada.ulga_br` (od 2026-01-01), krok o podstawie odliczenia i krok o przepisach, których zasada nie opisuje.
+- Zgłoszone: 2026-11-26.
+- Ustawa o PIT (Dz.U. 2026 poz. 592), art. 30ca ust. 9a: „Od dochodu z kwalifikowanego prawa własności intelektualnej
+  podatnik może odliczyć koszty kwalifikowane określone w art. 26e ust. 2–3b, które doprowadziły do wytworzenia,
+  rozwinięcia lub ulepszenia przez podatnika tego prawa, przy czym przepisy art. 26e ust. 1 zdanie drugie i ust. 3c–10
+  stosuje się odpowiednio.” Ustęp dodała ustawa Dz.U. 2021 poz. 2105 (art. 1 pkt 55 lit. b), od 1 stycznia 2022 r.
+- Art. 30ca ust. 4: kwalifikowany dochód to iloczyn „dochodu z kwalifikowanego prawa własności intelektualnej”
+  i wskaźnika; ust. 3: podstawą opodatkowania jest suma kwalifikowanych dochodów.
+- Objaśnienia podatkowe MF z 15 lipca 2019 r. (IP Box), akapit 151, wydane przed dodaniem ust. 9a: „ulga B+R
+  nie podlega uwzględnieniu w obliczeniu podstawy opodatkowania podlegającej 5% podatkowi z IP Box”, a podatnik
+  nie może stosować obu preferencji do tego samego dochodu. Strony podatki.gov.pl o IP Box (aktualizacja 24.06.2026)
+  i o uldze badawczo-rozwojowej (aktualizacja 23.11.2026) nie opisują ust. 9a.
+- Ustawa o PIT, art. 26i ust. 1: „Podstawa obliczenia podatku ustalona zgodnie z art. 26 ust. 1, art. 30c ust. 2 lub
+  art. 30ca ust. 3 oraz po uprzednim odliczeniu kwot określonych w art. 26e […]”. Art. 26e ust. 1 w tekście jednolitym
+  z 2026 r. nadal odsyła tylko do podstawy ustalonej zgodnie z „art. 26 ust. 1 lub art. 30c ust. 2”, a ust. 9a przewiduje
+  odliczenie od dochodu z kwalifikowanego prawa, a nie od podstawy.
+- Pytania: czy odliczenie z ust. 9a pomniejsza dochód z kwalifikowanego prawa przed pomnożeniem przez wskaźnik
+  z ust. 4, czy kwalifikowany dochód po pomnożeniu? Czy akapit 151 objaśnień MF jest po 2021 r. nadal aktualny?
+  Czy art. 26i ust. 1 oznacza, że kwoty z art. 26e odlicza się także od podstawy z art. 30ca ust. 3, czy tylko opisuje
+  kolejność wobec odliczenia z ust. 9a?

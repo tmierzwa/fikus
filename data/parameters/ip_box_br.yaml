@@ -1,0 +1,467 @@
+# IP Box (art. 30ca i 30cb ustawy o PIT) i ulga badawczo-rozwojowa (art. 26e). Obie dotyczą dochodów
+# z działalności opodatkowanych według skali albo podatkiem liniowym; na ryczałcie nie przysługują.
+# Serwer podaje stawkę i procenty odliczenia oraz opisuje zasady krokami z podstawą prawną. Czy prawo
+# jest kwalifikowane, czy działalność jest badawczo-rozwojowa i ile wynosi odliczenie, ustala podatnik
+# albo klient.
+
+- id: ip_box.stawka
+  name: Stawka podatku od kwalifikowanego dochodu z kwalifikowanych praw własności intelektualnej (IP Box)
+  unit: "% podstawy"
+  applies_to: {tax_form: [skala, liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value: 5
+      note: >-
+        Stawka dotyczy podstawy opodatkowania, a nie całego dochodu z działalności. Czym jest ta podstawa, kto może
+        skorzystać ze stawki i dlaczego nie dotyczy ona ryczałtu, opisuje zasada opodatkowania IP Box.
+        Tekst jednolity Dz.U. 2026 poz. 592 uwzględnia stan prawny na 1 kwietnia 2026 r.; zmiany ustawy o PIT, które weszły w życie po 1 stycznia 2026 r., a przed 1 kwietnia 2026 r. (Dz.U. 2025 poz. 1795, Dz.U. 2026 poz. 203 i 424), zmieniają
+        tylko art. 21 i 52zr, więc stawka obowiązywała od 1 stycznia 2026 r. Późniejsze nowelizacje (Dz.U. 2026 poz. 779,
+        846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1541, 1542 i 1556) art. 30ca nie zmieniają. Wcześniejszych wersji
+        nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 1
+          quote: "kwalifikowanego dochodu z kwalifikowanych praw własności intelektualnej wynosi 5 % podstawy opodatkowania"
+        - title: Objaśnienia podatkowe Ministra Finansów z 15 lipca 2019 r. dotyczące preferencyjnego opodatkowania dochodów wytwarzanych przez prawa własności intelektualnej – IP Box
+          url: https://www.gov.pl/attachment/8b23d192-0777-4e1a-8fb3-355f797a1200
+          article: akapit 1
+          quote: "preferencyjne opodatkowanie 5% stawką podatkową dochodów uzyskiwanych przez podatnika z kwalifikowanych praw własności intelektualnej"
+          independent: true
+          as_of: 2019-07-15
+        - title: podatki.gov.pl (MF), IP BOX – Rozliczenie dochodów z kwalifikowanych praw własności intelektualnej PIT, aktualizacja 24.06.2026
+          url: https://podatki.gov.pl/poradniki-i-informatory/ip-box-rozliczenie-dochodow-z-kwalifikowanych-praw-wlasnosci-intelektualnej-pit
+          kind: control
+          quote: "5% podatek oblicz od podstawy opodatkowania."
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26}
+
+- id: zasada.ip_box
+  name: Opodatkowanie kwalifikowanych dochodów z kwalifikowanych praw własności intelektualnej (IP Box)
+  kind: rule
+  applies_to: {tax_form: [skala, liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Z opodatkowania stawką IP Box możesz skorzystać, jeżeli osiągasz kwalifikowany dochód z kwalifikowanych praw własności intelektualnej w ramach pozarolniczej działalności gospodarczej. To prawo, a nie obowiązek. Na ryczałcie od przychodów ewidencjonowanych ta preferencja nie przysługuje, bo według objaśnień MF jest ona w ustawie o PIT, a nie ma jej w ustawie o ryczałcie; ustawa o ryczałcie nie odsyła też do art. 30ca.
+            uses: [ip_box.stawka]
+            basis: art. 30ca ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 6 ust. 1 ustawy o zryczałtowanym podatku dochodowym (tekst jednolity Dz.U. 2025 poz. 843; ustawa nie odsyła do art. 30ca); objaśnienia podatkowe MF z 15 lipca 2019 r. (IP Box), przypis 11 i akapit 154
+          - text: Kwalifikowanym prawem własności intelektualnej jest patent, prawo ochronne na wzór użytkowy, prawo z rejestracji wzoru przemysłowego, prawo z rejestracji topografii układu scalonego, dodatkowe prawo ochronne dla patentu na produkt leczniczy lub produkt ochrony roślin, prawo z rejestracji produktu leczniczego i produktu leczniczego weterynaryjnego dopuszczonych do obrotu, wyłączne prawo z ustawy o ochronie prawnej odmian roślin oraz autorskie prawo do programu komputerowego. Prawo musi podlegać ochronie prawnej na podstawie przepisów odrębnych ustaw lub ratyfikowanych umów międzynarodowych, których stroną jest Rzeczpospolita Polska, oraz innych umów międzynarodowych, których stroną jest Unia Europejska, a jego przedmiot ochrony musisz wytworzyć, rozwinąć lub ulepszyć w ramach prowadzonej przez siebie działalności badawczo-rozwojowej. Działalność badawczo-rozwojowa to działalność twórcza obejmująca badania naukowe lub prace rozwojowe, podejmowana w sposób systematyczny w celu zwiększenia zasobów wiedzy oraz wykorzystania zasobów wiedzy do tworzenia nowych zastosowań.
+            uses: []
+            basis: art. 30ca ust. 2 i art. 5a pkt 38–40 ustawy o podatku dochodowym od osób fizycznych
+          - text: Zasady stosujesz odpowiednio do ekspektatywy prawa, od dnia zgłoszenia lub złożenia wniosku o udzielenie prawa ochronnego. W przypadku wycofania zgłoszenia lub wniosku, odmowy udzielenia prawa ochronnego, odrzucenia zgłoszenia lub odrzucenia wniosku o rejestrację kwalifikowane dochody uzyskane w okresie od dnia zgłoszenia lub złożenia wniosku do dnia wycofania wniosku lub zgłoszenia, odmowy udzielenia prawa ochronnego, odrzucenia zgłoszenia lub odrzucenia wniosku o rejestrację opodatkowujesz według skali albo podatkiem liniowym, a od podatku obliczonego od łącznej sumy dochodów odliczasz podatek zapłacony według stawki IP Box. Zasady stosujesz też odpowiednio do dochodów z licencji wyłącznej na kwalifikowane prawo, jeżeli wcześniej prowadziłeś prace badawczo-rozwojowe, których efektem jest to prawo.
+            uses: []
+            basis: art. 30ca ust. 12–14 ustawy o podatku dochodowym od osób fizycznych
+          - text: Dochodem z kwalifikowanego prawa jest dochód z pozarolniczej działalności gospodarczej obliczony według art. 9 ust. 2 w zakresie, w jakim osiągnąłeś go z opłat lub należności z umowy licencyjnej dotyczącej tego prawa, ze sprzedaży tego prawa, z tego prawa uwzględnionego w cenie sprzedaży produktu lub usługi albo z odszkodowania za naruszenie praw z niego, jeżeli zostało uzyskane w postępowaniu spornym, w tym w postępowaniu sądowym albo arbitrażu. Dochód z prawa uwzględnionego w cenie produktu lub usługi ustalasz, stosując odpowiednio art. 23o i 23p. Jeżeli nie da się ustalić dochodu przypadającego na poszczególne prawa, możesz obliczyć kwalifikowany dochód według zasad z art. 30ca ust. 4–6 dla tego samego rodzaju produktu lub usługi albo dla tej samej grupy produktów lub usług, w których wykorzystano kwalifikowane prawo.
+            uses: []
+            basis: art. 30ca ust. 7–9 ustawy o podatku dochodowym od osób fizycznych
+          - text: Kwalifikowany dochód ustalasz, mnożąc dochód z kwalifikowanego prawa osiągnięty w roku podatkowym przez wskaźnik (nexus) obliczony według wzoru z art. 30ca ust. 4; Fikus wzoru nie podaje. Wskaźnik zależy od kosztów faktycznie poniesionych przez Ciebie na prowadzoną bezpośrednio działalność badawczo-rozwojową związaną z tym prawem, na nabycie wyników prac badawczo-rozwojowych związanych z tym prawem od podmiotu niepowiązanego i od podmiotu powiązanego oraz na nabycie samego kwalifikowanego prawa. Do tych kosztów nie zaliczasz kosztów, które nie są bezpośrednio związane z prawem, w szczególności odsetek, opłat finansowych i kosztów związanych z nieruchomościami. Wskaźnik większy od 1 przyjmujesz jako 1.
+            uses: []
+            basis: art. 30ca ust. 4–6 ustawy o podatku dochodowym od osób fizycznych
+          - text: Podstawą opodatkowania jest suma kwalifikowanych dochodów ze wszystkich kwalifikowanych praw osiągniętych w roku podatkowym. Od tej podstawy obliczasz podatek według stawki IP Box.
+            uses: [ip_box.stawka]
+            basis: art. 30ca ust. 1 i 3 ustawy o podatku dochodowym od osób fizycznych
+          - text: Od dochodu z kwalifikowanego prawa możesz odliczyć koszty kwalifikowane z art. 26e ust. 2–3b (ulga badawczo-rozwojowa), które doprowadziły do wytworzenia, rozwinięcia lub ulepszenia przez Ciebie tego prawa; przy czym odpowiednio stosujesz art. 26e ust. 1 zdanie drugie oraz art. 26e ust. 3c–10 (między innymi limit odliczenia do wysokości dochodu, warunki z ust. 4–6, górne granice z ust. 7 i odliczenie w zeznaniu z ust. 8). Na jakim etapie ustalania kwalifikowanego dochodu to odliczenie się stosuje (przed pomnożeniem przez wskaźnik czy po nim) jest niewyjaśnione. Niewyjaśnione jest też, czy aktualne jest stanowisko objaśnień MF z 2019 r. (akapit 151), że ulgi badawczo-rozwojowej nie uwzględnia się w podstawie opodatkowanej stawką IP Box, wobec tego, że art. 26i ust. 1 mówi o podstawie ustalonej zgodnie z art. 30ca ust. 3 po uprzednim odliczeniu kwot z art. 26e, art. 26e ust. 1 nadal odsyła tylko do podstawy ustalonej zgodnie z art. 26 ust. 1 lub art. 30c ust. 2, a art. 30ca ust. 9a przewiduje odliczenie od dochodu z kwalifikowanego prawa, a nie od podstawy (otwarte pytanie do eksperta).
+            uses: [zasada.ulga_br, ulga.br.odliczenie]
+            basis: art. 30ca ust. 9a, art. 26e ust. 1 i art. 26i ust. 1 ustawy o podatku dochodowym od osób fizycznych; objaśnienia podatkowe MF z 15 lipca 2019 r. (IP Box), akapit 151
+          - text: Stratą z kwalifikowanego prawa poniesioną w roku podatkowym obniżasz dochód z tego samego prawa, tego samego rodzaju produktu lub usługi albo tej samej grupy produktów lub usług, w których je wykorzystano, osiągnięty w najbliższych kolejno następujących po sobie 5 latach podatkowych.
+            uses: []
+            basis: art. 30ca ust. 10 ustawy o podatku dochodowym od osób fizycznych
+          - text: Jeżeli prowadzisz podatkową księgę przychodów i rozchodów, w odrębnej ewidencji wyodrębniasz każde kwalifikowane prawo, przychody, koszty i dochód (stratę) przypadające na każde prawo oraz koszty, od których zależy wskaźnik, przypadające na każde prawo. Jeżeli wykorzystujesz więcej niż jedno kwalifikowane prawo, a przypisanie przychodów, kosztów i dochodu oraz tych kosztów do każdego prawa nie jest możliwe, prowadzisz zapisy pozwalające ustalić łączny dochód z kwalifikowanych praw. Jeżeli wykorzystujesz jedno lub więcej kwalifikowanych praw w produkcie lub usłudze albo w produktach lub usługach, a nie jest możliwe ani jedno, ani drugie, prowadzisz zapisy pozwalające ustalić dochód z kwalifikowanych praw w odniesieniu do tego produktu lub usługi albo tych produktów lub usług. Przy księgach rachunkowych te same informacje wyodrębniasz w księgach. Jeżeli z ksiąg lub ewidencji nie da się ustalić dochodu (straty) z kwalifikowanych praw, płacisz podatek według skali albo podatkiem liniowym.
+            uses: []
+            basis: art. 30cb ust. 1–3 ustawy o podatku dochodowym od osób fizycznych
+          - text: Dochód (stratę) z kwalifikowanego prawa wykazujesz w zeznaniu za rok podatkowy, w którym go osiągnąłeś (poniosłeś). Ze stawki IP Box korzystasz dopiero w zeznaniu; zaliczki w trakcie roku płacisz na zasadach ogólnych według swojej formy opodatkowania.
+            uses: [zasada.skala_podatek, zasada.liniowy_podatek]
+            basis: art. 30ca ust. 11 ustawy o podatku dochodowym od osób fizycznych; objaśnienia podatkowe MF z 15 lipca 2019 r. (IP Box), akapity 200 i 201
+          - text: Ta zasada nie opisuje zmniejszenia podstawy ustalonej według art. 30ca ust. 3 o wartość nieuregulowanych wierzytelności ani jej zwiększenia o wartość nieuregulowanych zobowiązań na zasadach art. 26i ust. 1 pkt 1 i 2 (ulga na złe długi), przepisu przejściowego z art. 52u, opodatkowania w spółkach niebędących osobami prawnymi ani składki zdrowotnej od dochodów opodatkowanych stawką IP Box.
+            uses: []
+            basis: art. 26i ust. 1 pkt 1 i 2 oraz art. 52u ustawy o podatku dochodowym od osób fizycznych
+      note: >-
+        Tekst jednolity Dz.U. 2026 poz. 592 uwzględnia stan prawny na 1 kwietnia 2026 r.; zmiany ustawy o PIT, które weszły w życie po 1 stycznia 2026 r., a przed 1 kwietnia 2026 r. (Dz.U. 2025 poz. 1795, Dz.U. 2026 poz. 203 i 424), zmieniają
+        tylko art. 21 i 52zr. Późniejsze nowelizacje (Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371,
+        1541, 1542 i 1556) nie zmieniają art. 5a pkt 38–40, art. 30ca ani art. 30cb; ustawa poz. 1541 od 1 stycznia 2027 r.
+        skreśla w art. 26i ust. 1 odesłanie do art. 26gb, co nie zmienia żadnego kroku. Ustawa poz. 1542 (art. 4 pkt 4) od 1 stycznia 2027 r. zmienia art. 26e ust. 6
+        (skreśla odesłanie do art. 21 ust. 1 pkt 63a), do którego odsyła art. 30ca ust. 9a; krok 7 wymienia ust. 6 wśród przepisów stosowanych odpowiednio, ale nie opisuje jego treści.
+        Ustęp 9a dodała ustawa
+        Dz.U. 2021 poz. 2105 (art. 1 pkt 55 lit. b), czyli po wydaniu objaśnień MF z 15 lipca 2019 r. Wcześniejszych wersji
+        nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (stawka)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 1
+          quote: "Podatek od osiągniętego przez podatnika w ramach pozarolniczej działalności gospodarczej kwalifikowanego dochodu z kwalifikowanych praw własności intelektualnej wynosi 5 % podstawy opodatkowania."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (kwalifikowane prawa)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 2
+          quote: "których przedmiot ochrony został wytworzony, rozwinięty lub ulepszony przez podatnika w ramach prowadzonej przez niego działalności badawczo-rozwojowej"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (program komputerowy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 2 pkt 8
+          quote: "autorskie prawo do programu komputerowego"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (działalność badawczo-rozwojowa)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 5a pkt 38
+          quote: "działalności badawczo-rozwojowej – oznacza to działalność twórczą obejmującą badania naukowe lub prace rozwojowe, podejmowaną w sposób systematyczny w celu zwiększenia zasobów wiedzy oraz wykorzystania zasobów wiedzy do tworzenia nowych zastosowań"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (badania naukowe)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 5a pkt 39
+          quote: "badania aplikacyjne w rozumieniu art. 4 ust. 2 pkt 2 ustawy z dnia 20 lipca 2018 r. – Prawo o szkolnictwie wyższym i nauce"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (prace rozwojowe)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 5a pkt 40
+          quote: "pracach rozwojowych – oznacza to prace rozwojowe w rozumieniu art. 4 ust. 3 ustawy z dnia 20 lipca 2018 r. – Prawo o szkolnictwie wyższym i nauce"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (podstawa opodatkowania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 3
+          quote: "Podstawę opodatkowania stanowi suma kwalifikowanych dochodów z kwalifikowanych praw własności intelektualnej osiągniętych w roku podatkowym."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wskaźnik)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 4
+          quote: "ustala się jako iloczyn dochodu z kwalifikowanego prawa własności intelektualnej osiągniętego w roku podatkowym i wskaźnika obliczonego według wzoru"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (koszty wyłączone ze wskaźnika)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 5
+          quote: "w szczególności odsetek, opłat finansowych oraz kosztów związanych z nieruchomościami"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wskaźnik nie większy niż 1)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 6
+          quote: "jest większa od 1, przyjmuje się, że wartość ta wynosi 1"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dochód z kwalifikowanego prawa)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 7
+          quote: "z kwalifikowanego prawa własności intelektualnej uwzględnionego w cenie sprzedaży produktu lub usługi"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (odliczenie kosztów kwalifikowanych)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 9a
+          quote: "Od dochodu z kwalifikowanego prawa własności intelektualnej podatnik może odliczyć koszty kwalifikowane określone w art. 26e ust. 2–3b"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (strata)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 10
+          quote: "obniża się dochód osiągnięty w najbliższych kolejno następujących po sobie 5 latach podatkowych"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (zeznanie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 11
+          quote: "są obowiązani do wykazania dochodu (straty) z kwalifikowanego prawa własności intelektualnej w zeznaniu za rok podatkowy"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ekspektatywa)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 12
+          quote: "stosuje się odpowiednio do ekspektatywy uzyskania kwalifikowanego prawa własności intelektualnej"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wycofanie zgłoszenia lub odmowa)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 13
+          quote: "podatnik jest obowiązany opodatkować zgodnie z art. 27 lub art. 30c kwalifikowane dochody z prawa własności intelektualnej uzyskane w okresie od dnia zgłoszenia lub złożenia wniosku, o którym mowa w ust. 12, do dnia wycofania wniosku lub zgłoszenia, odmowy udzielenia prawa ochronnego, odrzucenia zgłoszenia lub odrzucenia wniosku o rejestrację"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (podstawa IP Box po odliczeniu z art. 26e)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26i ust. 1
+          quote: "Podstawa obliczenia podatku ustalona zgodnie z art. 26 ust. 1, art. 30c ust. 2 lub art. 30ca ust. 3 oraz po uprzednim odliczeniu kwot określonych w art. 26e"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (licencja wyłączna)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 14
+          quote: "w której zastrzeżono wyłączność korzystania przez podatnika z tego prawa"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ochrona prawna)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 2
+          quote: "podlegające ochronie prawnej na podstawie przepisów odrębnych ustaw lub ratyfikowanych umów międzynarodowych, których stroną jest Rzeczpospolita Polska, oraz innych umów międzynarodowych, których stroną jest Unia Europejska"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ceny produktów i usług)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 8
+          quote: "Do ustalenia dochodów (strat), o których mowa w ust. 7 pkt 3, przepisy art. 23o i art. 23p stosuje się odpowiednio."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (rodzaj lub grupa produktów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30ca ust. 9
+          quote: "podatnik może obliczyć kwalifikowany dochód z kwalifikowanego prawa własności intelektualnej zgodnie z ust. 4–6 dla tego samego rodzaju produktu lub usługi lub dla tej samej grupy produktów lub usług"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wyodrębnienie każdego prawa)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30cb ust. 1 pkt 1
+          quote: "wyodrębnić każde kwalifikowane prawo własności intelektualnej w prowadzonych księgach rachunkowych"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (łączny dochód z kilku praw)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30cb ust. 1 pkt 4
+          quote: "w przypadku gdy podatnik wykorzystuje więcej niż jedno kwalifikowane prawo własności intelektualnej"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (dochód w odniesieniu do produktu lub usługi)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30cb ust. 1 pkt 5
+          quote: "usług – w przypadku gdy podatnik wykorzystuje jedno kwalifikowane prawo własności intelektualnej lub większą liczbę tych praw w produkcie lub usłudze"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (odrębna ewidencja)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30cb ust. 2
+          quote: "Podatnicy prowadzący podatkową księgę przychodów i rozchodów wykazują informacje, o których mowa w ust. 1, w odrębnej ewidencji."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (brak możliwości ustalenia dochodu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 30cb ust. 3
+          quote: "podatnik jest obowiązany do zapłaty podatku zgodnie z art. 27 lub art. 30c"
+        - title: Dz.U. 2021 poz. 2105, ustawa z 29 października 2021 r. o zmianie ustawy o PIT, ustawy o CIT oraz niektórych innych ustaw (dodanie ust. 9a)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2021/2105/text.pdf
+          article: art. 1 pkt 55 lit. b
+          quote: "Od dochodu z kwalifikowanego prawa własności intelektualnej podatnik może odliczyć koszty kwalifikowane określone w art. 26e ust. 2–3b"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (krok 1, ryczałt obejmuje przychody z działalności; ustawa nie odsyła do art. 30ca)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 6 ust. 1
+          quote: "podlegają przychody osób fizycznych lub przedsiębiorstw w spadku z pozarolniczej działalności gospodarczej, o których mowa w art. 7a ust. 4 lub art. 14 ustawy o podatku dochodowym"
+        - title: Objaśnienia podatkowe MF z 15 lipca 2019 r. (IP Box), ryczałt (potwierdza tylko krok 1)
+          url: https://www.gov.pl/attachment/8b23d192-0777-4e1a-8fb3-355f797a1200
+          article: przypis 11
+          quote: "Preferencja IP Box jest zawarta w ustawie o PIT, natomiast nie ma jej w ustawie z dnia 20 listopada 1998 r. o zryczałtowanym podatku dochodowym"
+          as_of: 2019-07-15
+        - title: Objaśnienia podatkowe MF z 15 lipca 2019 r. (IP Box), ryczałt, dalsza część przypisu 11 (krok 1)
+          url: https://www.gov.pl/attachment/8b23d192-0777-4e1a-8fb3-355f797a1200
+          article: przypis 11
+          quote: "W konsekwencji, preferencją IP Box nie są objęte osoby fizyczne prowadzące działalność gospodarczą opodatkowaną w formie ryczałtu ewidencjonowanego"
+          as_of: 2019-07-15
+        - title: Objaśnienia podatkowe MF z 15 lipca 2019 r. (IP Box), prawo wyboru (krok 1)
+          url: https://www.gov.pl/attachment/8b23d192-0777-4e1a-8fb3-355f797a1200
+          article: akapit 154
+          quote: "skorzystanie z ulgi B+R albo/i z preferencji IP Box to prawo, a nie obowiązek podatnika"
+          as_of: 2019-07-15
+        - title: Objaśnienia podatkowe MF z 15 lipca 2019 r. (IP Box), zaliczki (krok o zeznaniu)
+          url: https://www.gov.pl/attachment/8b23d192-0777-4e1a-8fb3-355f797a1200
+          article: akapit 201
+          quote: "Podatnicy nie mają zatem możliwości skorzystania z tej preferencji w trakcie roku podatkowego, poprzez pomniejszanie zaliczek na podatek dochodowy."
+          as_of: 2019-07-15
+        - title: Objaśnienia podatkowe MF z 15 lipca 2019 r. (IP Box), ulga B+R a IP Box (stan sprzed dodania art. 30ca ust. 9a)
+          url: https://www.gov.pl/attachment/8b23d192-0777-4e1a-8fb3-355f797a1200
+          article: akapit 151
+          quote: "ulga B+R nie podlega uwzględnieniu w obliczeniu podstawy opodatkowania podlegającej 5% podatkowi z IP Box"
+          as_of: 2019-07-15
+      verification:
+        checked_at: 2026-11-26
+        open_issue: >-
+          Art. 30ca ust. 9a (od 2022 r.) pozwala odliczyć od dochodu z kwalifikowanego prawa koszty kwalifikowane
+          z art. 26e ust. 2–3b. Nie wiadomo, czy odliczenie pomniejsza dochód przed pomnożeniem przez wskaźnik z ust. 4
+          czy po nim. Akapit 151 objaśnień MF z 2019 r. stanowi, że ulga B+R nie podlega uwzględnieniu w podstawie
+          opodatkowanej stawką IP Box, a art. 26i ust. 1 mówi o podstawie ustalonej zgodnie z art. 30ca ust. 3
+          „oraz po uprzednim odliczeniu kwot określonych w art. 26e”. Art. 26e ust. 1 nadal odsyła tylko do podstawy
+          ustalonej zgodnie z „art. 26 ust. 1 lub art. 30c ust. 2”, a ust. 9a to odliczenie od dochodu z kwalifikowanego
+          prawa, nie od podstawy. Nie wiadomo, czy akapit 151 jest nadal aktualny.
+          Pytanie do eksperta: docs/pytania-do-eksperta.md, P64.
+
+- id: ulga.br.odliczenie
+  name: Najwyższy procent poniesionych kosztów kwalifikowanych, który można odliczyć w uldze badawczo-rozwojowej (podatnik bez statusu centrum badawczo-rozwojowego)
+  unit: "% poniesionych kosztów kwalifikowanych (górna granica)"
+  applies_to: {tax_form: [skala, liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        koszty_osobowe: 200
+        pozostale_koszty: 100
+      note: >-
+        Art. 26e ust. 7 ustawy o PIT podaje górną granicę („Kwota kosztów kwalifikowanych nie może przekroczyć”),
+        a nie stały procent odliczenia. Wartości dotyczą „pozostałych podatników” z ust. 7 pkt 3, czyli bez statusu
+        centrum badawczo-rozwojowego. Klucze to grupy kosztów z tego przepisu: koszty osobowe to koszty z art. 26e ust. 2
+        pkt 1 i 1a, a pozostałe koszty to koszty z ust. 2 pkt 2–5, ust. 2a i 3. Co obejmują te grupy, limit odliczenia
+        do wysokości dochodu i to, że ulga nie dotyczy ryczałtu, opisuje zasada ulgi badawczo-rozwojowej. Tekst jednolity Dz.U. 2026 poz. 592
+        uwzględnia stan prawny na 1 kwietnia 2026 r.; zmiany ustawy o PIT, które weszły w życie po 1 stycznia 2026 r., a przed 1 kwietnia 2026 r., zmieniają tylko art. 21 i 52zr. Z późniejszych nowelizacji tylko Dz.U. 2026 poz. 1542 zmienia
+        art. 26e, i to wyłącznie ust. 6 od 1 stycznia 2027 r.; ust. 1, 2 i 7 się nie zmieniają. Wcześniejszych wersji
+        nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 7 pkt 3
+          quote: "w przypadku pozostałych podatników – 100 % kosztów, o których mowa w ust. 2 pkt 2–5, ust. 2a i 3, oraz 200 % kosztów, o których mowa w ust. 2 pkt 1 i 1a"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (górna granica)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 7
+          quote: "Kwota kosztów kwalifikowanych nie może przekroczyć"
+        - title: podatki.gov.pl (MF), Ulga badawczo-rozwojowa PIT, aktualizacja 23.11.2026
+          url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-badawczo-rozwojowa-pit
+          kind: control
+          quote: "200% kosztów wynagrodzeń pracowników i osób zatrudnionych na podstawie umowy zlecenia i umowy o dzieło oraz składek od tych wynagrodzeń 100% pozostałych kosztów kwalifikowanych."
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26}
+
+- id: zasada.ulga_br
+  name: Ulga badawczo-rozwojowa (odliczenie kosztów kwalifikowanych)
+  kind: rule
+  applies_to: {tax_form: [skala, liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Jeżeli uzyskujesz przychody z pozarolniczej działalności gospodarczej i prowadzisz działalność badawczo-rozwojową, możesz odliczyć od podstawy obliczenia podatku ustalonej według skali albo przy podatku liniowym koszty uzyskania przychodów poniesione na tę działalność (koszty kwalifikowane). Czy odliczasz je także od podstawy opodatkowanej stawką IP Box, jest niewyjaśnione (otwarte pytanie do eksperta). Działalność badawczo-rozwojowa to działalność twórcza obejmująca badania naukowe (badania podstawowe i aplikacyjne) lub prace rozwojowe, podejmowana w sposób systematyczny w celu zwiększenia zasobów wiedzy oraz wykorzystania zasobów wiedzy do tworzenia nowych zastosowań. Na ryczałcie ta ulga nie przysługuje.
+            uses: [zasada.skala_podatek, zasada.liniowy_podatek]
+            basis: art. 26e ust. 1 i art. 5a pkt 38–40 ustawy o podatku dochodowym od osób fizycznych; objaśnienia podatkowe MF z 15 lipca 2019 r. (IP Box), akapit 154; art. 11 ust. 1 ustawy o zryczałtowanym podatku dochodowym; art. 3 pkt 1 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1541)
+          - text: Kosztami kwalifikowanymi są poniesione w danym miesiącu należności z tytułów z art. 12 ust. 1 (stosunek służbowy, stosunek pracy, praca nakładcza i spółdzielczy stosunek pracy) oraz sfinansowane przez płatnika składki na ubezpieczenia społeczne od tych należności, w takiej części, w jakiej czas przeznaczony na działalność badawczo-rozwojową pozostaje w ogólnym czasie pracy pracownika w danym miesiącu; poniesione w danym miesiącu należności z tytułów z art. 13 pkt 8 lit. a i c (usługi wykonywane na podstawie umowy zlecenia lub umowy o dzieło na rzecz osoby fizycznej prowadzącej działalność gospodarczą, osoby prawnej i jej jednostki organizacyjnej, jednostki organizacyjnej niemającej osobowości prawnej albo przedsiębiorstwa w spadku, z wyjątkiem umów zawieranych w ramach pozarolniczej działalności gospodarczej prowadzonej przez zleceniobiorcę albo wykonawcę, który uzyskuje te przychody, oraz przychodów z art. 13 pkt 9) oraz sfinansowane przez płatnika składki od nich, w takiej części, w jakiej czas przeznaczony na wykonanie usługi w zakresie działalności badawczo-rozwojowej pozostaje w całości czasu przeznaczonego na wykonanie usługi w danym miesiącu; a ponadto nabycie materiałów i surowców bezpośrednio związanych z tą działalnością, nabycie niebędącego środkami trwałymi sprzętu specjalistycznego wykorzystywanego bezpośrednio w prowadzonej działalności badawczo-rozwojowej, ekspertyzy, opinie, usługi doradcze i usługi równorzędne, świadczone lub wykonywane na podstawie umowy przez podmioty z art. 7 ust. 1 pkt 1, 2 i 4–8 ustawy Prawo o szkolnictwie wyższym i nauce, a także nabycie od takiego podmiotu wyników prowadzonych przez niego badań naukowych, na potrzeby działalności badawczo-rozwojowej, odpłatne korzystanie z aparatury naukowo-badawczej wykorzystywanej wyłącznie w prowadzonej działalności badawczo-rozwojowej i nabycie usługi wykorzystania aparatury naukowo-badawczej wyłącznie na potrzeby prowadzonej działalności badawczo-rozwojowej (jeżeli nie wynika to z umowy zawartej z podmiotem powiązanym), koszty uzyskania i utrzymania patentu, prawa ochronnego na wzór użytkowy i prawa z rejestracji wzoru przemysłowego poniesione na przygotowanie dokumentacji zgłoszeniowej i dokonanie zgłoszenia do Urzędu Patentowego Rzeczypospolitej Polskiej lub odpowiedniego zagranicznego organu (łącznie z kosztami wymaganych tłumaczeń na język obcy), na prowadzenie postępowania przez ten urząd lub organ od momentu zgłoszenia (w szczególności opłaty urzędowe i koszty zastępstwa prawnego i procesowego), na odparcie zarzutów niespełnienia warunków wymaganych do uzyskania prawa w postępowaniu zgłoszeniowym i po jego zakończeniu oraz na opłaty okresowe, opłaty za odnowienie, tłumaczenia i inne czynności konieczne dla nadania lub utrzymania ważności prawa (w szczególności koszty walidacji patentu europejskiego), oraz dokonywane w danym roku podatkowym, zaliczane do kosztów uzyskania przychodów, odpisy amortyzacyjne od środków trwałych i wartości niematerialnych i prawnych wykorzystywanych w tej działalności, z wyłączeniem samochodów osobowych oraz budowli, budynków i lokali będących odrębną własnością, a także odpisy od kosztów prac rozwojowych w proporcji z art. 26e ust. 2a. Koszty badań podstawowych odliczasz tylko wtedy, gdy prowadzisz je na podstawie umowy lub porozumienia z podmiotem z art. 7 ust. 1 pkt 1, 2 i 4–8 ustawy Prawo o szkolnictwie wyższym i nauce.
+            uses: []
+            basis: art. 26e ust. 2, 2a, 3 i 4, art. 12 ust. 1 i art. 13 pkt 8 lit. a i c ustawy o podatku dochodowym od osób fizycznych
+          - text: Kwota kosztów kwalifikowanych, które odliczasz, nie może przekroczyć najwyższego procentu poniesionych kosztów, zależnego od ich grupy (koszty osobowe i pozostałe koszty). Kwota odliczenia w roku podatkowym nie może przekroczyć dochodu z pozarolniczej działalności gospodarczej. Koszty kwalifikowane podlegają odliczeniu, jeżeli nie zostały Ci zwrócone w jakiejkolwiek formie lub nie zostały odliczone od podstawy obliczenia podatku.
+            uses: [ulga.br.odliczenie]
+            basis: art. 26e ust. 1 zdanie drugie, ust. 5 i ust. 7 ustawy o podatku dochodowym od osób fizycznych
+          - text: Jeżeli zamierzasz skorzystać z odliczenia, w podatkowej księdze przychodów i rozchodów albo w księgach rachunkowych wyodrębniasz koszty działalności badawczo-rozwojowej.
+            uses: []
+            basis: art. 24a ust. 1b ustawy o podatku dochodowym od osób fizycznych
+          - text: Odliczenia dokonujesz w zeznaniu za rok podatkowy, w którym poniosłeś koszty kwalifikowane. Jeżeli poniosłeś stratę albo dochód jest niższy od przysługującego odliczenia, odliczasz całość albo pozostałą część w zeznaniach za kolejno następujące po sobie sześć lat podatkowych po roku, w którym skorzystałeś lub miałeś prawo skorzystać z odliczenia; dokonując tego odliczenia, uwzględniasz kwoty pomniejszeń z art. 26eb ust. 1. Odliczenia w zeznaniach za kolejne sześć lat ani uwzględniania pomniejszeń z art. 26eb ust. 1 nie stosujesz, jeżeli wykażesz w zeznaniu kwotę przysługującą Ci zgodnie z art. 26ea (art. 26e ust. 9 wyłącza tylko ust. 8 zdanie drugie i trzecie).
+            uses: []
+            basis: art. 26e ust. 8 i 9 ustawy o podatku dochodowym od osób fizycznych
+          - text: Ta zasada nie opisuje procentów i warunków dla podatników ze statusem centrum badawczo-rozwojowego (art. 26e ust. 3a–3j i ust. 7 pkt 1–2), warunków przy zwolnieniach z art. 21 ust. 1 pkt 63a lub 63b (art. 26e ust. 6; w brzmieniu od 1 stycznia 2027 r. ust. 6 odsyła tylko do pkt 63b; zasada nie opisuje przepisów przejściowych ustawy Dz.U. 2026 poz. 1542), zwrotu gotówkowego dla rozpoczynających działalność (art. 26ea), treści pomniejszeń z art. 26eb, odliczenia przez przedsiębiorstwo w spadku (art. 26e ust. 10), niestosowania art. 23 ust. 1 pkt 45 do kosztów kwalifikowanych stanowiących odpisy amortyzacyjne (art. 26e ust. 3k) ani zmniejszenia i zwiększenia podstawy obliczenia podatku ustalonej po odliczeniu kwot z art. 26e na zasadach art. 26i ust. 1 (ulga na złe długi). Odliczenie kosztów kwalifikowanych od dochodu z kwalifikowanego prawa własności intelektualnej opisuje zasada IP Box. Czy kwoty z art. 26e odlicza się także od podstawy z art. 30ca ust. 3 (art. 26i ust. 1), jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [zasada.ip_box]
+            basis: art. 26e ust. 3a–3k, 6, 7 i 10, art. 26ea, 26eb i 26i ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 4 pkt 4 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1542)
+      note: >-
+        Tekst jednolity Dz.U. 2026 poz. 592 uwzględnia stan prawny na 1 kwietnia 2026 r.; zmiany ustawy o PIT, które weszły w życie po 1 stycznia 2026 r., a przed 1 kwietnia 2026 r. (Dz.U. 2025 poz. 1795, Dz.U. 2026 poz. 203 i 424), zmieniają
+        tylko art. 21 i 52zr. Ustawa Dz.U. 2026 poz. 779 od 1 lipca 2026 r. zmienia w art. 24a ust. 1b tylko określenie
+        ksiąg („w podatkowej księdze przychodów i rozchodów albo księgach rachunkowych”), obowiązek zostaje ten sam.
+        Ustawa Dz.U. 2026 poz. 1542 od 1 stycznia 2027 r. zmienia art. 26e ust. 6 (skreśla odesłanie do art. 21 ust. 1
+        pkt 63a), którego kroki nie opisują. Pozostałe nowelizacje (Dz.U. 2026 poz. 846, 1079, 1098, 1123, 1287, 1347,
+        1354, 1371, 1541 i 1556) art. 5a pkt 38–40, 24a ust. 1b ani 26e nie zmieniają. Ustawa Dz.U. 2026 poz. 1541 (art. 3 pkt 1)
+        od 1 stycznia 2027 r. zmienia art. 11 ust. 1 ustawy o ryczałcie (wyrazy „art. 26 ust. 1 pkt 2, 2a, 2b, 2c, 5–6a i 9”
+        zastępuje się wyrazami „art. 26 ust. 1 pkt 2, 2a, 2b, 2c, 5, 6 i 9”); art. 26e nadal nie dochodzi, więc krok o ryczałcie się
+        nie zmienia. Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (prawo do odliczenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 1
+          quote: "odlicza od podstawy obliczenia podatku, ustalonej zgodnie z art. 26 ust. 1 lub art. 30c ust. 2, koszty uzyskania przychodów poniesione na działalność badawczo-rozwojową"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (limit do dochodu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 1 zdanie drugie
+          quote: "Kwota odliczenia nie może w roku podatkowym przekroczyć kwoty dochodu uzyskanego przez podatnika ze źródła określonego w art. 10 ust. 1 pkt 3."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (definicja)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 5a pkt 38
+          quote: "działalności badawczo-rozwojowej – oznacza to działalność twórczą obejmującą badania naukowe lub prace rozwojowe, podejmowaną w sposób systematyczny w celu zwiększenia zasobów wiedzy oraz wykorzystania zasobów wiedzy do tworzenia nowych zastosowań"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (badania naukowe)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 5a pkt 39
+          quote: "badania aplikacyjne w rozumieniu art. 4 ust. 2 pkt 2 ustawy z dnia 20 lipca 2018 r. – Prawo o szkolnictwie wyższym i nauce"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (prace rozwojowe)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 5a pkt 40
+          quote: "pracach rozwojowych – oznacza to prace rozwojowe w rozumieniu art. 4 ust. 3 ustawy z dnia 20 lipca 2018 r. – Prawo o szkolnictwie wyższym i nauce"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (należności ze stosunku pracy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 2 pkt 1
+          quote: "poniesione w danym miesiącu należności z tytułów, o których mowa w art. 12 ust. 1, oraz sfinansowane przez płatnika"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (rodzaje stosunków z art. 12 ust. 1)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 12 ust. 1
+          quote: "Za przychody ze stosunku służbowego, stosunku pracy, pracy nakładczej oraz spółdzielczego stosunku pracy"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (należności z umów zlecenia i o dzieło)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 2 pkt 1a
+          quote: "poniesione w danym miesiącu należności z tytułów, o których mowa w art. 13 pkt 8 lit. a i c, oraz sfinansowane przez płatnika składki"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (umowy zlecenia i o dzieło z art. 13 pkt 8)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 13 pkt 8
+          quote: "przychody z tytułu wykonywania usług, na podstawie umowy zlecenia lub umowy o dzieło, uzyskiwane wyłącznie od"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wyjątek w art. 13 pkt 8)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 13 pkt 8
+          quote: "z wyjątkiem przychodów uzyskanych na podstawie umów zawieranych w ramach prowadzonej przez podatnika pozarolniczej działalności gospodarczej oraz przychodów, o których mowa w pkt 9"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (patent i prawa ochronne)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 2 pkt 5
+          quote: "koszty uzyskania i utrzymania patentu, prawa ochronnego na wzór użytkowy, prawa z rejestracji wzoru przemysłowego, poniesione na"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (patent i prawa ochronne, opłaty okresowe)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 2 pkt 5 lit. d
+          quote: "opłaty okresowe, opłaty za odnowienie, tłumaczenia oraz dokonywanie innych czynności koniecznych dla nadania lub utrzymania ważności patentu"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (materiały i surowce)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 2 pkt 2
+          quote: "nabycie materiałów i surowców bezpośrednio związanych z prowadzoną działalnością badawczo-rozwojową"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (badania podstawowe)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 5a pkt 39 lit. a
+          quote: "badania podstawowe w rozumieniu art. 4 ust. 2 pkt 1 ustawy z dnia 20 lipca 2018 r. – Prawo o szkolnictwie wyższym i nauce"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ekspertyzy i usługi doradcze)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 2 pkt 3
+          quote: "ekspertyzy, opinie, usługi doradcze i usługi równorzędne, świadczone lub wykonywane na podstawie umowy przez podmioty, o których mowa w art. 7 ust. 1 pkt 1, 2 i 4–8 ustawy z dnia 20 lipca 2018 r. – Prawo o szkolnictwie wyższym i nauce, a także nabycie od takiego podmiotu wyników prowadzonych przez niego badań naukowych, na potrzeby działalności badawczo-rozwojowej"
+        - title: Objaśnienia podatkowe MF z 15 lipca 2019 r. (IP Box), ulga B+R jako prawo (krok 1)
+          url: https://www.gov.pl/attachment/8b23d192-0777-4e1a-8fb3-355f797a1200
+          article: akapit 154
+          quote: "skorzystanie z ulgi B+R albo/i z preferencji IP Box to prawo, a nie obowiązek podatnika"
+          as_of: 2019-07-15
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (sprzęt specjalistyczny)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 2 pkt 2a
+          quote: "nabycie niebędącego środkami trwałymi sprzętu specjalistycznego wykorzystywanego bezpośrednio w prowadzonej działalności badawczo-rozwojowej"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (aparatura naukowo-badawcza)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 2 pkt 4
+          quote: "odpłatne korzystanie z aparatury naukowo-badawczej wykorzystywanej wyłącznie w prowadzonej działalności badawczo-rozwojowej"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (usługa wykorzystania aparatury)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 2 pkt 4a
+          quote: "nabycie usługi wykorzystania aparatury naukowo-badawczej wyłącznie na potrzeby prowadzonej działalności badawczo-rozwojowej"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (odpisy zaliczane do kosztów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 3
+          quote: "dokonywane w danym roku podatkowym, zaliczane do kosztów uzyskania przychodów, odpisy amortyzacyjne"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (odpisy amortyzacyjne)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 3
+          quote: "w prowadzonej działalności badawczo-rozwojowej, z wyłączeniem samochodów osobowych oraz budowli, budynków i lokali będących odrębną własnością"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (badania podstawowe)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 4
+          quote: "Koszty kwalifikowane ponoszone w ramach badań podstawowych podlegają odliczeniu wyłącznie pod warunkiem"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (koszty zwrócone)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 5
+          quote: "Koszty kwalifikowane podlegają odliczeniu, jeżeli nie zostały podatnikowi zwrócone w jakiejkolwiek formie lub nie zostały odliczone od podstawy obliczenia podatku."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (procent odliczenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 7 pkt 3
+          quote: "w przypadku pozostałych podatników – 100 % kosztów, o których mowa w ust. 2 pkt 2–5, ust. 2a i 3, oraz 200 % kosztów, o których mowa w ust. 2 pkt 1 i 1a"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (zeznanie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 8
+          quote: "Odliczenia dokonuje się w zeznaniu za rok podatkowy, w którym poniesiono koszty kwalifikowane."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (sześć lat)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 8
+          quote: "dokonuje się w zeznaniach za kolejno następujące po sobie sześć lat podatkowych"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (przeniesienie odliczenia a pomniejszenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 8 zdanie trzecie
+          quote: "Dokonując odliczenia, o którym mowa w zdaniu drugim, uwzględnia się kwoty pomniejszeń, o których mowa w art. 26eb ust. 1."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wyjątek przy kwocie z art. 26ea)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 9
+          quote: "Przepisu ust. 8 zdanie drugie i trzecie nie stosuje się, jeżeli podatnik wykaże w zeznaniu kwotę przysługującą mu zgodnie z art. 26ea."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (odpisy a art. 23 ust. 1 pkt 45)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 3k
+          quote: "Do kosztów kwalifikowanych stanowiących odpisy amortyzacyjne od środków trwałych i wartości niematerialnych i prawnych przepisu art. 23 ust. 1 pkt 45 nie stosuje się."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (ulga na złe długi po odliczeniu z art. 26e)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26i ust. 1
+          quote: "Podstawa obliczenia podatku ustalona zgodnie z art. 26 ust. 1, art. 30c ust. 2 lub art. 30ca ust. 3 oraz po uprzednim odliczeniu kwot określonych w art. 26e"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wyjątek w art. 13 pkt 8)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 13 pkt 8
+          quote: "z wyjątkiem przychodów uzyskanych na podstawie umów zawieranych w ramach prowadzonej przez podatnika pozarolniczej działalności gospodarczej oraz przychodów, o których mowa w pkt 9"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wyodrębnienie kosztów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 24a ust. 1b
+          quote: "Podatnicy prowadzący działalność badawczo-rozwojową, którzy zamierzają skorzystać z odliczenia, o którym mowa w art. 26e, są obowiązani"
+        - title: Dz.U. 2026 poz. 779 (art. 24a ust. 1b od 1 lipca 2026 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/779/text.pdf
+          article: art. 1 pkt 3
+          quote: "w ust. 1b wyrazy „w prowadzonej księdze albo w prowadzonych księgach rachunkowych, o których mowa w ust. 1,” zastępuje się wyrazami „w podatkowej księdze przychodów i rozchodów albo księgach rachunkowych”"
+          as_of: 2026-06-15
+        - title: Dz.U. 2026 poz. 1542, ustawa z 22 października 2026 r. (art. 26e ust. 6 od 1 stycznia 2027 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1542/text.pdf
+          article: art. 4 pkt 4
+          quote: "w art. 26e ust. 6 otrzymuje brzmienie: „6. Podatnikowi, który w roku podatkowym korzysta ze zwolnienia podatkowego, o którym mowa w art. 21 ust. 1 pkt 63b, prawo do odliczenia przysługuje jedynie w odniesieniu do kosztów kwalifikowanych"
+        - title: Dz.U. 2026 poz. 1541, ustawa z 22 października 2026 r. (art. 11 ust. 1 ustawy o ryczałcie od 1 stycznia 2027 r.)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
+          article: art. 3 pkt 1
+          quote: "w ust. 1 wyrazy „art. 26 ust. 1 pkt 2, 2a, 2b, 2c, 5–6a i 9” zastępuje się wyrazami „art. 26 ust. 1 pkt 2, 2a, 2b, 2c, 5, 6 i 9”"
+          as_of: 2026-11-23
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (górna granica odliczenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 26e ust. 7
+          quote: "Kwota kosztów kwalifikowanych nie może przekroczyć"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (odliczenia na ryczałcie bez art. 26e)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 11 ust. 1
+          quote: "oraz wydatki określone w art. 26 ust. 1 pkt 2, 2a, 2b, 2c, 5–6a i 9"
+      verification:
+        checked_at: 2026-11-26
+        open_issue: >-
+          Krok o podstawie odliczenia: art. 26e ust. 1 mówi o podstawie ustalonej zgodnie z art. 26 ust. 1 lub art. 30c
+          ust. 2, a art. 26i ust. 1 o podstawie ustalonej zgodnie z art. 26 ust. 1, art. 30c ust. 2 lub art. 30ca ust. 3
+          po uprzednim odliczeniu kwot z art. 26e. Nie wiadomo, czy kwoty z art. 26e odlicza się także od podstawy
+          opodatkowanej stawką IP Box. Pytanie do eksperta: docs/pytania-do-eksperta.md, P64.

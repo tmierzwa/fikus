@@ -26,6 +26,9 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 - Zasady `zasada.dra_obowiazek` (deklaracja ZUS DRA za siebie) i `zasada.roczne_rozliczenie_zdrowotnej`
   oraz wzór formularza `schemat.zus_dra` (od 1 maja 2026 r., według dnia złożenia) w nowym pliku
   `data/parameters/zus_dra.yaml`. `get_schema("ZUS_DRA")` zwraca wzór DRA.
+- IP Box i ulga badawczo-rozwojowa w nowym pliku `data/parameters/ip_box_br.yaml` (skala i podatek liniowy):
+  stawka `ip_box.stawka` (art. 30ca ust. 1), najwyższe procenty kosztów kwalifikowanych `ulga.br.odliczenie` (art. 26e ust. 7 pkt 3)
+  oraz zasady `zasada.ip_box` i `zasada.ulga_br`.
 
 ### Zmienione
 
