@@ -267,12 +267,13 @@
         a krok 4 powoływał art. 81 ust. 2h, który dotyczy wyboru przychodu z poprzedniego roku.
         Ust. 2e-2i w tym brzmieniu obowiązują od 1 stycznia 2025 r. (Dz.U. 2024 poz. 1915).
         Poprawka 2026-11-26: dodany krok 2 o wyłączeniach z art. 81 ust. 2zd, którego brakowało (wskazał weryfikator).
+        Poprawka 2026-11-26: krok o wyłączeniach z art. 81 ust. 2zd mówi, że nie wiadomo, które brzmienie tego przepisu stosuje się na przełomie 2026 i 2027 r. (P8); wcześniej przesądzał to bez zastrzeżenia.
       value:
         steps:
           - text: Ustal przychód z działalności osiągnięty od początku roku kalendarzowego, pomniejszony o opłacone składki emerytalną, rentową, chorobową i wypadkową, jeżeli nie zostały zaliczone do kosztów ani odliczone od dochodu. Funduszu Pracy nie odejmuj. Zamiast tego możesz przyjąć przychód z poprzedniego roku (zasada.ryczalt_zdrowotna_prog_poprzedni_rok).
             uses: [zasada.ryczalt_zdrowotna_prog_poprzedni_rok]
             basis: art. 81 ust. 2f i 2g ustawy o świadczeniach opieki zdrowotnej
-          - text: Do przychodu nie wliczaj przychodów wyłączonych przez art. 81 ust. 2zd, czyli osiągniętych w okresie zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63a, 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, oraz osiągniętych w miesiącu, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a).
+          - text: Do przychodu nie wliczaj przychodów wyłączonych przez art. 81 ust. 2zd, czyli osiągniętych w okresie zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63a, 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, oraz osiągniętych w miesiącu, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a). Czy w rocznym rozliczeniu za 2026 r., dokonywanym w 2027 r., stosuje się to brzmienie, czy brzmienie od 1 stycznia 2027 r., które nie wymienia już art. 21 ust. 1 pkt 63a, jest niewyjaśnione (otwarte pytanie do eksperta, P8).
             uses: []
             basis: art. 81 ust. 2zd ustawy o świadczeniach opieki zdrowotnej
           - text: Porównaj tę kwotę z progami. Składka za miesiąc to kwota z parametru dla progu, w którym się mieści.
@@ -369,6 +370,7 @@
       note: >-
         ust. 2h w tym brzmieniu obowiązuje od 1 stycznia 2025 r. (Dz.U. 2024 poz. 1915); tekst jednolity uwzględnia zmiany ogłoszone przed 2025-09-25.
         Poprawka 2026-11-26: dodany krok 3 o wyłączeniach z art. 81 ust. 2zd, którego brakowało (wskazał weryfikator).
+        Poprawka 2026-11-26: ostatni krok mówi, że nie wiadomo, czy podstawę stosuje się przez cały rok także po zakończeniu i ponownym podjęciu działalności (P1); wcześniej przesądzał to bez zastrzeżenia.
       value:
         steps:
           - text: Ta możliwość dotyczy tylko podatnika, który przez cały poprzedni rok kalendarzowy prowadził działalność opodatkowaną ryczałtem, skalą, liniowym albo IP Box.
@@ -380,7 +382,7 @@
           - text: Do przychodu nie wliczaj przychodów wyłączonych przez art. 81 ust. 2zd, czyli osiągniętych w okresie zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63a, 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, oraz osiągniętych w miesiącu, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a).
             uses: []
             basis: art. 81 ust. 2zd ustawy o świadczeniach opieki zdrowotnej
-          - text: Wybierz próg według tej kwoty. Składka za każdy miesiąc bieżącego roku to kwota z parametru dla tego progu; stosuj ją przez cały rok kalendarzowy.
+          - text: Wybierz próg według tej kwoty. Składka za każdy miesiąc bieżącego roku to kwota z parametru dla tego progu; stosuj ją przez cały rok kalendarzowy. Czy tak jest także wtedy, gdy w trakcie roku zakończysz działalność, a potem podejmiesz ją na nowo (poradnik ZUS podaje taki wyjątek, ustawa go nie wymienia), jest niewyjaśnione (otwarte pytanie do eksperta, P1).
             uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka]
             basis: art. 81 ust. 2h ustawy o świadczeniach opieki zdrowotnej
       sources:
@@ -408,6 +410,7 @@
         Zmiana względem poprzedniej wersji: od 1 stycznia 2027 r. art. 81 ust. 2zd pkt 2 nie wymienia już art. 21 ust. 1
         pkt 63a ustawy o PIT (Dz.U. 2026 poz. 1542, art. 12); ta sama ustawa uchyla ten punkt w ustawie o PIT (art. 4
         pkt 1). Pozostałe kroki się nie zmieniają. Nowego brzmienia nie ma jeszcze w tekście jednolitym, więc źródłem jest ustawa zmieniająca.
+        Poprawka 2026-11-26: krok o wyłączeniach z art. 81 ust. 2zd mówi, że nie wiadomo, które brzmienie tego przepisu stosuje się do przychodu z 2026 r. (P8), a ostatni krok, że nie wiadomo, czy podstawę stosuje się przez cały rok także po zakończeniu i ponownym podjęciu działalności (P1); wcześniej przesądzały to bez zastrzeżenia.
       value:
         steps:
           - text: Ta możliwość dotyczy tylko podatnika, który przez cały poprzedni rok kalendarzowy prowadził działalność opodatkowaną ryczałtem, skalą, liniowym albo IP Box.
@@ -416,10 +419,10 @@
           - text: Weź przychód z poprzedniego roku kalendarzowego pomniejszony o składki emerytalną, rentową, chorobową i wypadkową opłacone w tamtym roku, jeżeli nie zostały odliczone.
             uses: []
             basis: art. 81 ust. 2h ustawy o świadczeniach opieki zdrowotnej
-          - text: Do przychodu nie wliczaj przychodów wyłączonych przez art. 81 ust. 2zd, czyli osiągniętych w okresie zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, oraz osiągniętych w miesiącu, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a).
+          - text: Do przychodu nie wliczaj przychodów wyłączonych przez art. 81 ust. 2zd, czyli osiągniętych w okresie zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, oraz osiągniętych w miesiącu, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a). Czy do przychodu z 2026 r. stosuje się brzmienie od 1 stycznia 2027 r. (bez art. 21 ust. 1 pkt 63a), czy brzmienie dotychczasowe, które wymienia ten punkt, jest niewyjaśnione (otwarte pytanie do eksperta, P8).
             uses: []
             basis: art. 81 ust. 2zd ustawy o świadczeniach opieki zdrowotnej
-          - text: Wybierz próg według tej kwoty. Składka za każdy miesiąc bieżącego roku to kwota z parametru dla tego progu; stosuj ją przez cały rok kalendarzowy.
+          - text: Wybierz próg według tej kwoty. Składka za każdy miesiąc bieżącego roku to kwota z parametru dla tego progu; stosuj ją przez cały rok kalendarzowy. Czy tak jest także wtedy, gdy w trakcie roku zakończysz działalność, a potem podejmiesz ją na nowo (poradnik ZUS podaje taki wyjątek, ustawa go nie wymienia), jest niewyjaśnione (otwarte pytanie do eksperta, P1).
             uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka]
             basis: art. 81 ust. 2h ustawy o świadczeniach opieki zdrowotnej
       sources:
@@ -453,7 +456,7 @@
           kind: control
           quote: "Przyjętą kwotę przychodów uzyskanych w poprzednim roku kalendarzowym pomniejszasz o kwotę opłaconych w poprzednim roku kalendarzowym składek na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, open_issue: "ZUS (poradnik, stan na 2025-01-01) dodaje wyjątek: podstawy z poprzedniego roku nie stosuje się przez cały rok, gdy działalność zostanie zakończona i podjęta na nowo; ustawa (art. 81 ust. 2h) go nie wymienia. Pytanie do eksperta: docs/pytania-do-eksperta.md, P1 Ustawa Dz.U. 2026 poz. 1542 zmienia art. 81 ust. 2zd pkt 2 od 1 stycznia 2027 r. bez przepisu przejściowego. Od którego miesiąca składkowego albo dla przychodów i dochodów z jakiego okresu stosuje się nowe brzmienie? Pytanie do eksperta: docs/pytania-do-eksperta.md, P8."}
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26, open_issue: "ZUS (poradnik, stan na 2025-01-01) dodaje wyjątek: podstawy z poprzedniego roku nie stosuje się przez cały rok, gdy działalność zostanie zakończona i podjęta na nowo; ustawa (art. 81 ust. 2h) go nie wymienia. Pytanie do eksperta: docs/pytania-do-eksperta.md, P1. Ustawa Dz.U. 2026 poz. 1542 zmienia art. 81 ust. 2zd pkt 2 od 1 stycznia 2027 r. bez przepisu przejściowego. Od którego miesiąca składkowego albo dla przychodów i dochodów z jakiego okresu stosuje się nowe brzmienie? Pytanie do eksperta: docs/pytania-do-eksperta.md, P8."}
 
 - id: zasada.ryczalt_podstawa
   name: Podstawa opodatkowania ryczałtem
@@ -744,7 +747,7 @@
           - text: Przy ustalaniu dochodu stosuj art. 24 ust. 1 i ust. 2 zdanie pierwsze oraz uwzględnij art. 14c i art. 22 ust. 4a i 4b ustawy o PIT; przy podatkowej księdze przychodów i rozchodów ustal dochód z uwzględnieniem art. 44 ust. 2 zdanie drugie tej ustawy.
             uses: []
             basis: art. 81 ust. 2c pkt 5 ustawy o świadczeniach opieki zdrowotnej
-          - text: Do przychodów i kosztów nie wliczaj tych, które wyłącza art. 81 ust. 2zd, czyli przychodów i kosztów z okresu zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), przychodów niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63a, 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, i kosztów, o których mowa w art. 23 ust. 1 pkt 1 tej ustawy, oraz przychodów i kosztów z miesiąca, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a). Wyjątek dla rocznej podstawy opisuje krok o rocznej podstawie.
+          - text: Do przychodów i kosztów nie wliczaj tych, które wyłącza art. 81 ust. 2zd, czyli przychodów i kosztów z okresu zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), przychodów niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63a, 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, i kosztów, o których mowa w art. 23 ust. 1 pkt 1 tej ustawy, oraz przychodów i kosztów z miesiąca, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a). Wyjątek dla rocznej podstawy opisuje krok o rocznej podstawie. Czy przy składce za styczeń 2027 r. (od dochodu z grudnia 2026 r.) i w rocznym rozliczeniu tego roku składkowego (od dochodu za 2026 r.) stosuje się to brzmienie, czy brzmienie od 1 stycznia 2027 r., które nie wymienia już art. 21 ust. 1 pkt 63a, jest niewyjaśnione (otwarte pytanie do eksperta, P8).
             uses: []
             basis: art. 81 ust. 2zd ustawy o świadczeniach opieki zdrowotnej
           - text: Jeżeli tak ustalona miesięczna podstawa jest niższa od minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego, podstawą za ten miesiąc jest ta kwota.
@@ -773,6 +776,7 @@
         Dz.U. 2024 poz. 1915) już nie obowiązuje, a minimalne podstawy liczy się od pełnego minimalnego wynagrodzenia. Tekst jednolity
         uwzględnia zmiany ogłoszone przed 2025-09-25. Okres wersji to rok składkowy, którego dotyczą składki i ich rozliczenie
         roczne: kroki o rozliczeniu rocznym tej wersji stosuje się od rozliczenia roku składkowego zaczynającego się 1 lutego 2026 r.
+        Poprawka 2026-11-26: krok o wyłączeniach z art. 81 ust. 2zd mówi, że nie wiadomo, które brzmienie tego przepisu stosuje się na przełomie 2026 i 2027 r. (P8); wcześniej przesądzał to bez zastrzeżenia.
       sources:
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (minimalna podstawa miesięczna)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
@@ -1143,7 +1147,7 @@
           - text: Przy ustalaniu dochodu stosuj art. 24 ust. 1 i ust. 2 zdanie pierwsze oraz uwzględnij art. 14c i art. 22 ust. 4a i 4b ustawy o PIT; przy podatkowej księdze przychodów i rozchodów ustal dochód z uwzględnieniem art. 44 ust. 2 zdanie drugie tej ustawy.
             uses: []
             basis: art. 81 ust. 2c pkt 5 ustawy o świadczeniach opieki zdrowotnej
-          - text: Do przychodów i kosztów nie wliczaj tych, które wyłącza art. 81 ust. 2zd, czyli przychodów i kosztów z okresu zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), przychodów niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63a, 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, i kosztów, o których mowa w art. 23 ust. 1 pkt 1 tej ustawy, oraz przychodów i kosztów z miesiąca, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a). Wyjątek dla rocznej podstawy opisuje krok o rocznej podstawie.
+          - text: Do przychodów i kosztów nie wliczaj tych, które wyłącza art. 81 ust. 2zd, czyli przychodów i kosztów z okresu zawieszenia działalności (z wyjątkami wskazanymi w tym przepisie), przychodów niepodlegających opodatkowaniu (poza art. 21 ust. 1 pkt 63a, 63b i 152–154 ustawy o PIT), przychodów, o których mowa w art. 14 ust. 2 pkt 1 i 19 ustawy o PIT, i kosztów, o których mowa w art. 23 ust. 1 pkt 1 tej ustawy, oraz przychodów i kosztów z miesiąca, w którym przysługiwało zwolnienie ze składki (art. 82 ust. 8–9a). Wyjątek dla rocznej podstawy opisuje krok o rocznej podstawie. Czy przy składce za styczeń 2027 r. (od dochodu z grudnia 2026 r.) i w rocznym rozliczeniu tego roku składkowego (od dochodu za 2026 r.) stosuje się to brzmienie, czy brzmienie od 1 stycznia 2027 r., które nie wymienia już art. 21 ust. 1 pkt 63a, jest niewyjaśnione (otwarte pytanie do eksperta, P8).
             uses: []
             basis: art. 81 ust. 2zd ustawy o świadczeniach opieki zdrowotnej
           - text: Jeżeli tak ustalona miesięczna podstawa jest niższa od minimalnego wynagrodzenia obowiązującego w pierwszym dniu roku składkowego, podstawą za ten miesiąc jest ta kwota.
@@ -1172,6 +1176,7 @@
         Dz.U. 2024 poz. 1915) nie ma zastosowania, bo dotyczy tylko roku składkowego 2025/2026, a minimalne podstawy liczy się od pełnego minimalnego wynagrodzenia. Tekst jednolity
         uwzględnia zmiany ogłoszone przed 2025-09-25. Okres wersji to rok składkowy, którego dotyczą składki i ich rozliczenie
         roczne: kroki o rozliczeniu rocznym tej wersji stosuje się od rozliczenia roku składkowego zaczynającego się 1 lutego 2026 r.
+        Poprawka 2026-11-26: krok o wyłączeniach z art. 81 ust. 2zd mówi, że nie wiadomo, które brzmienie tego przepisu stosuje się na przełomie 2026 i 2027 r. (P8); wcześniej przesądzał to bez zastrzeżenia.
       sources:
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (minimalna podstawa miesięczna)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf

@@ -185,15 +185,19 @@ def deadlines(
 
 @mcp.tool(title="Schemat deklaracji", annotations=READ_ONLY)
 def get_schema(
-    form: Annotated[str, Field(description="Symbol deklaracji, np. JPK_V7M.")],
+    form: Annotated[str, Field(description="Symbol deklaracji, np. JPK_V7M albo PIT-36L.")],
     as_of: AsOf = None,
 ) -> ParameterResult:
-    """Zwraca wersję schematu XSD deklaracji obowiązującą w danym dniu.
+    """Zwraca wersję schematu XSD deklaracji albo wzór formularza obowiązujący w danym dniu.
 
+    Symbol można podać z łącznikiem albo podkreśleniem, wielkimi albo małymi literami (PIT-36L, pit_36l).
     Dla JPK_V7M i JPK_V7K dniem jest pierwszy dzień okresu rozliczeniowego, za który składa się plik.
-    Są dane dla JPK_V7M, JPK_V7K, JPK_PKPIR i JPK_EWP; dla innych symboli wynik ma found=false.
+    Dla PIT-36, PIT-36L i PIT-28 dniem jest pierwszy dzień roku podatkowego, za który składa się zeznanie.
+    Dla ZUS_DRA (wzór formularza, bez schematu XSD) dniem jest dzień złożenia dokumentu.
+    Są dane dla JPK_V7M, JPK_V7K, JPK_PKPIR, JPK_EWP, ZUS_DRA, PIT-36, PIT-36L i PIT-28;
+    dla innych symboli wynik ma found=false.
     """
-    pid = f"schemat.{form.lower()}"
+    pid = "schemat." + form.strip().lower().replace("-", "_")
     if pid not in store.params:
         return ParameterResult(id=pid, found=False, reason=f"brak schematu {form} w danych")
     return ParameterResult.model_validate(store.get(pid, as_of or _today()))

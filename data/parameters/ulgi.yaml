@@ -108,7 +108,7 @@
           - text: Wpłaty na indywidualne konto zabezpieczenia emerytalnego dokonane w roku podatkowym odliczasz do wysokości rocznego limitu wpłat z ustawy o tych kontach, w zeznaniu.
             uses: [ikze.limit_wplat]
             basis: art. 11 ust. 1 i 2 ustawy o zryczałtowanym podatku dochodowym w brzmieniu od 1 stycznia 2027 r.; art. 26 ust. 1 pkt 2b i ust. 6g ustawy o podatku dochodowym od osób fizycznych; art. 13a ustawy o indywidualnych kontach emerytalnych oraz indywidualnych kontach zabezpieczenia emerytalnego
-          - text: Odliczenie wydatków na Internet nie przysługuje od przychodów uzyskanych od 1 stycznia 2027 r. Przepis przejściowy (art. 5 ust. 1) zachowuje to odliczenie w zeznaniu za 2027 r. na dotychczasowych zasadach podatnikowi, który po raz pierwszy skorzystał z niego w zeznaniu za 2026 r. Do podatników, którzy odliczali je na ryczałcie, stosuje się go odpowiednio (art. 5 ust. 2); jak dokładnie działa przy odliczeniu od przychodu, jest niewyjaśnione (otwarte pytanie do eksperta).
+          - text: Odliczenie wydatków na Internet nie przysługuje od przychodów uzyskanych od 1 stycznia 2027 r. Przepis przejściowy (art. 5 ust. 1) zachowuje to odliczenie w zeznaniu za 2027 r. na dotychczasowych zasadach podatnikowi, który po raz pierwszy skorzystał z niego w zeznaniu za 2026 r. Do podatników, którzy odliczali je na ryczałcie, stosuje się go odpowiednio (art. 5 ust. 2). Jak dokładnie działa przy odliczeniu od przychodu, czy w zeznaniu za 2027 r. obowiązuje dotychczasowy roczny limit i czy prawo zachowuje podatnik, który zmienił formę opodatkowania między 2026 a 2027 r., jest niewyjaśnione (otwarte pytanie do eksperta, P14).
             uses: [ulga.internet.limit]
             basis: art. 3 pkt 1, art. 4 ust. 1 i art. 5 ust. 1 i 2 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1541)
           - text: Wydatki na cele rehabilitacyjne i na ułatwienie wykonywania czynności życiowych odliczasz według katalogu z art. 26 ust. 7a ustawy o PIT; część pozycji ma roczny limit, a wydatki na leki odliczasz w części przekraczającej kwotę miesięczną. Warunki (orzeczenie, brak finansowania z funduszy, osoby na utrzymaniu) są w art. 26 ust. 7b–7g.
@@ -132,6 +132,7 @@
         a w ustawie o PIT uchylono art. 26 ust. 1 pkt 6a i ust. 6h. Tekstu jednolitego z tą zmianą jeszcze nie ma:
         brzmienie wynika z tekstu jednolitego Dz.U. 2025 poz. 843 i ustawy zmieniającej. Nowe brzmienie art. 11 ust. 2 nie
         obejmuje art. 26 ust. 6a (uchylonego już wcześniej) i ust. 6h; art. 26 ust. 5 nadal stosuje się odpowiednio.
+        Poprawka 2026-11-26: krok o Internecie mówi, że limit w zeznaniu za 2027 r. i prawo podatnika, który zmienił formę opodatkowania, są niewyjaśnione (P14); wcześniej tego nie zastrzegał.
       sources:
         - title: Dz.U. 2026 poz. 1541, ustawa z 22 października 2026 r. o zmianie ustawy o PIT, ustawy o CIT oraz ustawy o ryczałcie (nowy katalog odliczeń)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
@@ -570,7 +571,7 @@
           - text: Wpłaty na indywidualne konto zabezpieczenia emerytalnego odliczasz do wysokości rocznego limitu wpłat z ustawy o tych kontach, a składki członkowskie na związki zawodowe do kwoty rocznej z art. 26 ust. 1 pkt 2c; oba odliczenia tylko w zeznaniu.
             uses: [ikze.limit_wplat]
             basis: art. 26 ust. 1 pkt 2b i 2c oraz ust. 6g ustawy o podatku dochodowym od osób fizycznych; art. 13a ustawy o indywidualnych kontach emerytalnych oraz indywidualnych kontach zabezpieczenia emerytalnego
-          - text: Odliczenie wydatków na Internet nie przysługuje od dochodów uzyskanych od 1 stycznia 2027 r. Wyjątek dotyczy podatnika, który po raz pierwszy skorzystał z tego odliczenia w zeznaniu za 2026 r.; zachowuje je w zeznaniu za 2027 r. na dotychczasowych zasadach, do dotychczasowego rocznego limitu.
+          - text: Odliczenie wydatków na Internet nie przysługuje od dochodów uzyskanych od 1 stycznia 2027 r. Wyjątek dotyczy podatnika, który po raz pierwszy skorzystał z tego odliczenia w zeznaniu za 2026 r.; przepis przejściowy (art. 5 ust. 1) zachowuje mu je w zeznaniu za 2027 r. na zasadach z dotychczasowego art. 26 ust. 1 pkt 6a i ust. 6h. Czy obowiązuje wtedy dotychczasowy roczny limit i czy prawo zachowuje podatnik, który zmienił formę opodatkowania między 2026 a 2027 r. (na przykład w 2026 r. odliczał wydatki na ryczałcie), jest niewyjaśnione (otwarte pytanie do eksperta, P14).
             uses: [ulga.internet.limit]
             basis: art. 1 pkt 1, art. 4 ust. 1 i art. 5 ust. 1 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1541)
           - text: Wydatki na cele rehabilitacyjne i na ułatwienie wykonywania czynności życiowych odliczasz według katalogu z art. 26 ust. 7a; część pozycji ma roczny limit, a wydatki na leki odliczasz w części przekraczającej kwotę miesięczną. Warunki są w art. 26 ust. 7b–7g.
@@ -597,6 +598,7 @@
         na robotyzację), uchyla ust. 5a (do kosztów poniesionych przed tym dniem stosuje się go nadal, art. 7 ust. 1)
         i przedłuża okres w ust. 5 do lat 2022–2036 (art. 1 pkt 4 lit. b wchodzi w życie 31 grudnia 2026 r., ale według
         art. 4 ust. 1 dotyczy dochodów od 1 stycznia 2027 r.), a w art. 26i ust. 1 skreśla odesłanie do art. 26gb.
+        Poprawka 2026-11-26: krok o Internecie mówi, że limit w zeznaniu za 2027 r. i prawo podatnika, który zmienił formę opodatkowania, są niewyjaśnione (P14); wcześniej przesądzał, że obowiązuje dotychczasowy limit.
       sources:
         - title: Dz.U. 2026 poz. 1541, ustawa z 22 października 2026 r. o zmianie ustawy o PIT, ustawy o CIT oraz ustawy o ryczałcie (uchylenie ulgi internetowej)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
@@ -733,13 +735,15 @@
       note: >-
         Podatnik, który po raz pierwszy skorzystał z odliczenia w zeznaniu za 2026 r., zachowuje je w zeznaniu za 2027 r.
         na zasadach z art. 26 ust. 1 pkt 6a i ust. 6h w brzmieniu dotychczasowym (art. 5 ust. 1 ustawy Dz.U. 2026
-        poz. 1541), więc z tym samym limitem. Do podatników, którzy odliczali wydatki na ryczałcie, przepis stosuje się
+        poz. 1541); wartość to limit z dotychczasowego art. 26 ust. 1 pkt 6a, do którego ten przepis odsyła, ale czy obowiązuje
+        w zeznaniu za 2027 r., jest niewyjaśnione (otwarte pytanie do eksperta, P14). Do podatników, którzy odliczali wydatki na ryczałcie, przepis stosuje się
         odpowiednio (art. 5 ust. 2); kogo dokładnie obejmuje na ryczałcie, jest otwartym pytaniem (P14). Poza przepisem
         przejściowym odliczenie od dochodów (przychodów) uzyskanych od 1 stycznia 2027 r. nie przysługuje. Po 2027 r. wersji nie ma.
         Przepis przejściowy opisuje też ifirma.pl
         (https://www.ifirma.pl/blog/zmiany-w-ulgach-podatkowych-od-2027-koniec-ulgi-na-internet-i-ekspansje-wyzsza-ulga-dla-krwiodawcow/),
         ale nie podaje kwoty limitu na 2027 r. Strona MF „Ulga na Internet PIT” (aktualizacja 9.10.2026) powstała
         przed ogłoszeniem ustawy i opisuje tylko regułę dwóch lat z art. 26 ust. 6h.
+        Poprawka 2026-11-26: notatka nie przesądza już, że w zeznaniu za 2027 r. obowiązuje ten sam limit (P14).
       sources:
         - title: Dz.U. 2026 poz. 1541, ustawa z 22 października 2026 r. o zmianie ustawy o PIT, ustawy o CIT oraz ustawy o ryczałcie (przepis przejściowy)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf

@@ -28,8 +28,18 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
   `zasada.ryczalt_wylaczenia` (art. 8), `zasada.liniowy_wylaczenia` (art. 9a ust. 3 i 5 ustawy o PIT)
   i `zasada.wybor_formy_opodatkowania` (termin i sposób wyboru ryczałtu i podatku liniowego, kontynuacja, rezygnacja).
 
+- Schematy e-Deklaracji zeznań rocznych `schemat.pit_36`, `schemat.pit_36l` i `schemat.pit_28` (za 2025 r.
+  i od 2026 r., według wyróżników wzorów w CRWDE) oraz zasada `zasada.dane_autoryzujace` (podpis danymi
+  autoryzującymi zeznań PIT i plików JPK_V7M, JPK_EWP i JPK_PKPIR) w nowym pliku `data/parameters/pit_zeznania.yaml`.
+- Zasady `zasada.dra_obowiazek` (deklaracja ZUS DRA za siebie) i `zasada.roczne_rozliczenie_zdrowotnej`
+  oraz wzór formularza `schemat.zus_dra` (od 1 maja 2026 r., według dnia złożenia) w nowym pliku
+  `data/parameters/zus_dra.yaml`. `get_schema("ZUS_DRA")` zwraca wzór DRA.
+
 ### Zmienione
 
+- `get_schema` przyjmuje symbol z łącznikiem albo podkreśleniem, wielkimi albo małymi literami
+  (PIT-36L, pit_36l). Opis narzędzia wymienia wszystkie symbole, które mają dane, i dzień, według którego
+  wybiera się wersję.
 - Trzy poziomy pewności zamiast dwóch: `wysoka`, `średnia` i `niska`. `średnia` oznacza pełny komplet
   dowodów i otwarte pytanie tylko o przypadek brzegowy (`verification.open_issue_scope: edge_case`).
   Klient, który porównuje poziom z `niska`, musi obsłużyć nową wartość. Odpowiedź podaje też
@@ -37,6 +47,8 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 - Drugie źródło wartości złożonej można potwierdzić pole po polu (`confirms` przy źródle).
   `confidence.unconfirmed_fields` wymienia pola, którym brakuje drugiego dokumentu.
 - Sprawdzanie cytatów pomija znaki zerowej szerokości, którymi strony gov.pl dzielą nazwy plików.
+- Kroki zasad, które przesądzały otwarte pytania P1, P8, P14 i P19, opisują je teraz jako niewyjaśnione;
+  zasady o wspólnym opodatkowaniu wymieniają rezygnację korektą (P16) i kartę podatkową (P15).
 
 ## [0.3.0] - 2026-11-26
 
