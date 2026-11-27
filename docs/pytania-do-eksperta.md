@@ -91,8 +91,16 @@ przypadku brzegowego, średnią.
 - Pytanie: czy minimalna składka za styczeń 2027 r. (ostatni miesiąc roku składkowego) wynosi 432,54 zł,
   mimo że od 1 stycznia 2027 r. obowiązuje nowe minimalne wynagrodzenie?
 
-## P4. Zryczałtowana stopa składki wypadkowej dla płatnika do 9 ubezpieczonych (rok 2025/2026 rozstrzygnięty 2026-11-27, bez eksperta; rok 2026/2027 otwarty)
+## P4. Zryczałtowana stopa składki wypadkowej dla płatnika do 9 ubezpieczonych (rozstrzygnięte 2026-11-27, bez eksperta)
 
+- Rozstrzygnięcie za rok 2026/2027: spoza materiałów ZUS stopę na ten rok podaje portal Fakturownia w tekście „Składka
+  wypadkowa 2026 – nowe stawki i jak ją ustalić” z 3 listopada 2026 r. (https://fakturownia.pl/aktualnosci/skadka-wypadkowa-2026-nowe-stawki-i-jak-ja-ustalic):
+  „Stawki składki wypadkowej 2026/2027: do 9 ubezpieczonych – stała stopa 1,67%”. Ta sama strona podaje, że stopa na rok
+  2026/2027 obowiązuje od 1 kwietnia 2026 r. do 31 marca 2027 r. Portal jest tylko źródłem kontrolnym; zgadza się
+  z komunikatem ZUS z 12 stycznia 2026 r. i z art. 28 ust. 1 ustawy wypadkowej (50% najwyższej stopy 3,33%
+  z załącznika nr 2 rozporządzenia, którego stóp od 1 kwietnia 2024 r. nie zmieniono). Urzędowego źródła spoza ZUS
+  (strony ministerstw, biznes.gov.pl po 1 kwietnia 2026 r.) nie znaleziono: biznes.gov.pl ma nadal aktualizację z 11 lutego
+  2026 r. `open_issue` usunięty z wersji 2026/2027.
 - Rozstrzygnięcie częściowe, tylko za rok 2025/2026: poradnik ZUS „Ustalanie stopy procentowej składki na ubezpieczenie
   wypadkowe” (stan prawny na 1 stycznia 2026 r.) sam podaje stopę zryczałtowaną 1,67% dla płatnika zgłaszającego nie więcej
   niż 9 ubezpieczonych. Spoza ZUS podaje ją biznes.gov.pl (aktualizacja 11 lutego 2026 r.: składkę 1,67% opłacają firmy, które
@@ -101,7 +109,7 @@ przypadku brzegowego, średnią.
   stopy na tej stronie (1 kwietnia 2021 r. i 1 kwietnia 2024 r.) są wcześniejsze niż 1 kwietnia 2025 r., a cytowany przypis
   podaje stopę i grupę płatników w stanie na 11 lutego 2026 r., czyli w trakcie roku 2025/2026; stopę ustala się na cały rok
   składkowy (art. 27 ust. 1 ustawy wypadkowej). `open_issue` usunięty z wersji 2025/2026.
-- Za rok 2026/2027 pytanie pozostaje otwarte: stopę na ten rok podają tylko komunikat ZUS z 12 stycznia 2026 r. (w części o tym roku)
+- Za rok 2026/2027 pytanie było otwarte do 27 listopada 2026 r. (rozstrzygnięcie wyżej): stopę na ten rok podawały tylko komunikat ZUS z 12 stycznia 2026 r. (w części o tym roku)
   i przedruk wypowiedzi rzeczniczki ZUS z 1 kwietnia 2026 r. Załącznik nr 2 rozporządzenia nie nazywa najwyższej stopy,
   podaje tylko tabelę.
 
@@ -110,10 +118,13 @@ przypadku brzegowego, średnią.
 - Ustawa wypadkowa, art. 28 ust. 1: stopa wynosi 50% najwyższej stopy ustalonej na dany rok składkowy
   dla grup działalności. Najwyższa stopa w tabeli z załącznika nr 2 rozporządzenia (Dz.U. 2025
   poz. 1874) to 3,33, a § 6 ust. 2 każe zaokrąglać według zasady matematycznej. Kwotę 1,67% podają
-  wprost materiały ZUS (poradnik i strona o informacji ZUS IWA), a za rok 2025/2026 także biznes.gov.pl, choć bez wskazania roku składkowego (niżej).
-- Pytanie (po rozstrzygnięciu za 2025/2026 dotyczy już tylko roku 2026/2027): czy dla płatnika zgłaszającego nie więcej
+  wprost materiały ZUS (poradnik i strona o informacji ZUS IWA), za rok 2025/2026 także biznes.gov.pl, choć bez wskazania
+  roku składkowego (niżej), a za rok 2026/2027 portal Fakturownia (rozstrzygnięcie wyżej).
+- Pytanie (po rozstrzygnięciu za 2025/2026 dotyczyło już tylko roku 2026/2027): czy dla płatnika zgłaszającego nie więcej
   niż 9 ubezpieczonych stopa w roku składkowym 2026/2027 wynosi 1,67%, i czy istnieje urzędowe źródło poza materiałami ZUS, które
-  podaje tę stopę wprost?
+  podaje tę stopę wprost? Pierwszą część rozstrzyga drugi dowód opisany wyżej. Na drugą część odpowiedź jest przecząca:
+  urzędowego źródła spoza ZUS nie znaleziono (stan na 27 listopada 2026 r.). Nie blokuje to usunięcia `open_issue`, bo
+  wpis potrzebował drugiego dowodu, który sam podaje stopę na ten rok, a źródło spoza ZUS było tylko preferencją.
 
 - Materiały znalezione 2026-11-26 (historia; rok 2025/2026 rozstrzyga przypis z tej samej strony biznes.gov.pl, opisany wyżej):
   - Za rok 2026/2027: przedruk wypowiedzi regionalnej rzeczniczki prasowej ZUS z 1 kwietnia 2026 r. na stronie Starostwa
