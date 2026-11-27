@@ -32,7 +32,9 @@ Każda wersja parametru musi mieć:
 3. pole `verification` z datą sprawdzenia.
 
 Portale, blogi i kalkulatory mogą być tylko źródłem kontrolnym (`kind: control`). Bez źródła
-pierwotnego wartość nie trafia do danych. Starych wersji nie zmieniamy; dodaj nową. Notatka opisuje
+pierwotnego wartość nie trafia do danych. Drugie źródło (`kind: control` albo `independent: true`)
+liczy się jako dowód tylko z własnym dosłownym cytatem i tylko wtedy, gdy jest innym dokumentem
+(adresem) niż źródło pierwotne z cytatem. Starych wersji nie zmieniamy; dodaj nową. Notatka opisuje
 obecny stan wersji, bez historii edycji. Poprawkę błędu w starej wersji opisz w PR. Gdy zmienia wartość,
 okres, podstawę prawną albo kroki zasady, dopisz w notatce jedno krótkie zdanie, na przykład „Korekta
 z 27 listopada 2026 r.: zmienione kroki 2 i 4.”, bez opisu poprzedniego błędu.

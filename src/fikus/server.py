@@ -37,7 +37,7 @@ INSTRUCTIONS = (
     "(opisuje go confidence.open_issue; sprawdź, czy Cię dotyczy); "
     "'niska' oznacza niepełny komplet dowodów albo otwarte pytanie o samą wartość; "
     "nie opieraj na niej rozliczeń bez sprawdzenia. "
-"Gdy wynik ma pole not_covered, pewność dotyczy tylko samej wartości; to, czego wartość nie rozstrzyga, "
+    "Gdy wynik ma pole not_covered, pewność dotyczy tylko samej wartości; to, czego wartość nie rozstrzyga, "
     "opisują parametry z see_also, każdy z własnym poziomem pewności. Przy zasadzie obliczeń not_covered "
     "wylicza sprawy, których zasada nie opisuje; tych spraw nie obejmuje ani zasada, ani jej pewność. "
     "Narzędzia deadlines i changes podają sam poziom; pytanie i jego zakres zwraca get_parameter. "
@@ -190,20 +190,31 @@ def deadlines(
     return DeadlinesResult.model_validate(store.deadlines(profile, year, month))
 
 
-@mcp.tool(title="Schemat deklaracji", annotations=READ_ONLY)
+def _form_symbol(pid: str) -> str:
+    """schemat.pit_36l → PIT-36L, schemat.jpk_v7m → JPK_V7M."""
+    sym = pid.removeprefix("schemat.").upper()
+    return sym.replace("_", "-", 1) if sym.startswith("PIT_") else sym
+
+
+FORMS = sorted(_form_symbol(p) for p in store.params if p.startswith("schemat."))
+_FORM_LIST = ", ".join(FORMS[:-1]) + " i " + FORMS[-1]
+
+GET_SCHEMA_DESCRIPTION = f"""Zwraca wersję schematu XSD deklaracji albo wzór formularza obowiązujący w danym dniu.
+
+Symbol można podać z łącznikiem albo podkreśleniem, wielkimi albo małymi literami (PIT-36L, pit_36l).
+Dla JPK_V7M i JPK_V7K dniem jest pierwszy dzień okresu rozliczeniowego, za który składa się plik.
+Dla PIT-36, PIT-36L i PIT-28 dniem jest pierwszy dzień roku podatkowego, za który składa się zeznanie.
+Dla ZUS_DRA (wzór formularza, bez schematu XSD) dniem jest dzień złożenia dokumentu.
+Są dane dla {_FORM_LIST}; dla innych symboli wynik ma found=false.
+"""
+
+
+@mcp.tool(title="Schemat deklaracji", description=GET_SCHEMA_DESCRIPTION, annotations=READ_ONLY)
 def get_schema(
     form: Annotated[str, Field(description="Symbol deklaracji, np. JPK_V7M albo PIT-36L.")],
     as_of: AsOf = None,
 ) -> ParameterResult:
-    """Zwraca wersję schematu XSD deklaracji albo wzór formularza obowiązujący w danym dniu.
-
-    Symbol można podać z łącznikiem albo podkreśleniem, wielkimi albo małymi literami (PIT-36L, pit_36l).
-    Dla JPK_V7M i JPK_V7K dniem jest pierwszy dzień okresu rozliczeniowego, za który składa się plik.
-    Dla PIT-36, PIT-36L i PIT-28 dniem jest pierwszy dzień roku podatkowego, za który składa się zeznanie.
-    Dla ZUS_DRA (wzór formularza, bez schematu XSD) dniem jest dzień złożenia dokumentu.
-    Są dane dla JPK_V7M, JPK_V7K, JPK_PKPIR, JPK_EWP, ZUS_DRA, PIT-36, PIT-36L i PIT-28;
-    dla innych symboli wynik ma found=false.
-    """
+    # Opis narzędzia: GET_SCHEMA_DESCRIPTION (lista symboli pochodzi z danych).
     pid = "schemat." + form.strip().lower().replace("-", "_")
     if pid not in store.params:
         return ParameterResult(id=pid, found=False, reason=f"brak schematu {form} w danych")

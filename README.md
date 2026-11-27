@@ -90,7 +90,7 @@ Pole `confidence.level` wynika z dowodów zapisanych przy wersji parametru:
 | Dowód | Znaczenie |
 | --- | --- |
 | `cytat` | dosłowny fragment źródła pierwotnego (ISAP/ELI, M.P., komunikat ZUS lub MF), sprawdzany skryptem w oficjalnym tekście |
-| `drugie_zrodlo` | niezależne źródło, które samo podaje tę samą wartość |
+| `drugie_zrodlo` | niezależne albo kontrolne źródło z własnym cytatem, które samo podaje tę samą wartość i jest innym dokumentem niż źródło pierwotne z cytatem |
 | `agent` | sprawdzenie przez osobnego agenta, który porównał wpis ze źródłami |
 | `deklaracje` | zgodność z deklaracją przyjętą przez urząd |
 | `ekspert` | odpowiedź doradcy podatkowego lub księgowej |
