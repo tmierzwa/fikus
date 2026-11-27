@@ -215,10 +215,14 @@
           kind: control
           quote: "płatnicy składek, którzy zgłaszają do ubezpieczenia wypadkowego nie więcej niż 9 ubezpieczonych oraz płatnicy niewpisani do rejestru REGON, w dalszym ciągu będą naliczać składkę na ubezpieczenie wypadkowe w wysokości 1,67%, czyli 50% najwyższej stopy procentowej"
           as_of: 2026-04-01
+        - title: Fakturownia (portal), Składka wypadkowa 2026 – nowe stawki i jak ją ustalić, 3 listopada 2026 r. (stopa na rok składkowy 2026/2027)
+          url: https://fakturownia.pl/aktualnosci/skadka-wypadkowa-2026-nowe-stawki-i-jak-ja-ustalic
+          kind: control
+          quote: "Stawki składki wypadkowej 2026/2027: do 9 ubezpieczonych – stała stopa 1,67% , czyli 50% najwyższej stopy ustalonej dla grup działalności"
+          as_of: 2026-11-03
       verification:
         checked_at: 2026-11-27
         agent_check: 2026-11-27
-        open_issue: "Stopę na rok składkowy 2026/2027 podają tylko komunikat ZUS z 12 stycznia 2026 r. (w części o tym roku, choć cytowane zdanie samo nie nazywa roku) i przedruk wypowiedzi rzeczniczki ZUS z 1 kwietnia 2026 r.; oba to materiały ZUS. Potrzebny drugi dowód, który sam podaje stopę na ten rok, najlepiej spoza materiałów ZUS. Zob. docs/pytania-do-eksperta.md, P4."
 
 - id: zus.stawka.fundusz_pracy
   name: Stopa składki na Fundusz Pracy
