@@ -150,13 +150,7 @@
           as_of: 2025-06-12
         - title: ZUS, Wysokość składek na ubezpieczenia społeczne (granice podstawy)
           url: https://www.zus.pl/baza-wiedzy/skladki-wskazniki-odsetki/skladki/wysokosc-skladek-na-ubezpieczenia-spoleczne
-          independent: true
           quote: "Podstawa wymiaru tych składek nie może być niższa niż 30% kwoty minimalnego wynagrodzenia i nie wyższa niż 60% prognozowanego przeciętnego wynagrodzenia miesięcznego"
-          as_of: 2026-11-26
-        - title: biznes.gov.pl, Mały ZUS Plus, aktualizacja 31.12.2025 (warunki i wyłączenia)
-          url: https://www.biznes.gov.pl/pl/portal/00284
-          kind: control
-          quote: "prowadziłeś działalność gospodarczą w poprzednim roku kalendarzowym przez nie mniej niż 60 dni kalendarzowych"
           as_of: 2026-11-26
       verification:
         checked_at: 2026-11-26
@@ -262,13 +256,7 @@
           quote: "Przepis art. 18a ust. 1 stosuje się również do przedsiębiorców będących osobami fizycznymi, którzy kontynuują działalność gospodarczą po upływie okresu, o którym mowa w art. 18 ust. 1 ustawy z dnia 6 marca 2018 r. – Prawo przedsiębiorców"
         - title: ZUS, Ulga na start, preferencyjna podstawa, działalność nieewidencjonowana. Jakie są warunki, uprawnienia i skutki?
           url: https://www.zus.pl/-/ulga-na-start-preferencyjna-podstawa-dzialalnosc-nieewidencjonowana-jakie-sa-warunki-uprawnienia-i-skutk-1
-          independent: true
           quote: "W okresie korzystania z ulgi na start podlegasz obowiązkowo ubezpieczeniu zdrowotnemu. Opłacasz składki tylko na to ubezpieczenie."
-          as_of: 2026-11-26
-        - title: biznes.gov.pl, Ulga na start, aktualizacja 29.01.2026
-          url: https://www.biznes.gov.pl/pl/portal/00285
-          kind: control
-          quote: "Ulga na start nie dotyczy ubezpieczenia zdrowotnego."
           as_of: 2026-11-26
       verification:
         checked_at: 2026-11-26

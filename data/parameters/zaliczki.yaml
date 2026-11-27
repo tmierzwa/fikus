@@ -190,13 +190,7 @@
           quote: "Zaliczki kwartalne podatnicy wpłacają w terminie do 20 dnia każdego miesiąca następującego po kwartale, za który wpłacana jest zaliczka"
         - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym, aktualizacja 24.06.2026 (kroki 1 i 2)
           url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
-          kind: control
           quote: "Zaliczki kwartalne możesz wpłacać tylko wtedy, gdy: rozpoczynasz prowadzenie działalności gospodarczej albo jesteś małym podatnikiem"
-          as_of: 2026-11-26
-        - title: biznes.gov.pl, Skala podatkowa, aktualizacja 07.01.2026 (krok 7)
-          url: https://www.biznes.gov.pl/pl/portal/00264
-          kind: control
-          quote: "Wyboru kwartalnej formy wpłacania zaliczek nie musisz zgłaszać do urzędu skarbowego. Wskazujesz ich wybór w zeznaniu rocznym za rok, w którym stosowałeś kwartalne zaliczki"
           as_of: 2026-11-26
       verification:
         checked_at: 2026-11-26
@@ -285,19 +279,8 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
           article: art. 30c ust. 2 pkt 2 i ust. 2a
           quote: "Wysokość składek i wpłat, o których mowa w ust. 2, ustala się na podstawie dokumentów stwierdzających ich poniesienie"
-        - title: biznes.gov.pl, Skala podatkowa, aktualizacja 07.01.2026 (kroki 1 i 2)
-          url: https://www.biznes.gov.pl/pl/portal/00264
-          kind: control
-          quote: "nie wykazali dochodu z działalności gospodarczej albo wykazali dochód w wysokości nieprzekraczającej kwoty 30 tys. zł). Uproszczonej formy wpłacania zaliczek nie mogą wybrać podatnicy, którzy rozpoczęli działalność gospodarczą w tym samym bądź w poprzednim roku"
-          as_of: 2026-11-26
-        - title: biznes.gov.pl, Podatek liniowy, aktualizacja 18.02.2026 (krok 4 bez obniżki o składkę zdrowotną)
-          url: https://www.biznes.gov.pl/pl/portal/00253
-          kind: control
-          quote: "opłacają zaliczki na podatek dochodowy w wysokości 1/12 kwoty podatku ustalonego według 19% stawki wynikającej z zeznania rocznego"
-          as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym, aktualizacja 24.06.2026 (krok 5)
           url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
-          kind: control
           quote: "Jeżeli chcesz wpłacać zaliczki uproszczone, obliczone od dochodu z pozarolniczej działalności gospodarczej wykazanego przez Ciebie w latach ubiegłych, wpłacasz je w terminie do 20. dnia każdego miesiąca za miesiąc poprzedni"
           as_of: 2026-11-26
       verification:
@@ -362,14 +345,8 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           article: art. 4 ust. 2
           quote: "Kwoty wyrażone w euro przelicza się na walutę polską według średniego kursu euro ogłaszanego przez Narodowy Bank Polski na pierwszy dzień roboczy października roku poprzedzającego rok podatkowy"
-        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (kroki 1, 2 i 4)
-          url: https://www.biznes.gov.pl/pl/portal/00263
-          kind: control
-          quote: "O wyborze kwartalnego sposobu rozliczania ryczałtu informujesz w zeznaniu PIT-28/PIT-28S za rok, w którym opłacałeś ryczałt kwartalnie"
-          as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Opodatkowanie ryczałtem od przychodów ewidencjonowanych, aktualizacja 16.02.2026 (kroki 1–3)
           url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-ryczaltem-od-przychodow-ewidencjonowanych
-          kind: control
           quote: "Ryczałt kwartalny możesz wpłacać tylko wtedy, gdy: rozpoczynasz prowadzenie działalności gospodarczej albo Twoje przychody z działalności prowadzonej samodzielnie albo przychody spółki"
           as_of: 2026-11-26
       verification:

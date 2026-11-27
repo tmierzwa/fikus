@@ -43,7 +43,7 @@
         i 4f, więc potwierdzają, że ta zasada obowiązywała 1 stycznia 2025 r. (nie że wtedy zaczęła obowiązywać).
         Nowelizacje ogłoszone po tekście jednolitym poz. 592 (poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371,
         1541, 1542 i 1556) nie zmieniają art. 6 ani art. 6a. Ustawa mówi o zeznaniu według ustalonego wzoru; nazwę
-        formularza (PIT-36 albo PIT-37) podaje źródło kontrolne. Zasada podatku według
+        formularza (PIT-36 albo PIT-37) podaje strona MF. Zasada podatku według
         skali i termin zeznania, do których odwołują się kroki, mają wersje od 1 stycznia 2026 r.
         Poprawka 2026-11-26: krok o wniosku mówi też, że nie wiadomo, czy korektą zeznania można zrezygnować z łącznego opodatkowania albo przejść na nie (P16).
       sources:
@@ -86,12 +86,10 @@
           as_of: 2025-01-08
         - title: podatki.gov.pl (MF), Wspólne rozliczenie małżonków, aktualizacja 24.06.2026 (sposób obliczenia)
           url: https://podatki.gov.pl/poradniki-i-informatory/wspolne-rozliczenie-malzonkow
-          kind: control
           quote: "sumujesz uzyskane przez Was dochody (po uprzednim dokonaniu przysługujących odliczeń od dochodu odrębnie przez każdego z Was), tak ustaloną sumę dochodów dzielisz przez 2"
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Wspólne rozliczenie małżonków, aktualizacja 24.06.2026 (wniosek w zeznaniu)
           url: https://podatki.gov.pl/poradniki-i-informatory/wspolne-rozliczenie-malzonkow
-          kind: control
           quote: "złożycie wniosek o wspólne opodatkowanie dochodów, wyrażony w zeznaniu podatkowym PIT-37 lub PIT-36"
           as_of: 2026-11-26
       verification:
@@ -135,7 +133,7 @@
         2026 r.) mają to samo brzmienie art. 6 ust. 4c–4h, 8 i 11–13, poza zaktualizowanymi odesłaniami do Dziennika
         Ustaw w ust. 4e i 4f, więc potwierdzają, że ta zasada obowiązywała 1 stycznia 2025 r. (nie że wtedy zaczęła
         obowiązywać). Nowelizacje ogłoszone po tekście jednolitym poz. 592 nie zmieniają art. 6. Nazwę formularza
-        (PIT-36 albo PIT-37) podaje źródło kontrolne. Zasada podatku według skali
+        (PIT-36 albo PIT-37) podaje strona MF. Zasada podatku według skali
         i termin zeznania, do których odwołują się kroki, mają wersje od 1 stycznia 2026 r.
         Poprawka 2026-11-26: krok o wniosku mówi też, że nie wiadomo, czy korektą zeznania można zrezygnować z tego sposobu opodatkowania albo przejść na niego (P16).
       sources:
@@ -166,12 +164,10 @@
           as_of: 2025-01-08
         - title: podatki.gov.pl (MF), Osoba samotnie wychowująca dziecko, aktualizacja 24.06.2026 (sposób obliczenia)
           url: https://podatki.gov.pl/poradniki-i-informatory/osoba-samotnie-wychowujaca-dziecko
-          kind: control
           quote: "dzielisz uzyskane przez Ciebie dochody (po uprzednim dokonaniu przysługujących odliczeń od dochodu) przez 2"
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Osoba samotnie wychowująca dziecko, aktualizacja 24.06.2026 (wniosek w zeznaniu)
           url: https://podatki.gov.pl/poradniki-i-informatory/osoba-samotnie-wychowujaca-dziecko
-          kind: control
           quote: "złożysz wniosek o preferencyjne rozliczenie w zeznaniu PIT-37 lub PIT-36"
           as_of: 2026-11-26
       verification:
@@ -254,19 +250,12 @@
           article: art. 6 ust. 8
           quote: "Sposób opodatkowania, o którym mowa w ust. 2 i 4d, nie ma zastosowania, w przypadku gdy chociażby jeden z małżonków, osoba samotnie wychowująca dziecko lub jej dziecko"
           as_of: 2025-01-08
-        - title: biznes.gov.pl, Najważniejsze zasady opodatkowania według skali podatkowej, aktualizacja 07.01.2026 (rozliczanie z małżonkiem; tylko małżonkowie, podatek liniowy i ryczałt)
-          url: https://www.biznes.gov.pl/pl/portal/00264
-          kind: control
-          quote: "Wspólne rozliczenie z małżonkiem nie jest możliwe, jeżeli choćby jeden z małżonków prowadzi działalność gospodarczą opodatkowaną podatkiem liniowym, ryczałtem od przychodów ewidencjonowanych lub kartą podatkową i z tego tytułu osiąga jakiekolwiek przychody, poniósł koszty, skorzystał z odliczeń bądź ulg"
-          as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Wspólne rozliczenie małżonków, aktualizacja 24.06.2026 (wyłączenia)
           url: https://podatki.gov.pl/poradniki-i-informatory/wspolne-rozliczenie-malzonkow
-          kind: control
           quote: "nie stosowało przepisów dotyczących 19% podatku liniowego lub ustawy o zryczałtowanym podatku dochodowym (z wyjątkiem przepisów dotyczących przychodów z najmu lub dzierżawy prowadzonych poza działalnością gospodarczą)"
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Osoba samotnie wychowująca dziecko, aktualizacja 24.06.2026 (wyłączenia)
           url: https://podatki.gov.pl/poradniki-i-informatory/osoba-samotnie-wychowujaca-dziecko
-          kind: control
           quote: "19% podatku liniowego lub przepisy ustawy o zryczałtowanym podatku dochodowym (z wyłączeniem przychodów z najmu lub dzierżawy prowadzonych poza działalnością gospodarczą)"
           as_of: 2026-11-26
       verification:

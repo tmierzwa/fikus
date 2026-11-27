@@ -97,8 +97,8 @@ def test_get_schema_zus_dra_by_filing_date():
 
 
 def test_confidence_reports_medium_level_scope_and_unconfirmed_fields():
-    rule = _call("get_parameter", {"id": "zasada.ulgi_liniowy", "as_of": "2027-02-01"})
-    conf = rule.structured_content["confidence"]
+    edge = _call("get_parameter", {"id": "schemat.zus_dra", "as_of": "2026-06-01"})
+    conf = edge.structured_content["confidence"]
     assert conf["level"] == "średnia" and conf["open_issue_scope"] == "edge_case"
     schema = _call("get_parameter", {"id": "schemat.jpk_v7m", "as_of": "2026-11-26"})
     assert "system_code" in schema.structured_content["confidence"]["unconfirmed_fields"]

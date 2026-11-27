@@ -6,6 +6,12 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ## [Niewydane]
 
+### Zmienione
+
+- Przy zasadach obliczeń drugim źródłem jest tylko dokument, który sam podaje wszystkie kroki zasady.
+  Strony MF i ZUS potwierdzające część kroków są teraz zwykłymi źródłami, a częściowe strony portali
+  usunięto ze źródeł. Pewność 15 wersji zasad spadła do `niska` (decyzja z 27 listopada 2026 r.).
+
 ## [0.4.0] - 2026-11-27
 
 ### Dodane
