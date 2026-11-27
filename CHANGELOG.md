@@ -6,6 +6,16 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ## [Niewydane]
 
+## [0.4.5] - 2026-11-27
+
+### Dodane
+
+- Deklaracja ZUS DRA za siebie: schemat elektroniczny `schemat.kedu` (KEDU 5.7, specyfikacja EWD 2.27;
+  `get_schema` zwraca go dla symbolu KEDU), kody `zus.kod.termin_przesylania` i `zus.kod.tytul_ubezpieczenia`
+  (załącznik nr 24 do Dz.U. 2026 poz. 518), zasady `zasada.dra_finansowanie_skladek` (bloki IV i VI)
+  i `zasada.dra_bloki_zdrowotne` (bloki XI i XII) w pliku `data/parameters/zus_dra.yaml` oraz podstawa
+  `zdrowotna.ryczalt.podstawa` (podstawa składki zdrowotnej na ryczałcie dla każdego progu).
+
 ### Zmienione
 
 - Przy zasadach obliczeń drugim źródłem jest tylko dokument, który sam podaje wszystkie kroki zasady.
@@ -16,11 +26,6 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ### Dodane
 
-- Deklaracja ZUS DRA za siebie: schemat elektroniczny `schemat.kedu` (KEDU 5.7, specyfikacja EWD 2.27;
-  `get_schema` zwraca go dla symbolu KEDU), kody `zus.kod.termin_przesylania` i `zus.kod.tytul_ubezpieczenia`
-  (załącznik nr 24 do Dz.U. 2026 poz. 518), zasady `zasada.dra_finansowanie_skladek` (bloki IV i VI)
-  i `zasada.dra_bloki_zdrowotne` (bloki XI i XII) w pliku `data/parameters/zus_dra.yaml` oraz podstawa
-  `zdrowotna.ryczalt.podstawa` (podstawa składki zdrowotnej na ryczałcie dla każdego progu).
 - Parametr `ryczalt.stawki`: stawki ryczałtu od przychodów ewidencjonowanych według punktów
   art. 12 ust. 1 ustawy o zryczałtowanym podatku dochodowym (nowy plik `data/parameters/podatek.yaml`).
 - Parametr `ryczalt.zakres_uslug`: dosłowne brzmienie liter art. 12 ust. 1 ustawy o zryczałtowanym podatku
@@ -124,7 +129,8 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
   cytaty w oficjalnych tekstach.
 - Licencje: kod Apache 2.0, dane CC BY 4.0.
 
-[Niewydane]: https://github.com/tmierzwa/fikus/compare/v0.4.0...HEAD
+[Niewydane]: https://github.com/tmierzwa/fikus/compare/v0.4.5...HEAD
+[0.4.5]: https://github.com/tmierzwa/fikus/compare/v0.4.0...v0.4.5
 [0.4.0]: https://github.com/tmierzwa/fikus/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/tmierzwa/fikus/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/tmierzwa/fikus/compare/v0.1.0...v0.2.0
