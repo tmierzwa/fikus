@@ -101,7 +101,7 @@ def test_confidence_reports_medium_level_scope_and_unconfirmed_fields():
     conf = edge.structured_content["confidence"]
     assert conf["level"] == "średnia" and conf["open_issue_scope"] == "edge_case"
     schema = _call("get_parameter", {"id": "schemat.jpk_v7m", "as_of": "2026-11-26"})
-    assert "system_code" in schema.structured_content["confidence"]["unconfirmed_fields"]
+    assert schema.structured_content["confidence"]["unconfirmed_fields"] == ["period"]
     levels = {c["confidence"] for c in _call("changes", {"since": "2026-01-01"}).structured_content["result"]}
     assert levels <= {"wysoka", "średnia", "niska"} and "średnia" in levels
 
