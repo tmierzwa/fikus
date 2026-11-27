@@ -23,7 +23,7 @@
           - text: Wydatki na cele rehabilitacyjne i na ułatwienie wykonywania czynności życiowych odliczasz według katalogu z art. 26 ust. 7a ustawy o PIT; część pozycji ma roczny limit, a wydatki na leki odliczasz w części przekraczającej kwotę miesięczną. Warunki (orzeczenie, brak finansowania z funduszy, osoby na utrzymaniu) są w art. 26 ust. 7b–7g.
             uses: [ulga.rehabilitacyjna.limity]
             basis: art. 11 ust. 1 i 2 ustawy o zryczałtowanym podatku dochodowym; art. 26 ust. 1 pkt 6 i ust. 7a–7g ustawy o podatku dochodowym od osób fizycznych
-          - text: Darowizny na cele z art. 26 ust. 1 pkt 9 ustawy o PIT odliczasz łącznie do limitu procentowego. Nie odliczysz darowizn na rzecz osób fizycznych ani podmiotów wymienionych w art. 26 ust. 5 pkt 2, ani darowizn zaliczonych do kosztów. Wysokość darowizny ustalasz na podstawie dokumentów z art. 26 ust. 7.
+          - text: Darowizny na cele z art. 26 ust. 1 pkt 9 ustawy o PIT odliczasz łącznie do limitu procentowego. Nie odliczysz darowizn na rzecz osób fizycznych ani podmiotów wymienionych w art. 26 ust. 5 pkt 2, ani darowizn zaliczonych do kosztów. Wysokość darowizny ustalasz na podstawie dokumentów z art. 26 ust. 7. Od jakiej kwoty przychodu liczy się limit (przed odliczeniami z art. 11 ust. 1 i 1a ustawy o ryczałcie czy po nich, a przy przychodach opodatkowanych różnymi stawkami łącznie czy osobno), jest niewyjaśnione (otwarte pytanie do eksperta, P13).
             uses: [ulga.darowizny.limit_ryczalt]
             basis: art. 11 ust. 1 i 2 ustawy o zryczałtowanym podatku dochodowym; art. 26 ust. 1 pkt 9, ust. 5, 6, 6f i 7 ustawy o podatku dochodowym od osób fizycznych
           - text: Wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, odliczasz do limitu na wszystkie przedsięwzięcia, na warunkach art. 26h ust. 2–9 ustawy o PIT. Ta zasada nie opisuje odliczenia wydatków na zabytki (art. 26hb ust. 1) ani wydatków na terminal płatniczy (art. 11 ust. 3a ustawy o ryczałcie w zw. z art. 26hd ustawy o PIT).
@@ -44,6 +44,7 @@
         Dz.U. 2026 poz. 203 i 424), zmieniają tylko art. 21 i 52zr, a zmiana z Dz.U. 2025 poz. 1301 (tylko art. 52zo–52zr)
         weszła w życie w 2025 r., więc to brzmienie obowiązywało od 1 stycznia
         2026 r. Wcześniejszych wersji nie wprowadzono.
+        Poprawka 2026-11-27: krok o darowiznach mówi, że podstawa limitu na ryczałcie jest niewyjaśniona (P13); wcześniej zastrzegała to tylko wartość ulga.darowizny.limit_ryczalt.
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (katalog odliczeń)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
@@ -93,7 +94,14 @@
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-ikze-pit
           quote: "Ulgi na IKZE nie możesz uwzględnić przy obliczaniu zaliczek na podatek dochodowy. Odliczenia dokonujesz w zeznaniu rocznym."
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification:
+        checked_at: 2026-11-27
+        agent_check: 2026-11-27
+        open_issue: >-
+          Krok o darowiznach: art. 26 ust. 5 ustawy o PIT, stosowany na ryczałcie odpowiednio (art. 11 ust. 2 ustawy
+          o ryczałcie), określa limit jako 6% dochodu. Nie wiadomo, czy na ryczałcie liczy się go od przychodu przed
+          odliczeniami z art. 11 ust. 1 i 1a, czy po nich, ani czy przy przychodach opodatkowanych różnymi stawkami liczy
+          się go od łącznego przychodu. Pytanie do eksperta: docs/pytania-do-eksperta.md, P13.
     - valid_from: 2027-01-01
       value:
         steps:
@@ -109,7 +117,7 @@
           - text: Wydatki na cele rehabilitacyjne i na ułatwienie wykonywania czynności życiowych odliczasz według katalogu z art. 26 ust. 7a ustawy o PIT; część pozycji ma roczny limit, a wydatki na leki odliczasz w części przekraczającej kwotę miesięczną. Warunki (orzeczenie, brak finansowania z funduszy, osoby na utrzymaniu) są w art. 26 ust. 7b–7g.
             uses: [ulga.rehabilitacyjna.limity]
             basis: art. 11 ust. 1 i 2 ustawy o zryczałtowanym podatku dochodowym w brzmieniu od 1 stycznia 2027 r.; art. 26 ust. 1 pkt 6 i ust. 7a–7g ustawy o podatku dochodowym od osób fizycznych
-          - text: Darowizny na cele z art. 26 ust. 1 pkt 9 ustawy o PIT odliczasz łącznie do limitu procentowego. Nie odliczysz darowizn na rzecz osób fizycznych ani podmiotów wymienionych w art. 26 ust. 5 pkt 2, ani darowizn zaliczonych do kosztów. Wysokość darowizny ustalasz na podstawie dokumentów z art. 26 ust. 7. Od 1 stycznia 2027 r. darowiznę na krwiodawstwo liczy się według podwojonej kwoty rekompensaty (art. 26 ust. 1 pkt 9 lit. c w nowym brzmieniu).
+          - text: Darowizny na cele z art. 26 ust. 1 pkt 9 ustawy o PIT odliczasz łącznie do limitu procentowego. Nie odliczysz darowizn na rzecz osób fizycznych ani podmiotów wymienionych w art. 26 ust. 5 pkt 2, ani darowizn zaliczonych do kosztów. Wysokość darowizny ustalasz na podstawie dokumentów z art. 26 ust. 7. Od 1 stycznia 2027 r. darowiznę na krwiodawstwo liczy się według podwojonej kwoty rekompensaty (art. 26 ust. 1 pkt 9 lit. c w nowym brzmieniu). Od jakiej kwoty przychodu liczy się limit (przed odliczeniami z art. 11 ust. 1 i 1a ustawy o ryczałcie czy po nich, a przy przychodach opodatkowanych różnymi stawkami łącznie czy osobno), jest niewyjaśnione (otwarte pytanie do eksperta, P13).
             uses: [ulga.darowizny.limit_ryczalt]
             basis: art. 11 ust. 1 i 2 ustawy o zryczałtowanym podatku dochodowym w brzmieniu od 1 stycznia 2027 r.; art. 26 ust. 1 pkt 9, ust. 5, 6, 6f i 7 ustawy o podatku dochodowym od osób fizycznych
           - text: Wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, odliczasz do limitu na wszystkie przedsięwzięcia, na warunkach art. 26h ust. 2–9 ustawy o PIT. Ta zasada nie opisuje odliczenia wydatków na zabytki (art. 26hb ust. 1) ani wydatków na terminal płatniczy (art. 11 ust. 3a ustawy o ryczałcie w zw. z art. 26hd ustawy o PIT).
@@ -128,6 +136,7 @@
         brzmienie wynika z tekstu jednolitego Dz.U. 2025 poz. 843 i ustawy zmieniającej. Nowe brzmienie art. 11 ust. 2 nie
         obejmuje art. 26 ust. 6a (uchylonego już wcześniej) i ust. 6h; art. 26 ust. 5 nadal stosuje się odpowiednio.
         Poprawka 2026-11-26: krok o Internecie mówi, że limit w zeznaniu za 2027 r. i prawo podatnika, który zmienił formę opodatkowania, są niewyjaśnione (P14); wcześniej tego nie zastrzegał.
+        Poprawka 2026-11-27: krok o darowiznach mówi, że podstawa limitu na ryczałcie jest niewyjaśniona (P13); wcześniej zastrzegała to tylko wartość ulga.darowizny.limit_ryczalt.
       sources:
         - title: Dz.U. 2026 poz. 1541, ustawa z 22 października 2026 r. o zmianie ustawy o PIT, ustawy o CIT oraz ustawy o ryczałcie (nowy katalog odliczeń)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
@@ -188,14 +197,18 @@
           article: art. 27f ust. 1
           quote: "Od podatku dochodowego obliczonego zgodnie z art. 27 podatnik ma prawo odliczyć kwotę obliczoną zgodnie z ust. 2"
       verification:
-        checked_at: 2026-11-26
-        agent_check: 2026-11-26
+        checked_at: 2026-11-27
+        agent_check: 2026-11-27
         open_issue: >-
           Krok o Internecie: art. 5 ust. 2 ustawy Dz.U. 2026 poz. 1541 stosuje przepis przejściowy do ryczałtu tylko
           odpowiednio; nie wiadomo, jak art. 5 ust. 1 stosuje się przy odliczeniu od przychodu na ryczałcie. Przepis nie
           rozstrzyga też, czy prawo do odliczenia w zeznaniu za 2027 r. zachowuje podatnik, który zmienił formę
           opodatkowania między 2026 a 2027 r. (z ryczałtu na skalę albo odwrotnie). Kwota limitu na 2027 r. wynika
           tylko z przepisu przejściowego. Pytanie do eksperta: docs/pytania-do-eksperta.md, P14.
+          Krok o darowiznach: art. 26 ust. 5 ustawy o PIT, stosowany na ryczałcie odpowiednio (art. 11 ust. 2 ustawy
+          o ryczałcie), określa limit jako 6% dochodu. Nie wiadomo, czy na ryczałcie liczy się go od przychodu przed
+          odliczeniami z art. 11 ust. 1 i 1a, czy po nich, ani czy przy przychodach opodatkowanych różnymi stawkami liczy
+          się go od łącznego przychodu. Pytanie do eksperta: docs/pytania-do-eksperta.md, P13.
 
 - id: zasada.ulgi_liniowy
   name: Ulgi i odliczenia przy podatku liniowym
@@ -892,8 +905,13 @@
         Na ryczałcie darowizny z art. 26 ust. 1 pkt 9 ustawy o PIT odlicza się od przychodu (art. 11 ust. 1 ustawy
         o ryczałcie), a limit z art. 26 ust. 5 stosuje się odpowiednio (art. 11 ust. 2). Ustawa mówi o 6% dochodu;
         strony MF podają „6% Twojego dochodu (przychodu)”. Od jakiej kwoty przychodu liczy się limit, jest
-        niewyjaśnione (otwarte pytanie do eksperta). Od 1 stycznia 2027 r. art. 11 ust. 2 ma nowe brzmienie (Dz.U. 2026
+        niewyjaśnione (otwarte pytanie do eksperta, P13); opisuje to zasada.ulgi_ryczalt. Od 1 stycznia 2027 r. art. 11 ust. 2 ma nowe brzmienie (Dz.U. 2026
         poz. 1541), ale nadal odsyła do art. 26 ust. 5. Wcześniejszych wersji nie wprowadzono.
+      not_covered: >-
+        Od jakiej kwoty przychodu liczy się limit 6% na ryczałcie (przed odliczeniami z art. 11 ust. 1 i 1a ustawy
+        o ryczałcie czy po nich, a przy przychodach opodatkowanych różnymi stawkami łącznie czy osobno). Ta wartość
+        podaje tylko procent.
+      see_also: [zasada.ulgi_ryczalt]
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (odpowiednie stosowanie)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
@@ -914,13 +932,8 @@
           quote: "Odliczasz kwotę faktycznie przekazanej darowizny, nie więcej jednak niż 6% Twojego dochodu (przychodu)."
           as_of: 2026-11-26
       verification:
-        checked_at: 2026-11-26
-        agent_check: 2026-11-26
-        open_issue: >-
-          Art. 26 ust. 5 ustawy o PIT, stosowany na ryczałcie odpowiednio (art. 11 ust. 2 ustawy o ryczałcie), określa
-          limit jako 6% dochodu. Nie wiadomo, czy na ryczałcie liczy się go od przychodu przed odliczeniami z art. 11
-          ust. 1 i 1a, czy po nich, ani czy przy przychodach opodatkowanych różnymi stawkami liczy się go od łącznego
-          przychodu. Pytanie do eksperta: docs/pytania-do-eksperta.md, P13.
+        checked_at: 2026-11-27
+        agent_check: 2026-11-27
 
 - id: ulga.rehabilitacyjna.limity
   name: Limity kwotowe wydatków na cele rehabilitacyjne

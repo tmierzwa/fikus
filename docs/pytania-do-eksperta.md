@@ -401,7 +401,8 @@ przypadku brzegowego, średnią.
 
 ## P13. Limit odliczenia darowizn na ryczałcie: od jakiej kwoty przychodu
 
-- Wpis: `ulga.darowizny.limit_ryczalt` (od 2026-01-01).
+- Wpis: `zasada.ulgi_ryczalt` (od 2026-01-01 i od 2027-01-01), krok o darowiznach. Wartość `ulga.darowizny.limit_ryczalt`
+  (6%) od 2026-11-27 nie ma tego pytania: podaje tylko procent i odsyła do zasady (rozdzielenie wartości i sposobu stosowania).
 - Zgłoszone: 2026-11-26.
 - Ustawa o zryczałtowanym podatku dochodowym (Dz.U. 2025 poz. 843), art. 11 ust. 1: darowizny z art. 26 ust. 1
   pkt 9 ustawy o PIT odlicza się od przychodów; art. 11 ust. 2: art. 26 ust. 5 ustawy o PIT stosuje się odpowiednio.
