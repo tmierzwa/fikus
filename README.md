@@ -77,9 +77,9 @@ Odpowiedź `get_parameter("zdrowotna.minimum")` w skrócie:
   "valid_from": "2026-02-01", "valid_to": "2027-01-31",
   "sources": [
     { "kind": "primary", "title": "Komunikat ZUS …", "url": "https://www.zus.pl/…", "quote": "…" },
-    { "kind": "control", "title": "…", "url": "…" }
+    { "kind": "control", "title": "…", "url": "https://www.biznes.gov.pl/…", "quote": "…" }
   ],
-  "confidence": { "level": "wysoka", "evidence": ["cytat", "drugie_zrodlo", "agent"], "open_issue": null, "open_issue_scope": null }
+  "confidence": { "level": "wysoka", "evidence": ["cytat", "drugie_zrodlo", "agent"], "open_issue": null, "open_issue_scope": null, "unconfirmed_fields": null }
 }
 ```
 
@@ -160,6 +160,8 @@ Dostępne parametry:
   - ulga na start i Mały ZUS Plus;
   - minimalne i prognozowane przeciętne wynagrodzenie;
   - obowiązek składania deklaracji ZUS DRA, wzór formularza DRA i schemat elektroniczny KEDU;
+  - kody terminu przesyłania i tytułu ubezpieczenia oraz zasady wypełniania bloków DRA o finansowaniu składek
+    i składce zdrowotnej;
 - składka zdrowotna:
   - progi i kwoty na ryczałcie;
   - stopy i zasady obliczenia na podatku liniowym i skali, z rozliczeniem rocznym;
@@ -183,12 +185,12 @@ Dane są w [`data/parameters/`](data/parameters), jeden plik YAML na obszar prze
 
 ## Przegląd źródeł
 
-Co tydzień CI uruchamia dwa skrypty, które niczego nie zmieniają w danych:
+CI uruchamia dwa skrypty, które niczego nie zmieniają w danych:
 
-- `scripts/sprawdz_cytaty.py` sprawdza, czy każdy cytat nadal jest w oficjalnym tekście;
-- `scripts/wykryj_zmiany.py` pyta [API ELI Sejmu](https://api.sejm.gov.pl/eli) o cytowane akty i zgłasza akty uchylone, nowsze teksty jednolite, nowelizacje po cytowanym tekście oraz wersje, które kończą się w ciągu 60 dni bez następczyni.
+- `scripts/sprawdz_cytaty.py` sprawdza, czy każdy cytat nadal jest w oficjalnym tekście. Działa przy każdym PR (z zapisanymi tekstami źródeł), a po scaleniu do `main` i co tydzień pobiera wszystkie teksty od nowa;
+- `scripts/wykryj_zmiany.py` działa co tydzień i pyta [API ELI Sejmu](https://api.sejm.gov.pl/eli) o cytowane akty i zgłasza akty uchylone, nowsze teksty jednolite, nowelizacje po cytowanym tekście oraz wersje, które kończą się w ciągu 60 dni bez następczyni.
 
-Gdy skrypt coś znajdzie, zadanie kończy się na czerwono, a lista jest w podsumowaniu zadania. Nowelizację, która zmienia wartość, obsługujemy nową wersją parametru. Przejrzaną nowelizację bez wpływu na wartości wpisz do [`data/zmiany_sprawdzone.yaml`](data/zmiany_sprawdzone.yaml) z uzasadnieniem.
+Gdy skrypt coś znajdzie, zadanie kończy się na czerwono. Niezgodne cytaty są w logu zadania, a lista zmian w aktach w jego podsumowaniu. Nowelizację, która zmienia wartość, obsługujemy nową wersją parametru. Przejrzaną nowelizację bez wpływu na wartości wpisz do [`data/zmiany_sprawdzone.yaml`](data/zmiany_sprawdzone.yaml) z uzasadnieniem.
 
 ## Rozwój
 
