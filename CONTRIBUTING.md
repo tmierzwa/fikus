@@ -41,7 +41,7 @@ z 27 listopada 2026 r.: zmienione kroki 2 i 4.”, bez opisu poprzedniego błęd
 
 Gdy źródła się różnią albo przepis wymaga interpretacji, nie zgaduj. Wpisz `open_issue` i dopisz
 pytanie w [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md). Gdy pytanie dotyczy tylko przypadku
-brzegowego, a nie samej wartości, dopisz `open_issue_scope: edge_case`; w razie wątpliwości go nie wpisuj.
+brzegowego, a nie samej wartości ani rdzenia zasady, a krok opisuje ten przypadek jako niewyjaśniony, dopisz `open_issue_scope: edge_case`; w razie wątpliwości go nie wpisuj.
 Odpowiedź eksperta zapisujemy w `verification.expert` z datą i podstawą. Imię i nazwisko eksperta
 wpisujemy tylko za jego zgodą na publikację; bez zgody wpisujemy samą kwalifikację, na przykład „doradca podatkowy”.
 

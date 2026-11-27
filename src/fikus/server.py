@@ -93,6 +93,7 @@ class Confidence(BaseModel):
                           "albo edge_case (tylko przypadek brzegowy).")
     unconfirmed_fields: list[str] | None = Field(
         None, description="Przy wartości złożonej potwierdzanej pole po polu: pola (i period, czyli okres), "
+                          "a przy zasadzie potwierdzanej krok po kroku: kroki (step_1, step_2, …), "
                           "których nie podają jeszcze dwa różne dokumenty.")
 
 
@@ -113,7 +114,9 @@ class ParameterResult(BaseModel):
     not_covered: str | None = Field(None, description=(
         "Czego wersja nie rozstrzyga. Przy wartości pewność dotyczy tylko samej wartości; sposób stosowania "
         "i jego pewność podają parametry z see_also. Przy zasadzie to sprawy, których zasada nie opisuje."))
-    see_also: list[str] = Field([], description="Parametry, które opisują to, czego wartość nie rozstrzyga.")
+    see_also: list[str] = Field([], description=(
+        "Parametry, które opisują to, czego wersja nie rozstrzyga (przy wartości sposób stosowania, "
+        "przy zasadzie sprawy z not_covered)."))
 
 
 class DeadlineRule(BaseModel):
@@ -205,6 +208,7 @@ Symbol można podać z łącznikiem albo podkreśleniem, wielkimi albo małymi l
 Dla JPK_V7M i JPK_V7K dniem jest pierwszy dzień okresu rozliczeniowego, za który składa się plik.
 Dla PIT-36, PIT-36L i PIT-28 dniem jest pierwszy dzień roku podatkowego, za który składa się zeznanie.
 Dla ZUS_DRA (wzór formularza, bez schematu XSD) dniem jest dzień złożenia dokumentu.
+Dla pozostałych symboli (JPK_PKPIR, JPK_EWP, KEDU) to, od kiedy stosuje się wersję, opisuje notatka wersji.
 Są dane dla {_FORM_LIST}; dla innych symboli wynik ma found=false.
 """
 

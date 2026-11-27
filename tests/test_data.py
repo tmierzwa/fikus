@@ -367,3 +367,12 @@ def test_duplicate_yaml_key_is_rejected(tmp_path):
     f.write_text("- id: a\n  name: b\n  name: c\n", encoding="utf-8")
     with pytest.raises(ValueError, match="powtórzony klucz 'name'"):
         load_yaml(f)
+
+
+def test_expert_answer_link_must_be_https():
+    from fikus.model import Expert
+    e = Expert.model_validate({"name": "doradca podatkowy", "answered_at": "2026-11-27", "basis": "art. 1",
+                               "url": "https://github.com/tmierzwa/fikus/discussions/1"})
+    assert e.url.startswith("https://")
+    with pytest.raises(ValueError, match="https"):
+        Expert.model_validate({"name": "x", "answered_at": "2026-11-27", "basis": "b", "url": "http://x"})
