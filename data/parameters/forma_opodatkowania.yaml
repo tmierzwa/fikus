@@ -154,7 +154,7 @@
             opodatkowane podatkiem akcyzowym, z wyjątkiem wytwarzania energii elektrycznej z odnawialnych źródeł energii;
           as_of: 2026-11-27
           confirms: [step_2]
-      verification: {checked_at: 2026-11-27}
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: zasada.liniowy_wylaczenia
   name: Warunki podatku liniowego i utrata prawa do niego
@@ -223,7 +223,7 @@
             takich usług spowoduje utratę prawa do opodatkowania podatkiem liniowym i obowiązek wpłacenia zaliczek od
             początku roku obliczonych według skali podatkowej oraz odsetek za zwłokę z tytułu tych zaliczek.
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-27}
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: zasada.wybor_formy_opodatkowania
   name: Wybór ryczałtu albo podatku liniowego, kontynuacja wyboru i rezygnacja
