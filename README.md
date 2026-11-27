@@ -57,7 +57,7 @@ Serwer działa lokalnie przez stdio, tylko czyta dołączone dane i nie łączy 
 | `list_profiles()` | profile przykładowe: forma opodatkowania, VAT, rodzaj ZUS |
 | `list_parameters(profile, as_of)` | wszystkie parametry, które dotyczą profilu |
 | `deadlines(profile, year, month)` | reguły terminów, dni wolne i zasadę przesunięcia; datę liczy klient |
-| `get_schema(form, as_of)` | wersję schematu XSD deklaracji (JPK_V7M, JPK_V7K, JPK_PKPIR, JPK_EWP, PIT-36, PIT-36L, PIT-28) z adresem pliku XSD (`xsd_url`) albo wzór formularza (ZUS_DRA) |
+| `get_schema(form, as_of)` | wersję schematu XSD deklaracji (JPK_V7M, JPK_V7K, JPK_PKPIR, JPK_EWP, PIT-36, PIT-36L, PIT-28, KEDU) z adresem pliku XSD (`xsd_url`) albo wzór formularza (ZUS_DRA) |
 | `changes(since)` | wersje sprawdzone od podanej daty |
 
 - Daty mają format `RRRR-MM-DD`. Bez `as_of` obowiązuje dzisiejsza data w Polsce.
@@ -90,7 +90,7 @@ Pole `confidence.level` wynika z dowodów zapisanych przy wersji parametru:
 | Dowód | Znaczenie |
 | --- | --- |
 | `cytat` | dosłowny fragment źródła pierwotnego (ISAP/ELI, M.P., komunikat ZUS lub MF), sprawdzany skryptem w oficjalnym tekście |
-| `drugie_zrodlo` | niezależne źródło, które samo podaje tę samą wartość |
+| `drugie_zrodlo` | niezależne albo kontrolne źródło z własnym cytatem, które samo podaje tę samą wartość i jest innym dokumentem niż źródło pierwotne z cytatem |
 | `agent` | sprawdzenie przez osobnego agenta, który porównał wpis ze źródłami |
 | `deklaracje` | zgodność z deklaracją przyjętą przez urząd |
 | `ekspert` | odpowiedź doradcy podatkowego lub księgowej |

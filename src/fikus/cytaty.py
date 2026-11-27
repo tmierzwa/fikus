@@ -61,8 +61,14 @@ class _HttpsOnlyRedirects(urllib.request.HTTPRedirectHandler):
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
+class TotalTimeout(TimeoutError):
+    """Pobieranie przekroczyło łączny limit czasu. Po nim nie ma ponownej próby."""
+
+
 def _retryable(e: Exception) -> bool:
     """Błąd sieci albo serwera, po którym warto spróbować jeszcze raz."""
+    if isinstance(e, TotalTimeout):
+        return False
     if isinstance(e, urllib.error.HTTPError):
         return e.code >= 500
     if isinstance(e, urllib.error.URLError):
@@ -70,12 +76,15 @@ def _retryable(e: Exception) -> bool:
     return isinstance(e, (TimeoutError, ConnectionError))
 
 
-def _fetch_once(url: str, headers: dict[str, str], max_bytes: int, timeout: float) -> tuple[bytes, str]:
-    deadline = time.monotonic() + timeout
+def _fetch_once(url: str, headers: dict[str, str], max_bytes: int, deadline: float,
+                timeout: float) -> tuple[bytes, str]:
+    remaining = deadline - time.monotonic()
+    if remaining <= 0:
+        raise TotalTimeout(f"pobieranie {url} trwa ponad {timeout:g} s")
     req = urllib.request.Request(url, headers=headers)
     # Opener powstaje dopiero tutaj, po truststore: HTTPSHandler tworzy kontekst SSL przy budowie.
     opener = urllib.request.build_opener(_HttpsOnlyRedirects)
-    with opener.open(req, timeout=min(timeout, _SOCKET_TIMEOUT)) as r:
+    with opener.open(req, timeout=min(remaining, _SOCKET_TIMEOUT)) as r:
         ctype = r.headers.get("Content-Type", "")
         chunks: list[bytes] = []
         size = 0
@@ -87,7 +96,7 @@ def _fetch_once(url: str, headers: dict[str, str], max_bytes: int, timeout: floa
             if size > max_bytes:
                 raise ValueError(f"odpowiedź spod {url} ma ponad {max_bytes // 2**20} MB")
             if time.monotonic() > deadline:
-                raise TimeoutError(f"pobieranie {url} trwa ponad {timeout:g} s")
+                raise TotalTimeout(f"pobieranie {url} trwa ponad {timeout:g} s")
     return b"".join(chunks), ctype
 
 
@@ -109,15 +118,19 @@ def fetch_bytes(url: str, headers: dict[str, str], max_bytes: int,
                 timeout: float | None = None) -> tuple[bytes, str]:
     """Pobiera adres https:// z łącznym limitem czasu i limitem rozmiaru. Zwraca treść i Content-Type.
 
-    Po błędzie sieci, błędzie serwera (5xx) albo przekroczeniu czasu próbuje jeszcze raz."""
+    Po błędzie sieci, błędzie serwera (5xx) albo przekroczeniu czasu jednej operacji próbuje jeszcze
+    raz. Obie próby mieszczą się w jednym łącznym limicie czasu; po jego przekroczeniu nie ma drugiej."""
+    if not url.startswith("https://"):     # build_opener obsługuje też file:// i http://
+        raise ValueError(f"dozwolone są tylko adresy https://, a nie {url!r}")
     _use_truststore()
     limit = FETCH_TIMEOUT if timeout is None else timeout
+    deadline = time.monotonic() + limit
     try:
-        return _fetch_once(url, headers, max_bytes, limit)
+        return _fetch_once(url, headers, max_bytes, deadline, limit)
     except Exception as e:                 # noqa: BLE001
         if not _retryable(e):
             raise
-    return _fetch_once(url, headers, max_bytes, limit)
+    return _fetch_once(url, headers, max_bytes, deadline, limit)
 
 
 def normalize(s: str) -> str:
@@ -130,7 +143,7 @@ def normalize(s: str) -> str:
 
 
 def _cache_path(url: str) -> Path:
-    key = url if TEXT_FORMAT == 1 else f"{TEXT_FORMAT}:{url}"
+    key = f"{TEXT_FORMAT}:{url}"
     return CACHE / (hashlib.sha256(key.encode()).hexdigest()[:20] + ".txt")
 
 
@@ -173,8 +186,6 @@ def cached_text(url: str) -> str | None:
 def fetch_text(url: str) -> str:
     """Pobiera tekst źródła (z pamięci podręcznej, jeśli jest)."""
     turl = text_url(url)
-    if not turl.startswith("https://"):     # tylko publiczne strony, bez file:// i http://
-        raise ValueError(f"dozwolone są tylko adresy https://, a nie {turl!r}")
     p = _cache_path(turl)
     if p.exists():
         return _read_cached(p)
@@ -191,8 +202,17 @@ def fetch_text(url: str) -> str:
     # Plik tymczasowy i zamiana nazwy: inny wątek albo przerwany przebieg nie zobaczy połowy tekstu.
     with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=p.parent, suffix=".tmp",
                                      delete=False) as tmp:
-        tmp.write(text)
-    os.replace(tmp.name, p)
+        try:
+            tmp.write(text)
+        except BaseException:
+            tmp.close()
+            os.unlink(tmp.name)
+            raise
+    try:
+        os.replace(tmp.name, p)
+    except BaseException:
+        os.unlink(tmp.name)
+        raise
     with _lock, (CACHE / "indeks.tsv").open("a", encoding="utf-8") as idx:   # adres → plik, dla weryfikatora
         idx.write(f"{turl}\t{p.name}\n")
     return _read_cached(p)

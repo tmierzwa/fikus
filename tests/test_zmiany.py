@@ -5,7 +5,7 @@ import pytest
 
 from fikus.model import Parameter
 from fikus.store import Store
-from fikus.zmiany import cited_acts, check_act, detect, eli_id, ending_versions, load_reviewed
+from fikus.zmiany import check_act, current_acts, detect, eli_id, ending_versions, load_reviewed
 
 TODAY = date(2026, 11, 26)
 
@@ -57,7 +57,7 @@ def test_only_primary_sources_of_current_or_future_versions_are_checked():
                _param("b", "https://eli.gov.pl/eli/DU/2024/2/ogl", "2024-01-01", "2024-12-31"),
                _with_control(_param("c", "https://www.zus.pl/-/komunikat"), "https://eli.gov.pl/eli/DU/2025/3/ogl"),
                _param("d", "https://eli.gov.pl/eli/DU/2027/4/ogl", "2027-01-01"))
-    assert cited_acts(s, TODAY) == {"DU/2025/1": {"a"}, "DU/2027/4": {"d"}}
+    assert current_acts(s, TODAY, lambda act: {}) == {"DU/2025/1": {"a"}, "DU/2027/4": {"d"}}
 
 
 def test_amendments_after_current_consolidated_text_are_reported_except_reviewed():
@@ -159,3 +159,13 @@ def test_reviewed_file_requires_note(tmp_path):
 def test_repository_reviewed_file_is_valid():
     from fikus.store import DATA
     load_reviewed(DATA / "zmiany_sprawdzone.yaml")
+
+
+def test_amendment_handled_for_one_parameter_is_still_reported_for_another():
+    a = _param("a", "https://api.sejm.gov.pl/eli/acts/DU/2025/100/text.pdf")
+    a["versions"][0]["sources"].append({"title": "nowelizacja", "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/50/text.pdf"})
+    b = _param("b", "https://api.sejm.gov.pl/eli/acts/DU/2025/100/text.pdf")
+    act = {"inForce": "IN_FORCE", "references": {"Akty zmieniające": [{"id": "DU/2026/50", "date": "2026-03-01"}]}}
+    f = _fake({"DU/2025/100": act, "DU/2026/50": {"inForce": "IN_FORCE", "references": {}}})
+    out = [(x.act, x.params, x.detail) for x in detect(_store(a, b), TODAY, fetch=f) if x.kind == "nowelizacja"]
+    assert out == [("DU/2025/100", ("b",), "DU/2026/50, wchodzi w życie 2026-03-01")]

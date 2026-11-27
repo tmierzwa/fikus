@@ -54,7 +54,7 @@ def test_slow_server_hits_total_timeout(opener):
     start = time.monotonic()
     with pytest.raises(TimeoutError, match="trwa ponad"):
         cytaty.fetch_bytes("https://example.org/a", {}, 1024 * 1024, timeout=0.1)
-    assert o.calls == 2                         # jedna ponowna próba
+    assert o.calls == 1                         # po łącznym limicie czasu bez ponownej próby
     assert time.monotonic() - start < 2
 
 
@@ -106,3 +106,38 @@ def test_cache_key_depends_on_text_format(monkeypatch):
     a = cytaty._cache_path("https://example.org/a")
     monkeypatch.setattr(cytaty, "TEXT_FORMAT", cytaty.TEXT_FORMAT + 1)
     assert cytaty._cache_path("https://example.org/a") != a
+
+
+def test_only_https_is_fetched(opener):
+    o = opener(_Response([b"127.0.0.1 localhost"]))
+    for url in ("file:///etc/hosts", "http://example.org/a", "ftp://example.org/a"):
+        with pytest.raises(ValueError, match="https"):
+            cytaty.fetch_bytes(url, {}, 100, timeout=5)
+    assert o.calls == 0
+
+
+def test_retry_shares_the_total_deadline(monkeypatch):
+    class _Slow(_Opener):
+        timeouts: list[float] = []
+
+        def open(self, req, timeout):
+            self.timeouts.append(timeout)
+            if not self.calls:
+                time.sleep(0.3)             # pierwsza próba zużywa część limitu
+            return super().open(req, timeout)
+    o = _Slow(urllib.error.URLError(ConnectionResetError()), _Response([b"ok"]))
+    monkeypatch.setattr(cytaty.urllib.request, "build_opener", lambda *a: o)
+    assert cytaty.fetch_bytes("https://example.org/a", {}, 100, timeout=1.0)[0] == b"ok"
+    assert o.timeouts[0] > 0.9 and o.timeouts[1] < 0.75
+
+
+def test_cache_write_failure_leaves_no_temporary_file(opener, monkeypatch, tmp_path):
+    monkeypatch.setattr(cytaty, "CACHE", tmp_path)
+    opener(_Response([b"<p>tekst</p>"]))
+
+    def broken(*a):
+        raise OSError("dysk pełny")
+    monkeypatch.setattr(cytaty.os, "replace", broken)
+    with pytest.raises(OSError):
+        cytaty.fetch_text("https://example.org/strona")
+    assert list(tmp_path.glob("*.tmp")) == []
