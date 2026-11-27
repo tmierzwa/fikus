@@ -315,8 +315,7 @@
         (kedu_5_7.xsd) wynika ze zmiany struktury dokumentów ZUS DRA i ZUS RCA. Datę początku obowiązywania
         (25 kwietnia 2026 r.) podaje strona ZUS w BIP; wzór papierowy ZUS DRA z rozporządzenia Dz.U. 2026 poz. 518
         obowiązuje od 1 maja 2026 r. (schemat.zus_dra). Plik XSD pod adresem z BIP podaje tę samą przestrzeń nazw
-        (targetNamespace) i wersję 5.7.0, ale skrypt cytatów nie sprawdza tekstu plików XSD, więc plik jest źródłem
-        bez cytatu. Poprzedniej wersji (kedu_5_6.xsd, od specyfikacji 2.23) nie wprowadzono.
+        (targetNamespace) i wersję 5.7.0; w danych plik jest źródłem bez cytatu. Poprzedniej wersji (kedu_5_6.xsd, od specyfikacji 2.23) nie wprowadzono.
       sources:
         - title: ZUS, EWD Elektroniczna Wymiana Dokumentów. Specyfikacja wejścia – wyjścia, wersja 2.27 (przestrzeń nazw w przykładzie pliku)
           url: https://www.zus.pl/documents/493361/13983870/EWD+Elektroniczna+Wymiana+Dokument%C3%B3w.+Specyfikacja+wej%C5%9Bcia+-+wyj%C5%9Bcia.+Wersja+2.27+%5Bpdf+2%2C1+MB%5D.pdf/6f967072-4d65-3dd7-be04-00b05ebd506a
@@ -345,7 +344,7 @@
           confirms: [specification]
           quote: "EWD Elektroniczna Wymiana Dokumentów. Specyfikacja wejścia - wyjścia. Wersja 2.27"
           as_of: 2026-11-27
-        - title: ZUS, plik XSD schematu KEDU dla specyfikacji w wersji 2.27 (targetNamespace i wersja 5.7.0; bez cytatu, bo skrypt nie sprawdza plików XSD)
+        - title: ZUS, plik XSD schematu KEDU dla specyfikacji w wersji 2.27 (targetNamespace i wersja 5.7.0; bez cytatu)
           url: https://www.zus.pl/documents/493361/13983870/Wersja+elektroniczna+schematu+KEDU+dla+specyfikacji+w+wersji+2.27+Plik+do+pobrania+w+wersji+XSD+%5B92+KB%5D+-+wa%C5%BCny+od+25.04..2026+r..xsd/197b27e0-9975-11a4-f0dc-0eca51672eb2
           as_of: 2026-11-27
       verification:
@@ -354,8 +353,9 @@
         open_issue: >-
           Przestrzeń nazw i nazwę pliku podaje z cytatem tylko specyfikacja EWD 2.27, a datę początku obowiązywania
           tylko strona ZUS w BIP. Wersję 5.7 wprost podaje tylko plik XSD (atrybut version 5.7.0); specyfikacja daje ją
-          pośrednio, przez nazwy KEDU_5_7 i kedu_5_7.xsd (jej atrybut wersja_schematu to inna wartość). Pliku XSD
-          nie da się sprawdzić skryptem cytatów. Potrzebny drugi dokument z cytatem; to nie jest pytanie o interpretację przepisów.
+          pośrednio, przez nazwy KEDU_5_7 i kedu_5_7.xsd (jej atrybut wersja_schematu to inna wartość). Plik XSD
+          nie ma jeszcze cytatu, choć skrypt cytatów czyta atrybuty plików XSD. Potrzebny drugi dokument z cytatem; to nie jest pytanie o interpretację przepisów.
+          Pytanie do eksperta: docs/pytania-do-eksperta.md, P65.
 
 - id: zus.kod.termin_przesylania
   name: Kod terminu przesyłania deklaracji i raportów (ZUS DRA, blok I, pole 01)
@@ -500,6 +500,7 @@
           2023 r., a jego wykaz kodów (rozdział VII) ma stan na styczeń 2022 r.: nie ma kodów 05 14, 05 74 i 05 94, a przy 05 90 i 05 92 podaje podstawę „uzależnioną od przychodu”, a nie od dochodu. Specyfikacja ZUS
           dla oprogramowania interfejsowego (wersja 2.27, od 25 kwietnia 2026 r.) nie zawiera wykazu kodów. Potrzebny
           drugi dokument, który sam podaje, od kiedy obowiązuje wykaz; to nie jest pytanie o interpretację przepisów.
+          Pytanie do eksperta: docs/pytania-do-eksperta.md, P66.
 
 - id: zasada.dra_finansowanie_skladek
   name: Kolumny finansowania składek w deklaracji ZUS DRA za siebie (bloki IV i VI)
