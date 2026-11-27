@@ -12,7 +12,7 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
   (`step_1`, `step_2`, …), tak jak pola wartości złożonej. Dowód `drugie_zrodlo` jest spełniony, gdy każdy
   krok podają co najmniej dwa różne dokumenty z cytatem, w tym źródło pierwotne. Okresu zasady nie
   potwierdza się osobno. Brakujące kroki są w `confidence.unconfirmed_fields` (decyzja z 27 listopada 2026 r.).
-- Pytania do eksperta mają dyskusje w GitHub Discussions, w kategorii „Pytania do eksperta”, z formularzem
+- Pytania do eksperta mają dyskusje w GitHub Discussions, w kategorii „Pytania do ekspertów”, z formularzem
   dla nowych pytań. Odpowiedź z dyskusji trafia do `verification.expert` dopiero po potwierdzeniu przez
   opiekuna (decyzja z 27 listopada 2026 r.).
 
