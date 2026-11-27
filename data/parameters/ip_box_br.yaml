@@ -34,7 +34,7 @@
           kind: control
           quote: "5% podatek oblicz od podstawy opodatkowania."
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26}
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-27}
 
 - id: zasada.ip_box
   name: Opodatkowanie kwalifikowanych dochodów z kwalifikowanych praw własności intelektualnej (IP Box)
@@ -226,6 +226,7 @@
           as_of: 2019-07-15
       verification:
         checked_at: 2026-11-26
+        agent_check: 2026-11-27
         open_issue: >-
           Art. 30ca ust. 9a (od 2022 r.) pozwala odliczyć od dochodu z kwalifikowanego prawa koszty kwalifikowane
           z art. 26e ust. 2–3b. Nie wiadomo, czy odliczenie pomniejsza dochód przed pomnożeniem przez wskaźnik z ust. 4
@@ -268,7 +269,7 @@
           kind: control
           quote: "200% kosztów wynagrodzeń pracowników i osób zatrudnionych na podstawie umowy zlecenia i umowy o dzieło oraz składek od tych wynagrodzeń 100% pozostałych kosztów kwalifikowanych."
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26}
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-27}
 
 - id: zasada.ulga_br
   name: Ulga badawczo-rozwojowa (odliczenie kosztów kwalifikowanych)
@@ -460,6 +461,7 @@
           quote: "oraz wydatki określone w art. 26 ust. 1 pkt 2, 2a, 2b, 2c, 5–6a i 9"
       verification:
         checked_at: 2026-11-26
+        agent_check: 2026-11-27
         open_issue: >-
           Krok o podstawie odliczenia: art. 26e ust. 1 mówi o podstawie ustalonej zgodnie z art. 26 ust. 1 lub art. 30c
           ust. 2, a art. 26i ust. 1 o podstawie ustalonej zgodnie z art. 26 ust. 1, art. 30c ust. 2 lub art. 30ca ust. 3
