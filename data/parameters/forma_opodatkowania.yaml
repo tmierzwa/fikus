@@ -217,7 +217,11 @@
           quote: "obliczonych przy zastosowaniu skali podatkowej, o której mowa w art. 27 ust. 1, oraz odsetek za zwłokę od zaległości z tytułu tych zaliczek"
         - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym (komunikat MF; podaje krok 3 bez wspólników i spółki)
           url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
-          quote: "świadczyć usług na rzecz byłego lub obecnego pracodawcy, odpowiadających czynnościom, które wykonywałeś(-aś) lub wykonujesz w roku podatkowym w ramach stosunku pracy lub spółdzielczego stosunku pracy"
+          quote: >-
+            świadczyć usług na rzecz byłego lub obecnego pracodawcy, odpowiadających czynnościom, które wykonywałeś(-aś)
+            lub wykonujesz w roku podatkowym w ramach stosunku pracy lub spółdzielczego stosunku pracy – świadczenie
+            takich usług spowoduje utratę prawa do opodatkowania podatkiem liniowym i obowiązek wpłacenia zaliczek od
+            początku roku obliczonych według skali podatkowej oraz odsetek za zwłokę z tytułu tych zaliczek.
           as_of: 2026-11-26
       verification: {checked_at: 2026-11-27}
 
