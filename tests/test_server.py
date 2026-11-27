@@ -100,7 +100,7 @@ def test_confidence_reports_medium_level_scope_and_unconfirmed_fields():
     edge = _call("get_parameter", {"id": "schemat.zus_dra", "as_of": "2026-06-01"})
     conf = edge.structured_content["confidence"]
     assert conf["level"] == "średnia" and conf["open_issue_scope"] == "edge_case"
-    schema = _call("get_parameter", {"id": "schemat.pit_36l", "as_of": "2026-11-26"})
+    schema = _call("get_parameter", {"id": "schemat.pit_28", "as_of": "2026-11-26"})
     assert "system_code" in schema.structured_content["confidence"]["unconfirmed_fields"]
     levels = {c["confidence"] for c in _call("changes", {"since": "2026-01-01"}).structured_content["result"]}
     assert levels <= {"wysoka", "średnia", "niska"} and "średnia" in levels

@@ -103,10 +103,12 @@ Pole `confidence.level` wynika z dowodów zapisanych przy wersji parametru:
 
 - Pewność `średnia` znaczy, że otwarte pytanie (`confidence.open_issue`) dotyczy tylko przypadku brzegowego. Jeśli ten przypadek Cię nie dotyczy, wartość ma pełny komplet dowodów. Otwarte pytanie bez podanego zakresu liczy się jak pytanie o samą wartość.
 - Pole `not_covered` mówi, czego wartość nie rozstrzyga, na przykład od jakiej podstawy liczy się limit. Pewność dotyczy wtedy tylko samej wartości. Resztę opisują parametry z `see_also`, każdy z własną pewnością; sprawdź je, zanim użyjesz wartości.
+- Przy zasadzie obliczeń `not_covered` wylicza sprawy, których zasada nie opisuje (na przykład deklaracji korygujących). Pewność zasady ich nie obejmuje; jeśli Cię dotyczą, zasada Ci nie wystarczy. Niepuste `see_also` wskazuje parametry, które te sprawy opisują.
 - Zasadę obliczeń i wartość złożoną z kilku pól (na przykład schemat JPK) można potwierdzać po kawałku. Źródło wymienia w `confirms` kroki (`step_1`, `step_2`, …) albo pola (klucze wartości i `period` dla okresu), które samo podaje, i musi mieć cytat. Dowód `drugie_zrodlo` jest spełniony, gdy każdy krok albo pole podają co najmniej dwa różne dokumenty z cytatem, w tym źródło pierwotne; jeden dokument liczy się raz. Kroki i pola bez drugiego dokumentu są w `confidence.unconfirmed_fields`, a otwarte pytanie nadal obniża pewność.
   - Bez `confirms` zasadę potwierdza jeden dokument, który sam podaje wszystkie jej kroki. Gdy któreś źródło wersji używa `confirms`, liczy się tylko potwierdzenie po kawałku, a źródło kontrolne bez `confirms` go nie zastępuje.
   - Okresu zasady nie potwierdza się osobno, bo wiele wersji zaczyna się na początku zakresu danych; opisuje go notatka.
   - Adres pliku schematu (`xsd_url`) potwierdza też sam plik spod tego adresu, jeśli cytat z pliku podaje kod systemowy formularza. Skrypt cytatów dopisuje na końcu tekstu źródła wartości atrybutów z plików XML i XSD oraz adresy linków ze stron, więc je też można cytować.
+  - Przy schemacie z CRWDE plik schematu, którego adres podają już dwa dokumenty, sam potwierdza kod systemowy i wersję schematu, a wyróżnik wzoru o tym samym numerze sam potwierdza okres. Koniec okresu zamkniętej wersji wynika z potwierdzonego początku następnej wersji.
 
 ## Zakres
 

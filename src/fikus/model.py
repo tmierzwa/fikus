@@ -1,16 +1,21 @@
 """Model danych: parametr = lista wersji z okresem obowiązywania, źródłami i dowodami."""
 from __future__ import annotations
 
-from datetime import date
+import re
+from datetime import date, timedelta
 from typing import Literal
 
-from pydantic import BaseModel, Field, field_validator, model_validator
+from pydantic import BaseModel, Field, PrivateAttr, field_validator, model_validator
 
 from .cytaty import normalize
 
 PERIOD = "period"   # w confirms: okres obowiązywania wersji
 XSD_URL = "xsd_url"     # w schemacie: adres pliku XSD
 SYSTEM_CODE = "system_code"
+SCHEMA_VERSION = "schema_version"
+# Wyróżnik i plik schematu tego samego wzoru w Centralnym Repozytorium Wzorów Dokumentów Elektronicznych.
+_CRWDE_CARD = re.compile(r"crd\.gov\.pl/wzor/(\d{4}/\d{2}/\d{2}/\d+)/wyroznik\.xml")
+_CRWDE_XSD = re.compile(r"crd\.gov\.pl/wzor/(\d{4}/\d{2}/\d{2}/\d+)/schemat\.xsd")
 STEP = "step_"         # w confirms zasady: step_1, step_2, … (numer kroku od 1)
 
 
@@ -84,15 +89,19 @@ class Version(BaseModel):
     sources: list[Source]
     verification: Verification
     note: str | None = None
-    # Czego wartość nie rozstrzyga, gdy sposób jej stosowania opisuje osobny parametr (decyzja
-    # z 27 listopada 2026 r.). Pytanie o sposób stosowania ma tamten parametr, nie ta wersja.
+    # Czego wersja nie rozstrzyga (decyzje z 27 listopada 2026 r.). Przy wartości: sposób stosowania,
+    # który opisuje osobny parametr z see_also; pytanie o niego ma tamten parametr, nie ta wersja.
+    # Przy zasadzie: sprawy, których zasada nie opisuje; odsyłacz nie jest wymagany. Tego opisu
+    # nie potwierdza się dokumentami.
     not_covered: str | None = None
-    see_also: list[str] = Field(default_factory=list)   # parametry, które opisują to, czego wartość nie rozstrzyga
+    see_also: list[str] = Field(default_factory=list)   # parametry, które opisują to, czego wersja nie rozstrzyga
+    # Początek następnej wersji tego samego parametru, gdy jej okres jest potwierdzony (ustawia Parameter).
+    _next_confirmed_from: date | None = PrivateAttr(default=None)
 
     @model_validator(mode="after")
     def _check(self) -> "Version":
-        if bool(self.not_covered) != bool(self.see_also):
-            raise ValueError("opis tego, czego wartość nie rozstrzyga, wymaga listy parametrów, które to opisują, i odwrotnie")
+        if self.see_also and not self.not_covered:
+            raise ValueError("lista parametrów, które opisują to, czego wersja nie rozstrzyga, wymaga opisu tego, czego nie rozstrzyga")
         if self.valid_to and self.valid_to < self.valid_from:
             raise ValueError("koniec obowiązywania wersji jest wcześniejszy niż jej początek")
         if not any(s.kind == "primary" for s in self.sources):
@@ -127,19 +136,45 @@ class Version(BaseModel):
     def _unconfirmed_fields(self) -> list[str] | None:
         """Pola wartości złożonej (i okres), których nie podają co najmniej dwa różne dokumenty z cytatem,
         w tym źródło pierwotne. Jeden dokument (adres) liczy się raz, także przy kilku cytatach.
-        None, gdy wersja nie potwierdza pól osobno."""
+        Wyjątki dla schematów z CRWDE opisuje _crwde_confirmed. None, gdy wersja nie potwierdza pól osobno."""
         if not isinstance(self.value, dict) or not any(s.confirms for s in self.sources):
             return None
-        missing = []
         # Okresu zasady nie potwierdza się osobno: wersje często zaczynają się na początku zakresu danych.
         is_rule = isinstance(self.value.get("steps"), list)
-        for field in [*_fields(self.value), *([] if is_rule else [PERIOD])]:
-            docs = {s.url for s in self.sources if s.quote and field in (s.confirms or [])}
-            primary = {s.url for s in self.sources
-                       if s.quote and s.kind == "primary" and field in (s.confirms or [])}
-            if len(docs) < 2 or not primary:
-                missing.append(field)
+        fields = [*_fields(self.value), *([] if is_rule else [PERIOD])]
+        missing = [f for f in fields if not self._two_documents(f)]
+        if not is_rule:
+            missing = [f for f in missing if f not in self._crwde_confirmed(missing)]
         return missing
+
+    def _two_documents(self, field: str) -> bool:
+        docs = {s.url for s in self.sources if s.quote and field in (s.confirms or [])}
+        primary = {s.url for s in self.sources if s.quote and s.kind == "primary" and field in (s.confirms or [])}
+        return len(docs) >= 2 and bool(primary)
+
+    def _crwde_confirmed(self, missing: list[str]) -> set[str]:
+        """Urzędowy łańcuch dokumentów schematu z CRWDE zastępuje drugi dokument (decyzja z 27 listopada
+        2026 r.). Plik schematu, którego adres potwierdzają dwa dokumenty, a cytat z pliku podaje kod
+        systemowy, sam potwierdza kod systemowy i wersję schematu. Wyróżnik wzoru o tym samym numerze
+        co adres schematu sam potwierdza okres; koniec okresu wersji zamkniętej wynika z początku
+        następnej wersji, gdy zaczyna się ona dzień później i ma potwierdzony okres."""
+        url = self.value.get(XSD_URL)
+        if not isinstance(url, str):
+            return set()
+        ok: set[str] = set()
+        if XSD_URL not in missing:
+            for s in self.sources:      # cytat z kodem systemowym sprawdza już _check_xsd_self
+                if s.quote and XSD_URL in (s.confirms or []) and _address(s.url) == _address(url):
+                    ok |= {f for f in (SYSTEM_CODE, SCHEMA_VERSION) if f in s.confirms}
+        number = _CRWDE_XSD.fullmatch(_address(url))
+        card = number and any(
+            s.quote and s.kind == "primary" and PERIOD in (s.confirms or [])
+            and (m := _CRWDE_CARD.fullmatch(_address(s.url))) and m.group(1) == number.group(1)
+            for s in self.sources)
+        if card and (self.valid_to is None
+                     or self._next_confirmed_from == self.valid_to + timedelta(days=1)):
+            ok.add(PERIOD)
+        return ok
 
     def confidence(self) -> dict:
         """Wysoka: cytat ze źródła pierwotnego i co najmniej dwa inne dowody, bez otwartych pytań.
@@ -195,6 +230,11 @@ class Parameter(BaseModel):
         self.versions = vs
         for v in vs:
             self._check_value_shape(v)
+        # Od najpóźniejszej: koniec okresu wersji zamkniętej może wynikać z potwierdzonego początku następnej.
+        for a, b in zip(reversed(vs[:-1]), reversed(vs[1:])):
+            unconfirmed = b._unconfirmed_fields()
+            if unconfirmed is not None and PERIOD not in unconfirmed:
+                a._next_confirmed_from = b.valid_from
         return self
 
     def _check_value_shape(self, v: Version) -> None:
@@ -208,8 +248,11 @@ class Parameter(BaseModel):
             steps = v.value.get("steps") if isinstance(v.value, dict) else None
             if not steps or not all(isinstance(s, dict) and s.get("text") for s in steps):
                 raise ValueError(f"{where}: zasada potrzebuje value.steps, a każdy krok pola text")
+            return          # zasada może opisać, czego nie obejmuje, bez odsyłacza
         elif self.kind == "calendar" and not isinstance(v.value, list):
             raise ValueError(f"{where}: kalendarz potrzebuje listy dat")
+        if v.not_covered and not v.see_also:
+            raise ValueError(f"{where}: opis tego, czego wartość nie rozstrzyga, wymaga listy parametrów, które to opisują")
 
     def at(self, d: date) -> Version | None:
         return next((v for v in self.versions if v.covers(d)), None)
