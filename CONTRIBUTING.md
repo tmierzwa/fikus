@@ -41,14 +41,14 @@ z 27 listopada 2026 r.: zmienione kroki 2 i 4.”, bez opisu poprzedniego błęd
 
 Gdy źródła się różnią albo przepis wymaga interpretacji, nie zgaduj. Wpisz `open_issue` i dopisz
 pytanie w [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md). Gdy pytanie dotyczy tylko przypadku
-brzegowego, a nie samej wartości, dopisz `open_issue_scope: edge_case`; w razie wątpliwości go nie wpisuj.
+brzegowego, a nie samej wartości ani rdzenia zasady, a krok opisuje ten przypadek jako niewyjaśniony, dopisz `open_issue_scope: edge_case`; w razie wątpliwości go nie wpisuj.
 Odpowiedź eksperta zapisujemy w `verification.expert` z datą i podstawą. Imię i nazwisko eksperta
 wpisujemy tylko za jego zgodą na publikację; bez zgody wpisujemy samą kwalifikację, na przykład „doradca podatkowy”.
 
 ## Odpowiedzi ekspertów
 
 Otwarte pytania mają dyskusje w kategorii
-[Pytania do eksperta](https://github.com/tmierzwa/fikus/discussions/categories/pytania-do-eksperta),
+[Pytania do ekspertów](https://github.com/tmierzwa/fikus/discussions/categories/pytania-do-ekspert%C3%B3w),
 jedna dyskusja na jedno pytanie z [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md). Jeśli jesteś
 doradcą podatkowym, księgową albo prawnikiem, odpowiedz w dyskusji i podaj podstawę prawną: przepis,
 interpretację, wyrok albo komunikat urzędu.

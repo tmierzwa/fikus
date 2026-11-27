@@ -4,7 +4,7 @@ Użycie: python scripts/wykryj_zmiany.py [--dni 60]
 --dni: ile dni naprzód szukać wersji kończących się bez następczyni (domyślnie 60).
 
 Kody wyjścia: 0, gdy nie ma nic do sprawdzenia; 1, gdy są zmiany do przejrzenia; 2, gdy któregoś
-aktu nie dało się sprawdzić. Przejrzaną nowelizację, która nie zmienia wartości, zapisz
+aktu nie dało się sprawdzić albo przebieg przerwał nieoczekiwany błąd. Przejrzaną nowelizację, która nie zmienia wartości, zapisz
 w data/zmiany_sprawdzone.yaml, żeby skrypt przestał ją zgłaszać.
 Wynik jest w Markdown, więc w CI trafia wprost do podsumowania zadania.
 """
@@ -58,4 +58,8 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except Exception as e:      # noqa: BLE001  nieoczekiwany błąd to kod 2, a nie 1 („są zmiany”)
+        print(f"\nPrzebieg przerwany: {type(e).__name__}: {e}")
+        sys.exit(2)

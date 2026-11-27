@@ -1,20 +1,21 @@
 # Pytania do eksperta
 
 Pytania, na które źródła nie dają jednoznacznej odpowiedzi. Do czasu odpowiedzi wpis ma `open_issue`
-i pewność niską albo, gdy pytanie dotyczy tylko przypadku brzegowego, średnią.
+i pewność niską albo średnią, gdy wpis ma pełny komplet dowodów, a pytanie dotyczy tylko przypadku
+brzegowego.
 
 Każde otwarte pytanie oprócz P0 ma dyskusję w kategorii
-[Pytania do eksperta](https://github.com/tmierzwa/fikus/discussions/categories/pytania-do-eksperta)
+[Pytania do ekspertów](https://github.com/tmierzwa/fikus/discussions/categories/pytania-do-ekspert%C3%B3w)
 o tym samym tytule. Link jest w linii „Dyskusja” pod pytaniem. Doradców podatkowych, księgowych i innych
 ekspertów prosimy o odpowiedź w dyskusji, z podstawą prawną.
 
 Sama odpowiedź w dyskusji nie jest dowodem. Opiekun potwierdza kwalifikację autora i to, że odpowiedź
 podaje podstawę prawną, a potem oznacza ją jako odpowiedź. Wtedy trafia do pola `verification.expert`
-wpisu z datą odpowiedzi, podstawą i linkiem do komentarza. Imię i nazwisko wpisujemy tylko wtedy, gdy
+wpisu z datą odpowiedzi, podstawą i linkiem do komentarza (`url`). Imię i nazwisko wpisujemy tylko wtedy, gdy
 ekspert napisze, że się na to zgadza; bez tego wpisujemy samą kwalifikację. Gdy dane z odpowiedzią są na
 `main`, dyskusję zamykamy, a nagłówek pytania dostaje dopisek „rozstrzygnięte”.
 
-Nowe pytanie dopisujemy tutaj w PR, a potem zakładamy dla niego dyskusję. Dyskusję może też założyć
+Nowe pytanie dopisujemy tutaj w PR, a dyskusję dla niego zakładamy dopiero za zgodą opiekuna. Dyskusję może też założyć
 kontrybutor formularzem kategorii; opiekun nadaje wtedy pytaniu numer i dopisuje je tutaj. W dyskusjach
 nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się rozlicza.
 
@@ -995,6 +996,19 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
   o interpretację przepisów.
 - Pytanie: czy wykaz kodów tytułu ubezpieczenia z załącznika nr 24 do rozporządzenia Dz.U. 2026 poz. 518 stosuje się
   od 30 kwietnia 2026 r.? Czy jest aktualny poradnik albo komunikat ZUS, który podaje ten wykaz i datę wprost?
+
+## P67. Darowizny na kościelną działalność charytatywno-opiekuńczą przy podatku liniowym
+
+- Wpisy: `zasada.ulgi_liniowy` (od 2026-01-01 i od 2027-01-01), krok o darowiznach.
+- Zgłoszone: 2026-11-27.
+- Ustawy o stosunku Państwa do kościołów, na przykład art. 55 ust. 7 ustawy o stosunku Państwa do Kościoła Katolickiego
+  (Dz.U. 2023 poz. 1966): darowizny na kościelną działalność charytatywno-opiekuńczą „są wyłączone z podstawy opodatkowania
+  darczyńców podatkiem dochodowym”, bez rozróżnienia form opodatkowania.
+- Ustawa o PIT (Dz.U. 2026 poz. 592), art. 30c ust. 2: dochód opodatkowany podatkiem liniowym „podatnicy mogą pomniejszyć o”
+  pozycje z pkt 1–4, wśród których nie ma tych darowizn. Art. 30c ust. 3a stosuje odpowiednio art. 26 ust. 6b, który
+  wspomina odliczenie darowizn „wynikającego z odrębnych ustaw”.
+- Pytanie: czy podatnik opodatkowany podatkiem liniowym (art. 30c) może wyłączyć z podstawy opodatkowania darowizny na
+  kościelną działalność charytatywno-opiekuńczą na podstawie ustaw o stosunku Państwa do kościołów?
 
 ## Numeracja
 

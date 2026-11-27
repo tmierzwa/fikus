@@ -10,6 +10,9 @@ from pydantic import BaseModel, Field, PrivateAttr, field_validator, model_valid
 from .cytaty import normalize
 
 PERIOD = "period"   # w confirms: okres obowiązywania wersji
+# Data odcięcia danych (decyzja z 27 listopada 2026 r.). Wersja, która zaczyna się tego dnia, zaczyna się
+# umownie; początku nie potwierdza się dokumentami, a period w confirms dotyczy wtedy tylko końca wersji.
+DATA_CUTOFF = date(2024, 1, 1)
 XSD_URL = "xsd_url"     # w schemacie: adres pliku XSD
 SYSTEM_CODE = "system_code"
 SCHEMA_VERSION = "schema_version"
@@ -47,7 +50,7 @@ class Source(BaseModel):
     independent: bool = False
     # Pola wartości złożonej (klucze value i "period" dla okresu obowiązywania), które to źródło
     # samo podaje. Pozwala potwierdzić drugie źródło pole po polu (Version.confidence).
-    confirms: list[str] | None = None
+    confirms: list[str] | None = None   # pola wartości złożonej, period albo kroki zasady (step_N)
 
     @field_validator("url")
     @classmethod
@@ -62,6 +65,14 @@ class Expert(BaseModel):
     name: str                       # imię i nazwisko tylko za zgodą na publikację; inaczej kwalifikacja
     answered_at: date
     basis: str                      # co ekspert potwierdził i na jakiej podstawie
+    url: str | None = None          # link do odpowiedzi (komentarz w GitHub Discussions)
+
+    @field_validator("url")
+    @classmethod
+    def _https(cls, v: str | None) -> str | None:
+        if v is not None and not v.startswith("https://"):
+            raise ValueError("adres odpowiedzi eksperta musi zaczynać się od https://")
+        return v
 
 
 class Verification(BaseModel):
@@ -97,6 +108,14 @@ class Version(BaseModel):
     see_also: list[str] = Field(default_factory=list)   # parametry, które opisują to, czego wersja nie rozstrzyga
     # Początek następnej wersji tego samego parametru, gdy jej okres jest potwierdzony (ustawia Parameter).
     _next_confirmed_from: date | None = PrivateAttr(default=None)
+
+    @field_validator("value", mode="before")
+    @classmethod
+    def _no_bool(cls, v):
+        # Bez tego true z YAML staje się po cichu liczbą 1.0.
+        if isinstance(v, bool):
+            raise ValueError("wartość nie może być logiczna (true/false); zapisz ją jako liczbę albo tekst")
+        return v
 
     @model_validator(mode="after")
     def _check(self) -> "Version":
@@ -145,6 +164,8 @@ class Version(BaseModel):
         missing = [f for f in fields if not self._two_documents(f)]
         if not is_rule:
             missing = [f for f in missing if f not in self._crwde_confirmed(missing)]
+        if PERIOD in missing and self.valid_from == DATA_CUTOFF and self.valid_to is None:
+            missing.remove(PERIOD)      # umowny początek, bez końca: nie ma czego potwierdzać
         return missing
 
     def _two_documents(self, field: str) -> bool:
