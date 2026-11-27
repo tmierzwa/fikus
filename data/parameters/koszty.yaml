@@ -1,0 +1,494 @@
+# Koszty uzyskania przychodów na skali i podatku liniowym: limity dla samochodów osobowych, limity amortyzacji
+# i podstawowe zasady amortyzacji, wyłączenie z kosztów płatności poza rachunkiem płatniczym.
+# Serwer podaje limity z ustaw i opisuje zasady krokami z podstawą prawną. Odpisów i kwot nie liczy;
+# robi to klient. Wykazu rocznych stawek amortyzacyjnych (załącznik nr 1 do ustawy o PIT) nie kopiujemy.
+
+- id: koszty.samochod.limity
+  name: Limity wartości samochodu osobowego i udziału wydatków w kosztach uzyskania przychodów
+  unit: PLN, %
+  applies_to: {tax_form: [skala, liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        elektryczny_lub_wodorowy: 225000
+        spalinowy_co2_ponizej_50: 150000
+        spalinowy_co2_od_50: 100000
+        ubezpieczenie: 150000
+        uzytek_mieszany_niekoszt_procent: 25
+        prywatny_koszt_procent: 20
+      note: >-
+        Trzy pierwsze kwoty to wartość samochodu osobowego, powyżej której odpisy amortyzacyjne nie są kosztem
+        (art. 23 ust. 1 pkt 4 ustawy o PIT): dla pojazdu elektrycznego albo napędzanego wodorem w rozumieniu art. 2 pkt 12
+        i 15 ustawy o elektromobilności, dla samochodu, którego silnik spalinowy emituje według centralnej ewidencji
+        pojazdów mniej niż 50 g CO2 na kilometr, oraz dla samochodu z emisją równą lub wyższą niż 50 g na kilometr.
+        Te same kwoty stosuje się do opłat z umowy leasingu, najmu, dzierżawy lub podobnej (art. 23 ust. 1 pkt 47a,
+        w związku z pkt 4 lit. b i c oraz ust. 5e); przy leasingu ograniczenie dotyczy tylko części opłaty, która stanowi
+        spłatę wartości samochodu (art. 23 ust. 5c), a przy umowie krótszej niż 6 miesięcy wartością samochodu jest
+        wartość przyjęta dla celów ubezpieczenia (ust. 5d). Kwota przy ubezpieczeniu dotyczy składek na ubezpieczenie
+        samochodu, który nie jest prywatnym samochodem z art. 23 ust. 1 pkt 46 (pkt 47), i nie zależy od emisji CO2.
+        Przy samochodzie wykorzystywanym również do celów niezwiązanych z działalnością 25% wydatków na jego używanie
+        nie jest kosztem (pkt 46a); przy samochodzie stanowiącym własność podatnika, który nie jest składnikiem majątku
+        związanym z działalnością, kosztem jest 20% wydatków i składek na ubezpieczenie (pkt 46). Wydatki i kwoty
+        z pkt 46, 46a i 47a obejmują VAT, którego nie można odliczyć (art. 23 ust. 5a); ograniczenie odliczenia VAT
+        do 50% opisuje zasada.vat_odliczenie. Bez ewidencji przebiegu pojazdu z art. 86a ust. 4 ustawy o VAT samochód
+        uznaje się za wykorzystywany również do celów niezwiązanych z działalnością (art. 23 ust. 5f i 5g).
+        Kwoty zależne od emisji CO2 obowiązują od 1 stycznia 2026 r. (art. 41 pkt 4 ustawy Dz.U. 2021 poz. 2269); wcześniej
+        dla samochodów innych niż elektryczne i wodorowe było to 150 000 zł, czego ta wersja nie obejmuje. Do pojazdów
+        wprowadzonych do ewidencji środków trwałych przed tym dniem stosuje się przepisy dotychczasowe (art. 30 tej
+        ustawy). Przepis nie wspomina o leasingu ani najmie; stanowisko MF z odpowiedzi na interpelację nr 12100 (nie treść przepisu) jest takie, że samochody używane na podstawie leasingu operacyjnego, najmu
+        lub dzierżawy nie są w tej ewidencji, więc od 1 stycznia 2026 r. stosuje się do nich nowe kwoty, także gdy umowę
+        zawarto wcześniej. Udziały procentowe obowiązują od 1 stycznia 2019 r. (Dz.U. 2018 poz. 2159); tu ujęte od
+        początku tej wersji. Tekst jednolity Dz.U. 2026 poz. 592 uwzględnia stan prawny na 1 kwietnia 2026 r.; nowelizacje
+        ogłoszone później (Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1541, 1542 i 1556)
+        nie zmieniają art. 23 ust. 1 pkt 4, 46, 46a, 47 i 47a ani ust. 5a–5g.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (pojazd elektryczny lub wodorowy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 23 ust. 1 pkt 4 lit. a
+          quote: "225 000 zł – w przypadku samochodu osobowego będącego pojazdem elektrycznym w rozumieniu art. 2 pkt 12"
+          confirms: [elektryczny_lub_wodorowy]
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o PIT (emisja poniżej 50 g/km)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 23 ust. 1 pkt 4 lit. b
+          quote: "150 000 zł – jeśli emisja CO2 silnika spalinowego samochodu osobowego, określona na podstawie danych zawartych w centralnej ewidencji pojazdów, o której mowa w art. 80a ustawy z dnia 20 czerwca 1997 r. – Prawo o ruchu drogowym, wynosi mniej niż 50 g na kilometr"
+          confirms: [spalinowy_co2_ponizej_50]
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o PIT (emisja od 50 g/km)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 23 ust. 1 pkt 4 lit. c
+          quote: "100 000 zł – jeśli emisja CO2 silnika spalinowego samochodu osobowego, określona na podstawie danych zawartych w centralnej ewidencji pojazdów, o której mowa w art. 80a ustawy z dnia 20 czerwca 1997 r. – Prawo o ruchu drogowym, jest równa lub wyższa niż 50 g na kilometr"
+          confirms: [spalinowy_co2_od_50]
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o PIT (ubezpieczenie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 23 ust. 1 pkt 47
+          quote: "w jakiej kwota 150 000 zł pozostaje do wartości samochodu przyjętej dla celów ubezpieczenia"
+          confirms: [ubezpieczenie]
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o PIT (użytek mieszany)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 23 ust. 1 pkt 46a
+          quote: "25 % poniesionych wydatków, z zastrzeżeniem pkt 36, z tytułu kosztów używania samochodu osobowego"
+          confirms: [uzytek_mieszany_niekoszt_procent]
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o PIT (samochód prywatny)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 23 ust. 1 pkt 46
+          quote: "te wydatki i składki w wysokości 20 % stanowią jednak koszty uzyskania przychodów"
+          confirms: [prywatny_koszt_procent]
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o PIT (leasing i najem, ta sama kwota co przy amortyzacji)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 23 ust. 1 pkt 47a i ust. 5e
+          quote: "w jakiej kwota, o której mowa w pkt 4 odpowiednio w lit. b lub c, pozostaje do wartości samochodu osobowego będącego przedmiotem tej umowy"
+        - title: Dz.U. 2021 poz. 2269, ustawa o zmianie ustawy o elektromobilności i paliwach alternatywnych oraz niektórych innych ustaw (art. 3, emisja poniżej 50 g/km)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2021/2269/text.pdf
+          article: art. 3 pkt 1 lit. a
+          quote: "150 000 zł – jeśli emisja CO2 silnika spalinowego samochodu osobowego, określona na podstawie danych zawartych w centralnej ewidencji pojazdów, o której mowa w art. 80a ustawy z dnia 20 czerwca 1997 r. – Prawo o ruchu drogowym, wynosi mniej niż 50 g na kilometr"
+          confirms: [spalinowy_co2_ponizej_50]
+        - title: Dz.U. 2021 poz. 2269 (art. 3, emisja od 50 g/km)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2021/2269/text.pdf
+          article: art. 3 pkt 1 lit. a
+          quote: "100 000 zł – jeśli emisja CO2 silnika spalinowego samochodu osobowego, określona na podstawie danych zawartych w centralnej ewidencji pojazdów, o której mowa w art. 80a ustawy z dnia 20 czerwca 1997 r. – Prawo o ruchu drogowym, jest równa lub wyższa niż 50 g na kilometr"
+          confirms: [spalinowy_co2_od_50]
+        - title: Dz.U. 2021 poz. 2269 (art. 3, pojazd elektryczny lub wodorowy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2021/2269/text.pdf
+          article: art. 3 pkt 1 lit. a
+          quote: "225 000 zł – w przypadku samochodu osobowego będącego pojazdem elektrycznym w rozumieniu art. 2 pkt 12"
+          confirms: [elektryczny_lub_wodorowy]
+        - title: Dz.U. 2021 poz. 2269 (wejście w życie kwot zależnych od emisji CO2)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2021/2269/text.pdf
+          article: art. 41 pkt 4
+          quote: "art. 3 pkt 1 lit. a tiret pierwsze w zakresie lit. b oraz tiret drugie i lit. b oraz art. 4 pkt 1 lit. a tiret pierwsze w zakresie lit. b oraz tiret drugie i lit. b, które wchodzą w życie z dniem 1 stycznia 2026 r."
+          confirms: [period]
+        - title: Dz.U. 2021 poz. 2269 (przepis przejściowy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2021/2269/text.pdf
+          article: art. 30
+          quote: "Do pojazdów wprowadzonych do ewidencji środków trwałych i wartości niematerialnych i prawnych podatnika przed dniem wejścia w życie art. 23 ust. 1 pkt 4 i 47a oraz ust. 5e ustawy zmienianej w art. 3"
+        - title: Dz.U. 2018 poz. 2159, ustawa o zmianie ustawy o podatku dochodowym od osób fizycznych, ustawy o podatku dochodowym od osób prawnych oraz niektórych innych ustaw (ubezpieczenie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2018/2159/text.pdf
+          article: art. 1 (art. 23 ust. 1 pkt 47 ustawy o PIT)
+          quote: "w jakiej kwota 150 000 zł pozostaje do wartości samochodu przyjętej dla celów ubezpieczenia"
+          confirms: [ubezpieczenie]
+        - title: Dz.U. 2018 poz. 2159 (użytek mieszany)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2018/2159/text.pdf
+          article: art. 1 (art. 23 ust. 1 pkt 46a ustawy o PIT)
+          quote: "46a) 25% poniesionych wydatków, z zastrzeżeniem pkt 36, z tytułu kosztów używania samochodu osobowego"
+          confirms: [uzytek_mieszany_niekoszt_procent]
+        - title: Dz.U. 2018 poz. 2159 (samochód prywatny)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2018/2159/text.pdf
+          article: art. 1 (art. 23 ust. 1 pkt 46 ustawy o PIT)
+          quote: "te wydatki i składki w wysokości 20% stanowią jednak koszty uzyskania przychodów"
+          confirms: [prywatny_koszt_procent]
+        - title: Ministerstwo Finansów, odpowiedź na interpelację nr 12100 z 17 września 2025 r. (emisja poniżej 50 g/km)
+          url: https://api.sejm.gov.pl/sejm/term10/interpellations/attachment/ATTDLNHSY/i12100-o1.pdf
+          kind: control
+          quote: "Limit 150 000 zł znajdzie zastosowanie do odpisów amortyzacyjnych, jeżeli emisja CO2 silnika spalinowego samochodu osobowego będzie wynosiła mniej niż 50g na kilometr."
+          confirms: [spalinowy_co2_ponizej_50]
+          as_of: 2026-11-26
+        - title: Ministerstwo Finansów, odpowiedź na interpelację nr 12100 (emisja od 50 g/km)
+          url: https://api.sejm.gov.pl/sejm/term10/interpellations/attachment/ATTDLNHSY/i12100-o1.pdf
+          kind: control
+          quote: "Jeżeli emisja CO2 silnika spalinowego samochodu osobowego będzie równa lub wyższa niż 50g na kilometr, limit odpisów amortyzacyjnych będzie wynosił 100 000 zł."
+          confirms: [spalinowy_co2_od_50]
+          as_of: 2026-11-26
+        - title: Ministerstwo Finansów, odpowiedź na interpelację nr 12100 (pojazd elektryczny lub wodorowy)
+          url: https://api.sejm.gov.pl/sejm/term10/interpellations/attachment/ATTDLNHSY/i12100-o1.pdf
+          kind: control
+          quote: "Na niezmienionym poziomie w wysokości 225 000 zł pozostanie natomiast limit odpisów amortyzacyjnych dla samochodów osobowych będących pojazdami elektrycznymi"
+          confirms: [elektryczny_lub_wodorowy]
+          as_of: 2026-11-26
+        - title: Ministerstwo Finansów, odpowiedź na interpelację nr 12100 (data)
+          url: https://api.sejm.gov.pl/sejm/term10/interpellations/attachment/ATTDLNHSY/i12100-o1.pdf
+          kind: control
+          quote: "które wejdą w życie z dniem 1 stycznia 2026 r."
+          confirms: [period]
+          as_of: 2026-11-26
+        - title: Ministerstwo Finansów, odpowiedź na interpelację nr 12100 (leasing i najem zawarte przed 2026 r.)
+          url: https://api.sejm.gov.pl/sejm/term10/interpellations/attachment/ATTDLNHSY/i12100-o1.pdf
+          kind: control
+          quote: "zastosowanie nowe limity, w tym niższy limit w wysokości 100 000 zł, nawet jeżeli takie umowy zostały zawarte przed tym dniem"
+          as_of: 2026-11-26
+        - title: biznes.gov.pl, Podstawowe informacje o księgowości i ewidencjach w przedsiębiorstwie, aktualizacja 14.03.2026 (samochód prywatny)
+          url: https://www.biznes.gov.pl/pl/portal/00260
+          kind: control
+          quote: "Wówczas odliczysz 20% wydatków na jego użytkowanie."
+          confirms: [prywatny_koszt_procent]
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: amortyzacja.srodek_niskocenny.limit
+  name: Wartość początkowa, do której nie musisz amortyzować składnika majątku
+  unit: PLN
+  applies_to: {tax_form: [skala, liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value: 10000
+      note: >-
+        Gdy wartość początkowa składnika majątku nie przekracza tej kwoty, możesz nie dokonywać odpisów i zaliczyć wydatek
+        do kosztów w miesiącu oddania do używania (art. 22d ust. 1 ustawy o PIT); takiego składnika nie musisz wprowadzać
+        do ewidencji środków trwałych (art. 22d ust. 2). Gdy wartość początkowa jest wyższa, amortyzujesz według
+        art. 22h–22m (art. 22f ust. 3); gdy jest równa tej kwocie lub niższa, możesz też amortyzować według tych przepisów
+        albo jednorazowo w miesiącu oddania do używania lub w miesiącu następnym. Tę samą kwotę stosuje art. 22e (składniki
+        o przewidywanym okresie używania nie dłuższym niż rok). Wartość początkową ustala się według art. 22g; ta wartość
+        tego nie opisuje. Zasady amortyzacji opisuje zasada.amortyzacja. Data początku obowiązywania (2026-01-01) to
+        ostrożnie wybrana data, a nie dzień wejścia kwoty w życie; tekst jednolity Dz.U. 2026 poz. 592 uwzględnia stan
+        prawny na 1 kwietnia 2026 r. Nowelizacje ogłoszone później (Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287,
+        1347, 1354, 1371, 1541, 1542 i 1556) nie zmieniają art. 22d, 22e ani 22f.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22d ust. 1
+          quote: "których wartość początkowa, określona zgodnie z art. 22g, nie przekracza 10 000 zł; wydatki poniesione na ich nabycie stanowią wówczas koszty uzyskania przychodów w miesiącu oddania ich do używania"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o PIT (od jakiej wartości amortyzujesz)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22f ust. 3
+          quote: "Odpisów amortyzacyjnych dokonuje się zgodnie z art. 22h–22m, gdy wartość początkowa środka trwałego albo wartości niematerialnej i prawnej w dniu przyjęcia do używania jest wyższa niż 10 000 zł."
+        - title: biznes.gov.pl, Podstawowe informacje o księgowości i ewidencjach w przedsiębiorstwie, aktualizacja 14.03.2026
+          url: https://www.biznes.gov.pl/pl/portal/00260
+          kind: control
+          quote: "Do ewidencji wpisujesz środki trwałe oraz wartości niematerialne i prawne, których wartość przekracza 10 000 zł"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: amortyzacja.jednorazowa.limit_euro
+  name: Roczny limit jednorazowych odpisów amortyzacyjnych dla rozpoczynających działalność i małych podatników (w euro)
+  unit: EUR/rok
+  applies_to: {tax_form: [skala, liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value: 50000
+      note: >-
+        Limit łącznej wartości jednorazowych odpisów w roku podatkowym od środków trwałych z grup 3–8 Klasyfikacji,
+        z wyłączeniem samochodów osobowych, w roku wprowadzenia ich do ewidencji (art. 22k ust. 7 ustawy o PIT). Przysługuje
+        w roku rozpoczęcia działalności, z wyłączeniem z art. 22k ust. 11, oraz małym podatnikom (pit.maly_podatnik.limit_euro).
+        Kwotę przelicza się na złote według średniego kursu euro NBP na pierwszy dzień roboczy października roku
+        poprzedzającego rok podatkowy, w zaokrągleniu do 1000 zł (art. 22k ust. 12). Do limitu nie wlicza się odpisów
+        od środków o wartości początkowej nieprzekraczającej 10 000 zł z art. 22f ust. 3 (art. 22k ust. 9). Jest to pomoc
+        de minimis (art. 22k ust. 10). Data początku obowiązywania (2026-01-01) to ostrożnie wybrana data, a nie dzień
+        wejścia kwoty w życie; tekst jednolity Dz.U. 2026 poz. 592 uwzględnia stan prawny na 1 kwietnia 2026 r.
+        Nowelizacje ogłoszone później (Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1541, 1542
+        i 1556) nie zmieniają art. 22k.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22k ust. 7
+          quote: "do wysokości nieprzekraczającej w roku podatkowym równowartości kwoty 50 000 euro łącznej wartości tych odpisów amortyzacyjnych"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o PIT (przeliczenie na złote)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22k ust. 12
+          quote: "według średniego kursu euro ogłaszanego przez Narodowy Bank Polski na pierwszy dzień roboczy października roku poprzedzającego rok podatkowy, w którym wystąpiło zdarzenie, o którym mowa w tym przepisie, w zaokrągleniu do 1000 zł"
+        - title: podatki.gov.pl (MF), Stawki i limity (PIT), aktualizacja 15.12.2025
+          url: https://www.podatki.gov.pl/podatki-firmowe/pit/stawki-i-limity
+          kind: control
+          quote: "Górny limit odpisów jednorazowej amortyzacji w 2026 r. dla podatników rozpoczynających działalność oraz małych podatników (przeliczony na złote w zaokrągleniu do 1000 zł) 50 000 euro"
+          as_of: 2026-11-26
+        - title: Ministerstwo Finansów, odpowiedź na interpelację nr 7671 z 6 lutego 2025 r.
+          url: https://api.sejm.gov.pl/sejm/term10/interpellations/attachment/ATTDDNJUE/i07671-o1.pdf
+          kind: control
+          quote: "mali podatnicy mogą dokonywać jednorazowo odpisów amortyzacyjnych do kwoty 50 000 euro rocznie"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: amortyzacja.jednorazowa.limit_nowe_srodki
+  name: Roczny limit jednorazowych odpisów od fabrycznie nowych środków trwałych z grup 3–6 i 8
+  unit: PLN/rok
+  applies_to: {tax_form: [skala, liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value: 100000
+      note: >-
+        Limit dotyczy jednorazowych odpisów od nabytych fabrycznie nowych środków trwałych z grup 3–6 i 8 Klasyfikacji
+        w roku wprowadzenia ich do ewidencji i obejmuje sumę odpisów oraz wpłaty na poczet nabycia środka trwałego
+        zaliczonej do kosztów (art. 22k ust. 14 ustawy o PIT). Warunki minimalnej wartości początkowej określa art. 22k
+        ust. 15. Od tego samego środka trwałego odpisu dokonujesz na podstawie art. 22k ust. 7 albo ust. 14, nie obu
+        (ust. 20). Data początku obowiązywania (2026-01-01) to ostrożnie wybrana data, a nie dzień wejścia kwoty w życie;
+        tekst jednolity Dz.U. 2026 poz. 592 uwzględnia stan prawny na 1 kwietnia 2026 r. Nowelizacje ogłoszone później
+        (Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1541, 1542 i 1556) nie zmieniają art. 22k.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22k ust. 14
+          quote: "nabytych fabrycznie nowych środków trwałych zaliczonych do grupy 3–6 i 8 Klasyfikacji w roku podatkowym, w którym środki te zostały wprowadzone do ewidencji środków trwałych oraz wartości niematerialnych i prawnych, do wysokości nieprzekraczającej w roku podatkowym kwoty 100 000 zł"
+        - title: Ministerstwo Finansów, odpowiedź na interpelację nr 7671 z 6 lutego 2025 r.
+          url: https://api.sejm.gov.pl/sejm/term10/interpellations/attachment/ATTDDNJUE/i07671-o1.pdf
+          kind: control
+          quote: "wysokości nieprzekraczającej w roku podatkowym kwoty 100.000 zł"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: zasada.amortyzacja
+  name: Amortyzacja środków trwałych i wartości niematerialnych i prawnych, podstawowe zasady
+  kind: rule
+  applies_to: {tax_form: [skala, liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Odpisów amortyzacyjnych dokonujesz od wartości początkowej środków trwałych oraz wartości niematerialnych i prawnych. Gdy wartość początkowa w dniu przyjęcia do używania przekracza limit środka niskocennego, amortyzujesz według art. 22h–22m. Gdy go nie przekracza, możesz amortyzować według tych przepisów albo jednorazowo w miesiącu oddania do używania lub w miesiącu następnym, albo nie dokonywać odpisów i zaliczyć wydatek do kosztów w miesiącu oddania do używania.
+            uses: [amortyzacja.srodek_niskocenny.limit]
+            basis: art. 22d ust. 1 i art. 22f ust. 1 i 3 ustawy o PIT
+          - text: Składniki majątku z art. 22a–22c, z wyłączeniem składników z art. 22d ust. 1 (o wartości początkowej nieprzekraczającej limitu środka niskocennego), wprowadzasz do ewidencji środków trwałych oraz wartości niematerialnych i prawnych zgodnie z art. 22n najpóźniej w miesiącu przekazania ich do używania. Późniejsze wprowadzenie uznaje się za ujawnienie środka trwałego lub wartości niematerialnej i prawnej.
+            uses: [amortyzacja.srodek_niskocenny.limit]
+            basis: art. 22d ust. 2 ustawy o PIT
+          - text: Odpisów dokonujesz od pierwszego miesiąca następującego po miesiącu, w którym środek lub wartość wprowadzono do ewidencji, do końca miesiąca, w którym suma odpisów zrówna się z wartością początkową albo w którym postawiono je w stan likwidacji, zbyto lub stwierdzono ich niedobór. Do sumy odpisów wliczasz też odpisy, które nie są kosztem na podstawie art. 23 ust. 1. Od ujawnionych środków lub wartości odpisów dokonujesz od miesiąca następującego po miesiącu wprowadzenia ich do ewidencji.
+            uses: []
+            basis: art. 22h ust. 1 pkt 1 i 4 ustawy o PIT
+          - text: Metodę amortyzacji (art. 22i–22k) wybierasz dla każdego środka trwałego przed rozpoczęciem jego amortyzacji i stosujesz ją do pełnego zamortyzowania tego środka. Odpisów możesz dokonywać w równych ratach co miesiąc, w równych ratach co kwartał albo jednorazowo na koniec roku podatkowego. W pierwszym roku podatkowym suma odpisów nie może przekroczyć odpisów przypadających od wprowadzenia do ewidencji do końca tego roku.
+            uses: []
+            basis: art. 22h ust. 2 i 4 ustawy o PIT
+          - text: Metoda liniowa polega na stosowaniu stawek z Wykazu rocznych stawek amortyzacyjnych, który jest załącznikiem nr 1 do ustawy o PIT. Stawki możesz podwyższać współczynnikami w przypadkach i do wysokości określonych w art. 22i ust. 2–4 i 6 (pogorszone lub złe warunki używania budynków i budowli, intensywniejsze używanie maszyn, urządzeń i środków transportu, szybki postęp techniczny) oraz obniżać dla poszczególnych środków trwałych (art. 22i ust. 5).
+            uses: []
+            basis: art. 22i ust. 1–6 ustawy o PIT, załącznik nr 1 do ustawy o PIT
+          - text: Metodę degresywną możesz stosować do maszyn i urządzeń z grup 3–6 i 8 Klasyfikacji oraz środków transportu, z wyłączeniem samochodów osobowych. W pierwszym roku używania stosujesz stawkę z Wykazu podwyższoną o współczynnik nie wyższy niż 2,0, a w następnych latach liczysz odpis od wartości początkowej pomniejszonej o dotychczasowe odpisy. Od roku, w którym tak ustalona roczna kwota amortyzacji byłaby niższa niż przy metodzie liniowej, dokonujesz dalszych odpisów metodą liniową. Wyższy współczynnik w gminach z wykazu Rady Ministrów określa art. 22k ust. 2 i 3.
+            uses: []
+            basis: art. 22k ust. 1–3 ustawy o PIT
+          - text: Indywidualne stawki amortyzacyjne możesz ustalić dla używanych lub ulepszonych środków trwałych wprowadzonych po raz pierwszy do Twojej ewidencji, z zachowaniem najkrótszych okresów amortyzacji z art. 22j ust. 1. Kiedy środek trwały uznaje się za używany albo ulepszony, określa art. 22j ust. 2 i 3. Indywidualne stawki dla inwestycji w obcych środkach trwałych opisuje art. 22j ust. 4, a dla wytworzonych we własnym zakresie budynków niemieszkalnych i budowli mikro, małych i średnich przedsiębiorców w powiatach o wysokim bezrobociu art. 22j ust. 7–10 i 13.
+            uses: []
+            basis: art. 22j ust. 1–4, 7–10 i 13 ustawy o PIT
+          - text: W roku rozpoczęcia działalności (z wyłączeniem z art. 22k ust. 11) oraz jako mały podatnik możesz dokonać jednorazowych odpisów od środków trwałych z grup 3–8 Klasyfikacji, z wyłączeniem samochodów osobowych, w roku wprowadzenia ich do ewidencji, do limitu w euro. Limit przeliczasz na złote według średniego kursu euro NBP na pierwszy dzień roboczy października roku poprzedzającego rok podatkowy, w zaokrągleniu do 1000 zł. Odpisu dokonujesz nie wcześniej niż w miesiącu wprowadzenia do ewidencji albo stosujesz zasady z art. 22h ust. 4; od następnego roku amortyzujesz metodą degresywną albo liniową. Jest to pomoc de minimis.
+            uses: [amortyzacja.jednorazowa.limit_euro, pit.maly_podatnik.limit_euro]
+            basis: art. 22k ust. 7–12 ustawy o PIT
+          - text: Od nabytych fabrycznie nowych środków trwałych z grup 3–6 i 8 Klasyfikacji możesz dokonać jednorazowych odpisów w roku wprowadzenia ich do ewidencji, do limitu w złotych, który obejmuje także wpłatę na poczet nabycia środka trwałego zaliczoną do kosztów (art. 22 ust. 1s). Warunki wartości początkowej określa art. 22k ust. 15. Jeżeli do tego samego środka masz prawo do obu odpisów jednorazowych, dokonujesz odpisu na podstawie art. 22k ust. 7 albo ust. 14.
+            uses: [amortyzacja.jednorazowa.limit_nowe_srodki]
+            basis: art. 22k ust. 14–20 ustawy o PIT
+          - text: Odpisy od samochodu osobowego w części ustalonej od wartości przewyższającej limit właściwy dla tego samochodu nie są kosztem uzyskania przychodów.
+            uses: [koszty.samochod.limity]
+            basis: art. 23 ust. 1 pkt 4 ustawy o PIT
+          - text: Gdy do działalności wykorzystujesz, wynajmujesz lub wydzierżawiasz tylko część nieruchomości lub lokalu użytkowego, odpisów dokonujesz od wartości początkowej odpowiadającej stosunkowi powierzchni użytkowej tak wykorzystywanej do ogólnej powierzchni użytkowej.
+            uses: []
+            basis: art. 22f ust. 4 ustawy o PIT
+          - text: Ta zasada nie opisuje ustalania wartości początkowej (art. 22g), amortyzacji wartości niematerialnych i prawnych (art. 22m), taboru transportu morskiego (art. 22l), amortyzacji przy zmianie formy prawnej i podobnych zdarzeniach (art. 22h ust. 3–3e), używania sezonowego (art. 22h ust. 1 pkt 3), składników o przewidywanym okresie używania nie dłuższym niż rok (art. 22e), ewidencji środków trwałych (art. 22n) ani pozostałych wyłączeń z kosztów w art. 23 ust. 1.
+            uses: []
+            basis: art. 22e, 22g, 22h ust. 1 pkt 3 i ust. 3–3e, art. 22l, 22m i 22n ustawy o PIT
+      note: >-
+        Data początku obowiązywania (2026-01-01) to ostrożnie wybrana data, a nie dzień wejścia przepisów w życie; od tego dnia
+        obowiązuje art. 22j ust. 7 w brzmieniu z ustawy Dz.U. 2025 poz. 1817 (odnośnik 30 w tekście jednolitym). Tekst
+        jednolity Dz.U. 2026 poz. 592 uwzględnia stan prawny na 1 kwietnia 2026 r. Nowelizacje ogłoszone później
+        (Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1541, 1542 i 1556) nie zmieniają
+        art. 22d–22k ani art. 23 ust. 1 pkt 4. Strona biznes.gov.pl „Podstawowe informacje o księgowości i ewidencjach
+        w przedsiębiorstwie” (aktualizacja 14.03.2026) potwierdza tylko część kroków 1 i 2, więc nie jest drugim źródłem zasady.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (krok 1)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22f ust. 3
+          quote: "podatnicy, z zastrzeżeniem art. 22d ust. 1, mogą dokonywać odpisów amortyzacyjnych zgodnie z art. 22h–22m albo jednorazowo – w miesiącu oddania do używania tego środka trwałego lub wartości niematerialnej i prawnej, albo w miesiącu następnym"
+        - title: Dz.U. 2026 poz. 592 (krok 2)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22d ust. 2
+          quote: "najpóźniej w miesiącu przekazania ich do używania. Późniejszy termin wprowadzenia uznaje się za ujawnienie środka trwałego"
+        - title: Dz.U. 2026 poz. 592 (krok 3)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22h ust. 1 pkt 1
+          quote: "począwszy od pierwszego miesiąca następującego po miesiącu, w którym ten środek lub wartość wprowadzono do ewidencji (wykazu)"
+        - title: Dz.U. 2026 poz. 592 (krok 4, wybór metody)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22h ust. 2
+          quote: "dokonują wyboru jednej z metod amortyzacji określonej w art. 22i–22k dla poszczególnych środków trwałych przed rozpoczęciem ich amortyzacji; wybraną metodę stosuje się do pełnego zamortyzowania danego środka trwałego"
+        - title: Dz.U. 2026 poz. 592 (krok 4, raty)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22h ust. 4
+          quote: "Podatnicy mogą dokonywać odpisów amortyzacyjnych w równych ratach co miesiąc albo w równych ratach co kwartał, albo jednorazowo na koniec roku podatkowego"
+        - title: Dz.U. 2026 poz. 592 (krok 5)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22i ust. 1
+          quote: "dokonuje się przy zastosowaniu stawek amortyzacyjnych określonych w Wykazie stawek amortyzacyjnych"
+        - title: Dz.U. 2026 poz. 592 (krok 5, Wykaz jako załącznik)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22e ust. 1 pkt 2
+          quote: "Wykazie rocznych stawek amortyzacyjnych, stanowiącym załącznik nr 1 do ustawy, zwanym „Wykazem stawek amortyzacyjnych”"
+        - title: Dz.U. 2026 poz. 592 (krok 6)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22k ust. 1
+          quote: "podatnicy dokonują dalszych odpisów amortyzacyjnych zgodnie z art. 22i"
+        - title: Dz.U. 2026 poz. 592 (krok 7)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22j ust. 1
+          quote: "mogą indywidualnie ustalić stawki amortyzacyjne dla używanych lub ulepszonych środków trwałych, po raz pierwszy wprowadzonych do ewidencji danego podatnika"
+        - title: Dz.U. 2026 poz. 592 (krok 8)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22k ust. 8
+          quote: "lub stosować zasady określone w art. 22h ust. 4"
+        - title: Dz.U. 2026 poz. 592 (krok 8, zakres)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22k ust. 7
+          quote: "oraz mali podatnicy, mogą dokonywać jednorazowo odpisów amortyzacyjnych od wartości początkowej środków trwałych zaliczonych do grupy 3–8 Klasyfikacji, z wyłączeniem samochodów osobowych"
+        - title: Dz.U. 2026 poz. 592 (krok 9)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22k ust. 20
+          quote: "to dokonuje on odpisu amortyzacyjnego na podstawie ust. 7 albo 14"
+        - title: Dz.U. 2026 poz. 592 (krok 10)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 23 ust. 1 pkt 4
+          quote: "odpisów z tytułu zużycia samochodu osobowego, dokonywanych według zasad określonych w art. 22a–22o, w części ustalonej od wartości samochodu przewyższającej kwotę"
+        - title: Dz.U. 2026 poz. 592 (krok 11)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22f ust. 4
+          quote: "odpowiadającej stosunkowi powierzchni użytkowej wykorzystywanej do prowadzenia działalności gospodarczej, wynajmowanej lub wydzierżawianej, do ogólnej powierzchni użytkowej"
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: zasada.platnosci_gotowkowe_koszty
+  name: Wyłączenie z kosztów płatności dokonanych poza rachunkiem płatniczym
+  kind: rule
+  applies_to: {tax_form: [skala, liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      valid_to: 2026-12-31
+      value:
+        steps:
+          - text: Prowadząc pozarolniczą działalność gospodarczą, nie zaliczasz do kosztów uzyskania przychodów kosztu w tej części, w jakiej płatność dotycząca transakcji określonej w art. 19 Prawa przedsiębiorców została dokonana bez pośrednictwa rachunku płatniczego; przelewem na rachunek inny niż zawarty na dzień zlecenia przelewu w wykazie podmiotów z art. 96b ust. 1 ustawy o VAT, gdy dostawę towarów lub usługę potwierdzoną fakturą wykonał dostawca lub usługodawca zarejestrowany jako podatnik VAT czynny; albo z pominięciem mechanizmu podzielonej płatności, choć faktura zawiera wyrazy „mechanizm podzielonej płatności”.
+            uses: []
+            basis: art. 22p ust. 1 ustawy o PIT
+          - text: Transakcja z art. 19 Prawa przedsiębiorców to transakcja, której stroną jest inny przedsiębiorca i której jednorazowa wartość, bez względu na liczbę wynikających z niej płatności, przekracza 15 000 zł lub równowartość tej kwoty. Transakcje w walutach obcych przelicza się na złote według średniego kursu NBP z ostatniego dnia roboczego poprzedzającego dzień dokonania transakcji.
+            uses: []
+            basis: art. 19 ustawy – Prawo przedsiębiorców
+          - text: Jeżeli taki koszt zaliczyłeś już do kosztów, w tej części zmniejszasz koszty uzyskania przychodów, a gdy nie możesz ich zmniejszyć, zwiększasz przychody, w miesiącu, w którym dokonałeś płatności bez pośrednictwa rachunku płatniczego, zleciłeś przelew albo dokonałeś płatności z pominięciem mechanizmu podzielonej płatności.
+            uses: []
+            basis: art. 22p ust. 2 ustawy o PIT
+          - text: Te same zasady stosujesz odpowiednio przy nabyciu lub wytworzeniu środków trwałych albo nabyciu wartości niematerialnych i prawnych oraz przy płatności dokonanej po likwidacji działalności albo po zmianie formy opodatkowania na zryczałtowaną formę opodatkowania określoną w ustawie o zryczałtowanym podatku dochodowym albo w ustawie o podatku tonażowym. W tych dwóch ostatnich przypadkach zmniejszasz koszty lub zwiększasz przychody za rok, w którym zlikwidowałeś działalność, albo za rok poprzedzający rok zmiany formy opodatkowania.
+            uses: []
+            basis: art. 22p ust. 3 ustawy o PIT
+          - text: Przelewu na rachunek spoza wykazu nie wyłącza się z kosztów, jeżeli przy pierwszej zapłacie należności przelewem na ten rachunek złożyłeś, w terminie 7 dni od dnia zlecenia przelewu, zawiadomienie z art. 117ba § 3 pkt 2 Ordynacji podatkowej do naczelnika urzędu skarbowego właściwego dla Ciebie, jeżeli zapłaciłeś na rachunek banku lub spółdzielczej kasy oszczędnościowo-kredytowej w przypadkach z art. 22p ust. 4 pkt 2, jeżeli zapłaciłeś z zastosowaniem mechanizmu podzielonej płatności albo jeżeli faktura dokumentuje wewnątrzwspólnotowe nabycie towarów, import towarów lub usług albo dostawę towarów rozliczaną przez nabywcę.
+            uses: []
+            basis: art. 22p ust. 4 ustawy o PIT
+          - text: Ta zasada nie opisuje obowiązku dokonywania płatności przez rachunek płatniczy i jego skutków poza podatkiem dochodowym, solidarnej odpowiedzialności w VAT przy zapłacie na rachunek spoza wykazu (art. 117ba Ordynacji podatkowej) ani obowiązku stosowania mechanizmu podzielonej płatności (art. 108a ustawy o VAT).
+            uses: []
+            basis: art. 117ba Ordynacji podatkowej, art. 108a ustawy o VAT
+      note: >-
+        Data początku obowiązywania (2026-01-01) to ostrożnie wybrana data, a nie dzień wejścia przepisów w życie; tekst
+        jednolity ustawy o PIT Dz.U. 2026 poz. 592 uwzględnia stan prawny na 1 kwietnia 2026 r. Wersja kończy się
+        31 grudnia 2026 r., bo ustawa Dz.U. 2026 poz. 1371 od 1 stycznia 2027 r. zmienia art. 22p ust. 1 i 2 i uchyla ust. 4;
+        do płatności z faktur wystawionych przed tym dniem stosuje się art. 22p w brzmieniu tej wersji (art. 3 ust. 2 tej
+        ustawy). Pozostałe nowelizacje ustawy o PIT ogłoszone po tekście jednolitym (Dz.U. 2026 poz. 779, 846, 1079, 1098,
+        1123, 1287, 1347, 1354, 1541, 1542 i 1556) nie zmieniają art. 22p. Art. 19 Prawa przedsiębiorców cytowany jest
+        z tekstu jednolitego Dz.U. 2026 poz. 1484 (stan prawny na 28 października 2026 r.); ma to samo brzmienie
+        w tekście jednolitym Dz.U. 2025 poz. 1480, a ustawa Dz.U. 2026 poz. 1542 zmienia w tej ustawie tylko art. 47.
+        Drugiego źródła urzędowego dla tej zasady nie znaleziono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (krok 1)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22p ust. 1
+          quote: "nie zaliczają do kosztów uzyskania przychodów kosztu w tej części, w jakiej płatność dotycząca transakcji określonej w art. 19 ustawy z dnia 6 marca 2018 r. – Prawo przedsiębiorców"
+        - title: Dz.U. 2026 poz. 592 (krok 1, biała lista)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22p ust. 1 pkt 2
+          quote: "została dokonana przelewem na rachunek inny niż zawarty na dzień zlecenia przelewu w wykazie podmiotów, o którym mowa w art. 96b ust. 1 ustawy o podatku od towarów i usług"
+        - title: Dz.U. 2026 poz. 592 (krok 3)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22p ust. 2
+          quote: "w przypadku braku możliwości zmniejszenia kosztów uzyskania przychodów – zwiększają przychody"
+        - title: Dz.U. 2026 poz. 592 (krok 4)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22p ust. 3
+          quote: "nabycia lub wytworzenia środków trwałych albo nabycia wartości niematerialnych i prawnych"
+        - title: Dz.U. 2026 poz. 592 (krok 4, zmiana formy opodatkowania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22p ust. 3 pkt 2 lit. b
+          quote: "po zmianie formy opodatkowania na zryczałtowaną formę opodatkowania określoną w ustawie o zryczałtowanym podatku dochodowym albo w ustawie z dnia 24 sierpnia 2006 r. o podatku tonażowym"
+        - title: Dz.U. 2026 poz. 592 (krok 5)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22p ust. 4 pkt 1
+          quote: "a podatnik złożył przy pierwszej zapłacie należności przelewem na ten rachunek zawiadomienie, o którym mowa w art. 117ba § 3 pkt 2 Ordynacji podatkowej"
+        - title: Dz.U. 2026 poz. 1484, tekst jednolity ustawy – Prawo przedsiębiorców (krok 2)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1484/text.pdf
+          article: art. 19
+          quote: "jednorazowa wartość transakcji, bez względu na liczbę wynikających z niej płatności, przekracza 15 000 zł lub równowartość tej kwoty"
+        - title: Dz.U. 2026 poz. 1371, ustawa o zmianie ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku dochodowym od osób prawnych (koniec wersji)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1371/text.pdf
+          article: art. 3 ust. 2
+          quote: "Do płatności wynikającej z faktury wystawionej przed dniem 1 stycznia 2027 r. mają zastosowanie przepisy art. 22p ustawy zmienianej w art. 1, w brzmieniu dotychczasowym"
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+    - valid_from: 2027-01-01
+      value:
+        steps:
+          - text: Prowadząc pozarolniczą działalność gospodarczą, nie zaliczasz do kosztów uzyskania przychodów kosztu w tej części, w jakiej płatność dotycząca transakcji określonej w art. 19 Prawa przedsiębiorców została dokonana bez pośrednictwa rachunku płatniczego.
+            uses: []
+            basis: art. 22p ust. 1 ustawy o PIT
+          - text: Transakcja z art. 19 Prawa przedsiębiorców to transakcja, której stroną jest inny przedsiębiorca i której jednorazowa wartość, bez względu na liczbę wynikających z niej płatności, przekracza 15 000 zł lub równowartość tej kwoty. Transakcje w walutach obcych przelicza się na złote według średniego kursu NBP z ostatniego dnia roboczego poprzedzającego dzień dokonania transakcji.
+            uses: []
+            basis: art. 19 ustawy – Prawo przedsiębiorców
+          - text: Jeżeli taki koszt zaliczyłeś już do kosztów, w tej części zmniejszasz koszty uzyskania przychodów, a gdy nie możesz ich zmniejszyć, zwiększasz przychody, w miesiącu, w którym dokonałeś płatności bez pośrednictwa rachunku płatniczego.
+            uses: []
+            basis: art. 22p ust. 2 ustawy o PIT
+          - text: Te same zasady stosujesz odpowiednio przy nabyciu lub wytworzeniu środków trwałych albo nabyciu wartości niematerialnych i prawnych oraz przy płatności dokonanej po likwidacji działalności albo po zmianie formy opodatkowania na zryczałtowaną formę opodatkowania określoną w ustawie o zryczałtowanym podatku dochodowym albo w ustawie o podatku tonażowym. W tych dwóch ostatnich przypadkach zmniejszasz koszty lub zwiększasz przychody za rok, w którym zlikwidowałeś działalność, albo za rok poprzedzający rok zmiany formy opodatkowania.
+            uses: []
+            basis: art. 22p ust. 3 ustawy o PIT
+          - text: Do płatności wynikającej z faktury wystawionej przed 1 stycznia 2027 r. stosujesz art. 22p w brzmieniu sprzed tego dnia, czyli także wyłączenie przelewu na rachunek spoza wykazu podmiotów z art. 96b ust. 1 ustawy o VAT i płatności z pominięciem mechanizmu podzielonej płatności, z wyjątkami z dawnego art. 22p ust. 4 (wersja tej zasady obowiązująca do 31 grudnia 2026 r.).
+            uses: []
+            basis: art. 3 ust. 2 ustawy z dnia 18 września 2026 r. (Dz.U. 2026 poz. 1371)
+          - text: Ta zasada nie opisuje obowiązku dokonywania płatności przez rachunek płatniczy i jego skutków poza podatkiem dochodowym, solidarnej odpowiedzialności w VAT przy zapłacie na rachunek spoza wykazu (art. 117ba Ordynacji podatkowej) ani obowiązku stosowania mechanizmu podzielonej płatności (art. 108a ustawy o VAT).
+            uses: []
+            basis: art. 117ba Ordynacji podatkowej, art. 108a ustawy o VAT
+      note: >-
+        Nowe brzmienie art. 22p ust. 1 i 2 i uchylenie ust. 4 wynikają z ustawy Dz.U. 2026 poz. 1371, która w tym zakresie
+        wchodzi w życie 1 stycznia 2027 r. (art. 6); nowego tekstu jednolitego jeszcze nie ogłoszono. Art. 22p ust. 3 cytowany
+        jest z tekstu jednolitego Dz.U. 2026 poz. 592, bo nowelizacja go nie zmienia. Pozostałe nowelizacje ustawy o PIT
+        ogłoszone po tekście jednolitym (Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1541, 1542 i 1556)
+        nie zmieniają art. 22p. Art. 19 Prawa przedsiębiorców według tekstu jednolitego Dz.U. 2026 poz. 1484; ustawa
+        Dz.U. 2026 poz. 1542 (od 1 stycznia 2027 r.) zmienia w tej ustawie tylko art. 47. Drugiego źródła urzędowego dla tej
+        zasady nie znaleziono.
+      sources:
+        - title: Dz.U. 2026 poz. 1371, ustawa o zmianie ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku dochodowym od osób prawnych (krok 1)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1371/text.pdf
+          article: art. 1 pkt 2 lit. a (art. 22p ust. 1 ustawy o PIT)
+          quote: "nie zaliczają do kosztów uzyskania przychodów kosztu w tej części, w jakiej płatność dotycząca transakcji określonej w art. 19 ustawy z dnia 6 marca 2018 r. – Prawo przedsiębiorców została dokonana bez pośrednictwa rachunku płatniczego."
+        - title: Dz.U. 2026 poz. 1371 (krok 3)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1371/text.pdf
+          article: art. 1 pkt 2 lit. b (art. 22p ust. 2 ustawy o PIT)
+          quote: "– w miesiącu, w którym została dokonana płatność bez pośrednictwa rachunku płatniczego."
+        - title: Dz.U. 2026 poz. 1371 (krok 5, przepis przejściowy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1371/text.pdf
+          article: art. 3 ust. 2
+          quote: "Do płatności wynikającej z faktury wystawionej przed dniem 1 stycznia 2027 r. mają zastosowanie przepisy art. 22p ustawy zmienianej w art. 1, w brzmieniu dotychczasowym"
+        - title: Dz.U. 2026 poz. 1371 (data początku obowiązywania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1371/text.pdf
+          article: art. 6
+          quote: "z wyjątkiem art. 1 pkt 1 i 2, art. 2 pkt 3 i 4 oraz art. 3, które wchodzą w życie z dniem 1 stycznia 2027 r."
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (krok 4)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22p ust. 3
+          quote: "nabycia lub wytworzenia środków trwałych albo nabycia wartości niematerialnych i prawnych"
+        - title: Dz.U. 2026 poz. 592 (krok 4, zmiana formy opodatkowania)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 22p ust. 3 pkt 2 lit. b
+          quote: "po zmianie formy opodatkowania na zryczałtowaną formę opodatkowania określoną w ustawie o zryczałtowanym podatku dochodowym albo w ustawie z dnia 24 sierpnia 2006 r. o podatku tonażowym"
+        - title: Dz.U. 2026 poz. 1484, tekst jednolity ustawy – Prawo przedsiębiorców (krok 2)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1484/text.pdf
+          article: art. 19
+          quote: "jednorazowa wartość transakcji, bez względu na liczbę wynikających z niej płatności, przekracza 15 000 zł lub równowartość tej kwoty"
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
