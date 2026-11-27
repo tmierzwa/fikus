@@ -37,6 +37,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P1. Składka zdrowotna na ryczałcie według przychodu z poprzedniego roku: wyjątek przy ponownym podjęciu działalności
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/84
 - Wpis: `zasada.ryczalt_zdrowotna_prog_poprzedni_rok` (od 2025-01-01 i od 2027-01-01), krok 4.
 - Zgłoszone: 2026-11-26.
 - Ustawa o świadczeniach opieki zdrowotnej, art. 81 ust. 2h: podstawę ustaloną według przychodu
@@ -82,6 +83,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P5. Przesunięcie terminu z art. 12 § 5 Ordynacji podatkowej od 1 października 2026 r. a termin zapłaty
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/91
 - Wpis: `zasada.przesuniecie_terminu` (od 2026-10-01).
 - Zgłoszone: 2026-11-26.
 - Ustawa z 29 maja 2026 r. (Dz.U. 2026 poz. 846, art. 1 pkt 1) zmienia art. 12 § 5: przesunięcie dotyczy „ostatniego
@@ -113,6 +115,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P6. Stawka ryczałtu bez ewidencji pozwalającej ustalić przychody z każdego rodzaju działalności
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/92
 - Wpis: `zasada.ryczalt_podstawa` (od 2024-01-01), krok o stawce bez takiej ewidencji.
 - Zgłoszone: 2026-11-26.
 - Ustawa o zryczałtowanym podatku dochodowym (Dz.U. 2025 poz. 843), art. 12 ust. 3 zdanie drugie: gdy
@@ -139,6 +142,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P7. Minimum rocznej składki zdrowotnej przy podatku liniowym: liczba miesięcy
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/93
 - Wpis: `zasada.liniowy_zdrowotna` (wersje od 2025-02-01, od 2026-02-01 i od 2027-02-01), krok o rocznej składce.
 - Zgłoszone: 2026-11-26.
 - Ustawa o świadczeniach opieki zdrowotnej (Dz.U. 2025 poz. 1461), art. 79a ust. 1 pkt 2: roczna składka nie mniej niż 9%
@@ -189,6 +193,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P8. Od kiedy stosować art. 81 ust. 2zd pkt 2 bez art. 21 ust. 1 pkt 63a ustawy o PIT
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/94
 - Wpisy, których dotyczy wątpliwość:
   - `zasada.ryczalt_zdrowotna_prog`, wersja od 2025-01-01 (roczne rozliczenie za 2026 r.);
   - `zasada.ryczalt_zdrowotna_prog_poprzedni_rok`, wersja od 2027-01-01 (przychód z 2026 r. przyjmowany w 2027 r.);
@@ -239,6 +244,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P9. Ulga na start: jak liczyć 6 miesięcy ulgi i następne 24 miesiące podstawy preferencyjnej
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/95
 - Wpis: `zasada.ulga_na_start` (od 2026-01-01), kroki 3, 5 i 6. Wartość `zus.ulga_na_start.okres` (6 miesięcy) od 2026-11-27
   nie ma tego pytania: podaje tylko liczbę miesięcy i odsyła do zasady (rozdzielenie wartości i sposobu stosowania).
 - Zgłoszone: 2026-11-26.
@@ -279,6 +285,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P10. Mały ZUS Plus: skutek zgłoszenia po terminie i liczenie okresów od 2026 r.
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/96
 - Wpis: `zasada.maly_zus_plus` (od 2026-01-01), kroki 3, 4 i ostatni.
 - Zgłoszone: 2026-11-26.
 - Ustawa o systemie ubezpieczeń społecznych (Dz.U. 2026 poz. 1474), art. 36 ust. 4b i 14a: zgłoszenie do ubezpieczeń
@@ -315,6 +322,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P11. Jak długo podatnik jest „rozpoczynającym działalność” przy zaliczkach kwartalnych PIT i kwartalnym ryczałcie
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/97
 - Wpisy: `zasada.zaliczki_kwartalne_pit` (od 2026-01-01), krok 2; `zasada.ryczalt_kwartalnie` (od 2026-01-01), krok 2.
 - Zgłoszone: 2026-11-26.
 - Ustawa o PIT (Dz.U. 2026 poz. 592), art. 44 ust. 3g: zaliczki kwartalne mogą wpłacać mali podatnicy oraz
@@ -341,6 +349,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P12. Zaliczki uproszczone, gdy w roku poprzedzającym nie złożono zeznania PIT z działalności
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/98
 - Wpis: `zasada.zaliczki_uproszczone` (od 2026-01-01), krok 2.
 - Zgłoszone: 2026-11-26.
 - Ustawa o PIT (Dz.U. 2026 poz. 592), art. 44 ust. 6b: podstawą zaliczek uproszczonych jest dochód z działalności
@@ -359,6 +368,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P13. Limit odliczenia darowizn na ryczałcie: od jakiej kwoty przychodu
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/99
 - Wpis: `zasada.ulgi_ryczalt` (od 2026-01-01 i od 2027-01-01), krok o darowiznach. Wartość `ulga.darowizny.limit_ryczalt`
   (6%) od 2026-11-27 nie ma tego pytania: podaje tylko procent i odsyła do zasady (rozdzielenie wartości i sposobu stosowania).
 - Zgłoszone: 2026-11-26.
@@ -384,6 +394,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P14. Limit ulgi internetowej w zeznaniu za 2027 r. po jej uchyleniu
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/100
 - Wpisy: `ulga.internet.limit` (2027-01-01 – 2027-12-31, 760 zł) oraz kroki o Internecie w `zasada.ulgi_ryczalt`
   i `zasada.ulgi_skala` (od 2027-01-01).
 - Zgłoszone: 2026-11-26.
@@ -414,6 +425,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P15. Wyłączenie łącznego opodatkowania przy podatku liniowym albo ryczałcie: rok bez przychodów i zmiana formy w trakcie roku
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/101
 - Wpis: `zasada.opodatkowanie_laczne_wylaczenia` (od 2025-01-01), ostatni krok.
 - Zgłoszone: 2026-11-26.
 - Ustawa o PIT (Dz.U. 2026 poz. 592), art. 6 ust. 8 pkt 1: wspólnego opodatkowania małżonków i sposobu
@@ -460,6 +472,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P16. Wniosek o łączne opodatkowanie w zeznaniu złożonym po terminie albo w korekcie; okres samotnego wychowywania dzieci
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/102
 - Materiał urzędowy znaleziony 2026-11-26 (pytanie zostaje otwarte): objaśnienia podatkowe MF z 18 stycznia 2019 r.
   (Eureka, ID 482279, https://eureka.mf.gov.pl/informacje/podglad/482279) podają, że po uchyleniu art. 6 ust. 10 ustawy
   o PIT możliwość „opodatkowania dochodów małżonków, wdów i wdowców albo osób samotnie wychowujących dzieci nie jest już
@@ -499,6 +512,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P17. Wariant JPK_V7K dla deklaracji za I kwartał 2026 r.
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/103
 - Wpisy: `schemat.jpk_v7k` (od 2026-02-01, wariant 3, i do 2026-01-31, wariant 2: od odpowiedzi zależy data końca).
 - Zgłoszone: 2026-11-26.
 - MF (podatki.gov.pl, gov.pl/web/kas/struktury-jpk, broszura z 1 lutego 2026 r.): wariant 2 stosuje się „za okresy
@@ -532,6 +546,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P19. Na który dzień ocenia się rozliczanie VAT miesięcznie przy pierwszym przesłaniu ksiąg w formie JPK (częściowo rozstrzygnięte 2026-11-27, bez eksperta)
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/104
 - Rozstrzygnięcie: MF na stronie „Pytania i odpowiedzi JPK_PD” (podatki.gov.pl, pytanie 134, dodane 12.11.2025)
   odpowiada na pytanie, na jaki moment ustala się, czy podatnik przesyła JPK_V7M czy JPK_V7K (dla ustalenia obowiązku
   przesyłania ksiąg w formie JPK). Odpowiedź nie wymienia tych plików, ale mówi, który dzień się liczy: „W dacie zaprowadzenia
@@ -580,6 +595,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P20. Ulga na robotyzację i ulga na ekspansję od 2027 r.: odpisy od aktywów sprzed 2027 r. i kolejność wobec art. 26i
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/105
 - Wpisy: `zasada.ulgi_liniowy` i `zasada.ulgi_skala` (od 2027-01-01), krok o odliczeniach od podstawy obliczenia podatku.
 - Zgłoszone: 2026-11-26.
 - Ustawa z 22 października 2026 r. (Dz.U. 2026 poz. 1541), art. 1 pkt 4 lit. a, dodaje w art. 52jb ustawy o PIT
@@ -610,6 +626,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P30. Limit odliczenia składki zdrowotnej przy podatku liniowym na 2027 r.
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/106
 - Wpis: `podatek.liniowy.limit_skladki_zdrowotnej` (2027-01-01 – 2027-12-31, 15 100 zł).
 - Zgłoszone: 2026-11-26.
 - Obwieszczenie Ministra Finansów i Gospodarki z 16 listopada 2026 r. (M.P. 2026 poz. 1163), wydane na podstawie
@@ -620,6 +637,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P32. Korekta przychodu w ewidencji przychodów przy błędzie rachunkowym lub oczywistej omyłce
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/107
 - Wpis: `zasada.ewidencja_przychodow` (od 2026-01-01), krok o korekcie przychodu.
 - Zgłoszone: 2026-11-26.
 - Ustawa o PIT (Dz.U. 2026 poz. 592), art. 14 ust. 1m: jeżeli korekta przychodu „nie jest spowodowana błędem rachunkowym
@@ -641,6 +659,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P33. Data uzyskania przychodu, gdy faktura jest wystawiona przed wykonaniem usługi
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/108
 - Wpisy: `zasada.przychod_data_uzyskania` (od 2026-01-01), krok o dniu wykonania usługi, oraz `zasada.przychod_w_walucie`
   (od 2026-01-01), krok o kursie.
 - Zgłoszone: 2026-11-26.
@@ -661,6 +680,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P34. Przeliczenie przychodu w walucie obcej na ryczałcie
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/109
 - Wpis: `zasada.przychod_w_walucie` (od 2026-01-01), krok o ryczałcie.
 - Zgłoszone: 2026-11-26.
 - Ustawa o PIT (Dz.U. 2026 poz. 592), art. 11a ust. 1: przychody w walutach obcych przelicza się „według kursu średniego
@@ -683,6 +703,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P39. Deklaracja ZUS DRA za miesiąc, w którym działalność zawieszono w trakcie miesiąca
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/110
 - Wpis: `zasada.dra_obowiazek` (od 2024-11-01), krok o zawieszeniu działalności.
 - Zgłoszone: 2026-11-26.
 - Ustawa o systemie ubezpieczeń społecznych (Dz.U. 2026 poz. 1474), art. 36a ust. 3: „Za okres zawieszenia wykonywania
@@ -711,6 +732,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P40. Wzór ZUS DRA dla deklaracji za kwiecień 2026 r. złożonej przed 1 maja 2026 r.
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/111
 - Wpis: `schemat.zus_dra` (od 2026-05-01), notatka.
 - Zgłoszone: 2026-11-26.
 - Rozporządzenie Ministra Rodziny, Pracy i Polityki Społecznej z 9 kwietnia 2026 r. (Dz.U. 2026 poz. 518): weszło w życie
@@ -730,6 +752,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P41. Który wzór elektroniczny zeznania PIT stosuje się, gdy MF opublikowało kilka wersji schematu za ten sam rok
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/112
 - Wpisy: `schemat.pit_36` (za 2025 i za 2026 r.), `schemat.pit_28` (za 2025 i za 2026 r.).
 - Zgłoszone: 2026-11-26.
 - W Centralnym Repozytorium Wzorów Dokumentów Elektronicznych (CRWDE, ePUAP) Ministerstwo Finansów opublikowało
@@ -755,6 +778,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P42. Kwota przychodu w danych autoryzujących przy kilku zeznaniach za rok sprzed dwóch lat
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/113
 - Wpis: `zasada.dane_autoryzujace` (wersje od 2026-04-01 i od 2026-06-16), kroki 2 i 3.
 - Zgłoszone: 2026-11-26.
 - Rozporządzenie w sprawie sposobu przesyłania deklaracji i podań (Dz.U. 2025 poz. 327, § 12 ust. 2 pkt 5)
@@ -778,6 +802,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P43. Przychód na ryczałcie w polach ZUS DRA XI 13 i XII 22: pomniejszony o składki czy bez pomniejszenia
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/114
 - Wpis: `zasada.dra_bloki_zdrowotne` (od 2026-05-01), kroki 3 i 6.
 - Zgłoszone: 2026-11-27.
 - Ustawa o świadczeniach opieki zdrowotnej (Dz.U. 2025 poz. 1461), art. 81 ust. 2g: „Przychody, o których mowa
@@ -807,6 +832,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P44. Które składki pomniejszają przychód na ryczałcie: zapłacone w okresie czy należne za jego miesiące
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/115
 - Wpisy: `zasada.dra_bloki_zdrowotne` (od 2026-05-01), kroki 3 i 6; `zasada.ryczalt_zdrowotna_prog` (wersje
   od 2025-01-01 i od 2027-01-01), kroki 1 i 5.
 - Zgłoszone: 2026-11-27.
@@ -824,6 +850,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P45. Kwota do zwrotu w rocznym rozliczeniu (ZUS DRA, pole XII 27): składki należne czy wpłacone
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/116
 - Wpisy: `zasada.dra_bloki_zdrowotne` (od 2026-05-01), krok 7; `zasada.ryczalt_zdrowotna_prog` (wersje od 2025-01-01
   i od 2027-01-01), krok 5.
 - Zgłoszone: 2026-11-27.
@@ -845,6 +872,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P46. Wybór ryczałtu albo podatku liniowego w roku po utracie prawa do tej formy
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/117
 - Wpis: `zasada.wybor_formy_opodatkowania` (od 2026-01-01), krok o roku po utracie prawa.
 - Zgłoszone: 2026-11-26.
 - Ustawa o ryczałcie (Dz.U. 2025 poz. 843), art. 9 ust. 1b: wybór ryczałtu „dotyczy również lat następnych”, chyba że
@@ -876,6 +904,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P56. Zaliczki i ryczałt za miesiąc lub kwartał, w którego trakcie zawieszono albo wznowiono działalność
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/118
 - Wpis: `zasada.zaliczki_zawieszenie` (od 2026-01-01), kroki o zaliczkach na PIT i o okresie częściowym.
 - Zgłoszone: 2026-11-26.
 - Ustawa o PIT (Dz.U. 2026 poz. 592), art. 44 ust. 10: podatnik, który zawiesił działalność, „jest zwolniony, w zakresie
@@ -903,6 +932,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P64. IP Box: odliczenie kosztów kwalifikowanych od dochodu z kwalifikowanego prawa (art. 30ca ust. 9a)
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/120
 - Wpis: `zasada.ip_box` (od 2026-01-01), krok o odliczeniu kosztów kwalifikowanych; `zasada.ulga_br` (od 2026-01-01), krok o podstawie odliczenia i krok o przepisach, których zasada nie opisuje.
 - Zgłoszone: 2026-11-26.
 - Ustawa o PIT (Dz.U. 2026 poz. 592), art. 30ca ust. 9a: „Od dochodu z kwalifikowanego prawa własności intelektualnej
