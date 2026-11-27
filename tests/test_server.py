@@ -113,3 +113,14 @@ def test_get_schema_accepts_hyphen_and_lowercase():
         assert r.structured_content["found"] is True
     r = _call("get_schema", {"form": "PIT-28", "as_of": "2025-01-01"})
     assert r.structured_content["found"] is True and r.structured_content["value"]["form"].startswith("PIT-28")
+
+
+def test_get_schema_description_lists_every_schema_in_data():
+    from fikus.server import _form_symbol, store
+    tool = next(t for t in _run(lambda c: c.list_tools()).tools if t.name == "get_schema")
+    pids = [p for p in store.params if p.startswith("schemat.")]
+    assert "KEDU" in tool.description
+    for pid in pids:
+        form = _form_symbol(pid)
+        assert form in tool.description
+        assert _call("get_schema", {"form": form}).structured_content["id"] == pid

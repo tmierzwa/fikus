@@ -86,7 +86,7 @@ def _version(**ver):
     return Version.model_validate({
         "valid_from": "2026-01-01", "value": 1,
         "sources": [{"title": "akt", "url": "https://example.org/1", "quote": "wynosi 1 %"},
-                    {"title": "komunikat", "url": "https://example.org/2", "kind": "control"}],
+                    {"title": "komunikat", "url": "https://example.org/2", "quote": "1 %", "kind": "control"}],
         "verification": {"checked_at": "2026-01-01", **ver}})
 
 
@@ -324,3 +324,46 @@ def test_notes_describe_current_state_not_edit_history():
     bad = [f"{p.id} {v.valid_from}: {m[0]}" for p in Store().params.values() for v in p.versions
            if v.note and (m := history.search(v.note))]
     assert not bad, "historia edycji w notatkach (opisz ją w PR, w notatce zostaw „Korekta z …: zmienione …”):\n" + "\n".join(bad)
+
+
+def _second(*sources):
+    return Version.model_validate({
+        "valid_from": "2026-01-01", "value": 1, "sources": list(sources),
+        "verification": {"checked_at": "2026-01-01", "agent_check": "2026-01-02"}})
+
+
+def test_second_source_needs_its_own_quote_and_another_document():
+    act = {"title": "akt", "url": "https://example.org/1", "quote": "wynosi 1 %"}
+    assert "drugie_zrodlo" not in _second(              # komunikat bez cytatu
+        act, {"title": "komunikat", "url": "https://example.org/2", "kind": "control"}).confidence()["evidence"]
+    assert "drugie_zrodlo" not in _second(              # to samo źródło, które dało cytat
+        {**act, "independent": True}).confidence()["evidence"]
+    assert "drugie_zrodlo" not in _second(              # ten sam dokument drugi raz
+        act, {"title": "akt", "url": "https://example.org/1", "quote": "1 %", "kind": "control"}
+    ).confidence()["evidence"]
+    assert _second(act, {"title": "ustawa", "url": "https://example.org/3", "quote": "1 %",
+                         "independent": True}).confidence()["level"] == "wysoka"
+    assert _second(act, {"title": "komunikat", "url": "https://example.org/2", "quote": "1 %",
+                         "kind": "control"}).confidence()["level"] == "wysoka"
+
+
+def _applies(applies_to):
+    return Parameter.model_validate({"id": "p.x", "name": "x", "applies_to": applies_to, "versions": [
+        {"valid_from": "2026-01-01", "value": 1, "sources": [{"title": "akt", "url": "https://example.org/1"}],
+         "verification": {"checked_at": "2026-01-01"}}]})
+
+
+def test_applies_to_must_name_profile_fields_and_their_values():
+    _applies({"tax_form": ["ryczalt"], "zus": ["pelny"]})
+    with pytest.raises(ValueError, match="tax_fom"):
+        _applies({"tax_fom": ["ryczalt"]})
+    with pytest.raises(ValueError, match="ryczal"):
+        _applies({"tax_form": ["ryczal"]})
+
+
+def test_duplicate_yaml_key_is_rejected(tmp_path):
+    from fikus.store import load_yaml
+    f = tmp_path / "x.yaml"
+    f.write_text("- id: a\n  name: b\n  name: c\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="powtórzony klucz 'name'"):
+        load_yaml(f)

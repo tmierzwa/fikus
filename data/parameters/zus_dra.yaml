@@ -118,7 +118,7 @@
     - valid_from: 2025-01-01
       value:
         steps:
-          - text: Po końcu roku ustalasz roczną składkę zdrowotną od rocznej podstawy i porównujesz ją ze składkami za poszczególne miesiące. Roczną podstawę i roczną składkę opisują zasady składki zdrowotnej dla Twojej formy opodatkowania.
+          - text: Po końcu roku ustalasz roczną składkę zdrowotną od rocznej podstawy i porównujesz ją ze składkami za poszczególne miesiące.
             uses: [zasada.skala_zdrowotna, zasada.liniowy_zdrowotna, zasada.ryczalt_zdrowotna_prog, zasada.ryczalt_zdrowotna_prog_poprzedni_rok]
             basis: art. 81 ust. 2, 2b, 2e, 2i i 2j ustawy o świadczeniach opieki zdrowotnej
           - text: Na skali podatkowej i podatku liniowym rozliczenie dotyczy roku składkowego, który trwa od 1 lutego roku, za który ustalasz dochód, do 31 stycznia roku następnego. Na ryczałcie rozliczenie dotyczy roku kalendarzowego.
@@ -136,15 +136,21 @@
           - text: Według ZUS rozliczenie składasz, jeżeli w roku, którego ono dotyczy, choćby przez jeden dzień podlegałeś ubezpieczeniu zdrowotnemu z tytułu działalności, także wtedy, gdy w tym roku zawiesiłeś albo zakończyłeś działalność. Rozliczenia nie składasz, jeżeli działalność była zawieszona przez cały ten rok. Na skali podatkowej i podatku liniowym liczy się rok składkowy, więc według ZUS rozliczenie za poprzedni rok składasz także wtedy, gdy podlegałeś ubezpieczeniu tylko w styczniu roku następnego (na przykład wznowiłeś albo rozpocząłeś działalność w styczniu).
             uses: []
             basis: art. 81 ust. 2, 2ka i 2i ustawy o świadczeniach opieki zdrowotnej; komunikat ZUS „Roczne rozliczenie składki zdrowotnej za 2025 r.” i ZUS FAQ „Zmiany od 2022 r.”
-          - text: Ta zasada nie opisuje korekty rozliczenia rocznego ani rozliczenia przy zmianie formy opodatkowania w trakcie roku (poza tym, że dane wykazujesz odrębnie dla każdej formy), a także rozliczenia osób, które nie stosują skali podatkowej, podatku liniowego ani ryczałtu od przychodów ewidencjonowanych.
-            uses: []
-            basis: art. 81 ust. 2r i 2y ustawy o świadczeniach opieki zdrowotnej
       note: >-
         Kroki opisują brzmienie z tekstu jednolitego ustawy o świadczeniach opieki zdrowotnej (Dz.U. 2025 poz. 1461).
         Data początku obowiązywania (2025-01-01) to dzień wejścia w życie ustawy z 6 grudnia 2024 r. (Dz.U. 2024
         poz. 1915), która nadała obecne brzmienie art. 81 ust. 2 zdanie pierwsze; dla pozostałych przepisów tej daty
         źródło nie potwierdza. Wcześniejszych wersji nie wprowadzono. Komunikaty i poradnik ZUS potwierdzają tylko
         część kroków, a żadne źródło poza nimi nie podaje całej zasady, więc wersja nie ma drugiego niezależnego dowodu.
+        Korekta z 27 listopada 2026 r.: zmieniony krok 1, usunięty dawny krok 7.
+      not_covered: >-
+        Rocznej podstawy wymiaru i rocznej składki dla poszczególnych form opodatkowania (opisują je zasady składki
+        zdrowotnej dla skali podatkowej, podatku liniowego i ryczałtu od przychodów ewidencjonowanych). Korekty
+        rozliczenia rocznego i dokumentów rozliczeniowych za poszczególne miesiące oraz skutków zwrotu nadpłaty dla
+        rozliczenia (art. 81 ust. 2r i 2y ustawy o świadczeniach opieki zdrowotnej). Rozliczenia przy zmianie formy
+        opodatkowania w trakcie roku poza tym, co podaje krok o dokumencie rozliczeniowym. Rozliczenia osób, które nie
+        stosują skali podatkowej, podatku liniowego ani ryczałtu od przychodów ewidencjonowanych.
+      see_also: [zasada.skala_zdrowotna, zasada.liniowy_zdrowotna, zasada.ryczalt_zdrowotna_prog]
       sources:
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (rok składkowy)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
@@ -170,10 +176,19 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
           article: art. 81 ust. 2k i 2ka
           quote: "przekazuje roczne rozliczenie składek w dokumencie rozliczeniowym, o którym mowa w ust. 2k"
-        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (termin dopłaty)
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (niedopłata, dokument i termin dopłaty)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
-          article: art. 81 ust. 2l
-          quote: "Dopłata, o której mowa w ust. 2j, następuje w terminie płatności składek za miesiąc, o którym mowa w ust. 2k."
+          article: art. 81 ust. 2j–2l
+          quote: >-
+            2j. Ubezpieczony, o którym mowa w ust. 2 lub 2e, wpłaca kwotę stanowiącą różnicę między roczną składką na
+            ubezpieczenie zdrowotne ustaloną od rocznej podstawy, określonej w ust. 2 albo 2e, a sumą składek na
+            ubezpieczenie zdrowotne wynikającą ze złożonych dokumentów za poszczególne miesiące roku składkowego albo
+            roku kalendarzowego. 2k. Kwota, o której mowa w ust. 2j, wykazywana jest w dokumencie rozliczeniowym
+            składanym za miesiąc, w którym upływa termin złożenia zeznania, o którym mowa w art. 45 ust. 1 ustawy z dnia
+            26 lipca 1991 r. o podatku dochodowym od osób fizycznych. 2ka. Ubezpieczony, o którym mowa w ust. 2 lub 2e,
+            przekazuje roczne rozliczenie składek w dokumencie rozliczeniowym, o którym mowa w ust. 2k. 2l. Dopłata,
+            o której mowa w ust. 2j, następuje w terminie płatności składek za miesiąc, o którym mowa w ust. 2k.
+          confirms: [step_4]
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (wniosek o zwrot)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
           article: art. 81 ust. 2m–2o
@@ -200,9 +215,13 @@
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (rozliczenie roczne)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          quote: "Kwotę dopłaty składek wykazujesz w dokumentach rozliczeniowych, które składasz za kwiecień następnego roku"
-          as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+          quote: >-
+            Kwota dopłaty stanowi różnicę między roczną składką na ubezpieczenie zdrowotne ustaloną od rocznej
+            podstawy a sumą składek na ubezpieczenie zdrowotne wykazaną w przekazanych do ZUS dokumentach
+            rozliczeniowych. Kwotę dopłaty składek wykazujesz w dokumentach rozliczeniowych, które składasz za kwiecień
+            następnego roku [38]. Tę różnicę powinieneś dopłacić w terminie opłacania składek za kwiecień
+          as_of: 2026-11-27
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: schemat.zus_dra
   name: Wzór deklaracji rozliczeniowej ZUS DRA
@@ -336,7 +355,7 @@
           tylko strona ZUS w BIP. Wersję 5.7 wprost podaje tylko plik XSD (atrybut version 5.7.0); specyfikacja daje ją
           pośrednio, przez nazwy KEDU_5_7 i kedu_5_7.xsd (jej atrybut wersja_schematu to inna wartość). Plik XSD
           nie ma jeszcze cytatu, choć skrypt cytatów czyta atrybuty plików XSD. Potrzebny drugi dokument z cytatem; to nie jest pytanie o interpretację przepisów.
-          Pytanie do eksperta: docs/pytania-do-eksperta.md, P70.
+          Pytanie do eksperta: docs/pytania-do-eksperta.md, P65.
 
 - id: zus.kod.termin_przesylania
   name: Kod terminu przesyłania deklaracji i raportów (ZUS DRA, blok I, pole 01)
@@ -481,7 +500,7 @@
           2023 r., a jego wykaz kodów (rozdział VII) ma stan na styczeń 2022 r.: nie ma kodów 05 14, 05 74 i 05 94, a przy 05 90 i 05 92 podaje podstawę „uzależnioną od przychodu”, a nie od dochodu. Specyfikacja ZUS
           dla oprogramowania interfejsowego (wersja 2.27, od 25 kwietnia 2026 r.) nie zawiera wykazu kodów. Potrzebny
           drugi dokument, który sam podaje, od kiedy obowiązuje wykaz; to nie jest pytanie o interpretację przepisów.
-          Pytanie do eksperta: docs/pytania-do-eksperta.md, P71.
+          Pytanie do eksperta: docs/pytania-do-eksperta.md, P66.
 
 - id: zasada.dra_finansowanie_skladek
   name: Kolumny finansowania składek w deklaracji ZUS DRA za siebie (bloki IV i VI)

@@ -31,8 +31,13 @@
   checked_at: 2026-11-26
   note: "ustawa o świadczeniach (art. 2): zmienia art. 23e, 97 i 102; nie dotyka art. 79–82"
 - act: DU/2026/779
-  checked_at: 2026-11-26
-  note: "ustawa o ryczałcie: dodaje ust. w art. 15 (ewidencja); ustawa o PIT: zmienia art. 24a (księgi i ich przesyłanie); nie dotyka art. 11, 12 i 21 ustawy o ryczałcie ani art. 44 ustawy o PIT"
+  for: DU/2026/592
+  checked_at: 2026-11-27
+  note: "ustawa o PIT (art. 1): zmienia tylko art. 24a (ust. 1, 1a, 1b, 1c, 1e, 1f, 2, 3 i 8, dodaje ust. 1g); nie dotyka innych artykułów. Wersje oparte na art. 24a (zasada.jpk_pd_pkpir, zasada.dane_autoryzujace, zasada.ulga_br) cytują tę ustawę. schemat.jpk_pkpir podaje art. 24a ust. 1e tylko jako podstawę struktury; ust. 1e w nowym brzmieniu nadal odsyła do struktury logicznej z art. 193a § 2 Ordynacji podatkowej, więc nie zmienia schematu"
+- act: DU/2026/779
+  for: DU/2025/843
+  checked_at: 2026-11-27
+  note: "ustawa o ryczałcie (art. 3): dodaje tylko art. 15 ust. 13a (pełnomocnictwo do podpisywania ewidencji); nie dotyka innych przepisów. Wersję opartą na art. 15 ust. 13a (zasada.dane_autoryzujace) obsługuje cytat tej ustawy"
 - act: DU/2026/1446
   checked_at: 2026-11-26
   note: "ustawa o VAT: zmienia art. 2, 33, 33a, 33b, 34, 41, 52, 138i (eksport, import, stawki); nie dotyka art. 99, 103 i 109; w art. 41 zmienia tylko ust. 4–11 (eksport), nie ust. 1, 2 i 2a; nie dotyka art. 86, 86a, 88, 113 ani 146ef"
@@ -43,8 +48,9 @@
   checked_at: 2026-11-26
   note: "ustawa o PIT (art. 12): dodaje art. 52zu; nie dotyka art. 44"
 - act: DU/2026/1371
-  checked_at: 2026-11-26
-  note: "ustawa o PIT (art. 1): zmienia art. 14 ust. 2h i 2i, art. 22p, art. 23q pkt 4 i art. 23zf; nie dotyka art. 44"
+  for: DU/2026/592
+  checked_at: 2026-11-27
+  note: "ustawa o PIT (art. 1): uchyla art. 14 ust. 2h i 2i; w art. 22p zmienia ust. 1 i 2 i uchyla ust. 4; zmienia art. 23q pkt 4; w art. 23zf uchyla ust. 2 pkt 7, ust. 2b, 5 i 5a, dodaje ust. 2c, 2d, 5b i 5c, zmienia ust. 4 i 8; nie dotyka innych artykułów. Wersje oparte na art. 22p (zasada.platnosci_gotowkowe_koszty) cytują tę ustawę; art. 14 ust. 2h i 2i, 23q i 23zf nie są podstawą żadnego parametru"
 - act: DU/2026/825
   checked_at: 2026-11-26
   note: "Ordynacja podatkowa: dodaje § 6 i 7 w art. 14i, zmienia art. 14j § 3; nie dotyka art. 12"

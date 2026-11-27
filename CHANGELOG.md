@@ -11,10 +11,24 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 - Zasady obliczeń można potwierdzać krok po kroku: źródło wymienia w `confirms` kroki, które samo podaje
   (`step_1`, `step_2`, …), tak jak pola wartości złożonej. Dowód `drugie_zrodlo` jest spełniony, gdy każdy
   krok podają co najmniej dwa różne dokumenty z cytatem, w tym źródło pierwotne. Okresu zasady nie
-  potwierdza się osobno. Brakujące kroki
-  są w `confidence.unconfirmed_fields` (decyzja z 27 listopada 2026 r.).
+  potwierdza się osobno. Brakujące kroki są w `confidence.unconfirmed_fields` (decyzja z 27 listopada 2026 r.).
+- Pytania do eksperta mają dyskusje w GitHub Discussions, w kategorii „Pytania do eksperta”, z formularzem
+  dla nowych pytań. Odpowiedź z dyskusji trafia do `verification.expert` dopiero po potwierdzeniu przez
+  opiekuna (decyzja z 27 listopada 2026 r.).
 
 ### Zmienione
+
+- Dowód `drugie_zrodlo` liczy się tylko ze źródła kontrolnego albo niezależnego, które ma własny cytat
+  i jest innym dokumentem (adresem) niż źródło pierwotne z cytatem. Wcześniej wystarczało oznaczenie
+  `kind: control` albo `independent: true`, nawet bez cytatu i przy tym samym źródle, które dało cytat.
+  Obecne dane spełniają nowy warunek: żadna wersja nie zmienia poziomu pewności.
+- `applies_to` przy parametrze może mieć tylko pola profilu (`tax_form`, `vat`, `zus`) i ich wartości.
+  Literówka zatrzymuje wczytanie danych, zamiast po cichu wyłączać parametr ze wszystkich profili.
+- Pobieranie źródeł przyjmuje tylko adresy `https://`, obie próby mieszczą się w jednym łącznym
+  limicie 120 s, a po przekroczeniu tego limitu nie ma ponownej próby. Nieudany zapis do pamięci
+  podręcznej nie zostawia pliku `.tmp`.
+- Opis narzędzia `get_schema` wylicza symbole deklaracji z danych (doszedł KEDU).
+- Powtórzony klucz w pliku YAML z danymi zatrzymuje ładowanie danych. Dotąd brany był po cichu ostatni.
 
 - Schemat z CRWDE: plik schematu, którego adres podają już dwa dokumenty, sam potwierdza kod systemowy
   i wersję schematu, a wyróżnik wzoru o tym samym numerze sam potwierdza okres. Koniec okresu zamkniętej
@@ -23,6 +37,15 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
   (dawne zdania „Ta zasada nie opisuje…” w krokach), a `see_also` opcjonalnie wskazuje parametry, które
   te sprawy opisują (dawne odesłania „…opisuje zasada …”). Tego opisu nie potwierdza się dokumentami, więc nie
   blokuje pewności zasady. Przy wartości `not_covered` nadal wymaga `see_also` (decyzja z 27 listopada 2026 r.).
+- Notatki wersji opisują tylko obecny stan. Historię edycji danych w 23 notatkach (zdania „Poprawka…”,
+  opis poprzednich błędów, wzmianki o weryfikatorze) zastąpiło krótkie zdanie „Korekta z …: zmienione …”
+  albo usunięto ją, gdy poprawka dotyczyła samej notatki. Wartości, okresy, źródła i kroki się nie zmieniają.
+  Test odrzuca historię edycji w notatkach.
+
+### Poprawione
+
+- `wykryj_zmiany.py`: nowelizacja cytowana w jednym parametrze nie jest już pomijana w innych
+  parametrach, które cytują ten sam akt bez niej.
 
 ## [0.5.0] - 2026-11-27
 
@@ -50,10 +73,6 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 - `sprawdz_cytaty.py` pobiera brakujące teksty źródeł równolegle: najwyżej 6 naraz i 2 z jednego serwera.
   Cytaty sprawdza dalej po kolei, więc komunikaty, podsumowanie i kod wyjścia się nie zmieniają.
   Zapis tekstu do pamięci podręcznej idzie przez plik tymczasowy, a dopisanie do `indeks.tsv` pod blokadą.
-- Notatki wersji opisują tylko obecny stan. Historię edycji danych w 23 notatkach (zdania „Poprawka…”,
-  opis poprzednich błędów, wzmianki o weryfikatorze) zastąpiło krótkie zdanie „Korekta z …: zmienione …”
-  albo usunięto ją, gdy poprawka dotyczyła samej notatki. Wartości, okresy, źródła i kroki się nie zmieniają.
-  Test odrzuca historię edycji w notatkach.
 - Zasady źródeł: poradnik ZUS opublikowany na zus.pl jest komunikatem ZUS, czyli źródłem pierwotnym (CLAUDE.md).
 
 ## [0.4.5] - 2026-11-27

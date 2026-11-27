@@ -72,21 +72,12 @@ def load_reviewed(path: Path) -> set[str]:
     return {f"{e['act']}@{e['for']}" if e.get("for") else e["act"] for e in entries}
 
 
-def cited_acts(store: Store, today: date) -> dict[str, set[str]]:
-    """Akty ELI cytowane jako źródła pierwotne w wersjach obowiązujących dziś lub później."""
-    acts: dict[str, set[str]] = {}
-    for p in store.params.values():
-        for v in p.versions:
-            if v.valid_to is not None and v.valid_to < today:
-                continue
-            for s in v.sources:
-                if s.kind == "primary" and (act := eli_id(s.url)):
-                    acts.setdefault(act, set()).add(p.id)
-    return acts
-
-
-def check_act(act: str, params: set[str], fetch: Fetch, reviewed: set[str]) -> list[Finding]:
+def check_act(act: str, params: set[str], fetch: Fetch, reviewed: set[str],
+              handled: dict[str, set[str]] | None = None) -> list[Finding]:
+    """Zmiany jednego aktu. `handled` to nowelizacje obsłużone w danym parametrze („nowelizacja@akt”
+    według identyfikatora parametru): nowelizacja trafia do wyniku tylko z parametrami, które jej nie cytują."""
     ps = tuple(sorted(params))
+    handled = handled or {}
     meta = fetch(act)
     refs = meta.get("references", {})
     out: list[Finding] = []
@@ -114,9 +105,13 @@ def check_act(act: str, params: set[str], fetch: Fetch, reviewed: set[str]) -> l
         changes = refs.get("Akty zmieniające", [])
 
     for c in sorted(changes, key=lambda r: _order(r["id"])):
-        if c["id"] not in reviewed and f"{c['id']}@{act}" not in reviewed:
+        key = f"{c['id']}@{act}"
+        if c["id"] in reviewed or key in reviewed:
+            continue
+        open_for = tuple(p for p in ps if key not in handled.get(p, ()))
+        if open_for:
             when = f", wchodzi w życie {c['date']}" if c.get("date") else ""
-            out.append(Finding("nowelizacja", act, ps, f"{c['id']}{when}"))
+            out.append(Finding("nowelizacja", act, open_for, f"{c['id']}{when}"))
     return out
 
 
@@ -143,10 +138,12 @@ def _base_act(act: str, fetch: Fetch) -> str:
 
 
 def current_acts(store: Store, today: date, fetch: Fetch,
-                 handled: set[str] | None = None) -> dict[str, set[str]]:
-    """Jak cited_acts, ale bez starszych tekstów jednolitych, cytowanych obok nowszego tekstu
-    tej samej ustawy w tej samej wersji. Takie teksty są celowo nieaktualne: dowodzą stanu
-    prawnego z przeszłości (np. od kiedy obowiązuje przepis, czyli valid_from)."""
+                 handled: dict[str, set[str]] | None = None) -> dict[str, set[str]]:
+    """Akty ELI cytowane jako źródła pierwotne w wersjach obowiązujących dziś lub później, z parametrami.
+
+    Pomija starsze teksty jednolite cytowane obok nowszego tekstu tej samej ustawy w tej samej wersji.
+    Takie teksty są celowo nieaktualne: dowodzą stanu prawnego z przeszłości (np. od kiedy obowiązuje
+    przepis, czyli valid_from). Do `handled` dopisuje według parametru nowelizacje cytowane obok aktu."""
     acts: dict[str, set[str]] = {}
     for p in store.params.values():
         for v in p.versions:
@@ -160,8 +157,8 @@ def current_acts(store: Store, today: date, fetch: Fetch,
                         newest[base] = act
             for act in newest.values():
                 acts.setdefault(act, set()).add(p.id)
-                if handled is not None:            # nowelizacja cytowana obok aktu = obsłużona
-                    handled.update(f"{a}@{act}" for a in newest.values() if a != act)
+                if handled is not None:            # nowelizacja cytowana obok aktu = obsłużona w tym parametrze
+                    handled.setdefault(p.id, set()).update(f"{a}@{act}" for a in newest.values() if a != act)
     return acts
 
 
@@ -175,10 +172,10 @@ def detect(store: Store, today: date, fetch: Fetch = fetch_act, reviewed: set[st
         return cache[act]
 
     findings = ending_versions(store, today, horizon)
-    handled: set[str] = set()
+    handled: dict[str, set[str]] = {}
     for act, params in sorted(current_acts(store, today, cached, handled).items()):
         try:
-            findings += check_act(act, params, cached, set(reviewed) | handled)
+            findings += check_act(act, params, cached, set(reviewed), handled)
         except (OSError, ValueError, KeyError) as e:      # sieć, zły JSON, nieoczekiwany kształt
             findings.append(Finding("blad", act, tuple(sorted(params)), f"nie da się sprawdzić: {e}"))
     return findings

@@ -1,9 +1,22 @@
 # Pytania do eksperta
 
-Pytania, na które źródła nie dają jednoznacznej odpowiedzi. Opiekun przekazuje je doradcy podatkowemu
-albo biuru rachunkowemu, a odpowiedź (imię, data, podstawa) trafia do pola `verification.expert`
-wpisu. Do czasu odpowiedzi wpis ma `open_issue` i pewność niską albo, gdy pytanie dotyczy tylko
-przypadku brzegowego, średnią.
+Pytania, na które źródła nie dają jednoznacznej odpowiedzi. Do czasu odpowiedzi wpis ma `open_issue`
+i pewność niską albo, gdy pytanie dotyczy tylko przypadku brzegowego, średnią.
+
+Każde otwarte pytanie oprócz P0 ma dyskusję w kategorii
+[Pytania do eksperta](https://github.com/tmierzwa/fikus/discussions/categories/pytania-do-eksperta)
+o tym samym tytule. Link jest w linii „Dyskusja” pod pytaniem. Doradców podatkowych, księgowych i innych
+ekspertów prosimy o odpowiedź w dyskusji, z podstawą prawną.
+
+Sama odpowiedź w dyskusji nie jest dowodem. Opiekun potwierdza kwalifikację autora i to, że odpowiedź
+podaje podstawę prawną, a potem oznacza ją jako odpowiedź. Wtedy trafia do pola `verification.expert`
+wpisu z datą odpowiedzi, podstawą i linkiem do komentarza. Imię i nazwisko wpisujemy tylko wtedy, gdy
+ekspert napisze, że się na to zgadza; bez tego wpisujemy samą kwalifikację. Gdy dane z odpowiedzią są na
+`main`, dyskusję zamykamy, a nagłówek pytania dostaje dopisek „rozstrzygnięte”.
+
+Nowe pytanie dopisujemy tutaj w PR, a potem zakładamy dla niego dyskusję. Dyskusję może też założyć
+kontrybutor formularzem kategorii; opiekun nadaje wtedy pytaniu numer i dopisuje je tutaj. W dyskusjach
+nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się rozlicza.
 
 ## P0. Granica doradztwa podatkowego przed publicznym udostępnieniem
 
@@ -24,6 +37,7 @@ przypadku brzegowego, średnią.
 
 ## P1. Składka zdrowotna na ryczałcie według przychodu z poprzedniego roku: wyjątek przy ponownym podjęciu działalności
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/84
 - Wpis: `zasada.ryczalt_zdrowotna_prog_poprzedni_rok` (od 2025-01-01 i od 2027-01-01), krok 4.
 - Zgłoszone: 2026-11-26.
 - Ustawa o świadczeniach opieki zdrowotnej, art. 81 ust. 2h: podstawę ustaloną według przychodu
@@ -67,75 +81,9 @@ przypadku brzegowego, średnią.
   - Ten sam poradnik, przykład 15 (ryczałt, likwidacja i nowa działalność w lipcu): „W lipcu 2023 r. suma przychodów
     liczonych od początku 2023 r. przekroczyła 60 000 zł”. Przykład nie dotyczy art. 81 ust. 2h.
 
-## P2. Minimalna składka zdrowotna na skali i liniowym w roku składkowym 2025/2026 (rozstrzygnięte 2026-11-26, bez eksperta)
-
-- Rozstrzygnięcie: informacja ZUS na samorzad.gov.pl (18 lutego 2025 r.) sama podaje, że od lutego 2025 r. do stycznia 2026 r. składka nie może być niższa niż 314,96 zł; dodana jako źródło kontrolne, `open_issue` usunięty. Styczeń 2026 potwierdza też komunikat ZUS z 2026 r.
-
-- Wpis: `zdrowotna.minimum` (2025-02-01 – 2026-01-31, 314,96 zł).
-- Zgłoszone: 2026-11-26.
-- Komunikat ZUS z 30 stycznia 2025 r. podaje 314,96 zł „za miesiące od lutego 2025 r. do stycznia 2026 r.”
-  (9% z 3499,50 zł, czyli 75% minimalnego wynagrodzenia 4666 zł, art. 4 ustawy z 6 grudnia 2024 r.).
-- Żadne niezależne źródło nie podaje tej kwoty za cały ten okres: komunikat ZUS z 2026 r. i ifirma
-  podają ją tylko za styczeń 2026, a PITax podaje okres do grudnia 2026.
-- Pytanie: czy minimalna miesięczna składka zdrowotna przedsiębiorcy na skali i na podatku liniowym
-  wynosiła 314,96 zł za każdy miesiąc od lutego 2025 r. do stycznia 2026 r.?
-
-## P3. Minimalna składka zdrowotna na skali i liniowym za styczeń 2027 (rozstrzygnięte 2026-11-26, bez eksperta)
-
-- Rozstrzygnięcie: biznes.gov.pl sam podaje 432,54 zł za okres od 1 lutego 2026 r. do 31 stycznia 2027 r., tak jak komunikat ZUS z 2 lutego 2026 r.; dodany jako źródło kontrolne, `open_issue` usunięty.
-
-- Wpis: `zdrowotna.minimum` (2026-02-01 – 2027-01-31, 432,54 zł).
-- Zgłoszone: 2026-11-26.
-- Komunikat ZUS z 2 lutego 2026 r. podaje 432,54 zł „za miesiące od lutego 2026 r. do stycznia 2027 r.”
-  (9% z 4806 zł, art. 81 ust. 2d). Źródło kontrolne (ifirma) potwierdza kwotę tylko za luty–grudzień 2026.
-- Pytanie: czy minimalna składka za styczeń 2027 r. (ostatni miesiąc roku składkowego) wynosi 432,54 zł,
-  mimo że od 1 stycznia 2027 r. obowiązuje nowe minimalne wynagrodzenie?
-
-## P4. Zryczałtowana stopa składki wypadkowej dla płatnika do 9 ubezpieczonych (rozstrzygnięte 2026-11-27, bez eksperta)
-
-- Rozstrzygnięcie za rok 2026/2027: spoza materiałów ZUS stopę na ten rok podaje portal Fakturownia w tekście „Składka
-  wypadkowa 2026 – nowe stawki i jak ją ustalić” z 3 listopada 2026 r. (https://fakturownia.pl/aktualnosci/skadka-wypadkowa-2026-nowe-stawki-i-jak-ja-ustalic):
-  „Stawki składki wypadkowej 2026/2027: do 9 ubezpieczonych – stała stopa 1,67%”. Ta sama strona podaje, że stopa na rok
-  2026/2027 obowiązuje od 1 kwietnia 2026 r. do 31 marca 2027 r. Portal jest tylko źródłem kontrolnym; zgadza się
-  z komunikatem ZUS z 12 stycznia 2026 r. i z art. 28 ust. 1 ustawy wypadkowej (50% najwyższej stopy 3,33%
-  z załącznika nr 2 rozporządzenia, którego stóp od 1 kwietnia 2024 r. nie zmieniono). Urzędowego źródła spoza ZUS
-  (strony ministerstw, biznes.gov.pl po 1 kwietnia 2026 r.) nie znaleziono: biznes.gov.pl ma nadal aktualizację z 11 lutego
-  2026 r. `open_issue` usunięty z wersji 2026/2027.
-- Rozstrzygnięcie częściowe, tylko za rok 2025/2026: poradnik ZUS „Ustalanie stopy procentowej składki na ubezpieczenie
-  wypadkowe” (stan prawny na 1 stycznia 2026 r.) sam podaje stopę zryczałtowaną 1,67% dla płatnika zgłaszającego nie więcej
-  niż 9 ubezpieczonych. Spoza ZUS podaje ją biznes.gov.pl (aktualizacja 11 lutego 2026 r.: składkę 1,67% opłacają firmy, które
-  zgłosiły przeciętnie nie więcej niż 9 osób). Podaje ją też materiał ZUS województwa opolskiego przedrukowany przez Zieloną Linię
-  (stan prawny na 26 listopada 2025 r.). Zastrzeżenie wobec biznes.gov.pl opisane niżej nie przeszkadza: obie daty początku
-  stopy na tej stronie (1 kwietnia 2021 r. i 1 kwietnia 2024 r.) są wcześniejsze niż 1 kwietnia 2025 r., a cytowany przypis
-  podaje stopę i grupę płatników w stanie na 11 lutego 2026 r., czyli w trakcie roku 2025/2026; stopę ustala się na cały rok
-  składkowy (art. 27 ust. 1 ustawy wypadkowej). `open_issue` usunięty z wersji 2025/2026.
-- Za rok 2026/2027 pytanie było otwarte do 27 listopada 2026 r. (rozstrzygnięcie wyżej): stopę na ten rok podawały tylko komunikat ZUS z 12 stycznia 2026 r. (w części o tym roku)
-  i przedruk wypowiedzi rzeczniczki ZUS z 1 kwietnia 2026 r. Załącznik nr 2 rozporządzenia nie nazywa najwyższej stopy,
-  podaje tylko tabelę.
-
-- Wpis: `zus.stawka.wypadkowa_do_9` (2025-04-01 – 2026-03-31 i 2026-04-01 – 2027-03-31, 1,67%).
-- Zgłoszone: 2026-11-26.
-- Ustawa wypadkowa, art. 28 ust. 1: stopa wynosi 50% najwyższej stopy ustalonej na dany rok składkowy
-  dla grup działalności. Najwyższa stopa w tabeli z załącznika nr 2 rozporządzenia (Dz.U. 2025
-  poz. 1874) to 3,33, a § 6 ust. 2 każe zaokrąglać według zasady matematycznej. Kwotę 1,67% podają
-  wprost materiały ZUS (poradnik i strona o informacji ZUS IWA), za rok 2025/2026 także biznes.gov.pl, choć bez wskazania
-  roku składkowego (niżej), a za rok 2026/2027 portal Fakturownia (rozstrzygnięcie wyżej).
-- Pytanie (po rozstrzygnięciu za 2025/2026 dotyczyło już tylko roku 2026/2027): czy dla płatnika zgłaszającego nie więcej
-  niż 9 ubezpieczonych stopa w roku składkowym 2026/2027 wynosi 1,67%, i czy istnieje urzędowe źródło poza materiałami ZUS, które
-  podaje tę stopę wprost? Pierwszą część rozstrzyga drugi dowód opisany wyżej. Na drugą część odpowiedź jest przecząca:
-  urzędowego źródła spoza ZUS nie znaleziono (stan na 27 listopada 2026 r.). Nie blokuje to usunięcia `open_issue`, bo
-  wpis potrzebował drugiego dowodu, który sam podaje stopę na ten rok, a źródło spoza ZUS było tylko preferencją.
-
-- Materiały znalezione 2026-11-26 (historia; rok 2025/2026 rozstrzyga przypis z tej samej strony biznes.gov.pl, opisany wyżej):
-  - Za rok 2026/2027: przedruk wypowiedzi regionalnej rzeczniczki prasowej ZUS z 1 kwietnia 2026 r. na stronie Starostwa
-    Powiatowego w Hajnówce (https://samorzad.gov.pl/web/powiat-hajnowski/stopy-procentowe) podaje 1,67% i najwyższą stopę
-    3,33% od 1 kwietnia 2026 r. To nadal materiał ZUS, nie źródło spoza ZUS.
-  - Za rok 2025/2026: biznes.gov.pl (https://www.biznes.gov.pl/pl/portal/00274, aktualizacja 11 lutego 2026 r.) podaje
-    „Składka wypadkowa od 1.04.2024 (1,67%)”, ale nie wskazuje roku składkowego, a na tej samej stronie podaje też stopę
-    „od 1.04.2021”.
-
 ## P5. Przesunięcie terminu z art. 12 § 5 Ordynacji podatkowej od 1 października 2026 r. a termin zapłaty
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/91
 - Wpis: `zasada.przesuniecie_terminu` (od 2026-10-01).
 - Zgłoszone: 2026-11-26.
 - Ustawa z 29 maja 2026 r. (Dz.U. 2026 poz. 846, art. 1 pkt 1) zmienia art. 12 § 5: przesunięcie dotyczy „ostatniego
@@ -167,6 +115,7 @@ przypadku brzegowego, średnią.
 
 ## P6. Stawka ryczałtu bez ewidencji pozwalającej ustalić przychody z każdego rodzaju działalności
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/92
 - Wpis: `zasada.ryczalt_podstawa` (od 2024-01-01), krok o stawce bez takiej ewidencji.
 - Zgłoszone: 2026-11-26.
 - Ustawa o zryczałtowanym podatku dochodowym (Dz.U. 2025 poz. 843), art. 12 ust. 3 zdanie drugie: gdy
@@ -193,6 +142,7 @@ przypadku brzegowego, średnią.
 
 ## P7. Minimum rocznej składki zdrowotnej przy podatku liniowym: liczba miesięcy
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/93
 - Wpis: `zasada.liniowy_zdrowotna` (wersje od 2025-02-01, od 2026-02-01 i od 2027-02-01), krok o rocznej składce.
 - Zgłoszone: 2026-11-26.
 - Ustawa o świadczeniach opieki zdrowotnej (Dz.U. 2025 poz. 1461), art. 79a ust. 1 pkt 2: roczna składka nie mniej niż 9%
@@ -243,6 +193,7 @@ przypadku brzegowego, średnią.
 
 ## P8. Od kiedy stosować art. 81 ust. 2zd pkt 2 bez art. 21 ust. 1 pkt 63a ustawy o PIT
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/94
 - Wpisy, których dotyczy wątpliwość:
   - `zasada.ryczalt_zdrowotna_prog`, wersja od 2025-01-01 (roczne rozliczenie za 2026 r.);
   - `zasada.ryczalt_zdrowotna_prog_poprzedni_rok`, wersja od 2027-01-01 (przychód z 2026 r. przyjmowany w 2027 r.);
@@ -293,6 +244,7 @@ przypadku brzegowego, średnią.
 
 ## P9. Ulga na start: jak liczyć 6 miesięcy ulgi i następne 24 miesiące podstawy preferencyjnej
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/95
 - Wpis: `zasada.ulga_na_start` (od 2026-01-01), kroki 3, 5 i 6. Wartość `zus.ulga_na_start.okres` (6 miesięcy) od 2026-11-27
   nie ma tego pytania: podaje tylko liczbę miesięcy i odsyła do zasady (rozdzielenie wartości i sposobu stosowania).
 - Zgłoszone: 2026-11-26.
@@ -333,6 +285,7 @@ przypadku brzegowego, średnią.
 
 ## P10. Mały ZUS Plus: skutek zgłoszenia po terminie i liczenie okresów od 2026 r.
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/96
 - Wpis: `zasada.maly_zus_plus` (od 2026-01-01), kroki 3, 4 i ostatni.
 - Zgłoszone: 2026-11-26.
 - Ustawa o systemie ubezpieczeń społecznych (Dz.U. 2026 poz. 1474), art. 36 ust. 4b i 14a: zgłoszenie do ubezpieczeń
@@ -369,6 +322,7 @@ przypadku brzegowego, średnią.
 
 ## P11. Jak długo podatnik jest „rozpoczynającym działalność” przy zaliczkach kwartalnych PIT i kwartalnym ryczałcie
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/97
 - Wpisy: `zasada.zaliczki_kwartalne_pit` (od 2026-01-01), krok 2; `zasada.ryczalt_kwartalnie` (od 2026-01-01), krok 2.
 - Zgłoszone: 2026-11-26.
 - Ustawa o PIT (Dz.U. 2026 poz. 592), art. 44 ust. 3g: zaliczki kwartalne mogą wpłacać mali podatnicy oraz
@@ -395,6 +349,7 @@ przypadku brzegowego, średnią.
 
 ## P12. Zaliczki uproszczone, gdy w roku poprzedzającym nie złożono zeznania PIT z działalności
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/98
 - Wpis: `zasada.zaliczki_uproszczone` (od 2026-01-01), krok 2.
 - Zgłoszone: 2026-11-26.
 - Ustawa o PIT (Dz.U. 2026 poz. 592), art. 44 ust. 6b: podstawą zaliczek uproszczonych jest dochód z działalności
@@ -413,6 +368,7 @@ przypadku brzegowego, średnią.
 
 ## P13. Limit odliczenia darowizn na ryczałcie: od jakiej kwoty przychodu
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/99
 - Wpis: `zasada.ulgi_ryczalt` (od 2026-01-01 i od 2027-01-01), krok o darowiznach. Wartość `ulga.darowizny.limit_ryczalt`
   (6%) od 2026-11-27 nie ma tego pytania: podaje tylko procent i odsyła do zasady (rozdzielenie wartości i sposobu stosowania).
 - Zgłoszone: 2026-11-26.
@@ -438,6 +394,7 @@ przypadku brzegowego, średnią.
 
 ## P14. Limit ulgi internetowej w zeznaniu za 2027 r. po jej uchyleniu
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/100
 - Wpisy: `ulga.internet.limit` (2027-01-01 – 2027-12-31, 760 zł) oraz kroki o Internecie w `zasada.ulgi_ryczalt`
   i `zasada.ulgi_skala` (od 2027-01-01).
 - Zgłoszone: 2026-11-26.
@@ -468,6 +425,7 @@ przypadku brzegowego, średnią.
 
 ## P15. Wyłączenie łącznego opodatkowania przy podatku liniowym albo ryczałcie: rok bez przychodów i zmiana formy w trakcie roku
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/101
 - Wpis: `zasada.opodatkowanie_laczne_wylaczenia` (od 2025-01-01), ostatni krok.
 - Zgłoszone: 2026-11-26.
 - Ustawa o PIT (Dz.U. 2026 poz. 592), art. 6 ust. 8 pkt 1: wspólnego opodatkowania małżonków i sposobu
@@ -514,6 +472,7 @@ przypadku brzegowego, średnią.
 
 ## P16. Wniosek o łączne opodatkowanie w zeznaniu złożonym po terminie albo w korekcie; okres samotnego wychowywania dzieci
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/102
 - Materiał urzędowy znaleziony 2026-11-26 (pytanie zostaje otwarte): objaśnienia podatkowe MF z 18 stycznia 2019 r.
   (Eureka, ID 482279, https://eureka.mf.gov.pl/informacje/podglad/482279) podają, że po uchyleniu art. 6 ust. 10 ustawy
   o PIT możliwość „opodatkowania dochodów małżonków, wdów i wdowców albo osób samotnie wychowujących dzieci nie jest już
@@ -553,6 +512,7 @@ przypadku brzegowego, średnią.
 
 ## P17. Wariant JPK_V7K dla deklaracji za I kwartał 2026 r.
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/103
 - Wpisy: `schemat.jpk_v7k` (od 2026-02-01, wariant 3, i do 2026-01-31, wariant 2: od odpowiedzi zależy data końca).
 - Zgłoszone: 2026-11-26.
 - MF (podatki.gov.pl, gov.pl/web/kas/struktury-jpk, broszura z 1 lutego 2026 r.): wariant 2 stosuje się „za okresy
@@ -584,36 +544,9 @@ przypadku brzegowego, średnią.
     części deklaracyjnej należy wskazać ostatni miesiąc kwartału, tj. odpowiednio: 3, 6, 9, 12.” Zdanie dotyczy pola, nie wyboru
     wariantu. Strona MF „Pytania i odpowiedzi” o JPK_VAT z deklaracją nie ma pytania o wariant 3 ani o I kwartał 2026 r.
 
-## P18. Czy na ryczałcie przesyła się ewidencję przychodów (JPK_EWP) (rozstrzygnięte 2026-11-26, bez eksperta)
-
-- Rozstrzygnięcie: broszura MF o strukturze JPK_EWP(4) sama podaje wprost, że osoby fizyczne i spółki opodatkowane
-  ryczałtem od przychodów ewidencjonowanych, prowadzące ewidencję przychodów, „będą zobowiązane przesyłać plik XML zgodny
-  ze strukturą JPK_EWP”, i wskazuje art. 15 ust. 12 jako podstawę. Zgadza się to z ustawą: art. 15 ust. 1 nazywa ewidencję
-  przychodów „ewidencją”, a ust. 12 obejmuje podmioty „prowadzące ewidencję lub wykaz środków trwałych”. Strona KAS
-  „Struktury JPK w podatkach dochodowych” podaje dla ryczałtowców daty struktur JPK_EWP i JPK_ST z podstawą art. 15 ust. 12
-  i 13. Krok zasady poprawiony, P18 usunięty z `open_issue`. Ryczałtowiec prowadzący ewidencję przychodów przesyła ją
-  także wtedy, gdy nie ma środków trwałych.
-
-- Wpis: `zasada.jpk_pd_ryczalt` (od 2026-01-01).
-- Zgłoszone: 2026-11-26.
-- Ustawa o zryczałtowanym podatku dochodowym (Dz.U. 2025 poz. 843), art. 15 ust. 12: podmioty z ust. 1
-  „prowadzące ewidencję lub wykaz środków trwałych oraz wartości niematerialnych i prawnych są obowiązane prowadzić
-  tę ewidencję i wykaz przy użyciu programów komputerowych” i przesyłać je po zakończeniu roku do upływu terminu
-  zeznania. Art. 66 ust. 1 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) wymienia „księgi, ewidencje
-  i wykazy” z art. 15 ust. 12.
-- Broszura MF o strukturze JPK_EWP(4) (podatki.gov.pl) podaje, że podmioty prowadzące ewidencję przychodów „będą
-  zobowiązane przesyłać plik XML zgodny ze strukturą JPK_EWP”, i wskazuje art. 15 ust. 12 jako podstawę.
-- Strona MF o JPK_PD (podatki.gov.pl) podaje, że ustawa z 29 października 2021 r. nałożyła obowiązek prowadzenia
-  „ewidencji i wykazów prowadzonych dla celów podatków dochodowych” przy użyciu programów komputerowych
-  i ich przekazywania, wymienia JPK_EWP wśród pięciu struktur, które „JPK_PD obejmie”, i mówi o przesyłaniu danych
-  w postaci „obligatoryjnych plików JPK_PD”. Tekst art. 15 ust. 12 wymienia jednak tylko „ewidencję lub wykaz środków trwałych oraz
-  wartości niematerialnych i prawnych”.
-- Pytanie: czy art. 15 ust. 12 obejmuje ewidencję przychodów (czyli czy ryczałtowiec przesyła JPK_EWP), czy tylko
-  ewidencję lub wykaz środków trwałych oraz wartości niematerialnych i prawnych (JPK_ST)? Czy ryczałtowiec bez
-  środków trwałych przesyła cokolwiek?
-
 ## P19. Na który dzień ocenia się rozliczanie VAT miesięcznie przy pierwszym przesłaniu ksiąg w formie JPK (częściowo rozstrzygnięte 2026-11-27, bez eksperta)
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/104
 - Rozstrzygnięcie: MF na stronie „Pytania i odpowiedzi JPK_PD” (podatki.gov.pl, pytanie 134, dodane 12.11.2025)
   odpowiada na pytanie, na jaki moment ustala się, czy podatnik przesyła JPK_V7M czy JPK_V7K (dla ustalenia obowiązku
   przesyłania ksiąg w formie JPK). Odpowiedź nie wymienia tych plików, ale mówi, który dzień się liczy: „W dacie zaprowadzenia
@@ -662,6 +595,7 @@ przypadku brzegowego, średnią.
 
 ## P20. Ulga na robotyzację i ulga na ekspansję od 2027 r.: odpisy od aktywów sprzed 2027 r. i kolejność wobec art. 26i
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/105
 - Wpisy: `zasada.ulgi_liniowy` i `zasada.ulgi_skala` (od 2027-01-01), krok o odliczeniach od podstawy obliczenia podatku.
 - Zgłoszone: 2026-11-26.
 - Ustawa z 22 października 2026 r. (Dz.U. 2026 poz. 1541), art. 1 pkt 4 lit. a, dodaje w art. 52jb ustawy o PIT
@@ -692,6 +626,7 @@ przypadku brzegowego, średnią.
 
 ## P30. Limit odliczenia składki zdrowotnej przy podatku liniowym na 2027 r.
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/106
 - Wpis: `podatek.liniowy.limit_skladki_zdrowotnej` (2027-01-01 – 2027-12-31, 15 100 zł).
 - Zgłoszone: 2026-11-26.
 - Obwieszczenie Ministra Finansów i Gospodarki z 16 listopada 2026 r. (M.P. 2026 poz. 1163), wydane na podstawie
@@ -700,20 +635,9 @@ przypadku brzegowego, średnią.
   więc wartość nie ma drugiego dowodu.
 - Pytanie: czy limit z art. 30c ust. 2 pkt 2 ustawy o PIT na rok podatkowy 2027 wynosi 15 100 zł?
 
-## P31. Termin wpisu przychodów do ewidencji za grudzień (rozstrzygnięte 2026-11-26, bez eksperta)
-
-- Rozstrzygnięcie: rozporządzenie w sprawie prowadzenia ewidencji przychodów (Dz.U. 2025 poz. 1294), § 6, samo podaje
-  wprost, że zapisy dokonuje się „najpóźniej do 20. dnia każdego miesiąca za miesiąc poprzedni”. Przepis obejmuje każdy
-  miesiąc i nie ma wyjątku dla grudnia, więc wpisy za grudzień dokonuje się do 20 stycznia. Rozporządzenie nie ma przepisów
-  przejściowych dla ewidencji (§ 10 dotyczy tylko wykazu środków trwałych). Termin nie zależy od kwartalnego wpłacania
-  ryczałtu. Wpis `termin.ewidencja_przychodow_wpis` nie ma otwartego pytania.
-
-- Wpis: `termin.ewidencja_przychodow_wpis` (od 2026-01-01).
-- Zgłoszone: 2026-11-26 (specyfikacja Staffkey, obszar A2).
-- Pytanie: czy termin wpisu przychodów za grudzień jest inny niż za pozostałe miesiące?
-
 ## P32. Korekta przychodu w ewidencji przychodów przy błędzie rachunkowym lub oczywistej omyłce
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/107
 - Wpis: `zasada.ewidencja_przychodow` (od 2026-01-01), krok o korekcie przychodu.
 - Zgłoszone: 2026-11-26.
 - Ustawa o PIT (Dz.U. 2026 poz. 592), art. 14 ust. 1m: jeżeli korekta przychodu „nie jest spowodowana błędem rachunkowym
@@ -735,6 +659,7 @@ przypadku brzegowego, średnią.
 
 ## P33. Data uzyskania przychodu, gdy faktura jest wystawiona przed wykonaniem usługi
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/108
 - Wpisy: `zasada.przychod_data_uzyskania` (od 2026-01-01), krok o dniu wykonania usługi, oraz `zasada.przychod_w_walucie`
   (od 2026-01-01), krok o kursie.
 - Zgłoszone: 2026-11-26.
@@ -755,6 +680,7 @@ przypadku brzegowego, średnią.
 
 ## P34. Przeliczenie przychodu w walucie obcej na ryczałcie
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/109
 - Wpis: `zasada.przychod_w_walucie` (od 2026-01-01), krok o ryczałcie.
 - Zgłoszone: 2026-11-26.
 - Ustawa o PIT (Dz.U. 2026 poz. 592), art. 11a ust. 1: przychody w walutach obcych przelicza się „według kursu średniego
@@ -777,6 +703,7 @@ przypadku brzegowego, średnią.
 
 ## P39. Deklaracja ZUS DRA za miesiąc, w którym działalność zawieszono w trakcie miesiąca
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/110
 - Wpis: `zasada.dra_obowiazek` (od 2024-11-01), krok o zawieszeniu działalności.
 - Zgłoszone: 2026-11-26.
 - Ustawa o systemie ubezpieczeń społecznych (Dz.U. 2026 poz. 1474), art. 36a ust. 3: „Za okres zawieszenia wykonywania
@@ -805,6 +732,7 @@ przypadku brzegowego, średnią.
 
 ## P40. Wzór ZUS DRA dla deklaracji za kwiecień 2026 r. złożonej przed 1 maja 2026 r.
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/111
 - Wpis: `schemat.zus_dra` (od 2026-05-01), notatka.
 - Zgłoszone: 2026-11-26.
 - Rozporządzenie Ministra Rodziny, Pracy i Polityki Społecznej z 9 kwietnia 2026 r. (Dz.U. 2026 poz. 518): weszło w życie
@@ -824,6 +752,7 @@ przypadku brzegowego, średnią.
 
 ## P41. Który wzór elektroniczny zeznania PIT stosuje się, gdy MF opublikowało kilka wersji schematu za ten sam rok
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/112
 - Wpisy: `schemat.pit_36` (za 2025 i za 2026 r.), `schemat.pit_28` (za 2025 i za 2026 r.).
 - Zgłoszone: 2026-11-26.
 - W Centralnym Repozytorium Wzorów Dokumentów Elektronicznych (CRWDE, ePUAP) Ministerstwo Finansów opublikowało
@@ -849,6 +778,7 @@ przypadku brzegowego, średnią.
 
 ## P42. Kwota przychodu w danych autoryzujących przy kilku zeznaniach za rok sprzed dwóch lat
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/113
 - Wpis: `zasada.dane_autoryzujace` (wersje od 2026-04-01 i od 2026-06-16), kroki 2 i 3.
 - Zgłoszone: 2026-11-26.
 - Rozporządzenie w sprawie sposobu przesyłania deklaracji i podań (Dz.U. 2025 poz. 327, § 12 ust. 2 pkt 5)
@@ -872,6 +802,7 @@ przypadku brzegowego, średnią.
 
 ## P43. Przychód na ryczałcie w polach ZUS DRA XI 13 i XII 22: pomniejszony o składki czy bez pomniejszenia
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/114
 - Wpis: `zasada.dra_bloki_zdrowotne` (od 2026-05-01), kroki 3 i 6.
 - Zgłoszone: 2026-11-27.
 - Ustawa o świadczeniach opieki zdrowotnej (Dz.U. 2025 poz. 1461), art. 81 ust. 2g: „Przychody, o których mowa
@@ -901,6 +832,7 @@ przypadku brzegowego, średnią.
 
 ## P44. Które składki pomniejszają przychód na ryczałcie: zapłacone w okresie czy należne za jego miesiące
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/115
 - Wpisy: `zasada.dra_bloki_zdrowotne` (od 2026-05-01), kroki 3 i 6; `zasada.ryczalt_zdrowotna_prog` (wersje
   od 2025-01-01 i od 2027-01-01), kroki 1 i 5.
 - Zgłoszone: 2026-11-27.
@@ -918,6 +850,7 @@ przypadku brzegowego, średnią.
 
 ## P45. Kwota do zwrotu w rocznym rozliczeniu (ZUS DRA, pole XII 27): składki należne czy wpłacone
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/116
 - Wpisy: `zasada.dra_bloki_zdrowotne` (od 2026-05-01), krok 7; `zasada.ryczalt_zdrowotna_prog` (wersje od 2025-01-01
   i od 2027-01-01), krok 5.
 - Zgłoszone: 2026-11-27.
@@ -939,6 +872,7 @@ przypadku brzegowego, średnią.
 
 ## P46. Wybór ryczałtu albo podatku liniowego w roku po utracie prawa do tej formy
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/117
 - Wpis: `zasada.wybor_formy_opodatkowania` (od 2026-01-01), krok o roku po utracie prawa.
 - Zgłoszone: 2026-11-26.
 - Ustawa o ryczałcie (Dz.U. 2025 poz. 843), art. 9 ust. 1b: wybór ryczałtu „dotyczy również lat następnych”, chyba że
@@ -970,6 +904,7 @@ przypadku brzegowego, średnią.
 
 ## P56. Zaliczki i ryczałt za miesiąc lub kwartał, w którego trakcie zawieszono albo wznowiono działalność
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/118
 - Wpis: `zasada.zaliczki_zawieszenie` (od 2026-01-01), kroki o zaliczkach na PIT i o okresie częściowym.
 - Zgłoszone: 2026-11-26.
 - Ustawa o PIT (Dz.U. 2026 poz. 592), art. 44 ust. 10: podatnik, który zawiesił działalność, „jest zwolniony, w zakresie
@@ -995,7 +930,190 @@ przypadku brzegowego, średnią.
     roku następującego po tym roku, a za rok wznowienia na zasadach z ust. 1g i 1h. Przepisy dotyczą terminu wpłaty za okres
     zawieszenia, nie przychodu z części miesiąca lub kwartału, i nie dotyczą PIT.
 
-## P57. Faktury poza KSeF do 10 000 zł miesięcznie w 2026 r.: czy prawo wraca w kolejnym miesiącu (rozstrzygnięte 2026-11-27, bez eksperta)
+## P64. IP Box: odliczenie kosztów kwalifikowanych od dochodu z kwalifikowanego prawa (art. 30ca ust. 9a)
+
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/120
+- Wpis: `zasada.ip_box` (od 2026-01-01), krok o odliczeniu kosztów kwalifikowanych; `zasada.ulga_br` (od 2026-01-01), krok o podstawie odliczenia i krok o przepisach, których zasada nie opisuje.
+- Zgłoszone: 2026-11-26.
+- Ustawa o PIT (Dz.U. 2026 poz. 592), art. 30ca ust. 9a: „Od dochodu z kwalifikowanego prawa własności intelektualnej
+  podatnik może odliczyć koszty kwalifikowane określone w art. 26e ust. 2–3b, które doprowadziły do wytworzenia,
+  rozwinięcia lub ulepszenia przez podatnika tego prawa, przy czym przepisy art. 26e ust. 1 zdanie drugie i ust. 3c–10
+  stosuje się odpowiednio.” Ustęp dodała ustawa Dz.U. 2021 poz. 2105 (art. 1 pkt 55 lit. b), od 1 stycznia 2022 r.
+- Art. 30ca ust. 4: kwalifikowany dochód to iloczyn „dochodu z kwalifikowanego prawa własności intelektualnej”
+  i wskaźnika; ust. 3: podstawą opodatkowania jest suma kwalifikowanych dochodów.
+- Objaśnienia podatkowe MF z 15 lipca 2019 r. (IP Box), akapit 151, wydane przed dodaniem ust. 9a: „ulga B+R
+  nie podlega uwzględnieniu w obliczeniu podstawy opodatkowania podlegającej 5% podatkowi z IP Box”, a podatnik
+  nie może stosować obu preferencji do tego samego dochodu. Strony podatki.gov.pl o IP Box (aktualizacja 24.06.2026)
+  i o uldze badawczo-rozwojowej (aktualizacja 23.11.2026) nie opisują ust. 9a.
+- Ustawa o PIT, art. 26i ust. 1: „Podstawa obliczenia podatku ustalona zgodnie z art. 26 ust. 1, art. 30c ust. 2 lub
+  art. 30ca ust. 3 oraz po uprzednim odliczeniu kwot określonych w art. 26e […]”. Art. 26e ust. 1 w tekście jednolitym
+  z 2026 r. nadal odsyła tylko do podstawy ustalonej zgodnie z „art. 26 ust. 1 lub art. 30c ust. 2”, a ust. 9a przewiduje
+  odliczenie od dochodu z kwalifikowanego prawa, a nie od podstawy.
+- Pytania: czy odliczenie z ust. 9a pomniejsza dochód z kwalifikowanego prawa przed pomnożeniem przez wskaźnik
+  z ust. 4, czy kwalifikowany dochód po pomnożeniu? Czy akapit 151 objaśnień MF jest po 2021 r. nadal aktualny?
+  Czy art. 26i ust. 1 oznacza, że kwoty z art. 26e odlicza się także od podstawy z art. 30ca ust. 3, czy tylko opisuje
+  kolejność wobec odliczenia z ust. 9a?
+- Dalsze źródła sprawdzone 2026-11-27, bez rozstrzygnięcia:
+  - Formularz PIT/IP(5) (https://podatki.gov.pl/media/litajg0p/pit_ip_-5-02.pdf), wariant wskazany przez MF na lata 2023
+    i 2024: poz. 18 „Dochody z kwalifikowanych praw”, poz. 19 „Odliczenie zmniejszające dochód z kwalifikowanego prawa
+    z tytułu kosztów uzyskania przychodów poniesionych na działalność badawczo-rozwojową, które doprowadziły do wytworzenia,
+    rozwinięcia lub ulepszenia przez podatnika tego prawa”, poz. 20 „Kwalifikowany dochód (dochody) z kwalifikowanych praw
+    obliczony (obliczone) zgodnie z art. 30ca ust. 4 ustawy”. Objaśnienia nie mówią, czy odliczenie z poz. 19 stosuje się
+    przed wskaźnikiem z ust. 4, czy po nim; kolejność wynika tylko z układu pozycji. Na lata 2025 i 2026 MF nie podaje
+    wariantu tego formularza.
+
+## P65. Schemat KEDU 5.7: drugi dokument z przestrzenią nazw, wersją, nazwą pliku i datą początku obowiązywania
+
+- Wpis: `schemat.kedu` (od 2026-04-25).
+- Zgłoszone: 2026-11-27.
+- Specyfikacja ZUS „EWD Elektroniczna Wymiana Dokumentów. Specyfikacja wejścia – wyjścia”, wersja 2.27, podaje przestrzeń
+  nazw `http://www.zus.pl/2026/KEDU_5_7` i nową wersję schematu (kedu_5_7.xsd) „w związku ze zmianą struktury” dokumentów
+  ZUS DRA i ZUS RCA. Wersję 5.7 podaje tylko pośrednio, przez te nazwy (jej atrybut `wersja_schematu` ma inną wartość),
+  a daty, od której obowiązuje schemat, nie podaje.
+- Strona ZUS w BIP „Wymagania dla oprogramowania interfejsowego – dokumenty ubezpieczeniowe” podaje plik schematu dla
+  specyfikacji 2.27 i datę 25 kwietnia 2026 r., bez nazwy kedu_5_7.xsd. Plik XSD spod tego adresu ma w atrybutach
+  przestrzeń nazw KEDU_5_7 i wersję 5.7.0, ale nie ma w danych cytatu i nie podaje nazwy pliku ani daty.
+- Brakuje drugiego dokumentu z cytatem dla każdej z tych danych: przestrzeń nazw i nazwę pliku podaje z cytatem tylko
+  specyfikacja 2.27, wersję 5.7 wprost tylko plik XSD, a datę tylko strona w BIP. To pytanie o dokument, a nie
+  o interpretację przepisów.
+- Pytanie: czy od 25 kwietnia 2026 r. dokumenty ubezpieczeniowe przekazuje się do ZUS w schemacie KEDU w wersji 5.7
+  (kedu_5_7.xsd, przestrzeń nazw `http://www.zus.pl/2026/KEDU_5_7`)? Czy jest komunikat ZUS, informacja dla płatników
+  albo dokumentacja programu Płatnik, która podaje wprost wersję, nazwę pliku, przestrzeń nazw i datę?
+
+## P66. Kody tytułu ubezpieczenia z rozporządzenia Dz.U. 2026 poz. 518: drugi dokument z datą początku obowiązywania wykazu
+
+- Wpis: `zus.kod.tytul_ubezpieczenia` (od 2026-04-30).
+- Zgłoszone: 2026-11-27.
+- Rozporządzenie MRPiPS z 9 kwietnia 2026 r. w sprawie wzorów dokumentów ubezpieczeniowych (Dz.U. 2026 poz. 518)
+  podaje wykaz kodów w załączniku nr 24 i wchodzi w życie „po upływie 14 dni od dnia ogłoszenia”, czyli 30 kwietnia 2026 r.
+  Do dokumentów za okresy sprzed tego dnia stosuje się kody z rozporządzenia z 20 grudnia 2020 r. (§ 5).
+- Poza rozporządzeniem wykaz zgodny z nim podaje tylko portal pit.pl (źródło kontrolne), bez daty obowiązywania i bez
+  pozycji rozporządzenia w Dz.U. Poradnik ZUS „Ogólne zasady wypełniania i korygowania dokumentów ubezpieczeniowych”
+  (wydanie z sierpnia 2023 r.) ma wykaz ze stanem na styczeń 2022 r., bez kodów 05 14, 05 74 i 05 94. Specyfikacja ZUS
+  dla oprogramowania interfejsowego (wersja 2.27) nie zawiera wykazu kodów.
+- Brak drugiego dokumentu, który sam podaje, od kiedy obowiązuje wykaz z 2026 r. To pytanie o dokument, a nie
+  o interpretację przepisów.
+- Pytanie: czy wykaz kodów tytułu ubezpieczenia z załącznika nr 24 do rozporządzenia Dz.U. 2026 poz. 518 stosuje się
+  od 30 kwietnia 2026 r.? Czy jest aktualny poradnik albo komunikat ZUS, który podaje ten wykaz i datę wprost?
+
+## Numeracja
+
+Numerów pytań nie używamy ponownie, także po rozstrzygnięciu pytania. Numery z luk w numeracji
+(P21–P29, P35–P38, P47–P55, P58–P63) zostają puste, a nowe pytanie dostaje numer po najwyższym użytym.
+
+## Rozstrzygnięte
+
+Pytania rozstrzygnięte zostają tu z opisem źródeł, które je rozstrzygnęły. Częściowo rozstrzygnięte
+pytanie P19 jest wyżej, bo część jego pytań jest nadal otwarta.
+
+### P2. Minimalna składka zdrowotna na skali i liniowym w roku składkowym 2025/2026 (rozstrzygnięte 2026-11-26, bez eksperta)
+
+- Rozstrzygnięcie: informacja ZUS na samorzad.gov.pl (18 lutego 2025 r.) sama podaje, że od lutego 2025 r. do stycznia 2026 r. składka nie może być niższa niż 314,96 zł; dodana jako źródło kontrolne, `open_issue` usunięty. Styczeń 2026 potwierdza też komunikat ZUS z 2026 r.
+
+- Wpis: `zdrowotna.minimum` (2025-02-01 – 2026-01-31, 314,96 zł).
+- Zgłoszone: 2026-11-26.
+- Komunikat ZUS z 30 stycznia 2025 r. podaje 314,96 zł „za miesiące od lutego 2025 r. do stycznia 2026 r.”
+  (9% z 3499,50 zł, czyli 75% minimalnego wynagrodzenia 4666 zł, art. 4 ustawy z 6 grudnia 2024 r.).
+- Żadne niezależne źródło nie podaje tej kwoty za cały ten okres: komunikat ZUS z 2026 r. i ifirma
+  podają ją tylko za styczeń 2026, a PITax podaje okres do grudnia 2026.
+- Pytanie: czy minimalna miesięczna składka zdrowotna przedsiębiorcy na skali i na podatku liniowym
+  wynosiła 314,96 zł za każdy miesiąc od lutego 2025 r. do stycznia 2026 r.?
+
+### P3. Minimalna składka zdrowotna na skali i liniowym za styczeń 2027 (rozstrzygnięte 2026-11-26, bez eksperta)
+
+- Rozstrzygnięcie: biznes.gov.pl sam podaje 432,54 zł za okres od 1 lutego 2026 r. do 31 stycznia 2027 r., tak jak komunikat ZUS z 2 lutego 2026 r.; dodany jako źródło kontrolne, `open_issue` usunięty.
+
+- Wpis: `zdrowotna.minimum` (2026-02-01 – 2027-01-31, 432,54 zł).
+- Zgłoszone: 2026-11-26.
+- Komunikat ZUS z 2 lutego 2026 r. podaje 432,54 zł „za miesiące od lutego 2026 r. do stycznia 2027 r.”
+  (9% z 4806 zł, art. 81 ust. 2d). Źródło kontrolne (ifirma) potwierdza kwotę tylko za luty–grudzień 2026.
+- Pytanie: czy minimalna składka za styczeń 2027 r. (ostatni miesiąc roku składkowego) wynosi 432,54 zł,
+  mimo że od 1 stycznia 2027 r. obowiązuje nowe minimalne wynagrodzenie?
+
+### P4. Zryczałtowana stopa składki wypadkowej dla płatnika do 9 ubezpieczonych (rozstrzygnięte 2026-11-27, bez eksperta)
+
+- Rozstrzygnięcie za rok 2026/2027: spoza materiałów ZUS stopę na ten rok podaje portal Fakturownia w tekście „Składka
+  wypadkowa 2026 – nowe stawki i jak ją ustalić” z 3 listopada 2026 r. (https://fakturownia.pl/aktualnosci/skadka-wypadkowa-2026-nowe-stawki-i-jak-ja-ustalic):
+  „Stawki składki wypadkowej 2026/2027: do 9 ubezpieczonych – stała stopa 1,67%”. Ta sama strona podaje, że stopa na rok
+  2026/2027 obowiązuje od 1 kwietnia 2026 r. do 31 marca 2027 r. Portal jest tylko źródłem kontrolnym; zgadza się
+  z komunikatem ZUS z 12 stycznia 2026 r. i z art. 28 ust. 1 ustawy wypadkowej (50% najwyższej stopy 3,33%
+  z załącznika nr 2 rozporządzenia, którego stóp od 1 kwietnia 2024 r. nie zmieniono). Urzędowego źródła spoza ZUS
+  (strony ministerstw, biznes.gov.pl po 1 kwietnia 2026 r.) nie znaleziono: biznes.gov.pl ma nadal aktualizację z 11 lutego
+  2026 r. `open_issue` usunięty z wersji 2026/2027.
+- Rozstrzygnięcie częściowe, tylko za rok 2025/2026: poradnik ZUS „Ustalanie stopy procentowej składki na ubezpieczenie
+  wypadkowe” (stan prawny na 1 stycznia 2026 r.) sam podaje stopę zryczałtowaną 1,67% dla płatnika zgłaszającego nie więcej
+  niż 9 ubezpieczonych. Spoza ZUS podaje ją biznes.gov.pl (aktualizacja 11 lutego 2026 r.: składkę 1,67% opłacają firmy, które
+  zgłosiły przeciętnie nie więcej niż 9 osób). Podaje ją też materiał ZUS województwa opolskiego przedrukowany przez Zieloną Linię
+  (stan prawny na 26 listopada 2025 r.). Zastrzeżenie wobec biznes.gov.pl opisane niżej nie przeszkadza: obie daty początku
+  stopy na tej stronie (1 kwietnia 2021 r. i 1 kwietnia 2024 r.) są wcześniejsze niż 1 kwietnia 2025 r., a cytowany przypis
+  podaje stopę i grupę płatników w stanie na 11 lutego 2026 r., czyli w trakcie roku 2025/2026; stopę ustala się na cały rok
+  składkowy (art. 27 ust. 1 ustawy wypadkowej). `open_issue` usunięty z wersji 2025/2026.
+- Za rok 2026/2027 pytanie było otwarte do 27 listopada 2026 r. (rozstrzygnięcie wyżej): stopę na ten rok podawały tylko komunikat ZUS z 12 stycznia 2026 r. (w części o tym roku)
+  i przedruk wypowiedzi rzeczniczki ZUS z 1 kwietnia 2026 r. Załącznik nr 2 rozporządzenia nie nazywa najwyższej stopy,
+  podaje tylko tabelę.
+
+- Wpis: `zus.stawka.wypadkowa_do_9` (2025-04-01 – 2026-03-31 i 2026-04-01 – 2027-03-31, 1,67%).
+- Zgłoszone: 2026-11-26.
+- Ustawa wypadkowa, art. 28 ust. 1: stopa wynosi 50% najwyższej stopy ustalonej na dany rok składkowy
+  dla grup działalności. Najwyższa stopa w tabeli z załącznika nr 2 rozporządzenia (Dz.U. 2025
+  poz. 1874) to 3,33, a § 6 ust. 2 każe zaokrąglać według zasady matematycznej. Kwotę 1,67% podają
+  wprost materiały ZUS (poradnik i strona o informacji ZUS IWA), za rok 2025/2026 także biznes.gov.pl, choć bez wskazania
+  roku składkowego (niżej), a za rok 2026/2027 portal Fakturownia (rozstrzygnięcie wyżej).
+- Pytanie (po rozstrzygnięciu za 2025/2026 dotyczyło już tylko roku 2026/2027): czy dla płatnika zgłaszającego nie więcej
+  niż 9 ubezpieczonych stopa w roku składkowym 2026/2027 wynosi 1,67%, i czy istnieje urzędowe źródło poza materiałami ZUS, które
+  podaje tę stopę wprost? Pierwszą część rozstrzyga drugi dowód opisany wyżej. Na drugą część odpowiedź jest przecząca:
+  urzędowego źródła spoza ZUS nie znaleziono (stan na 27 listopada 2026 r.). Nie blokuje to usunięcia `open_issue`, bo
+  wpis potrzebował drugiego dowodu, który sam podaje stopę na ten rok, a źródło spoza ZUS było tylko preferencją.
+
+- Materiały znalezione 2026-11-26 (historia; rok 2025/2026 rozstrzyga przypis z tej samej strony biznes.gov.pl, opisany wyżej):
+  - Za rok 2026/2027: przedruk wypowiedzi regionalnej rzeczniczki prasowej ZUS z 1 kwietnia 2026 r. na stronie Starostwa
+    Powiatowego w Hajnówce (https://samorzad.gov.pl/web/powiat-hajnowski/stopy-procentowe) podaje 1,67% i najwyższą stopę
+    3,33% od 1 kwietnia 2026 r. To nadal materiał ZUS, nie źródło spoza ZUS.
+  - Za rok 2025/2026: biznes.gov.pl (https://www.biznes.gov.pl/pl/portal/00274, aktualizacja 11 lutego 2026 r.) podaje
+    „Składka wypadkowa od 1.04.2024 (1,67%)”, ale nie wskazuje roku składkowego, a na tej samej stronie podaje też stopę
+    „od 1.04.2021”.
+
+### P18. Czy na ryczałcie przesyła się ewidencję przychodów (JPK_EWP) (rozstrzygnięte 2026-11-26, bez eksperta)
+
+- Rozstrzygnięcie: broszura MF o strukturze JPK_EWP(4) sama podaje wprost, że osoby fizyczne i spółki opodatkowane
+  ryczałtem od przychodów ewidencjonowanych, prowadzące ewidencję przychodów, „będą zobowiązane przesyłać plik XML zgodny
+  ze strukturą JPK_EWP”, i wskazuje art. 15 ust. 12 jako podstawę. Zgadza się to z ustawą: art. 15 ust. 1 nazywa ewidencję
+  przychodów „ewidencją”, a ust. 12 obejmuje podmioty „prowadzące ewidencję lub wykaz środków trwałych”. Strona KAS
+  „Struktury JPK w podatkach dochodowych” podaje dla ryczałtowców daty struktur JPK_EWP i JPK_ST z podstawą art. 15 ust. 12
+  i 13. Krok zasady poprawiony, P18 usunięty z `open_issue`. Ryczałtowiec prowadzący ewidencję przychodów przesyła ją
+  także wtedy, gdy nie ma środków trwałych.
+
+- Wpis: `zasada.jpk_pd_ryczalt` (od 2026-01-01).
+- Zgłoszone: 2026-11-26.
+- Ustawa o zryczałtowanym podatku dochodowym (Dz.U. 2025 poz. 843), art. 15 ust. 12: podmioty z ust. 1
+  „prowadzące ewidencję lub wykaz środków trwałych oraz wartości niematerialnych i prawnych są obowiązane prowadzić
+  tę ewidencję i wykaz przy użyciu programów komputerowych” i przesyłać je po zakończeniu roku do upływu terminu
+  zeznania. Art. 66 ust. 1 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) wymienia „księgi, ewidencje
+  i wykazy” z art. 15 ust. 12.
+- Broszura MF o strukturze JPK_EWP(4) (podatki.gov.pl) podaje, że podmioty prowadzące ewidencję przychodów „będą
+  zobowiązane przesyłać plik XML zgodny ze strukturą JPK_EWP”, i wskazuje art. 15 ust. 12 jako podstawę.
+- Strona MF o JPK_PD (podatki.gov.pl) podaje, że ustawa z 29 października 2021 r. nałożyła obowiązek prowadzenia
+  „ewidencji i wykazów prowadzonych dla celów podatków dochodowych” przy użyciu programów komputerowych
+  i ich przekazywania, wymienia JPK_EWP wśród pięciu struktur, które „JPK_PD obejmie”, i mówi o przesyłaniu danych
+  w postaci „obligatoryjnych plików JPK_PD”. Tekst art. 15 ust. 12 wymienia jednak tylko „ewidencję lub wykaz środków trwałych oraz
+  wartości niematerialnych i prawnych”.
+- Pytanie: czy art. 15 ust. 12 obejmuje ewidencję przychodów (czyli czy ryczałtowiec przesyła JPK_EWP), czy tylko
+  ewidencję lub wykaz środków trwałych oraz wartości niematerialnych i prawnych (JPK_ST)? Czy ryczałtowiec bez
+  środków trwałych przesyła cokolwiek?
+
+### P31. Termin wpisu przychodów do ewidencji za grudzień (rozstrzygnięte 2026-11-26, bez eksperta)
+
+- Rozstrzygnięcie: rozporządzenie w sprawie prowadzenia ewidencji przychodów (Dz.U. 2025 poz. 1294), § 6, samo podaje
+  wprost, że zapisy dokonuje się „najpóźniej do 20. dnia każdego miesiąca za miesiąc poprzedni”. Przepis obejmuje każdy
+  miesiąc i nie ma wyjątku dla grudnia, więc wpisy za grudzień dokonuje się do 20 stycznia. Rozporządzenie nie ma przepisów
+  przejściowych dla ewidencji (§ 10 dotyczy tylko wykazu środków trwałych). Termin nie zależy od kwartalnego wpłacania
+  ryczałtu. Wpis `termin.ewidencja_przychodow_wpis` nie ma otwartego pytania.
+
+- Wpis: `termin.ewidencja_przychodow_wpis` (od 2026-01-01).
+- Zgłoszone: 2026-11-26 (specyfikacja Staffkey, obszar A2).
+- Pytanie: czy termin wpisu przychodów za grudzień jest inny niż za pozostałe miesiące?
+
+### P57. Faktury poza KSeF do 10 000 zł miesięcznie w 2026 r.: czy prawo wraca w kolejnym miesiącu (rozstrzygnięte 2026-11-27, bez eksperta)
 
 - Rozstrzygnięcie: wyjaśnienia MF na ksef.podatki.gov.pl podają wprost, że prawo nie wraca. Wyjaśnienie „Co warto
   wiedzieć przed startem II etapu wdrożenia Krajowego Systemu e-Faktur” (31.03.2026): „Po przekroczeniu limitu nie wracasz
@@ -1026,68 +1144,3 @@ przypadku brzegowego, średnią.
 - Pytania: czy podatnik, który w danym miesiącu 2026 r. przekroczył 10 000 zł, może w kolejnym miesiącu znów wystawiać
   faktury poza KSeF, jeżeli w tym miesiącu nie przekroczy tej wartości? Czy po przekroczeniu traci prawo od faktury, którą
   przekroczono wartość (art. 145m ust. 2), czy, jak opisuje strona MF, próg oznacza brak obowiązku do końca 2026 r.?
-
-## P64. IP Box: odliczenie kosztów kwalifikowanych od dochodu z kwalifikowanego prawa (art. 30ca ust. 9a)
-
-- Wpis: `zasada.ip_box` (od 2026-01-01), krok o odliczeniu kosztów kwalifikowanych; `zasada.ulga_br` (od 2026-01-01), krok o podstawie odliczenia i krok o przepisach, których zasada nie opisuje.
-- Zgłoszone: 2026-11-26.
-- Ustawa o PIT (Dz.U. 2026 poz. 592), art. 30ca ust. 9a: „Od dochodu z kwalifikowanego prawa własności intelektualnej
-  podatnik może odliczyć koszty kwalifikowane określone w art. 26e ust. 2–3b, które doprowadziły do wytworzenia,
-  rozwinięcia lub ulepszenia przez podatnika tego prawa, przy czym przepisy art. 26e ust. 1 zdanie drugie i ust. 3c–10
-  stosuje się odpowiednio.” Ustęp dodała ustawa Dz.U. 2021 poz. 2105 (art. 1 pkt 55 lit. b), od 1 stycznia 2022 r.
-- Art. 30ca ust. 4: kwalifikowany dochód to iloczyn „dochodu z kwalifikowanego prawa własności intelektualnej”
-  i wskaźnika; ust. 3: podstawą opodatkowania jest suma kwalifikowanych dochodów.
-- Objaśnienia podatkowe MF z 15 lipca 2019 r. (IP Box), akapit 151, wydane przed dodaniem ust. 9a: „ulga B+R
-  nie podlega uwzględnieniu w obliczeniu podstawy opodatkowania podlegającej 5% podatkowi z IP Box”, a podatnik
-  nie może stosować obu preferencji do tego samego dochodu. Strony podatki.gov.pl o IP Box (aktualizacja 24.06.2026)
-  i o uldze badawczo-rozwojowej (aktualizacja 23.11.2026) nie opisują ust. 9a.
-- Ustawa o PIT, art. 26i ust. 1: „Podstawa obliczenia podatku ustalona zgodnie z art. 26 ust. 1, art. 30c ust. 2 lub
-  art. 30ca ust. 3 oraz po uprzednim odliczeniu kwot określonych w art. 26e […]”. Art. 26e ust. 1 w tekście jednolitym
-  z 2026 r. nadal odsyła tylko do podstawy ustalonej zgodnie z „art. 26 ust. 1 lub art. 30c ust. 2”, a ust. 9a przewiduje
-  odliczenie od dochodu z kwalifikowanego prawa, a nie od podstawy.
-- Pytania: czy odliczenie z ust. 9a pomniejsza dochód z kwalifikowanego prawa przed pomnożeniem przez wskaźnik
-  z ust. 4, czy kwalifikowany dochód po pomnożeniu? Czy akapit 151 objaśnień MF jest po 2021 r. nadal aktualny?
-  Czy art. 26i ust. 1 oznacza, że kwoty z art. 26e odlicza się także od podstawy z art. 30ca ust. 3, czy tylko opisuje
-  kolejność wobec odliczenia z ust. 9a?
-- Dalsze źródła sprawdzone 2026-11-27, bez rozstrzygnięcia:
-  - Formularz PIT/IP(5) (https://podatki.gov.pl/media/litajg0p/pit_ip_-5-02.pdf), wariant wskazany przez MF na lata 2023
-    i 2024: poz. 18 „Dochody z kwalifikowanych praw”, poz. 19 „Odliczenie zmniejszające dochód z kwalifikowanego prawa
-    z tytułu kosztów uzyskania przychodów poniesionych na działalność badawczo-rozwojową, które doprowadziły do wytworzenia,
-    rozwinięcia lub ulepszenia przez podatnika tego prawa”, poz. 20 „Kwalifikowany dochód (dochody) z kwalifikowanych praw
-    obliczony (obliczone) zgodnie z art. 30ca ust. 4 ustawy”. Objaśnienia nie mówią, czy odliczenie z poz. 19 stosuje się
-    przed wskaźnikiem z ust. 4, czy po nim; kolejność wynika tylko z układu pozycji. Na lata 2025 i 2026 MF nie podaje
-    wariantu tego formularza.
-
-## P70. Schemat KEDU 5.7: drugi dokument z przestrzenią nazw, wersją, nazwą pliku i datą początku obowiązywania
-
-- Wpis: `schemat.kedu` (od 2026-04-25).
-- Zgłoszone: 2026-11-27.
-- Specyfikacja ZUS „EWD Elektroniczna Wymiana Dokumentów. Specyfikacja wejścia – wyjścia”, wersja 2.27, podaje przestrzeń
-  nazw `http://www.zus.pl/2026/KEDU_5_7` i nową wersję schematu (kedu_5_7.xsd) „w związku ze zmianą struktury” dokumentów
-  ZUS DRA i ZUS RCA. Wersję 5.7 podaje tylko pośrednio, przez te nazwy (jej atrybut `wersja_schematu` ma inną wartość),
-  a daty, od której obowiązuje schemat, nie podaje.
-- Strona ZUS w BIP „Wymagania dla oprogramowania interfejsowego – dokumenty ubezpieczeniowe” podaje plik schematu dla
-  specyfikacji 2.27 i datę 25 kwietnia 2026 r., bez nazwy kedu_5_7.xsd. Plik XSD spod tego adresu ma w atrybutach
-  przestrzeń nazw KEDU_5_7 i wersję 5.7.0, ale nie ma w danych cytatu i nie podaje nazwy pliku ani daty.
-- Brakuje drugiego dokumentu z cytatem dla każdej z tych danych: przestrzeń nazw i nazwę pliku podaje z cytatem tylko
-  specyfikacja 2.27, wersję 5.7 wprost tylko plik XSD, a datę tylko strona w BIP. To pytanie o dokument, a nie
-  o interpretację przepisów.
-- Pytanie: czy od 25 kwietnia 2026 r. dokumenty ubezpieczeniowe przekazuje się do ZUS w schemacie KEDU w wersji 5.7
-  (kedu_5_7.xsd, przestrzeń nazw `http://www.zus.pl/2026/KEDU_5_7`)? Czy jest komunikat ZUS, informacja dla płatników
-  albo dokumentacja programu Płatnik, która podaje wprost wersję, nazwę pliku, przestrzeń nazw i datę?
-
-## P71. Kody tytułu ubezpieczenia z rozporządzenia Dz.U. 2026 poz. 518: drugi dokument z datą początku obowiązywania wykazu
-
-- Wpis: `zus.kod.tytul_ubezpieczenia` (od 2026-04-30).
-- Zgłoszone: 2026-11-27.
-- Rozporządzenie MRPiPS z 9 kwietnia 2026 r. w sprawie wzorów dokumentów ubezpieczeniowych (Dz.U. 2026 poz. 518)
-  podaje wykaz kodów w załączniku nr 24 i wchodzi w życie „po upływie 14 dni od dnia ogłoszenia”, czyli 30 kwietnia 2026 r.
-  Do dokumentów za okresy sprzed tego dnia stosuje się kody z rozporządzenia z 20 grudnia 2020 r. (§ 5).
-- Poza rozporządzeniem wykaz zgodny z nim podaje tylko portal pit.pl (źródło kontrolne), bez daty obowiązywania i bez
-  pozycji rozporządzenia w Dz.U. Poradnik ZUS „Ogólne zasady wypełniania i korygowania dokumentów ubezpieczeniowych”
-  (wydanie z sierpnia 2023 r.) ma wykaz ze stanem na styczeń 2022 r., bez kodów 05 14, 05 74 i 05 94. Specyfikacja ZUS
-  dla oprogramowania interfejsowego (wersja 2.27) nie zawiera wykazu kodów.
-- Brak drugiego dokumentu, który sam podaje, od kiedy obowiązuje wykaz z 2026 r. To pytanie o dokument, a nie
-  o interpretację przepisów.
-- Pytanie: czy wykaz kodów tytułu ubezpieczenia z załącznika nr 24 do rozporządzenia Dz.U. 2026 poz. 518 stosuje się
-  od 30 kwietnia 2026 r.? Czy jest aktualny poradnik albo komunikat ZUS, który podaje ten wykaz i datę wprost?
