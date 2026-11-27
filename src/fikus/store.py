@@ -41,6 +41,11 @@ class Store:
                     for ref in step.get("uses", []):
                         if ref not in self.params:
                             raise ValueError(f"{p.id}: krok odwołuje się do nieznanego parametru {ref}")
+        for p in self.params.values():
+            for v in p.versions:
+                for ref in v.see_also:
+                    if ref == p.id or ref not in self.params:
+                        raise ValueError(f"{p.id}: odsyłacz do nieznanego parametru {ref}")
 
     def get(self, pid: str, d: date) -> dict:
         """Wersja parametru obowiązująca w dniu d albo found=False z powodem."""
@@ -55,6 +60,7 @@ class Store:
             "confidence": v.confidence(),
             "verification": v.verification.model_dump(mode="json", exclude_none=True),
             "note": v.note,
+            "not_covered": v.not_covered, "see_also": v.see_also,
         }
 
     def unknown_profile(self, profile_id: str) -> dict | None:

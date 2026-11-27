@@ -75,9 +75,15 @@ class Version(BaseModel):
     sources: list[Source]
     verification: Verification
     note: str | None = None
+    # Czego wartość nie rozstrzyga, gdy sposób jej stosowania opisuje osobny parametr (decyzja
+    # z 27 listopada 2026 r.). Pytanie o sposób stosowania ma tamten parametr, nie ta wersja.
+    not_covered: str | None = None
+    see_also: list[str] = Field(default_factory=list)   # parametry, które opisują to, czego wartość nie rozstrzyga
 
     @model_validator(mode="after")
     def _check(self) -> "Version":
+        if bool(self.not_covered) != bool(self.see_also):
+            raise ValueError("opis tego, czego wartość nie rozstrzyga, wymaga listy parametrów, które to opisują, i odwrotnie")
         if self.valid_to and self.valid_to < self.valid_from:
             raise ValueError("koniec obowiązywania wersji jest wcześniejszy niż jej początek")
         if not any(s.kind == "primary" for s in self.sources):
