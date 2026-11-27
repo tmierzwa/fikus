@@ -737,6 +737,65 @@ przypadku brzegowego, średnią.
 - Pytanie: którą kwotę przychodu podaje się w takim przypadku przy zeznaniu PIT i przy plikach JPK? Czy można podać
   kwotę z dowolnego ze złożonych zeznań?
 
+## P43. Przychód na ryczałcie w polach ZUS DRA XI 13 i XII 22: pomniejszony o składki czy bez pomniejszenia
+
+- Wpis: `zasada.dra_bloki_zdrowotne` (od 2026-05-01), kroki 3 i 6.
+- Zgłoszone: 2026-11-27.
+- Ustawa o świadczeniach opieki zdrowotnej (Dz.U. 2025 poz. 1461), art. 81 ust. 2g: „Przychody, o których mowa
+  w ust. 2e i 2f, są pomniejszane o kwoty opłaconych składek na ubezpieczenia emerytalne, rentowe, chorobowe
+  i wypadkowe”, jeżeli nie zostały zaliczone do kosztów ani odliczone od dochodu. Od tak pomniejszonego przychodu
+  zależy próg, a więc podstawa i składka.
+- Wzór ZUS DRA (załącznik nr 16 do rozporządzenia Dz.U. 2026 poz. 518) w poradniku ZUS „ZUS DRA. Deklaracja
+  rozliczeniowa. Jak wypełnić i skorygować” (maj 2026): pole XI 13 „Suma przychodów w bieżącym roku kalendarzowym”,
+  przypis 9: „Kwota przychodów osiągniętych od początku roku kalendarzowego do końca miesiąca, za który dokonywane
+  jest rozliczenie”; pole XII 22 „Kwota przychodów osiągniętych z działalności gospodarczej w roku, którego dotyczy
+  roczne rozliczenie”. Przy polu XI 15 (przychód z poprzedniego roku) przypis 10 odsyła do art. 81 ust. 2h, który
+  wprost mówi o przychodzie pomniejszonym o składki.
+- Poradnik przy polach XI 13 i XII 22 nie wspomina o pomniejszeniu. W przykładach na ryczałcie pole XI 13
+  (wspólnik spółki cywilnej) i pole XII 22 (przedsiębiorca korzystający ze zwolnienia ze składki) zawierają sumę
+  przychodów podaną w opisie przykładu, a opisy nie mówią o składkach. Ten sam poradnik w opisie rocznej podstawy
+  na ryczałcie podaje: „Roczną podstawę ustalasz w oparciu o łączną kwotę przychodów z działalności gospodarczej.
+  Odejmujesz od tego opłacone składki na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe.”
+- Pytanie: czy w polach XI 13 i XII 22 wpisuje się przychód pomniejszony o składki z art. 81 ust. 2g, czy przychód
+  bez pomniejszenia (a pomniejszenie uwzględnia się tylko przy ustalaniu progu)?
+
+## P44. Które składki pomniejszają przychód na ryczałcie: zapłacone w okresie czy należne za jego miesiące
+
+- Wpis: `zasada.dra_bloki_zdrowotne` (od 2026-05-01), kroki 3 i 6. Tego samego sformułowania („opłacone składki”)
+  używa krok 1 zasady `zasada.ryczalt_zdrowotna_prog`; odwołanie do tego pytania dopisuje się tam osobno.
+- Zgłoszone: 2026-11-27.
+- Ustawa o świadczeniach opieki zdrowotnej (Dz.U. 2025 poz. 1461): art. 81 ust. 2g pomniejsza przychody
+  z ust. 2e (roczne) i 2f (od początku roku) o „kwoty opłaconych składek” bez wskazania, w jakim okresie zostały
+  opłacone; art. 81 ust. 2h przy przychodzie z poprzedniego roku mówi o składkach „opłaconych w poprzednim roku
+  kalendarzowym”.
+- Poradnik ZUS „ZUS DRA…” (maj 2026) przy rocznym rozliczeniu na ryczałcie: „Odejmujesz od tego opłacone składki
+  na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe”; przy skali podatkowej mówi o składkach
+  „zapłaconych od początku roku”. Składki za dany miesiąc są płatne w następnym miesiącu (termin.zus), więc obie
+  kwoty różnią się zwykle o składki za jeden miesiąc.
+- Pytanie: czy przy ustalaniu przychodu od początku roku (art. 81 ust. 2f) i przychodu rocznego (art. 81 ust. 2e)
+  odejmuje się składki faktycznie zapłacone w tym okresie (według dnia zapłaty), czy składki należne za miesiące
+  tego okresu? Jak traktuje się składki za grudzień zapłacone w styczniu następnego roku?
+
+## P45. Kwota do zwrotu w rocznym rozliczeniu (ZUS DRA, pole XII 27): składki należne czy wpłacone
+
+- Wpis: `zasada.dra_bloki_zdrowotne` (od 2026-05-01), krok 7.
+- Zgłoszone: 2026-11-27.
+- Ustawa o świadczeniach opieki zdrowotnej (Dz.U. 2025 poz. 1461): niedopłatę liczy się jako różnicę między roczną
+  składką „a sumą składek na ubezpieczenie zdrowotne wynikającą ze złożonych dokumentów za poszczególne miesiące”
+  (art. 81 ust. 2j), a zwrot jako różnicę, w której występuje „suma wpłaconych za poszczególne miesiące roku
+  składkowego albo roku kalendarzowego” składek (art. 81 ust. 2i).
+- Wzór ZUS DRA (w poradniku ZUS „ZUS DRA…”, maj 2026): pole XII 25 „Suma miesięcznych należnych składek wynikająca
+  ze złożonych dokumentów za rok, którego dotyczy roczne rozliczenie”, pole 26 „Kwota do dopłaty (p. 24 – p. 25)”,
+  pole 27 „Kwota do zwrotu (p. 25 – p. 24)”, z przypisem 17: „Wypełnij, jeśli składka roczna jest mniejsza od sumy
+  miesięcznych należnych składek wynikających ze złożonych dokumentów za rok, którego dotyczy roczne rozliczenie.”
+  Analogicznie pola 10–12 (skala) i 18–20 (podatek liniowy).
+- W przykładzie z poradnika (ryczałt, zwolnienie ze składki przez część roku) opis porównuje roczną składkę
+  z „opłaconymi składkami”, a w polu 25 wpisuje kwotę składek opłaconych za te miesiące; przykład nie pokazuje
+  przypadku, w którym składki należne i wpłacone się różnią.
+- Pytanie: gdy suma składek należnych za miesiące roku różni się od sumy składek faktycznie wpłaconych za te miesiące
+  (na przykład składka za jeden miesiąc nie została zapłacona albo zapłacono więcej), od której z nich ustala się
+  kwotę do zwrotu w polu 27? Czy pole 25 zawsze zawiera składki należne, także przy nadpłacie?
+
 ## P46. Wybór ryczałtu albo podatku liniowego w roku po utracie prawa do tej formy
 
 - Wpis: `zasada.wybor_formy_opodatkowania` (od 2026-01-01), krok o roku po utracie prawa.

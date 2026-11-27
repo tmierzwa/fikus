@@ -276,3 +276,328 @@
           na nich przed 1 maja i że rozliczenie na starych formularzach wymaga korekty. Który wzór stosuje się
           do deklaracji za kwiecień 2026 r. złożonej przed 1 maja 2026 r.? Nie dotyczy wartości ani okresu tej wersji. Pytanie do eksperta:
           docs/pytania-do-eksperta.md, P40.
+
+- id: schemat.kedu
+  name: Schemat elektroniczny KEDU dokumentów ubezpieczeniowych ZUS
+  kind: value
+  versions:
+    - valid_from: 2026-04-25
+      value:
+        schema: KEDU
+        version: "5.7"
+        namespace: http://www.zus.pl/2026/KEDU_5_7
+        xsd_file: kedu_5_7.xsd
+        specification: EWD 2.27
+      note: >-
+        Schemat KEDU (Kolekcja Elektronicznych Dokumentów Ubezpieczeniowych) opisuje plik XML z dokumentami
+        ubezpieczeniowymi, w tym z deklaracją ZUS DRA, przekazywany do ZUS w formie elektronicznej (art. 47a
+        ustawy o systemie ubezpieczeń społecznych). ZUS publikuje go w Biuletynie Informacji Publicznej razem ze
+        specyfikacją EWD (Elektroniczna Wymiana Dokumentów). Według specyfikacji 2.27 nowa wersja schematu
+        (kedu_5_7.xsd) wynika ze zmiany struktury dokumentów ZUS DRA i ZUS RCA. Datę początku obowiązywania
+        (25 kwietnia 2026 r.) podaje strona ZUS w BIP; wzór papierowy ZUS DRA z rozporządzenia Dz.U. 2026 poz. 518
+        obowiązuje od 1 maja 2026 r. (schemat.zus_dra). Plik XSD pod adresem z BIP podaje tę samą przestrzeń nazw
+        (targetNamespace) i wersję 5.7.0, ale skrypt cytatów nie sprawdza tekstu plików XSD, więc plik jest źródłem
+        bez cytatu. Poprzedniej wersji (kedu_5_6.xsd, od specyfikacji 2.23) nie wprowadzono.
+      sources:
+        - title: ZUS, EWD Elektroniczna Wymiana Dokumentów. Specyfikacja wejścia – wyjścia, wersja 2.27 (przestrzeń nazw w przykładzie pliku)
+          url: https://www.zus.pl/documents/493361/13983870/EWD+Elektroniczna+Wymiana+Dokument%C3%B3w.+Specyfikacja+wej%C5%9Bcia+-+wyj%C5%9Bcia.+Wersja+2.27+%5Bpdf+2%2C1+MB%5D.pdf/6f967072-4d65-3dd7-be04-00b05ebd506a
+          article: rozdział 2
+          confirms: [schema, namespace]
+          quote: '<KEDU wersja_schematu="1" xmlns="http://www.zus.pl/2026/KEDU_5_7"'
+          as_of: 2026-04-25
+        - title: ZUS, EWD Elektroniczna Wymiana Dokumentów. Specyfikacja wejścia – wyjścia, wersja 2.27 (historia zmian)
+          url: https://www.zus.pl/documents/493361/13983870/EWD+Elektroniczna+Wymiana+Dokument%C3%B3w.+Specyfikacja+wej%C5%9Bcia+-+wyj%C5%9Bcia.+Wersja+2.27+%5Bpdf+2%2C1+MB%5D.pdf/6f967072-4d65-3dd7-be04-00b05ebd506a
+          article: pkt 1.6.23
+          confirms: [xsd_file]
+          quote: "Wersja 2.27 • Uwzględnienie wydania nowej wersji kedu (kedu_5_7.xsd) w związku ze zmianą struktury dokumentów ZUS DRA i ZUS RCA."
+          as_of: 2026-04-25
+        - title: ZUS, EWD Elektroniczna Wymiana Dokumentów. Specyfikacja wejścia – wyjścia, wersja 2.27 (strona tytułowa)
+          url: https://www.zus.pl/documents/493361/13983870/EWD+Elektroniczna+Wymiana+Dokument%C3%B3w.+Specyfikacja+wej%C5%9Bcia+-+wyj%C5%9Bcia.+Wersja+2.27+%5Bpdf+2%2C1+MB%5D.pdf/6f967072-4d65-3dd7-be04-00b05ebd506a
+          confirms: [specification]
+          quote: "EWD Elektroniczna Wymiana Dokumentów Specyfikacja wejścia – wyjścia wersja 2.27"
+          as_of: 2026-04-25
+        - title: ZUS, Biuletyn Informacji Publicznej, Wymagania dla oprogramowania interfejsowego – dokumenty ubezpieczeniowe
+          url: https://www.zus.pl/web/biuletyn-informacji-publicznej/inne/wymagania-dla-oprogramowania-interfejsowego/dokumenty-ubezpieczeniowe
+          confirms: [schema, period]
+          quote: "Wersja elektroniczna schematu KEDU dla specyfikacji w wersji 2.27 Plik do pobrania w wersji: XSD [92 KB] - ważny od 25.04.2026 r."
+          as_of: 2026-11-27
+        - title: ZUS, Biuletyn Informacji Publicznej, Wymagania dla oprogramowania interfejsowego – dokumenty ubezpieczeniowe (nazwa specyfikacji)
+          url: https://www.zus.pl/web/biuletyn-informacji-publicznej/inne/wymagania-dla-oprogramowania-interfejsowego/dokumenty-ubezpieczeniowe
+          confirms: [specification]
+          quote: "EWD Elektroniczna Wymiana Dokumentów. Specyfikacja wejścia - wyjścia. Wersja 2.27"
+          as_of: 2026-11-27
+        - title: ZUS, plik XSD schematu KEDU dla specyfikacji w wersji 2.27 (targetNamespace i wersja 5.7.0; bez cytatu, bo skrypt nie sprawdza plików XSD)
+          url: https://www.zus.pl/documents/493361/13983870/Wersja+elektroniczna+schematu+KEDU+dla+specyfikacji+w+wersji+2.27+Plik+do+pobrania+w+wersji+XSD+%5B92+KB%5D+-+wa%C5%BCny+od+25.04..2026+r..xsd/197b27e0-9975-11a4-f0dc-0eca51672eb2
+          as_of: 2026-11-27
+      verification:
+        checked_at: 2026-11-27
+        agent_check: 2026-11-27
+        open_issue: >-
+          Przestrzeń nazw i nazwę pliku podaje z cytatem tylko specyfikacja EWD 2.27, a datę początku obowiązywania
+          tylko strona ZUS w BIP. Wersję 5.7 wprost podaje tylko plik XSD (atrybut version 5.7.0); specyfikacja daje ją
+          pośrednio, przez nazwy KEDU_5_7 i kedu_5_7.xsd (jej atrybut wersja_schematu to inna wartość). Pliku XSD
+          nie da się sprawdzić skryptem cytatów. Potrzebny drugi dokument z cytatem; to nie jest pytanie o interpretację przepisów.
+
+- id: zus.kod.termin_przesylania
+  name: Kod terminu przesyłania deklaracji i raportów (ZUS DRA, blok I, pole 01)
+  kind: value
+  versions:
+    - valid_from: 2026-04-30
+      value: {osobowosc_prawna: 3, pozostali_platnicy: 6}
+      note: >-
+        Kod wpisujesz w polu 01 bloku I deklaracji ZUS DRA. Kod 3 dotyczy płatników składek posiadających osobowość
+        prawną (termin do 15. dnia następnego miesiąca), kod 6 pozostałych płatników (termin do 20. dnia następnego
+        miesiąca), w tym osoby prowadzącej działalność, która opłaca składki wyłącznie za siebie (termin.zus).
+        Wykaz w załączniku nr 24 do rozporządzenia ma też kod 1 (jednostki budżetowe i samorządowe zakłady budżetowe,
+        do 5. dnia) i kod 5 (deklaracje za sędziów, prokuratorów, żołnierzy i funkcjonariuszy); kody 2 i 4 są skreślone.
+        Data początku obowiązywania to dzień wejścia w życie rozporządzenia Dz.U. 2026 poz. 518 (§ 8: 14 dni od
+        ogłoszenia 15 kwietnia 2026 r.); dokumenty wypełnia się kodami z załącznika nr 24 (§ 2). Te same kody
+        podawał poradnik ZUS w stanie na styczeń 2022 r., ale wersji sprzed 30 kwietnia 2026 r. nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 518, rozporządzenie MRPiPS z 9 kwietnia 2026 r. w sprawie wzorów dokumentów ubezpieczeniowych, załącznik nr 24 (kod 6)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/518/text.pdf
+          article: § 2, załącznik nr 24 część XII
+          quote: "6 - dla deklaracji składanych do 20. dnia następnego miesiąca - dla pozostałych płatników składek"
+        - title: Dz.U. 2026 poz. 518, załącznik nr 24 (kod 3)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/518/text.pdf
+          article: załącznik nr 24 część XII
+          quote: "3 - dla deklaracji składanych do 15. dnia następnego miesiąca - dla płatników składek posiadających osobowość prawną"
+        - title: Dz.U. 2026 poz. 518 (dokumenty wypełnia się kodami z załącznika nr 24)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/518/text.pdf
+          article: § 2
+          quote: "Dokumenty są wypełniane z użyciem kodów, których wykaz jest określony w załączniku nr 24 do rozporządzenia."
+        - title: ZUS, poradnik „ZUS DRA. Deklaracja rozliczeniowa. Jak wypełnić i skorygować”, maj 2026 (blok I, pole 01, podaje oba kody)
+          url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
+          independent: true
+          quote: "3 – dla deklaracji składanych do 15. dnia następnego miesiąca za miesiąc poprzedni (dotyczy płatników składek posiadających osobowość prawną), 6 – dla deklaracji składanych do 20. dnia następnego miesiąca za miesiąc poprzedni (dotyczy pozostałych płatników składek)."
+          as_of: 2026-05-01
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
+
+- id: zus.kod.tytul_ubezpieczenia
+  name: Kod tytułu ubezpieczenia osoby prowadzącej działalność (ZUS DRA, blok X, pole 01)
+  kind: value
+  versions:
+    - valid_from: 2026-04-30
+      value:
+        podmiot:
+          "0510": osoba prowadząca pozarolniczą działalność gospodarczą niemająca ustalonego prawa do renty z tytułu niezdolności do pracy, z podstawą wymiaru składek społecznych nie niższą niż 60% przeciętnego miesięcznego wynagrodzenia
+          "0512": osoba prowadząca pozarolniczą działalność gospodarczą mająca ustalone prawo do renty z tytułu niezdolności do pracy, z podstawą wymiaru składek społecznych nie niższą niż 60% przeciętnego miesięcznego wynagrodzenia
+          "0514": osoba prowadząca pozarolniczą działalność gospodarczą zwolniona z opłacania składek, z podstawą wymiaru składek społecznych równą 60% prognozowanego przeciętnego wynagrodzenia
+          "0540": osoba niepodlegająca ubezpieczeniom społecznym i podlegająca ubezpieczeniu zdrowotnemu, zgodnie z art. 18 ust. 1 Prawa przedsiębiorców
+          "0570": osoba prowadząca pozarolniczą działalność gospodarczą niemająca ustalonego prawa do renty z tytułu niezdolności do pracy, z podstawą wymiaru składek społecznych nie niższą niż 30% minimalnego wynagrodzenia
+          "0572": osoba prowadząca pozarolniczą działalność gospodarczą mająca ustalone prawo do renty z tytułu niezdolności do pracy, z podstawą wymiaru składek społecznych nie niższą niż 30% minimalnego wynagrodzenia
+          "0574": osoba prowadząca pozarolniczą działalność gospodarczą zwolniona z opłacania składek, z podstawą wymiaru składek społecznych równą 30% minimalnego wynagrodzenia
+          "0580": osoba prowadząca pozarolniczą działalność, której zasiłek macierzyński nie przekracza kwoty świadczenia rodzicielskiego
+          "0590": osoba prowadząca pozarolniczą działalność gospodarczą niemająca ustalonego prawa do renty z tytułu niezdolności do pracy, z podstawą wymiaru składek społecznych uzależnioną od dochodu
+          "0592": osoba prowadząca pozarolniczą działalność gospodarczą mająca ustalone prawo do renty z tytułu niezdolności do pracy, z podstawą wymiaru składek społecznych uzależnioną od dochodu
+          "0594": osoba prowadząca pozarolniczą działalność gospodarczą zwolniona z opłacania składek, z podstawą wymiaru składek społecznych uzależnioną od dochodu
+        prawo_do_emerytury_lub_renty:
+          "0": osoba, która nie ma ustalonego prawa do emerytury lub renty
+          "1": osoba, która ma ustalone prawo do emerytury
+          "2": osoba, która ma ustalone prawo do renty
+        stopien_niepelnosprawnosci:
+          "0": osoba nieposiadająca orzeczenia o niepełnosprawności lub osoba, która posiada orzeczenie i nie przedłożyła go płatnikowi składek
+          "1": orzeczenie o lekkim stopniu niepełnosprawności przedłożone płatnikowi składek
+          "2": orzeczenie o umiarkowanym stopniu niepełnosprawności przedłożone płatnikowi składek
+          "3": orzeczenie o znacznym stopniu niepełnosprawności przedłożone płatnikowi składek
+          "4": orzeczenie o niepełnosprawności wydawane osobom do 16. roku życia przedłożone płatnikowi
+      note: >-
+        Kod tytułu ubezpieczenia ma 6 znaków: 4 znaki podmiotu podstawowego z rozszerzeniem (klucze w części podmiot),
+        1 znak prawa do emerytury lub renty i 1 znak stopnia niepełnosprawności. W bloku X deklaracji ZUS DRA wpisujesz
+        kod, który podałeś w zgłoszeniu do ubezpieczeń. Część podmiot zawiera tylko kody grupy 05 dla osoby
+        prowadzącej pozarolniczą działalność gospodarczą i osoby z art. 18 ust. 1 Prawa przedsiębiorców; opisy są
+        skrócone, pełne brzmienie i pozostałe kody (w tym 05 11 i 05 81 dla osób współpracujących, 05 13 dla korekt za okresy
+        do grudnia 2007 r., 05 20 twórca, 05 30 artysta, 05 43, 05 44) są w załączniku nr 24. Wybór kodu dla konkretnej osoby zależy od tytułu ubezpieczenia
+        i podstawy wymiaru składek; ten wpis go nie opisuje. Data początku obowiązywania to dzień wejścia w życie
+        rozporządzenia Dz.U. 2026 poz. 518; do dokumentów dotyczących okresu sprzed tego dnia stosuje się kody
+        tytułu ubezpieczenia z rozporządzenia z 20 grudnia 2020 r. obowiązujące w tamtym okresie (§ 5). Wersji
+        wcześniejszych nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 518, rozporządzenie MRPiPS z 9 kwietnia 2026 r. w sprawie wzorów dokumentów ubezpieczeniowych, załącznik nr 24 (budowa kodu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/518/text.pdf
+          article: § 2, załącznik nr 24 część I
+          quote: "05 70 - osoba prowadząca pozarolniczą działalność gospodarczą niemająca ustalonego prawa do renty z tytułu niezdolności do pracy, dla której podstawę wymiaru składek na ubezpieczenia społeczne stanowi zadeklarowana kwota nieniższa niż 30 % kwoty minimalnego wynagrodzenia"
+        - title: Dz.U. 2026 poz. 518, załącznik nr 24 część I pkt 2 (prawo do emerytury lub renty)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/518/text.pdf
+          article: załącznik nr 24 część I pkt 2
+          confirms: [prawo_do_emerytury_lub_renty]
+          quote: "0 - osoba, która nie ma ustalonego prawa do emerytury lub renty 1 - osoba, która ma ustalone prawo do emerytury 2 - osoba, która ma ustalone prawo do renty"
+        - title: Dz.U. 2026 poz. 518, załącznik nr 24 część I pkt 3 (stopień niepełnosprawności)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/518/text.pdf
+          article: załącznik nr 24 część I pkt 3
+          quote: "3 - osoba, która przedłożyła płatnikowi składek orzeczenie o znacznym stopniu niepełnosprawności 4 - osoba, która przedłożyła płatnikowi orzeczenie o niepełnosprawności wydawane osobom do 16. roku życia"
+        - title: Dz.U. 2026 poz. 518 (wejście w życie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/518/text.pdf
+          article: § 8
+          quote: "Rozporządzenie wchodzi w życie po upływie 14 dni od dnia ogłoszenia"
+        - title: Dz.U. 2026 poz. 518 (kody za okresy sprzed wejścia w życie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/518/text.pdf
+          article: § 5
+          quote: "W przypadku przekazywania dokumentu dotyczącego okresu przed dniem wejścia w życie niniejszego rozporządzenia stosuje się kody tytułu ubezpieczenia określone w rozporządzeniu, o którym mowa w § 7"
+        - title: ZUS, poradnik „Ogólne zasady wypełniania i korygowania dokumentów ubezpieczeniowych”, rozdział VII (kody, stan na styczeń 2022 r.; prawo do emerytury lub renty)
+          url: https://www.zus.pl/documents/10182/167567/Ogolne_dok_ubezp.pdf
+          quote: "osoba, która nie ma ustalonego prawa do emerytury lub renty,"
+          as_of: 2022-01-01
+        - title: ZUS, poradnik „Ogólne zasady wypełniania i korygowania dokumentów ubezpieczeniowych”, rozdział VII (kody, stan na styczeń 2022 r.; stopień niepełnosprawności)
+          url: https://www.zus.pl/documents/10182/167567/Ogolne_dok_ubezp.pdf
+          quote: "osoba, która przedłożyła płatnikowi orzeczenie o niepełnosprawności wydawane osobom do 16 roku życia."
+          as_of: 2022-01-01
+        - title: ZUS, poradnik „ZUS DRA. Deklaracja rozliczeniowa. Jak wypełnić i skorygować”, maj 2026 (blok X, pole 01)
+          url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
+          quote: "który podałeś w zgłoszeniu do ubezpieczeń. Obowiązujące kody tytułów ubezpieczeń znajdziesz w poradniku Ogólne zasady wypełniania i korygowania dokumentów ubezpieczeniowych"
+          as_of: 2026-05-01
+      verification:
+        checked_at: 2026-11-27
+        agent_check: 2026-11-27
+        open_issue: >-
+          Wykaz kodów i datę początku obowiązywania podaje w całości tylko rozporządzenie Dz.U. 2026 poz. 518. Poradnik ZUS „Ogólne zasady wypełniania i korygowania dokumentów ubezpieczeniowych” jest
+          w stanie na styczeń 2022 r.: nie ma kodów 05 14, 05 74 i 05 94, a przy 05 90 i 05 92 podaje podstawę
+          „uzależnioną od przychodu”, a nie od dochodu. Potrzebny aktualny drugi dokument z wykazem kodów; to nie jest
+          pytanie o interpretację przepisów.
+
+- id: zasada.dra_finansowanie_skladek
+  name: Kolumny finansowania składek w deklaracji ZUS DRA za siebie (bloki IV i VI)
+  kind: rule
+  versions:
+    - valid_from: 2026-05-01
+      value:
+        steps:
+          - text: Składki na własne ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe z tytułu prowadzenia działalności finansujesz w całości z własnych środków jako ubezpieczony.
+            uses: []
+            basis: art. 16 ust. 4 pkt 1 ustawy o systemie ubezpieczeń społecznych
+          - text: Jeżeli opłacasz składki wyłącznie za siebie, w bloku IV wykazujesz je w polach składek finansowanych przez ubezpieczonego (pola 04–06 dla ubezpieczeń emerytalnego i rentowych, pola 22–24 dla ubezpieczeń chorobowego i wypadkowego). Pól składek finansowanych przez płatnika (07–09 i 25–27), przez budżet państwa i przez Fundusz Kościelny nie wypełniasz.
+            uses: [schemat.zus_dra]
+            basis: poradnik ZUS „ZUS DRA. Deklaracja rozliczeniowa. Jak wypełnić i skorygować” (maj 2026), przykład 1, blok IV
+          - text: Składkę zdrowotną za siebie wykazujesz w bloku VI w polu 02 (składka finansowana przez ubezpieczonego), jako sumę składek ustalonych dla form opodatkowania wykazanych w bloku XI. Pola 01 (składka finansowana przez płatnika) nie wypełniasz.
+            uses: [zasada.dra_bloki_zdrowotne]
+            basis: poradnik ZUS „ZUS DRA. Deklaracja rozliczeniowa. Jak wypełnić i skorygować” (maj 2026), przykład 1, blok VI
+          - text: Ta zasada nie opisuje składek osób współpracujących, które finansujesz jako płatnik, ani miesięcy objętych zwolnieniem z opłacenia składek z art. 17a (wakacje składkowe), za które składki finansuje budżet państwa.
+            uses: []
+            basis: art. 16 ust. 4a i 5a ustawy o systemie ubezpieczeń społecznych
+      note: >-
+        Numery pól odpowiadają wzorowi ZUS DRA z załącznika nr 16 do rozporządzenia Dz.U. 2026 poz. 518 (od 1 maja
+        2026 r., schemat.zus_dra), stąd data początku obowiązywania; art. 16 ust. 4 obowiązywał już wcześniej.
+        Kroki o polach opisują przykład 1 z poradnika ZUS: deklarację osoby, która opłaca składki tylko za siebie.
+        Żadne źródło poza materiałami ZUS nie opisuje tych pól, więc wersja nie ma drugiego niezależnego dowodu.
+      sources:
+        - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (finansowanie składek osób prowadzących działalność)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
+          article: art. 16 ust. 4
+          quote: "osób prowadzących pozarolniczą działalność, 2) osób, o których mowa w art. 7, 3) marynarzy – finansują w całości, z własnych środków, sami ubezpieczeni"
+        - title: ZUS, poradnik „ZUS DRA. Deklaracja rozliczeniowa. Jak wypełnić i skorygować”, maj 2026 (przykład 1, osoba opłacająca składki tylko za siebie)
+          url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
+          quote: "Na stronach 4–7 przedstawiliśmy wzór wypełnionej deklaracji rozliczeniowej za maj 2026 r. osoby, która opłaca składki tylko za siebie."
+          as_of: 2026-05-01
+        - title: ZUS, poradnik „ZUS DRA…”, maj 2026 (blok IV, pole 07)
+          url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
+          quote: "W polu 07 – wpisz kwotę składki na ubezpieczenie emerytalne finansowanej przez Ciebie. W naszym przykładzie nie wypełniasz tego pola, bo składka finansowana jest tylko przez ubezpieczonego."
+          as_of: 2026-05-01
+        - title: ZUS, poradnik „ZUS DRA…”, maj 2026 (blok IV, pole 23)
+          url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
+          quote: "kwotę składek na ubezpieczenie wypadkowe finansowanych przez ubezpieczonego"
+          as_of: 2026-05-01
+        - title: ZUS, poradnik „ZUS DRA…”, maj 2026 (blok VI, pole 02)
+          url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
+          quote: "wysokość składki na ubezpieczenie zdrowotne, które finansuje ubezpieczony. W tym polu wpisujesz sumę składek ustalonych dla form opodatkowania wykazanych w bloku XI."
+          as_of: 2026-05-01
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
+
+- id: zasada.dra_bloki_zdrowotne
+  name: Składka zdrowotna w deklaracji ZUS DRA za siebie (bloki XI i XII)
+  kind: rule
+  versions:
+    - valid_from: 2026-05-01
+      value:
+        steps:
+          - text: W bloku XI zaznaczasz formę opodatkowania, którą stosowałeś w rozliczanym miesiącu, i wypełniasz pola tej formy.
+            uses: [schemat.zus_dra]
+            basis: poradnik ZUS „ZUS DRA. Deklaracja rozliczeniowa. Jak wypełnić i skorygować” (maj 2026), blok XI
+          - text: Na skali podatkowej w polu 02 wpisujesz dochód uzyskany w miesiącu bezpośrednio poprzedzającym rozliczany miesiąc, w polu 03 podstawę wymiaru, a w polu 04 składkę. Na podatku liniowym w polach 06–08 wpisujesz te same dane, a dochód ustalasz tak samo jak na skali. Jak ustalić dochód i podstawę, opisują zasady składki zdrowotnej dla tych form.
+            uses: [zasada.skala_zdrowotna, zasada.liniowy_zdrowotna]
+            basis: art. 81 ust. 2c ustawy o świadczeniach opieki zdrowotnej; poradnik ZUS (maj 2026), blok XI, pola 02–08
+          - text: Na ryczałcie w polu 13 wpisujesz sumę przychodów od początku roku kalendarzowego do końca rozliczanego miesiąca, jeżeli ustalasz składkę według przychodów bieżącego roku, a w polu 16 podstawę wymiaru i w polu 17 składkę dla progu przychodu. Czy w tym polu wpisujesz przychód pomniejszony o opłacone składki emerytalną, rentową, chorobową i wypadkową (art. 81 ust. 2g), czy przychód bez pomniejszenia, i czy chodzi o składki zapłacone w tym okresie, czy należne za jego miesiące, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [zasada.ryczalt_zdrowotna_prog, zdrowotna.ryczalt.podstawa, zdrowotna.ryczalt.skladka]
+            basis: art. 81 ust. 2f i 2g ustawy o świadczeniach opieki zdrowotnej; poradnik ZUS (maj 2026), blok XI, pola 13, 16 i 17 i przypis 9 wzoru
+          - text: Jeżeli ustalasz składkę według przychodu z poprzedniego roku, zaznaczasz pole 14, a w polu 15 wpisujesz kwotę rocznych przychodów w rozumieniu art. 81 ust. 2h, czyli przychód z poprzedniego roku pomniejszony o składki emerytalną, rentową, chorobową i wypadkową opłacone w poprzednim roku, jeżeli nie zostały zaliczone do kosztów ani odliczone od dochodu. Podstawę i składkę wpisujesz tak jak przy przychodach bieżącego roku, w polach 16 i 17.
+            uses: [zasada.ryczalt_zdrowotna_prog_poprzedni_rok, zdrowotna.ryczalt.podstawa, zdrowotna.ryczalt.skladka]
+            basis: art. 81 ust. 2f i 2h ustawy o świadczeniach opieki zdrowotnej; poradnik ZUS (maj 2026), blok XI, pola 14–17 i przypis 10 wzoru
+          - text: Blok XII wypełniasz w deklaracji, w której wykazujesz roczne rozliczenie składki zdrowotnej, czyli za kwiecień następnego roku. W polu 01 wpisujesz rok, którego dotyczy rozliczenie. Dla skali podatkowej służą pola 04–12, dla podatku liniowego pola 13–20, a dla ryczałtu pola 21–27.
+            uses: [zasada.roczne_rozliczenie_zdrowotnej, termin.roczne_rozliczenie_zdrowotnej]
+            basis: art. 81 ust. 2k i 2ka ustawy o świadczeniach opieki zdrowotnej; poradnik ZUS (maj 2026), blok XII
+          - text: Na ryczałcie w polu 22 wpisujesz kwotę przychodów z działalności w roku, którego dotyczy rozliczenie, w polu 23 roczną podstawę wymiaru, a w polu 24 roczną składkę. Czy w polu 22 wpisujesz przychód pomniejszony o opłacone składki, czy bez pomniejszenia, i czy chodzi o składki zapłacone w roku, czy należne za jego miesiące, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [zasada.ryczalt_zdrowotna_prog]
+            basis: art. 81 ust. 2e i 2g ustawy o świadczeniach opieki zdrowotnej; poradnik ZUS (maj 2026), blok XII, pola 21–24
+          - text: Pole 25 (pola 10 i 18 dla skali i podatku liniowego) wzór opisuje jako sumę miesięcznych należnych składek wynikającą ze złożonych dokumentów za rok, którego dotyczy rozliczenie. Pole 26 to według wzoru kwota do dopłaty (pole 24 minus pole 25), a pole 27 kwota do zwrotu (pole 25 minus pole 24). W polach 28 i 29 wpisujesz łączną kwotę do dopłaty albo do zwrotu dla wszystkich form opodatkowania. Ustawa liczy niedopłatę od sumy składek wynikającej ze złożonych dokumentów, a zwrot od sumy składek wpłaconych za poszczególne miesiące. Co wpisujesz w polu 25 i od której kwoty ustalasz zwrot, gdy składki należne i wpłacone się różnią, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [zasada.roczne_rozliczenie_zdrowotnej]
+            basis: art. 81 ust. 2i i 2j ustawy o świadczeniach opieki zdrowotnej; poradnik ZUS (maj 2026), blok XII, pola 10 i 25–29
+          - text: Ta zasada nie opisuje pól dla karty podatkowej i osób bez formy opodatkowania, pól XII 02–03, 06–07 i 15 (zmiana formy opodatkowania w 2022 r., zbycie składników majątku, obniżenie składki do wysokości zaliczki), korekty rozliczenia rocznego ani tego, czy w polu 25 uwzględnia się deklaracje korygujące za miesiące roku rozliczenia.
+            uses: []
+            basis: poradnik ZUS (maj 2026), bloki XI i XII
+      note: >-
+        Numery pól odpowiadają wzorowi ZUS DRA z załącznika nr 16 do rozporządzenia Dz.U. 2026 poz. 518 (od 1 maja
+        2026 r., schemat.zus_dra), stąd data początku obowiązywania. Opisy pól pochodzą z poradnika ZUS z maja 2026 r.
+        i z przypisów wzoru, które poradnik przytacza. W przykładach z poradnika na ryczałcie pole XI 13 (pan Czesław) i pole
+        XII 22 (pan Jan) zawierają sumę przychodów podaną w opisie przykładu, bez wzmianki o składkach, a ten sam
+        poradnik w opisie rocznej podstawy na ryczałcie każe odjąć od przychodów opłacone składki. Żadne źródło poza
+        materiałami ZUS nie opisuje tych pól, więc wersja nie ma drugiego niezależnego dowodu.
+      sources:
+        - title: ZUS, poradnik „ZUS DRA. Deklaracja rozliczeniowa. Jak wypełnić i skorygować”, maj 2026 (blok XI, pole 02)
+          url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
+          quote: "W polu 02 – wpisz wysokość dochodu, który uzyskałeś w miesiącu bezpośrednio poprzedzającym"
+          as_of: 2026-05-01
+        - title: ZUS, poradnik „ZUS DRA…”, maj 2026 (blok XI, pole 06)
+          url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
+          quote: "W polu 06 – wpisz dochód uzyskany w miesiącu, który bezpośrednio poprzedza rozliczany miesiąc. Dochód ustalasz tak, jak w polu 02."
+          as_of: 2026-05-01
+        - title: ZUS, poradnik „ZUS DRA…”, maj 2026 (blok XI, pole 13)
+          url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
+          quote: "W polu 13 – wpisz sumę przychodów z bieżącego roku kalendarzowego, jeśli chcesz ustalać składkę na podstawie bieżących przychodów. Jest to wysokość przychodów osiągniętych od początku roku kalendarzowego do końca miesiąca, który rozliczasz."
+          as_of: 2026-05-01
+        - title: ZUS, poradnik „ZUS DRA…”, maj 2026 (blok XI, pole 15)
+          url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
+          quote: "W polu 15 – wpisz sumę przychodów w poprzednim roku kalendarzowym. Jest to kwota rocznych przychodów w rozumieniu art. 81 ust. 2h"
+          as_of: 2026-05-01
+        - title: ZUS, poradnik „ZUS DRA…”, maj 2026 (wzór, blok XII, pole 25)
+          url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
+          quote: "25. Suma miesięcznych należnych składek wynikająca ze złożonych dokumentów za rok, którego dotyczy roczne rozliczenie"
+          as_of: 2026-05-01
+        - title: ZUS, poradnik „ZUS DRA…”, maj 2026 (blok XII, pole 10)
+          url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
+          quote: "W polu 10 – wpisz sumę miesięcznych składek, która wynika z dokumentów rozliczeniowych za poszczególne miesiące w roku, za który dokonujesz rozliczenia."
+          as_of: 2026-05-01
+        - title: ZUS, poradnik „ZUS DRA…”, maj 2026 (wzór, blok XII, pole 22)
+          url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
+          quote: "22. Kwota przychodów osiągniętych z działalności gospodarczej w roku, którego dotyczy roczne rozliczenie"
+          as_of: 2026-05-01
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (pomniejszenie przychodów o składki)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2g
+          quote: "Przychody, o których mowa w ust. 2e i 2f, są pomniejszane o kwoty opłaconych składek na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (przychód z poprzedniego roku)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2h
+          quote: "kwotę przychodów uzyskanych w poprzednim roku kalendarzowym pomniejszoną o kwotę opłaconych w poprzednim roku kalendarzowym składek na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (niedopłata)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2j
+          quote: "a sumą składek na ubezpieczenie zdrowotne wynikającą ze złożonych dokumentów za poszczególne miesiące roku składkowego albo roku kalendarzowego"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (nadpłata)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2i
+          quote: "suma wpłaconych za poszczególne miesiące roku składkowego albo roku kalendarzowego"
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (miesięczna podstawa na skali)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
+          article: art. 81 ust. 2c
+          quote: "dochód z działalności gospodarczej uzyskany w miesiącu poprzedzającym miesiąc, za który opłacana jest składka"
+      verification:
+        checked_at: 2026-11-27
+        agent_check: 2026-11-27
+        open_issue: >-
+          Art. 81 ust. 2g ustawy o świadczeniach opieki zdrowotnej pomniejsza przychody z ust. 2e i 2f o „kwoty opłaconych
+          składek” bez wskazania okresu, a ust. 2h przy przychodzie z poprzedniego roku mówi o składkach „opłaconych
+          w poprzednim roku kalendarzowym”. Wzór ZUS DRA w polach XI 13 i XII 22 mówi o „przychodach”; poradnik ZUS przy
+          tych polach nie wspomina o pomniejszeniu, a w przykładach wpisuje w nie sumę przychodów, choć w opisie rocznej
+          podstawy na ryczałcie każe odjąć opłacone składki. Pytania do eksperta:
+          docs/pytania-do-eksperta.md, P43 (przychód w polach XI 13 i XII 22), P44 (składki zapłacone w okresie czy
+          należne za jego miesiące) i P45 (kwota do zwrotu w polu XII 27: składki należne czy wpłacone; art. 81 ust. 2i
+          mówi o „sumie wpłaconych” składek, a pole 25 o składkach należnych).
