@@ -25,7 +25,7 @@ Fikus to serwer MCP z parametrami przepisów dla JDG. To samodzielny projekt spo
   - `expert`: tylko z odpowiedzi eksperta przekazanej przez opiekuna, z datą i podstawą. Imię i nazwisko wpisujesz tylko wtedy, gdy ekspert zgodził się na publikację; inaczej wpisujesz samą kwalifikację.
 - Gdy źródła się różnią, przepis wymaga interpretacji albo brakuje drugiego źródła, wpisz `open_issue` i dopisz pytanie w `docs/pytania-do-eksperta.md`. Nie zgaduj.
 - `open_issue_scope: edge_case` wpisujesz tylko wtedy, gdy pytanie nie dotyczy samej wartości ani rdzenia zasady, a krok opisuje ten przypadek jako niewyjaśniony. W razie wątpliwości zostaw zakres `value` (domyślny). Zakres sprawdza `weryfikator-zrodel`.
-- Źródłem pierwotnym nie jest tabela kursów NBP. Broszura informacyjna MF lub KAS jest komunikatem MF.
+- Źródłem pierwotnym nie jest tabela kursów NBP. Broszura informacyjna MF lub KAS jest komunikatem MF, a poradnik ZUS opublikowany na zus.pl jest komunikatem ZUS.
 - Przed commitem uruchom `pytest` i `python scripts/sprawdz_cytaty.py`. Skrypt pobiera oficjalne teksty i odrzuca cytat, którego w nich nie ma.
 
 ## Czego nie robić

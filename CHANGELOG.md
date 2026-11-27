@@ -17,6 +17,7 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 - `sprawdz_cytaty.py` pobiera brakujące teksty źródeł równolegle: najwyżej 6 naraz i 2 z jednego serwera.
   Cytaty sprawdza dalej po kolei, więc komunikaty, podsumowanie i kod wyjścia się nie zmieniają.
   Zapis tekstu do pamięci podręcznej idzie przez plik tymczasowy, a dopisanie do `indeks.tsv` pod blokadą.
+- Zasady źródeł: poradnik ZUS opublikowany na zus.pl jest komunikatem ZUS, czyli źródłem pierwotnym (CLAUDE.md).
 
 ## [0.4.5] - 2026-11-27
 
