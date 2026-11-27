@@ -88,13 +88,16 @@
           - text: Te wyłączenia z art. 8 ust. 1 nie dotyczą ryczałtu od przychodów z najmu, podnajmu, dzierżawy, poddzierżawy i podobnych umów zawieranych poza działalnością gospodarczą.
             uses: []
             basis: art. 6 ust. 1a i 1b ustawy o zryczałtowanym podatku dochodowym
-          - text: Ta zasada nie opisuje warunków ryczałtu dla przedsiębiorstwa w spadku (art. 6 ust. 4a i 6a) ani dla podatników, którzy w poprzednim roku byli opodatkowani kartą podatkową (art. 6 ust. 6), ani przychodów ze sprzedaży przetworzonych w sposób inny niż przemysłowy produktów roślinnych i zwierzęcych z art. 20 ust. 1c ustawy o PIT (art. 6 ust. 1d i 7).
-            uses: []
-            basis: art. 6 ust. 1d, 4a, 6, 6a i 7 ustawy o zryczałtowanym podatku dochodowym; art. 20 ust. 1c ustawy o podatku dochodowym od osób fizycznych
       note: >-
         Tekst jednolity uwzględnia zmiany ogłoszone przed 2025-06-12; data początku obowiązywania (2026-01-01) nie jest
         potwierdzona źródłem. Nowelizacje ogłoszone później (Dz.U. 2026 poz. 779, 1098 i 1541) nie zmieniają art. 4, 6 ani 8.
         Wcześniejszych wersji nie wprowadzono.
+        Korekta z 27 listopada 2026 r.: usunięty krok 7.
+      not_covered: >-
+        Warunków ryczałtu dla przedsiębiorstwa w spadku (art. 6 ust. 4a i 6a ustawy o zryczałtowanym podatku
+        dochodowym) i dla podatników, którzy w poprzednim roku byli opodatkowani kartą podatkową (art. 6 ust. 6),
+        oraz przychodów ze sprzedaży przetworzonych w sposób inny niż przemysłowy produktów roślinnych i zwierzęcych
+        z art. 20 ust. 1c ustawy o podatku dochodowym od osób fizycznych (art. 6 ust. 1d i 7).
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (wyłączenia)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
@@ -151,7 +154,7 @@
             opodatkowane podatkiem akcyzowym, z wyjątkiem wytwarzania energii elektrycznej z odnawialnych źródeł energii;
           as_of: 2026-11-27
           confirms: [step_2]
-      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
+      verification: {checked_at: 2026-11-27}
 
 - id: zasada.liniowy_wylaczenia
   name: Warunki podatku liniowego i utrata prawa do niego
@@ -179,16 +182,18 @@
           - text: Przepis o czynnościach wykonywanych w ramach stosunku pracy w roku poprzedzającym rok podatkowy (art. 9a ust. 3 pkt 1) jest uchylony; przy podatku liniowym liczą się tylko czynności wykonywane w roku podatkowym.
             uses: []
             basis: art. 9a ust. 3 pkt 1 i 2 ustawy o podatku dochodowym od osób fizycznych
-          - text: Wyłączenie wspólnego opodatkowania z małżonkiem i sposobu opodatkowania dla osoby samotnie wychowującej dziecko przy stosowaniu podatku liniowego opisuje osobna zasada.
-            uses: [zasada.opodatkowanie_laczne_wylaczenia]
-            basis: art. 6 ust. 8 pkt 1 lit. a ustawy o podatku dochodowym od osób fizycznych
-          - text: Ta zasada nie opisuje obowiązku stosowania podatku liniowego przez przedsiębiorstwo w spadku (art. 9a ust. 4a) ani wyboru podatku liniowego dla działów specjalnych produkcji rolnej (art. 9a ust. 7 i 8).
-            uses: []
-            basis: art. 9a ust. 4a, 7 i 8 ustawy o podatku dochodowym od osób fizycznych
       note: >-
         Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku obowiązywania (2026-01-01) nie jest
         potwierdzona źródłem. Nowelizacje ogłoszone później (Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354,
         1371, 1541, 1542 i 1556) nie zmieniają art. 6 ust. 8, art. 9a ani art. 30c. Wcześniejszych wersji nie wprowadzono.
+        Korekta z 27 listopada 2026 r.: usunięte kroki 5 i 6.
+      not_covered: >-
+        Wyłączenia wspólnego opodatkowania z małżonkiem i sposobu opodatkowania dla osoby samotnie wychowującej
+        dziecko przy podatku liniowym (art. 6 ust. 8 pkt 1 lit. a ustawy o podatku dochodowym od osób fizycznych;
+        opisują je zasady wspólnego opodatkowania małżonków i opodatkowania samotnego rodzica). Obowiązku stosowania
+        podatku liniowego przez przedsiębiorstwo w spadku (art. 9a ust. 4a) i wyboru podatku liniowego dla działów
+        specjalnych produkcji rolnej (art. 9a ust. 7 i 8).
+      see_also: [zasada.malzonkowie_wspolne_opodatkowanie, zasada.samotny_rodzic_opodatkowanie]
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (skala bez wyboru)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -218,7 +223,7 @@
           url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
           quote: "świadczyć usług na rzecz byłego lub obecnego pracodawcy, odpowiadających czynnościom, które wykonywałeś(-aś) lub wykonujesz w roku podatkowym w ramach stosunku pracy lub spółdzielczego stosunku pracy"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification: {checked_at: 2026-11-27}
 
 - id: zasada.wybor_formy_opodatkowania
   name: Wybór ryczałtu albo podatku liniowego, kontynuacja wyboru i rezygnacja
