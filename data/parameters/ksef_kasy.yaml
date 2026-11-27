@@ -189,7 +189,7 @@
           url: https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/zakres-obowiazkowego-ksef/
           quote: "W KSeF nie są wystawiane także faktury dokumentujące czynności dokonane przez podatnika korzystającego ze zwolnienia, o którym mowa w art. 113a ust.1 ustawy (procedura SME)."
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-27}
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: vat.kasa_fiskalna.limit_zwolnienia
   name: Limit sprzedaży na rzecz osób fizycznych zwalniający z ewidencji przy użyciu kasy rejestrującej
