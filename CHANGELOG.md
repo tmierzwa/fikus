@@ -6,6 +6,15 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ## [Niewydane]
 
+### Zmienione
+
+- Pobieranie źródeł (`sprawdz_cytaty.py`, `wykryj_zmiany.py`) ma łączny limit czasu 120 s na jeden adres
+  i jedną ponowną próbę po błędzie sieci lub serwera. Wcześniej limit 60 s dotyczył tylko jednej operacji
+  na gnieździe i powolny serwer mógł zablokować sprawdzanie na godziny.
+- CI: w PR teksty źródeł są przywracane z pamięci podręcznej i pobierane są tylko brakujące; na main,
+  w cotygodniowym przebiegu i na żądanie wszystko od nowa. Zadania mają limity czasu, a instalacja
+  pakietów korzysta z pamięci pip.
+
 ## [0.4.5] - 2026-11-27
 
 ### Dodane
