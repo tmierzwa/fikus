@@ -33,6 +33,13 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 - Zasady `zasada.dra_obowiazek` (deklaracja ZUS DRA za siebie) i `zasada.roczne_rozliczenie_zdrowotnej`
   oraz wzór formularza `schemat.zus_dra` (od 1 maja 2026 r., według dnia złożenia) w nowym pliku
   `data/parameters/zus_dra.yaml`. `get_schema("ZUS_DRA")` zwraca wzór DRA.
+- Koszty uzyskania przychodów na skali i podatku liniowym w nowym pliku `data/parameters/koszty.yaml`:
+  `koszty.samochod.limity` (limity wartości samochodu osobowego z art. 23 ust. 1 pkt 4, 47 i 47a ustawy o PIT
+  według emisji CO2 od 2026 r. oraz udziały wydatków z pkt 46 i 46a), `amortyzacja.srodek_niskocenny.limit`
+  (art. 22d ust. 1 i art. 22f ust. 3), `amortyzacja.jednorazowa.limit_euro` (art. 22k ust. 7),
+  `amortyzacja.jednorazowa.limit_nowe_srodki` (art. 22k ust. 14) oraz zasady `zasada.amortyzacja`
+  (metody, początek odpisów, odpisy jednorazowe, odesłanie do Wykazu stawek) i `zasada.platnosci_gotowkowe_koszty`
+  (art. 22p, z nową wersją od 2027 r.).
 
 ### Zmienione
 
