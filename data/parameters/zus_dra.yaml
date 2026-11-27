@@ -118,7 +118,7 @@
     - valid_from: 2025-01-01
       value:
         steps:
-          - text: Po końcu roku ustalasz roczną składkę zdrowotną od rocznej podstawy i porównujesz ją ze składkami za poszczególne miesiące. Roczną podstawę i roczną składkę opisują zasady składki zdrowotnej dla Twojej formy opodatkowania.
+          - text: Po końcu roku ustalasz roczną składkę zdrowotną od rocznej podstawy i porównujesz ją ze składkami za poszczególne miesiące.
             uses: [zasada.skala_zdrowotna, zasada.liniowy_zdrowotna, zasada.ryczalt_zdrowotna_prog, zasada.ryczalt_zdrowotna_prog_poprzedni_rok]
             basis: art. 81 ust. 2, 2b, 2e, 2i i 2j ustawy o świadczeniach opieki zdrowotnej
           - text: Na skali podatkowej i podatku liniowym rozliczenie dotyczy roku składkowego, który trwa od 1 lutego roku, za który ustalasz dochód, do 31 stycznia roku następnego. Na ryczałcie rozliczenie dotyczy roku kalendarzowego.
@@ -136,15 +136,22 @@
           - text: Według ZUS rozliczenie składasz, jeżeli w roku, którego ono dotyczy, choćby przez jeden dzień podlegałeś ubezpieczeniu zdrowotnemu z tytułu działalności, także wtedy, gdy w tym roku zawiesiłeś albo zakończyłeś działalność. Rozliczenia nie składasz, jeżeli działalność była zawieszona przez cały ten rok. Na skali podatkowej i podatku liniowym liczy się rok składkowy, więc według ZUS rozliczenie za poprzedni rok składasz także wtedy, gdy podlegałeś ubezpieczeniu tylko w styczniu roku następnego (na przykład wznowiłeś albo rozpocząłeś działalność w styczniu).
             uses: []
             basis: art. 81 ust. 2, 2ka i 2i ustawy o świadczeniach opieki zdrowotnej; komunikat ZUS „Roczne rozliczenie składki zdrowotnej za 2025 r.” i ZUS FAQ „Zmiany od 2022 r.”
-          - text: Ta zasada nie opisuje korekty rozliczenia rocznego ani rozliczenia przy zmianie formy opodatkowania w trakcie roku (poza tym, że dane wykazujesz odrębnie dla każdej formy), a także rozliczenia osób, które nie stosują skali podatkowej, podatku liniowego ani ryczałtu od przychodów ewidencjonowanych.
-            uses: []
-            basis: art. 81 ust. 2r i 2y ustawy o świadczeniach opieki zdrowotnej
       note: >-
         Kroki opisują brzmienie z tekstu jednolitego ustawy o świadczeniach opieki zdrowotnej (Dz.U. 2025 poz. 1461).
         Data początku obowiązywania (2025-01-01) to dzień wejścia w życie ustawy z 6 grudnia 2024 r. (Dz.U. 2024
         poz. 1915), która nadała obecne brzmienie art. 81 ust. 2 zdanie pierwsze; dla pozostałych przepisów tej daty
         źródło nie potwierdza. Wcześniejszych wersji nie wprowadzono. Komunikaty i poradnik ZUS potwierdzają tylko
         część kroków, a żadne źródło poza nimi nie podaje całej zasady, więc wersja nie ma drugiego niezależnego dowodu.
+        Korekta z 27 listopada 2026 r.: zmienione kroki 1 i 7 (sprawy pominięte opisuje teraz pole spraw, których
+        zasada nie opisuje).
+      not_covered: >-
+        Rocznej podstawy wymiaru i rocznej składki dla poszczególnych form opodatkowania (opisują je zasady składki
+        zdrowotnej dla skali podatkowej, podatku liniowego i ryczałtu od przychodów ewidencjonowanych). Korekty
+        rozliczenia rocznego i dokumentów rozliczeniowych za poszczególne miesiące oraz skutków zwrotu nadpłaty dla
+        rozliczenia (art. 81 ust. 2r i 2y ustawy o świadczeniach opieki zdrowotnej). Rozliczenia przy zmianie formy
+        opodatkowania w trakcie roku poza tym, co podaje krok o dokumencie rozliczeniowym. Rozliczenia osób, które nie
+        stosują skali podatkowej, podatku liniowego ani ryczałtu od przychodów ewidencjonowanych.
+      see_also: [zasada.skala_zdrowotna, zasada.liniowy_zdrowotna, zasada.ryczalt_zdrowotna_prog, zasada.ryczalt_zdrowotna_prog_poprzedni_rok]
       sources:
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (rok składkowy)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
