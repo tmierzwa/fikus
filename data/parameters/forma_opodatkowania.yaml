@@ -151,7 +151,7 @@
             opodatkowane podatkiem akcyzowym, z wyjątkiem wytwarzania energii elektrycznej z odnawialnych źródeł energii;
           as_of: 2026-11-27
           confirms: [step_2]
-      verification: {checked_at: 2026-11-27}
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: zasada.liniowy_wylaczenia
   name: Warunki podatku liniowego i utrata prawa do niego
