@@ -16,7 +16,7 @@
           - text: Te same zasady stosuje się do małżonków, którzy oboje mają miejsce zamieszkania dla celów podatkowych w innym państwie Unii Europejskiej, Europejskiego Obszaru Gospodarczego albo w Szwajcarii, oraz do małżonków, z których jeden podlega nieograniczonemu obowiązkowi podatkowemu w Polsce, a drugi ma takie miejsce zamieszkania za granicą. Warunki są trzy. Przychody podlegające opodatkowaniu w Polsce stanowią łącznie co najmniej 75% całkowitego przychodu obojga małżonków w roku podatkowym; całkowite przychody to przychody ze wszystkich źródeł z art. 10 ust. 1 bez względu na miejsce ich położenia. Miejsce zamieszkania jest udokumentowane certyfikatem rezydencji. Umowa o unikaniu podwójnego opodatkowania albo inna ratyfikowana umowa międzynarodowa daje organowi podatkowemu podstawę do uzyskania informacji podatkowych od państwa zamieszkania. Na żądanie organu podatkowego wysokość całkowitych przychodów dokumentuje się zaświadczeniem zagranicznego organu podatkowego albo innym dokumentem.
             uses: []
             basis: art. 6 ust. 3a i 11–13 ustawy o podatku dochodowym od osób fizycznych
-          - text: Łączne opodatkowanie następuje na wspólny wniosek wyrażony w zeznaniu podatkowym. Wniosek może wyrazić jeden z małżonków; jest to równoznaczne z jego oświadczeniem, złożonym pod rygorem odpowiedzialności karnej za fałszywe zeznania, że współmałżonek upoważnił go do złożenia wniosku. Zeznanie roczne składa się w terminie z art. 45 ust. 1. Ta zasada nie opisuje, czy wniosek można wyrazić w zeznaniu złożonym po terminie albo w korekcie zeznania (otwarte pytanie do eksperta).
+          - text: Łączne opodatkowanie następuje na wspólny wniosek wyrażony w zeznaniu podatkowym. Wniosek może wyrazić jeden z małżonków; jest to równoznaczne z jego oświadczeniem, złożonym pod rygorem odpowiedzialności karnej za fałszywe zeznania, że współmałżonek upoważnił go do złożenia wniosku. Zeznanie roczne składa się w terminie z art. 45 ust. 1. Czy wniosek można wyrazić w zeznaniu złożonym po terminie albo w korekcie zeznania i czy korektą zeznania można zrezygnować z łącznego opodatkowania (albo przejść na nie po złożeniu odrębnych zeznań), jest niewyjaśnione (otwarte pytanie do eksperta, P16); ta zasada tego nie opisuje.
             uses: [termin.zeznanie_skala]
             basis: art. 6 ust. 2 i 2a oraz art. 45 ust. 1 ustawy o podatku dochodowym od osób fizycznych
           - text: Łączne opodatkowanie nie ma zastosowania w przypadkach wyłączonych przepisem o podatku liniowym, ryczałcie, podatku tonażowym i aktywizacji przemysłu okrętowego; opisuje je osobna zasada.
@@ -45,6 +45,7 @@
         1541, 1542 i 1556) nie zmieniają art. 6 ani art. 6a. Ustawa mówi o zeznaniu według ustalonego wzoru; nazwę
         formularza (PIT-36 albo PIT-37) podaje źródło kontrolne. Zasada podatku według
         skali i termin zeznania, do których odwołują się kroki, mają wersje od 1 stycznia 2026 r.
+        Poprawka 2026-11-26: krok o wniosku mówi też, że nie wiadomo, czy korektą zeznania można zrezygnować z łącznego opodatkowania albo przejść na nie (P16).
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (warunki i wniosek)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -98,7 +99,7 @@
         agent_check: 2026-11-26
         open_issue: >-
           Przepis wymaga wniosku wyrażonego w zeznaniu, ale nie mówi, czy można go wyrazić w zeznaniu złożonym
-          po terminie albo w korekcie zeznania. Strona MF podaje, że tak; pytanie P16 w docs/pytania-do-eksperta.md.
+          po terminie albo w korekcie zeznania, ani czy korektą można z niego zrezygnować. Strona MF podaje, że tak; pytanie P16 w docs/pytania-do-eksperta.md.
 
 - id: zasada.samotny_rodzic_opodatkowanie
   name: Opodatkowanie dochodów osoby samotnie wychowującej dzieci (warunki i sposób ustalenia podatku)
@@ -120,13 +121,13 @@
           - text: Ten sam sposób stosuje się do osoby z ograniczonym obowiązkiem podatkowym, która samotnie wychowuje takie dzieci, jeżeli łącznie ma miejsce zamieszkania dla celów podatkowych w innym państwie Unii Europejskiej, Europejskiego Obszaru Gospodarczego albo w Szwajcarii, osiągnęła przychody podlegające opodatkowaniu w Polsce w wysokości co najmniej 75% całkowitego przychodu w roku podatkowym i udokumentowała miejsce zamieszkania certyfikatem rezydencji. Obowiązują wtedy te same warunki co do dzieci, wspólnego wychowywania i wyłączeń, a także warunek umowy o wymianie informacji podatkowych i obowiązek udokumentowania całkowitych przychodów na żądanie organu podatkowego.
             uses: []
             basis: art. 6 ust. 4g, 4h i 11–13 oraz art. 3 ust. 2a ustawy o podatku dochodowym od osób fizycznych
-          - text: Podatek ustala się na wniosek wyrażony w rocznym zeznaniu podatkowym. Zeznanie składa się w terminie z art. 45 ust. 1. Ta zasada nie opisuje, czy wniosek można wyrazić w zeznaniu złożonym po terminie albo w korekcie zeznania (otwarte pytanie do eksperta).
+          - text: Podatek ustala się na wniosek wyrażony w rocznym zeznaniu podatkowym. Zeznanie składa się w terminie z art. 45 ust. 1. Czy wniosek można wyrazić w zeznaniu złożonym po terminie albo w korekcie zeznania i czy korektą zeznania można zrezygnować z tego sposobu opodatkowania (albo przejść na niego po złożeniu zeznania bez wniosku), jest niewyjaśnione (otwarte pytanie do eksperta, P16); ta zasada tego nie opisuje.
             uses: [termin.zeznanie_skala]
             basis: art. 6 ust. 4c i art. 45 ust. 1 ustawy o podatku dochodowym od osób fizycznych
           - text: Podatek to podwójna wysokość podatku obliczonego według skali od połowy dochodów osoby samotnie wychowującej dzieci, z uwzględnieniem doliczenia dochodów małoletnich dzieci według art. 7. Do sumy tych dochodów nie wlicza się dochodów (przychodów) opodatkowanych w sposób zryczałtowany na zasadach ustawy o podatku dochodowym od osób fizycznych.
             uses: [podatek.skala, zasada.skala_podatek]
             basis: art. 6 ust. 4d i art. 27 ust. 1 ustawy o podatku dochodowym od osób fizycznych
-          - text: Ta zasada nie opisuje, czy warunek samotnego wychowywania dzieci musi być spełniony przez cały rok podatkowy (otwarte pytanie do eksperta), doliczania dochodów małoletnich dzieci (art. 7), odliczeń od dochodu i od podatku ani zaliczek w trakcie roku.
+          - text: Ta zasada nie opisuje, czy warunek samotnego wychowywania dzieci musi być spełniony przez cały rok podatkowy (otwarte pytanie do eksperta, P16), doliczania dochodów małoletnich dzieci (art. 7), odliczeń od dochodu i od podatku ani zaliczek w trakcie roku.
             uses: []
             basis: art. 6 ust. 4c, art. 7, art. 26, art. 27f i art. 44 ustawy o podatku dochodowym od osób fizycznych
       note: >-
@@ -136,6 +137,7 @@
         obowiązywać). Nowelizacje ogłoszone po tekście jednolitym poz. 592 nie zmieniają art. 6. Nazwę formularza
         (PIT-36 albo PIT-37) podaje źródło kontrolne. Zasada podatku według skali
         i termin zeznania, do których odwołują się kroki, mają wersje od 1 stycznia 2026 r.
+        Poprawka 2026-11-26: krok o wniosku mówi też, że nie wiadomo, czy korektą zeznania można zrezygnować z tego sposobu opodatkowania albo przejść na niego (P16).
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (warunki)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -177,7 +179,7 @@
         agent_check: 2026-11-26
         open_issue: >-
           Przepis wymaga wniosku wyrażonego w rocznym zeznaniu, ale nie mówi, czy można go wyrazić w zeznaniu złożonym
-          po terminie albo w korekcie zeznania. Strona MF podaje, że korekta jest możliwa. Przepis mówi też, że rodzic
+          po terminie albo w korekcie zeznania, ani czy korektą można z niego zrezygnować. Strona MF podaje, że korekta jest możliwa. Przepis mówi też, że rodzic
           „w roku podatkowym samotnie wychowuje dzieci”, ale nie mówi, czy przez cały rok; strona MF podaje, że nie musi
           to być cały rok. Pytanie P16 w docs/pytania-do-eksperta.md.
 
@@ -191,16 +193,16 @@
           - text: Wspólnego opodatkowania małżonków ani sposobu opodatkowania dla osoby samotnie wychowującej dzieci nie stosuje się, gdy choćby jeden z małżonków, osoba samotnie wychowująca dziecko albo jej dziecko stosuje przepisy o podatku liniowym (art. 30c) w zakresie osiągniętych w roku podatkowym przychodów, poniesionych kosztów uzyskania przychodów, zobowiązania lub uprawnienia do zwiększania lub pomniejszania podstawy opodatkowania albo przychodów, zobowiązania lub uprawnienia do dokonywania innych doliczeń lub odliczeń.
             uses: [podatek.liniowy.stawka]
             basis: art. 6 ust. 8 pkt 1 lit. a ustawy o podatku dochodowym od osób fizycznych
-          - text: To samo dotyczy stosowania w tym samym zakresie przepisów ustawy o zryczałtowanym podatku dochodowym, z wyjątkiem art. 6 ust. 1a tej ustawy, czyli ryczałtu od przychodów z najmu, podnajmu, dzierżawy, poddzierżawy i podobnych umów z art. 10 ust. 1 pkt 6 ustawy o podatku dochodowym od osób fizycznych (poza składnikami majątku związanymi z działalnością gospodarczą).
+          - text: To samo dotyczy stosowania w tym samym zakresie przepisów ustawy o zryczałtowanym podatku dochodowym, z wyjątkiem art. 6 ust. 1a tej ustawy, czyli ryczałtu od przychodów z najmu, podnajmu, dzierżawy, poddzierżawy i podobnych umów z art. 10 ust. 1 pkt 6 ustawy o podatku dochodowym od osób fizycznych (poza składnikami majątku związanymi z działalnością gospodarczą). Przepis odsyła do całej ustawy o zryczałtowanym podatku dochodowym i wyjmuje z niej tylko art. 6 ust. 1a, więc obejmuje obie formy opodatkowania działalności, które ta ustawa przewiduje, czyli ryczałt od przychodów ewidencjonowanych i kartę podatkową (rozdział 3 tej ustawy).
             uses: [ryczalt.stawki]
-            basis: art. 6 ust. 8 pkt 1 lit. b ustawy o podatku dochodowym od osób fizycznych; art. 6 ust. 1a ustawy o zryczałtowanym podatku dochodowym; art. 10 ust. 1 pkt 6 ustawy o podatku dochodowym od osób fizycznych
+            basis: art. 6 ust. 8 pkt 1 lit. b i art. 5a pkt 15 ustawy o podatku dochodowym od osób fizycznych; art. 2 ust. 1, art. 6 ust. 1a i art. 23 ust. 1 ustawy o zryczałtowanym podatku dochodowym; art. 10 ust. 1 pkt 6 ustawy o podatku dochodowym od osób fizycznych
           - text: To samo dotyczy osoby, która podlega opodatkowaniu na zasadach ustawy o podatku tonażowym albo ustawy o aktywizacji przemysłu okrętowego i przemysłów komplementarnych.
             uses: []
             basis: art. 6 ust. 8 pkt 2 ustawy o podatku dochodowym od osób fizycznych
           - text: Te wyłączenia stosuje się także do małżonków, z których oboje albo jeden mają miejsce zamieszkania dla celów podatkowych w innym państwie Unii Europejskiej, Europejskiego Obszaru Gospodarczego albo w Szwajcarii, do osób samotnie wychowujących dzieci, które mają takie miejsce zamieszkania, oraz do wspólnego rozliczenia po śmierci małżonka.
             uses: [zasada.malzonkowie_wspolne_opodatkowanie, zasada.samotny_rodzic_opodatkowanie]
             basis: art. 6 ust. 3a i 4h oraz art. 6a ust. 2 pkt 2 ustawy o podatku dochodowym od osób fizycznych
-          - text: Ta zasada nie opisuje, jak ocenić rok, w którym ktoś zmienił w trakcie roku podatek liniowy albo ryczałt na skalę podatkową, ani rok, w którym przy działalności na podatku liniowym albo ryczałcie nie było przychodów, kosztów ani odliczeń (otwarte pytanie do eksperta).
+          - text: Ta zasada nie opisuje, jak ocenić rok, w którym ktoś zmienił w trakcie roku podatek liniowy, ryczałt od przychodów ewidencjonowanych albo kartę podatkową na skalę podatkową, ani rok, w którym przy działalności na podatku liniowym, ryczałcie od przychodów ewidencjonowanych albo karcie podatkowej nie było przychodów, kosztów ani odliczeń (otwarte pytanie do eksperta, P15).
             uses: []
             basis: art. 6 ust. 8 pkt 1 ustawy o podatku dochodowym od osób fizycznych
       note: >-
@@ -209,6 +211,7 @@
         1 stycznia 2025 r. (nie że wtedy zaczęła obowiązywać). Nowelizacje ogłoszone po tekście jednolitym poz. 592 nie
         zmieniają art. 6 ani art. 6a. Brzmienie art. 6 ust. 1a ustawy o zryczałtowanym podatku dochodowym według tekstu
         jednolitego Dz.U. 2025 poz. 843.
+        Poprawka 2026-11-26: krok o ryczałcie mówi, że wyłączenie obejmuje też kartę podatkową, a ostatni krok wymienia kartę podatkową wśród przypadków niewyjaśnionych (P15); wcześniej kroki jej nie wymieniały.
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wyłączenie)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -234,6 +237,18 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           article: art. 6 ust. 1a
           quote: "z tytułów, o których mowa w art. 10 ust. 1 pkt 6 ustawy o podatku dochodowym"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (definicja ustawy o zryczałtowanym podatku dochodowym)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 5a pkt 15
+          quote: "ustawie o zryczałtowanym podatku dochodowym – oznacza to ustawę z dnia 20 listopada 1998 r. o zryczałtowanym"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (karta podatkowa)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 23 ust. 1 (rozdział 3)
+          quote: "Zryczałtowany podatek dochodowy w formie karty podatkowej mogą płacić podatnicy prowadzący działalność"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (formy opodatkowania działalności)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 2 ust. 1 pkt 1 i 2
+          quote: "mogą opłacać zryczałtowany podatek dochodowy w formie: 1) ryczałtu od przychodów ewidencjonowanych; 2) karty podatkowej."
         - title: Dz.U. 2025 poz. 163, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (to samo brzmienie, dla daty początku obowiązywania)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/163/text.pdf
           article: art. 6 ust. 8
@@ -259,6 +274,12 @@
         agent_check: 2026-11-26
         open_issue: >-
           Przepis wyłącza łączne opodatkowanie przy stosowaniu podatku liniowego albo ryczałtu „w zakresie” przychodów,
-          kosztów i odliczeń z roku podatkowego. Strony MF i biznes.gov.pl podają, że nie wyklucza go rok bez przychodów,
-          kosztów i odliczeń na tej formie („zerowy” PIT-36L); biznes.gov.pl podaje też, że wyklucza go zmiana w trakcie
-          roku z podatku liniowego albo ryczałtu na skalę. Pytanie P15 w docs/pytania-do-eksperta.md.
+          kosztów i odliczeń z roku podatkowego. Strona MF podaje, że nie wyklucza go rok bez przychodów, kosztów
+          i odliczeń przy działalności na podatku liniowym („zerowy” PIT-36L); biznes.gov.pl pisze ogólnie, że wspólnego
+          rozliczenia nie wyłącza złożenie „PIT zero”, i podaje, że wyklucza je zmiana w trakcie roku z podatku liniowego
+          albo ryczałtu od przychodów ewidencjonowanych na skalę. Żadne źródło nie mówi, czy zmiana karty podatkowej na skalę
+          w trakcie roku wyklucza łączne opodatkowanie. Rok bez przychodów, kosztów i odliczeń na ryczałcie od przychodów
+          ewidencjonowanych albo karcie podatkowej obejmują tylko zdania ogólne: warunki na stronach MF, które powtarzają
+          brzmienie przepisu, oraz zdania biznes.gov.pl o wyłączeniu, gdy przy liniowym, ryczałcie lub karcie podatkowej
+          osiąga się jakiekolwiek przychody, ponosi koszty albo korzysta z odliczeń, i o „PIT zero”. Żadne z nich tego
+          nie rozstrzyga. Pytanie P15 w docs/pytania-do-eksperta.md.

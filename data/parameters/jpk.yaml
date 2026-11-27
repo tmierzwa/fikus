@@ -383,10 +383,10 @@
           - text: Podatnik prowadzący podatkową księgę przychodów i rozchodów lub ewidencję środków trwałych oraz wartości niematerialnych i prawnych prowadzi je przy użyciu programów komputerowych i po zakończeniu roku podatkowego przesyła je naczelnikowi urzędu skarbowego w postaci elektronicznej odpowiadającej strukturze logicznej, do dnia upływu terminu złożenia zeznania, o którym mowa w art. 45 ust. 1 ustawy o PIT.
             uses: [schemat.jpk_pkpir, termin.zeznanie_skala, termin.zeznanie_liniowy]
             basis: art. 24a ust. 1e pkt 1 ustawy o PIT w brzmieniu od 1 lipca 2026 r.; art. 193a § 2 Ordynacji podatkowej
-          - text: Po raz pierwszy księgę przesyła się za rok podatkowy rozpoczynający się po 31 grudnia 2025 r., jeżeli podatnik jest obowiązany przesyłać ewidencję VAT za każdy miesiąc łącznie z deklaracją (rozliczenie miesięczne VAT).
+          - text: Po raz pierwszy księgę przesyła się za rok podatkowy rozpoczynający się po 31 grudnia 2025 r., jeżeli podatnik jest obowiązany przesyłać ewidencję VAT za każdy miesiąc łącznie z deklaracją (rozliczenie miesięczne VAT). Na który dzień albo za który okres ocenia się, czy podatnik rozlicza VAT miesięcznie (na przykład przy zmianie rozliczenia z kwartalnego na miesięczne albo odwrotnie w 2026 r. albo przy rejestracji jako czynny podatnik VAT w trakcie roku), jest niewyjaśnione (otwarte pytanie do eksperta, P19).
             uses: [schemat.jpk_v7m]
             basis: art. 66 ust. 1 pkt 1 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) w brzmieniu nadanym ustawami Dz.U. 2022 poz. 1265 i Dz.U. 2023 poz. 1059; art. 109 ust. 3b ustawy o VAT
-          - text: Pozostali podatnicy (w tym rozliczający VAT kwartalnie i niebędący czynnymi podatnikami VAT) przesyłają księgę po raz pierwszy za rok podatkowy rozpoczynający się po 31 grudnia 2026 r.
+          - text: Pozostali podatnicy (w tym rozliczający VAT kwartalnie i niebędący czynnymi podatnikami VAT) przesyłają księgę po raz pierwszy za rok podatkowy rozpoczynający się po 31 grudnia 2026 r. Jak zakwalifikować podatnika, który w 2026 r. zmienił sposób rozliczania VAT albo zarejestrował się jako czynny podatnik VAT, jest niewyjaśnione (otwarte pytanie do eksperta, P19).
             uses: []
             basis: art. 66 ust. 1 pkt 2 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) w brzmieniu nadanym ustawami Dz.U. 2022 poz. 1265 i Dz.U. 2023 poz. 1059
       note: >-
@@ -398,6 +398,7 @@
         nie ma tekstu jednolitego, więc brzmienie art. 66 wynika z ustaw zmieniających. Inne zmiany tej ustawy wymienione w obwieszczeniu (Dz.U. 2021 poz. 2349 i 2427, Dz.U. 2022 poz. 1301, 1719 i 2180, Dz.U. 2023 poz. 1414, Dz.U. 2024 poz. 1593 i 1685, Dz.U. 2025 poz. 222) ani ustawy Dz.U. 2021 poz. 2469 (zmienia tylko art. 15 pkt 8) i Dz.U. 2023 poz. 1598 (zmienia tylko art. 88 ust. 1) nie zmieniają art. 66 ust. 1 ani art. 89 pkt 7 i 8; brzmienie art. 89 pkt 7 i 8 podaje obwieszczenie do tekstu jednolitego Dz.U. 2025 poz. 843. Przepis nie mówi, na który
         dzień ocenia się sposób rozliczania VAT (otwarte pytanie). Termin zeznania z art. 45 ust. 1 opisują parametry
         termin.zeznanie_skala (art. 45 ust. 1) i termin.zeznanie_liniowy (art. 45 ust. 1 i 1a pkt 2).
+        Poprawka 2026-11-26: kroki o pierwszym roku przesłania mówią, że nie wiadomo, na który dzień ocenia się sposób rozliczania VAT (P19); wcześniej zastrzegała to tylko notatka.
       sources:
         - title: Dz.U. 2026 poz. 779, ustawa z 15 maja 2026 r. o zmianie ustawy o PIT, ustawy o CIT i ustawy o ryczałcie
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/779/text.pdf
@@ -451,10 +452,10 @@
           - text: Podatnik na ryczałcie prowadzący ewidencję przychodów lub wykaz środków trwałych oraz wartości niematerialnych i prawnych prowadzi tę ewidencję i wykaz przy użyciu programów komputerowych i po zakończeniu roku podatkowego przesyła je naczelnikowi urzędu skarbowego w postaci elektronicznej odpowiadającej strukturze logicznej, do dnia upływu terminu złożenia zeznania rocznego. Ustawa nazywa ewidencję przychodów „ewidencją” (art. 15 ust. 1). Ewidencję przychodów przesyła się w strukturze JPK_EWP.
             uses: [termin.zeznanie_ryczalt]
             basis: art. 15 ust. 1 i 12 ustawy o zryczałtowanym podatku dochodowym; art. 193a § 2 Ordynacji podatkowej
-          - text: Po raz pierwszy przesyła się je za rok podatkowy rozpoczynający się po 31 grudnia 2025 r., jeżeli podatnik jest obowiązany przesyłać ewidencję VAT za każdy miesiąc łącznie z deklaracją (rozliczenie miesięczne VAT).
+          - text: Po raz pierwszy przesyła się je za rok podatkowy rozpoczynający się po 31 grudnia 2025 r., jeżeli podatnik jest obowiązany przesyłać ewidencję VAT za każdy miesiąc łącznie z deklaracją (rozliczenie miesięczne VAT). Na który dzień albo za który okres ocenia się, czy podatnik rozlicza VAT miesięcznie (na przykład przy zmianie rozliczenia z kwartalnego na miesięczne albo odwrotnie w 2026 r. albo przy rejestracji jako czynny podatnik VAT w trakcie roku), jest niewyjaśnione (otwarte pytanie do eksperta, P19).
             uses: [schemat.jpk_v7m]
             basis: art. 66 ust. 1 pkt 1 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) w brzmieniu nadanym ustawami Dz.U. 2022 poz. 1265 i Dz.U. 2023 poz. 1059; art. 109 ust. 3b ustawy o VAT
-          - text: Pozostali podatnicy (w tym rozliczający VAT kwartalnie i niebędący czynnymi podatnikami VAT) przesyłają je po raz pierwszy za rok podatkowy rozpoczynający się po 31 grudnia 2026 r.
+          - text: Pozostali podatnicy (w tym rozliczający VAT kwartalnie i niebędący czynnymi podatnikami VAT) przesyłają je po raz pierwszy za rok podatkowy rozpoczynający się po 31 grudnia 2026 r. Jak zakwalifikować podatnika, który w 2026 r. zmienił sposób rozliczania VAT albo zarejestrował się jako czynny podatnik VAT, jest niewyjaśnione (otwarte pytanie do eksperta, P19).
             uses: []
             basis: art. 66 ust. 1 pkt 2 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) w brzmieniu nadanym ustawami Dz.U. 2022 poz. 1265 i Dz.U. 2023 poz. 1059
       note: >-
@@ -467,6 +468,7 @@
         o strukturze JPK_EWP(4) podaje wprost, że ryczałtowcy prowadzący ewidencję przychodów przesyłają plik
         JPK_EWP, i wskazuje art. 15 ust. 12 jako podstawę. Przepis nie mówi, na który dzień ocenia się sposób
         rozliczania VAT (otwarte pytanie).
+        Poprawka 2026-11-26: kroki o pierwszym roku przesłania mówią, że nie wiadomo, na który dzień ocenia się sposób rozliczania VAT (P19); wcześniej zastrzegała to tylko notatka.
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
