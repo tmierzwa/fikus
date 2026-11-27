@@ -550,13 +550,13 @@
     - valid_from: 2026-01-01
       value:
         steps:
-          - text: Składkę na Fundusz Pracy liczysz od podstawy wymiaru składek emerytalnej i rentowej bez rocznego ograniczenia tej podstawy. Opłacasz ją, jeżeli ta podstawa w przeliczeniu na miesiąc wynosi co najmniej minimalne wynagrodzenie.
+          - text: Składkę na Fundusz Pracy liczysz od podstawy wymiaru składek emerytalnej i rentowej bez ograniczenia, o którym mowa w art. 19 ust. 1 ustawy o systemie ubezpieczeń społecznych. Opłaca się ją, jeżeli ta podstawa w przeliczeniu na miesiąc wynosi co najmniej minimalne wynagrodzenie.
             uses: [zus.stawka.fundusz_pracy, wynagrodzenie.minimalne]
             basis: art. 259 ust. 1 pkt 4 ustawy o rynku pracy i służbach zatrudnienia
           - text: Jeżeli podlegasz obowiązkowym ubezpieczeniom emerytalnemu i rentowym także z innych tytułów, obowiązek powstaje, gdy łączna podstawa ze wszystkich tytułów wynosi co najmniej minimalne wynagrodzenie.
             uses: [wynagrodzenie.minimalne]
             basis: art. 259 ust. 2 ustawy o rynku pracy i służbach zatrudnienia
-          - text: W takim przypadku składasz oświadczenie każdemu pracodawcy albo w ZUS.
+          - text: W takim przypadku składasz oświadczenie każdemu pracodawcy albo, jeżeli sam opłacasz składki na ubezpieczenia społeczne, w ZUS.
             uses: []
             basis: art. 259 ust. 3 ustawy o rynku pracy i służbach zatrudnienia
           - text: Przy podstawie preferencyjnej, niższej od minimalnego wynagrodzenia, składki na Fundusz Pracy nie opłacasz, chyba że łączna podstawa z kroku o kilku tytułach osiąga minimalne wynagrodzenie.
@@ -581,9 +581,14 @@
         Wersja zaczyna się razem ze stawkami Funduszu Pracy i Funduszu Solidarnościowego na 2026 r. Te przepisy
         obowiązują wcześniej (ustawa o rynku pracy i służbach zatrudnienia od 1 czerwca 2025 r.), ale okresu sprzed
         2026 r. ta wersja nie obejmuje. Ustawa o rynku pracy nie ma jeszcze tekstu jednolitego; cytowany jest tekst
-        ogłoszony, a jej nowelizacje nie zmieniają art. 259–261. Poprawka 2026-11-27: kroki podzielono na mniejsze,
-        żeby każdy dało się potwierdzić osobno (oświadczenie przy kilku tytułach, wiek, miesiąc zwolnienia, Fundusz
-        Solidarnościowy i łączne rozliczenie są teraz osobnymi krokami); ich treść się nie zmieniła.
+        ogłoszony, a jej nowelizacje nie zmieniają art. 259–261. Poprawka 2026-11-27: pięć kroków podzielono na
+        dziewięć, żeby każdy dało się potwierdzić osobno. Krok o kilku tytułach to teraz kroki 2 (łączna podstawa)
+        i 3 (oświadczenie); krok o wieku i miesiącu zwolnienia to kroki 5 i 6; krok o Funduszu Solidarnościowym to
+        kroki 7 (odpowiednie stosowanie przepisów), 8 (łączne rozliczenie) i 9 (miesiąc zwolnienia). Podstawy prawne
+        i używane parametry przypisano do nowych kroków. Zmieniło się też brzmienie: krok 1 odsyła do ograniczenia
+        z art. 19 ust. 1 ustawy o systemie ubezpieczeń społecznych zamiast pisać o rocznym ograniczeniu i nie mówi,
+        kto opłaca składkę; krok 3 podaje warunek z art. 259 ust. 3 (oświadczenie w ZUS składasz, jeżeli sam opłacasz
+        składki na ubezpieczenia społeczne); krok 4 odsyła do kroku o kilku tytułach zamiast do poprzedniego kroku.
       sources:
         - title: Dz.U. 2025 poz. 620, ustawa z 20 marca 2025 r. o rynku pracy i służbach zatrudnienia
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/620/text.pdf
@@ -698,6 +703,13 @@
           quote: "Składek na Fundusz Pracy nie opłaca się za kobiety, które skończyły 55 lat, i mężczyzn, którzy skończyli 60 lat."
           as_of: 2026-11-27
           confirms: [step_5]
+        - title: ZUS, poradnik „Zasady opłacania składek na Fundusz Pracy…”, stan prawny na 1 czerwca 2025 r. (miesiąc zwolnienia)
+          url: https://www.zus.pl/documents/10182/167567/Zasady+op%C5%82acania+sk%C5%82adek+na+Fundusz+Pracy%2C+Fundusz+Gwarantowanych+%C5%9Awiadcze%C5%84+Pracowniczych+oraz+Fundusz+Emerytur+Pomostowych.pdf/92a5c5b1-cf05-4869-8845-538a48fd5129
+          quote: >-
+            osób zwolnionych z opłacania składek na własne obowiązkowe ubezpieczenia emerytalne i rentowe, za wskazany
+            miesiąc kalendarzowy w danym roku kalendarzowym, o których mowa w art. 17a ust. 1 ustawy o s.u.s.
+          as_of: 2026-11-27
+          confirms: [step_6]
         - title: ZUS, poradnik „Zasady opłacania składek na Fundusz Pracy…”, stan prawny na 1 czerwca 2025 r. (Fundusz Solidarnościowy)
           url: https://www.zus.pl/documents/10182/167567/Zasady+op%C5%82acania+sk%C5%82adek+na+Fundusz+Pracy%2C+Fundusz+Gwarantowanych+%C5%9Awiadcze%C5%84+Pracowniczych+oraz+Fundusz+Emerytur+Pomostowych.pdf/92a5c5b1-cf05-4869-8845-538a48fd5129
           quote: "Do obowiązkowych składek na FS należy stosować zasady dotyczące obowiązkowych składek na Fundusz Pracy."
@@ -724,11 +736,13 @@
         - title: ZUS, „Wakacje składkowe – zwolnienie z opłacania składek ZUS” (Fundusz Pracy i Fundusz Solidarnościowy)
           url: https://www.zus.pl/-/wakacje-sk%C5%82adkowe-zwolnienie-z-op%C5%82acania-sk%C5%82adek-zus
           quote: >-
-            Gdy przedsiębiorca złoży wniosek, może uzyskać zwolnienie z opłacenia składek na: własne obowiązkowe
-            ubezpieczenia społeczne: emerytalne, rentowe i wypadkowe; własne dobrowolne ubezpieczenie chorobowe;
-            Fundusz Pracy i Fundusz Solidarnościowy.
+            Zgodnie z nowymi przepisami przedsiębiorcy mogą raz w roku za wybrany miesiąc nie płacić za siebie składek
+            na ubezpieczenia społeczne. Z ulgi można będzie skorzystać niezależnie od formy rozliczania podatku
+            dochodowego (PIT, ryczałt, karta podatkowa). Gdy przedsiębiorca złoży wniosek, może uzyskać zwolnienie
+            z opłacenia składek na: własne obowiązkowe ubezpieczenia społeczne: emerytalne, rentowe i wypadkowe; własne
+            dobrowolne ubezpieczenie chorobowe; Fundusz Pracy i Fundusz Solidarnościowy.
           as_of: 2026-11-27
-          confirms: [step_6, step_9]
+          confirms: [step_9]
       verification: {checked_at: 2026-11-27}
 
 - id: zasada.liniowy_zdrowotna
