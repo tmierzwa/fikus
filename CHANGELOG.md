@@ -23,6 +23,10 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 - Parametry VAT w nowym pliku `data/parameters/vat.yaml`: `vat.stawki` (stawka podstawowa i obniżone
   w okresie z art. 146ef ustawy o VAT), `vat.limit_zwolnienia` (limit zwolnienia podmiotowego z art. 113
   ust. 1) i zasada `zasada.vat_odliczenie` (prawo do odliczenia, moment i korekta, samochody, wyłączenia).
+- Nowy plik `data/parameters/forma_opodatkowania.yaml`: limit przychodów uprawniający do ryczałtu
+  (`ryczalt.limit_przychodow_euro`, art. 6 ust. 4 ustawy o zryczałtowanym podatku dochodowym) oraz zasady
+  `zasada.ryczalt_wylaczenia` (art. 8), `zasada.liniowy_wylaczenia` (art. 9a ust. 3 i 5 ustawy o PIT)
+  i `zasada.wybor_formy_opodatkowania` (termin i sposób wyboru ryczałtu i podatku liniowego, kontynuacja, rezygnacja).
 - Schematy e-Deklaracji zeznań rocznych `schemat.pit_36`, `schemat.pit_36l` i `schemat.pit_28` (za 2025 r.
   i od 2026 r., według wyróżników wzorów w CRWDE) oraz zasada `zasada.dane_autoryzujace` (podpis danymi
   autoryzującymi zeznań PIT i plików JPK_V7M, JPK_EWP i JPK_PKPIR) w nowym pliku `data/parameters/pit_zeznania.yaml`.
