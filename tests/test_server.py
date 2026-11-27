@@ -124,3 +124,13 @@ def test_get_schema_description_lists_every_schema_in_data():
         form = _form_symbol(pid)
         assert form in tool.description
         assert _call("get_schema", {"form": form}).structured_content["id"] == pid
+
+
+@pytest.mark.parametrize("forms,expected", [
+    ([], "Danych schematów jeszcze nie ma"),
+    (["PIT-28"], "Są dane dla PIT-28;"),
+    (["JPK_V7K", "JPK_V7M", "PIT-28"], "Są dane dla JPK_V7K, JPK_V7M i PIT-28;"),
+])
+def test_form_list_in_get_schema_description(forms, expected):
+    from fikus.server import _forms_sentence
+    assert _forms_sentence(forms).startswith(expected)

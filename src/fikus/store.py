@@ -84,17 +84,15 @@ class Store:
             "not_covered": v.not_covered, "see_also": v.see_also,
         }
 
-    def unknown_profile(self, profile_id: str) -> dict | None:
-        if profile_id in self.profiles:
-            return None
-        return {"profile": profile_id, "found": False, "reason": "nieznany profil",
-                "known": sorted(self.profiles)}
+    def _profile(self, profile_id: str) -> dict[str, str]:
+        """Pola profilu do wybierania parametrów. Nieznany profil to błąd: serwer sprawdza go wcześniej."""
+        if profile_id not in self.profiles:
+            raise ValueError(f"nieznany profil {profile_id!r} (znane: {', '.join(sorted(self.profiles))})")
+        return self.profiles[profile_id].as_dict()
 
     def for_profile(self, profile_id: str, d: date) -> list[dict]:
         """Parametry, których applies_to pasuje do profilu, w wersji na dzień d."""
-        if err := self.unknown_profile(profile_id):
-            return [err]
-        prof = self.profiles[profile_id].as_dict()
+        prof = self._profile(profile_id)
         return [self.get(p.id, d) for p in self.params.values() if p.matches(prof)]
 
     def changes(self, since: date) -> list[dict]:
@@ -110,12 +108,8 @@ class Store:
 
     def deadlines(self, profile_id: str, year: int, month: int) -> dict:
         """Reguły terminów przypadających w miesiącu i dni wolne tego miesiąca. Bez wyliczania dat."""
-        if err := self.unknown_profile(profile_id):
-            return err
-        if not (1 <= month <= 12 and 1 <= year <= 9999):
-            return {"year": year, "month": month, "found": False, "reason": "niepoprawny rok lub miesiąc"}
-        prof = self.profiles[profile_id].as_dict()
-        d = date(year, month, 1)
+        prof = self._profile(profile_id)
+        d = date(year, month, 1)        # zły rok albo miesiąc: ValueError z datetime
         last = date(year, month, calendar.monthrange(year, month)[1])
         rules = []
         for p in self.params.values():

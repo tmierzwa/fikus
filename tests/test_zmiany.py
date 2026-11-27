@@ -169,3 +169,21 @@ def test_amendment_handled_for_one_parameter_is_still_reported_for_another():
     f = _fake({"DU/2025/100": act, "DU/2026/50": {"inForce": "IN_FORCE", "references": {}}})
     out = [(x.act, x.params, x.detail) for x in detect(_store(a, b), TODAY, fetch=f) if x.kind == "nowelizacja"]
     assert out == [("DU/2025/100", ("b",), "DU/2026/50, wchodzi w życie 2026-03-01")]
+
+
+@pytest.mark.parametrize("meta", [[], {"references": []}, {"references": {"Akty zmieniające": [{"x": 1}]}}])
+def test_unexpected_api_shape_is_a_finding_not_a_crash(meta):
+    out = detect(_store(_param("a", "https://eli.gov.pl/eli/DU/2025/1/ogl")), TODAY, fetch=lambda act: meta)
+    assert [(f.kind, f.act) for f in out] == [("blad", "DU/2025/1")]
+    assert "kształt" in out[0].detail
+
+
+def test_reviewed_file_rejects_duplicate_keys_and_non_mapping_entries(tmp_path):
+    p = tmp_path / "z.yaml"
+    p.write_text("- {act: DU/2026/1, for: DU/2025/1, for: DU/2025/2, checked_at: 2026-11-26, note: x}\n",
+                 encoding="utf-8")
+    with pytest.raises(ValueError, match="powtórzony klucz"):
+        load_reviewed(p)
+    p.write_text("- DU/2026/1\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="potrzebuje pól"):
+        load_reviewed(p)

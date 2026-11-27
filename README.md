@@ -64,7 +64,7 @@ Serwer działa lokalnie przez stdio, tylko czyta dołączone dane i nie łączy 
 - Wyniki są w `structuredContent` zgodnie z `outputSchema` narzędzia. Wszystkie narzędzia mają `readOnlyHint`.
 - Błędny argument (nieznany identyfikator, zła data) daje błąd narzędzia z listą poprawnych wartości. Brak wersji na dany dzień nie jest błędem: wynik ma `found: false` i powód w `reason`. Tak samo `get_schema` odpowiada na symbol formularza, którego nie ma w danych.
 - Pola `quote`, `note` i opisy kroków to dane z repozytorium. Klient nie powinien ich traktować jak poleceń dla modelu.
-- `get_schema` przyjmuje symbol z łącznikiem albo podkreśleniem, wielkimi albo małymi literami (PIT-36L, pit_36l). Dla JPK_V7M i JPK_V7K dniem jest pierwszy dzień okresu rozliczeniowego, dla zeznań PIT pierwszy dzień roku podatkowego, a dla ZUS_DRA dzień złożenia dokumentu.
+- `get_schema` przyjmuje symbol z łącznikiem albo podkreśleniem, wielkimi albo małymi literami (PIT-36L, pit_36l). Dla JPK_V7M i JPK_V7K dniem jest pierwszy dzień okresu rozliczeniowego, dla zeznań PIT pierwszy dzień roku podatkowego, a dla ZUS_DRA dzień złożenia dokumentu. Dla JPK_PKPIR, JPK_EWP i KEDU to, od kiedy stosuje się wersję, opisuje notatka wersji.
 - `xsd_url` w `get_schema` to adres, pod którym urząd udostępnia plik XSD. Dla JPK_V7M, JPK_V7K i zeznań PIT to adres schematu w Centralnym Repozytorium Wzorów Dokumentów Elektronicznych, a dla JPK_PKPIR i JPK_EWP adres pliku na gov.pl. Nie jest to przestrzeń nazw schematu i może się zmienić bez nowej wersji struktury.
 
 Odpowiedź `get_parameter("zdrowotna.minimum")` w skrócie:
@@ -79,7 +79,7 @@ Odpowiedź `get_parameter("zdrowotna.minimum")` w skrócie:
     { "kind": "primary", "title": "Komunikat ZUS …", "url": "https://www.zus.pl/…", "quote": "…" },
     { "kind": "control", "title": "…", "url": "…" }
   ],
-  "confidence": { "level": "niska", "evidence": ["cytat", "drugie_zrodlo"], "open_issue": "…", "open_issue_scope": "value" }
+  "confidence": { "level": "wysoka", "evidence": ["cytat", "drugie_zrodlo", "agent"], "open_issue": null, "open_issue_scope": null }
 }
 ```
 
@@ -108,7 +108,7 @@ Pole `confidence.level` wynika z dowodów zapisanych przy wersji parametru:
   - Bez `confirms` zasadę potwierdza jeden dokument, który sam podaje wszystkie jej kroki. Gdy któreś źródło wersji używa `confirms`, liczy się tylko potwierdzenie po kawałku, a źródło kontrolne bez `confirms` go nie zastępuje.
   - Okresu zasady nie potwierdza się osobno, bo wiele wersji zaczyna się na początku zakresu danych; opisuje go notatka.
   - Adres pliku schematu (`xsd_url`) potwierdza też sam plik spod tego adresu, jeśli cytat z pliku podaje kod systemowy formularza. Skrypt cytatów dopisuje na końcu tekstu źródła wartości atrybutów z plików XML i XSD oraz adresy linków ze stron, więc je też można cytować.
-  - Przy schemacie z CRWDE plik schematu, którego adres podają już dwa dokumenty, sam potwierdza kod systemowy i wersję schematu, a wyróżnik wzoru o tym samym numerze sam potwierdza okres. Koniec okresu zamkniętej wersji wynika z potwierdzonego początku następnej wersji.
+  - Przy schemacie z CRWDE plik schematu, którego adres podają już dwa dokumenty, sam potwierdza kod systemowy i wersję schematu, gdy wymienia je w `confirms`, a wyróżnik wzoru o tym samym numerze sam potwierdza okres. Koniec okresu zamkniętej wersji wynika z potwierdzonego początku następnej wersji, która zaczyna się dzień później.
 
 ## Zakres
 
