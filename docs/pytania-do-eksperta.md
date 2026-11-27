@@ -24,7 +24,7 @@ przypadku brzegowego, średnią.
 
 ## P1. Składka zdrowotna na ryczałcie według przychodu z poprzedniego roku: wyjątek przy ponownym podjęciu działalności
 
-- Wpis: `zasada.ryczalt_zdrowotna_prog_poprzedni_rok` (od 2025-01-01), krok 4.
+- Wpis: `zasada.ryczalt_zdrowotna_prog_poprzedni_rok` (od 2025-01-01 i od 2027-01-01), krok 4.
 - Zgłoszone: 2026-11-26.
 - Ustawa o świadczeniach opieki zdrowotnej, art. 81 ust. 2h: podstawę ustaloną według przychodu
   z poprzedniego roku stosuje się „przez cały rok kalendarzowy”.
@@ -420,10 +420,13 @@ przypadku brzegowego, średnią.
   dochodowym (z wyjątkiem jej art. 6 ust. 1a) „w zakresie osiągniętych w roku podatkowym przychodów,
   poniesionych kosztów uzyskania przychodów, zobowiązania lub uprawnienia do zwiększania lub pomniejszenia
   podstawy opodatkowania” albo innych doliczeń lub odliczeń.
-- podatki.gov.pl (Wspólne rozliczenie małżonków, aktualizacja 24.06.2026) i biznes.gov.pl (strona 00264):
-  rok, w którym przy działalności na podatku liniowym nie było przychodów, kosztów ani odliczeń („zerowy”
-  PIT-36L), nie wyklucza wspólnego rozliczenia. biznes.gov.pl: zmiana w trakcie roku z podatku liniowego albo
-  ryczałtu na zasady ogólne wyklucza wspólne rozliczenie za ten rok.
+- podatki.gov.pl (Wspólne rozliczenie małżonków, aktualizacja 24.06.2026): rok, w którym przy działalności
+  na podatku liniowym nie było przychodów, kosztów ani odliczeń („zerowy” PIT-36L), nie wyklucza wspólnego
+  rozliczenia. biznes.gov.pl (strona 00264) pisze tylko ogólnie, że wspólnego rozliczenia „nie wyłącza złożenie
+  PIT zero”, i że zmiana w trakcie roku z podatku liniowego albo ryczałtu od przychodów ewidencjonowanych na zasady ogólne wyklucza wspólne
+  rozliczenie za ten rok. W ogólnym warunku biznes.gov.pl wymienia też kartę podatkową (wspólne rozliczenie nie jest
+  możliwe, gdy przy liniowym, ryczałcie lub karcie podatkowej osiąga się jakiekolwiek przychody, ponosi koszty albo
+  korzysta z odliczeń lub ulg); o zmianie karty podatkowej na skalę w trakcie roku nie pisze.
 - Pytania: czy oba te wyjaśnienia wynikają z art. 6 ust. 8 i czy można je dopisać do zasady jako kroki?
   Czy tak samo jest przy ryczałcie od przychodów ewidencjonowanych (rok bez przychodów i kosztów) i przy
   karcie podatkowej?
@@ -436,6 +439,10 @@ przypadku brzegowego, średnią.
     jeśli do któregoś z małżonków mają zastosowanie przepisy dot. działalności gospodarczej opodatkowanej podatkiem
     liniowym, ale ma on „zerowy” PIT-36L”. Nie dotyczy ryczałtu, karty podatkowej ani zmiany formy w trakcie roku.
     „Pigułka wiedzy” nie jest objaśnieniem podatkowym ani interpretacją ogólną.
+- Ustalone 2026-11-26 (bez eksperta, z brzmienia przepisu): art. 6 ust. 8 pkt 1 lit. b odsyła do całej ustawy
+  o zryczałtowanym podatku dochodowym (art. 5a pkt 15 ustawy o PIT) z wyjątkiem tylko jej art. 6 ust. 1a, więc obejmuje
+  też kartę podatkową (art. 2 ust. 1 pkt 2 i rozdział 3 tej ustawy). Zasada to opisuje. Otwarte zostaje, jak przy ryczałcie
+  od przychodów ewidencjonowanych i karcie podatkowej ocenia się rok bez przychodów i zmianę formy w trakcie roku.
 
 ## P16. Wniosek o łączne opodatkowanie w zeznaniu złożonym po terminie albo w korekcie; okres samotnego wychowywania dzieci
 
@@ -448,8 +455,10 @@ przypadku brzegowego, średnią.
   zeznanie w terminie, ale nie skorzystali z preferencyjnego opodatkowania i „nie mogąc tego dokonać po terminie” czuli
   się pokrzywdzeni („Wprowadzona zmiana eliminuje tę niedogodność”), a Przykład 1 (stan sprzed zmiany) opisuje korektę
   wspólnego zeznania na odrębne zeznania. Objaśnienia opisują stan prawny z 2019 r.; w innych punktach (zawarcie
-  małżeństwa w trakcie roku, śmierć małżonka, dochody uczącego się dziecka) są nieaktualne. Kroków zasad nie zmieniono:
-  zmiana kroku wymaga nowej wersji po ocenie, czy objaśnienia obejmują też korektę zeznania.
+  małżeństwa w trakcie roku, śmierć małżonka, dochody uczącego się dziecka) są nieaktualne. Objaśnienia nie mówią,
+  czy w obecnym stanie prawnym można dobrowolnie zrezygnować korektą z łącznego opodatkowania (sprawdzone 2026-11-26);
+  Przykład 1 opisuje korektę wspólnego zeznania na odrębne zeznania w stanie prawnym sprzed 2019 r. Kroki o wniosku
+  w obu zasadach opisują to (2026-11-26) jako niewyjaśnione, z odesłaniem do tego pytania.
 
 - Wpisy: `zasada.malzonkowie_wspolne_opodatkowanie` i `zasada.samotny_rodzic_opodatkowanie` (od 2025-01-01),
   krok o wniosku; przy osobie samotnie wychowującej dzieci także ostatni krok.
@@ -646,3 +655,105 @@ przypadku brzegowego, średnią.
   przychodów ewidencjonowanych, broszura MF o JPK_EWP(4) (pole kwoty przychodu w PLN, bez zasady przeliczenia).
 - Pytanie: czy podatnik na ryczałcie przelicza przychód w walucie obcej według art. 11a ust. 1 ustawy o PIT? Jeżeli tak,
   na jakiej podstawie (art. 6 ust. 1 ustawy o ryczałcie)?
+
+## P39. Deklaracja ZUS DRA za miesiąc, w którym działalność zawieszono w trakcie miesiąca
+
+- Wpis: `zasada.dra_obowiazek` (od 2024-11-01), krok o zawieszeniu działalności.
+- Zgłoszone: 2026-11-26.
+- Ustawa o systemie ubezpieczeń społecznych (Dz.U. 2026 poz. 1474), art. 36a ust. 3: „Za okres zawieszenia wykonywania
+  działalności gospodarczej przedsiębiorca będący płatnikiem składek wyłącznie za siebie nie ma obowiązku składania
+  deklaracji rozliczeniowej”. Art. 36a ust. 2: obowiązek ubezpieczeń społecznych ustaje od dnia rozpoczęcia zawieszenia
+  do dnia poprzedzającego wznowienie. Art. 46 ust. 1 i art. 47 ust. 1 każą rozliczać składki i przesyłać deklarację
+  za każdy miesiąc kalendarzowy.
+- Materiał (portal, nie rozstrzyga): biznes.gov.pl, „Jak składać deklaracje i raporty ZUS”
+  (https://www.biznes.gov.pl/pl/portal/00287): „Co do zasady deklaracje ZUS DRA i raporty imienne: ZUS RCA i ZUS RSA
+  składasz co miesiąc. Dotyczy to cię, jeżeli: […] zawieszasz lub wznawiasz działalność gospodarczą.” Ta sama strona:
+  „Jeśli wznawiasz działalność w trakcie miesiąca, deklarację ZUS DRA
+  składasz za niepełny okres rozliczeniowy i drugą - za kolejny pełny miesiąc.” Strona nie opisuje zawieszenia
+  od połowy miesiąca ani składki zdrowotnej za taki miesiąc.
+- Pytanie: czy płatnik składek wyłącznie za siebie, który zawiesza działalność od dnia innego niż pierwszy dzień miesiąca,
+  składa deklarację rozliczeniową za ten miesiąc za dni przed zawieszeniem? Jak wykazuje w niej składkę zdrowotną
+  za ten miesiąc?
+
+## P40. Wzór ZUS DRA dla deklaracji za kwiecień 2026 r. złożonej przed 1 maja 2026 r.
+
+- Wpis: `schemat.zus_dra` (od 2026-05-01), notatka.
+- Zgłoszone: 2026-11-26.
+- Rozporządzenie Ministra Rodziny, Pracy i Polityki Społecznej z 9 kwietnia 2026 r. (Dz.U. 2026 poz. 518): weszło w życie
+  30 kwietnia 2026 r. (§ 8, 14 dni od ogłoszenia 15 kwietnia), a § 4 ust. 2 stanowi: „W okresie od dnia wejścia w życie
+  rozporządzenia do dnia 30 kwietnia 2026 r. w przypadku przekazywania deklaracji rozliczeniowej – o symbolu ZUS DRA,
+  stosuje się dokument, którego wzór stanowi załącznik nr 26 do rozporządzenia.” Wzór z załącznika nr 16 obowiązuje
+  od 1 maja 2026 r. (§ 8), także dla dokumentów za wcześniejsze okresy (§ 6). Do 29 kwietnia 2026 r. obowiązywało
+  rozporządzenie z 20 grudnia 2020 r. (Dz.U. 2025 poz. 1036 i 1781), które § 7 uchyla.
+- Komunikat ZUS „Od 1 maja 2026 r. obowiązują nowe wzory formularzy ZUS DRA i ZUS RCA”
+  (https://www.zus.pl/-/od-1-maja-2026-r.-obowi%C4%85zuj%C4%85-nowe-wzory-formularzy-zus-dra-i-zus-rca): nową metrykę
+  programu Płatnik z nowymi wzorami ZUS udostępnił 24 kwietnia 2026 r.; „Możliwe jest sporządzanie i przekazanie rozliczeń
+  na nowych wzorach formularzy przed ich oficjalnym terminem obowiązywania tj. 1 maja 2026 r.”, a „Rozliczenie składek za kwiecień 2026 r. przekazane na „starych”
+  formularzach będą wymagały skorygowania.”
+- Pytanie: który wzór stosuje się do deklaracji rozliczeniowej za kwiecień 2026 r. złożonej przed 1 maja 2026 r.:
+  do 29 kwietnia wzór z rozporządzenia z 2020 r., a 30 kwietnia wzór z załącznika nr 26 (brzmienie rozporządzenia), czy
+  wzór z załącznika nr 16 (stanowisko ZUS)?
+
+## P41. Który wzór elektroniczny zeznania PIT stosuje się, gdy MF opublikowało kilka wersji schematu za ten sam rok
+
+- Wpisy: `schemat.pit_36` (za 2025 i za 2026 r.), `schemat.pit_28` (za 2025 i za 2026 r.).
+- Zgłoszone: 2026-11-26.
+- W Centralnym Repozytorium Wzorów Dokumentów Elektronicznych (CRWDE, ePUAP) Ministerstwo Finansów opublikowało
+  dla tego samego wariantu i roku podatkowego po dwa wzory z różnymi wersjami schematu:
+  - PIT-36(32) za 2025 r.: wzór 2025/09/24/13871 (wersja schematu 1-0E) i 2026/09/11/14368 (2-0E); oba wyróżniki
+    podają, że wzór „stosuje się do uzyskanych dochodów lub poniesionych strat od dnia 1 stycznia 2025 r.”;
+  - PIT-36(32) za 2026 r.: wzór 2026/09/16/14376 (3-0E) i 2026/10/13/14405 (3-1E);
+  - PIT-28(27): wzór 2025/09/11/13849 (1-0E) i 2025/10/10/13916 (1-1E);
+  - PIT-28(28): wzór 2026/09/10/14364 (1-0E) i 2026/09/14/14369 (1-1E).
+- Porównanie plików XSD (diff), poza przestrzenią nazw wzoru: 14368 różni się od 13871 wersją schematu i opisem
+  jednego pola (numery pozycji 293 i 294 zamiast 283 i 284); 14405 od 14376 wersją schematu i jednym warunkiem
+  unikalności identyfikatora; 13916 od 13849 wersją schematu, usunięciem dwóch warunków „większe od zera”
+  i najwcześniejszym dopuszczalnym rokiem w jednym polu; 14369 od 14364 tylko wersją schematu.
+  Wpisy podają wzór opublikowany najpóźniej.
+- Wyróżniki PIT-36(32) za 2025 r.: wzór 13871 podpisano 24 września 2025 r., a wzór 14368 11 września 2026 r.;
+  oba mają ważność od 24 lipca 2025 r. Nie wiadomo, czy wzór 14368 dotyczy też zeznań i korekt złożonych przed
+  jego publikacją ani według którego wzoru składa się teraz korektę zeznania za 2025 r.
+- Strona MF „Struktury dokumentów XML” (podatki.gov.pl, e-Deklaracje, Dokumentacja IT) odsyła do CRWDE, a wzory
+  zeznań PIT-28, PIT-36 i PIT-36L na jej liście kończą się na latach 2021–2023. Żadne źródło urzędowe nie mówi, który z tych wzorów system e-Deklaracji przyjmuje
+  i czy wcześniejszy przestaje być przyjmowany po publikacji nowszego.
+- Pytanie: który wzór (wersję schematu) stosuje się przy składaniu zeznania i korekty za dany rok, gdy w CRWDE są
+  dwa wzory tego samego wariantu? Czy MF publikuje gdzieś aktualną listę wzorów przyjmowanych przez e-Deklaracje?
+
+## P42. Kwota przychodu w danych autoryzujących przy kilku zeznaniach za rok sprzed dwóch lat
+
+- Wpis: `zasada.dane_autoryzujace` (wersje od 2026-04-01 i od 2026-06-16), kroki 2 i 3.
+- Zgłoszone: 2026-11-26.
+- Rozporządzenie w sprawie sposobu przesyłania deklaracji i podań (Dz.U. 2025 poz. 327, § 12 ust. 2 pkt 5)
+  i rozporządzenie w sprawie sposobu przesyłania ksiąg podatkowych (Dz.U. 2025 poz. 461, § 2 ust. 2a pkt 5):
+  dane autoryzujące obejmują „wysokość przychodu wykazanego odpowiednio w” zeznaniu PIT-28, PIT-36, PIT-36L,
+  PIT-37, PIT-38, PIT-39 albo w rocznym obliczeniu PIT-40A za rok podatkowy o dwa lata wcześniejszy niż rok
+  przesyłania, albo zero, gdy nie złożono żadnego z nich.
+- Odpowiedzi MF o e-Deklaracjach (podatki.gov.pl): gdy za tamten rok nie złożono zeznania „na analogicznym
+  formularzu”, ale rozliczano się na innym z wymienionych, podaje się kwotę z tamtego zeznania, a nie zero. MF podaje też
+  pozycje zeznań, z których bierze się kwotę, dla kolejnych wzorów.
+- Żadne z tych źródeł nie mówi, którą kwotę podać, gdy za tamten rok podatnik złożył kilka z wymienionych zeznań
+  (na przykład PIT-36L i PIT-38 albo PIT-28 i PIT-38). Przy plikach JPK (JPK_V7M, JPK_EWP, JPK_PKPIR) nie ma
+  „analogicznego formularza”.
+- Pytanie: którą kwotę przychodu podaje się w takim przypadku przy zeznaniu PIT i przy plikach JPK? Czy można podać
+  kwotę z dowolnego ze złożonych zeznań?
+
+## P46. Wybór ryczałtu albo podatku liniowego w roku po utracie prawa do tej formy
+
+- Wpis: `zasada.wybor_formy_opodatkowania` (od 2026-01-01), krok o roku po utracie prawa.
+- Zgłoszone: 2026-11-26.
+- Ustawa o ryczałcie (Dz.U. 2025 poz. 843), art. 9 ust. 1b: wybór ryczałtu „dotyczy również lat następnych”, chyba że
+  podatnik w terminie złoży oświadczenie o rezygnacji albo o wyborze podatku liniowego. Art. 8 ust. 2: podatnik, który
+  uzyska przychód od byłego lub obecnego pracodawcy, „traci w roku podatkowym prawo” do ryczałtu i do końca roku
+  podatkowego opłaca podatek na ogólnych zasadach. Art. 8 ust. 3 mówi tak samo o utracie prawa w roku podatkowym.
+- Ustawa o PIT (Dz.U. 2026 poz. 592), art. 9a ust. 2b: wybór podatku liniowego „dotyczy również lat następnych”;
+  art. 9a ust. 3: podatnik „traci w roku podatkowym prawo” do podatku liniowego.
+- Przepisy nie mówią wprost, czy wybór sprzed utraty prawa obowiązuje w następnym roku bez nowego oświadczenia.
+  Przeszukane źródła urzędowe (2026-11-26), bez rozstrzygnięcia: strony podatki.gov.pl i biznes.gov.pl o ryczałcie
+  i o podatku liniowym.
+- Materiał (bez rozstrzygnięcia): biznes.gov.pl, Podatek liniowy (portal 00253) podaje, że wybór podatku liniowego
+  „jest możliwy dopiero od roku następującego po roku podatkowym”, w którym podatnik pracował na rzecz byłego pracodawcy.
+  Strona nie mówi, czy w tym następnym roku trzeba złożyć nowe oświadczenie.
+- Pytanie: czy podatnik, który stracił w roku podatkowym prawo do ryczałtu (art. 8 ust. 2 lub 3 ustawy o ryczałcie) albo
+  do podatku liniowego (art. 9a ust. 3 ustawy o PIT), jest w następnym roku opodatkowany tą formą bez nowego oświadczenia,
+  jeżeli spełnia jej warunki? Czy musi złożyć oświadczenie o wyborze ponownie w terminie z art. 9 ust. 1 ustawy
+  o ryczałcie albo art. 9a ust. 2 ustawy o PIT?

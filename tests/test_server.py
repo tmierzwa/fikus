@@ -89,6 +89,13 @@ def test_deadlines_list_revenue_record_entry_for_flat_rate_only():
     assert "termin.ewidencja_przychodow_wpis" not in ids
 
 
+def test_get_schema_zus_dra_by_filing_date():
+    r = _call("get_schema", {"form": "ZUS_DRA", "as_of": "2026-05-01"})
+    assert not r.is_error and r.structured_content["value"]["legal_act"] == "Dz.U. 2026 poz. 518"
+    r = _call("get_schema", {"form": "ZUS_DRA", "as_of": "2026-04-30"})
+    assert r.structured_content["found"] is False
+
+
 def test_confidence_reports_medium_level_scope_and_unconfirmed_fields():
     rule = _call("get_parameter", {"id": "zasada.ulgi_liniowy", "as_of": "2027-02-01"})
     conf = rule.structured_content["confidence"]
@@ -97,3 +104,12 @@ def test_confidence_reports_medium_level_scope_and_unconfirmed_fields():
     assert "system_code" in schema.structured_content["confidence"]["unconfirmed_fields"]
     levels = {c["confidence"] for c in _call("changes", {"since": "2026-01-01"}).structured_content["result"]}
     assert levels <= {"wysoka", "średnia", "niska"} and "średnia" in levels
+
+
+def test_get_schema_accepts_hyphen_and_lowercase():
+    for form in ("PIT-36L", "pit_36l", "PIT_36L", "pit-36l"):
+        r = _call("get_schema", {"form": form, "as_of": "2026-01-01"})
+        assert not r.is_error and r.structured_content["id"] == "schemat.pit_36l"
+        assert r.structured_content["found"] is True
+    r = _call("get_schema", {"form": "PIT-28", "as_of": "2025-01-01"})
+    assert r.structured_content["found"] is True and r.structured_content["value"]["form"].startswith("PIT-28")
