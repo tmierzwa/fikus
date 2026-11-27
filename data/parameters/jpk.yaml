@@ -63,9 +63,11 @@
         w sprawie szczegółowego zakresu danych w deklaracjach i ewidencji VAT (oznaczenia związane z Krajowym
         Systemem e-Faktur), które weszły w życie 1 lutego 2026 r.; do okresów wcześniejszych stosuje się przepisy
         dotychczasowe. Rozporządzenie bazowe (Dz.U. 2019 poz. 1988) nie ma tekstu jednolitego w ELI.
-        Wariant, kod systemowy, wersję schematu 1-0E i okres podaje sama tylko broszura MF z 2026 r.; wersję 1-0E
-        potwierdza też zestawienie zmian MF, ale bez okresu, a adres schematu podaje tylko wyróżnik wzoru. Dlatego
-        wersja nie ma drugiego niezależnego dowodu.
+        Kod systemowy i wersję schematu 1-0E podaje broszura MF z 2026 r. i atrybuty pliku XSD spod adresu
+        schematu (wersję 1-0E także zestawienie zmian MF), a adres schematu wyróżnik wzoru i sam plik. Okres
+        rozliczeniowy od lutego 2026 r. podaje w cytacie tylko broszura MF z 2026 r.; strony MF i KAS piszą
+        o strukturze „obowiązującej od 1 lutego 2026 roku” i nie mówią, czy chodzi o okres rozliczeniowy.
+        Dlatego okres nie ma drugiego dokumentu i wersja nie ma drugiego niezależnego dowodu.
       sources:
         - title: podatki.gov.pl (MF), JPK_VAT z deklaracją – pliki do pobrania
           url: https://podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat-z-deklaracja/pliki-do-pobrania
@@ -98,6 +100,11 @@
           confirms: [form, variant, schema_version]
           quote: "Schema JPK_V7M (3) (1-0E)"
           as_of: 2026-11-26
+        - title: CRWDE (ePUAP), plik XSD wzoru 2025/12/19/14090 (kod systemowy, wersja schematu i wariant z atrybutów pliku)
+          url: https://crd.gov.pl/wzor/2025/12/19/14090/schemat.xsd
+          confirms: [form, variant, system_code, schema_version, xsd_url]
+          quote: "kodSystemowy xsd:string required JPK_V7M (3) wersjaSchemy xsd:string required 1-0E WariantFormularza xsd:byte 3"
+          as_of: 2026-11-27
         - title: podatki.gov.pl (MF), Broszura – JPK_VAT z deklaracją od 1 lutego 2026 r. (okresy wersji 3)
           url: https://podatki.gov.pl/media/wgbkrejs/broszura-jpk_vat-z-deklaracj%C4%85-od-1-lutego-2026-r.pdf
           confirms: [variant, period]
@@ -119,7 +126,7 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1800/text.pdf
           quote: "„OFF” – faktura, o której mowa w art. 106nf ust. 1 ustawy, która na dzień złożenia ewidencji nie posiada numeru identyfikującego tę fakturę w Krajowym Systemie e-Faktur"
           article: § 1 pkt 1 lit. d
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: schemat.jpk_v7k
   name: Schemat JPK_V7K (deklaracja kwartalna i ewidencja VAT)
@@ -261,48 +268,60 @@
         w Biuletynie Informacji Publicznej serwisu Ministerstwa Finansów – Krajowej Administracji Skarbowej
         (gov.pl/web/kas), która udostępnia go jako „Schemat_JPK_PKPIR(3)_v1-0”, plik Struktura_Schemat_JPK_PKPIR(3)_v1-0.xsd.
         Plik spod tego adresu ma przestrzeń nazw http://jpk.mf.gov.pl/wzor/2024/10/30/10302/
-        oraz stałe wartości kodu systemowego „JPK_PKPIR (3)” i wersji schematu „1-0”; te wartości są w atrybutach pliku,
-        więc nie da się ich zacytować.
-        Wariant, kod systemowy, wersję schematu 1-0 i datę podaje razem tylko broszura MF, a adres pliku XSD tylko strona KAS. Strona MF
-        o JPK_PD podaje tylko wariant 3, a specyfikacja interfejsów usług JPK wariant i datę, bez wersji schematu,
-        więc żadna z nich nie jest drugim niezależnym dowodem.
+        oraz stałe wartości kodu systemowego „JPK_PKPIR (3)”, wersji schematu „1-0” i wariantu 3 w atrybutach; cytat
+        z pliku podaje je razem z nazwami atrybutów. Wariant podają broszura MF, strona MF o JPK_PD, specyfikacja
+        interfejsów usług JPK, strona KAS (nazwa pliku) i plik XSD; kod systemowy i wersję schematu broszura MF i plik XSD; adres pliku strona
+        KAS (adres linku) i sam plik; datę obowiązywania broszura MF i strona KAS.
         Poprawka: dodany adres pliku XSD (wcześniej wartość go nie miała, bo nie ustalono go w urzędowym źródle).
       sources:
         - title: podatki.gov.pl (MF), Broszura informacyjna dotycząca struktury JPK_PKPIR(3)
           url: https://podatki.gov.pl/media/pbqdgqcp/broszura_informacyjna_dot_jpk_pkpir-3.pdf
-          quote: "wersja 3, w formacie XSD (XML Schema Definition), która będzie obowiązywać od 01.01.2026 r."
+          confirms: [form, variant, period]
+          quote: "Niniejsza Broszura przedstawia strukturę JPK_PKPIR – podatkowa księga przychodów i rozchodów – wersja 3, w formacie XSD (XML Schema Definition), która będzie obowiązywać od 01.01.2026 r."
           article: art. 193a § 2 Ordynacji podatkowej, art. 24a ust. 1e ustawy o PIT
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Broszura informacyjna dotycząca struktury JPK_PKPIR(3) (kod systemowy i wersja schematu)
           url: https://podatki.gov.pl/media/pbqdgqcp/broszura_informacyjna_dot_jpk_pkpir-3.pdf
           quote: "kodSystemowy: „JPK_PKPIR (3)”"
+          confirms: [system_code]
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Broszura informacyjna dotycząca struktury JPK_PKPIR(3) (wersja schematu)
           url: https://podatki.gov.pl/media/pbqdgqcp/broszura_informacyjna_dot_jpk_pkpir-3.pdf
           quote: "wersjaSchemy: „1-0”"
+          confirms: [schema_version]
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), JPK_PD (formularz dla prowadzących księgę; tylko wariant)
           url: https://podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_pd/jpk_pd
           quote: "formularz JPK_PKPIR(3) – podatkowa księga przychodów i rozchodów"
+          confirms: [form, variant]
           as_of: 2026-11-26
         - title: podatki.gov.pl (MF), Specyfikacja Interfejsów usług JPK wersja 5.6.0 (wariant i data, bez wersji schematu)
           url: https://podatki.gov.pl/media/bngboylg/specyfikacja-interfejs%C3%B3w-us%C5%82ug-jpk-wersja-560.pdf
           quote: "JPK_PKPIR(3) PODATKOWA KSIĘGA PRZYCHODÓW I ROZCHODÓW (W FORMIE JEDNOLITEGO PLIKU KONTROLNEGO (3)) (schemat dostępny produkcyjnie od 01.01.2026)"
+          confirms: [form, variant]
           as_of: 2026-11-26
         - title: gov.pl (KAS), Struktury JPK w podatkach dochodowych (data obowiązywania struktury)
           url: https://www.gov.pl/web/kas/struktury-jpk-w-podatkach-dochodowych
           quote: "Struktury JPK_PKPIR, JPK_EWP oraz JPK_ST będą obowiązywały od 1 stycznia 2026 r."
           article: art. 193a § 2 Ordynacji podatkowej, art. 24a ust. 1e ustawy o PIT
+          confirms: [form, period]
           as_of: 2026-11-26
-        - title: gov.pl (KAS), Struktury JPK w podatkach dochodowych (plik XSD do pobrania; adres pliku to adres linku przy tej nazwie)
+        - title: gov.pl (KAS), Struktury JPK w podatkach dochodowych (plik XSD do pobrania)
           url: https://www.gov.pl/web/kas/struktury-jpk-w-podatkach-dochodowych
           quote: "Schemat_JPK_PKPIR(3)_v1-0 Struktura_Schemat_JPK_PKPIR(3)_v1-0.xsd"
+          confirms: [form, variant]
           as_of: 2026-11-26
-        - title: gov.pl (MF), plik XSD spod adresu schematu (przestrzeń nazw, kod systemowy i wersja schematu są w atrybutach; cytat potwierdza tylko, że to schemat JPK_PKPIR)
+        - title: gov.pl (KAS), Struktury JPK w podatkach dochodowych (adres linku przy nazwie Schemat_JPK_PKPIR(3)_v1-0)
+          url: https://www.gov.pl/web/kas/struktury-jpk-w-podatkach-dochodowych
+          quote: "/attachment/70b78fa0-9183-400d-a967-eeacdcb87e57"
+          confirms: [xsd_url]
+          as_of: 2026-11-27
+        - title: gov.pl (MF), plik XSD spod adresu schematu (kod systemowy, wersja schematu i wariant z atrybutów pliku)
           url: https://www.gov.pl/attachment/70b78fa0-9183-400d-a967-eeacdcb87e57
-          quote: "Nagłówek JPK_PKPIR"
-          as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+          quote: "kodSystemowy xsd:string required JPK_PKPIR (3) wersjaSchemy xsd:string required 1-0 WariantFormularza xsd:byte 3"
+          confirms: [form, variant, system_code, schema_version, xsd_url]
+          as_of: 2026-11-27
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: schemat.jpk_ewp
   name: Schemat JPK_EWP (ewidencja przychodów)
@@ -323,8 +342,8 @@
         wariant schematu. Adres pliku XSD pochodzi ze strony KAS „Struktury JPK w podatkach dochodowych”, która udostępnia
         go jako „Schemat_JPK_EWP(4)_v1-0”, plik Struktura_Schemat_JPK_EWP(4)_v1-0.xsd. Plik spod tego adresu ma przestrzeń
         nazw http://jpk.mf.gov.pl/wzor/2024/10/30/10301/ oraz stałe wartości kodu systemowego „JPK_EWP (4)” i wersji
-        schematu „1-0”; te wartości są w atrybutach pliku, więc nie da się ich zacytować. Kod systemowy i wersję schematu
-        podaje w cytacie tylko broszura MF, a adres pliku XSD tylko strona KAS, więc te pola nie mają drugiego dokumentu.
+        schematu „1-0” oraz wariant 4 w atrybutach; cytat z pliku podaje je razem z nazwami atrybutów. Kod systemowy
+        i wersję schematu podają broszura MF i plik XSD, a adres pliku strona KAS (adres linku) i sam plik.
         Specyfikacja interfejsów usług JPK 5.6.0 wymienia też wariant 3 (JPK_EWP(3)) bez daty; ta wersja nie opisuje
         okresu przed 1 stycznia 2026 r.
       sources:
@@ -360,17 +379,22 @@
           article: art. 193a § 2 Ordynacji podatkowej, art. 15 ust. 12 ustawy o zryczałtowanym podatku dochodowym
           confirms: [form, period]
           as_of: 2026-11-26
-        - title: gov.pl (KAS), Struktury JPK w podatkach dochodowych (plik XSD do pobrania; adres pliku to adres linku przy tej nazwie)
+        - title: gov.pl (KAS), Struktury JPK w podatkach dochodowych (plik XSD do pobrania)
           url: https://www.gov.pl/web/kas/struktury-jpk-w-podatkach-dochodowych
           quote: "Schemat_JPK_EWP(4)_v1-0 Struktura_Schemat_JPK_EWP(4)_v1-0.xsd"
+          confirms: [form, variant]
+          as_of: 2026-11-26
+        - title: gov.pl (KAS), Struktury JPK w podatkach dochodowych (adres linku przy nazwie Schemat_JPK_EWP(4)_v1-0)
+          url: https://www.gov.pl/web/kas/struktury-jpk-w-podatkach-dochodowych
+          quote: "/attachment/67b55c59-e05c-42f0-be4c-28afcca460b6"
           confirms: [xsd_url]
-          as_of: 2026-11-26
-        - title: gov.pl (MF), plik XSD spod adresu schematu (przestrzeń nazw, kod systemowy i wersja schematu są w atrybutach; cytat potwierdza tylko, że to schemat JPK_EWP)
+          as_of: 2026-11-27
+        - title: gov.pl (MF), plik XSD spod adresu schematu (kod systemowy, wersja schematu i wariant z atrybutów pliku)
           url: https://www.gov.pl/attachment/67b55c59-e05c-42f0-be4c-28afcca460b6
-          quote: "Nagłówek JPK_EWP"
-          confirms: [form]
-          as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+          quote: "kodSystemowy xsd:string required JPK_EWP (4) wersjaSchemy xsd:string required 1-0 WariantFormularza xsd:byte 4"
+          confirms: [form, variant, system_code, schema_version, xsd_url]
+          as_of: 2026-11-27
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: zasada.jpk_pd_pkpir
   name: Przesyłanie podatkowej księgi przychodów i rozchodów w formie JPK (JPK_PKPIR)
