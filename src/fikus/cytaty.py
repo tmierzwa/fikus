@@ -6,6 +6,7 @@ wyrazów i rodzaj cudzysłowów i myślników, bo tak różnią się teksty wyci
 """
 from __future__ import annotations
 
+import functools
 import hashlib
 import html
 import os
@@ -109,9 +110,15 @@ def _cache_path(url: str) -> Path:
     return CACHE / (hashlib.sha256(url.encode()).hexdigest()[:20] + ".txt")
 
 
+@functools.lru_cache(maxsize=None)
+def _read_cached(p: Path) -> str:
+    # Ten sam obiekt tekstu dla tego samego źródła, żeby _normalized_text liczył go raz.
+    return p.read_text(encoding="utf-8")
+
+
 def cached_text(url: str) -> str | None:
     p = _cache_path(text_url(url))
-    return p.read_text(encoding="utf-8") if p.exists() else None
+    return _read_cached(p) if p.exists() else None
 
 
 def fetch_text(url: str) -> str:
@@ -121,7 +128,7 @@ def fetch_text(url: str) -> str:
         raise ValueError(f"dozwolone są tylko adresy https://, a nie {turl!r}")
     p = _cache_path(turl)
     if p.exists():
-        return p.read_text(encoding="utf-8")
+        return _read_cached(p)
     body, ctype = fetch_bytes(turl, {"User-Agent": "fikus-sprawdz-cytaty/0.1"}, MAX_BYTES)
     if body[:5] == b"%PDF-" or "pdf" in ctype:
         with tempfile.NamedTemporaryFile(suffix=".pdf") as f:
@@ -137,9 +144,14 @@ def fetch_text(url: str) -> str:
     p.write_text(text, encoding="utf-8")
     with (CACHE / "indeks.tsv").open("a", encoding="utf-8") as idx:   # adres → plik, dla weryfikatora
         idx.write(f"{turl}\t{p.name}\n")
-    return text
+    return _read_cached(p)
+
+
+@functools.lru_cache(maxsize=32)
+def _normalized_text(text: str) -> str:
+    return normalize(text)
 
 
 def quote_in(quote: str, text: str) -> bool:
     """Czy cytat jest w tekście, po sprowadzeniu obu do tej samej postaci (patrz normalize)."""
-    return normalize(quote) in normalize(text)
+    return normalize(quote) in _normalized_text(text)
