@@ -218,7 +218,7 @@
       valid_to: 2026-12-31
       value:
         steps:
-          - text: Dochód z działalności opodatkowanej podatkiem liniowym możesz pomniejszyć tylko o pozycje wymienione w art. 30c ust. 2 ustawy o PIT. Odliczenie składek społecznych i zdrowotnych opisuje zasada podatku liniowego.
+          - text: Dochód z działalności opodatkowanej podatkiem liniowym możesz pomniejszyć tylko o pozycje wymienione w art. 30c ust. 2 ustawy o PIT.
             uses: [zasada.liniowy_podatek]
             basis: art. 30c ust. 2 ustawy o podatku dochodowym od osób fizycznych
           - text: Wpłaty na indywidualne konto zabezpieczenia emerytalnego odliczasz do wysokości rocznego limitu wpłat z ustawy o tych kontach, wyłącznie w zeznaniu, jeżeli nie zostały zaliczone do kosztów, odliczone od dochodów opodatkowanych według skali ani od przychodów na ryczałcie i nie zostały zwrócone.
@@ -227,7 +227,7 @@
           - text: Z darowizn odliczasz tylko darowiznę na cele kształcenia zawodowego z art. 26 ust. 1 pkt 9 lit. d (materiały dydaktyczne lub środki trwałe dla publicznych szkół, placówek i centrów kształcenia zawodowego, na warunkach art. 26 ust. 6ea i 6eb), w wysokości darowizny, nie więcej niż limit procentowy dochodu. Pozostałych odliczeń z art. 26 ust. 1, na przykład wydatków na Internet i na cele rehabilitacyjne, art. 30c ust. 2 nie wymienia.
             uses: [ulga.darowizny.limit]
             basis: art. 30c ust. 2 pkt 4, ust. 3 i 3a ustawy o podatku dochodowym od osób fizycznych; art. 26 ust. 1 pkt 9 lit. d, ust. 6ea i 6eb tej ustawy
-          - text: Od podstawy obliczenia podatku ustalonej według art. 30c ust. 2 możesz odliczyć wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, do limitu na wszystkie przedsięwzięcia. Do tej podstawy odnoszą się też odliczenia z art. 26e, 26ga, 26gb, 26ha, 26hb, 26hc, 26hd i 26he ustawy o PIT, art. 52jb (ulga na robotyzację, 50% kosztów poniesionych na robotyzację, nie więcej niż dochód z działalności, dla kosztów poniesionych w latach 2022–2026; przedłużenie do lat 2022–2036 z ustawy Dz.U. 2026 poz. 1541 stosuje się do dochodów uzyskanych od 1 stycznia 2027 r.) oraz art. 52n (darowizny na przeciwdziałanie COVID-19) i art. 52x (darowizny rzeczowe laptopów i tabletów dla organów prowadzących placówki oświatowe albo dla organizacji, o których mowa w art. 3 ust. 2 i 3 ustawy o działalności pożytku publicznego, prowadzących działalność pożytku publicznego w sferze zadań publicznych, lub operatora OSE, z przeznaczeniem na dalsze nieodpłatne przekazanie), w obu przypadkach przekazane od 1 stycznia 2020 r. do końca miesiąca odwołania stanu epidemii; ta zasada ich nie opisuje. Podstawę po odliczeniach z art. 26e, 26ga, 26gb, 26h–26he i 52jb można zmniejszyć o wartość nieuregulowanych wierzytelności, a trzeba zwiększyć o wartość nieuregulowanych zobowiązań, na zasadach art. 26i (ulga na złe długi); ta zasada tego nie opisuje. Ta lista obejmuje odliczenia i zmiany tej podstawy, które przepisy ustawy o PIT (tekst jednolity Dz.U. 2026 poz. 592) wiążą z podstawą ustaloną według art. 26 ust. 1 lub art. 30c ust. 2; odliczeń przewidzianych w odrębnych ustawach (art. 26 ust. 6b) nie sprawdzono, więc lista nie musi być pełna.
+          - text: Od podstawy obliczenia podatku ustalonej według art. 30c ust. 2 możesz odliczyć wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, do limitu na wszystkie przedsięwzięcia. Do tej podstawy odnoszą się też odliczenia z art. 26e, 26ga, 26gb, 26ha, 26hb, 26hc, 26hd i 26he ustawy o PIT, art. 52jb (ulga na robotyzację, 50% kosztów poniesionych na robotyzację, nie więcej niż dochód z działalności, dla kosztów poniesionych w latach 2022–2026; przedłużenie do lat 2022–2036 z ustawy Dz.U. 2026 poz. 1541 stosuje się do dochodów uzyskanych od 1 stycznia 2027 r.) oraz art. 52n (darowizny na przeciwdziałanie COVID-19) i art. 52x (darowizny rzeczowe laptopów i tabletów dla organów prowadzących placówki oświatowe albo dla organizacji, o których mowa w art. 3 ust. 2 i 3 ustawy o działalności pożytku publicznego, prowadzących działalność pożytku publicznego w sferze zadań publicznych, lub operatora OSE, z przeznaczeniem na dalsze nieodpłatne przekazanie), w obu przypadkach przekazane od 1 stycznia 2020 r. do końca miesiąca odwołania stanu epidemii. Podstawę po odliczeniach z art. 26e, 26ga, 26gb, 26h–26he i 52jb można zmniejszyć o wartość nieuregulowanych wierzytelności, a trzeba zwiększyć o wartość nieuregulowanych zobowiązań, na zasadach art. 26i (ulga na złe długi).
             uses: [ulga.termomodernizacja.limit]
             basis: art. 26h ust. 1 i 2, art. 26i ust. 1, art. 52jb ust. 1 i 5, art. 52n ust. 1 i art. 52x ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 1 pkt 4 lit. b i art. 4 ust. 1 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1541)
           - text: Ulgi na dzieci nie odliczasz od podatku liniowego, bo art. 27f ustawy o PIT dotyczy podatku obliczonego według skali (art. 27). Dochody opodatkowane podatkiem liniowym wlicza się jednak do dochodów, od których zależy prawo do ulgi na jedno dziecko. Jeżeli masz też dochody opodatkowane według skali, ulgę wykazujesz w zeznaniu, w którym rozliczasz te dochody.
@@ -240,6 +240,15 @@
         31 grudnia 2026 r. (poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1556) art. 26, 26h, 27f i 30c nie zmieniają;
         ustawa Dz.U. 2026 poz. 1542 od 1 stycznia 2027 r. zmienia art. 21, 23b i 23z, a z przepisów o odliczeniach
         tylko warunki art. 26e ust. 6 i art. 26ga ust. 10 przy zwolnieniu z art. 21 ust. 1 pkt 63b. Wcześniejszych wersji nie wprowadzono.
+        Korekta z 27 listopada 2026 r.: zmienione kroki 1 i 4.
+      not_covered: >-
+        Odliczenia składek na ubezpieczenia społeczne i zdrowotne (opisuje je zasada podatku liniowego).
+        Warunków i sposobu odliczeń od podstawy obliczenia podatku z art. 26e, 26ga, 26gb, 26ha–26he, 52jb, 52n i 52x
+        ustawy o podatku dochodowym od osób fizycznych oraz ulgi na złe długi (art. 26i) poza tym, co podaje krok
+        o podstawie obliczenia podatku. Odliczeń od tej podstawy przewidzianych w odrębnych ustawach (art. 26 ust. 6b);
+        krok wymienia tylko odliczenia, które ustawa o PIT (tekst jednolity Dz.U. 2026 poz. 592) wiąże z podstawą
+        ustaloną według art. 26 ust. 1 lub art. 30c ust. 2.
+      see_also: [zasada.liniowy_podatek]
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (IKZE)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -315,7 +324,7 @@
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
           quote: "Jeżeli oprócz tych dochodów lub przychodów uzyskujesz również dochody opodatkowane według skali podatkowej, możesz skorzystać z ulgi na dziecko."
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification: {checked_at: 2026-11-27}
     - valid_from: 2027-01-01
       value:
         steps:
@@ -443,7 +452,7 @@
       valid_to: 2026-12-31
       value:
         steps:
-          - text: Od dochodu (art. 26 ust. 1 ustawy o PIT) odliczasz wydatki na cele z art. 26 ust. 1, jeżeli nie zostały zaliczone do kosztów, odliczone od dochodów opodatkowanych podatkiem liniowym ani od przychodów na ryczałcie i nie zostały zwrócone. Ta zasada nie opisuje odliczenia składek społecznych (pkt 2 i 2a) ani zwrotu nienależnych świadczeń (pkt 5).
+          - text: Od dochodu (art. 26 ust. 1 ustawy o PIT) odliczasz wydatki na cele z art. 26 ust. 1, jeżeli nie zostały zaliczone do kosztów, odliczone od dochodów opodatkowanych podatkiem liniowym ani od przychodów na ryczałcie i nie zostały zwrócone.
             uses: []
             basis: art. 26 ust. 1 i 13a ustawy o podatku dochodowym od osób fizycznych
           - text: Wpłaty na indywidualne konto zabezpieczenia emerytalnego odliczasz do wysokości rocznego limitu wpłat z ustawy o tych kontach, a składki członkowskie na związki zawodowe do kwoty rocznej z art. 26 ust. 1 pkt 2c; oba odliczenia tylko w zeznaniu.
@@ -458,7 +467,7 @@
           - text: Darowizny na cele z art. 26 ust. 1 pkt 9 odliczasz łącznie do limitu procentowego dochodu. Nie odliczysz darowizn na rzecz osób fizycznych ani podmiotów wymienionych w art. 26 ust. 5 pkt 2, ani darowizn zaliczonych do kosztów. Darowiznę na kształcenie zawodowe (pkt 9 lit. d) odlicza tylko podatnik z przychodami z działalności gospodarczej.
             uses: [ulga.darowizny.limit]
             basis: art. 26 ust. 1 pkt 9, ust. 5, 6, 6eb, 6f i 7 ustawy o podatku dochodowym od osób fizycznych
-          - text: Od podstawy obliczenia podatku możesz odliczyć wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, do limitu na wszystkie przedsięwzięcia. Do tej podstawy odnoszą się też odliczenia z art. 26e, 26ga, 26gb, 26ha, 26hb, 26hc, 26hd i 26he, art. 52jb (ulga na robotyzację, 50% kosztów poniesionych na robotyzację, nie więcej niż dochód z działalności, dla kosztów poniesionych w latach 2022–2026; przedłużenie do lat 2022–2036 z ustawy Dz.U. 2026 poz. 1541 stosuje się do dochodów uzyskanych od 1 stycznia 2027 r.) oraz art. 52n (darowizny na przeciwdziałanie COVID-19) i art. 52x (darowizny rzeczowe laptopów i tabletów dla organów prowadzących placówki oświatowe albo dla organizacji, o których mowa w art. 3 ust. 2 i 3 ustawy o działalności pożytku publicznego, prowadzących działalność pożytku publicznego w sferze zadań publicznych, lub operatora OSE, z przeznaczeniem na dalsze nieodpłatne przekazanie), w obu przypadkach przekazane od 1 stycznia 2020 r. do końca miesiąca odwołania stanu epidemii; ta zasada ich nie opisuje. Podstawę po odliczeniach z art. 26e, 26ga, 26gb, 26h–26he i 52jb można zmniejszyć o wartość nieuregulowanych wierzytelności, a trzeba zwiększyć o wartość nieuregulowanych zobowiązań, na zasadach art. 26i (ulga na złe długi); ta zasada tego nie opisuje. Ta lista obejmuje odliczenia i zmiany tej podstawy, które przepisy ustawy o PIT (tekst jednolity Dz.U. 2026 poz. 592) wiążą z podstawą ustaloną według art. 26 ust. 1 lub art. 30c ust. 2; odliczeń przewidzianych w odrębnych ustawach (art. 26 ust. 6b) nie sprawdzono, więc lista nie musi być pełna.
+          - text: Od podstawy obliczenia podatku możesz odliczyć wydatki na przedsięwzięcie termomodernizacyjne w budynku mieszkalnym jednorodzinnym, którego jesteś właścicielem lub współwłaścicielem, do limitu na wszystkie przedsięwzięcia. Do tej podstawy odnoszą się też odliczenia z art. 26e, 26ga, 26gb, 26ha, 26hb, 26hc, 26hd i 26he, art. 52jb (ulga na robotyzację, 50% kosztów poniesionych na robotyzację, nie więcej niż dochód z działalności, dla kosztów poniesionych w latach 2022–2026; przedłużenie do lat 2022–2036 z ustawy Dz.U. 2026 poz. 1541 stosuje się do dochodów uzyskanych od 1 stycznia 2027 r.) oraz art. 52n (darowizny na przeciwdziałanie COVID-19) i art. 52x (darowizny rzeczowe laptopów i tabletów dla organów prowadzących placówki oświatowe albo dla organizacji, o których mowa w art. 3 ust. 2 i 3 ustawy o działalności pożytku publicznego, prowadzących działalność pożytku publicznego w sferze zadań publicznych, lub operatora OSE, z przeznaczeniem na dalsze nieodpłatne przekazanie), w obu przypadkach przekazane od 1 stycznia 2020 r. do końca miesiąca odwołania stanu epidemii. Podstawę po odliczeniach z art. 26e, 26ga, 26gb, 26h–26he i 52jb można zmniejszyć o wartość nieuregulowanych wierzytelności, a trzeba zwiększyć o wartość nieuregulowanych zobowiązań, na zasadach art. 26i (ulga na złe długi).
             uses: [ulga.termomodernizacja.limit]
             basis: art. 26h ust. 1 i 2, art. 26i ust. 1, art. 52jb ust. 1 i 5, art. 52n ust. 1 i art. 52x ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 1 pkt 4 lit. b i art. 4 ust. 1 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1541)
           - text: Od podatku obliczonego według skali odliczasz ulgę na dzieci, za każdy miesiąc wykonywania władzy rodzicielskiej, pełnienia funkcji opiekuna prawnego albo rodziny zastępczej, w kwotach zależnych od liczby dzieci. Przy jednym dziecku ulga przysługuje tylko wtedy, gdy dochody nie przekroczyły limitu (z wyjątkiem dziecka z orzeczeniem albo decyzją z art. 26 ust. 7d); przy dwojgu i więcej dzieciach limitu dochodów nie ma. Na pełnoletnie dzieci ulga przysługuje na warunkach art. 27f ust. 6.
@@ -471,8 +480,20 @@
         Tekst jednolity Dz.U. 2026 poz. 592 uwzględnia stan prawny na 1 kwietnia 2026 r.; zmiany ustawy o PIT, które
         weszły w życie między 1 stycznia a 1 kwietnia 2026 r. (Dz.U. 2025 poz. 1795, Dz.U. 2026 poz. 203 i 424), zmieniają
         tylko art. 21 i 52zr, a zmiana z Dz.U. 2025 poz. 1301 (tylko art. 52zo–52zr) weszła w życie w 2025 r., więc to brzmienie obowiązywało od 1 stycznia 2026 r. Późniejsze nowelizacje do
-        31 grudnia 2026 r. (poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1556) art. 26, 26h i 27f nie zmieniają. Zasada nie opisuje skali podatkowej ani innych odliczeń od
-        podatku. Wcześniejszych wersji nie wprowadzono.
+        31 grudnia 2026 r. (poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1556) art. 26, 26h i 27f nie zmieniają. Wcześniejszych
+        wersji nie wprowadzono.
+        Korekta z 27 listopada 2026 r.: zmienione kroki 1 i 6.
+      not_covered: >-
+        Odliczenia składek na ubezpieczenia społeczne z art. 26 ust. 1 pkt 2 i 2a ustawy o podatku dochodowym od osób
+        fizycznych (opisuje je zasada podatku według skali) i zwrotu nienależnie pobranych świadczeń (art. 26 ust. 1
+        pkt 5). Skali podatkowej (opisuje ją zasada podatku według skali) i odliczeń od podatku innych niż ulga na
+        dzieci.
+        Warunków i sposobu odliczeń od podstawy obliczenia podatku z art. 26e, 26ga, 26gb, 26ha–26he, 52jb, 52n i 52x
+        ustawy o podatku dochodowym od osób fizycznych oraz ulgi na złe długi (art. 26i) poza tym, co podaje krok
+        o podstawie obliczenia podatku. Odliczeń od tej podstawy przewidzianych w odrębnych ustawach (art. 26 ust. 6b);
+        krok wymienia tylko odliczenia, które ustawa o PIT (tekst jednolity Dz.U. 2026 poz. 592) wiąże z podstawą
+        ustaloną według art. 26 ust. 1 lub art. 30c ust. 2.
+      see_also: [zasada.skala_podatek]
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (warunek odliczeń z art. 26 ust. 1)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -556,7 +577,7 @@
           url: https://podatki.gov.pl/ulgi-i-odliczenia/ulga-na-dziecko-pit
           quote: "112 000 zł - jeśli przez cały rok pozostajesz w związku małżeńskim"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification: {checked_at: 2026-11-27}
     - valid_from: 2027-01-01
       value:
         steps:
