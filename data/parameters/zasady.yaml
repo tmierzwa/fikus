@@ -572,14 +572,8 @@
         Wersja zaczyna się razem ze stawkami Funduszu Pracy i Funduszu Solidarnościowego na 2026 r. Te przepisy
         obowiązują wcześniej (ustawa o rynku pracy i służbach zatrudnienia od 1 czerwca 2025 r.), ale okresu sprzed
         2026 r. ta wersja nie obejmuje. Ustawa o rynku pracy nie ma jeszcze tekstu jednolitego; cytowany jest tekst
-        ogłoszony, a jej nowelizacje nie zmieniają art. 259–261. Poprawka 2026-11-27: pięć kroków podzielono na
-        dziewięć, żeby każdy dało się potwierdzić osobno. Krok o kilku tytułach to teraz kroki 2 (łączna podstawa)
-        i 3 (oświadczenie); krok o wieku i miesiącu zwolnienia to kroki 5 i 6; krok o Funduszu Solidarnościowym to
-        kroki 7 (odpowiednie stosowanie przepisów), 8 (łączne rozliczenie) i 9 (miesiąc zwolnienia). Podstawy prawne
-        i używane parametry przypisano do nowych kroków. Zmieniło się też brzmienie: krok 1 odsyła do ograniczenia
-        z art. 19 ust. 1 ustawy o systemie ubezpieczeń społecznych zamiast pisać o rocznym ograniczeniu i nie mówi,
-        kto opłaca składkę; krok 3 podaje warunek z art. 259 ust. 3 (oświadczenie w ZUS składasz, jeżeli sam opłacasz
-        składki na ubezpieczenia społeczne); krok 4 odsyła do kroku o kilku tytułach zamiast do poprzedniego kroku.
+        ogłoszony, a jej nowelizacje nie zmieniają art. 259–261. Korekta z 27 listopada 2026 r.: zmienione kroki
+        (pięć kroków podzielonych na dziewięć, zmienione brzmienie kroków 1, 3 i 4).
       sources:
         - title: Dz.U. 2025 poz. 620, ustawa z 20 marca 2025 r. o rynku pracy i służbach zatrudnienia
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/620/text.pdf
@@ -727,7 +721,7 @@
             dobrowolne ubezpieczenie chorobowe; Fundusz Pracy i Fundusz Solidarnościowy.
           as_of: 2026-11-27
           confirms: [step_6, step_9]
-      verification: {checked_at: 2026-11-27}
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: zasada.liniowy_zdrowotna
   name: Składka zdrowotna przy podatku liniowym
