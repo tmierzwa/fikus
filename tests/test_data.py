@@ -269,6 +269,41 @@ def test_rule_step_confirms_must_name_existing_steps():
         _rule({"title": "akt", "url": "https://example.org/akt", "quote": "q", "confirms": ["step_3"]})
 
 
+def _crwde(valid_from, valid_to=None, nr="2026/01/01/2", period=True):
+    url = f"http://crd.gov.pl/wzor/{nr}/schemat.xsd"
+    card = ["form", "period"] if period else ["form"]
+    return {"valid_from": valid_from, "valid_to": valid_to,
+            "value": {"form": "PIT-X", "system_code": "PITX (1)", "schema_version": "1-0E", "xsd_url": url},
+            "sources": [{"title": "wyróżnik", "url": f"https://crd.gov.pl/wzor/{nr}/wyroznik.xml",
+                         "quote": f"PIT-X(1) od dnia {valid_from} {url}", "confirms": card + ["xsd_url"]},
+                        {"title": "MF", "url": "https://example.org/mf", "quote": "PIT-X", "confirms": ["form"]},
+                        {"title": "plik", "url": f"https://crd.gov.pl/wzor/{nr}/schemat.xsd",
+                         "quote": "kodSystemowy PITX (1) wersjaSchemy 1-0E",
+                         "confirms": ["xsd_url", "system_code", "schema_version"]}],
+            "verification": {"checked_at": "2026-01-01"}}
+
+
+def test_crwde_chain_confirms_code_version_and_period():
+    assert Version.model_validate(_crwde("2026-01-01"))._unconfirmed_fields() == []
+    # Wyróżnik innego wzoru niż adres schematu nie potwierdza okresu.
+    other = _crwde("2026-01-01")
+    other["sources"][0]["url"] = "https://crd.gov.pl/wzor/2026/01/01/9/wyroznik.xml"
+    assert Version.model_validate(other)._unconfirmed_fields() == ["period"]
+
+
+def test_crwde_closed_version_end_follows_next_version():
+    def param(*versions):
+        return Parameter.model_validate({"id": "schemat.x", "name": "x", "versions": list(versions)})
+    p = param(_crwde("2025-01-01", "2025-12-31", nr="2025/01/01/1"), _crwde("2026-01-01"))
+    assert [v._unconfirmed_fields() for v in p.versions] == [[], []]
+    # Bez następnej wersji albo z luką koniec okresu nie ma potwierdzenia.
+    assert param(_crwde("2025-01-01", "2025-12-31", nr="2025/01/01/1")).versions[0]._unconfirmed_fields() == ["period"]
+    gap = param(_crwde("2025-01-01", "2025-11-30", nr="2025/01/01/1"), _crwde("2026-01-01"))
+    assert gap.versions[0]._unconfirmed_fields() == ["period"]
+    unconfirmed_next = param(_crwde("2025-01-01", "2025-12-31", nr="2025/01/01/1"), _crwde("2026-01-01", period=False))
+    assert unconfirmed_next.versions[0]._unconfirmed_fields() == ["period"]
+
+
 def test_rule_describes_what_it_leaves_out_without_confirming_it():
     act = {"title": "akt", "url": "https://example.org/akt", "quote": "q",
            "confirms": ["step_1", "step_2"]}
