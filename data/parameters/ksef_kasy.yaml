@@ -1,0 +1,249 @@
+# Krajowy System e-Faktur (KSeF) i kasy rejestrujące: od kiedy faktury wystawia się w KSeF, kto jest z tego
+# wyłączony, oraz limit sprzedaży zwalniający z ewidencji przy użyciu kasy rejestrującej. Stawki i limit zwolnienia
+# podmiotowego z VAT są w vat.yaml.
+
+- id: zasada.ksef_obowiazek
+  name: Obowiązek wystawiania faktur w Krajowym Systemie e-Faktur (KSeF)
+  kind: rule
+  versions:
+    - valid_from: 2026-02-01
+      valid_to: 2026-12-31
+      value:
+        steps:
+          - text: Jako podatnik VAT masz obowiązek wystawiać faktury ustrukturyzowane przy użyciu Krajowego Systemu e-Faktur. Obowiązek dotyczy także podatnika zwolnionego z VAT na podstawie art. 113 ust. 1 lub 9 ustawy o VAT, gdy wystawia fakturę; ustawa nie wyłącza go z tego obowiązku (wyłączenie dotyczy tylko zwolnienia w procedurze SME z art. 113a ust. 1). Kiedy fakturę w ogóle trzeba wystawić, określa art. 106b; sprzedaży zwolnionej z art. 113 ust. 1 i 9 nie musisz dokumentować fakturą, chyba że nabywca zażąda faktury.
+            uses: [vat.limit_zwolnienia]
+            basis: art. 106ga ust. 1 i 2 oraz art. 106b ust. 2 i 3 ustawy o podatku od towarów i usług
+          - text: Od 1 lutego do 31 marca 2026 r. możesz zamiast faktur ustrukturyzowanych wystawiać faktury elektroniczne lub papierowe, jeżeli łączna wartość Twojej sprzedaży razem z podatkiem nie przekroczyła w 2024 r. 200 000 000 zł.
+            uses: []
+            basis: art. 145l ustawy o podatku od towarów i usług
+          - text: Od 1 kwietnia do 31 grudnia 2026 r. możesz wystawiać faktury elektroniczne lub papierowe, jeżeli łączna wartość sprzedaży razem z podatkiem udokumentowana tymi fakturami wystawionymi w danym miesiącu jest mniejsza lub równa 10 000 zł. Prawo to tracisz począwszy od faktury, którą przekroczono tę wartość. Czy po miesiącu, w którym przekroczono tę wartość, prawo wraca w kolejnym miesiącu, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: []
+            basis: art. 145m ust. 1 i 2 ustawy o podatku od towarów i usług
+          - text: Od 1 lutego do 31 grudnia 2026 r. możesz też wystawiać faktury elektroniczne lub papierowe przy zastosowaniu kas rejestrujących oraz paragony fiskalne uznane za faktury (art. 106e ust. 5 pkt 3).
+            uses: []
+            basis: art. 145n ust. 1 ustawy o podatku od towarów i usług
+          - text: Obowiązek nie dotyczy faktur wystawianych na rzecz osoby fizycznej nieprowadzącej działalności gospodarczej, faktur wystawianych przez podatnika bez siedziby działalności gospodarczej i bez stałego miejsca prowadzenia działalności w kraju (albo ze stałym miejscem, które nie uczestniczy w danej sprzedaży), faktur dokumentujących czynności rozliczane w procedurach szczególnych z działu XII rozdziałów 7, 7a i 9, faktur przy dostawach i usługach określonych w rozporządzeniu wydanym na podstawie art. 106s ani faktur wystawianych przez podatnika korzystającego ze zwolnienia z art. 113a ust. 1. W tych przypadkach wystawiasz faktury elektroniczne lub papierowe; fakturę dla osoby fizycznej nieprowadzącej działalności możesz wystawić w KSeF dobrowolnie.
+            uses: []
+            basis: art. 106ga ust. 2–4 ustawy o podatku od towarów i usług
+          - text: Fakturę ustrukturyzowaną otrzymujesz przy użyciu Krajowego Systemu e-Faktur. Wyjątki dotyczą między innymi nabywcy korzystającego ze zwolnienia z art. 113a ust. 1, nabywcy, który nie posługuje się numerem identyfikacji na potrzeby podatku ani NIP, nabywcy zagranicznego i osoby fizycznej nieprowadzącej działalności gospodarczej, a także sprzedaży z miejscem świadczenia poza krajem; wtedy fakturę udostępnia się nabywcy w sposób z nim uzgodniony.
+            uses: []
+            basis: art. 106gb ust. 1 i 4 ustawy o podatku od towarów i usług
+          - text: Kary pieniężne z art. 106ni ust. 1 (między innymi za niewystawienie wbrew obowiązkowi faktury ustrukturyzowanej w KSeF) stosuje się od 1 stycznia 2027 r.
+            uses: []
+            basis: art. 106ni ust. 1 ustawy o podatku od towarów i usług w zw. z art. 23 pkt 4 ustawy z dnia 16 czerwca 2023 r. o zmianie ustawy o podatku od towarów i usług oraz niektórych innych ustaw
+          - text: Ta zasada nie opisuje wystawiania faktur w trybie offline24 i w czasie awarii albo niedostępności KSeF (art. 106nda–106nh), faktur z załącznikiem (art. 106gba), podawania numeru KSeF przy płatnościach (art. 108g, od 1 stycznia 2027 r.) ani faktur VAT RR.
+            uses: []
+            basis: art. 106gba, 106nda–106nh, 108g i 116 ustawy o podatku od towarów i usług
+      note: >-
+        Art. 106ga i art. 145l–145n w brzmieniu nadanym ustawą Dz.U. 2023 poz. 1598, zmienioną ustawami Dz.U. 2024 poz. 852
+        i 1721 oraz Dz.U. 2025 poz. 1203, obowiązują od 1 lutego 2026 r. (art. 23 tej ustawy, przytoczony
+        w obwieszczeniu do tekstu jednolitego). Uzasadnienie projektu ustawy Dz.U. 2025 poz. 1203 (druk sejmowy
+        nr 1407) opisuje obowiązek jako dotyczący podatników czynnych i zwolnionych z VAT. Nowelizacje ogłoszone po tekście
+        jednolitym Dz.U. 2026 poz. 1263 (Dz.U. 2026 poz. 1270, 1446, 1509 i 1556) nie zmieniają art. 106ga, 106gb, 106ni
+        ani 145l–145n; ustawa Dz.U. 2026 poz. 1270 zmienia w art. 106b tylko odesłanie w ust. 3 pkt 2 (od 1 stycznia 2027 r.).
+        Strona MF „Zakres obowiązkowego KSeF” podaje próg 10 000 zł w dwóch ujęciach: w opisie terminów, że podatnicy,
+        u których wartość sprzedaży dokumentowana fakturami za okresy miesięczne nie przekracza tej kwoty, do końca 2026 r.
+        nie mają obowiązku wystawiania faktur w KSeF, a w punkcie o przepisach epizodycznych prawie dosłownie art. 145m ust. 1
+        (mogą wystawiać faktury elektroniczne lub papierowe). Strona pomija art. 145m ust. 2 (utratę prawa od faktury,
+        którą przekroczono wartość). Krok opiera się na brzmieniu ustawy; różnicę opisuje pytanie P57.
+      sources:
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (obowiązek)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 106ga ust. 1
+          quote: "Podatnicy są obowiązani wystawiać faktury ustrukturyzowane przy użyciu Krajowego Systemu e-Faktur."
+        - title: Dz.U. 2026 poz. 1263, obwieszczenie, art. 23 ustawy Dz.U. 2023 poz. 1598 (data początku obowiązywania art. 106ga)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 23 ustawy Dz.U. 2023 poz. 1598
+          quote: "Ustawa wchodzi w życie z dniem 1 lutego 2026 r., z wyjątkiem:"
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (wyłączenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 106ga ust. 2 pkt 4
+          quote: "na rzecz nabywcy towarów lub usług będącego osobą fizyczną nieprowadzącą działalności gospodarczej"
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (zwolnienie z art. 113a)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 106ga ust. 2 pkt 6
+          quote: "przez podatnika korzystającego ze zwolnienia, o którym mowa w art. 113a ust. 1."
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (faktury dobrowolne w KSeF)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 106ga ust. 4
+          quote: "W przypadku, o którym mowa w ust. 2 pkt 1, 2 i 4, podatnicy mogą wystawiać faktury ustrukturyzowane."
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (sprzedaż zwolniona bez faktury)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 106b ust. 2
+          quote: "Podatnik nie jest obowiązany do wystawienia faktury w odniesieniu do sprzedaży zwolnionej od podatku na podstawie art. 43 ust. 1, art. 113 ust. 1 i 9"
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (luty–marzec 2026)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 145l
+          quote: "jeżeli łączna wartość sprzedaży wraz z kwotą podatku u tych podatników nie przekroczyła w 2024 r. kwoty 200 000 000 zł"
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (do 10 000 zł miesięcznie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 145m ust. 1
+          quote: "udokumentowana tymi fakturami wystawionymi w danym miesiącu jest mniejsza lub równa 10 000 zł"
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (utrata prawa)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 145m ust. 2
+          quote: "traci prawo do wystawiania faktur elektronicznych oraz faktur w postaci papierowej począwszy od faktury, którą przekroczono wartość"
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (kasy rejestrujące)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 145n ust. 1
+          quote: "faktury elektroniczne lub faktury w postaci papierowej przy zastosowaniu kas rejestrujących"
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (otrzymywanie faktur)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 106gb ust. 1
+          quote: "Faktura ustrukturyzowana jest wystawiana i otrzymywana przy użyciu Krajowego Systemu e-Faktur"
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (kary od 2027 r., art. 23 ustawy Dz.U. 2023 poz. 1598 w obwieszczeniu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 23 pkt 4 ustawy Dz.U. 2023 poz. 1598
+          quote: "art. 1 pkt 24 w zakresie art. 106ni ust. 1–3 i 5–7 i pkt 30, które wchodzą w życie z dniem 1 stycznia 2027 r."
+        - title: Komunikat MF, ksef.podatki.gov.pl, Zakres obowiązkowego KSeF (daty obowiązku od 1 kwietnia 2026 r. i próg 10 000 zł w opisie MF)
+          url: https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/zakres-obowiazkowego-ksef/
+          quote: "1 kwietnia 2026 r. dla pozostałych podatników, chyba, że wartość sprzedaży dokumentowana fakturami za okresy miesięczne nie przekracza kwoty 10 000 zł (brutto)"
+          as_of: 2026-11-26
+        - title: Komunikat MF, ksef.podatki.gov.pl, Podstawy prawne oraz kluczowe terminy, modyfikacja 29.05.2026 (daty 1 lutego i 1 kwietnia 2026 r.)
+          url: https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/podstawy-prawne-oraz-kluczowe-terminy/
+          quote: "od 1 lutego 2026 r. dla przedsiębiorców, których wartość sprzedaży (wraz z kwotą podatku) przekroczyła w 2024 r. 200 mln zł, od 1 kwietnia 2026 r. dla pozostałych przedsiębiorców"
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue: >-
+          Art. 145m ust. 2 mówi, że podatnik „traci prawo do wystawiania faktur elektronicznych oraz faktur w postaci
+          papierowej począwszy od faktury, którą przekroczono wartość”, a ust. 1 liczy wartość faktur „wystawionymi
+          w danym miesiącu”. Przepis nie mówi, czy prawo wraca w kolejnym miesiącu. Uzasadnienie projektu (druk nr 1407)
+          podaje, że po przekroczeniu podatnik nie może ponownie skorzystać z tej możliwości, ale uzasadnienie nie jest
+          źródłem prawa. Strona MF „Zakres obowiązkowego KSeF” opisuje próg raz jako brak obowiązku do końca 2026 r., a raz
+          prawie dosłownie jak art. 145m ust. 1, i pomija ust. 2 (utratę prawa). Pytanie do eksperta: docs/pytania-do-eksperta.md, P57.
+
+    - valid_from: 2027-01-01
+      value:
+        steps:
+          - text: Jako podatnik VAT masz obowiązek wystawiać faktury ustrukturyzowane przy użyciu Krajowego Systemu e-Faktur. Obowiązek dotyczy także podatnika zwolnionego z VAT na podstawie art. 113 ust. 1 lub 9 ustawy o VAT, gdy wystawia fakturę; ustawa nie wyłącza go z tego obowiązku (wyłączenie dotyczy tylko zwolnienia w procedurze SME z art. 113a ust. 1). Kiedy fakturę w ogóle trzeba wystawić, określa art. 106b; sprzedaży zwolnionej z art. 113 ust. 1 i 9 nie musisz dokumentować fakturą, chyba że nabywca zażąda faktury.
+            uses: [vat.limit_zwolnienia]
+            basis: art. 106ga ust. 1 i 2 oraz art. 106b ust. 2 i 3 ustawy o podatku od towarów i usług
+          - text: Przepisy przejściowe, które pozwalały do końca 2026 r. wystawiać faktury elektroniczne lub papierowe (przy sprzedaży do 10 000 zł miesięcznie, przy zastosowaniu kas rejestrujących i paragony fiskalne uznane za faktury), już nie obowiązują.
+            uses: []
+            basis: art. 145l–145n ustawy o podatku od towarów i usług
+          - text: Obowiązek nie dotyczy faktur wystawianych na rzecz osoby fizycznej nieprowadzącej działalności gospodarczej, faktur wystawianych przez podatnika bez siedziby działalności gospodarczej i bez stałego miejsca prowadzenia działalności w kraju (albo ze stałym miejscem, które nie uczestniczy w danej sprzedaży), faktur dokumentujących czynności rozliczane w procedurach szczególnych z działu XII rozdziałów 7, 7a i 9, faktur przy dostawach i usługach określonych w rozporządzeniu wydanym na podstawie art. 106s ani faktur wystawianych przez podatnika korzystającego ze zwolnienia z art. 113a ust. 1. W tych przypadkach wystawiasz faktury elektroniczne lub papierowe; fakturę dla osoby fizycznej nieprowadzącej działalności możesz wystawić w KSeF dobrowolnie.
+            uses: []
+            basis: art. 106ga ust. 2–4 ustawy o podatku od towarów i usług
+          - text: Fakturę ustrukturyzowaną otrzymujesz przy użyciu Krajowego Systemu e-Faktur. Wyjątki dotyczą między innymi nabywcy korzystającego ze zwolnienia z art. 113a ust. 1, nabywcy, który nie posługuje się numerem identyfikacji na potrzeby podatku ani NIP, nabywcy zagranicznego i osoby fizycznej nieprowadzącej działalności gospodarczej, a także sprzedaży z miejscem świadczenia poza krajem; wtedy fakturę udostępnia się nabywcy w sposób z nim uzgodniony.
+            uses: []
+            basis: art. 106gb ust. 1 i 4 ustawy o podatku od towarów i usług
+          - text: Jeżeli wbrew obowiązkowi nie wystawisz faktury ustrukturyzowanej w KSeF (to jeden z przypadków z art. 106ni ust. 1), naczelnik urzędu skarbowego nakłada w drodze decyzji karę pieniężną do 100% kwoty podatku wykazanego na fakturze wystawionej poza KSeF, a przy fakturze bez wykazanego podatku do 18,7% kwoty należności ogółem.
+            uses: []
+            basis: art. 106ni ust. 1 ustawy o podatku od towarów i usług
+          - text: Ta zasada nie opisuje wystawiania faktur w trybie offline24 i w czasie awarii albo niedostępności KSeF (art. 106nda–106nh), faktur z załącznikiem (art. 106gba), podawania numeru KSeF przy płatnościach (art. 108g) ani faktur VAT RR.
+            uses: []
+            basis: art. 106gba, 106nda–106nh, 108g i 116 ustawy o podatku od towarów i usług
+      note: >-
+        Okres stosowania art. 145l–145n kończy się 31 grudnia 2026 r. (te przepisy same podają swoje okresy), a art. 106ni
+        ust. 1 wchodzi w życie 1 stycznia 2027 r. (odnośnik 23 w tekście jednolitym). Nowelizacje ogłoszone po tekście
+        jednolitym Dz.U. 2026 poz. 1263 (Dz.U. 2026 poz. 1270, 1446, 1509 i 1556) nie zmieniają art. 106ga, 106gb ani 106ni;
+        ustawa Dz.U. 2026 poz. 1270 zmienia w art. 106b tylko odesłanie w ust. 3 pkt 2.
+      sources:
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (obowiązek)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 106ga ust. 1
+          quote: "Podatnicy są obowiązani wystawiać faktury ustrukturyzowane przy użyciu Krajowego Systemu e-Faktur."
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (wyłączenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 106ga ust. 2 pkt 4
+          quote: "na rzecz nabywcy towarów lub usług będącego osobą fizyczną nieprowadzącą działalności gospodarczej"
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (zwolnienie z art. 113a)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 106ga ust. 2 pkt 6
+          quote: "przez podatnika korzystającego ze zwolnienia, o którym mowa w art. 113a ust. 1."
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (faktury dobrowolne w KSeF)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 106ga ust. 4
+          quote: "W przypadku, o którym mowa w ust. 2 pkt 1, 2 i 4, podatnicy mogą wystawiać faktury ustrukturyzowane."
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (sprzedaż zwolniona bez faktury)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 106b ust. 2
+          quote: "Podatnik nie jest obowiązany do wystawienia faktury w odniesieniu do sprzedaży zwolnionej od podatku na podstawie art. 43 ust. 1, art. 113 ust. 1 i 9"
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (okres przepisów przejściowych z art. 145n)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 145n ust. 1
+          quote: "W okresie od dnia 1 lutego 2026 r. do dnia 31 grudnia 2026 r. podatnicy obowiązani do wystawiania faktur ustrukturyzowanych mogą wystawiać"
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (otrzymywanie faktur)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 106gb ust. 1
+          quote: "Faktura ustrukturyzowana jest wystawiana i otrzymywana przy użyciu Krajowego Systemu e-Faktur"
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (kara pieniężna)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 106ni ust. 1
+          quote: "karę pieniężną w wysokości do 100 % kwoty podatku wykazanego na tej fakturze wystawionej poza Krajowym Systemem e-Faktur"
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (kara od 2027 r., art. 23 ustawy Dz.U. 2023 poz. 1598 w obwieszczeniu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 23 pkt 4 ustawy Dz.U. 2023 poz. 1598
+          quote: "art. 1 pkt 24 w zakresie art. 106ni ust. 1–3 i 5–7 i pkt 30, które wchodzą w życie z dniem 1 stycznia 2027 r."
+        - title: Komunikat MF, ksef.podatki.gov.pl, Zakres obowiązkowego KSeF (wyłączenie procedury SME)
+          url: https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/zakres-obowiazkowego-ksef/
+          quote: "W KSeF nie są wystawiane także faktury dokumentujące czynności dokonane przez podatnika korzystającego ze zwolnienia, o którym mowa w art. 113a ust.1 ustawy (procedura SME)."
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: vat.kasa_fiskalna.limit_zwolnienia
+  name: Limit sprzedaży na rzecz osób fizycznych zwalniający z ewidencji przy użyciu kasy rejestrującej
+  unit: PLN/rok
+  versions:
+    - valid_from: 2025-01-01
+      valid_to: 2027-12-31
+      value: 20000
+      note: >-
+        Obowiązek ewidencji sprzedaży na rzecz osób fizycznych nieprowadzących działalności gospodarczej i rolników
+        ryczałtowych przy użyciu kasy rejestrującej wynika z art. 111 ust. 1 ustawy o VAT; zwolnienia określa rozporządzenie
+        wydane na podstawie art. 111 ust. 8, na czas określony. Rozporządzenie Dz.U. 2024 poz. 1902 obowiązuje od 1 stycznia
+        2025 r. (§ 9), a zwolnienie stosuje się w danym roku podatkowym, nie dłużej niż do 31 grudnia 2027 r. (§ 3 ust. 1).
+        Limit dotyczy wartości sprzedaży na rzecz osób fizycznych nieprowadzących działalności gospodarczej i rolników
+        ryczałtowych w poprzednim roku podatkowym (§ 3 ust. 1 pkt 1); przy rozpoczęciu tej sprzedaży w poprzednim roku
+        albo po 31 grudnia 2024 r. w danym roku kwotę stosuje się w proporcji do okresu wykonywania tych czynności
+        (§ 3 ust. 1 pkt 1 i 2). Do wartości sprzedaży nie wlicza się podatku VAT ani dostawy nieruchomości i sprzedaży
+        środków trwałych oraz wartości niematerialnych i prawnych udokumentowanej w całości fakturą (§ 3 ust. 3, poz. 40
+        i 50 załącznika). Zwolnienia z limitu nie stosuje się do podatnika, który w poprzednim roku był obowiązany do
+        ewidencji albo przestał spełniać warunki zwolnienia (§ 3 ust. 2 pkt 1). Zwolnienie traci moc po upływie dwóch
+        miesięcy następujących po miesiącu, w którym przekroczono kwotę (§ 5 ust. 1 pkt 1 i 2), a z chwilą wykonania
+        czynności z § 4 ust. 1 (§ 5 ust. 2). Niezależnie od wartości sprzedaży zwolnienie nie dotyczy czynności z § 4 ust. 1, między
+        innymi dostawy komputerów i wyrobów elektronicznych oraz usług prawniczych, doradztwa podatkowego, opieki medycznej
+        lekarzy i lekarzy dentystów, fryzjerskich i kosmetycznych, gastronomicznych i naprawy pojazdów. § 4 ust. 1 ma
+        wyjątki, których notatka nie wylicza w całości: między innymi § 4 ust. 2 (poz. 53 i 57 załącznika), § 4 ust. 3
+        (na przykład pkt 2 lit. b: usługi z ust. 1 pkt 2 lit. f–h świadczone wyłącznie na odległość na warunkach poz. 42,
+        pkt 2 lit. c: usługi z lit. f na warunkach poz. 51), a z samych lit. f i g wyłączone są usługi z poz. 51 i 31
+        załącznika. Notatka nie opisuje też przepisów przejściowych § 6–8 (między innymi § 8 ust. 1–4 o towarach
+        z § 4 ust. 1 pkt 1 lit. s–u do 30 czerwca 2025 r., usługach parkingowych oraz usługach przewozowych przy
+        urządzeniach samoobsługowych do 31 marca 2026 r. oraz innych urządzeniach samoobsługowych do 31 marca 2027 r.). Wartość nie opisuje zwolnień przedmiotowych z załącznika ani zwolnienia przy udziale
+        sprzedaży zwolnionej powyżej 80% (§ 3 ust. 1 pkt 3 i 4). Rozporządzenie Dz.U. 2026 poz. 420 zmienia rozporządzenie
+        Dz.U. 2024 poz. 1902 tylko w załączniku: zmienia poz. 38 i dodaje poz. 59; kwoty nie zmienia. Innych zmian według API ELI nie było. Wcześniejsze rozporządzenie (Dz.U. 2023 poz. 2605) ta wersja
+        nie obejmuje. Ustawy ogłoszone po tekście jednolitym ustawy o VAT Dz.U. 2026 poz. 1263 nie zmieniają art. 111 ust. 1
+        ani 8 (ustawa Dz.U. 2026 poz. 1270 zmienia art. 111 ust. 3a pkt 13 i 6l oraz dodaje ust. 6kb).
+      sources:
+        - title: Dz.U. 2024 poz. 1902, rozporządzenie Ministra Finansów w sprawie zwolnień z obowiązku prowadzenia ewidencji sprzedaży przy zastosowaniu kas rejestrujących (limit)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/1902/text.pdf
+          article: § 3 ust. 1 pkt 1
+          quote: "podatników, u których wartość sprzedaży dokonanej na rzecz osób fizycznych nieprowadzących działalności gospodarczej oraz rolników ryczałtowych w poprzednim roku podatkowym nie przekroczyła kwoty 20 000 zł"
+        - title: Dz.U. 2024 poz. 1902, rozporządzenie (okres zwolnienia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/1902/text.pdf
+          article: § 3 ust. 1
+          quote: "Zwalnia się z obowiązku prowadzenia ewidencji w danym roku podatkowym, nie dłużej jednak niż do dnia 31 grudnia 2027 r.:"
+        - title: Dz.U. 2024 poz. 1902, rozporządzenie (utrata zwolnienia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/1902/text.pdf
+          article: § 5 ust. 1 pkt 1
+          quote: "zwolnienie to traci moc po upływie dwóch miesięcy następujących po miesiącu, w którym wartość sprzedaży"
+        - title: Dz.U. 2024 poz. 1902, rozporządzenie (wejście w życie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/1902/text.pdf
+          article: § 9
+          quote: "Rozporządzenie wchodzi w życie z dniem 1 stycznia 2025 r."
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (obowiązek kasy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 111 ust. 1
+          quote: "Podatnicy dokonujący sprzedaży na rzecz osób fizycznych nieprowadzących działalności gospodarczej oraz rolników ryczałtowych są obowiązani prowadzić ewidencję sprzedaży przy zastosowaniu kas rejestrujących."
+        - title: Dz.U. 2026 poz. 420, rozporządzenie zmieniające (zmienia poz. 38 i dodaje poz. 59 załącznika)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/420/text.pdf
+          article: § 1
+          quote: "w załączniku wprowadza się następujące zmiany"
+        - title: biznes.gov.pl, Kasa fiskalna w firmie, aktualizacja 03.05.2026
+          url: https://www.biznes.gov.pl/pl/portal/00243
+          kind: control
+          quote: "lub rolników ryczałtowych nie przekroczył 20 tys. zł i jednocześnie nie miałeś obowiązku ewidencjonowania sprzedaży"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
