@@ -200,3 +200,20 @@ def test_deadline_without_day_is_rejected_at_load():
             {"valid_from": "2026-01-01", "value": {"day": 20},
              "sources": [{"title": "akt", "url": "https://example.org/a"}],
              "verification": {"checked_at": "2026-01-01"}}]})
+
+
+def _schema(quote):
+    return Version.model_validate({
+        "valid_from": "2026-01-01",
+        "value": {"system_code": "JPK_EWP (4)", "xsd_url": "http://crd.gov.pl/wzor/1/schemat.xsd"},
+        "sources": [{"title": "rejestr", "url": "https://crd.gov.pl/wzor/1/wyroznik.xml",
+                     "quote": "http://crd.gov.pl/wzor/1/schemat.xsd", "confirms": ["xsd_url"]},
+                    {"title": "plik", "url": "https://crd.gov.pl/wzor/1/schemat.xsd",
+                     "quote": quote, "confirms": ["xsd_url", "system_code"]}],
+        "verification": {"checked_at": "2026-01-01"}})
+
+
+def test_schema_file_confirms_its_own_address_only_with_system_code():
+    assert "xsd_url" not in _schema("JPK_EWP (4)")._unconfirmed_fields()
+    with pytest.raises(ValueError, match="kodem systemowym"):
+        _schema("Nagłówek JPK_EWP")

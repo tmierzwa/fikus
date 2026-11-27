@@ -87,3 +87,22 @@ def test_fetch_text_uses_limits_and_caches(opener, monkeypatch, tmp_path):
     assert "Ala & kot" in cytaty.fetch_text("https://example.org/strona")   # z pamięci
     assert o.calls == 1
     assert (tmp_path / "indeks.tsv").read_text().count("\n") == 1
+
+
+def test_xml_attributes_and_page_links_are_quotable_without_splitting_text():
+    xsd = '<?xml version="1.0"?><xsd:element name="KodFormularza"><xsd:attribute fixed="JPK_PKPIR (3)"/>' \
+          '<xsd:documentation>Nagłówek JPK_PKPIR</xsd:documentation></xsd:element>'
+    assert cytaty._is_xml(xsd.encode(), "application/octet-stream")
+    text = cytaty.markup_text(xsd, xml=True)
+    assert cytaty.quote_in("JPK_PKPIR (3)", text) and cytaty.quote_in("Nagłówek JPK_PKPIR", text)
+    page = '<p>Struktura (<a href="/attachment/abc" class="x">JPK_V7M(3) w formacie XSD</a>) obowiązuje</p>'
+    assert not cytaty._is_xml(b"<!DOCTYPE html><html>", "text/html")
+    text = cytaty.markup_text(page, xml=False)
+    assert cytaty.quote_in("Struktura (JPK_V7M(3) w formacie XSD) obowiązuje", text)   # link nie rozdziela
+    assert cytaty.quote_in("/attachment/abc", text) and "class" not in text
+
+
+def test_cache_key_depends_on_text_format(monkeypatch):
+    a = cytaty._cache_path("https://example.org/a")
+    monkeypatch.setattr(cytaty, "TEXT_FORMAT", cytaty.TEXT_FORMAT + 1)
+    assert cytaty._cache_path("https://example.org/a") != a

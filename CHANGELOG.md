@@ -8,6 +8,12 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ### Zmienione
 
+- Skrypt cytatów czyta w plikach XML i XSD wartości atrybutów, a na stronach adresy linków, i dopisuje je
+  na końcu tekstu źródła. Można więc zacytować kod systemowy i wersję schematu z pliku XSD oraz adres pliku
+  z linku na stronie urzędu. Zmienił się format pamięci podręcznej `.cache/zrodla/`, więc teksty źródeł
+  pobierają się od nowa.
+- Adres pliku schematu (`xsd_url`) potwierdza też sam plik spod tego adresu, gdy cytat z niego podaje kod
+  systemowy formularza. Model odrzuca taki cytat bez kodu systemowego.
 - Pobieranie źródeł (`sprawdz_cytaty.py`, `wykryj_zmiany.py`) ma łączny limit czasu 120 s na jeden adres
   i jedną ponowną próbę po błędzie sieci lub serwera. Wcześniej limit 60 s dotyczył tylko jednej operacji
   na gnieździe i powolny serwer mógł zablokować sprawdzanie na godziny.

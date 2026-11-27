@@ -38,6 +38,9 @@ FETCH_PER_HOST = 2              # równoległe połączenia z jednym serwerem, �
 _lock = threading.Lock()        # zapis do indeks.tsv i jednorazowe włączenie truststore
 _truststore_done = False
 
+# Wersja sposobu wydobywania tekstu. Zmiana unieważnia teksty zapisane w .cache/zrodla/.
+TEXT_FORMAT = 2
+
 _ELI_PAGE = re.compile(r"^https://eli\.gov\.pl/eli/(DU|MP)/(\d{4})/(\d+)/ogl/?$")
 
 
@@ -127,7 +130,33 @@ def normalize(s: str) -> str:
 
 
 def _cache_path(url: str) -> Path:
-    return CACHE / (hashlib.sha256(url.encode()).hexdigest()[:20] + ".txt")
+    key = url if TEXT_FORMAT == 1 else f"{TEXT_FORMAT}:{url}"
+    return CACHE / (hashlib.sha256(key.encode()).hexdigest()[:20] + ".txt")
+
+
+_TAG = re.compile(r"(?s)<[^>]+>")
+_ATTR = re.compile(r"""([\w:.-]+)\s*=\s*(?:"([^"]*)"|'([^']*)')""")
+APPENDIX = "\n\n[atrybuty]\n"   # oddziela tekst dokumentu od wartości atrybutów
+
+
+def _is_xml(body: bytes, ctype: str) -> bool:
+    head = body[:200].lstrip(b"\xef\xbb\xbf \t\r\n").lower()
+    return head.startswith(b"<?xml") and b"<!doctype html" not in head and b"<html" not in head \
+        or ("xml" in ctype and "html" not in ctype)
+
+
+def markup_text(raw: str, xml: bool) -> str:
+    """Tekst strony albo pliku XML bez znaczników. Wartości atrybutów (w XML wszystkie, na stronie
+    adresy linków href) idą osobno na koniec tekstu, każda w swoim wierszu, żeby nie rozdzielały
+    cytatów z treści. Tak da się zacytować kod systemowy ze schematu XSD i adres pliku z linku."""
+    raw = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", raw)
+    values = []
+    for tag in _TAG.findall(raw):
+        for name, v1, v2 in _ATTR.findall(tag):
+            if xml or name.lower() == "href":
+                values.append(html.unescape(v1 or v2))
+    text = html.unescape(_TAG.sub(" ", raw))
+    return text + APPENDIX + "\n".join(values) if values else text
 
 
 @functools.lru_cache(maxsize=None)
@@ -157,9 +186,7 @@ def fetch_text(url: str) -> str:
             text = subprocess.run(["pdftotext", f.name, "-"], check=True, timeout=120,
                                   capture_output=True).stdout.decode("utf-8", "replace")
     else:
-        raw = body.decode("utf-8", "replace")
-        raw = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", raw)
-        text = html.unescape(re.sub(r"(?s)<[^>]+>", " ", raw))
+        text = markup_text(body.decode("utf-8", "replace"), _is_xml(body, ctype))
     p.parent.mkdir(parents=True, exist_ok=True)
     # Plik tymczasowy i zamiana nazwy: inny wątek albo przerwany przebieg nie zobaczy połowy tekstu.
     with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=p.parent, suffix=".tmp",
