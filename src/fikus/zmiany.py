@@ -17,7 +17,6 @@ from __future__ import annotations
 
 import json
 import re
-import urllib.request
 from dataclasses import dataclass
 from datetime import date, timedelta
 from pathlib import Path
@@ -25,7 +24,7 @@ from typing import Callable
 
 import yaml
 
-from .cytaty import _HttpsOnlyRedirects
+from .cytaty import fetch_bytes
 from .store import Store
 
 API = "https://api.sejm.gov.pl/eli/acts/"
@@ -56,17 +55,8 @@ def _order(act: str) -> tuple[int, int]:
 
 def fetch_act(act: str) -> dict:
     """Metadane aktu z API ELI."""
-    try:                                   # systemowy magazyn certyfikatów, jeśli dostępny
-        import truststore
-        truststore.inject_into_ssl()
-    except ImportError:
-        pass
-    req = urllib.request.Request(API + act, headers={"User-Agent": "fikus-wykryj-zmiany/0.1",
-                                                     "Accept": "application/json"})
-    with urllib.request.build_opener(_HttpsOnlyRedirects).open(req, timeout=60) as r:
-        body = r.read(MAX_BYTES + 1)
-    if len(body) > MAX_BYTES:
-        raise ValueError(f"odpowiedź dla {act} ma ponad {MAX_BYTES // 2**20} MB")
+    body, _ = fetch_bytes(API + act, {"User-Agent": "fikus-wykryj-zmiany/0.1",
+                                      "Accept": "application/json"}, MAX_BYTES)
     return json.loads(body)
 
 

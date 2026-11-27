@@ -12,6 +12,7 @@ import os
 import re
 import subprocess
 import tempfile
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -22,6 +23,9 @@ CACHE = Path(os.environ.get("FIKUS_CACHE") or (
     else Path.home() / ".cache" / "fikus" / "zrodla"))
 
 MAX_BYTES = 50 * 1024 * 1024    # górny limit pobieranego pliku, żeby zły adres nie zapchał dysku i pamięci
+FETCH_TIMEOUT = 120.0           # łączny limit czasu jednego pobrania w sekundach, nie tylko jednej operacji
+_SOCKET_TIMEOUT = 30.0          # limit jednej operacji na gnieździe (połączenie, odczyt)
+_CHUNK = 64 * 1024
 
 _ELI_PAGE = re.compile(r"^https://eli\.gov\.pl/eli/(DU|MP)/(\d{4})/(\d+)/ogl/?$")
 
@@ -41,6 +45,55 @@ class _HttpsOnlyRedirects(urllib.request.HTTPRedirectHandler):
         if not newurl.startswith("https://"):
             raise urllib.error.URLError(f"przekierowanie poza https: {newurl}")
         return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+def _retryable(e: Exception) -> bool:
+    """Błąd sieci albo serwera, po którym warto spróbować jeszcze raz."""
+    if isinstance(e, urllib.error.HTTPError):
+        return e.code >= 500
+    if isinstance(e, urllib.error.URLError):
+        return isinstance(e.reason, OSError)       # nie: przekierowanie poza https
+    return isinstance(e, (TimeoutError, ConnectionError))
+
+
+def _fetch_once(url: str, headers: dict[str, str], max_bytes: int, timeout: float) -> tuple[bytes, str]:
+    deadline = time.monotonic() + timeout
+    req = urllib.request.Request(url, headers=headers)
+    # Opener powstaje dopiero tutaj, po truststore: HTTPSHandler tworzy kontekst SSL przy budowie.
+    opener = urllib.request.build_opener(_HttpsOnlyRedirects)
+    with opener.open(req, timeout=min(timeout, _SOCKET_TIMEOUT)) as r:
+        ctype = r.headers.get("Content-Type", "")
+        chunks: list[bytes] = []
+        size = 0
+        # read1 wraca po jednym odczycie z gniazda, więc serwer wysyłający dane po bajcie
+        # nie zablokuje pętli dłużej niż limit jednej operacji.
+        while chunk := r.read1(_CHUNK):
+            chunks.append(chunk)
+            size += len(chunk)
+            if size > max_bytes:
+                raise ValueError(f"odpowiedź spod {url} ma ponad {max_bytes // 2**20} MB")
+            if time.monotonic() > deadline:
+                raise TimeoutError(f"pobieranie {url} trwa ponad {timeout:g} s")
+    return b"".join(chunks), ctype
+
+
+def fetch_bytes(url: str, headers: dict[str, str], max_bytes: int,
+                timeout: float | None = None) -> tuple[bytes, str]:
+    """Pobiera adres https:// z łącznym limitem czasu i limitem rozmiaru. Zwraca treść i Content-Type.
+
+    Po błędzie sieci, błędzie serwera (5xx) albo przekroczeniu czasu próbuje jeszcze raz."""
+    try:                                   # systemowy magazyn certyfikatów, jeśli dostępny
+        import truststore
+        truststore.inject_into_ssl()
+    except ImportError:
+        pass
+    limit = FETCH_TIMEOUT if timeout is None else timeout
+    try:
+        return _fetch_once(url, headers, max_bytes, limit)
+    except Exception as e:                 # noqa: BLE001
+        if not _retryable(e):
+            raise
+    return _fetch_once(url, headers, max_bytes, limit)
 
 
 def normalize(s: str) -> str:
@@ -69,18 +122,7 @@ def fetch_text(url: str) -> str:
     p = _cache_path(turl)
     if p.exists():
         return p.read_text(encoding="utf-8")
-    try:                                   # systemowy magazyn certyfikatów, jeśli dostępny
-        import truststore
-        truststore.inject_into_ssl()
-    except ImportError:
-        pass
-    req = urllib.request.Request(turl, headers={"User-Agent": "fikus-sprawdz-cytaty/0.1"})
-    # Opener powstaje dopiero tutaj, po truststore: HTTPSHandler tworzy kontekst SSL przy budowie.
-    opener = urllib.request.build_opener(_HttpsOnlyRedirects)
-    with opener.open(req, timeout=60) as r:
-        body, ctype = r.read(MAX_BYTES + 1), r.headers.get("Content-Type", "")
-    if len(body) > MAX_BYTES:
-        raise ValueError(f"tekst spod {turl} ma ponad {MAX_BYTES // 2**20} MB")
+    body, ctype = fetch_bytes(turl, {"User-Agent": "fikus-sprawdz-cytaty/0.1"}, MAX_BYTES)
     if body[:5] == b"%PDF-" or "pdf" in ctype:
         with tempfile.NamedTemporaryFile(suffix=".pdf") as f:
             f.write(body)
