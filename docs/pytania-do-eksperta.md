@@ -24,7 +24,7 @@ przypadku brzegowego, średnią.
 
 ## P1. Składka zdrowotna na ryczałcie według przychodu z poprzedniego roku: wyjątek przy ponownym podjęciu działalności
 
-- Wpis: `zasada.ryczalt_zdrowotna_prog_poprzedni_rok` (od 2025-01-01), krok 4.
+- Wpis: `zasada.ryczalt_zdrowotna_prog_poprzedni_rok` (od 2025-01-01 i od 2027-01-01), krok 4.
 - Zgłoszone: 2026-11-26.
 - Ustawa o świadczeniach opieki zdrowotnej, art. 81 ust. 2h: podstawę ustaloną według przychodu
   z poprzedniego roku stosuje się „przez cały rok kalendarzowy”.
@@ -420,10 +420,13 @@ przypadku brzegowego, średnią.
   dochodowym (z wyjątkiem jej art. 6 ust. 1a) „w zakresie osiągniętych w roku podatkowym przychodów,
   poniesionych kosztów uzyskania przychodów, zobowiązania lub uprawnienia do zwiększania lub pomniejszenia
   podstawy opodatkowania” albo innych doliczeń lub odliczeń.
-- podatki.gov.pl (Wspólne rozliczenie małżonków, aktualizacja 24.06.2026) i biznes.gov.pl (strona 00264):
-  rok, w którym przy działalności na podatku liniowym nie było przychodów, kosztów ani odliczeń („zerowy”
-  PIT-36L), nie wyklucza wspólnego rozliczenia. biznes.gov.pl: zmiana w trakcie roku z podatku liniowego albo
-  ryczałtu na zasady ogólne wyklucza wspólne rozliczenie za ten rok.
+- podatki.gov.pl (Wspólne rozliczenie małżonków, aktualizacja 24.06.2026): rok, w którym przy działalności
+  na podatku liniowym nie było przychodów, kosztów ani odliczeń („zerowy” PIT-36L), nie wyklucza wspólnego
+  rozliczenia. biznes.gov.pl (strona 00264) pisze tylko ogólnie, że wspólnego rozliczenia „nie wyłącza złożenie
+  PIT zero”, i że zmiana w trakcie roku z podatku liniowego albo ryczałtu od przychodów ewidencjonowanych na zasady ogólne wyklucza wspólne
+  rozliczenie za ten rok. W ogólnym warunku biznes.gov.pl wymienia też kartę podatkową (wspólne rozliczenie nie jest
+  możliwe, gdy przy liniowym, ryczałcie lub karcie podatkowej osiąga się jakiekolwiek przychody, ponosi koszty albo
+  korzysta z odliczeń lub ulg); o zmianie karty podatkowej na skalę w trakcie roku nie pisze.
 - Pytania: czy oba te wyjaśnienia wynikają z art. 6 ust. 8 i czy można je dopisać do zasady jako kroki?
   Czy tak samo jest przy ryczałcie od przychodów ewidencjonowanych (rok bez przychodów i kosztów) i przy
   karcie podatkowej?
@@ -436,6 +439,10 @@ przypadku brzegowego, średnią.
     jeśli do któregoś z małżonków mają zastosowanie przepisy dot. działalności gospodarczej opodatkowanej podatkiem
     liniowym, ale ma on „zerowy” PIT-36L”. Nie dotyczy ryczałtu, karty podatkowej ani zmiany formy w trakcie roku.
     „Pigułka wiedzy” nie jest objaśnieniem podatkowym ani interpretacją ogólną.
+- Ustalone 2026-11-26 (bez eksperta, z brzmienia przepisu): art. 6 ust. 8 pkt 1 lit. b odsyła do całej ustawy
+  o zryczałtowanym podatku dochodowym (art. 5a pkt 15 ustawy o PIT) z wyjątkiem tylko jej art. 6 ust. 1a, więc obejmuje
+  też kartę podatkową (art. 2 ust. 1 pkt 2 i rozdział 3 tej ustawy). Zasada to opisuje. Otwarte zostaje, jak przy ryczałcie
+  od przychodów ewidencjonowanych i karcie podatkowej ocenia się rok bez przychodów i zmianę formy w trakcie roku.
 
 ## P16. Wniosek o łączne opodatkowanie w zeznaniu złożonym po terminie albo w korekcie; okres samotnego wychowywania dzieci
 
@@ -448,8 +455,10 @@ przypadku brzegowego, średnią.
   zeznanie w terminie, ale nie skorzystali z preferencyjnego opodatkowania i „nie mogąc tego dokonać po terminie” czuli
   się pokrzywdzeni („Wprowadzona zmiana eliminuje tę niedogodność”), a Przykład 1 (stan sprzed zmiany) opisuje korektę
   wspólnego zeznania na odrębne zeznania. Objaśnienia opisują stan prawny z 2019 r.; w innych punktach (zawarcie
-  małżeństwa w trakcie roku, śmierć małżonka, dochody uczącego się dziecka) są nieaktualne. Kroków zasad nie zmieniono:
-  zmiana kroku wymaga nowej wersji po ocenie, czy objaśnienia obejmują też korektę zeznania.
+  małżeństwa w trakcie roku, śmierć małżonka, dochody uczącego się dziecka) są nieaktualne. Objaśnienia nie mówią,
+  czy w obecnym stanie prawnym można dobrowolnie zrezygnować korektą z łącznego opodatkowania (sprawdzone 2026-11-26);
+  Przykład 1 opisuje korektę wspólnego zeznania na odrębne zeznania w stanie prawnym sprzed 2019 r. Kroki o wniosku
+  w obu zasadach opisują to (2026-11-26) jako niewyjaśnione, z odesłaniem do tego pytania.
 
 - Wpisy: `zasada.malzonkowie_wspolne_opodatkowanie` i `zasada.samotny_rodzic_opodatkowanie` (od 2025-01-01),
   krok o wniosku; przy osobie samotnie wychowującej dzieci także ostatni krok.

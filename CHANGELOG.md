@@ -42,6 +42,8 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 - Drugie źródło wartości złożonej można potwierdzić pole po polu (`confirms` przy źródle).
   `confidence.unconfirmed_fields` wymienia pola, którym brakuje drugiego dokumentu.
 - Sprawdzanie cytatów pomija znaki zerowej szerokości, którymi strony gov.pl dzielą nazwy plików.
+- Kroki zasad, które przesądzały otwarte pytania P1, P8, P14 i P19, opisują je teraz jako niewyjaśnione;
+  zasady o wspólnym opodatkowaniu wymieniają rezygnację korektą (P16) i kartę podatkową (P15).
 
 ## [0.3.0] - 2026-11-26
 
