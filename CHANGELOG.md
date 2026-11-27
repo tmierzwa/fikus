@@ -6,6 +6,8 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ## [Niewydane]
 
+## [0.5.0] - 2026-11-27
+
 ### Dodane
 
 - Pola `not_covered` i `see_also` w wersji parametru i w wyniku `get_parameter`. Wartość, która ma pełny
@@ -155,7 +157,8 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
   cytaty w oficjalnych tekstach.
 - Licencje: kod Apache 2.0, dane CC BY 4.0.
 
-[Niewydane]: https://github.com/tmierzwa/fikus/compare/v0.4.5...HEAD
+[Niewydane]: https://github.com/tmierzwa/fikus/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/tmierzwa/fikus/compare/v0.4.5...v0.5.0
 [0.4.5]: https://github.com/tmierzwa/fikus/compare/v0.4.0...v0.4.5
 [0.4.0]: https://github.com/tmierzwa/fikus/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/tmierzwa/fikus/compare/v0.2.0...v0.3.0

@@ -3,7 +3,7 @@
   "name": "io.github.tmierzwa/fikus",
   "title": "Fikus",
   "description": "Parametry przepisów dla JDG w Polsce: stawki, progi, terminy, dni wolne, ze źródłami",
-  "version": "0.4.5",
+  "version": "0.5.0",
   "repository": {
     "url": "https://github.com/tmierzwa/fikus",
     "source": "github"
@@ -12,7 +12,7 @@
     {
       "registryType": "pypi",
       "identifier": "fikus",
-      "version": "0.4.5",
+      "version": "0.5.0",
       "transport": {
         "type": "stdio"
       }
