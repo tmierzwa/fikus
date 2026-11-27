@@ -18,7 +18,7 @@ Sprawdzasz dane, których nie pisałeś. Teksty źródeł z PDF są w `.cache/zr
 
 Dla każdego nowego wpisu w `data/zmiany_sprawdzone.yaml` w tym PR:
 
-10. Otwórz tekst nowelizacji (identyfikator ELI z wpisu) i porównaj go z listą artykułów w notatce. Lista musi wymieniać dokładnie te artykuły, które nowelizacja zmienia, dodaje albo uchyla w akcie, którego dotyczy wpis (przy wpisie z aktem docelowym tylko w tym akcie). Sprawdź też, czy żaden z tych artykułów nie jest podstawą parametru w `data/parameters/`. Brakujący lub nadmiarowy artykuł zgłoś jako niezgodność.
+11. Otwórz tekst nowelizacji (identyfikator ELI z wpisu) i porównaj go z listą artykułów w notatce. Lista musi wymieniać dokładnie te artykuły, które nowelizacja zmienia, dodaje albo uchyla w akcie, którego dotyczy wpis (przy wpisie z aktem docelowym tylko w tym akcie). Sprawdź też, czy żaden z tych artykułów nie jest podstawą parametru w `data/parameters/`. Brakujący lub nadmiarowy artykuł zgłoś jako niezgodność.
 
 Zgłaszaj tylko niezgodności i brakujące źródła: wartość, data, artykuł, link, który nie prowadzi do tekstu jednolitego. Link do ustawy zmieniającej w Dz.U. jest poprawny, gdy zmiany nie ma jeszcze w tekście jednolitym, a wersja cytuje też ostatni tekst jednolity. Pomiń styl i formatowanie.
 Nie edytujesz plików. Nie wpisujesz siebie ani nikogo jako recenzenta.

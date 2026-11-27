@@ -30,7 +30,6 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 - Opis narzędzia `get_schema` wylicza symbole deklaracji z danych (doszedł KEDU).
 - Odpowiedź eksperta (`verification.expert`) ma pole `url` na link do odpowiedzi w GitHub Discussions.
 - Powtórzony klucz w pliku YAML z danymi zatrzymuje ładowanie danych. Dotąd brany był po cichu ostatni.
-
 - Schemat z CRWDE: plik schematu, którego adres podają już dwa dokumenty, sam potwierdza kod systemowy
   i wersję schematu, a wyróżnik wzoru o tym samym numerze sam potwierdza okres. Koniec okresu zamkniętej
   wersji wynika z potwierdzonego początku następnej (decyzja z 27 listopada 2026 r.).

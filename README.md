@@ -79,7 +79,7 @@ Odpowiedź `get_parameter("zdrowotna.minimum")` w skrócie:
     { "kind": "primary", "title": "Komunikat ZUS …", "url": "https://www.zus.pl/…", "quote": "…" },
     { "kind": "control", "title": "…", "url": "…" }
   ],
-  "confidence": { "level": "niska", "evidence": ["cytat", "drugie_zrodlo"], "open_issue": "…", "open_issue_scope": "value" }
+  "confidence": { "level": "wysoka", "evidence": ["cytat", "drugie_zrodlo", "agent"], "open_issue": null, "open_issue_scope": null }
 }
 ```
 
@@ -108,7 +108,7 @@ Pole `confidence.level` wynika z dowodów zapisanych przy wersji parametru:
   - Bez `confirms` zasadę potwierdza jeden dokument, który sam podaje wszystkie jej kroki. Gdy któreś źródło wersji używa `confirms`, liczy się tylko potwierdzenie po kawałku, a źródło kontrolne bez `confirms` go nie zastępuje.
   - Okresu zasady nie potwierdza się osobno, bo wiele wersji zaczyna się na początku zakresu danych; opisuje go notatka.
   - Adres pliku schematu (`xsd_url`) potwierdza też sam plik spod tego adresu, jeśli cytat z pliku podaje kod systemowy formularza. Skrypt cytatów dopisuje na końcu tekstu źródła wartości atrybutów z plików XML i XSD oraz adresy linków ze stron, więc je też można cytować.
-  - Przy schemacie z CRWDE plik schematu, którego adres podają już dwa dokumenty, sam potwierdza kod systemowy i wersję schematu, a wyróżnik wzoru o tym samym numerze sam potwierdza okres. Koniec okresu zamkniętej wersji wynika z potwierdzonego początku następnej wersji, która zaczyna się dzień później.
+  - Przy schemacie z CRWDE plik schematu, którego adres podają już dwa dokumenty, sam potwierdza kod systemowy i wersję schematu, gdy wymienia je w `confirms`, a wyróżnik wzoru o tym samym numerze sam potwierdza okres. Koniec okresu zamkniętej wersji wynika z potwierdzonego początku następnej wersji, która zaczyna się dzień później.
 
 ## Zakres
 

@@ -35,7 +35,7 @@ INSTRUCTIONS = (
     "'wysoka' to cytat ze źródła pierwotnego, co najmniej dwa inne dowody i brak otwartych pytań; "
     "'średnia' to ten sam komplet dowodów, ale z otwartym pytaniem o przypadek brzegowy "
     "(opisuje go confidence.open_issue; sprawdź, czy Cię dotyczy); "
-    "'niska' oznacza niepełny komplet dowodów albo otwarte pytanie o samą wartość; "
+    "'niska' oznacza niepełny komplet dowodów albo otwarte pytanie o samą wartość lub rdzeń zasady; "
     "nie opieraj na niej rozliczeń bez sprawdzenia. "
     "Gdy wynik ma pole not_covered, pewność dotyczy tylko samej wartości; to, czego wartość nie rozstrzyga, "
     "opisują parametry z see_also, każdy z własnym poziomem pewności. Przy zasadzie obliczeń not_covered "
@@ -85,7 +85,7 @@ Level = Literal["wysoka", "średnia", "niska"]
 
 class Confidence(BaseModel):
     level: Level = Field(description="'średnia': pełny komplet dowodów i otwarte pytanie o przypadek brzegowy; "
-                                     "'niska': niepełny komplet dowodów albo otwarte pytanie o samą wartość.")
+                                     "'niska': niepełny komplet dowodów albo otwarte pytanie o samą wartość lub rdzeń zasady.")
     evidence: list[str] = Field(description="Rodzaje dowodów: cytat, drugie_zrodlo, agent, deklaracje, ekspert.")
     open_issue: str | None = Field(description="Otwarte pytanie, które blokuje wysoką pewność.")
     open_issue_scope: Literal["value", "edge_case"] | None = Field(
