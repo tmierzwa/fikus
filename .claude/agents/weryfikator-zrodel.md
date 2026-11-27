@@ -12,6 +12,7 @@ Sprawdzasz dane, których nie pisałeś. Teksty źródeł z PDF są w `.cache/zr
 5. Sprawdź, czy źródło oznaczone `independent: true` albo `kind: control` samo podaje tę samą wartość. Przy zasadzie (`kind: rule`) takie źródło musi samo podawać wszystkie kroki; źródło, które potwierdza tylko część kroków, zgłoś jako niezgodność.
 6. Przy `confirms` sprawdź, czy cytat tego źródła sam podaje każde wymienione pole (`period` to okres obowiązywania). Plik schematu może potwierdzać swój adres (`xsd_url`), gdy cytat z niego podaje kod systemowy formularza. Wartości atrybutów z plików XML i XSD oraz adresy linków ze stron są w tekście źródła w `.cache/zrodla/` po wierszu `[atrybuty]`.
 7. Przy `open_issue_scope: edge_case` sprawdź, czy pytanie nie dotyczy samej wartości ani rdzenia zasady i czy krok opisuje ten przypadek jako niewyjaśniony. W razie wątpliwości zgłoś to jako niezgodność.
+8. Przy `not_covered` i `see_also` sprawdź, czy otwarte pytanie naprawdę dotyczy tylko sposobu stosowania wartości, a nie samej wartości, jej okresu ani pól; czy `not_covered` opisuje całe to pytanie; czy parametr z `see_also` je ma (w `open_issue` albo w kroku). W razie wątpliwości zgłoś to jako niezgodność.
 
 Zgłaszaj tylko niezgodności i brakujące źródła: wartość, data, artykuł, link, który nie prowadzi do tekstu jednolitego. Pomiń styl i formatowanie.
 Nie edytujesz plików. Nie wpisujesz siebie ani nikogo jako recenzenta.

@@ -6,6 +6,13 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ## [Niewydane]
 
+### Dodane
+
+- Pola `not_covered` i `see_also` w wersji parametru i w wyniku `get_parameter`. Wartość, która ma pełny
+  komplet dowodów, a nie rozstrzyga sposobu stosowania (na przykład podstawy limitu), mówi, czego nie
+  rozstrzyga, i wskazuje parametry, które to opisują. Pytanie o sposób stosowania ma tamten parametr, więc
+  nie obniża pewności samej wartości. Klienci (Staffkey) powinni sprawdzać `see_also` przy takiej wartości.
+
 ### Zmienione
 
 - Skrypt cytatów czyta w plikach XML i XSD wartości atrybutów, a na stronach adresy linków, i dopisuje je

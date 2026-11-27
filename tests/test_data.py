@@ -217,3 +217,25 @@ def test_schema_file_confirms_its_own_address_only_with_system_code():
     assert "xsd_url" not in _schema("JPK_EWP (4)")._unconfirmed_fields()
     with pytest.raises(ValueError, match="kodem systemowym"):
         _schema("Nagłówek JPK_EWP")
+
+
+def test_value_that_leaves_its_use_open_names_where_it_is_described():
+    v = _version(agent_check="2026-01-02")
+    linked = Version.model_validate({**v.model_dump(mode="json"), "not_covered": "podstawy limitu",
+                                     "see_also": ["zasada.ulga_na_start"]})
+    assert linked.confidence()["level"] == "wysoka"
+    with pytest.raises(ValueError, match="nie rozstrzyga"):
+        Version.model_validate({**v.model_dump(mode="json"), "not_covered": "podstawy limitu"})
+    with pytest.raises(ValueError, match="nie rozstrzyga"):
+        Version.model_validate({**v.model_dump(mode="json"), "see_also": ["zasada.ulga_na_start"]})
+
+
+def test_see_also_must_point_to_another_known_parameter():
+    s = Store()
+    for ref in ("brak.takiego", "test.wartosc"):
+        p = Parameter.model_validate({"id": "test.wartosc", "name": "t", "versions": [
+            {**_version(agent_check="2026-01-02").model_dump(mode="json"),
+             "not_covered": "sposobu stosowania", "see_also": [ref]}]})
+        s.params[p.id] = p
+        with pytest.raises(ValueError, match="odsyłacz"):
+            s._check_rule_refs()
