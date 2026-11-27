@@ -215,7 +215,6 @@
             rozliczeniowych. Kwotę dopłaty składek wykazujesz w dokumentach rozliczeniowych, które składasz za kwiecień
             następnego roku [38]. Tę różnicę powinieneś dopłacić w terminie opłacania składek za kwiecień
           as_of: 2026-11-27
-          confirms: [step_4]
       verification: {checked_at: 2026-11-27}
 
 - id: schemat.zus_dra
