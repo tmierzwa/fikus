@@ -14,6 +14,13 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
   potwierdza się osobno. Brakujące kroki
   są w `confidence.unconfirmed_fields` (decyzja z 27 listopada 2026 r.).
 
+### Zmienione
+
+- Zasada obliczeń może mieć `not_covered` bez `see_also`. Wylicza wtedy sprawy, których zasada nie opisuje
+  (dawne zdania „Ta zasada nie opisuje…” w krokach), a `see_also` opcjonalnie wskazuje parametry, które
+  te sprawy opisują (dawne odesłania „…opisuje zasada …”). Tego opisu nie potwierdza się dokumentami, więc nie
+  blokuje pewności zasady. Przy wartości `not_covered` nadal wymaga `see_also` (decyzja z 27 listopada 2026 r.).
+
 ## [0.5.0] - 2026-11-27
 
 ### Dodane
