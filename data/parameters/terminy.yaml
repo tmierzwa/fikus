@@ -59,8 +59,8 @@
       value: {day_of_month: 20}
       note: >-
         Wpłata miesięczna. Kwartalny sposób (art. 21 ust. 1a) wymaga osobnego parametru.
-        Poprawka daty początku obowiązywania (wcześniej 2020-01-01; termin za grudzień
-        przed 2022 r. mógł być inny). Tekst jednolity uwzględnia zmiany ogłoszone przed 2025-06-12;
+        Korekta: zmieniona data początku obowiązywania, bo termin za grudzień przed 2022 r.
+        mógł być inny. Tekst jednolity uwzględnia zmiany ogłoszone przed 2025-06-12;
         data początku obowiązywania (2022-01-01) nie jest potwierdzona źródłem.
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
@@ -119,7 +119,7 @@
       note: >-
         Rozliczenie roczne w dokumencie rozliczeniowym za miesiąc, w którym upływa termin zeznania
         rocznego (kwiecień); dopłata w terminie składek za ten miesiąc, czyli do 20 maja.
-        Poprawka: wcześniej powołany art. 81 ust. 9 nie dotyczy rozliczenia rocznego.
+        Korekta: zmieniona podstawa prawna.
         data początku obowiązywania (2023-01-01) nie jest potwierdzona źródłem.
       sources:
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
