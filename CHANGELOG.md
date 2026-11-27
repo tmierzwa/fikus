@@ -31,11 +31,7 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
   limicie 120 s, a po przekroczeniu tego limitu nie ma ponownej próby. Nieudany zapis do pamięci
   podręcznej nie zostawia pliku `.tmp`.
 - Opis narzędzia `get_schema` wylicza symbole deklaracji z danych (doszedł KEDU).
-
-### Poprawione
-
-- `wykryj_zmiany.py`: nowelizacja cytowana w jednym parametrze nie jest już pomijana w innych
-  parametrach, które cytują ten sam akt bez niej.
+- Powtórzony klucz w pliku YAML z danymi zatrzymuje ładowanie danych. Dotąd brany był po cichu ostatni.
 
 - Schemat z CRWDE: plik schematu, którego adres podają już dwa dokumenty, sam potwierdza kod systemowy
   i wersję schematu, a wyróżnik wzoru o tym samym numerze sam potwierdza okres. Koniec okresu zamkniętej
@@ -48,6 +44,11 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
   opis poprzednich błędów, wzmianki o weryfikatorze) zastąpiło krótkie zdanie „Korekta z …: zmienione …”
   albo usunięto ją, gdy poprawka dotyczyła samej notatki. Wartości, okresy, źródła i kroki się nie zmieniają.
   Test odrzuca historię edycji w notatkach.
+
+### Poprawione
+
+- `wykryj_zmiany.py`: nowelizacja cytowana w jednym parametrze nie jest już pomijana w innych
+  parametrach, które cytują ten sam akt bez niej.
 
 ## [0.5.0] - 2026-11-27
 

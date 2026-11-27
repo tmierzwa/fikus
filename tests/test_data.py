@@ -359,3 +359,11 @@ def test_applies_to_must_name_profile_fields_and_their_values():
         _applies({"tax_fom": ["ryczalt"]})
     with pytest.raises(ValueError, match="ryczal"):
         _applies({"tax_form": ["ryczal"]})
+
+
+def test_duplicate_yaml_key_is_rejected(tmp_path):
+    from fikus.store import load_yaml
+    f = tmp_path / "x.yaml"
+    f.write_text("- id: a\n  name: b\n  name: c\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="powtórzony klucz 'name'"):
+        load_yaml(f)

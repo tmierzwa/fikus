@@ -14,13 +14,34 @@ _PKG_DATA = Path(__file__).resolve().parent / "data"        # paczka zainstalowa
 DATA = _REPO_DATA if (_REPO_DATA / "parameters").is_dir() else _PKG_DATA
 
 
+class _StrictLoader(yaml.SafeLoader):
+    """SafeLoader, który odrzuca powtórzony klucz w mapie (safe_load bierze po cichu ostatni)."""
+
+
+def _no_duplicates(loader, node, deep=False):
+    seen = set()
+    for key_node, _ in node.value:
+        key = loader.construct_object(key_node, deep=deep)
+        if key in seen:
+            raise ValueError(f"powtórzony klucz {key!r} w {node.start_mark.name}, wiersz {key_node.start_mark.line + 1}")
+        seen.add(key)
+    return loader.construct_mapping(node, deep=deep)
+
+
+_StrictLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, _no_duplicates)
+
+
+def load_yaml(f: Path):
+    return yaml.load(f.read_text(encoding="utf-8"), Loader=_StrictLoader)
+
+
 class Store:
     """Wszystkie parametry i profile wczytane z YAML. Błąd w danych zatrzymuje start serwera."""
 
     def __init__(self, data_dir: Path = DATA):
         self.params: dict[str, Parameter] = {}
         for f in sorted((data_dir / "parameters").glob("*.yaml")):
-            for raw in yaml.safe_load(f.read_text(encoding="utf-8")) or []:
+            for raw in load_yaml(f) or []:
                 p = Parameter.model_validate(raw)
                 if p.id in self.params:
                     raise ValueError(f"zduplikowany parametr {p.id} ({f.name})")
@@ -29,7 +50,7 @@ class Store:
         for required in ("kalendarz.dni_wolne", "zasada.przesuniecie_terminu"):   # potrzebne w deadlines()
             if required not in self.params:
                 raise ValueError(f"w danych brakuje parametru {required}")
-        raw_profiles = yaml.safe_load((data_dir / "profiles.yaml").read_text(encoding="utf-8"))
+        raw_profiles = load_yaml(data_dir / "profiles.yaml")
         self.profiles = {r["id"]: Profile.model_validate(r) for r in raw_profiles}
 
     def _check_rule_refs(self) -> None:
