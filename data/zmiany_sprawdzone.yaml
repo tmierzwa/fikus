@@ -95,11 +95,15 @@
 - act: DU/2026/1542
   for: DU/2026/592
   checked_at: 2026-11-26
-  note: "ustawa o PIT (art. 4): zmienia art. 21 (uchyla ust. 1 pkt 63a, zmienia pkt 63b i ust. 5a–5cc), art. 23b ust. 2, art. 23z, art. 26e ust. 6 i art. 26ga ust. 10; nie dotyka art. 44. Uchylenie art. 21 ust. 1 pkt 63a zmienia wyliczenie, które zasady składki zdrowotnej przepisują z art. 81 ust. 2zd pkt 2 ustawy o świadczeniach (art. 12 tej nowelizacji); obsłużą to nowe wersje tych zasad od 2027-01-01, poza tym wpisem"
+  note: "ustawa o PIT (art. 4): zmienia art. 21 (uchyla ust. 1 pkt 63a, zmienia pkt 63b i ust. 5a–5cc), art. 23b ust. 2, art. 23z, art. 26e ust. 6 i art. 26ga ust. 10; nie dotyka art. 44. Uchylenie art. 21 ust. 1 pkt 63a zmienia wyliczenie, które zasady składki zdrowotnej przepisują z art. 81 ust. 2zd pkt 2 ustawy o świadczeniach (art. 12 tej nowelizacji); obsłużą to nowe wersje tych zasad od 2027-01-01 (ryczałt) i od 2027-02-01 (skala, podatek liniowy), poza tym wpisem"
 - act: DU/2026/1542
   for: DU/2026/622
   checked_at: 2026-11-26
   note: "Ordynacja podatkowa (art. 9): dodaje art. 299 § 3 pkt 22; nie dotyka art. 12"
+- act: DU/2026/1542
+  for: DU/2025/1461
+  checked_at: 2026-11-27
+  note: "ustawa o świadczeniach (art. 12): skreśla w art. 81 ust. 2zd pkt 2 wyrazy „63a,”; nie zmienia innych przepisów tej ustawy, w tym art. 79, 79a, art. 81 ust. 2, 2c–2l i art. 82. Art. 81 ust. 2zd wylicza, czego nie uwzględnia się w przychodach i kosztach ich uzyskania, o których mowa w art. 81 ust. 2, 2b–2c, 2d–2f, 2g i 2h–2zc; to wyliczenie przepisują zasady składki zdrowotnej na ryczałcie (nowe wersje od 2027-01-01) oraz na skali i podatku liniowym (nowe wersje od 2027-02-01), które cytują tę nowelizację. Pozostałe parametry cytujące ten tekst jednolity nie opisują tego wyliczenia"
 - act: DU/2026/1556
   for: DU/2026/592
   checked_at: 2026-11-26
