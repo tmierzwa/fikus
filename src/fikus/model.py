@@ -47,7 +47,7 @@ class Source(BaseModel):
     independent: bool = False
     # Pola wartości złożonej (klucze value i "period" dla okresu obowiązywania), które to źródło
     # samo podaje. Pozwala potwierdzić drugie źródło pole po polu (Version.confidence).
-    confirms: list[str] | None = None
+    confirms: list[str] | None = None   # pola wartości złożonej, period albo kroki zasady (step_N)
 
     @field_validator("url")
     @classmethod
@@ -62,6 +62,14 @@ class Expert(BaseModel):
     name: str                       # imię i nazwisko tylko za zgodą na publikację; inaczej kwalifikacja
     answered_at: date
     basis: str                      # co ekspert potwierdził i na jakiej podstawie
+    url: str | None = None          # link do odpowiedzi (komentarz w GitHub Discussions)
+
+    @field_validator("url")
+    @classmethod
+    def _https(cls, v: str | None) -> str | None:
+        if v is not None and not v.startswith("https://"):
+            raise ValueError("adres odpowiedzi eksperta musi zaczynać się od https://")
+        return v
 
 
 class Verification(BaseModel):

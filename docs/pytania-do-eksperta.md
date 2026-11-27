@@ -1,7 +1,8 @@
 # Pytania do eksperta
 
 Pytania, na które źródła nie dają jednoznacznej odpowiedzi. Do czasu odpowiedzi wpis ma `open_issue`
-i pewność niską albo, gdy pytanie dotyczy tylko przypadku brzegowego, średnią.
+i pewność niską albo średnią, gdy wpis ma pełny komplet dowodów, a pytanie dotyczy tylko przypadku
+brzegowego.
 
 Każde otwarte pytanie oprócz P0 ma dyskusję w kategorii
 [Pytania do ekspertów](https://github.com/tmierzwa/fikus/discussions/categories/pytania-do-ekspert%C3%B3w)
@@ -10,11 +11,11 @@ ekspertów prosimy o odpowiedź w dyskusji, z podstawą prawną.
 
 Sama odpowiedź w dyskusji nie jest dowodem. Opiekun potwierdza kwalifikację autora i to, że odpowiedź
 podaje podstawę prawną, a potem oznacza ją jako odpowiedź. Wtedy trafia do pola `verification.expert`
-wpisu z datą odpowiedzi, podstawą i linkiem do komentarza. Imię i nazwisko wpisujemy tylko wtedy, gdy
+wpisu z datą odpowiedzi, podstawą i linkiem do komentarza (`url`). Imię i nazwisko wpisujemy tylko wtedy, gdy
 ekspert napisze, że się na to zgadza; bez tego wpisujemy samą kwalifikację. Gdy dane z odpowiedzią są na
 `main`, dyskusję zamykamy, a nagłówek pytania dostaje dopisek „rozstrzygnięte”.
 
-Nowe pytanie dopisujemy tutaj w PR, a potem zakładamy dla niego dyskusję. Dyskusję może też założyć
+Nowe pytanie dopisujemy tutaj w PR, a dyskusję dla niego zakładamy dopiero za zgodą opiekuna. Dyskusję może też założyć
 kontrybutor formularzem kategorii; opiekun nadaje wtedy pytaniu numer i dopisuje je tutaj. W dyskusjach
 nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się rozlicza.
 

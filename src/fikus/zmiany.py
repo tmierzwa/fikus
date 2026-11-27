@@ -22,10 +22,8 @@ from datetime import date, timedelta
 from pathlib import Path
 from typing import Callable
 
-import yaml
-
 from .cytaty import fetch_bytes
-from .store import Store
+from .store import Store, load_yaml    # load_yaml odrzuca powtórzony klucz
 
 API = "https://api.sejm.gov.pl/eli/acts/"
 MAX_BYTES = 5 * 1024 * 1024        # metadane aktu mają kilkadziesiąt kB
@@ -65,7 +63,7 @@ def load_reviewed(path: Path) -> set[str]:
     albo, gdy wpis ma pole `for`, para „nowelizacja@akt” (przejrzana tylko dla tego aktu)."""
     if not path.is_file():
         return set()
-    entries = yaml.safe_load(path.read_text(encoding="utf-8")) or []
+    entries = load_yaml(path) or []
     for e in entries:
         if not {"act", "checked_at", "note"} <= set(e):
             raise ValueError(f"{path.name}: wpis {e!r} potrzebuje pól act, checked_at i note")
