@@ -16,12 +16,19 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 - Schematy `schemat.jpk_v7m`, `schemat.jpk_v7k` i `schemat.jpk_pkpir` oraz zasady przesyłania ksiąg
   w formie JPK (`zasada.jpk_pd_pkpir`, `zasada.jpk_pd_ryczalt`) w nowym pliku `data/parameters/jpk.yaml`.
   `get_schema` zwraca teraz dane dla tych symboli.
+- Schemat `schemat.jpk_ewp` (JPK_EWP, wariant 4 od 2026 r.); `get_schema` zwraca go dla symbolu JPK_EWP.
+- Nowy plik `data/parameters/ewidencja.yaml`: termin `termin.ewidencja_przychodow_wpis` (wpis przychodów
+  za miesiąc na ryczałcie; `deadlines` zwraca go dla profili na ryczałcie) oraz zasady `zasada.ewidencja_przychodow`,
+  `zasada.przychod_data_uzyskania` i `zasada.przychod_w_walucie`.
 - Parametry VAT w nowym pliku `data/parameters/vat.yaml`: `vat.stawki` (stawka podstawowa i obniżone
   w okresie z art. 146ef ustawy o VAT), `vat.limit_zwolnienia` (limit zwolnienia podmiotowego z art. 113
   ust. 1) i zasada `zasada.vat_odliczenie` (prawo do odliczenia, moment i korekta, samochody, wyłączenia).
 - Schematy e-Deklaracji zeznań rocznych `schemat.pit_36`, `schemat.pit_36l` i `schemat.pit_28` (za 2025 r.
   i od 2026 r., według wyróżników wzorów w CRWDE) oraz zasada `zasada.dane_autoryzujace` (podpis danymi
   autoryzującymi zeznań PIT i plików JPK_V7M, JPK_EWP i JPK_PKPIR) w nowym pliku `data/parameters/pit_zeznania.yaml`.
+- Zasady `zasada.dra_obowiazek` (deklaracja ZUS DRA za siebie) i `zasada.roczne_rozliczenie_zdrowotnej`
+  oraz wzór formularza `schemat.zus_dra` (od 1 maja 2026 r., według dnia złożenia) w nowym pliku
+  `data/parameters/zus_dra.yaml`. `get_schema("ZUS_DRA")` zwraca wzór DRA.
 
 ### Zmienione
 
