@@ -6,7 +6,8 @@ opiekun w dokumencie projektowym.
 Decyzje opiekuna (decyzja 25 w dokumencie projektowym, 2026-11-26):
 
 - A6 (zakres usług według stawek ryczałtu) jest w zakresie.
-- C3 obejmuje tylko wzór formularza DRA (`schemat.zus_dra`), bez specyfikacji EWD i schematu KEDU.
+- C3 obejmuje wzór formularza DRA (`schemat.zus_dra`). Schemat KEDU (`schemat.kedu`, z wersją specyfikacji
+  EWD) doszedł później, w wersji 0.4.5, razem z deklaracją ZUS DRA za siebie.
 - Obszar D (kanały wysyłki) jest poza zakresem.
 
 ## Cel
@@ -94,14 +95,17 @@ krokami z podstawą prawną. Ta specyfikacja wymienia, czego dziś w danych brak
 - Źródło do sprawdzenia: art. 11a ustawy o PIT.
 - Fikus nie podaje kursów. Kurs pobiera klient z NBP.
 
-### A6. Do decyzji opiekuna: zakres usług według stawek ryczałtu
+### A6. Zakres usług według stawek ryczałtu
+
+W zakresie (decyzja 25). W danych jest jako `ryczalt.zakres_uslug`.
+
 
 - Staffkey musi przypisać stawkę do każdego przychodu. Dziś `ryczalt.stawki` podaje stawki według
   punktów art. 12 ust. 1, a zakres usług odsyła do przepisu.
 - Propozycja: osobny parametr z dosłownym zakresem usług (symbole PKWiU) dla stawek, które
   dotyczą usług IT i inżynierskich.
-- Ryzyko: wybór stawki dla konkretnego przychodu zbliża się do doradztwa (pytanie P0). Ten punkt
-  wymaga decyzji opiekuna przed jakimkolwiek wpisem.
+- Ryzyko: wybór stawki dla konkretnego przychodu zbliża się do doradztwa (pytanie P0). Dlatego
+  parametr podaje tylko brzmienie przepisu, a stawkę dla przychodu wybiera podatnik.
 
 ## Obszar B: zeznanie roczne PIT
 
@@ -166,17 +170,16 @@ krokami z podstawą prawną. Ta specyfikacja wymienia, czego dziś w danych brak
   - komunikat ZUS o nowych wzorach DRA i RCA od 1 maja 2026 r.,
   - strona ZUS „Wymagania dla oprogramowania interfejsowego – dokumenty ubezpieczeniowe”,
   - rozporządzenie o wzorach dokumentów ubezpieczeniowych, jeśli wzór DRA ustala akt.
-- Do decyzji opiekuna: czy wersja specyfikacji technicznej jest parametrem przepisów. Wzór
-  formularza jest. Specyfikacja EWD to dokument techniczny ZUS.
+- Oba parametry są w danych: `schemat.zus_dra` i `schemat.kedu` (od wersji 0.4.5).
 
-## Obszar D: kanały wysyłki (do decyzji opiekuna)
+## Obszar D: kanały wysyłki (poza zakresem, decyzja 25)
 
 - Propozycja: `schemat.jpk_api` (wersja specyfikacji interfejsów usług JPK) i
   `schemat.e_deklaracje_api` (wersja specyfikacji wejścia-wyjścia e-Deklaracji).
 - Wskazówka: specyfikacja JPK 5.6.0 z 10 września 2026 r. i specyfikacja e-Deklaracji 2.4.
 - Za: klient wie, kiedy MF zmienia interfejs, a `changes` to pokaże.
 - Przeciw: to nie są przepisy, a Fikus zbiera przepisy. Adresów usług Fikus nie podaje.
-- Ten obszar powstaje tylko po decyzji w dokumencie projektowym.
+- Obszar jest poza zakresem (decyzja 25).
 
 ## Zmiany w serwerze
 
@@ -201,7 +204,7 @@ Pytania dopisujesz przy wpisie, którego dotyczą, z kolejnym numerem po P30.
 1. Obszar A bez A6: ewidencja jest potrzebna jako pierwsza. Wpisy za 2026 r. trzeba robić już teraz.
 2. Obszar C: DRA za każdy miesiąc i roczne rozliczenie do 20 maja 2027 r.
 3. Obszar B: zeznania za 2026 r. od 15 lutego 2027 r.
-4. A6 i obszar D: tylko po decyzji opiekuna.
+4. A6 (w zakresie po decyzji 25). Obszar D jest poza zakresem.
 
 ## Kryteria odbioru całości
 

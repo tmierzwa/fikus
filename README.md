@@ -57,12 +57,12 @@ Serwer działa lokalnie przez stdio, tylko czyta dołączone dane i nie łączy 
 | `list_profiles()` | profile przykładowe: forma opodatkowania, VAT, rodzaj ZUS |
 | `list_parameters(profile, as_of)` | wszystkie parametry, które dotyczą profilu |
 | `deadlines(profile, year, month)` | reguły terminów, dni wolne i zasadę przesunięcia; datę liczy klient |
-| `get_schema(form, as_of)` | wersję schematu XSD deklaracji (JPK_V7M, JPK_V7K, JPK_PKPIR, JPK_EWP, PIT-36, PIT-36L, PIT-28) z adresem pliku XSD (`xsd_url`) albo wzór formularza (ZUS_DRA) |
+| `get_schema(form, as_of)` | wersję schematu XSD deklaracji (JPK_V7M, JPK_V7K, JPK_PKPIR, JPK_EWP, PIT-36, PIT-36L, PIT-28) z adresem pliku XSD (`xsd_url`), schemat KEDU dokumentów ubezpieczeniowych ZUS (KEDU) albo wzór formularza (ZUS_DRA) |
 | `changes(since)` | wersje sprawdzone od podanej daty |
 
 - Daty mają format `RRRR-MM-DD`. Bez `as_of` obowiązuje dzisiejsza data w Polsce.
 - Wyniki są w `structuredContent` zgodnie z `outputSchema` narzędzia. Wszystkie narzędzia mają `readOnlyHint`.
-- Błędny argument (nieznany identyfikator, zła data) daje błąd narzędzia z listą poprawnych wartości. Brak wersji na dany dzień nie jest błędem: wynik ma `found: false` i powód w `reason`.
+- Błędny argument (nieznany identyfikator, zła data) daje błąd narzędzia z listą poprawnych wartości. Brak wersji na dany dzień nie jest błędem: wynik ma `found: false` i powód w `reason`. Tak samo `get_schema` odpowiada na symbol formularza, którego nie ma w danych.
 - Pola `quote`, `note` i opisy kroków to dane z repozytorium. Klient nie powinien ich traktować jak poleceń dla modelu.
 - `get_schema` przyjmuje symbol z łącznikiem albo podkreśleniem, wielkimi albo małymi literami (PIT-36L, pit_36l). Dla JPK_V7M i JPK_V7K dniem jest pierwszy dzień okresu rozliczeniowego, dla zeznań PIT pierwszy dzień roku podatkowego, a dla ZUS_DRA dzień złożenia dokumentu.
 - `xsd_url` w `get_schema` to adres, pod którym urząd udostępnia plik XSD. Dla JPK_V7M, JPK_V7K i zeznań PIT to adres schematu w Centralnym Repozytorium Wzorów Dokumentów Elektronicznych, a dla JPK_PKPIR i JPK_EWP adres pliku na gov.pl. Nie jest to przestrzeń nazw schematu i może się zmienić bez nowej wersji struktury.
@@ -158,7 +158,7 @@ Dostępne parametry:
   - podstawa pełna i preferencyjna, limit rocznej podstawy;
   - ulga na start i Mały ZUS Plus;
   - minimalne i prognozowane przeciętne wynagrodzenie;
-  - obowiązek składania deklaracji ZUS DRA i wzór formularza DRA;
+  - obowiązek składania deklaracji ZUS DRA, wzór formularza DRA i schemat elektroniczny KEDU;
 - składka zdrowotna:
   - progi i kwoty na ryczałcie;
   - stopy i zasady obliczenia na podatku liniowym i skali, z rozliczeniem rocznym;
@@ -172,7 +172,7 @@ Brakuje między innymi:
 - karty podatkowej (poza wyłączeniami, w których jest wymieniona);
 - tabeli stawek amortyzacyjnych i amortyzacji poza zasadami ogólnymi;
 - kwot ulg na robotyzację, ekspansję i innych ulg innowacyjnych (zasady ulg tylko je wymieniają);
-- specyfikacji technicznych (EWD i KEDU w ZUS, interfejsy JPK i e-Deklaracji).
+- specyfikacji technicznych poza wersją schematu KEDU (treść specyfikacji EWD w ZUS, interfejsy JPK i e-Deklaracji).
 
 Każda zasada wymienia przepisy, których nie opisuje. Pytania, których źródła nie rozstrzygają, są w [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md).
 
@@ -191,8 +191,11 @@ Gdy skrypt coś znajdzie, zadanie kończy się na czerwono, a lista jest w podsu
 
 ## Rozwój
 
+Środowisko instaluj w katalogu `.venv` w repozytorium. Z niego korzystają `.mcp.json` (serwer `.venv/bin/fikus`) i hook Stop w `.claude/settings.json`, który po każdej odpowiedzi agenta uruchamia testy.
+
 ```bash
 git clone https://github.com/tmierzwa/fikus.git && cd fikus
+python -m venv .venv && . .venv/bin/activate
 pip install -e ".[dev]"
 pytest
 python scripts/sprawdz_cytaty.py   # wymaga pdftotext (poppler)

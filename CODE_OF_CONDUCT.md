@@ -19,8 +19,8 @@ błąd albo zadać pytanie o dane bez obawy, że zostanie wyśmiany.
 
 ## Zgłoszenia
 
-Naruszenia zgłaszaj opiekunom projektu na adres podany w pliku [SECURITY.md](SECURITY.md)
-(sekcja „Kontakt”). Zgłoszenia traktujemy poufnie. Opiekunowie mogą usunąć komentarz, zablokować
+Naruszenia zgłaszaj opiekunom projektu prywatnie, przez „Report a vulnerability” w zakładce Security
+repozytorium, z tytułem „Kodeks postępowania” (opis w [SECURITY.md](SECURITY.md)). Zgłoszenia traktujemy poufnie. Opiekunowie mogą usunąć komentarz, zablokować
 konto w repozytorium albo odrzucić wkład, który narusza ten kodeks.
 
 Kodeks obowiązuje w repozytorium, zgłoszeniach, PR-ach i innych kanałach projektu.
