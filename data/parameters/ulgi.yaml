@@ -566,7 +566,7 @@
           - text: Wpłaty na indywidualne konto zabezpieczenia emerytalnego odliczasz do wysokości rocznego limitu wpłat z ustawy o tych kontach, a składki członkowskie na związki zawodowe do kwoty rocznej z art. 26 ust. 1 pkt 2c; oba odliczenia tylko w zeznaniu.
             uses: [ikze.limit_wplat]
             basis: art. 26 ust. 1 pkt 2b i 2c oraz ust. 6g ustawy o podatku dochodowym od osób fizycznych; art. 13a ustawy o indywidualnych kontach emerytalnych oraz indywidualnych kontach zabezpieczenia emerytalnego
-          - text: Odliczenie wydatków na Internet nie przysługuje od dochodów uzyskanych od 1 stycznia 2027 r. Wyjątek dotyczy podatnika, który po raz pierwszy skorzystał z tego odliczenia w zeznaniu za 2026 r.; przepis przejściowy (art. 5 ust. 1) zachowuje mu je w zeznaniu za 2027 r. na zasadach z dotychczasowego art. 26 ust. 1 pkt 6a i ust. 6h. Czy obowiązuje wtedy dotychczasowy roczny limit i czy prawo zachowuje podatnik, który zmienił formę opodatkowania między 2026 a 2027 r. (na przykład w 2026 r. odliczał wydatki na ryczałcie), jest niewyjaśnione (otwarte pytanie do eksperta, P14).
+          - text: Odliczenie wydatków na Internet nie przysługuje od dochodów uzyskanych od 1 stycznia 2027 r. Wyjątek dotyczy podatnika, który po raz pierwszy skorzystał z tego odliczenia w zeznaniu za 2026 r.; przepis przejściowy (art. 5 ust. 1) zachowuje mu je w zeznaniu za 2027 r. na zasadach z dotychczasowego art. 26 ust. 1 pkt 6a i ust. 6h. Niewyjaśnione (otwarte pytanie do eksperta, P14) są roczny limit tego odliczenia w zeznaniu za 2027 r. oraz zachowanie prawa przez podatnika, który zmienił formę opodatkowania między 2026 a 2027 r. (na przykład w 2026 r. odliczał wydatki na ryczałcie).
             uses: [ulga.internet.limit]
             basis: art. 1 pkt 1, art. 4 ust. 1 i art. 5 ust. 1 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1541)
           - text: Wydatki na cele rehabilitacyjne i na ułatwienie wykonywania czynności życiowych odliczasz według katalogu z art. 26 ust. 7a; część pozycji ma roczny limit, a wydatki na leki odliczasz w części przekraczającej kwotę miesięczną. Warunki są w art. 26 ust. 7b–7g.
@@ -593,7 +593,7 @@
         na robotyzację), uchyla ust. 5a (do kosztów poniesionych przed tym dniem stosuje się go nadal, art. 7 ust. 1)
         i przedłuża okres w ust. 5 do lat 2022–2036 (art. 1 pkt 4 lit. b wchodzi w życie 31 grudnia 2026 r., ale według
         art. 4 ust. 1 dotyczy dochodów od 1 stycznia 2027 r.), a w art. 26i ust. 1 skreśla odesłanie do art. 26gb.
-        Korekta z 26 listopada 2026 r.: zmieniony krok o Internecie (P14).
+        Korekty z 26 i 27 listopada 2026 r.: zmieniony krok 3.
       sources:
         - title: Dz.U. 2026 poz. 1541, ustawa z 22 października 2026 r. o zmianie ustawy o PIT, ustawy o CIT oraz ustawy o ryczałcie (uchylenie ulgi internetowej)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1541/text.pdf
@@ -675,13 +675,14 @@
           article: art. 27f ust. 1
           quote: "Od podatku dochodowego obliczonego zgodnie z art. 27 podatnik ma prawo odliczyć kwotę obliczoną zgodnie z ust. 2"
       verification:
-        checked_at: 2026-11-26
-        agent_check: 2026-11-26
+        checked_at: 2026-11-27
+        agent_check: 2026-11-27
         open_issue: >-
           Krok o Internecie: art. 5 ust. 2 ustawy Dz.U. 2026 poz. 1541 stosuje przepis przejściowy do ryczałtu tylko
           odpowiednio i nie rozstrzyga, czy prawo do odliczenia w zeznaniu za 2027 r. zachowuje podatnik, który zmienił
-          formę opodatkowania między 2026 a 2027 r. (z ryczałtu na skalę albo odwrotnie). Kwota limitu na 2027 r. wynika
-          tylko z przepisu przejściowego. Pytanie do eksperta: docs/pytania-do-eksperta.md, P14.
+          formę opodatkowania między 2026 a 2027 r. (z ryczałtu na skalę albo odwrotnie). Niewyjaśniony jest też roczny limit
+          odliczenia w zeznaniu za 2027 r., bo wynika tylko z przepisu przejściowego (art. 5 ust. 1 odsyła do zasad
+          z dotychczasowego art. 26 ust. 1 pkt 6a i ust. 6h). Pytanie do eksperta: docs/pytania-do-eksperta.md, P14.
           Krok o odliczeniach od podstawy: art. 52jb ust. 2a (od 1 stycznia 2027 r.) uznaje za koszty poniesione
           na robotyzację odpisy amortyzacyjne dokonywane w danym roku. Nie wiadomo, czy dotyczy to także odpisów od
           środków trwałych i wartości niematerialnych i prawnych nabytych przed 2027 r., i jak to się ma do art. 7 ust. 1
