@@ -11,6 +11,15 @@ from .cytaty import normalize
 PERIOD = "period"   # w confirms: okres obowiązywania wersji
 XSD_URL = "xsd_url"     # w schemacie: adres pliku XSD
 SYSTEM_CODE = "system_code"
+STEP = "step_"         # w confirms zasady: step_1, step_2, … (numer kroku od 1)
+
+
+def _fields(value) -> list[str]:
+    """Co potwierdza się osobno: kroki zasady (step_N) albo klucze wartości złożonej."""
+    steps = value.get("steps") if isinstance(value, dict) else None
+    if isinstance(steps, list):
+        return [f"{STEP}{i}" for i in range(1, len(steps) + 1)]
+    return list(value)
 
 
 def _address(url: str) -> str:
@@ -90,10 +99,10 @@ class Version(BaseModel):
             raise ValueError("każda wersja potrzebuje źródła pierwotnego")
         if any(s.confirms is not None for s in self.sources):
             if not isinstance(self.value, dict):
-                raise ValueError("potwierdzanie pól (confirms) dotyczy tylko wartości złożonej")
+                raise ValueError("potwierdzanie pól (confirms) dotyczy tylko wartości złożonej albo kroków zasady")
             if PERIOD in self.value:
                 raise ValueError(f"klucz wartości {PERIOD!r} jest zarezerwowany dla okresu w confirms")
-            known = set(self.value) | {PERIOD}
+            known = set(_fields(self.value)) | {PERIOD}
             for s in self.sources:
                 if s.confirms is None:
                     continue
@@ -122,7 +131,9 @@ class Version(BaseModel):
         if not isinstance(self.value, dict) or not any(s.confirms for s in self.sources):
             return None
         missing = []
-        for field in [*self.value, PERIOD]:
+        # Okresu zasady nie potwierdza się osobno: wersje często zaczynają się na początku zakresu danych.
+        is_rule = isinstance(self.value.get("steps"), list)
+        for field in [*_fields(self.value), *([] if is_rule else [PERIOD])]:
             docs = {s.url for s in self.sources if s.quote and field in (s.confirms or [])}
             primary = {s.url for s in self.sources
                        if s.quote and s.kind == "primary" and field in (s.confirms or [])}

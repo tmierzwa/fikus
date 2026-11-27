@@ -239,3 +239,30 @@ def test_see_also_must_point_to_another_known_parameter():
         s.params[p.id] = p
         with pytest.raises(ValueError, match="odsyłacz"):
             s._check_rule_refs()
+
+
+def _rule(*sources):
+    return Version.model_validate({
+        "valid_from": "2026-01-01",
+        "value": {"steps": [{"text": "a", "uses": [], "basis": "art. 1"},
+                            {"text": "b", "uses": [], "basis": "art. 2"}]},
+        "sources": list(sources),
+        "verification": {"checked_at": "2026-01-01", "agent_check": "2026-01-02"}})
+
+
+def test_rule_can_be_confirmed_step_by_step():
+    act = {"title": "akt", "url": "https://example.org/akt", "quote": "q",
+           "confirms": ["step_1", "step_2", "period"]}
+    mf = {"title": "MF", "url": "https://example.org/mf", "quote": "q", "confirms": ["step_1"]}
+    zus = {"title": "ZUS", "url": "https://example.org/zus", "quote": "q", "confirms": ["step_2"]}
+    partial = _rule(act, mf)
+    assert partial.confidence()["level"] == "niska"
+    assert partial.confidence()["unconfirmed_fields"] == ["step_2"]
+    full = _rule(act, mf, zus)
+    assert full.confidence()["level"] == "wysoka"
+    assert full.confidence()["unconfirmed_fields"] == []
+
+
+def test_rule_step_confirms_must_name_existing_steps():
+    with pytest.raises(ValueError, match="nieznane pola: step_3"):
+        _rule({"title": "akt", "url": "https://example.org/akt", "quote": "q", "confirms": ["step_3"]})
