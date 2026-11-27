@@ -16,6 +16,7 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ### Zmienione
 
+- Powtórzony klucz w pliku YAML z danymi zatrzymuje ładowanie danych. Dotąd brany był po cichu ostatni.
 - Schemat z CRWDE: plik schematu, którego adres podają już dwa dokumenty, sam potwierdza kod systemowy
   i wersję schematu, a wyróżnik wzoru o tym samym numerze sam potwierdza okres. Koniec okresu zamkniętej
   wersji wynika z potwierdzonego początku następnej (decyzja z 27 listopada 2026 r.).
