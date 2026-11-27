@@ -157,10 +157,13 @@ def test_quotes_match_cached_official_texts():
         pytest.skip("brak tekstów źródeł w .cache/zrodla (uruchom scripts/sprawdz_cytaty.py)")
 
 
-def test_unknown_profile_and_bad_month_return_reasons():
-    assert store.for_profile("nie_ma", date(2026, 6, 1))[0]["known"] == sorted(store.profiles)
-    assert store.deadlines("nie_ma", 2026, 6)["found"] is False
-    assert store.deadlines("przyklad_ryczalt", 2026, 13)["found"] is False
+def test_unknown_profile_and_bad_month_raise():
+    with pytest.raises(ValueError, match="nieznany profil"):
+        store.for_profile("nie_ma", date(2026, 6, 1))
+    with pytest.raises(ValueError, match="nieznany profil"):
+        store.deadlines("nie_ma", 2026, 6)
+    with pytest.raises(ValueError):
+        store.deadlines("przyklad_ryczalt", 2026, 13)
 
 
 def test_source_url_must_be_https():
@@ -367,6 +370,13 @@ def test_duplicate_yaml_key_is_rejected(tmp_path):
     f.write_text("- id: a\n  name: b\n  name: c\n", encoding="utf-8")
     with pytest.raises(ValueError, match="powtórzony klucz 'name'"):
         load_yaml(f)
+
+
+def test_boolean_value_is_rejected():
+    with pytest.raises(ValueError, match="logiczna"):
+        _version().model_validate({"valid_from": "2026-01-01", "value": True,
+                                   "sources": [{"title": "x", "url": "https://example.org/a"}],
+                                   "verification": {"checked_at": "2026-01-01"}})
 
 
 def test_expert_answer_link_must_be_https():

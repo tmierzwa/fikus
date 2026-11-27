@@ -106,6 +106,14 @@ class Version(BaseModel):
     # Początek następnej wersji tego samego parametru, gdy jej okres jest potwierdzony (ustawia Parameter).
     _next_confirmed_from: date | None = PrivateAttr(default=None)
 
+    @field_validator("value", mode="before")
+    @classmethod
+    def _no_bool(cls, v):
+        # Bez tego true z YAML staje się po cichu liczbą 1.0.
+        if isinstance(v, bool):
+            raise ValueError("wartość nie może być logiczna (true/false); zapisz ją jako liczbę albo tekst")
+        return v
+
     @model_validator(mode="after")
     def _check(self) -> "Version":
         if self.see_also and not self.not_covered:

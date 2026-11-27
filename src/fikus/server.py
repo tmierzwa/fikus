@@ -199,8 +199,15 @@ def _form_symbol(pid: str) -> str:
     return sym.replace("_", "-", 1) if sym.startswith("PIT_") else sym
 
 
+def _forms_sentence(forms: list[str]) -> str:
+    """Zdanie o symbolach, dla których są dane. Bez schematów w danych serwer i tak startuje."""
+    if not forms:
+        return "Danych schematów jeszcze nie ma; wynik ma zawsze found=false."
+    listed = forms[0] if len(forms) == 1 else ", ".join(forms[:-1]) + " i " + forms[-1]
+    return f"Są dane dla {listed}; dla innych symboli wynik ma found=false."
+
+
 FORMS = sorted(_form_symbol(p) for p in store.params if p.startswith("schemat."))
-_FORM_LIST = ", ".join(FORMS[:-1]) + " i " + FORMS[-1]
 
 GET_SCHEMA_DESCRIPTION = f"""Zwraca wersję schematu XSD deklaracji albo wzór formularza obowiązujący w danym dniu.
 
@@ -209,7 +216,7 @@ Dla JPK_V7M i JPK_V7K dniem jest pierwszy dzień okresu rozliczeniowego, za któ
 Dla PIT-36, PIT-36L i PIT-28 dniem jest pierwszy dzień roku podatkowego, za który składa się zeznanie.
 Dla ZUS_DRA (wzór formularza, bez schematu XSD) dniem jest dzień złożenia dokumentu.
 Dla pozostałych symboli (JPK_PKPIR, JPK_EWP, KEDU) to, od kiedy stosuje się wersję, opisuje notatka wersji.
-Są dane dla {_FORM_LIST}; dla innych symboli wynik ma found=false.
+{_forms_sentence(FORMS)}
 """
 
 
