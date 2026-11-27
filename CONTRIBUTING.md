@@ -44,6 +44,22 @@ Odpowiedź eksperta zapisujemy
 w `verification.expert` z datą i podstawą. Imię i nazwisko eksperta wpisujemy tylko za jego zgodą
 na publikację; bez zgody wpisujemy samą kwalifikację, na przykład „doradca podatkowy”.
 
+## Odpowiedzi ekspertów
+
+Otwarte pytania mają dyskusje w kategorii
+[Pytania do eksperta](https://github.com/tmierzwa/fikus/discussions/categories/pytania-do-eksperta),
+jedna dyskusja na jedno pytanie z [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md). Jeśli jesteś
+doradcą podatkowym, księgową albo prawnikiem, odpowiedz w dyskusji i podaj podstawę prawną: przepis,
+interpretację, wyrok albo komunikat urzędu.
+
+Sama odpowiedź w dyskusji nie jest jeszcze dowodem. Opiekun potwierdza Twoją kwalifikację i to, że
+odpowiedź podaje podstawę, a potem oznacza ją jako odpowiedź. Wtedy trafia do danych z datą, podstawą
+i linkiem do Twojego komentarza. Twoje imię i nazwisko wpiszemy tylko wtedy, gdy napiszesz w dyskusji,
+że się na to zgadzasz. Login na GitHubie nie jest taką zgodą. Bez niej wpisujemy samą kwalifikację.
+
+W dyskusjach obowiązują te same zasady co w zgłoszeniach: nie wpisujemy kwot z deklaracji, NIP, PESEL
+ani informacji o tym, kto jak się rozlicza, a pytania o własne rozliczenie zamykamy.
+
 Szczegółowy opis pól jest w [README.md](README.md), a procedura dla agentów w
 [CLAUDE.md](CLAUDE.md) i `.claude/skills/dodaj-parametr/`.
 
