@@ -963,6 +963,19 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
     przed wskaźnikiem z ust. 4, czy po nim; kolejność wynika tylko z układu pozycji. Na lata 2025 i 2026 MF nie podaje
     wariantu tego formularza.
 
+## P67. Darowizny na kościelną działalność charytatywno-opiekuńczą przy podatku liniowym
+
+- Wpisy: `zasada.ulgi_liniowy` (od 2026-01-01 i od 2027-01-01), krok o darowiznach.
+- Zgłoszone: 2026-11-27.
+- Ustawy o stosunku Państwa do kościołów, na przykład art. 55 ust. 7 ustawy o stosunku Państwa do Kościoła Katolickiego
+  (Dz.U. 2023 poz. 1966): darowizny na kościelną działalność charytatywno-opiekuńczą „są wyłączone z podstawy opodatkowania
+  darczyńców podatkiem dochodowym”, bez rozróżnienia form opodatkowania.
+- Ustawa o PIT (Dz.U. 2026 poz. 592), art. 30c ust. 2: dochód opodatkowany podatkiem liniowym „podatnicy mogą pomniejszyć o”
+  pozycje z pkt 1–4, wśród których nie ma tych darowizn. Art. 30c ust. 3a stosuje odpowiednio art. 26 ust. 6b, który
+  wspomina odliczenie darowizn „wynikającego z odrębnych ustaw”.
+- Pytanie: czy podatnik opodatkowany podatkiem liniowym (art. 30c) może wyłączyć z podstawy opodatkowania darowizny na
+  kościelną działalność charytatywno-opiekuńczą na podstawie ustaw o stosunku Państwa do kościołów?
+
 ## Numeracja
 
 Numerów pytań nie używamy ponownie, także po rozstrzygnięciu pytania. Numery z luk w numeracji
