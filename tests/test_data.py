@@ -266,3 +266,14 @@ def test_rule_can_be_confirmed_step_by_step():
 def test_rule_step_confirms_must_name_existing_steps():
     with pytest.raises(ValueError, match="nieznane pola: step_3"):
         _rule({"title": "akt", "url": "https://example.org/akt", "quote": "q", "confirms": ["step_3"]})
+
+
+def test_notes_describe_current_state_not_edit_history():
+    """Notatka opisuje obecny stan wersji; historia edycji danych idzie do PR (CLAUDE.md)."""
+    import re
+    history = re.compile(r"\bpoprawk[aię]\b|weryfikator|agent_check|notatk\w* (?:błędnie|nie przesądza już)"
+                         r"|wcześniej (?:zastrzega\w*|przesądza\w*|opisywa\w*|powoływa\w*|wpisan\w*)"
+                         r"|nie zastrzega już", re.I)
+    bad = [f"{p.id} {v.valid_from}: {m[0]}" for p in Store().params.values() for v in p.versions
+           if v.note and (m := history.search(v.note))]
+    assert not bad, "historia edycji w notatkach (opisz ją w PR, w notatce zostaw „Korekta z …: zmienione …”):\n" + "\n".join(bad)
