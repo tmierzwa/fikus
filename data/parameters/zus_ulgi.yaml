@@ -178,6 +178,11 @@
         (art. 18 ust. 1 i 3 w tekście jednolitym Dz.U. 2025 poz. 1480 brzmią tak samo, poza adresem publikacyjnym ustawy
         o ubezpieczeniu społecznym rolników), ale okresu sprzed 2026 r. ta wersja nie obejmuje; tekst jednolity poz. 1484
         potwierdza brzmienie według stanu prawnego na 28 października 2026 r.
+      not_covered: >-
+        Jak liczyć 6 miesięcy ulgi, czyli kiedy okres się kończy: z upływem 6 miesięcy od dnia podjęcia działalności
+        czy z końcem szóstego pełnego miesiąca kalendarzowego (różnica jest zwłaszcza przy rozpoczęciu działalności
+        w trakcie miesiąca). Ta wartość podaje tylko liczbę miesięcy.
+      see_also: [zasada.ulga_na_start]
       sources:
         - title: Dz.U. 2026 poz. 1484, tekst jednolity ustawy – Prawo przedsiębiorców
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1484/text.pdf
@@ -193,13 +198,8 @@
           quote: "Ulga zwalnia przez sześć pełnych miesięcy od rozpoczęcia działalności z płacenia składek"
           as_of: 2026-11-26
       verification:
-        checked_at: 2026-11-26
-        agent_check: 2026-11-26
-        open_issue: >-
-          Art. 18 ust. 1 Prawa przedsiębiorców mówi o „okresie 6 miesięcy od dnia podjęcia działalności gospodarczej”. ZUS podaje
-          „6 miesięcy kalendarzowych”, a biznes.gov.pl „sześć pełnych miesięcy”, i oba nie wliczają miesiąca rozpoczęcia działalności
-          w trakcie miesiąca. Te źródła potwierdzają liczbę 6 tylko w swojej interpretacji. Pytanie do eksperta:
-          docs/pytania-do-eksperta.md, P9.
+        checked_at: 2026-11-27
+        agent_check: 2026-11-27
 
 - id: zasada.ulga_na_start
   name: Ulga na start, czyli zwolnienie z obowiązkowych ubezpieczeń społecznych na początku działalności
