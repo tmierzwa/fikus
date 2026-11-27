@@ -6,6 +6,13 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ## [Niewydane]
 
+### Dodane
+
+- Zasady obliczeń można potwierdzać krok po kroku: źródło wymienia w `confirms` kroki, które samo podaje
+  (`step_1`, `step_2`, …), tak jak pola wartości złożonej. Dowód `drugie_zrodlo` jest spełniony, gdy każdy
+  krok i okres podają co najmniej dwa różne dokumenty z cytatem, w tym źródło pierwotne. Brakujące kroki
+  są w `confidence.unconfirmed_fields` (decyzja z 27 listopada 2026 r.).
+
 ## [0.5.0] - 2026-11-27
 
 ### Dodane
