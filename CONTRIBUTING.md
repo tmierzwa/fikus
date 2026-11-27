@@ -32,9 +32,10 @@ Każda wersja parametru musi mieć:
 3. pole `verification` z datą sprawdzenia.
 
 Portale, blogi i kalkulatory mogą być tylko źródłem kontrolnym (`kind: control`). Bez źródła
-pierwotnego wartość nie trafia do danych. Starych wersji nie zmieniamy; dodaj nową. Poprawkę błędu
-w starej wersji opisz w PR, a w polu `note` tylko wtedy, gdy zmienia wartość, okres, podstawę
-prawną albo kroki zasady.
+pierwotnego wartość nie trafia do danych. Starych wersji nie zmieniamy; dodaj nową. Notatka opisuje
+obecny stan wersji, bez historii edycji. Poprawkę błędu w starej wersji opisz w PR. Gdy zmienia wartość,
+okres, podstawę prawną albo kroki zasady, dopisz w notatce jedno krótkie zdanie, na przykład „Korekta
+z 27 listopada 2026 r.: zmienione kroki 2 i 4.”, bez opisu poprzedniego błędu.
 
 Gdy źródła się różnią albo przepis wymaga interpretacji, nie zgaduj. Wpisz `open_issue` i dopisz
 pytanie w [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md). Gdy pytanie dotyczy tylko przypadku
