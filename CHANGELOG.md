@@ -21,10 +21,7 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 - Dowód `drugie_zrodlo` liczy się tylko ze źródła kontrolnego albo niezależnego, które ma własny cytat
   i jest innym dokumentem (adresem) niż źródło pierwotne z cytatem. Wcześniej wystarczało oznaczenie
   `kind: control` albo `independent: true`, nawet bez cytatu i przy tym samym źródle, które dało cytat.
-  Skutek w danych: `zus.stawka.emerytalna`, `zus.stawka.rentowa`, `zus.stawka.chorobowa`,
-  `zus.limit_rocznej_podstawy` i `zus.podstawa_minimalna` w wersjach od 1 stycznia 2026 r. mają teraz
-  pewność `niska` zamiast `wysoka`, bo komunikat ZUS przy nich nie ma cytatu. Wrócą do `wysoka` po
-  dopisaniu cytatu z komunikatu.
+  Obecne dane spełniają nowy warunek: żadna wersja nie zmienia poziomu pewności.
 - `applies_to` przy parametrze może mieć tylko pola profilu (`tax_form`, `vat`, `zus`) i ich wartości.
   Literówka zatrzymuje wczytanie danych, zamiast po cichu wyłączać parametr ze wszystkich profili.
 - Pobieranie źródeł przyjmuje tylko adresy `https://`, obie próby mieszczą się w jednym łącznym
