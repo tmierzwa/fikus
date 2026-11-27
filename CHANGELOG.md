@@ -18,6 +18,7 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ### Zmienione
 
+- Zasady danych: wartość wynikającą wprost z przepisu i z liczby ogłoszonej w akcie wpisujemy przed komunikatem urzędu, z niską pewnością i bez pytania do eksperta (CLAUDE.md).
 - Dowód `drugie_zrodlo` liczy się tylko ze źródła kontrolnego albo niezależnego, które ma własny cytat
   i jest innym dokumentem (adresem) niż źródło pierwotne z cytatem. Wcześniej wystarczało oznaczenie
   `kind: control` albo `independent: true`, nawet bez cytatu i przy tym samym źródle, które dało cytat.
