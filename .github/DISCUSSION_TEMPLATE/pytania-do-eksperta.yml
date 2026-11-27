@@ -3,7 +3,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Ta kategoria służy pytaniom o dane Fikusa, których źródła nie rozstrzygają. Odpowiadają na nie doradcy
+        Ta kategoria służy pytaniom o parametry Fikusa, których źródła nie rozstrzygają. Odpowiadają na nie doradcy
         podatkowi, księgowi i inni eksperci. Lista otwartych pytań jest w
         [docs/pytania-do-eksperta.md](https://github.com/tmierzwa/fikus/blob/main/docs/pytania-do-eksperta.md).
 
