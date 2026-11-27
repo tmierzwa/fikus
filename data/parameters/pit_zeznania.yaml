@@ -135,9 +135,10 @@
         dochodów i strat od 1 stycznia 2025 r.; innego wzoru PIT-36L za 2025 r. w CRWDE nie znaleziono. Wyróżnik podaje tylko początek okresu,
         a strona MF wariant, nie wersję schematu, więc końca okresu tej wersji nie potwierdza żaden dokument. Kod systemowy
         w pliku XSD to „PIT36L (21)”, bez łącznika, choć symbol formularza ma łącznik. Kod systemowy i wersja schematu
-        są stałymi wartościami atrybutów w pliku XSD, więc skrypt cytatów ich nie sprawdzi; nie podaje ich też żaden
-        inny dokument. Adres schematu pochodzi z wyróżnika wzoru (z http). Strona MF z formularzami podaje wariant 21
-        dla zeznań za 2025 i 2026 r.
+        są stałymi wartościami atrybutów w pliku XSD; cytat z pliku podaje je razem z nazwami atrybutów, ale nie
+        podaje ich żaden inny dokument (strony MF i dokumentacja e-Deklaracji nie wymieniają tego wzoru). Adres schematu
+        podają wyróżnik wzoru (z http) i sam plik, którego cytat zawiera kod systemowy. Strona MF z formularzami podaje
+        wariant 21 dla zeznań za 2025 i 2026 r.
       sources:
         - title: CRWDE (ePUAP), wyróżnik wzoru 2025/09/25/13874, twórca wzoru Ministerstwo Finansów
           url: https://crd.gov.pl/wzor/2025/09/25/13874/wyroznik.xml
@@ -161,10 +162,12 @@
           confirms: [form, variant]
           quote: "Aktualny formularz PIT-36L (21)"
           as_of: 2026-11-26
-        - title: CRWDE (ePUAP), plik XSD wzoru 2025/09/25/13874 (kod systemowy „PIT36L (21)” i wersja schematu „1-0E” są w atrybutach, więc nie da się ich zacytować)
+        - title: CRWDE (ePUAP), plik XSD wzoru 2025/09/25/13874 (kod systemowy, wersja schematu i wariant z atrybutów pliku)
           url: https://crd.gov.pl/wzor/2025/09/25/13874/schemat.xsd
-          as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+          confirms: [variant, system_code, schema_version, xsd_url]
+          quote: "kodSystemowy xsd:string required PIT36L (21) kodPodatku xsd:string required PPL rodzajZobowiazania xsd:token required Z wersjaSchemy xsd:string required 1-0E WariantFormularza xsd:byte 21"
+          as_of: 2026-11-27
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
     - valid_from: 2026-01-01
       value:
         form: PIT-36L
@@ -176,8 +179,9 @@
         Okres obowiązywania zaczyna się od roku podatkowego 2026. Wyróżnik wzoru 2026/09/17/14379 podaje, że wzór
         stosuje się do dochodów i strat od 1 stycznia 2026 r.; innego wzoru PIT-36L za 2026 r. w CRWDE nie znaleziono
         (stan na 26 listopada 2026 r.). Kod systemowy w pliku XSD to „PIT36L (21)”, bez łącznika. Kod systemowy
-        i wersja schematu są stałymi wartościami atrybutów w pliku XSD, więc skrypt cytatów ich nie sprawdzi; nie
-        podaje ich też żaden inny dokument. Adres schematu pochodzi z wyróżnika wzoru (z http).
+        i wersja schematu są stałymi wartościami atrybutów w pliku XSD; cytat z pliku podaje je razem z nazwami
+        atrybutów, ale nie podaje ich żaden inny dokument. Adres schematu podają wyróżnik wzoru (z http) i sam plik, którego cytat
+        zawiera kod systemowy.
       sources:
         - title: CRWDE (ePUAP), wyróżnik wzoru 2026/09/17/14379, twórca wzoru Ministerstwo Finansów
           url: https://crd.gov.pl/wzor/2026/09/17/14379/wyroznik.xml
@@ -196,10 +200,12 @@
           quote: "PIT-36L (21) za 2025 r. i za 2026 r."
           article: art. 45b ust. 1 pkt 5 ustawy o PIT
           as_of: 2026-11-26
-        - title: CRWDE (ePUAP), plik XSD wzoru 2026/09/17/14379 (kod systemowy „PIT36L (21)” i wersja schematu „2-0E” są w atrybutach, więc nie da się ich zacytować)
+        - title: CRWDE (ePUAP), plik XSD wzoru 2026/09/17/14379 (kod systemowy, wersja schematu i wariant z atrybutów pliku)
           url: https://crd.gov.pl/wzor/2026/09/17/14379/schemat.xsd
-          as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+          confirms: [variant, system_code, schema_version, xsd_url]
+          quote: "kodSystemowy xsd:string required PIT36L (21) kodPodatku xsd:string required PPL rodzajZobowiazania xsd:token required Z wersjaSchemy xsd:string required 2-0E WariantFormularza xsd:byte 21"
+          as_of: 2026-11-27
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: schemat.pit_28
   name: Schemat e-Deklaracji PIT-28 (zeznanie roczne na ryczałcie)
