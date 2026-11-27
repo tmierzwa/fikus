@@ -40,9 +40,8 @@ z 27 listopada 2026 r.: zmienione kroki 2 i 4.”, bez opisu poprzedniego błęd
 Gdy źródła się różnią albo przepis wymaga interpretacji, nie zgaduj. Wpisz `open_issue` i dopisz
 pytanie w [docs/pytania-do-eksperta.md](docs/pytania-do-eksperta.md). Gdy pytanie dotyczy tylko przypadku
 brzegowego, a nie samej wartości, dopisz `open_issue_scope: edge_case`; w razie wątpliwości go nie wpisuj.
-Odpowiedź eksperta zapisujemy
-w `verification.expert` z datą i podstawą. Imię i nazwisko eksperta wpisujemy tylko za jego zgodą
-na publikację; bez zgody wpisujemy samą kwalifikację, na przykład „doradca podatkowy”.
+Odpowiedź eksperta zapisujemy w `verification.expert` z datą i podstawą. Imię i nazwisko eksperta
+wpisujemy tylko za jego zgodą na publikację; bez zgody wpisujemy samą kwalifikację, na przykład „doradca podatkowy”.
 
 ## Odpowiedzi ekspertów
 
@@ -60,7 +59,7 @@ i linkiem do Twojego komentarza. Twoje imię i nazwisko wpiszemy tylko wtedy, gd
 W dyskusjach obowiązują te same zasady co w zgłoszeniach: nie wpisujemy kwot z deklaracji, NIP, PESEL
 ani informacji o tym, kto jak się rozlicza, a pytania o własne rozliczenie zamykamy.
 
-Szczegółowy opis pól jest w [README.md](README.md), a procedura dla agentów w
+Szczegółowy opis pól jest w [src/fikus/model.py](src/fikus/model.py), a procedura dla agentów w
 [CLAUDE.md](CLAUDE.md) i `.claude/skills/dodaj-parametr/`.
 
 ## Jak przygotować zmianę
