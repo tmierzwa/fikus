@@ -18,6 +18,9 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 ### Zmienione
 
+- Dane zaczynają się 1 stycznia 2024 r. (data odcięcia). Początek wersji w tym dniu jest umowny i nie wymaga
+  potwierdzenia dokumentami; `period` w `confirms` dotyczy wtedy tylko końca wersji, a wersja bez końca ma okres
+  potwierdzony (decyzja z 27 listopada 2026 r.). Skutek w danych: `ryczalt.zakres_uslug` ma potwierdzony okres.
 - Zasady danych: wartość wynikającą wprost z przepisu i z liczby ogłoszonej w akcie wpisujemy przed komunikatem urzędu, z niską pewnością i bez pytania do eksperta (CLAUDE.md).
 - Dowód `drugie_zrodlo` liczy się tylko ze źródła kontrolnego albo niezależnego, które ma własny cytat
   i jest innym dokumentem (adresem) niż źródło pierwotne z cytatem. Wcześniej wystarczało oznaczenie

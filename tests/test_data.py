@@ -386,3 +386,21 @@ def test_expert_answer_link_must_be_https():
     assert e.url.startswith("https://")
     with pytest.raises(ValueError, match="https"):
         Expert.model_validate({"name": "x", "answered_at": "2026-11-27", "basis": "b", "url": "http://x"})
+
+
+def _cutoff(valid_to=None, end_docs=0):
+    act = {"title": "akt", "url": "https://example.org/akt", "quote": "q", "confirms": ["a"]}
+    mf = {"title": "MF", "url": "https://example.org/mf", "quote": "q", "kind": "control", "confirms": ["a"]}
+    ends = [{"title": f"r{i}", "url": f"https://example.org/r{i}", "quote": "do dnia", "confirms": ["period"]}
+            for i in range(end_docs)]
+    return Version.model_validate({"valid_from": "2024-01-01", "valid_to": valid_to, "value": {"a": 1},
+                                   "sources": [act, mf, *ends],
+                                   "verification": {"checked_at": "2026-01-01", "agent_check": "2026-01-02"}})
+
+
+def test_cutoff_start_needs_no_confirmation_but_end_does():
+    assert _cutoff()._unconfirmed_fields() == []
+    assert _cutoff("2028-12-31")._unconfirmed_fields() == ["period"]
+    assert _cutoff("2028-12-31", end_docs=2)._unconfirmed_fields() == []
+    later = Version.model_validate({**_cutoff().model_dump(mode="json"), "valid_from": "2024-01-02"})
+    assert later._unconfirmed_fields() == ["period"]

@@ -10,6 +10,9 @@ from pydantic import BaseModel, Field, PrivateAttr, field_validator, model_valid
 from .cytaty import normalize
 
 PERIOD = "period"   # w confirms: okres obowiązywania wersji
+# Data odcięcia danych (decyzja z 27 listopada 2026 r.). Wersja, która zaczyna się tego dnia, zaczyna się
+# umownie; początku nie potwierdza się dokumentami, a period w confirms dotyczy wtedy tylko końca wersji.
+DATA_CUTOFF = date(2024, 1, 1)
 XSD_URL = "xsd_url"     # w schemacie: adres pliku XSD
 SYSTEM_CODE = "system_code"
 SCHEMA_VERSION = "schema_version"
@@ -161,6 +164,8 @@ class Version(BaseModel):
         missing = [f for f in fields if not self._two_documents(f)]
         if not is_rule:
             missing = [f for f in missing if f not in self._crwde_confirmed(missing)]
+        if PERIOD in missing and self.valid_from == DATA_CUTOFF and self.valid_to is None:
+            missing.remove(PERIOD)      # umowny początek, bez końca: nie ma czego potwierdzać
         return missing
 
     def _two_documents(self, field: str) -> bool:
