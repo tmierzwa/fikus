@@ -84,15 +84,17 @@ class Version(BaseModel):
     sources: list[Source]
     verification: Verification
     note: str | None = None
-    # Czego wartość nie rozstrzyga, gdy sposób jej stosowania opisuje osobny parametr (decyzja
-    # z 27 listopada 2026 r.). Pytanie o sposób stosowania ma tamten parametr, nie ta wersja.
+    # Czego wersja nie rozstrzyga (decyzje z 27 listopada 2026 r.). Przy wartości: sposób stosowania,
+    # który opisuje osobny parametr z see_also; pytanie o niego ma tamten parametr, nie ta wersja.
+    # Przy zasadzie: sprawy, których zasada nie opisuje; odsyłacz nie jest wymagany. Tego opisu
+    # nie potwierdza się dokumentami.
     not_covered: str | None = None
-    see_also: list[str] = Field(default_factory=list)   # parametry, które opisują to, czego wartość nie rozstrzyga
+    see_also: list[str] = Field(default_factory=list)   # parametry, które opisują to, czego wersja nie rozstrzyga
 
     @model_validator(mode="after")
     def _check(self) -> "Version":
-        if bool(self.not_covered) != bool(self.see_also):
-            raise ValueError("opis tego, czego wartość nie rozstrzyga, wymaga listy parametrów, które to opisują, i odwrotnie")
+        if self.see_also and not self.not_covered:
+            raise ValueError("lista parametrów, które opisują to, czego wersja nie rozstrzyga, wymaga opisu tego, czego nie rozstrzyga")
         if self.valid_to and self.valid_to < self.valid_from:
             raise ValueError("koniec obowiązywania wersji jest wcześniejszy niż jej początek")
         if not any(s.kind == "primary" for s in self.sources):
@@ -208,8 +210,11 @@ class Parameter(BaseModel):
             steps = v.value.get("steps") if isinstance(v.value, dict) else None
             if not steps or not all(isinstance(s, dict) and s.get("text") for s in steps):
                 raise ValueError(f"{where}: zasada potrzebuje value.steps, a każdy krok pola text")
+            return          # zasada może opisać, czego nie obejmuje, bez odsyłacza
         elif self.kind == "calendar" and not isinstance(v.value, list):
             raise ValueError(f"{where}: kalendarz potrzebuje listy dat")
+        if v.not_covered and not v.see_also:
+            raise ValueError(f"{where}: opis tego, czego wartość nie rozstrzyga, wymaga listy parametrów, które to opisują")
 
     def at(self, d: date) -> Version | None:
         return next((v for v in self.versions if v.covers(d)), None)
