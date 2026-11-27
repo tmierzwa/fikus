@@ -215,8 +215,6 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
           article: art. 9a ust. 3
           quote: "obliczonych przy zastosowaniu skali podatkowej, o której mowa w art. 27 ust. 1, oraz odsetek za zwłokę od zaległości z tytułu tych zaliczek"
-          article: art. 6 ust. 8
-          quote: "Sposób opodatkowania, o którym mowa w ust. 2 i 4d, nie ma zastosowania, w przypadku gdy chociażby jeden z małżonków, osoba samotnie wychowująca dziecko lub jej dziecko"
         - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym (komunikat MF; podaje krok 3 bez wspólników i spółki)
           url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
           quote: "świadczyć usług na rzecz byłego lub obecnego pracodawcy, odpowiadających czynnościom, które wykonywałeś(-aś) lub wykonujesz w roku podatkowym w ramach stosunku pracy lub spółdzielczego stosunku pracy"
