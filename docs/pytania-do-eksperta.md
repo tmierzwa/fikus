@@ -999,6 +999,7 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 
 ## P67. Darowizny na kościelną działalność charytatywno-opiekuńczą przy podatku liniowym
 
+- Dyskusja: https://github.com/tmierzwa/fikus/discussions/129
 - Wpisy: `zasada.ulgi_liniowy` (od 2026-01-01 i od 2027-01-01), krok o darowiznach.
 - Zgłoszone: 2026-11-27.
 - Ustawy o stosunku Państwa do kościołów, na przykład art. 55 ust. 7 ustawy o stosunku Państwa do Kościoła Katolickiego
