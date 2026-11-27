@@ -282,7 +282,8 @@ przypadku brzegowego, średnią.
 
 ## P9. Ulga na start: jak liczyć 6 miesięcy ulgi i następne 24 miesiące podstawy preferencyjnej
 
-- Wpis: `zasada.ulga_na_start` (od 2026-01-01), kroki 3, 5 i 6; `zus.ulga_na_start.okres`.
+- Wpis: `zasada.ulga_na_start` (od 2026-01-01), kroki 3, 5 i 6. Wartość `zus.ulga_na_start.okres` (6 miesięcy) od 2026-11-27
+  nie ma tego pytania: podaje tylko liczbę miesięcy i odsyła do zasady (rozdzielenie wartości i sposobu stosowania).
 - Zgłoszone: 2026-11-26.
 - Prawo przedsiębiorców (Dz.U. 2026 poz. 1484), art. 18 ust. 1: przedsiębiorca „nie podlega obowiązkowym
   ubezpieczeniom społecznym przez okres 6 miesięcy od dnia podjęcia działalności gospodarczej”.
