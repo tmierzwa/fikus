@@ -6,7 +6,16 @@ from typing import Literal
 
 from pydantic import BaseModel, Field, field_validator, model_validator
 
+from .cytaty import normalize
+
 PERIOD = "period"   # w confirms: okres obowiązywania wersji
+XSD_URL = "xsd_url"     # w schemacie: adres pliku XSD
+SYSTEM_CODE = "system_code"
+
+
+def _address(url: str) -> str:
+    """Adres bez protokołu: rejestr wzorów podaje http://, a źródło musi mieć https://."""
+    return url.split("://", 1)[-1]
 
 
 class Source(BaseModel):
@@ -87,7 +96,18 @@ class Version(BaseModel):
                 unknown = set(s.confirms) - known
                 if unknown:
                     raise ValueError(f"źródło {s.url} potwierdza nieznane pola: {', '.join(sorted(unknown))}")
+                self._check_xsd_self(s)
         return self
+
+    def _check_xsd_self(self, s: Source) -> None:
+        """Plik spod adresu schematu potwierdza ten adres tylko wtedy, gdy jego cytat podaje kod
+        systemowy formularza (decyzja z 27 listopada 2026 r.). Inaczej nie wiadomo, że to ten schemat."""
+        url, code = self.value.get(XSD_URL), self.value.get(SYSTEM_CODE)
+        if XSD_URL not in s.confirms or not isinstance(url, str) or _address(s.url) != _address(url):
+            return
+        if not isinstance(code, str) or normalize(code) not in normalize(s.quote or ""):
+            raise ValueError(f"źródło {s.url}: plik schematu potwierdza swój adres tylko cytatem "
+                             "z kodem systemowym formularza")
 
     def _unconfirmed_fields(self) -> list[str] | None:
         """Pola wartości złożonej (i okres), których nie podają co najmniej dwa różne dokumenty z cytatem,
