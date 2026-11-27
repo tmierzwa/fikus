@@ -45,7 +45,7 @@
         1541, 1542 i 1556) nie zmieniają art. 6 ani art. 6a. Ustawa mówi o zeznaniu według ustalonego wzoru; nazwę
         formularza (PIT-36 albo PIT-37) podaje strona MF. Zasada podatku według
         skali i termin zeznania, do których odwołują się kroki, mają wersje od 1 stycznia 2026 r.
-        Poprawka 2026-11-26: krok o wniosku mówi też, że nie wiadomo, czy korektą zeznania można zrezygnować z łącznego opodatkowania albo przejść na nie (P16).
+        Korekta z 26 listopada 2026 r.: zmieniony krok o wniosku (P16).
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (warunki i wniosek)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -135,7 +135,7 @@
         obowiązywać). Nowelizacje ogłoszone po tekście jednolitym poz. 592 nie zmieniają art. 6. Nazwę formularza
         (PIT-36 albo PIT-37) podaje strona MF. Zasada podatku według skali
         i termin zeznania, do których odwołują się kroki, mają wersje od 1 stycznia 2026 r.
-        Poprawka 2026-11-26: krok o wniosku mówi też, że nie wiadomo, czy korektą zeznania można zrezygnować z tego sposobu opodatkowania albo przejść na niego (P16).
+        Korekta z 26 listopada 2026 r.: zmieniony krok o wniosku (P16).
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (warunki)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -207,7 +207,7 @@
         1 stycznia 2025 r. (nie że wtedy zaczęła obowiązywać). Nowelizacje ogłoszone po tekście jednolitym poz. 592 nie
         zmieniają art. 6 ani art. 6a. Brzmienie art. 6 ust. 1a ustawy o zryczałtowanym podatku dochodowym według tekstu
         jednolitego Dz.U. 2025 poz. 843.
-        Poprawka 2026-11-26: krok o ryczałcie mówi, że wyłączenie obejmuje też kartę podatkową, a ostatni krok wymienia kartę podatkową wśród przypadków niewyjaśnionych (P15); wcześniej kroki jej nie wymieniały.
+        Korekta z 26 listopada 2026 r.: zmienione krok o ryczałcie i ostatni krok (P15).
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wyłączenie)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
