@@ -13,10 +13,15 @@ import os
 import re
 import subprocess
 import tempfile
+import threading
 import time
 import urllib.error
 import urllib.request
+from collections import Counter, deque
+from collections.abc import Callable, Iterable
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from pathlib import Path
+from urllib.parse import urlsplit
 
 _REPO = Path(__file__).resolve().parents[2]
 CACHE = Path(os.environ.get("FIKUS_CACHE") or (
@@ -27,6 +32,11 @@ MAX_BYTES = 50 * 1024 * 1024    # górny limit pobieranego pliku, żeby zły adr
 FETCH_TIMEOUT = 120.0           # łączny limit czasu jednego pobrania w sekundach, nie tylko jednej operacji
 _SOCKET_TIMEOUT = 30.0          # limit jednej operacji na gnieździe (połączenie, odczyt)
 _CHUNK = 64 * 1024
+FETCH_WORKERS = 6               # równoległe pobrania razem
+FETCH_PER_HOST = 2              # równoległe połączenia z jednym serwerem, żeby nie obciążać urzędów
+
+_lock = threading.Lock()        # zapis do indeks.tsv i jednorazowe włączenie truststore
+_truststore_done = False
 
 _ELI_PAGE = re.compile(r"^https://eli\.gov\.pl/eli/(DU|MP)/(\d{4})/(\d+)/ogl/?$")
 
@@ -78,16 +88,26 @@ def _fetch_once(url: str, headers: dict[str, str], max_bytes: int, timeout: floa
     return b"".join(chunks), ctype
 
 
+def _use_truststore() -> None:
+    """Systemowy magazyn certyfikatów, jeśli dostępny. Raz, bo podmienia klasę w module ssl."""
+    global _truststore_done
+    with _lock:
+        if _truststore_done:
+            return
+        _truststore_done = True
+        try:
+            import truststore
+            truststore.inject_into_ssl()
+        except ImportError:
+            pass
+
+
 def fetch_bytes(url: str, headers: dict[str, str], max_bytes: int,
                 timeout: float | None = None) -> tuple[bytes, str]:
     """Pobiera adres https:// z łącznym limitem czasu i limitem rozmiaru. Zwraca treść i Content-Type.
 
     Po błędzie sieci, błędzie serwera (5xx) albo przekroczeniu czasu próbuje jeszcze raz."""
-    try:                                   # systemowy magazyn certyfikatów, jeśli dostępny
-        import truststore
-        truststore.inject_into_ssl()
-    except ImportError:
-        pass
+    _use_truststore()
     limit = FETCH_TIMEOUT if timeout is None else timeout
     try:
         return _fetch_once(url, headers, max_bytes, limit)
@@ -141,10 +161,52 @@ def fetch_text(url: str) -> str:
         raw = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", raw)
         text = html.unescape(re.sub(r"(?s)<[^>]+>", " ", raw))
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(text, encoding="utf-8")
-    with (CACHE / "indeks.tsv").open("a", encoding="utf-8") as idx:   # adres → plik, dla weryfikatora
+    # Plik tymczasowy i zamiana nazwy: inny wątek albo przerwany przebieg nie zobaczy połowy tekstu.
+    with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=p.parent, suffix=".tmp",
+                                     delete=False) as tmp:
+        tmp.write(text)
+    os.replace(tmp.name, p)
+    with _lock, (CACHE / "indeks.tsv").open("a", encoding="utf-8") as idx:   # adres → plik, dla weryfikatora
         idx.write(f"{turl}\t{p.name}\n")
     return _read_cached(p)
+
+
+def prefetch(urls: Iterable[str], fetch: Callable[[str], object] = fetch_text,
+             workers: int = FETCH_WORKERS, per_host: int = FETCH_PER_HOST) -> dict[str, Exception]:
+    """Pobiera adresy równolegle: najwyżej `workers` naraz i `per_host` z jednego serwera.
+
+    Zwraca błędy pobierania według adresu; pobrane teksty trafiają do pamięci podręcznej.
+    Adres trafia do puli dopiero wtedy, gdy jego serwer ma wolne miejsce, więc żaden wątek nie
+    czeka bezczynnie na serwer zajęty przez inne wątki. Najpierw idą serwery z najdłuższą kolejką.
+    """
+    queues: dict[str, deque[str]] = {}
+    for url in dict.fromkeys(urls):
+        queues.setdefault(urlsplit(url).hostname or "", deque()).append(url)
+    active: Counter[str] = Counter()
+    errors: dict[str, Exception] = {}
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        running = {}
+
+        def fill() -> None:
+            while len(running) < workers:
+                free = [h for h, q in queues.items() if q and active[h] < per_host]
+                if not free:
+                    return
+                host = max(free, key=lambda h: len(queues[h]))
+                url = queues[host].popleft()
+                active[host] += 1
+                running[pool.submit(fetch, url)] = (host, url)
+
+        fill()
+        while running:
+            done, _ = wait(running, return_when=FIRST_COMPLETED)
+            for f in done:
+                host, url = running.pop(f)
+                active[host] -= 1
+                if (e := f.exception()) is not None:
+                    errors[url] = e   # type: ignore[assignment]
+            fill()
+    return errors
 
 
 @functools.lru_cache(maxsize=32)
