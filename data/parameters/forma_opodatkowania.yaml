@@ -1,0 +1,336 @@
+# Wybór formy opodatkowania działalności i warunki ryczałtu oraz podatku liniowego.
+# Termin wyboru zależy od miesiąca pierwszego przychodu w roku, więc opisuje go zasada, a nie termin miesięczny.
+# Serwer niczego nie liczy: limit jest w euro, przeliczenie na złote robi klient według kroku zasady.
+
+- id: ryczalt.limit_przychodow_euro
+  name: Limit przychodów z poprzedniego roku uprawniający do ryczałtu od przychodów ewidencjonowanych (w euro)
+  unit: EUR/rok
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2026-01-01
+      value: 2000000
+      note: >-
+        Ryczałt opłaca w roku podatkowym podatnik, który w roku poprzedzającym rok podatkowy uzyskał przychody z działalności
+        prowadzonej wyłącznie samodzielnie nieprzekraczające tej kwoty albo przychody wyłącznie z działalności w formie spółki,
+        gdy suma przychodów wspólników z tej działalności jej nie przekroczyła. Gdy podatnik prowadził działalność samodzielnie
+        i w formie spółki, warunek sprawdza się odrębnie dla każdej z nich (art. 6 ust. 5). Podatnik rozpoczynający działalność
+        w roku podatkowym, który nie korzysta z karty podatkowej, opłaca ryczałt bez względu na wysokość przychodów
+        (art. 6 ust. 4 pkt 2). Do limitu nie wlicza się kwot, o które podatnik zmniejszył albo zwiększył przychody na podstawie
+        art. 11 ust. 4, 5, 8 i 9 albo podstawę obliczenia podatku na podstawie art. 26i ustawy o PIT (art. 6 ust. 8). Kwotę
+        przelicza się na złote według średniego kursu euro ogłaszanego przez NBP na pierwszy dzień roboczy października roku
+        poprzedzającego rok podatkowy (art. 4 ust. 2); ustawa o ryczałcie nie przewiduje zaokrąglenia tej kwoty. Tekst jednolity
+        uwzględnia zmiany ogłoszone przed 2025-06-12; data początku obowiązywania (2026-01-01) nie jest potwierdzona źródłem.
+        Nowelizacje ogłoszone później (Dz.U. 2026 poz. 779, 1098 i 1541) nie zmieniają art. 4 ani art. 6.
+      sources:
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (limit)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 6 ust. 4 pkt 1
+          quote: "uzyskali przychody z tej działalności, prowadzonej wyłącznie samodzielnie, w wysokości nieprzekraczającej 2 000 000 euro"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (przeliczenie euro)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 4 ust. 2
+          quote: "Kwoty wyrażone w euro przelicza się na walutę polską według średniego kursu euro ogłaszanego przez Narodowy Bank Polski na pierwszy dzień roboczy października roku poprzedzającego rok podatkowy"
+        - title: podatki.gov.pl (MF), Opodatkowanie ryczałtem od przychodów ewidencjonowanych
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-ryczaltem-od-przychodow-ewidencjonowanych
+          kind: control
+          quote: "z działalności prowadzonej samodzielnie lub wszystkich wspólników spółki, w której masz udziały - nie przekroczyły kwoty 2 000 000 euro"
+          as_of: 2026-11-26
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (limit i kurs)
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          quote: "których przychody w poprzednim roku podatkowym nie przekroczyły limitu 2 mln euro, obliczonego według średniego kursu euro ogłaszanego przez Narodowy Bank Polski na pierwszy dzień roboczy października roku poprzedniego"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: zasada.ryczalt_wylaczenia
+  name: Kiedy nie można stosować ryczałtu od przychodów ewidencjonowanych i kiedy traci się do niego prawo
+  kind: rule
+  applies_to: {tax_form: [ryczalt]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Ryczałt możesz opłacać w roku podatkowym, jeżeli przychody z działalności w roku poprzedzającym nie przekroczyły limitu w euro albo jeżeli rozpoczynasz działalność w roku podatkowym i nie korzystasz z karty podatkowej.
+            uses: [ryczalt.limit_przychodow_euro]
+            basis: art. 6 ust. 4 ustawy o zryczałtowanym podatku dochodowym
+          - text: >-
+              Ryczałtu nie stosuje się do podatników: opłacających podatek w formie karty podatkowej; korzystających, na podstawie
+              odrębnych przepisów, z okresowego zwolnienia od podatku dochodowego; osiągających w całości lub w części przychody
+              z tytułu prowadzenia aptek, działalności w zakresie kupna i sprzedaży wartości dewizowych albo działalności w zakresie
+              handlu częściami i akcesoriami do pojazdów mechanicznych; wytwarzających wyroby opodatkowane podatkiem akcyzowym,
+              na podstawie odrębnych przepisów, z wyjątkiem wytwarzania energii elektrycznej z odnawialnych źródeł energii.
+            uses: []
+            basis: art. 8 ust. 1 pkt 1–4 ustawy o zryczałtowanym podatku dochodowym
+          - text: >-
+              Ryczałtu nie stosuje się też do podatników podejmujących wykonywanie działalności w roku podatkowym po zmianie
+              działalności wykonywanej samodzielnie na działalność prowadzoną w formie spółki z małżonkiem, w formie spółki
+              z małżonkiem na działalność prowadzoną samodzielnie przez jednego lub każdego z małżonków albo samodzielnie przez
+              małżonka na działalność prowadzoną samodzielnie przez drugiego małżonka, jeżeli małżonek lub małżonkowie przed zmianą
+              opłacali z tytułu prowadzenia tej działalności podatek dochodowy na ogólnych zasadach, czyli według skali podatkowej.
+            uses: []
+            basis: art. 8 ust. 1 pkt 5 i art. 4 ust. 1 pkt 8 ustawy o zryczałtowanym podatku dochodowym
+          - text: >-
+              Jeżeli wybrałeś ryczałt i uzyskasz z działalności prowadzonej samodzielnie lub w formie spółki przychody ze sprzedaży
+              towarów handlowych lub wyrobów lub ze świadczenia usług na rzecz byłego lub obecnego pracodawcy, odpowiadających
+              czynnościom, które Ty lub co najmniej jeden ze wspólników wykonywaliście w roku poprzedzającym rok podatkowy albo
+              wykonywaliście lub wykonujecie w roku podatkowym w ramach stosunku pracy lub spółdzielczego stosunku pracy, tracisz
+              w roku podatkowym prawo do ryczałtu. Od dnia uzyskania tego przychodu do końca roku podatkowego opłacasz podatek
+              dochodowy według skali podatkowej.
+            uses: [podatek.skala]
+            basis: art. 8 ust. 2 i art. 4 ust. 1 pkt 8 ustawy o zryczałtowanym podatku dochodowym
+          - text: >-
+              Jeżeli w roku poprzedzającym rok podatkowy nie uzyskałeś przychodu z działalności wyłączonej z ryczałtu (apteki,
+              wartości dewizowe, części i akcesoria do pojazdów mechanicznych, wyroby akcyzowe), tracisz w roku podatkowym prawo
+              do ryczałtu z dniem uzyskania przychodu z takiej działalności i od tego dnia opłacasz podatek dochodowy według skali
+              podatkowej.
+            uses: [podatek.skala]
+            basis: art. 8 ust. 3 ustawy o zryczałtowanym podatku dochodowym
+          - text: Te wyłączenia z art. 8 ust. 1 nie dotyczą ryczałtu od przychodów z najmu, podnajmu, dzierżawy, poddzierżawy i podobnych umów zawieranych poza działalnością gospodarczą.
+            uses: []
+            basis: art. 6 ust. 1a i 1b ustawy o zryczałtowanym podatku dochodowym
+          - text: Ta zasada nie opisuje warunków ryczałtu dla przedsiębiorstwa w spadku (art. 6 ust. 4a i 6a) ani dla podatników, którzy w poprzednim roku byli opodatkowani kartą podatkową (art. 6 ust. 6), ani przychodów ze sprzedaży przetworzonych w sposób inny niż przemysłowy produktów roślinnych i zwierzęcych z art. 20 ust. 1c ustawy o PIT (art. 6 ust. 1d i 7).
+            uses: []
+            basis: art. 6 ust. 1d, 4a, 6, 6a i 7 ustawy o zryczałtowanym podatku dochodowym; art. 20 ust. 1c ustawy o podatku dochodowym od osób fizycznych
+      note: >-
+        Tekst jednolity uwzględnia zmiany ogłoszone przed 2025-06-12; data początku obowiązywania (2026-01-01) nie jest
+        potwierdzona źródłem. Nowelizacje ogłoszone później (Dz.U. 2026 poz. 779, 1098 i 1541) nie zmieniają art. 4, 6 ani 8.
+        Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (wyłączenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 8 ust. 1
+          quote: "Opodatkowania w formie ryczałtu od przychodów ewidencjonowanych, z zastrzeżeniem art. 6 ust. 1b, nie stosuje się do podatników"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (części do pojazdów)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 8 ust. 1 pkt 3 lit. f
+          quote: "działalności w zakresie handlu częściami i akcesoriami do pojazdów mechanicznych"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (akcyza)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 8 ust. 1 pkt 4
+          quote: "wytwarzających wyroby opodatkowane podatkiem akcyzowym, na podstawie odrębnych przepisów, z wyjątkiem wytwarzania energii elektrycznej z odnawialnych źródeł energii"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (zmiana z udziałem małżonka)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 8 ust. 1 pkt 5
+          quote: "jeżeli małżonek lub małżonkowie przed zmianą opłacali z tytułu prowadzenia tej działalności podatek dochodowy na ogólnych zasadach"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (były lub obecny pracodawca)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 8 ust. 2
+          quote: "ze świadczenia usług na rzecz byłego lub obecnego pracodawcy, odpowiadających czynnościom, które podatnik lub co najmniej jeden ze wspólników"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (skutek utraty prawa)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 8 ust. 2
+          quote: "poczynając od dnia uzyskania tego przychodu do końca roku podatkowego, opłaca podatek dochodowy na ogólnych zasadach"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (nowa działalność wyłączona)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 8 ust. 3
+          quote: "traci w roku podatkowym prawo do opodatkowania w formie ryczałtu od przychodów ewidencjonowanych z dniem uzyskania przychodów z tych rodzajów działalności"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (ogólne zasady)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 4 ust. 1 pkt 8
+          quote: "podatek dochodowy od osób fizycznych, opłacany przy zastosowaniu podstawy obliczania podatku, o której mowa w art. 26 ustawy o podatku dochodowym, i skali"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (najem poza działalnością)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 6 ust. 1b
+          quote: "Do przychodów, o których mowa w ust. 1a, nie ma zastosowania przepis art. 8 ust. 1."
+        - title: podatki.gov.pl (MF), Opodatkowanie ryczałtem od przychodów ewidencjonowanych (komunikat MF; potwierdza kroki 1–2 i części kroków 3–5, bez kroków 6–7)
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-ryczaltem-od-przychodow-ewidencjonowanych
+          quote: "osiągasz w całości lub w części przychody z tytułu: prowadzenia aptek, działalności w zakresie kupna i sprzedaży wartości dewizowych, działalności w zakresie handlu częściami i akcesoriami do pojazdów mechanicznych"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: zasada.liniowy_wylaczenia
+  name: Warunki podatku liniowego i utrata prawa do niego
+  kind: rule
+  applies_to: {tax_form: [liniowy]}
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Podatek liniowy stosujesz tylko wtedy, gdy go wybrałeś; bez wyboru dochody z działalności opodatkowuje się według skali podatkowej.
+            uses: [zasada.wybor_formy_opodatkowania, podatek.skala]
+            basis: art. 9a ust. 1 i 2 ustawy o podatku dochodowym od osób fizycznych
+          - text: Jeżeli prowadzisz działalność samodzielnie i jesteś wspólnikiem spółki niebędącej osobą prawną albo jesteś tylko wspólnikiem takiej spółki, wybór podatku liniowego dotyczy wszystkich form prowadzenia tej działalności.
+            uses: []
+            basis: art. 9a ust. 5 ustawy o podatku dochodowym od osób fizycznych
+          - text: >-
+              Jeżeli wybrałeś podatek liniowy i uzyskasz z działalności prowadzonej samodzielnie lub z tytułu prawa do udziału
+              w zysku spółki niebędącej osobą prawną przychody ze świadczenia usług na rzecz byłego lub obecnego pracodawcy,
+              odpowiadających czynnościom, które Ty lub co najmniej jeden ze wspólników wykonywaliście lub wykonujecie w roku
+              podatkowym w ramach stosunku pracy lub spółdzielczego stosunku pracy, tracisz w roku podatkowym prawo do podatku
+              liniowego. Wpłacasz wtedy zaliczki od dochodu osiągniętego od początku roku, obliczone według skali podatkowej, oraz
+              odsetki za zwłokę od zaległości z tytułu tych zaliczek.
+            uses: [podatek.skala]
+            basis: art. 9a ust. 3 ustawy o podatku dochodowym od osób fizycznych
+          - text: Przepis o czynnościach wykonywanych w ramach stosunku pracy w roku poprzedzającym rok podatkowy (art. 9a ust. 3 pkt 1) jest uchylony; przy podatku liniowym liczą się tylko czynności wykonywane w roku podatkowym.
+            uses: []
+            basis: art. 9a ust. 3 pkt 1 i 2 ustawy o podatku dochodowym od osób fizycznych
+          - text: Wyłączenie wspólnego opodatkowania z małżonkiem i sposobu opodatkowania dla osoby samotnie wychowującej dziecko przy stosowaniu podatku liniowego opisuje osobna zasada.
+            uses: [zasada.opodatkowanie_laczne_wylaczenia]
+            basis: art. 6 ust. 8 pkt 1 lit. a ustawy o podatku dochodowym od osób fizycznych
+          - text: Ta zasada nie opisuje obowiązku stosowania podatku liniowego przez przedsiębiorstwo w spadku (art. 9a ust. 4a) ani wyboru podatku liniowego dla działów specjalnych produkcji rolnej (art. 9a ust. 7 i 8).
+            uses: []
+            basis: art. 9a ust. 4a, 7 i 8 ustawy o podatku dochodowym od osób fizycznych
+      note: >-
+        Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku obowiązywania (2026-01-01) nie jest
+        potwierdzona źródłem. Nowelizacje ogłoszone później (Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354,
+        1371, 1541, 1542 i 1556) nie zmieniają art. 6 ust. 8, art. 9a ani art. 30c. Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (skala bez wyboru)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 9a ust. 1
+          quote: "są opodatkowane na zasadach określonych w art. 27, z zastrzeżeniem ust. 2 i 3, chyba że podatnicy złożą"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (wszystkie formy działalności)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 9a ust. 5
+          quote: "wybór sposobu opodatkowania, o którym mowa w ust. 2, dotyczy wszystkich form prowadzenia tej działalności"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (były lub obecny pracodawca)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 9a ust. 3
+          quote: "przychody ze świadczenia usług na rzecz byłego lub obecnego pracodawcy, odpowiadających czynnościom, które podatnik lub co najmniej jeden ze wspólników"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (skutek utraty prawa)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 9a ust. 3
+          quote: "traci w roku podatkowym prawo do opodatkowania w sposób określony w art. 30c i jest obowiązany do wpłacenia zaliczek od dochodu osiągniętego od początku roku"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (zaliczki według skali i odsetki)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 9a ust. 3
+          quote: "obliczonych przy zastosowaniu skali podatkowej, o której mowa w art. 27 ust. 1, oraz odsetek za zwłokę od zaległości z tytułu tych zaliczek"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (łączne opodatkowanie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 6 ust. 8
+          quote: "Sposób opodatkowania, o którym mowa w ust. 2 i 4d, nie ma zastosowania, w przypadku gdy chociażby jeden z małżonków, osoba samotnie wychowująca dziecko lub jej dziecko"
+        - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym (komunikat MF; potwierdza krok 3 bez wspólników oraz części kroków 1 i 5)
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
+          quote: "świadczyć usług na rzecz byłego lub obecnego pracodawcy, odpowiadających czynnościom, które wykonywałeś(-aś) lub wykonujesz w roku podatkowym w ramach stosunku pracy lub spółdzielczego stosunku pracy"
+          as_of: 2026-11-26
+      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+
+- id: zasada.wybor_formy_opodatkowania
+  name: Wybór ryczałtu albo podatku liniowego, kontynuacja wyboru i rezygnacja
+  kind: rule
+  versions:
+    - valid_from: 2026-01-01
+      value:
+        steps:
+          - text: Jeżeli nie wybierzesz ryczałtu ani podatku liniowego, dochody z działalności opodatkowuje się według skali podatkowej.
+            uses: [podatek.skala]
+            basis: art. 9a ust. 1 ustawy o podatku dochodowym od osób fizycznych
+          - text: >-
+              Ryczałt wybierasz pisemnym oświadczeniem o wyborze ryczałtu na dany rok podatkowy, złożonym naczelnikowi urzędu
+              skarbowego właściwemu według miejsca zamieszkania, do 20. dnia miesiąca następującego po miesiącu, w którym
+              osiągnąłeś pierwszy przychód z działalności w roku podatkowym, albo do końca roku podatkowego, jeżeli pierwszy taki
+              przychód osiągnąłeś w grudniu. Przy spółce oświadczenie składają wszyscy wspólnicy.
+            uses: []
+            basis: art. 9 ust. 1 i 2 ustawy o zryczałtowanym podatku dochodowym
+          - text: >-
+              Podatek liniowy wybierasz pisemnym oświadczeniem o wyborze tego sposobu opodatkowania, złożonym właściwemu
+              naczelnikowi urzędu skarbowego do 20. dnia miesiąca następującego po miesiącu, w którym osiągnąłeś pierwszy przychód
+              z działalności w roku podatkowym, albo do końca roku podatkowego, jeżeli pierwszy taki przychód osiągnąłeś
+              w grudniu.
+            uses: []
+            basis: art. 9a ust. 2 ustawy o podatku dochodowym od osób fizycznych
+          - text: Oświadczenia o wyborze ryczałtu i podatku liniowego oraz oświadczenie albo zawiadomienie o rezygnacji możesz złożyć także na podstawie przepisów ustawy o CEIDG.
+            uses: []
+            basis: art. 9 ust. 1c ustawy o zryczałtowanym podatku dochodowym; art. 9a ust. 2c ustawy o podatku dochodowym od osób fizycznych
+          - text: >-
+              Przed upływem tego terminu możesz złożyć pisemne oświadczenie o rezygnacji z ryczałtu albo oświadczenie o wyborze
+              podatku liniowego; przy podatku liniowym możesz przed upływem terminu zawiadomić na piśmie o rezygnacji z niego
+              albo złożyć oświadczenie o wyborze ryczałtu.
+            uses: []
+            basis: art. 9 ust. 1a ustawy o zryczałtowanym podatku dochodowym; art. 9a ust. 2a ustawy o podatku dochodowym od osób fizycznych
+          - text: >-
+              Wybór ryczałtu albo podatku liniowego dotyczy również lat następnych, chyba że w kolejnym roku, w terminie
+              z poprzednich kroków, złożysz pisemne oświadczenie o rezygnacji z ryczałtu albo zawiadomisz na piśmie o rezygnacji
+              z podatku liniowego, albo złożysz oświadczenie o wyborze drugiej z tych form.
+            uses: []
+            basis: art. 9 ust. 1b ustawy o zryczałtowanym podatku dochodowym; art. 9a ust. 2b ustawy o podatku dochodowym od osób fizycznych
+          - text: >-
+              Jeżeli rozpoczynasz działalność w roku podatkowym, a w poprzednim roku jej nie prowadziłeś, ryczałt stosujesz od dnia
+              uzyskania pierwszego przychodu. Jeżeli rozpoczynasz działalność w trakcie roku i nie złożysz oświadczenia o wyborze
+              ryczałtu w terminie, masz obowiązek założyć właściwe księgi i opłacać podatek na zasadach ustawy o podatku dochodowym
+              od osób fizycznych.
+            uses: []
+            basis: art. 7 ust. 1 i art. 9 ust. 3 ustawy o zryczałtowanym podatku dochodowym
+          - text: Czy wybór ryczałtu albo podatku liniowego obowiązuje w roku następującym po roku, w którym straciłeś prawo do tej formy (na przykład przez przychód od byłego lub obecnego pracodawcy), czy trzeba złożyć oświadczenie o wyborze ponownie, jest niewyjaśnione (otwarte pytanie do eksperta).
+            uses: [zasada.ryczalt_wylaczenia, zasada.liniowy_wylaczenia]
+            basis: art. 8 ust. 2 i art. 9 ust. 1b ustawy o zryczałtowanym podatku dochodowym; art. 9a ust. 2b i 3 ustawy o podatku dochodowym od osób fizycznych
+          - text: Ta zasada nie opisuje wyboru formy opodatkowania przez przedsiębiorstwo w spadku, oświadczenia dla przychodów z art. 21 ust. 15a ustawy o PIT (art. 9 ust. 6 ustawy o ryczałcie) ani karty podatkowej.
+            uses: []
+            basis: art. 9 ust. 1, 2 i 6 ustawy o zryczałtowanym podatku dochodowym; art. 9a ust. 4a ustawy o podatku dochodowym od osób fizycznych
+      note: >-
+        Termin zależy od miesiąca pierwszego przychodu w roku, więc nie jest terminem miesięcznym; datę liczy klient.
+        Teksty jednolite: ustawa o ryczałcie Dz.U. 2025 poz. 843 (zmiany ogłoszone przed
+        2025-06-12) i ustawa o PIT Dz.U. 2026 poz. 592 (stan prawny na 1 kwietnia 2026 r.); data początku obowiązywania
+        (2026-01-01) nie jest potwierdzona źródłem. Nowelizacje ustawy o ryczałcie ogłoszone później (Dz.U. 2026 poz. 779,
+        1098 i 1541) nie zmieniają art. 7, 8 ani 9, a nowelizacje ustawy o PIT (Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123,
+        1287, 1347, 1354, 1371, 1541, 1542 i 1556) nie zmieniają art. 9a. Wcześniejszych wersji nie wprowadzono.
+      sources:
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (termin wyboru ryczałtu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 9 ust. 1
+          quote: "do 20. dnia miesiąca następującego po miesiącu, w którym osiągnął pierwszy przychód z tego tytułu w roku podatkowym, albo do końca roku podatkowego, jeżeli pierwszy taki przychód osiągnął w grudniu roku podatkowego"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (oświadczenie)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 9 ust. 1
+          quote: "Sporządzone na piśmie oświadczenie o wyborze opodatkowania przychodów z pozarolniczej działalności gospodarczej w formie ryczałtu od przychodów ewidencjonowanych na dany rok podatkowy podatnik składa naczelnikowi urzędu skarbowego właściwemu według miejsca zamieszkania podatnika"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (rezygnacja przed terminem)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 9 ust. 1a
+          quote: "Podatnik może złożyć oświadczenie, na piśmie, właściwemu naczelnikowi urzędu skarbowego o rezygnacji z opodatkowania ryczałtem od przychodów ewidencjonowanych lub złożyć oświadczenie o wyborze opodatkowania na zasadach określonych w art. 30c ustawy o podatku dochodowym, przed upływem terminu, o którym mowa w ust. 1"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (lata następne)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 9 ust. 1b
+          quote: "Dokonany wybór formy opodatkowania, o którym mowa w ust. 1, dotyczy również lat następnych, chyba że w kolejnych latach podatnik w terminie określonym w ust. 1 złoży oświadczenie"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (CEIDG)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 9 ust. 1c
+          quote: "podatnik może złożyć na podstawie przepisów ustawy z dnia 6 marca 2018 r. o Centralnej Ewidencji i Informacji o Działalności Gospodarczej"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (spółka)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 9 ust. 2
+          quote: "w przypadku prowadzenia działalności w formie spółki składają wszyscy wspólnicy"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (brak oświadczenia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 9 ust. 3
+          quote: "W przypadku rozpoczęcia działalności gospodarczej w trakcie roku podatkowego i niezłożenia w określonym terminie oświadczenia, o którym mowa w ust. 1, podatnik jest obowiązany do założenia właściwych ksiąg i opłacania podatku na zasadach określonych w ustawie o podatku dochodowym"
+        - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (od pierwszego przychodu)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
+          article: art. 7 ust. 1
+          quote: "opodatkowanie ryczałtem od przychodów ewidencjonowanych stosuje się od dnia uzyskania pierwszego przychodu"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (skala bez wyboru)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 9a ust. 1
+          quote: "są opodatkowane na zasadach określonych w art. 27, z zastrzeżeniem ust. 2 i 3, chyba że podatnicy złożą"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (termin wyboru podatku liniowego)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 9a ust. 2
+          quote: "do 20. dnia miesiąca następującego po miesiącu, w którym został osiągnięty pierwszy przychód z tego tytułu w roku podatkowym, albo do końca roku podatkowego, jeżeli pierwszy taki przychód został osiągnięty w grudniu tego roku podatkowego"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (rezygnacja przed terminem)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 9a ust. 2a
+          quote: "Podatnik może zawiadomić na piśmie o rezygnacji z opodatkowania dochodów z pozarolniczej działalności gospodarczej na zasadach określonych w art. 30c lub złożyć oświadczenie o wyborze opodatkowania w formie ryczałtu od przychodów ewidencjonowanych przed upływem terminu, o którym mowa w ust. 2"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (lata następne)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 9a ust. 2b
+          quote: "Dokonany wybór sposobu opodatkowania, o którym mowa w ust. 2, dotyczy również lat następnych"
+        - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (CEIDG)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
+          article: art. 9a ust. 2c
+          quote: "Oświadczenie oraz zawiadomienie, o których mowa w ust. 1–2b, podatnicy mogą złożyć na podstawie przepisów ustawy o CEIDG"
+        - title: podatki.gov.pl (MF), Opodatkowanie ryczałtem od przychodów ewidencjonowanych (komunikat MF; potwierdza części kroków 2, 4 i 6 dotyczące ryczałtu)
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-ryczaltem-od-przychodow-ewidencjonowanych
+          quote: "w terminie do 20. dnia miesiąca następującego po miesiącu, w którym osiągniesz pierwszy przychód z tego tytułu w roku podatkowym, albo do końca roku podatkowego, jeżeli pierwszy przychód osiągniesz w grudniu tego roku"
+          as_of: 2026-11-26
+        - title: podatki.gov.pl (MF), Opodatkowanie podatkiem liniowym (komunikat MF; potwierdza części kroków 3, 4 i 6 dotyczące podatku liniowego)
+          url: https://podatki.gov.pl/podatki-firmowe/pit/informacje-podstawowe/co-jest-opodatkowane/opodatkowanie-podatkiem-liniowym
+          quote: "Jeśli wybierzesz podatek liniowy, to tę formę opodatkowania będziesz stosować również w kolejnych latach podatkowych. Możesz z niej jednak zrezygnować albo wybrać ryczałt od przychodów ewidencjonowanych."
+          as_of: 2026-11-26
+      verification:
+        checked_at: 2026-11-26
+        agent_check: 2026-11-26
+        open_issue_scope: edge_case
+        open_issue: >-
+          Art. 9 ust. 1b ustawy o ryczałcie i art. 9a ust. 2b ustawy o PIT mówią, że wybór formy dotyczy również lat
+          następnych, a art. 8 ust. 2 ustawy o ryczałcie i art. 9a ust. 3 ustawy o PIT, że podatnik traci prawo do tej formy
+          „w roku podatkowym”. Przepisy nie mówią wprost, czy po utracie prawa wybór obowiązuje w następnym roku bez nowego
+          oświadczenia. Pytanie do eksperta: docs/pytania-do-eksperta.md, P46.
