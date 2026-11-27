@@ -59,6 +59,13 @@ przypadku brzegowego, średnią.
     zakończenia i ponownego podjęcia działalności. Sprawy składek rozpatrują sądy powszechne, nie administracyjne,
     więc CBOSA nie jest właściwą bazą.
   - Interpelacje poselskie (wyszukiwanie w sejm.gov.pl): brak odpowiedzi na to pytanie.
+- Dalsze źródła sprawdzone 2026-11-27, bez rozstrzygnięcia:
+  - Poradnik ZUS „Polski Ład” (stan prawny na 1 stycznia 2025 r.), przykład 17: „Od lipca Dariusz nie jest związany swoją
+    deklaracją” i „może zatem ustalić swoją podstawę wymiaru składki zdrowotnej na podstawie przychodów z działalności
+    osiągniętych od początku 2023 r.”. Przykład dotyczy zakończenia działalności i rozpoczęcia nowej, nie zawieszenia,
+    i nie wskazuje przepisu, z którego wynika wyjątek.
+  - Ten sam poradnik, przykład 15 (ryczałt, likwidacja i nowa działalność w lipcu): „W lipcu 2023 r. suma przychodów
+    liczonych od początku 2023 r. przekroczyła 60 000 zł”. Przykład nie dotyczy art. 81 ust. 2h.
 
 ## P2. Minimalna składka zdrowotna na skali i liniowym w roku składkowym 2025/2026 (rozstrzygnięte 2026-11-26, bez eksperta)
 
@@ -165,6 +172,13 @@ przypadku brzegowego, średnią.
   do stawek niższych” oraz: „Zasady tej sankcji nie stosuje się do przychodów, dla których stawka ryczałtu jest wyższa niż
   8,5%”. Według tej strony stawkę podwyższoną stosuje się więc tylko do przychodów z danego punktu. Portal nie jest
   objaśnieniem podatkowym MF, więc nie rozstrzyga pytania.
+- Dalsze źródła sprawdzone 2026-11-27, bez rozstrzygnięcia:
+  - Interpretacja indywidualna KIS z 25 lipca 2025 r., sygn. 0115-KDST2-1.4011.286.2025.3.JPO
+    (https://eureka.mf.gov.pl/informacje/podglad/650518), wiąże tylko wnioskodawcę. Przy jednej ewidencji bez wyodrębnienia
+    przychodów z usług objętych stawkami 8,5%, 12% i 15% organ uznał, że „dla wszystkich opisanych usług, będących przedmiotem
+    Pana wniosku, znajdzie zastosowanie – zgodnie z art. 12 ust. 3 pkt 2 (…) – stawka ryczałtu w wysokości 15%”. Nie omawia
+    wprost, którą stawkę stosuje się przy przychodach z kilku punktów art. 12 ust. 1, i stoi w opozycji do opisu
+    z biznes.gov.pl.
 
 ## P7. Minimum rocznej składki zdrowotnej przy podatku liniowym: liczba miesięcy
 
@@ -207,6 +221,14 @@ przypadku brzegowego, średnią.
   - Orzeczenia sądów powszechnych (baza SAOS, fraza „liczby miesięcy w roku składkowym”): 31 wyroków z lat 2023–2025,
     głównie w sprawach komorników sądowych. Przytaczają art. 79a ust. 1, ale żaden nie rozstrzyga, którą liczbę miesięcy
     przyjąć.
+- Dalsze źródła sprawdzone 2026-11-27, bez rozstrzygnięcia:
+  - Kalkulator rocznej składki zdrowotnej ZUS (https://www.zus.pl/firmy/przedsiebiorco-przeczytaj-wazne/kalkulator-rocznej-skladki-zdrowotnej),
+    tylko źródło kontrolne: „Podaj liczbę miesięcy podlegania ubezpieczeniu zdrowotnemu dla formy opodatkowania „podatek
+    liniowy” w roku kalendarzowym, którego dotyczy roczne rozliczenie (w liczbie miesięcy nie uwzględnia się miesięcy zwolnienia
+    z opłacania składki).” Strona nie mówi, że ta liczba służy do minimum z art. 79a ust. 1 pkt 2, i obejmuje lata 2022–2025.
+  - Poradnik ZUS „ZUS DRA” (maj 2026), przykład 15: roczna podstawa „nie może być niższa niż kwota wyliczona jako iloczyn
+    liczby miesięcy, w których korzystała z tej formy opodatkowania i 75% minimalnego wynagrodzenia w 2025 r.”. Przykład dotyczy
+    tylko roku 2025, który ma osobny przepis.
 
 ## P8. Od kiedy stosować art. 81 ust. 2zd pkt 2 bez art. 21 ust. 1 pkt 63a ustawy o PIT
 
@@ -248,6 +270,15 @@ przypadku brzegowego, średnią.
     „stosuje się do rozliczenia składek na ubezpieczenie zdrowotne należnych za okres od dnia 1 lutego 2025 r.”; art. 3:
     do składek na ryczałcie należnych za okres do 31 grudnia 2024 r. stosuje się przepisy dotychczasowe. Ustawa Dz.U. 2026
     poz. 1542 takich przepisów nie ma.
+- Dalsze źródła sprawdzone 2026-11-27, bez rozstrzygnięcia:
+  - Uzasadnienie projektu ustawy Dz.U. 2026 poz. 1542 (druk sejmowy nr 3160): „z uwagi na dalej obowiązujące zezwolenia na
+    działanie na terenie SSE wydane na podstawie ustawy o SSE, konieczne było utrzymanie tego instrumentu do końca 2026 r.”;
+    wygaszenie SSE od 1 stycznia 2027 r. „skutkuje brakiem możliwości rozliczania pomocy publicznej wynikającej z posiadanych
+    zezwoleń”. Uzasadnienie nie jest źródłem prawa i nie mówi, do których dochodów stosuje się nowe brzmienie art. 81 ust. 2zd.
+  - Ustawa Dz.U. 2026 poz. 1542, art. 26 ust. 1: nowe brzmienie art. 21 ust. 1 pkt 63b ustawy o PIT stosuje się „do dochodów
+    uzyskanych z działalności gospodarczej określonej w decyzji o wsparciu wydanej po dniu 31 grudnia 2026 r.”; art. 24 ust. 2:
+    „Decyzje o wsparciu wydane przed dniem wejścia w życie niniejszej ustawy obowiązują przez oznaczony czas, na który zostały
+    wydane.” Żaden przepis przejściowy nie wymienia pkt 63a ani art. 81 ust. 2zd.
 
 ## P9. Ulga na start: jak liczyć 6 miesięcy ulgi i następne 24 miesiące podstawy preferencyjnej
 
@@ -455,6 +486,18 @@ przypadku brzegowego, średnią.
   o zryczałtowanym podatku dochodowym (art. 5a pkt 15 ustawy o PIT) z wyjątkiem tylko jej art. 6 ust. 1a, więc obejmuje
   też kartę podatkową (art. 2 ust. 1 pkt 2 i rozdział 3 tej ustawy). Zasada to opisuje. Otwarte zostaje, jak przy ryczałcie
   od przychodów ewidencjonowanych i karcie podatkowej ocenia się rok bez przychodów i zmianę formy w trakcie roku.
+- Dalsze źródła sprawdzone 2026-11-27, bez rozstrzygnięcia:
+  - Interpretacja indywidualna KIS z 24 lutego 2026 r., sygn. 0115-KDIT2.4011.734.2025.3.ŁS
+    (https://eureka.mf.gov.pl/informacje/podglad/680608), wiąże tylko wnioskodawcę. Dotyczy działalności opodatkowanej kartą
+    podatkową, zawieszonej przez cały rok, bez przychodów, kosztów, doliczeń i odliczeń; taki stan „nie powoduje utraty prawa
+    do wspólnego opodatkowania dochodów małżonków”, a „Istotą nie jest zatem kwestia braku ewidencjonowania przychodu czy też
+    kosztów uzyskania przychodów lecz rzeczywisty ich brak.” Nie dotyczy ryczałtu od przychodów ewidencjonowanych ani zmiany
+    formy w trakcie roku.
+  - Interpretacja indywidualna Dyrektora Izby Skarbowej w Warszawie z 16 listopada 2010 r., sygn. IPPB1/415-854/10-2/JB
+    (https://eureka.mf.gov.pl/informacje/podglad/94867), wiąże tylko wnioskodawcę: podatnik, który stracił w trakcie roku prawo
+    do podatku liniowego (art. 9a ust. 3), „poprzez utratę prawa do opodatkowania tzw. podatkiem liniowym uzyska prawo do
+    preferencyjnego opodatkowania”. Wydana według art. 6 ust. 8 w brzmieniu z 2010 r. i dotyczy przymusowej utraty prawa,
+    nie dobrowolnej zmiany formy; różni się od opisu z biznes.gov.pl.
 
 ## P16. Wniosek o łączne opodatkowanie w zeznaniu złożonym po terminie albo w korekcie; okres samotnego wychowywania dzieci
 
@@ -518,6 +561,15 @@ przypadku brzegowego, średnią.
   - Schematy XSD obu wariantów (CRWDE 2021/12/27/11149 i 2025/12/19/14089) technicznie dopuszczają rok 2026 i każdy kwartał,
     więc nie rozstrzygają pytania.
   - Specyfikacja interfejsów usług JPK 5.6.0 i strona KAS „Struktury JPK” nie wyjaśniają tego przypadku.
+- Dalsze źródła sprawdzone 2026-11-27, bez rozstrzygnięcia:
+  - Przykładowe pliki XML JPK_V7K(3) na stronie MF „pliki do pobrania”
+    (https://podatki.gov.pl/media/rhvjhlbm/jpk_v7k-3-przyk%C5%82adowy-plik-w-formacie-xml.xml i
+    https://podatki.gov.pl/media/hivhu0oh/jpk_v7k-3-przyk%C5%82adowy-plik-w-formacie-xml.xml) mają wariant 3, rok 2026,
+    miesiąc 3 i kwartał 1; drugi z nich to korekta. Są wypełnione danymi zastępczymi i pokazują strukturę, a nie wyjaśniają,
+    w którym wariancie składa się deklarację za I kwartał 2026 r.
+  - Broszura MF o JPK_VAT od 1 lutego 2026 r., opis pola Miesiac: „W przypadku złożenia pierwotnego JPK_V7K, jak i korekty
+    części deklaracyjnej należy wskazać ostatni miesiąc kwartału, tj. odpowiednio: 3, 6, 9, 12.” Zdanie dotyczy pola, nie wyboru
+    wariantu. Strona MF „Pytania i odpowiedzi” o JPK_VAT z deklaracją nie ma pytania o wariant 3 ani o I kwartał 2026 r.
 
 ## P18. Czy na ryczałcie przesyła się ewidencję przychodów (JPK_EWP) (rozstrzygnięte 2026-11-26, bez eksperta)
 
@@ -636,6 +688,11 @@ przypadku brzegowego, średnią.
 - Pytania: czy korektę wynikającą z błędu rachunkowego lub oczywistej omyłki ujmuje się w okresie, w którym ujęto
   pierwotny przychód (z korektą wpłaconego ryczałtu za ten okres)? Jak wpisuje się taką korektę i korektę z art. 14 ust. 1m
   do ewidencji: nowym zapisem ze znakiem minus z datą wpisu w dniu korekty, czy poprawieniem pierwotnego zapisu?
+- Dalsze źródła sprawdzone 2026-11-27, bez rozstrzygnięcia:
+  - Interpretacja indywidualna z 6 listopada 2026 r., sygn. 0114-KDIP2-2.4010.422.2026.1.RK
+    (https://eureka.mf.gov.pl/informacje/podglad/718200), wiąże tylko wnioskodawcę: „korekta „wstecz” może być dokonana jedynie
+    wtedy, gdy przyczyną korekty jest błąd rachunkowy lub inna oczywista omyłka”. Dotyczy podatku CIT (art. 12 ust. 3j ustawy
+    o CIT) i korekty niewynikającej z błędu, nie ewidencji przychodów ani sposobu zapisu.
 
 ## P33. Data uzyskania przychodu, gdy faktura jest wystawiona przed wykonaniem usługi
 
@@ -651,6 +708,11 @@ przypadku brzegowego, średnią.
 - Pytania: czy przy fakturze wystawionej przed wykonaniem usługi (albo wydaniem rzeczy), bez zapłaty, dniem uzyskania
   przychodu jest dzień wystawienia faktury? Czy inaczej jest, gdy faktura dokumentuje usługę wykonywaną w następnym okresie
   (zarachowana należność z art. 14 ust. 3 pkt 1)? Czy na ryczałcie odpowiedź jest taka sama?
+- Dalsze źródła sprawdzone 2026-11-27, bez rozstrzygnięcia:
+  - Interpretacja indywidualna Dyrektora Izby Skarbowej w Warszawie z 10 stycznia 2012 r., sygn. IPPB1/415-971/11-4/JB
+    (https://eureka.mf.gov.pl/informacje/podglad/318624), wiąże tylko wnioskodawcę: „wystawienie faktury przed datą wydania
+    towaru, zbycia prawa lub wykonania usługi (…) – datą powstania przychodu będzie w tym przypadku dzień wystawienia faktury”.
+    Stan prawny z 2012 r., faktura była zapłacona z góry, sprawa dotyczy PIT, nie ryczałtu.
 
 ## P34. Przeliczenie przychodu w walucie obcej na ryczałcie
 
@@ -667,6 +729,12 @@ przypadku brzegowego, średnią.
   przychodów ewidencjonowanych, broszura MF o JPK_EWP(4) (pole kwoty przychodu w PLN, bez zasady przeliczenia).
 - Pytanie: czy podatnik na ryczałcie przelicza przychód w walucie obcej według art. 11a ust. 1 ustawy o PIT? Jeżeli tak,
   na jakiej podstawie (art. 6 ust. 1 ustawy o ryczałcie)?
+- Dalsze źródła sprawdzone 2026-11-27, bez rozstrzygnięcia:
+  - Interpretacja indywidualna KIS z 27 kwietnia 2026 r., sygn. 0115-KDIT1.4011.230.2026.2.MN
+    (https://eureka.mf.gov.pl/informacje/podglad/688926), wiąże tylko wnioskodawcę na ryczałcie (przychód z programu
+    motywacyjnego): „przeliczenia tej wartości na złote należy zatem dokonać według kursu średniego NBP z ostatniego dnia
+    roboczego poprzedzającego dzień uzyskania przychodu”. Organ nie podaje przepisu ustawy o ryczałcie, który odsyła
+    do art. 11a ustawy o PIT.
 
 ## P39. Deklaracja ZUS DRA za miesiąc, w którym działalność zawieszono w trakcie miesiąca
 
@@ -686,6 +754,15 @@ przypadku brzegowego, średnią.
 - Pytanie: czy płatnik składek wyłącznie za siebie, który zawiesza działalność od dnia innego niż pierwszy dzień miesiąca,
   składa deklarację rozliczeniową za ten miesiąc za dni przed zawieszeniem? Jak wykazuje w niej składkę zdrowotną
   za ten miesiąc?
+- Dalsze źródła sprawdzone 2026-11-27, bez rozstrzygnięcia:
+  - Poradnik ZUS „ABC płatnika składek – jednoosobowa działalność gospodarcza” (kwiecień 2026,
+    https://www.zus.pl/documents/10182/167561/ABC_platnika_skladek_skladki_na_ubezpieczenia_wlasne.pdf/cd145d00-c406-48b9-991a-4a427769282a):
+    „Składki rozliczaj i opłacaj za każdy miesiąc, w którym jako płatnik byłeś zgłoszony do ubezpieczeń przez przynajmniej
+    jeden dzień.” O składce zdrowotnej: „Nawet jeśli wykonywałeś działalność gospodarczą przez część miesiąca (…) składka
+    na to ubezpieczenie nie zmniejsza się proporcjonalnie.” Rozdział o zawieszeniu mówi tylko o wyrejestrowaniu i nie omawia
+    deklaracji za miesiąc rozpoczęcia zawieszenia.
+  - Ustawa o świadczeniach opieki zdrowotnej, art. 79 ust. 2: „Składka jest miesięczna i niepodzielna, z zastrzeżeniem
+    art. 79a oraz art. 81 ust. 2 i 2e.” Przepis nie wymienia zawieszenia.
 
 ## P40. Wzór ZUS DRA dla deklaracji za kwiecień 2026 r. złożonej przed 1 maja 2026 r.
 
@@ -748,6 +825,11 @@ przypadku brzegowego, średnią.
   „analogicznego formularza”.
 - Pytanie: którą kwotę przychodu podaje się w takim przypadku przy zeznaniu PIT i przy plikach JPK? Czy można podać
   kwotę z dowolnego ze złożonych zeznań?
+- Dalsze źródła sprawdzone 2026-11-27, bez rozstrzygnięcia:
+  - Instrukcja MF do interaktywnych formularzy PDF, wersja 1.19 ze stycznia 2024 r.
+    (https://www.podatki.gov.pl/media/xsndcdg0/instrukcja-korzystania-z-formularzy-interaktywnych-pdf-wersja-1-19_tk-1.pdf):
+    w polu „Kwota przychodu” podatnik wykazuje „kwotę (sumę) przychodów wynikających z dowolnego zeznania lub rozliczenia
+    rocznego za rok 2022”. Instrukcja dotyczy deklaracji składanych w 2024 r. i nie mówi o plikach JPK.
 
 ## P43. Przychód na ryczałcie w polach ZUS DRA XI 13 i XII 22: pomniejszony o składki czy bez pomniejszenia
 
@@ -770,6 +852,13 @@ przypadku brzegowego, średnią.
   Odejmujesz od tego opłacone składki na ubezpieczenia emerytalne, rentowe, chorobowe i wypadkowe.”
 - Pytanie: czy w polach XI 13 i XII 22 wpisuje się przychód pomniejszony o składki z art. 81 ust. 2g, czy przychód
   bez pomniejszenia (a pomniejszenie uwzględnia się tylko przy ustalaniu progu)?
+- Dalsze źródła sprawdzone 2026-11-27, bez rozstrzygnięcia:
+  - FAQ ZUS „Zmiany od 2022 r.” (https://www.zus.pl/o-zus/o-nas/programy-transformacji-cyfrowej-zus/zmiany-od-2022-r./faq):
+    „Dla osób opodatkowanych ryczałtem przy wyliczeniu składki zdrowotnej ustala się wysokość przychodów z uwzględnieniem
+    pomniejszenia o opłacone składki na ubezpieczenia społeczne.” oraz „Progi kwotowe odnoszą się do przychodów pomniejszonych
+    o kwoty opłaconych składek”. Oba zdania dotyczą wyliczenia i progów, nie tego, co wpisać w pola XI 13 i XII 22.
+  - Dokumentacja programu Płatnik (wersja 8.6) opisuje pole „Suma przychodów w bieżącym roku kalendarzowym” bez wzmianki
+    o pomniejszeniu. Wprost o pomniejszeniu w polu XI 13 pisze tylko portal poradnikprzedsiebiorcy.pl (źródło kontrolne).
 
 ## P44. Które składki pomniejszają przychód na ryczałcie: zapłacone w okresie czy należne za jego miesiące
 
@@ -829,6 +918,16 @@ przypadku brzegowego, średnią.
   do podatku liniowego (art. 9a ust. 3 ustawy o PIT), jest w następnym roku opodatkowany tą formą bez nowego oświadczenia,
   jeżeli spełnia jej warunki? Czy musi złożyć oświadczenie o wyborze ponownie w terminie z art. 9 ust. 1 ustawy
   o ryczałcie albo art. 9a ust. 2 ustawy o PIT?
+- Dalsze źródła sprawdzone 2026-11-27, bez rozstrzygnięcia:
+  - Interpretacja indywidualna Dyrektora Izby Skarbowej w Katowicach z 19 grudnia 2016 r., sygn. 2461-IBPB-1-1.4511.577.2016.1.WRz
+    (https://eureka.mf.gov.pl/informacje/podglad/328874), wiąże tylko wnioskodawcę: po utracie prawa do podatku liniowego
+    (art. 9a ust. 3) „dokonany 11 stycznia 2015 r. wybór formy opodatkowania nie jest już skuteczny w następnych latach
+    podatkowych”. Wydana według dawnego art. 9a ust. 4; nie dotyczy ryczałtu.
+  - Interpretacja indywidualna KIS z 18 czerwca 2026 r., sygn. 0115-KDST2-1.4011.303.2026.1.NC
+    (https://eureka.mf.gov.pl/informacje/podglad/696705), wiąże tylko wnioskodawcę: po utracie ryczałtu z powodu przekroczenia
+    limitu z art. 6 ust. 4 przelew opisany „PIT28” „może być uznany za skutecznie złożone oświadczanie o wyborze formy
+    opodatkowania, o którym mowa w art. 9 ust. 1”. Nie dotyczy art. 8 ust. 2 i 3 ani nie rozstrzyga, czy wcześniejszy wybór
+    przechodzi na kolejny rok.
 
 ## P56. Zaliczki i ryczałt za miesiąc lub kwartał, w którego trakcie zawieszono albo wznowiono działalność
 
@@ -842,7 +941,7 @@ przypadku brzegowego, średnią.
   zawieszeniem”; ust. 1g: ryczałt „dotyczący okresu zawieszenia” wpłaca się po wznowieniu.
 - Prawo przedsiębiorców (Dz.U. 2026 poz. 1484), art. 24 ust. 7: wobec zobowiązań publicznoprawnych zawieszenie działa
   od dnia rozpoczęcia zawieszenia do dnia poprzedzającego dzień wznowienia, a więc może obejmować część miesiąca.
-- biznes.gov.pl (Podatki przy zawieszeniu, wznowieniu i likwidacji działalności, aktualizacja 04.05.2026) podaje w przykładzie,
+- biznes.gov.pl (Podatki przy zawieszeniu, wznowieniu i likwidacji działalności, aktualizacja 20.10.2026) podaje w przykładzie,
   że przy zawieszeniu od 16 marca zaliczkę za przychody sprzed zawieszenia wpłaca się w zwykłym terminie; strona portalu
   nie rozstrzyga tej kwestii.
 - Pytania: jak ustala się i kiedy wpłaca zaliczkę na PIT (skala, podatek liniowy) oraz ryczałt za miesiąc albo kwartał,
@@ -850,6 +949,12 @@ przypadku brzegowego, średnią.
   w zwykłym terminie, a na ryczałcie przychód z części okresu objętej zawieszeniem dopiero po wznowieniu? Czy zwolnienie
   z art. 44 ust. 10 obejmuje zaliczki kwartalne przy podatku liniowym (ust. 3h), skoro przepis wymienia ust. 1 pkt 1,
   ale nie ust. 3h?
+- Dalsze źródła sprawdzone 2026-11-27, bez rozstrzygnięcia:
+  - Ustawa o ryczałcie (Dz.U. 2025 poz. 843), art. 21 ust. 1h–1j: przy wznowieniu w ostatnim miesiącu (kwartale) roku ryczałt
+    za okres zawieszenia wpłaca się „w terminie do dnia 20 stycznia następnego roku podatkowego”; gdy wznowienie następuje
+    w następnym roku albo dwa lata później, ryczałt za okres zawieszenia w każdym wcześniejszym roku wpłaca się do 20 stycznia
+    roku następującego po tym roku, a za rok wznowienia na zasadach z ust. 1g i 1h. Przepisy dotyczą terminu wpłaty za okres
+    zawieszenia, nie przychodu z części miesiąca lub kwartału, i nie dotyczą PIT.
 
 ## P57. Faktury poza KSeF do 10 000 zł miesięcznie w 2026 r.: czy prawo wraca w kolejnym miesiącu
 
@@ -896,3 +1001,11 @@ przypadku brzegowego, średnią.
   z ust. 4, czy kwalifikowany dochód po pomnożeniu? Czy akapit 151 objaśnień MF jest po 2021 r. nadal aktualny?
   Czy art. 26i ust. 1 oznacza, że kwoty z art. 26e odlicza się także od podstawy z art. 30ca ust. 3, czy tylko opisuje
   kolejność wobec odliczenia z ust. 9a?
+- Dalsze źródła sprawdzone 2026-11-27, bez rozstrzygnięcia:
+  - Formularz PIT/IP(5) (https://podatki.gov.pl/media/litajg0p/pit_ip_-5-02.pdf), wariant wskazany przez MF na lata 2023
+    i 2024: poz. 18 „Dochody z kwalifikowanych praw”, poz. 19 „Odliczenie zmniejszające dochód z kwalifikowanego prawa
+    z tytułu kosztów uzyskania przychodów poniesionych na działalność badawczo-rozwojową, które doprowadziły do wytworzenia,
+    rozwinięcia lub ulepszenia przez podatnika tego prawa”, poz. 20 „Kwalifikowany dochód (dochody) z kwalifikowanych praw
+    obliczony (obliczone) zgodnie z art. 30ca ust. 4 ustawy”. Objaśnienia nie mówią, czy odliczenie z poz. 19 stosuje się
+    przed wskaźnikiem z ust. 4, czy po nim; kolejność wynika tylko z układu pozycji. Na lata 2025 i 2026 MF nie podaje
+    wariantu tego formularza.
