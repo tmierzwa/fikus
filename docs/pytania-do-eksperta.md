@@ -80,73 +80,6 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
   - Ten sam poradnik, przykład 15 (ryczałt, likwidacja i nowa działalność w lipcu): „W lipcu 2023 r. suma przychodów
     liczonych od początku 2023 r. przekroczyła 60 000 zł”. Przykład nie dotyczy art. 81 ust. 2h.
 
-## P2. Minimalna składka zdrowotna na skali i liniowym w roku składkowym 2025/2026 (rozstrzygnięte 2026-11-26, bez eksperta)
-
-- Rozstrzygnięcie: informacja ZUS na samorzad.gov.pl (18 lutego 2025 r.) sama podaje, że od lutego 2025 r. do stycznia 2026 r. składka nie może być niższa niż 314,96 zł; dodana jako źródło kontrolne, `open_issue` usunięty. Styczeń 2026 potwierdza też komunikat ZUS z 2026 r.
-
-- Wpis: `zdrowotna.minimum` (2025-02-01 – 2026-01-31, 314,96 zł).
-- Zgłoszone: 2026-11-26.
-- Komunikat ZUS z 30 stycznia 2025 r. podaje 314,96 zł „za miesiące od lutego 2025 r. do stycznia 2026 r.”
-  (9% z 3499,50 zł, czyli 75% minimalnego wynagrodzenia 4666 zł, art. 4 ustawy z 6 grudnia 2024 r.).
-- Żadne niezależne źródło nie podaje tej kwoty za cały ten okres: komunikat ZUS z 2026 r. i ifirma
-  podają ją tylko za styczeń 2026, a PITax podaje okres do grudnia 2026.
-- Pytanie: czy minimalna miesięczna składka zdrowotna przedsiębiorcy na skali i na podatku liniowym
-  wynosiła 314,96 zł za każdy miesiąc od lutego 2025 r. do stycznia 2026 r.?
-
-## P3. Minimalna składka zdrowotna na skali i liniowym za styczeń 2027 (rozstrzygnięte 2026-11-26, bez eksperta)
-
-- Rozstrzygnięcie: biznes.gov.pl sam podaje 432,54 zł za okres od 1 lutego 2026 r. do 31 stycznia 2027 r., tak jak komunikat ZUS z 2 lutego 2026 r.; dodany jako źródło kontrolne, `open_issue` usunięty.
-
-- Wpis: `zdrowotna.minimum` (2026-02-01 – 2027-01-31, 432,54 zł).
-- Zgłoszone: 2026-11-26.
-- Komunikat ZUS z 2 lutego 2026 r. podaje 432,54 zł „za miesiące od lutego 2026 r. do stycznia 2027 r.”
-  (9% z 4806 zł, art. 81 ust. 2d). Źródło kontrolne (ifirma) potwierdza kwotę tylko za luty–grudzień 2026.
-- Pytanie: czy minimalna składka za styczeń 2027 r. (ostatni miesiąc roku składkowego) wynosi 432,54 zł,
-  mimo że od 1 stycznia 2027 r. obowiązuje nowe minimalne wynagrodzenie?
-
-## P4. Zryczałtowana stopa składki wypadkowej dla płatnika do 9 ubezpieczonych (rozstrzygnięte 2026-11-27, bez eksperta)
-
-- Rozstrzygnięcie za rok 2026/2027: spoza materiałów ZUS stopę na ten rok podaje portal Fakturownia w tekście „Składka
-  wypadkowa 2026 – nowe stawki i jak ją ustalić” z 3 listopada 2026 r. (https://fakturownia.pl/aktualnosci/skadka-wypadkowa-2026-nowe-stawki-i-jak-ja-ustalic):
-  „Stawki składki wypadkowej 2026/2027: do 9 ubezpieczonych – stała stopa 1,67%”. Ta sama strona podaje, że stopa na rok
-  2026/2027 obowiązuje od 1 kwietnia 2026 r. do 31 marca 2027 r. Portal jest tylko źródłem kontrolnym; zgadza się
-  z komunikatem ZUS z 12 stycznia 2026 r. i z art. 28 ust. 1 ustawy wypadkowej (50% najwyższej stopy 3,33%
-  z załącznika nr 2 rozporządzenia, którego stóp od 1 kwietnia 2024 r. nie zmieniono). Urzędowego źródła spoza ZUS
-  (strony ministerstw, biznes.gov.pl po 1 kwietnia 2026 r.) nie znaleziono: biznes.gov.pl ma nadal aktualizację z 11 lutego
-  2026 r. `open_issue` usunięty z wersji 2026/2027.
-- Rozstrzygnięcie częściowe, tylko za rok 2025/2026: poradnik ZUS „Ustalanie stopy procentowej składki na ubezpieczenie
-  wypadkowe” (stan prawny na 1 stycznia 2026 r.) sam podaje stopę zryczałtowaną 1,67% dla płatnika zgłaszającego nie więcej
-  niż 9 ubezpieczonych. Spoza ZUS podaje ją biznes.gov.pl (aktualizacja 11 lutego 2026 r.: składkę 1,67% opłacają firmy, które
-  zgłosiły przeciętnie nie więcej niż 9 osób). Podaje ją też materiał ZUS województwa opolskiego przedrukowany przez Zieloną Linię
-  (stan prawny na 26 listopada 2025 r.). Zastrzeżenie wobec biznes.gov.pl opisane niżej nie przeszkadza: obie daty początku
-  stopy na tej stronie (1 kwietnia 2021 r. i 1 kwietnia 2024 r.) są wcześniejsze niż 1 kwietnia 2025 r., a cytowany przypis
-  podaje stopę i grupę płatników w stanie na 11 lutego 2026 r., czyli w trakcie roku 2025/2026; stopę ustala się na cały rok
-  składkowy (art. 27 ust. 1 ustawy wypadkowej). `open_issue` usunięty z wersji 2025/2026.
-- Za rok 2026/2027 pytanie było otwarte do 27 listopada 2026 r. (rozstrzygnięcie wyżej): stopę na ten rok podawały tylko komunikat ZUS z 12 stycznia 2026 r. (w części o tym roku)
-  i przedruk wypowiedzi rzeczniczki ZUS z 1 kwietnia 2026 r. Załącznik nr 2 rozporządzenia nie nazywa najwyższej stopy,
-  podaje tylko tabelę.
-
-- Wpis: `zus.stawka.wypadkowa_do_9` (2025-04-01 – 2026-03-31 i 2026-04-01 – 2027-03-31, 1,67%).
-- Zgłoszone: 2026-11-26.
-- Ustawa wypadkowa, art. 28 ust. 1: stopa wynosi 50% najwyższej stopy ustalonej na dany rok składkowy
-  dla grup działalności. Najwyższa stopa w tabeli z załącznika nr 2 rozporządzenia (Dz.U. 2025
-  poz. 1874) to 3,33, a § 6 ust. 2 każe zaokrąglać według zasady matematycznej. Kwotę 1,67% podają
-  wprost materiały ZUS (poradnik i strona o informacji ZUS IWA), za rok 2025/2026 także biznes.gov.pl, choć bez wskazania
-  roku składkowego (niżej), a za rok 2026/2027 portal Fakturownia (rozstrzygnięcie wyżej).
-- Pytanie (po rozstrzygnięciu za 2025/2026 dotyczyło już tylko roku 2026/2027): czy dla płatnika zgłaszającego nie więcej
-  niż 9 ubezpieczonych stopa w roku składkowym 2026/2027 wynosi 1,67%, i czy istnieje urzędowe źródło poza materiałami ZUS, które
-  podaje tę stopę wprost? Pierwszą część rozstrzyga drugi dowód opisany wyżej. Na drugą część odpowiedź jest przecząca:
-  urzędowego źródła spoza ZUS nie znaleziono (stan na 27 listopada 2026 r.). Nie blokuje to usunięcia `open_issue`, bo
-  wpis potrzebował drugiego dowodu, który sam podaje stopę na ten rok, a źródło spoza ZUS było tylko preferencją.
-
-- Materiały znalezione 2026-11-26 (historia; rok 2025/2026 rozstrzyga przypis z tej samej strony biznes.gov.pl, opisany wyżej):
-  - Za rok 2026/2027: przedruk wypowiedzi regionalnej rzeczniczki prasowej ZUS z 1 kwietnia 2026 r. na stronie Starostwa
-    Powiatowego w Hajnówce (https://samorzad.gov.pl/web/powiat-hajnowski/stopy-procentowe) podaje 1,67% i najwyższą stopę
-    3,33% od 1 kwietnia 2026 r. To nadal materiał ZUS, nie źródło spoza ZUS.
-  - Za rok 2025/2026: biznes.gov.pl (https://www.biznes.gov.pl/pl/portal/00274, aktualizacja 11 lutego 2026 r.) podaje
-    „Składka wypadkowa od 1.04.2024 (1,67%)”, ale nie wskazuje roku składkowego, a na tej samej stronie podaje też stopę
-    „od 1.04.2021”.
-
 ## P5. Przesunięcie terminu z art. 12 § 5 Ordynacji podatkowej od 1 października 2026 r. a termin zapłaty
 
 - Wpis: `zasada.przesuniecie_terminu` (od 2026-10-01).
@@ -597,34 +530,6 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
     części deklaracyjnej należy wskazać ostatni miesiąc kwartału, tj. odpowiednio: 3, 6, 9, 12.” Zdanie dotyczy pola, nie wyboru
     wariantu. Strona MF „Pytania i odpowiedzi” o JPK_VAT z deklaracją nie ma pytania o wariant 3 ani o I kwartał 2026 r.
 
-## P18. Czy na ryczałcie przesyła się ewidencję przychodów (JPK_EWP) (rozstrzygnięte 2026-11-26, bez eksperta)
-
-- Rozstrzygnięcie: broszura MF o strukturze JPK_EWP(4) sama podaje wprost, że osoby fizyczne i spółki opodatkowane
-  ryczałtem od przychodów ewidencjonowanych, prowadzące ewidencję przychodów, „będą zobowiązane przesyłać plik XML zgodny
-  ze strukturą JPK_EWP”, i wskazuje art. 15 ust. 12 jako podstawę. Zgadza się to z ustawą: art. 15 ust. 1 nazywa ewidencję
-  przychodów „ewidencją”, a ust. 12 obejmuje podmioty „prowadzące ewidencję lub wykaz środków trwałych”. Strona KAS
-  „Struktury JPK w podatkach dochodowych” podaje dla ryczałtowców daty struktur JPK_EWP i JPK_ST z podstawą art. 15 ust. 12
-  i 13. Krok zasady poprawiony, P18 usunięty z `open_issue`. Ryczałtowiec prowadzący ewidencję przychodów przesyła ją
-  także wtedy, gdy nie ma środków trwałych.
-
-- Wpis: `zasada.jpk_pd_ryczalt` (od 2026-01-01).
-- Zgłoszone: 2026-11-26.
-- Ustawa o zryczałtowanym podatku dochodowym (Dz.U. 2025 poz. 843), art. 15 ust. 12: podmioty z ust. 1
-  „prowadzące ewidencję lub wykaz środków trwałych oraz wartości niematerialnych i prawnych są obowiązane prowadzić
-  tę ewidencję i wykaz przy użyciu programów komputerowych” i przesyłać je po zakończeniu roku do upływu terminu
-  zeznania. Art. 66 ust. 1 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) wymienia „księgi, ewidencje
-  i wykazy” z art. 15 ust. 12.
-- Broszura MF o strukturze JPK_EWP(4) (podatki.gov.pl) podaje, że podmioty prowadzące ewidencję przychodów „będą
-  zobowiązane przesyłać plik XML zgodny ze strukturą JPK_EWP”, i wskazuje art. 15 ust. 12 jako podstawę.
-- Strona MF o JPK_PD (podatki.gov.pl) podaje, że ustawa z 29 października 2021 r. nałożyła obowiązek prowadzenia
-  „ewidencji i wykazów prowadzonych dla celów podatków dochodowych” przy użyciu programów komputerowych
-  i ich przekazywania, wymienia JPK_EWP wśród pięciu struktur, które „JPK_PD obejmie”, i mówi o przesyłaniu danych
-  w postaci „obligatoryjnych plików JPK_PD”. Tekst art. 15 ust. 12 wymienia jednak tylko „ewidencję lub wykaz środków trwałych oraz
-  wartości niematerialnych i prawnych”.
-- Pytanie: czy art. 15 ust. 12 obejmuje ewidencję przychodów (czyli czy ryczałtowiec przesyła JPK_EWP), czy tylko
-  ewidencję lub wykaz środków trwałych oraz wartości niematerialnych i prawnych (JPK_ST)? Czy ryczałtowiec bez
-  środków trwałych przesyła cokolwiek?
-
 ## P19. Na który dzień ocenia się rozliczanie VAT miesięcznie przy pierwszym przesłaniu ksiąg w formie JPK (częściowo rozstrzygnięte 2026-11-27, bez eksperta)
 
 - Rozstrzygnięcie: MF na stronie „Pytania i odpowiedzi JPK_PD” (podatki.gov.pl, pytanie 134, dodane 12.11.2025)
@@ -712,18 +617,6 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
 - Na 26 listopada 2026 r. żadna strona urzędu (podatki.gov.pl, biznes.gov.pl) nie podaje jeszcze kwoty na 2027 r.,
   więc wartość nie ma drugiego dowodu.
 - Pytanie: czy limit z art. 30c ust. 2 pkt 2 ustawy o PIT na rok podatkowy 2027 wynosi 15 100 zł?
-
-## P31. Termin wpisu przychodów do ewidencji za grudzień (rozstrzygnięte 2026-11-26, bez eksperta)
-
-- Rozstrzygnięcie: rozporządzenie w sprawie prowadzenia ewidencji przychodów (Dz.U. 2025 poz. 1294), § 6, samo podaje
-  wprost, że zapisy dokonuje się „najpóźniej do 20. dnia każdego miesiąca za miesiąc poprzedni”. Przepis obejmuje każdy
-  miesiąc i nie ma wyjątku dla grudnia, więc wpisy za grudzień dokonuje się do 20 stycznia. Rozporządzenie nie ma przepisów
-  przejściowych dla ewidencji (§ 10 dotyczy tylko wykazu środków trwałych). Termin nie zależy od kwartalnego wpłacania
-  ryczałtu. Wpis `termin.ewidencja_przychodow_wpis` nie ma otwartego pytania.
-
-- Wpis: `termin.ewidencja_przychodow_wpis` (od 2026-01-01).
-- Zgłoszone: 2026-11-26 (specyfikacja Staffkey, obszar A2).
-- Pytanie: czy termin wpisu przychodów za grudzień jest inny niż za pozostałe miesiące?
 
 ## P32. Korekta przychodu w ewidencji przychodów przy błędzie rachunkowym lub oczywistej omyłce
 
@@ -1008,38 +901,6 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
     roku następującego po tym roku, a za rok wznowienia na zasadach z ust. 1g i 1h. Przepisy dotyczą terminu wpłaty za okres
     zawieszenia, nie przychodu z części miesiąca lub kwartału, i nie dotyczą PIT.
 
-## P57. Faktury poza KSeF do 10 000 zł miesięcznie w 2026 r.: czy prawo wraca w kolejnym miesiącu (rozstrzygnięte 2026-11-27, bez eksperta)
-
-- Rozstrzygnięcie: wyjaśnienia MF na ksef.podatki.gov.pl podają wprost, że prawo nie wraca. Wyjaśnienie „Co warto
-  wiedzieć przed startem II etapu wdrożenia Krajowego Systemu e-Faktur” (31.03.2026): „Po przekroczeniu limitu nie wracasz
-  już do poprzednich zasad, nawet jeśli w kolejnych miesiącach wartość sprzedaży dokumentowana fakturami będzie niższa.”
-  „Najczęstsze pytania”, pytanie 14 (strona opublikowana 15.04.2026, zmieniona 29.04.2026): obowiązek „powstaje od faktury, którą limit został przekroczony, oraz dla
-  wszystkich kolejnych faktur. Późniejsze nieprzekroczenie limitu (np. w czerwcu) nie ma już znaczenia.” Zgadza się to
-  z art. 145m ust. 2 i z uzasadnieniem projektu. Strona „Zakres obowiązkowego KSeF” nadal pomija ust. 2, a komunikat
-  z 26.03.2026 nie mówi nic o przekroczeniu limitu; oba upraszczają, ale nie przeczą wyjaśnieniom. Krok zasady poprawiony,
-  P57 usunięty z otwartych pytań. Opis poniżej to stan sprzed rozstrzygnięcia.
-
-- Wpis: `zasada.ksef_obowiazek` (2026-02-01 – 2026-12-31), krok o art. 145m.
-- Zgłoszone: 2026-11-26.
-- Ustawa o VAT (Dz.U. 2026 poz. 1263), art. 145m ust. 1: od 1 kwietnia do 31 grudnia 2026 r. podatnik może wystawiać
-  faktury elektroniczne lub papierowe, jeżeli łączna wartość sprzedaży z podatkiem „udokumentowana tymi fakturami
-  wystawionymi w danym miesiącu jest mniejsza lub równa 10 000 zł”; ust. 2: podatnik „traci prawo do wystawiania faktur
-  elektronicznych oraz faktur w postaci papierowej począwszy od faktury, którą przekroczono wartość”.
-- Uzasadnienie projektu ustawy Dz.U. 2025 poz. 1203 (druk sejmowy nr 1407, w projekcie art. 145o): „jeżeli w danym miesiącu
-  faktury nie spełnią wskazanego wyżej warunku, podatnik nie może ponownie skorzystać z możliwości wystawiania faktur
-  w postaci papierowej lub faktur elektronicznych”. Uzasadnienie nie jest źródłem prawa.
-- Strona MF ksef.podatki.gov.pl „Zakres obowiązkowego KSeF”
-  (https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/zakres-obowiazkowego-ksef/) podaje próg w dwóch ujęciach.
-  W opisie terminów: podatnicy, u których „wartość sprzedaży dokumentowana fakturami za okresy miesięczne nie przekracza
-  kwoty 10 000 zł (brutto)”, do końca 2026 r. „nie mają obowiązku wystawiania faktur w KSeF”. W punkcie o przepisach
-  epizodycznych powtarza prawie dosłownie art. 145m ust. 1 (podatnicy „mogą wystawiać faktury elektroniczne lub faktury
-  w postaci papierowej”). Art. 145m ust. 2 (utrata prawa od faktury, którą przekroczono wartość) strona pomija.
-  Komunikat MF z 26.03.2026 (https://www.podatki.gov.pl/aktualnosci/drugi-etap-wdrozenia-krajowego-systemu-e-faktur-260326/) podaje, że tacy podatnicy „Będą oni wystawiać faktury w KSeF dopiero od 1 stycznia
-  2027 r.”. Źródła się różnią.
-- Pytania: czy podatnik, który w danym miesiącu 2026 r. przekroczył 10 000 zł, może w kolejnym miesiącu znów wystawiać
-  faktury poza KSeF, jeżeli w tym miesiącu nie przekroczy tej wartości? Czy po przekroczeniu traci prawo od faktury, którą
-  przekroczono wartość (art. 145m ust. 2), czy, jak opisuje strona MF, próg oznacza brak obowiązku do końca 2026 r.?
-
 ## P64. IP Box: odliczenie kosztów kwalifikowanych od dochodu z kwalifikowanego prawa (art. 30ca ust. 9a)
 
 - Wpis: `zasada.ip_box` (od 2026-01-01), krok o odliczeniu kosztów kwalifikowanych; `zasada.ulga_br` (od 2026-01-01), krok o podstawie odliczenia i krok o przepisach, których zasada nie opisuje.
@@ -1070,3 +931,152 @@ nie wpisujemy kwot z deklaracji, NIP, PESEL ani informacji o tym, kto jak się r
     obliczony (obliczone) zgodnie z art. 30ca ust. 4 ustawy”. Objaśnienia nie mówią, czy odliczenie z poz. 19 stosuje się
     przed wskaźnikiem z ust. 4, czy po nim; kolejność wynika tylko z układu pozycji. Na lata 2025 i 2026 MF nie podaje
     wariantu tego formularza.
+
+## Numeracja
+
+Numerów pytań nie używamy ponownie, także po rozstrzygnięciu pytania. Numery z luk w numeracji
+(P21–P29, P35–P38, P47–P55, P58–P63) zostają puste, a nowe pytanie dostaje numer po najwyższym użytym.
+
+## Rozstrzygnięte
+
+Pytania rozstrzygnięte zostają tu z opisem źródeł, które je rozstrzygnęły. Częściowo rozstrzygnięte
+pytanie P19 jest wyżej, bo część jego pytań jest nadal otwarta.
+
+### P2. Minimalna składka zdrowotna na skali i liniowym w roku składkowym 2025/2026 (rozstrzygnięte 2026-11-26, bez eksperta)
+
+- Rozstrzygnięcie: informacja ZUS na samorzad.gov.pl (18 lutego 2025 r.) sama podaje, że od lutego 2025 r. do stycznia 2026 r. składka nie może być niższa niż 314,96 zł; dodana jako źródło kontrolne, `open_issue` usunięty. Styczeń 2026 potwierdza też komunikat ZUS z 2026 r.
+
+- Wpis: `zdrowotna.minimum` (2025-02-01 – 2026-01-31, 314,96 zł).
+- Zgłoszone: 2026-11-26.
+- Komunikat ZUS z 30 stycznia 2025 r. podaje 314,96 zł „za miesiące od lutego 2025 r. do stycznia 2026 r.”
+  (9% z 3499,50 zł, czyli 75% minimalnego wynagrodzenia 4666 zł, art. 4 ustawy z 6 grudnia 2024 r.).
+- Żadne niezależne źródło nie podaje tej kwoty za cały ten okres: komunikat ZUS z 2026 r. i ifirma
+  podają ją tylko za styczeń 2026, a PITax podaje okres do grudnia 2026.
+- Pytanie: czy minimalna miesięczna składka zdrowotna przedsiębiorcy na skali i na podatku liniowym
+  wynosiła 314,96 zł za każdy miesiąc od lutego 2025 r. do stycznia 2026 r.?
+
+### P3. Minimalna składka zdrowotna na skali i liniowym za styczeń 2027 (rozstrzygnięte 2026-11-26, bez eksperta)
+
+- Rozstrzygnięcie: biznes.gov.pl sam podaje 432,54 zł za okres od 1 lutego 2026 r. do 31 stycznia 2027 r., tak jak komunikat ZUS z 2 lutego 2026 r.; dodany jako źródło kontrolne, `open_issue` usunięty.
+
+- Wpis: `zdrowotna.minimum` (2026-02-01 – 2027-01-31, 432,54 zł).
+- Zgłoszone: 2026-11-26.
+- Komunikat ZUS z 2 lutego 2026 r. podaje 432,54 zł „za miesiące od lutego 2026 r. do stycznia 2027 r.”
+  (9% z 4806 zł, art. 81 ust. 2d). Źródło kontrolne (ifirma) potwierdza kwotę tylko za luty–grudzień 2026.
+- Pytanie: czy minimalna składka za styczeń 2027 r. (ostatni miesiąc roku składkowego) wynosi 432,54 zł,
+  mimo że od 1 stycznia 2027 r. obowiązuje nowe minimalne wynagrodzenie?
+
+### P4. Zryczałtowana stopa składki wypadkowej dla płatnika do 9 ubezpieczonych (rozstrzygnięte 2026-11-27, bez eksperta)
+
+- Rozstrzygnięcie za rok 2026/2027: spoza materiałów ZUS stopę na ten rok podaje portal Fakturownia w tekście „Składka
+  wypadkowa 2026 – nowe stawki i jak ją ustalić” z 3 listopada 2026 r. (https://fakturownia.pl/aktualnosci/skadka-wypadkowa-2026-nowe-stawki-i-jak-ja-ustalic):
+  „Stawki składki wypadkowej 2026/2027: do 9 ubezpieczonych – stała stopa 1,67%”. Ta sama strona podaje, że stopa na rok
+  2026/2027 obowiązuje od 1 kwietnia 2026 r. do 31 marca 2027 r. Portal jest tylko źródłem kontrolnym; zgadza się
+  z komunikatem ZUS z 12 stycznia 2026 r. i z art. 28 ust. 1 ustawy wypadkowej (50% najwyższej stopy 3,33%
+  z załącznika nr 2 rozporządzenia, którego stóp od 1 kwietnia 2024 r. nie zmieniono). Urzędowego źródła spoza ZUS
+  (strony ministerstw, biznes.gov.pl po 1 kwietnia 2026 r.) nie znaleziono: biznes.gov.pl ma nadal aktualizację z 11 lutego
+  2026 r. `open_issue` usunięty z wersji 2026/2027.
+- Rozstrzygnięcie częściowe, tylko za rok 2025/2026: poradnik ZUS „Ustalanie stopy procentowej składki na ubezpieczenie
+  wypadkowe” (stan prawny na 1 stycznia 2026 r.) sam podaje stopę zryczałtowaną 1,67% dla płatnika zgłaszającego nie więcej
+  niż 9 ubezpieczonych. Spoza ZUS podaje ją biznes.gov.pl (aktualizacja 11 lutego 2026 r.: składkę 1,67% opłacają firmy, które
+  zgłosiły przeciętnie nie więcej niż 9 osób). Podaje ją też materiał ZUS województwa opolskiego przedrukowany przez Zieloną Linię
+  (stan prawny na 26 listopada 2025 r.). Zastrzeżenie wobec biznes.gov.pl opisane niżej nie przeszkadza: obie daty początku
+  stopy na tej stronie (1 kwietnia 2021 r. i 1 kwietnia 2024 r.) są wcześniejsze niż 1 kwietnia 2025 r., a cytowany przypis
+  podaje stopę i grupę płatników w stanie na 11 lutego 2026 r., czyli w trakcie roku 2025/2026; stopę ustala się na cały rok
+  składkowy (art. 27 ust. 1 ustawy wypadkowej). `open_issue` usunięty z wersji 2025/2026.
+- Za rok 2026/2027 pytanie było otwarte do 27 listopada 2026 r. (rozstrzygnięcie wyżej): stopę na ten rok podawały tylko komunikat ZUS z 12 stycznia 2026 r. (w części o tym roku)
+  i przedruk wypowiedzi rzeczniczki ZUS z 1 kwietnia 2026 r. Załącznik nr 2 rozporządzenia nie nazywa najwyższej stopy,
+  podaje tylko tabelę.
+
+- Wpis: `zus.stawka.wypadkowa_do_9` (2025-04-01 – 2026-03-31 i 2026-04-01 – 2027-03-31, 1,67%).
+- Zgłoszone: 2026-11-26.
+- Ustawa wypadkowa, art. 28 ust. 1: stopa wynosi 50% najwyższej stopy ustalonej na dany rok składkowy
+  dla grup działalności. Najwyższa stopa w tabeli z załącznika nr 2 rozporządzenia (Dz.U. 2025
+  poz. 1874) to 3,33, a § 6 ust. 2 każe zaokrąglać według zasady matematycznej. Kwotę 1,67% podają
+  wprost materiały ZUS (poradnik i strona o informacji ZUS IWA), za rok 2025/2026 także biznes.gov.pl, choć bez wskazania
+  roku składkowego (niżej), a za rok 2026/2027 portal Fakturownia (rozstrzygnięcie wyżej).
+- Pytanie (po rozstrzygnięciu za 2025/2026 dotyczyło już tylko roku 2026/2027): czy dla płatnika zgłaszającego nie więcej
+  niż 9 ubezpieczonych stopa w roku składkowym 2026/2027 wynosi 1,67%, i czy istnieje urzędowe źródło poza materiałami ZUS, które
+  podaje tę stopę wprost? Pierwszą część rozstrzyga drugi dowód opisany wyżej. Na drugą część odpowiedź jest przecząca:
+  urzędowego źródła spoza ZUS nie znaleziono (stan na 27 listopada 2026 r.). Nie blokuje to usunięcia `open_issue`, bo
+  wpis potrzebował drugiego dowodu, który sam podaje stopę na ten rok, a źródło spoza ZUS było tylko preferencją.
+
+- Materiały znalezione 2026-11-26 (historia; rok 2025/2026 rozstrzyga przypis z tej samej strony biznes.gov.pl, opisany wyżej):
+  - Za rok 2026/2027: przedruk wypowiedzi regionalnej rzeczniczki prasowej ZUS z 1 kwietnia 2026 r. na stronie Starostwa
+    Powiatowego w Hajnówce (https://samorzad.gov.pl/web/powiat-hajnowski/stopy-procentowe) podaje 1,67% i najwyższą stopę
+    3,33% od 1 kwietnia 2026 r. To nadal materiał ZUS, nie źródło spoza ZUS.
+  - Za rok 2025/2026: biznes.gov.pl (https://www.biznes.gov.pl/pl/portal/00274, aktualizacja 11 lutego 2026 r.) podaje
+    „Składka wypadkowa od 1.04.2024 (1,67%)”, ale nie wskazuje roku składkowego, a na tej samej stronie podaje też stopę
+    „od 1.04.2021”.
+
+### P18. Czy na ryczałcie przesyła się ewidencję przychodów (JPK_EWP) (rozstrzygnięte 2026-11-26, bez eksperta)
+
+- Rozstrzygnięcie: broszura MF o strukturze JPK_EWP(4) sama podaje wprost, że osoby fizyczne i spółki opodatkowane
+  ryczałtem od przychodów ewidencjonowanych, prowadzące ewidencję przychodów, „będą zobowiązane przesyłać plik XML zgodny
+  ze strukturą JPK_EWP”, i wskazuje art. 15 ust. 12 jako podstawę. Zgadza się to z ustawą: art. 15 ust. 1 nazywa ewidencję
+  przychodów „ewidencją”, a ust. 12 obejmuje podmioty „prowadzące ewidencję lub wykaz środków trwałych”. Strona KAS
+  „Struktury JPK w podatkach dochodowych” podaje dla ryczałtowców daty struktur JPK_EWP i JPK_ST z podstawą art. 15 ust. 12
+  i 13. Krok zasady poprawiony, P18 usunięty z `open_issue`. Ryczałtowiec prowadzący ewidencję przychodów przesyła ją
+  także wtedy, gdy nie ma środków trwałych.
+
+- Wpis: `zasada.jpk_pd_ryczalt` (od 2026-01-01).
+- Zgłoszone: 2026-11-26.
+- Ustawa o zryczałtowanym podatku dochodowym (Dz.U. 2025 poz. 843), art. 15 ust. 12: podmioty z ust. 1
+  „prowadzące ewidencję lub wykaz środków trwałych oraz wartości niematerialnych i prawnych są obowiązane prowadzić
+  tę ewidencję i wykaz przy użyciu programów komputerowych” i przesyłać je po zakończeniu roku do upływu terminu
+  zeznania. Art. 66 ust. 1 ustawy z 29 października 2021 r. (Dz.U. 2021 poz. 2105) wymienia „księgi, ewidencje
+  i wykazy” z art. 15 ust. 12.
+- Broszura MF o strukturze JPK_EWP(4) (podatki.gov.pl) podaje, że podmioty prowadzące ewidencję przychodów „będą
+  zobowiązane przesyłać plik XML zgodny ze strukturą JPK_EWP”, i wskazuje art. 15 ust. 12 jako podstawę.
+- Strona MF o JPK_PD (podatki.gov.pl) podaje, że ustawa z 29 października 2021 r. nałożyła obowiązek prowadzenia
+  „ewidencji i wykazów prowadzonych dla celów podatków dochodowych” przy użyciu programów komputerowych
+  i ich przekazywania, wymienia JPK_EWP wśród pięciu struktur, które „JPK_PD obejmie”, i mówi o przesyłaniu danych
+  w postaci „obligatoryjnych plików JPK_PD”. Tekst art. 15 ust. 12 wymienia jednak tylko „ewidencję lub wykaz środków trwałych oraz
+  wartości niematerialnych i prawnych”.
+- Pytanie: czy art. 15 ust. 12 obejmuje ewidencję przychodów (czyli czy ryczałtowiec przesyła JPK_EWP), czy tylko
+  ewidencję lub wykaz środków trwałych oraz wartości niematerialnych i prawnych (JPK_ST)? Czy ryczałtowiec bez
+  środków trwałych przesyła cokolwiek?
+
+### P31. Termin wpisu przychodów do ewidencji za grudzień (rozstrzygnięte 2026-11-26, bez eksperta)
+
+- Rozstrzygnięcie: rozporządzenie w sprawie prowadzenia ewidencji przychodów (Dz.U. 2025 poz. 1294), § 6, samo podaje
+  wprost, że zapisy dokonuje się „najpóźniej do 20. dnia każdego miesiąca za miesiąc poprzedni”. Przepis obejmuje każdy
+  miesiąc i nie ma wyjątku dla grudnia, więc wpisy za grudzień dokonuje się do 20 stycznia. Rozporządzenie nie ma przepisów
+  przejściowych dla ewidencji (§ 10 dotyczy tylko wykazu środków trwałych). Termin nie zależy od kwartalnego wpłacania
+  ryczałtu. Wpis `termin.ewidencja_przychodow_wpis` nie ma otwartego pytania.
+
+- Wpis: `termin.ewidencja_przychodow_wpis` (od 2026-01-01).
+- Zgłoszone: 2026-11-26 (specyfikacja Staffkey, obszar A2).
+- Pytanie: czy termin wpisu przychodów za grudzień jest inny niż za pozostałe miesiące?
+
+### P57. Faktury poza KSeF do 10 000 zł miesięcznie w 2026 r.: czy prawo wraca w kolejnym miesiącu (rozstrzygnięte 2026-11-27, bez eksperta)
+
+- Rozstrzygnięcie: wyjaśnienia MF na ksef.podatki.gov.pl podają wprost, że prawo nie wraca. Wyjaśnienie „Co warto
+  wiedzieć przed startem II etapu wdrożenia Krajowego Systemu e-Faktur” (31.03.2026): „Po przekroczeniu limitu nie wracasz
+  już do poprzednich zasad, nawet jeśli w kolejnych miesiącach wartość sprzedaży dokumentowana fakturami będzie niższa.”
+  „Najczęstsze pytania”, pytanie 14 (strona opublikowana 15.04.2026, zmieniona 29.04.2026): obowiązek „powstaje od faktury, którą limit został przekroczony, oraz dla
+  wszystkich kolejnych faktur. Późniejsze nieprzekroczenie limitu (np. w czerwcu) nie ma już znaczenia.” Zgadza się to
+  z art. 145m ust. 2 i z uzasadnieniem projektu. Strona „Zakres obowiązkowego KSeF” nadal pomija ust. 2, a komunikat
+  z 26.03.2026 nie mówi nic o przekroczeniu limitu; oba upraszczają, ale nie przeczą wyjaśnieniom. Krok zasady poprawiony,
+  P57 usunięty z otwartych pytań. Opis poniżej to stan sprzed rozstrzygnięcia.
+
+- Wpis: `zasada.ksef_obowiazek` (2026-02-01 – 2026-12-31), krok o art. 145m.
+- Zgłoszone: 2026-11-26.
+- Ustawa o VAT (Dz.U. 2026 poz. 1263), art. 145m ust. 1: od 1 kwietnia do 31 grudnia 2026 r. podatnik może wystawiać
+  faktury elektroniczne lub papierowe, jeżeli łączna wartość sprzedaży z podatkiem „udokumentowana tymi fakturami
+  wystawionymi w danym miesiącu jest mniejsza lub równa 10 000 zł”; ust. 2: podatnik „traci prawo do wystawiania faktur
+  elektronicznych oraz faktur w postaci papierowej począwszy od faktury, którą przekroczono wartość”.
+- Uzasadnienie projektu ustawy Dz.U. 2025 poz. 1203 (druk sejmowy nr 1407, w projekcie art. 145o): „jeżeli w danym miesiącu
+  faktury nie spełnią wskazanego wyżej warunku, podatnik nie może ponownie skorzystać z możliwości wystawiania faktur
+  w postaci papierowej lub faktur elektronicznych”. Uzasadnienie nie jest źródłem prawa.
+- Strona MF ksef.podatki.gov.pl „Zakres obowiązkowego KSeF”
+  (https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/zakres-obowiazkowego-ksef/) podaje próg w dwóch ujęciach.
+  W opisie terminów: podatnicy, u których „wartość sprzedaży dokumentowana fakturami za okresy miesięczne nie przekracza
+  kwoty 10 000 zł (brutto)”, do końca 2026 r. „nie mają obowiązku wystawiania faktur w KSeF”. W punkcie o przepisach
+  epizodycznych powtarza prawie dosłownie art. 145m ust. 1 (podatnicy „mogą wystawiać faktury elektroniczne lub faktury
+  w postaci papierowej”). Art. 145m ust. 2 (utrata prawa od faktury, którą przekroczono wartość) strona pomija.
+  Komunikat MF z 26.03.2026 (https://www.podatki.gov.pl/aktualnosci/drugi-etap-wdrozenia-krajowego-systemu-e-faktur-260326/) podaje, że tacy podatnicy „Będą oni wystawiać faktury w KSeF dopiero od 1 stycznia
+  2027 r.”. Źródła się różnią.
+- Pytania: czy podatnik, który w danym miesiącu 2026 r. przekroczył 10 000 zł, może w kolejnym miesiącu znów wystawiać
+  faktury poza KSeF, jeżeli w tym miesiącu nie przekroczy tej wartości? Czy po przekroczeniu traci prawo od faktury, którą
+  przekroczono wartość (art. 145m ust. 2), czy, jak opisuje strona MF, próg oznacza brak obowiązku do końca 2026 r.?

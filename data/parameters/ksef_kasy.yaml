@@ -138,14 +138,16 @@
           - text: Jeżeli wbrew obowiązkowi nie wystawisz faktury ustrukturyzowanej w KSeF (to jeden z przypadków z art. 106ni ust. 1), naczelnik urzędu skarbowego nakłada w drodze decyzji karę pieniężną do 100% kwoty podatku wykazanego na fakturze wystawionej poza KSeF, a przy fakturze bez wykazanego podatku do 18,7% kwoty należności ogółem.
             uses: []
             basis: art. 106ni ust. 1 ustawy o podatku od towarów i usług
-          - text: Ta zasada nie opisuje wystawiania faktur w trybie offline24 i w czasie awarii albo niedostępności KSeF (art. 106nda–106nh), faktur z załącznikiem (art. 106gba), podawania numeru KSeF przy płatnościach (art. 108g) ani faktur VAT RR.
-            uses: []
-            basis: art. 106gba, 106nda–106nh, 108g i 116 ustawy o podatku od towarów i usług
       note: >-
         Okres stosowania art. 145l–145n kończy się 31 grudnia 2026 r. (te przepisy same podają swoje okresy), a art. 106ni
         ust. 1 wchodzi w życie 1 stycznia 2027 r. (odnośnik 23 w tekście jednolitym). Nowelizacje ogłoszone po tekście
         jednolitym Dz.U. 2026 poz. 1263 (Dz.U. 2026 poz. 1270, 1446, 1509 i 1556) nie zmieniają art. 106ga, 106gb ani 106ni;
-        ustawa Dz.U. 2026 poz. 1270 zmienia w art. 106b tylko odesłanie w ust. 3 pkt 2.
+        ustawa Dz.U. 2026 poz. 1270 zmienia w art. 106b tylko odesłanie w ust. 3 pkt 2. Korekta z 27 listopada 2026 r.:
+        usunięty krok 6.
+      not_covered: >-
+        Wystawiania faktur w trybie offline24 i w czasie awarii albo niedostępności KSeF (art. 106nda–106nh ustawy
+        o podatku od towarów i usług), faktur z załącznikiem (art. 106gba), podawania numeru KSeF przy płatnościach
+        (art. 108g) i faktur VAT RR (art. 116).
       sources:
         - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (obowiązek)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
@@ -187,7 +189,7 @@
           url: https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/zakres-obowiazkowego-ksef/
           quote: "W KSeF nie są wystawiane także faktury dokumentujące czynności dokonane przez podatnika korzystającego ze zwolnienia, o którym mowa w art. 113a ust.1 ustawy (procedura SME)."
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: vat.kasa_fiskalna.limit_zwolnienia
   name: Limit sprzedaży na rzecz osób fizycznych zwalniający z ewidencji przy użyciu kasy rejestrującej

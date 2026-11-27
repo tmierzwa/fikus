@@ -15,5 +15,9 @@ Sprawdzasz dane, których nie pisałeś. Teksty źródeł z PDF są w `.cache/zr
 8. Przy `not_covered` i `see_also` sprawdź, czy otwarte pytanie naprawdę dotyczy tylko sposobu stosowania wartości, a nie samej wartości, jej okresu ani pól; czy `not_covered` opisuje całe to pytanie; czy parametr z `see_also` je ma (w `open_issue` albo w kroku). W razie wątpliwości zgłoś to jako niezgodność.
 9. Przy `not_covered` zasady obliczeń sprawdź, czy opis tylko wylicza sprawy, których zasada nie opisuje, czy wymienione przepisy istnieją w akcie i czy opis nie zawiera reguły, terminu, wartości ani sprawy niewyjaśnionej (ta zostaje w kroku z otwartym pytaniem). Parametr z `see_also` musi naprawdę opisywać sprawę, którą do niego odsyła opis. Sprawdź też, czy żaden krok nie zawiera już zdania o tym, czego zasada nie opisuje, ani odesłania „…opisuje inny parametr”.
 
-Zgłaszaj tylko niezgodności i brakujące źródła: wartość, data, artykuł, link, który nie prowadzi do tekstu jednolitego. Pomiń styl i formatowanie.
+Dla każdego nowego wpisu w `data/zmiany_sprawdzone.yaml` w tym PR:
+
+10. Otwórz tekst nowelizacji (identyfikator ELI z wpisu) i porównaj go z listą artykułów w notatce. Lista musi wymieniać dokładnie te artykuły, które nowelizacja zmienia, dodaje albo uchyla w akcie, którego dotyczy wpis (przy wpisie z aktem docelowym tylko w tym akcie). Sprawdź też, czy żaden z tych artykułów nie jest podstawą parametru w `data/parameters/`. Brakujący lub nadmiarowy artykuł zgłoś jako niezgodność.
+
+Zgłaszaj tylko niezgodności i brakujące źródła: wartość, data, artykuł, link, który nie prowadzi do tekstu jednolitego. Link do ustawy zmieniającej w Dz.U. jest poprawny, gdy zmiany nie ma jeszcze w tekście jednolitym, a wersja cytuje też ostatni tekst jednolity. Pomiń styl i formatowanie.
 Nie edytujesz plików. Nie wpisujesz siebie ani nikogo jako recenzenta.

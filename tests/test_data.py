@@ -324,3 +324,11 @@ def test_notes_describe_current_state_not_edit_history():
     bad = [f"{p.id} {v.valid_from}: {m[0]}" for p in Store().params.values() for v in p.versions
            if v.note and (m := history.search(v.note))]
     assert not bad, "historia edycji w notatkach (opisz ją w PR, w notatce zostaw „Korekta z …: zmienione …”):\n" + "\n".join(bad)
+
+
+def test_duplicate_yaml_key_is_rejected(tmp_path):
+    from fikus.store import load_yaml
+    f = tmp_path / "x.yaml"
+    f.write_text("- id: a\n  name: b\n  name: c\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="powtórzony klucz 'name'"):
+        load_yaml(f)
