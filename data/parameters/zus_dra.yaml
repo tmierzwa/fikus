@@ -170,10 +170,19 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
           article: art. 81 ust. 2k i 2ka
           quote: "przekazuje roczne rozliczenie składek w dokumencie rozliczeniowym, o którym mowa w ust. 2k"
-        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (termin dopłaty)
+        - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (niedopłata, dokument i termin dopłaty)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
-          article: art. 81 ust. 2l
-          quote: "Dopłata, o której mowa w ust. 2j, następuje w terminie płatności składek za miesiąc, o którym mowa w ust. 2k."
+          article: art. 81 ust. 2j–2l
+          quote: >-
+            2j. Ubezpieczony, o którym mowa w ust. 2 lub 2e, wpłaca kwotę stanowiącą różnicę między roczną składką na
+            ubezpieczenie zdrowotne ustaloną od rocznej podstawy, określonej w ust. 2 albo 2e, a sumą składek na
+            ubezpieczenie zdrowotne wynikającą ze złożonych dokumentów za poszczególne miesiące roku składkowego albo
+            roku kalendarzowego. 2k. Kwota, o której mowa w ust. 2j, wykazywana jest w dokumencie rozliczeniowym
+            składanym za miesiąc, w którym upływa termin złożenia zeznania, o którym mowa w art. 45 ust. 1 ustawy z dnia
+            26 lipca 1991 r. o podatku dochodowym od osób fizycznych. 2ka. Ubezpieczony, o którym mowa w ust. 2 lub 2e,
+            przekazuje roczne rozliczenie składek w dokumencie rozliczeniowym, o którym mowa w ust. 2k. 2l. Dopłata,
+            o której mowa w ust. 2j, następuje w terminie płatności składek za miesiąc, o którym mowa w ust. 2k.
+          confirms: [step_4]
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej (wniosek o zwrot)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
           article: art. 81 ust. 2m–2o
@@ -200,9 +209,14 @@
           as_of: 2026-11-26
         - title: ZUS, poradnik „Polski Ład…”, stan prawny na 1 stycznia 2025 r. (rozliczenie roczne)
           url: https://www.zus.pl/documents/10182/3996913/Polski+%C3%83%E2%80%A6%C3%82%C2%81ad+-+poradnik.pdf/f4f5043f-4487-2e82-e93a-8f8d7cc6c5f9
-          quote: "Kwotę dopłaty składek wykazujesz w dokumentach rozliczeniowych, które składasz za kwiecień następnego roku"
-          as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+          quote: >-
+            Kwota dopłaty stanowi różnicę między roczną składką na ubezpieczenie zdrowotne ustaloną od rocznej
+            podstawy a sumą składek na ubezpieczenie zdrowotne wykazaną w przekazanych do ZUS dokumentach
+            rozliczeniowych. Kwotę dopłaty składek wykazujesz w dokumentach rozliczeniowych, które składasz za kwiecień
+            następnego roku [38]. Tę różnicę powinieneś dopłacić w terminie opłacania składek za kwiecień
+          as_of: 2026-11-27
+          confirms: [step_4]
+      verification: {checked_at: 2026-11-27}
 
 - id: schemat.zus_dra
   name: Wzór deklaracji rozliczeniowej ZUS DRA
