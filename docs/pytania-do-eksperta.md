@@ -6,8 +6,7 @@ brzegowego.
 
 Otwarte pytania (oprócz P0) dostają dyskusje w kategorii
 [Pytania do eksperta](https://github.com/tmierzwa/fikus/discussions/categories/pytania-do-eksperta)
-o tym samym tytule. Dyskusje zakładamy stopniowo; gdy pytanie ma już dyskusję, link jest w linii
-„Dyskusja” pod pytaniem. Doradców podatkowych, księgowych i innych
+o tym samym tytule. Link jest w linii „Dyskusja” pod pytaniem. Doradców podatkowych, księgowych i innych
 ekspertów prosimy o odpowiedź w dyskusji, z podstawą prawną.
 
 Sama odpowiedź w dyskusji nie jest dowodem. Opiekun potwierdza kwalifikację autora i to, że odpowiedź
