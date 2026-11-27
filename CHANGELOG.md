@@ -46,6 +46,14 @@ opisują PR-y i pole `verification`; tu trafiają tylko zmiany w serwerze, model
 
 - `wykryj_zmiany.py`: nowelizacja cytowana w jednym parametrze nie jest już pomijana w innych
   parametrach, które cytują ten sam akt bez niej.
+- `wykryj_zmiany.py`: odpowiedź API ELI w nieoczekiwanym kształcie jest błędem sprawdzenia tego aktu
+  i nie przerywa przebiegu. Nieoczekiwany błąd kończy skrypt kodem 2, a nie 1 („są zmiany do przejrzenia”).
+- `data/zmiany_sprawdzone.yaml` wczytuje się tak samo ściśle jak pliki parametrów: powtórzony klucz
+  i wpis, który nie jest mapą, to błąd.
+- Wartość logiczna (`true`, `false`) w `value` jest błędem danych. Wcześniej stawała się po cichu liczbą 1.0.
+- Serwer startuje także bez schematów deklaracji w danych.
+- `Store.for_profile` i `Store.deadlines` zgłaszają błąd dla nieznanego profilu i złego miesiąca zamiast
+  zwracać słownik z powodem. Narzędzia MCP sprawdzają te argumenty wcześniej, więc dla klienta nic się nie zmienia.
 
 ## [0.5.0] - 2026-11-27
 

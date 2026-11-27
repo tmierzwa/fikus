@@ -22,10 +22,8 @@ from datetime import date, timedelta
 from pathlib import Path
 from typing import Callable
 
-import yaml
-
 from .cytaty import fetch_bytes
-from .store import Store
+from .store import Store, load_yaml
 
 API = "https://api.sejm.gov.pl/eli/acts/"
 MAX_BYTES = 5 * 1024 * 1024        # metadane aktu mają kilkadziesiąt kB
@@ -53,6 +51,17 @@ def _order(act: str) -> tuple[int, int]:
     return int(year), int(pos)
 
 
+def _check_shape(act: str, meta: object) -> dict:
+    """Odpowiedź API w kształcie, którego oczekuje check_act; inaczej ValueError, który trafia do wyniku
+    jako błąd sprawdzenia tego aktu, a nie przerywa całego przebiegu."""
+    refs = meta.get("references", {}) if isinstance(meta, dict) else None
+    if not isinstance(refs, dict) or not all(
+            isinstance(items, list) and all(isinstance(r, dict) and isinstance(r.get("id"), str) for r in items)
+            for items in refs.values()):
+        raise ValueError(f"nieoczekiwany kształt odpowiedzi API ELI dla {act}")
+    return meta
+
+
 def fetch_act(act: str) -> dict:
     """Metadane aktu z API ELI."""
     body, _ = fetch_bytes(API + act, {"User-Agent": "fikus-wykryj-zmiany/0.1",
@@ -65,9 +74,11 @@ def load_reviewed(path: Path) -> set[str]:
     albo, gdy wpis ma pole `for`, para „nowelizacja@akt” (przejrzana tylko dla tego aktu)."""
     if not path.is_file():
         return set()
-    entries = yaml.safe_load(path.read_text(encoding="utf-8")) or []
+    entries = load_yaml(path) or []      # powtórzony klucz we wpisie to błąd, jak w plikach parametrów
+    if not isinstance(entries, list):
+        raise ValueError(f"{path.name}: plik powinien być listą wpisów")
     for e in entries:
-        if not {"act", "checked_at", "note"} <= set(e):
+        if not isinstance(e, dict) or not {"act", "checked_at", "note"} <= set(e):
             raise ValueError(f"{path.name}: wpis {e!r} potrzebuje pól act, checked_at i note")
     return {f"{e['act']}@{e['for']}" if e.get("for") else e["act"] for e in entries}
 
@@ -168,7 +179,7 @@ def detect(store: Store, today: date, fetch: Fetch = fetch_act, reviewed: set[st
 
     def cached(act: str) -> dict:                  # każdy akt pobieramy z API raz
         if act not in cache:
-            cache[act] = fetch(act)
+            cache[act] = _check_shape(act, fetch(act))
         return cache[act]
 
     findings = ending_versions(store, today, horizon)
