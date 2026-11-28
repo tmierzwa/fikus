@@ -167,9 +167,6 @@
           - text: Nie odliczasz podatku, jeżeli nie jesteś zarejestrowany jako podatnik VAT czynny, z wyjątkiem przypadku z art. 86 ust. 2 pkt 7 (wewnątrzwspólnotowa dostawa nowego środka transportu przez podatnika z art. 16).
             uses: []
             basis: art. 88 ust. 4 ustawy o VAT
-          - text: Ta zasada nie opisuje odliczenia przy towarach i usługach wykorzystywanych także do celów innych niż działalność gospodarcza (art. 86 ust. 2a–2h), odliczenia przy sprzedaży zwolnionej i korekt z tym związanych (art. 90 i 91), zwrotu nadwyżki podatku naliczonego (art. 87), korekt przy nieuregulowanych fakturach (art. 89a i 89b), odliczenia w imporcie rozliczanym w procedurach uproszczonych (art. 86 ust. 10d), wewnątrzwspólnotowego nabycia opodatkowanego z powodu podania numeru VAT (art. 88 ust. 6) ani pojazdów i przypadków określonych w rozporządzeniach (art. 86a ust. 16 i 17).
-            uses: []
-            basis: art. 86 ust. 2a i 10d, art. 86a ust. 16 i 17, art. 87, art. 88 ust. 6, art. 89a, 89b, 90 i 91 ustawy o VAT
       note: >-
         Data początku obowiązywania (2026-01-01) to ostrożnie wybrana data wewnątrz okresu, w którym teksty jednolite
         Dz.U. 2025 poz. 775 i Dz.U. 2026 poz. 1263 (stan prawny na 26 sierpnia 2026 r.) mają tę samą treść cytowanych przepisów
@@ -179,6 +176,13 @@
         poz. 1270 nadaje od 1 stycznia 2027 r. nowe brzmienie art. 88 ust. 3a pkt 4 lit. c (czynności dokonane w warunkach nadużycia
         prawa zamiast czynności z art. 58 i 83 Kodeksu cywilnego); kroki tego przypadku nie opisują. Nie zmienia art. 86 ani 86a.
         Ustawy Dz.U. 2026 poz. 1446, 1509 i 1556 nie zmieniają art. 86, 86a ani 88.
+        Korekta z 28 listopada 2026 r.: usunięty krok 15.
+      not_covered: >-
+        Odliczenia przy towarach i usługach wykorzystywanych także do celów innych niż działalność gospodarcza (art. 86 ust.
+        2a–2h), odliczenia przy sprzedaży zwolnionej i korekt z tym związanych (art. 90 i 91), zwrotu nadwyżki podatku
+        naliczonego (art. 87), korekt przy nieuregulowanych fakturach (art. 89a i 89b), odliczenia w imporcie rozliczanym w
+        procedurach uproszczonych (art. 86 ust. 10d), wewnątrzwspólnotowego nabycia opodatkowanego z powodu podania numeru VAT
+        (art. 88 ust. 6) ani pojazdów i przypadków określonych w rozporządzeniach (art. 86a ust. 16 i 17).
       sources:
         - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (krok 1)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
@@ -261,4 +265,4 @@
           quote: "może obniżyć kwotę podatku należnego w deklaracji podatkowej za jeden z trzech następnych okresów rozliczeniowych, a w przypadku podatnika, o którym mowa w art. 99 ust. 2 i 3, w deklaracji podatkowej za jeden z dwóch następnych okresów rozliczeniowych"
           article: art. 86 ust. 11
           as_of: 2025-06-16
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}

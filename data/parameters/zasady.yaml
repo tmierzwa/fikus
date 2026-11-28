@@ -185,7 +185,7 @@
     - valid_from: 2026-01-01
       value:
         steps:
-          - text: Ustal dochód z działalności według art. 9, art. 23o, art. 23u, art. 24 ust. 1, 2, 3b–3e, 4–4e, 6 i 21 albo art. 24b ust. 1 i 2 ustawy o PIT, z uwzględnieniem obniżenia o straty z lat poprzednich na zasadach art. 9 ust. 3. Przy podatkowej księdze przychodów i rozchodów dochodem jest różnica między przychodem a kosztami jego uzyskania, powiększona albo pomniejszona o różnicę między wartością remanentu końcowego i początkowego (art. 24 ust. 2 zdanie pierwsze). Ta zasada nie opisuje ustalania dochodu przy księgach rachunkowych (art. 24 ust. 1) ani dochodu z odpłatnego zbycia składników majątku (art. 24 ust. 2 zdanie drugie).
+          - text: Ustal dochód z działalności według art. 9, art. 23o, art. 23u, art. 24 ust. 1, 2, 3b–3e, 4–4e, 6 i 21 albo art. 24b ust. 1 i 2 ustawy o PIT, z uwzględnieniem obniżenia o straty z lat poprzednich na zasadach art. 9 ust. 3. Przy podatkowej księdze przychodów i rozchodów dochodem jest różnica między przychodem a kosztami jego uzyskania, powiększona albo pomniejszona o różnicę między wartością remanentu końcowego i początkowego (art. 24 ust. 2 zdanie pierwsze).
             uses: []
             basis: art. 26 ust. 1 zdanie pierwsze, art. 9 ust. 2 i 3 oraz art. 24 ust. 2 ustawy o podatku dochodowym od osób fizycznych
           - text: Od dochodu odlicz składki na ubezpieczenia społeczne z art. 26 ust. 1 pkt 2 lit. a i pkt 2a ustawy o PIT zapłacone w roku podatkowym, na warunkach z tych przepisów (przy pkt 2 bez składek, których podstawą są dochody zwolnione albo dochody, od których zaniechano poboru podatku; przy pkt 2a z zastrzeżeniem art. 26 ust. 13b i 13c). Odliczasz tylko składki, które nie zostały zaliczone do kosztów uzyskania przychodów, odliczone od dochodów opodatkowanych na zasadach art. 30c ani od przychodu na podstawie ustawy o zryczałtowanym podatku dochodowym i nie zostały zwrócone w jakiejkolwiek formie (art. 26 ust. 13a).
@@ -197,10 +197,7 @@
           - text: Podstawę opodatkowania i kwotę podatku zaokrąglij do pełnych złotych; końcówki poniżej 50 groszy pomiń, a od 50 groszy podwyższ do pełnego złotego.
             uses: []
             basis: art. 63 § 1 Ordynacji podatkowej
-          - text: Ta zasada nie opisuje pozostałych odliczeń od dochodu i od podatku (między innymi z art. 26 ust. 1 pkt 2b–9, art. 26e–26i, art. 27f i art. 52jb–52x ustawy o PIT), wspólnego opodatkowania małżonków i osób samotnie wychowujących dzieci (art. 6), łączenia dochodu z działalności z innymi dochodami opodatkowanymi według skali ani dochodów i podatku zagranicznego (metoda z art. 27 ust. 8 i odliczenie podatku zapłaconego za granicą z art. 27 ust. 9 i 9a).
-            uses: []
-            basis: art. 6, art. 26, art. 27 i art. 27f ustawy o podatku dochodowym od osób fizycznych
-          - text: Przy zaliczkach miesięcznych obowiązek zaliczki powstaje od miesiąca, w którym dochody przekroczyły iloraz kwoty zmniejszającej podatek i stawki niższej (art. 44 ust. 3 pkt 1). Zaliczka za ten miesiąc to podatek od tego dochodu obliczony według kroków powyżej, z tym że przy podatkowej księdze przychodów i rozchodów dochodem do zaliczki jest różnica między przychodem a kosztami wynikającymi z księgi, a różnicę remanentową uwzględniasz tylko wtedy, gdy sporządzasz remanent na koniec miesiąca albo zarządzi to naczelnik urzędu skarbowego (art. 44 ust. 2); a za dalsze miesiące różnica między podatkiem od dochodu od początku roku a sumą zaliczek za miesiące poprzedzające. Zaliczki można nie wpłacać, jeżeli podatek od dochodu od początku roku pomniejszony o sumę wpłaconych zaliczek nie przekracza 1000 zł. Gdy ta kwota przekroczy 1000 zł, wpłać różnicę między podatkiem od dochodu od początku roku a sumą zaliczek wpłaconych od początku roku. Mały podatnik i podatnik rozpoczynający działalność mogą zamiast tego wpłacać zaliczki kwartalne (art. 44 ust. 3g i 3i), a podatnik może wybrać zaliczki uproszczone (art. 44 ust. 6b–6e); ta zasada tych sposobów nie opisuje. Nie opisuje też zwolnienia z zaliczek podatnika, który po raz pierwszy rozpoczął działalność (art. 44 ust. 7a–7k), braku zaliczek w okresie zawieszenia działalności (art. 44 ust. 10) ani korekty dochodu przy niezapłaconych należnościach i zobowiązaniach (art. 44 ust. 17–26).
+          - text: Przy zaliczkach miesięcznych obowiązek zaliczki powstaje od miesiąca, w którym dochody przekroczyły iloraz kwoty zmniejszającej podatek i stawki niższej (art. 44 ust. 3 pkt 1). Zaliczka za ten miesiąc to podatek od tego dochodu obliczony według kroków powyżej, z tym że przy podatkowej księdze przychodów i rozchodów dochodem do zaliczki jest różnica między przychodem a kosztami wynikającymi z księgi, a różnicę remanentową uwzględniasz tylko wtedy, gdy sporządzasz remanent na koniec miesiąca albo zarządzi to naczelnik urzędu skarbowego (art. 44 ust. 2); a za dalsze miesiące różnica między podatkiem od dochodu od początku roku a sumą zaliczek za miesiące poprzedzające. Zaliczki można nie wpłacać, jeżeli podatek od dochodu od początku roku pomniejszony o sumę wpłaconych zaliczek nie przekracza 1000 zł. Gdy ta kwota przekroczy 1000 zł, wpłać różnicę między podatkiem od dochodu od początku roku a sumą zaliczek wpłaconych od początku roku. Mały podatnik i podatnik rozpoczynający działalność mogą zamiast tego wpłacać zaliczki kwartalne (art. 44 ust. 3g i 3i), a podatnik może wybrać zaliczki uproszczone (art. 44 ust. 6b–6e).
             uses: [podatek.skala, termin.zaliczka_skala]
             basis: art. 44 ust. 2, ust. 3 pkt 1–3 i ust. 15 ustawy o podatku dochodowym od osób fizycznych
           - text: Po końcu roku podatek należny wykazujesz w zeznaniu rocznym. Przed upływem terminu złożenia zeznania wpłacasz różnicę między podatkiem należnym wynikającym z zeznania a sumą zapłaconych za ten rok zaliczek.
@@ -210,7 +207,20 @@
         Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku obowiązywania (2026-01-01)
         nie jest potwierdzona źródłem. Wcześniejszych wersji nie wprowadzono. Zero przy podatku ujemnym podają broszury
         MF do zeznań za 2025 r. (PIT-36, opis poz. 296, i PIT-37, opis poz. 134); broszur za 2026 r. jeszcze nie ma,
-        a art. 27 ust. 1 ma to samo brzmienie. Korekta z 28 listopada 2026 r.: zmieniony krok 3.
+        a art. 27 ust. 1 ma to samo brzmienie. Korekta z 28 listopada 2026 r.: zmienione kroki 1, 3 i 5, usunięty dawny krok 5, dawne kroki 6 i 7 to teraz 5 i 6.
+      not_covered: >-
+        Ustalania dochodu przy księgach rachunkowych (art. 24 ust. 1) i dochodu z odpłatnego zbycia składników majątku (art.
+        24 ust. 2 zdanie drugie). Pozostałych odliczeń od dochodu i od podatku (między innymi z art. 26 ust. 1 pkt 2b–9, art.
+        26e–26i, art. 27f i art. 52jb–52x ustawy o PIT; część z nich opisuje zasada ulg i odliczeń przy skali podatkowej),
+        wspólnego opodatkowania małżonków i osób samotnie wychowujących dzieci (art. 6; opisują je zasady wspólnego
+        opodatkowania małżonków i opodatkowania osoby samotnie wychowującej dzieci), łączenia dochodu z działalności z innymi
+        dochodami opodatkowanymi według skali ani dochodów i podatku zagranicznego (metoda z art. 27 ust. 8 i odliczenie
+        podatku zapłaconego za granicą z art. 27 ust. 9 i 9a). Zaliczek kwartalnych (art. 44 ust. 3g i 3i; opisuje je zasada
+        zaliczek kwartalnych) i uproszczonych (art. 44 ust. 6b–6e; opisuje je zasada zaliczek uproszczonych), zwolnienia z
+        zaliczek podatnika, który po raz pierwszy rozpoczął działalność (art. 44 ust. 7a–7k), braku zaliczek w okresie
+        zawieszenia działalności (art. 44 ust. 10; opisuje go zasada zaliczek na PIT i ryczałt w okresie zawieszenia
+        działalności) ani korekty dochodu przy niezapłaconych należnościach i zobowiązaniach (art. 44 ust. 17–26).
+      see_also: [zasada.ulgi_skala, zasada.malzonkowie_wspolne_opodatkowanie, zasada.samotny_rodzic_opodatkowanie, zasada.zaliczki_kwartalne_pit, zasada.zaliczki_uproszczone, zasada.zaliczki_zawieszenie]
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (podstawa)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -275,6 +285,12 @@
         Korekta: zmienione okres i podstawa kroku 4.
         Ust. 2e-2i w tym brzmieniu obowiązują od 1 stycznia 2025 r. (Dz.U. 2024 poz. 1915).
         Korekty z 26 i 27 listopada 2026 r.: dodany krok 2, zmienione kroki 1 i 2 oraz ostatni krok (P8, P44, P45).
+        Korekta z 28 listopada 2026 r.: zmieniony krok 5.
+      not_covered: >-
+        Zwrotu nadpłaty (art. 81 ust. 2m–2qa i 2s ustawy o świadczeniach opieki zdrowotnej; opisuje go zasada rocznego
+        rozliczenia składki zdrowotnej). Ostateczności rozliczenia po zwrocie (art. 81 ust. 2r), formy zwrotu (ust. 2t) ani
+        odmowy zwrotu i odwołania od niej (ust. 2u i 2v).
+      see_also: [zasada.roczne_rozliczenie_zdrowotnej]
       value:
         steps:
           - text: Ustal przychód z działalności osiągnięty od początku roku kalendarzowego, pomniejszony o opłacone składki emerytalną, rentową, chorobową i wypadkową, jeżeli nie zostały zaliczone do kosztów ani odliczone od dochodu. Funduszu Pracy nie odejmuj. Czy odejmujesz składki zapłacone w tym okresie (według dnia zapłaty), czy składki należne za jego miesiące, jest niewyjaśnione (otwarte pytanie do eksperta, P44). Zamiast tego możesz przyjąć przychód z poprzedniego roku (zasada.ryczalt_zdrowotna_prog_poprzedni_rok).
@@ -289,7 +305,7 @@
           - text: Po przekroczeniu progu w trakcie roku płać kwotę wyższego progu od miesiąca przekroczenia.
             uses: [zdrowotna.ryczalt.skladka]
             basis: art. 81 ust. 2f ustawy o świadczeniach opieki zdrowotnej
-          - text: Po końcu roku ustal roczną składkę według progu dla rocznego przychodu, pomnożonej przez liczbę miesięcy podlegania ubezpieczeniu (bez miesięcy zwolnienia ze składki). Roczny przychód pomniejszasz o opłacone składki i ustalasz z wyłączeniami tak jak w krokach 1 i 2 (z tymi samymi zastrzeżeniami). Niedopłatę ustawa liczy od sumy składek wynikającej ze złożonych dokumentów za miesiące roku (art. 81 ust. 2j); dopłacasz ją w rozliczeniu rocznym. Nadpłatę ustawa opisuje jako różnicę między sumą składek wpłaconych za miesiące roku a roczną składką (art. 81 ust. 2i), a wzór ZUS DRA wyznacza kwotę do zwrotu od sumy składek należnych ze złożonych dokumentów. Od której z tych kwot ustalasz nadpłatę, gdy się różnią, jest niewyjaśnione (otwarte pytanie do eksperta, P45). Zwrot nadpłaty opisuje zasada rocznego rozliczenia.
+          - text: Po końcu roku ustal roczną składkę według progu dla rocznego przychodu, pomnożonej przez liczbę miesięcy podlegania ubezpieczeniu (bez miesięcy zwolnienia ze składki). Roczny przychód pomniejszasz o opłacone składki i ustalasz z wyłączeniami tak jak w krokach 1 i 2 (z tymi samymi zastrzeżeniami). Niedopłatę ustawa liczy od sumy składek wynikającej ze złożonych dokumentów za miesiące roku (art. 81 ust. 2j); dopłacasz ją w rozliczeniu rocznym. Nadpłatę ustawa opisuje jako różnicę między sumą składek wpłaconych za miesiące roku a roczną składką (art. 81 ust. 2i), a wzór ZUS DRA wyznacza kwotę do zwrotu od sumy składek należnych ze złożonych dokumentów. Od której z tych kwot ustalasz nadpłatę, gdy się różnią, jest niewyjaśnione (otwarte pytanie do eksperta, P45).
             uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka, termin.roczne_rozliczenie_zdrowotnej, zasada.roczne_rozliczenie_zdrowotnej]
             basis: art. 81 ust. 2e, 2ea, 2g, 2i, 2j, 2k, 2l i 2zd ustawy o świadczeniach opieki zdrowotnej; wzór ZUS DRA, blok XII, pola 25–27
       sources:
@@ -326,8 +342,8 @@
           quote: "Wypełnij, jeśli składka roczna jest mniejsza od sumy miesięcznych należnych składek wynikających ze złożonych dokumentów za rok, którego dotyczy roczne rozliczenie."
           as_of: 2026-05-01
       verification:
-        checked_at: 2026-11-27
-        agent_check: 2026-11-27
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue: >-
           Ustawa Dz.U. 2026 poz. 1542 zmienia art. 81 ust. 2zd pkt 2 od 1 stycznia 2027 r. bez przepisu przejściowego.
           Od którego miesiąca składkowego albo dla przychodów i dochodów z jakiego okresu stosuje się nowe brzmienie?
@@ -340,7 +356,13 @@
         Zmiana względem poprzedniej wersji: od 1 stycznia 2027 r. art. 81 ust. 2zd pkt 2 nie wymienia już art. 21 ust. 1
         pkt 63a ustawy o PIT (Dz.U. 2026 poz. 1542, art. 12); ta sama ustawa uchyla ten punkt w ustawie o PIT (art. 4
         pkt 1). Pozostałe kroki się nie zmieniają. Nowego brzmienia nie ma jeszcze w tekście jednolitym, więc źródłem jest ustawa zmieniająca.
-        Korekta z 27 listopada 2026 r.: zmienione krok 1 i ostatni krok (P44, P45).
+        Korekta z 27 listopada 2026 r.: zmienione kroki 1 i ostatni (P44, P45).
+        Korekta z 28 listopada 2026 r.: zmieniony krok 5.
+      not_covered: >-
+        Zwrotu nadpłaty (art. 81 ust. 2m–2qa i 2s ustawy o świadczeniach opieki zdrowotnej; opisuje go zasada rocznego
+        rozliczenia składki zdrowotnej). Ostateczności rozliczenia po zwrocie (art. 81 ust. 2r), formy zwrotu (ust. 2t) ani
+        odmowy zwrotu i odwołania od niej (ust. 2u i 2v).
+      see_also: [zasada.roczne_rozliczenie_zdrowotnej]
       value:
         steps:
           - text: Ustal przychód z działalności osiągnięty od początku roku kalendarzowego, pomniejszony o opłacone składki emerytalną, rentową, chorobową i wypadkową, jeżeli nie zostały zaliczone do kosztów ani odliczone od dochodu. Funduszu Pracy nie odejmuj. Czy odejmujesz składki zapłacone w tym okresie (według dnia zapłaty), czy składki należne za jego miesiące, jest niewyjaśnione (otwarte pytanie do eksperta, P44). Zamiast tego możesz przyjąć przychód z poprzedniego roku (zasada.ryczalt_zdrowotna_prog_poprzedni_rok).
@@ -355,7 +377,7 @@
           - text: Po przekroczeniu progu w trakcie roku płać kwotę wyższego progu od miesiąca przekroczenia.
             uses: [zdrowotna.ryczalt.skladka]
             basis: art. 81 ust. 2f ustawy o świadczeniach opieki zdrowotnej
-          - text: Po końcu roku ustal roczną składkę według progu dla rocznego przychodu, pomnożonej przez liczbę miesięcy podlegania ubezpieczeniu (bez miesięcy zwolnienia ze składki). Roczny przychód pomniejszasz o opłacone składki i ustalasz z wyłączeniami tak jak w krokach 1 i 2 (z tymi samymi zastrzeżeniami). Niedopłatę ustawa liczy od sumy składek wynikającej ze złożonych dokumentów za miesiące roku (art. 81 ust. 2j); dopłacasz ją w rozliczeniu rocznym. Nadpłatę ustawa opisuje jako różnicę między sumą składek wpłaconych za miesiące roku a roczną składką (art. 81 ust. 2i), a wzór ZUS DRA wyznacza kwotę do zwrotu od sumy składek należnych ze złożonych dokumentów. Od której z tych kwot ustalasz nadpłatę, gdy się różnią, jest niewyjaśnione (otwarte pytanie do eksperta, P45). Zwrot nadpłaty opisuje zasada rocznego rozliczenia.
+          - text: Po końcu roku ustal roczną składkę według progu dla rocznego przychodu, pomnożonej przez liczbę miesięcy podlegania ubezpieczeniu (bez miesięcy zwolnienia ze składki). Roczny przychód pomniejszasz o opłacone składki i ustalasz z wyłączeniami tak jak w krokach 1 i 2 (z tymi samymi zastrzeżeniami). Niedopłatę ustawa liczy od sumy składek wynikającej ze złożonych dokumentów za miesiące roku (art. 81 ust. 2j); dopłacasz ją w rozliczeniu rocznym. Nadpłatę ustawa opisuje jako różnicę między sumą składek wpłaconych za miesiące roku a roczną składką (art. 81 ust. 2i), a wzór ZUS DRA wyznacza kwotę do zwrotu od sumy składek należnych ze złożonych dokumentów. Od której z tych kwot ustalasz nadpłatę, gdy się różnią, jest niewyjaśnione (otwarte pytanie do eksperta, P45).
             uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka, termin.roczne_rozliczenie_zdrowotnej, zasada.roczne_rozliczenie_zdrowotnej]
             basis: art. 81 ust. 2e, 2ea, 2g, 2i, 2j, 2k, 2l i 2zd ustawy o świadczeniach opieki zdrowotnej; wzór ZUS DRA, blok XII, pola 25–27
       sources:
@@ -404,8 +426,8 @@
           quote: "Wypełnij, jeśli składka roczna jest mniejsza od sumy miesięcznych należnych składek wynikających ze złożonych dokumentów za rok, którego dotyczy roczne rozliczenie."
           as_of: 2026-05-01
       verification:
-        checked_at: 2026-11-27
-        agent_check: 2026-11-27
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue: >-
           Art. 81 ust. 2g pomniejsza przychód o „kwoty opłaconych składek” bez wskazania okresu: czy chodzi o składki
           zapłacone w okresie, czy należne za jego miesiące (docs/pytania-do-eksperta.md, P44)? Niedopłatę ust. 2j
@@ -459,7 +481,7 @@
         Zmiana względem poprzedniej wersji: od 1 stycznia 2027 r. art. 81 ust. 2zd pkt 2 nie wymienia już art. 21 ust. 1
         pkt 63a ustawy o PIT (Dz.U. 2026 poz. 1542, art. 12); ta sama ustawa uchyla ten punkt w ustawie o PIT (art. 4
         pkt 1). Pozostałe kroki się nie zmieniają. Nowego brzmienia nie ma jeszcze w tekście jednolitym, więc źródłem jest ustawa zmieniająca.
-        Korekta z 26 listopada 2026 r.: zmienione krok o wyłączeniach z art. 81 ust. 2zd (P8) i ostatni krok (P1).
+        Korekta z 26 listopada 2026 r.: zmienione kroki o wyłączeniach z art. 81 ust. 2zd (P8) i ostatni (P1).
       value:
         steps:
           - text: Ta możliwość dotyczy tylko podatnika, który przez cały poprzedni rok kalendarzowy prowadził działalność opodatkowaną ryczałtem, skalą, liniowym albo IP Box.

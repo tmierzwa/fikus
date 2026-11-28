@@ -165,20 +165,25 @@
           - text: Zaliczki kwartalnej można nie wpłacać, jeżeli podatek należny od dochodu od początku roku pomniejszony o sumę zaliczek wpłaconych od początku roku nie przekracza 1000 zł. Gdy ta kwota przekroczy 1000 zł, wpłać różnicę między podatkiem należnym od dochodu od początku roku a sumą zaliczek wpłaconych od początku roku.
             uses: []
             basis: art. 44 ust. 15 ustawy o podatku dochodowym od osób fizycznych
-          - text: Zaliczkę za kwartał wpłacasz do 20 dnia miesiąca po kwartale, a za ostatni kwartał roku do 20 stycznia następnego roku.
+          - text: Zaliczkę za kwartał wpłacasz do 20. dnia miesiąca po kwartale, a za ostatni kwartał roku do 20 stycznia następnego roku.
             uses: [termin.zaliczka_kwartalna_pit]
             basis: art. 44 ust. 6 zdanie drugie i trzecie ustawy o podatku dochodowym od osób fizycznych
           - text: O wyborze zaliczek kwartalnych informujesz w zeznaniu rocznym za rok, w którym wpłacałeś zaliczki kwartalne.
             uses: []
             basis: art. 44 ust. 3i ustawy o podatku dochodowym od osób fizycznych
-          - text: Ta zasada nie opisuje zwolnienia z obowiązku wpłacania zaliczek dla podatnika, który po raz pierwszy rozpoczął działalność (art. 44 ust. 7a–7l, tylko przy opodatkowaniu według skali), zaliczek przedsiębiorstwa w spadku (art. 44 ust. 6aa i 6ab), braku zaliczek w okresie zawieszenia działalności i zaliczek po jej wznowieniu (art. 44 ust. 10 i 13), działów specjalnych produkcji rolnej (art. 44 ust. 14) ani korekty dochodu przy niezapłaconych należnościach i zobowiązaniach (art. 44 ust. 17–26).
-            uses: []
-            basis: art. 44 ust. 6aa, 6ab, 7a–7l, 10, 13, 14 i 17–26 ustawy o podatku dochodowym od osób fizycznych
       note: >-
         Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku obowiązywania (2026-01-01) nie jest
         potwierdzona źródłem. Nowelizacje ogłoszone później (Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287, 1347,
         1354, 1371, 1541, 1542 i 1556) nie zmieniają art. 5a pkt 20, art. 22k ani art. 44 ust. 3f–3i, 6, 15.
         Wcześniejszych wersji nie wprowadzono.
+        Korekta z 28 listopada 2026 r.: usunięty krok 8.
+      not_covered: >-
+        Zwolnienia z obowiązku wpłacania zaliczek dla podatnika, który po raz pierwszy rozpoczął działalność (art. 44 ust.
+        7a–7l, tylko przy opodatkowaniu według skali), zaliczek przedsiębiorstwa w spadku (art. 44 ust. 6aa i 6ab), braku
+        zaliczek w okresie zawieszenia działalności i zaliczek po jej wznowieniu (art. 44 ust. 10 i 13; opisuje je zasada
+        zaliczek na PIT i ryczałt w okresie zawieszenia działalności), działów specjalnych produkcji rolnej (art. 44 ust. 14)
+        ani korekty dochodu przy niezapłaconych należnościach i zobowiązaniach (art. 44 ust. 17–26).
+      see_also: [zasada.zaliczki_zawieszenie]
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (kto może, skala)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -217,8 +222,8 @@
           quote: "Zaliczki kwartalne możesz wpłacać tylko wtedy, gdy: rozpoczynasz prowadzenie działalności gospodarczej albo jesteś małym podatnikiem"
           as_of: 2026-11-26
       verification:
-        checked_at: 2026-11-26
-        agent_check: 2026-11-26
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue_scope: edge_case
         open_issue: >-
           Art. 44 ust. 3g wymienia „podatnicy rozpoczynający prowadzenie działalności gospodarczej, o których mowa
@@ -248,7 +253,7 @@
           - text: Przy podatku liniowym zaliczka za miesiąc to 1/12 kwoty obliczonej od tego dochodu przy stawce 19% wskazanej wprost w art. 44 ust. 6h. Zaliczkę możesz obniżyć o 19% składki zdrowotnej zapłaconej w danym miesiącu z tytułu działalności opodatkowanej podatkiem liniowym i za osoby współpracujące; wysokość składek ustala się na podstawie dokumentów stwierdzających ich zapłatę. Składki, od których liczysz obniżkę, wliczasz do rocznego limitu składki zdrowotnej przy podatku liniowym.
             uses: [podatek.liniowy.limit_skladki_zdrowotnej]
             basis: art. 44 ust. 6b, 6h i 6j w zw. z art. 30c ust. 2 pkt 2 i ust. 2a–2c ustawy o podatku dochodowym od osób fizycznych
-          - text: Zaliczki uproszczone stosujesz przez cały rok podatkowy i wpłacasz w terminach zaliczek miesięcznych (do 20 dnia każdego miesiąca za miesiąc poprzedni, za grudzień do 20 stycznia następnego roku). Po końcu roku rozliczasz podatek w zeznaniu rocznym na zwykłych zasadach.
+          - text: Zaliczki uproszczone stosujesz przez cały rok podatkowy i wpłacasz w terminach zaliczek miesięcznych (do 20. dnia każdego miesiąca za miesiąc poprzedni, za grudzień do 20 stycznia następnego roku). Po końcu roku rozliczasz podatek w zeznaniu rocznym na zwykłych zasadach.
             uses: [termin.zaliczka_liniowy, termin.zaliczka_skala]
             basis: art. 44 ust. 6 i 6c pkt 2–4 ustawy o podatku dochodowym od osób fizycznych
           - text: O wyborze zaliczek uproszczonych informujesz w zeznaniu rocznym za rok, w którym wpłacałeś zaliczki uproszczone.
@@ -257,15 +262,21 @@
           - text: Jeżeli korekta zeznania, z którego wzięto dochód, zmienia podstawę zaliczek, zaliczki zmieniają się odpowiednio od początku roku, gdy korektę złożono do końca roku poprzedzającego rok wpłat; od miesiąca po złożeniu korekty, gdy złożono ją w roku wpłat; później korekta ich nie zmienia. Tak samo jest, gdy organ podatkowy stwierdzi inny dochód z działalności niż wykazany w zeznaniu.
             uses: []
             basis: art. 44 ust. 6f i 6g ustawy o podatku dochodowym od osób fizycznych
-          - text: Ta zasada nie opisuje zwolnienia z obowiązku wpłacania zaliczek dla podatnika, który po raz pierwszy rozpoczął działalność (art. 44 ust. 7a–7l, tylko przy opodatkowaniu według skali; może przypadać na rok, w którym zaliczki uproszczone nie są już wyłączone), braku zaliczek w okresie zawieszenia działalności i zaliczek po jej wznowieniu (art. 44 ust. 10 i 13) ani działów specjalnych produkcji rolnej (art. 44 ust. 14).
-            uses: []
-            basis: art. 44 ust. 7a–7l, 10, 13 i 14 ustawy o podatku dochodowym od osób fizycznych
       note: >-
         Termin wpłat na skali jest taki sam jak przy podatku liniowym (art. 44 ust. 6); opisują go termin.zaliczka_skala
         i termin.zaliczka_liniowy. Art. 44 ust. 6i jest uchylony. Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data
         początku obowiązywania (2026-01-01) nie jest potwierdzona źródłem. Nowelizacje ogłoszone później (Dz.U. 2026
         poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1541, 1542 i 1556) nie zmieniają art. 44 ust. 6–6j.
         Wcześniejszych wersji nie wprowadzono.
+        Zwolnienie z obowiązku wpłacania zaliczek dla podatnika, który po raz pierwszy rozpoczął działalność (art. 44 ust. 7a–7l),
+        może przypadać na rok, w którym zaliczki uproszczone nie są już wyłączone.
+        Korekta z 28 listopada 2026 r.: usunięty krok 8.
+      not_covered: >-
+        Zwolnienia z obowiązku wpłacania zaliczek dla podatnika, który po raz pierwszy rozpoczął działalność (art. 44 ust.
+        7a–7l, tylko przy opodatkowaniu według skali), braku zaliczek w okresie zawieszenia działalności i zaliczek po jej
+        wznowieniu (art. 44 ust. 10 i 13; opisuje je zasada zaliczek na PIT i ryczałt w okresie zawieszenia działalności) ani
+        działów specjalnych produkcji rolnej (art. 44 ust. 14).
+      see_also: [zasada.zaliczki_zawieszenie]
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (kto może, 1/12)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -308,8 +319,8 @@
           quote: "Jeżeli chcesz wpłacać zaliczki uproszczone, obliczone od dochodu z pozarolniczej działalności gospodarczej wykazanego przez Ciebie w latach ubiegłych, wpłacasz je w terminie do 20. dnia każdego miesiąca za miesiąc poprzedni"
           as_of: 2026-11-26
       verification:
-        checked_at: 2026-11-26
-        agent_check: 2026-11-26
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue_scope: edge_case
         open_issue: >-
           Art. 44 ust. 6b pkt 2 każe sięgnąć do zeznania sprzed dwóch lat, gdy „w zeznaniu, o którym mowa w pkt 1”
@@ -331,19 +342,23 @@
           - text: Ryczałt kwartalnie może też opłacać podatnik rozpoczynający działalność w roku podatkowym, który w poprzednim roku podatkowym nie prowadził działalności. W nowo utworzonej spółce za rozpoczęcie działalności uważa się dzień uzyskania pierwszego przychodu przez spółkę. Rozpoczęciem działalności nie jest zmiana branży lub przedmiotu działalności, zmiana umowy spółki lub wspólnika ani powstanie przedsiębiorstwa w spadku. Czy to prawo dotyczy tylko roku rozpoczęcia, jest niewyjaśnione (otwarte pytanie do eksperta).
             uses: []
             basis: art. 21 ust. 1b w zw. z art. 7 ust. 1 i 2 ustawy o zryczałtowanym podatku dochodowym
-          - text: Ryczałt za kwartał obliczasz od przychodów tego kwartału według zasady podstawy opodatkowania ryczałtem i wpłacasz do 20 dnia miesiąca po kwartale, a za ostatni kwartał roku do 20 stycznia następnego roku.
+          - text: Ryczałt za kwartał obliczasz od przychodów tego kwartału według zasady podstawy opodatkowania ryczałtem i wpłacasz do 20. dnia miesiąca po kwartale, a za ostatni kwartał roku do 20 stycznia następnego roku.
             uses: [zasada.ryczalt_podstawa, termin.ryczalt_kwartal]
             basis: art. 21 ust. 1a ustawy o zryczałtowanym podatku dochodowym
           - text: O wyborze kwartalnego opłacania ryczałtu informujesz w zeznaniu rocznym za rok, w którym opłacałeś ryczałt kwartalnie.
             uses: []
             basis: art. 21 ust. 1c ustawy o zryczałtowanym podatku dochodowym
-          - text: Ta zasada nie opisuje kwartalnego opłacania ryczałtu przez przedsiębiorstwo w spadku i jego pierwszego ryczałtu (art. 21 ust. 1aa, 1ba i 5a) ani ryczałtu za okres zawieszenia działalności i terminów jego wpłaty po wznowieniu (art. 21 ust. 1d–1k).
-            uses: []
-            basis: art. 21 ust. 1aa, 1ba, 1d–1k i 5a ustawy o zryczałtowanym podatku dochodowym
       note: >-
         Tekst jednolity uwzględnia zmiany ogłoszone przed 2025-06-12; data początku obowiązywania (2026-01-01) nie jest
         potwierdzona źródłem. Nowelizacje ogłoszone później (Dz.U. 2026 poz. 779, 1098 i 1541) nie zmieniają art. 4, 7
         ani 21 ust. 1a–1k. Wcześniejszych wersji nie wprowadzono.
+        Korekta z 28 listopada 2026 r.: usunięty krok 5.
+      not_covered: >-
+        Kwartalnego opłacania ryczałtu przez przedsiębiorstwo w spadku i jego pierwszego ryczałtu (art. 21 ust. 1aa, 1ba i 5a)
+        ani ryczałtu za okres zawieszenia działalności i terminów jego wpłaty po wznowieniu (art. 21 ust. 1d i 1g–1k; opisuje je
+        zasada zaliczek na PIT i ryczałt w okresie zawieszenia działalności), ani ryczałtu wspólnika spółki jawnej, która
+        zawiesiła działalność (art. 21 ust. 1e i 1f).
+      see_also: [zasada.zaliczki_zawieszenie]
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (kto może)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
@@ -374,8 +389,8 @@
           quote: "Ryczałt kwartalny możesz wpłacać tylko wtedy, gdy: rozpoczynasz prowadzenie działalności gospodarczej albo Twoje przychody z działalności prowadzonej samodzielnie albo przychody spółki"
           as_of: 2026-11-26
       verification:
-        checked_at: 2026-11-26
-        agent_check: 2026-11-26
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue_scope: edge_case
         open_issue: >-
           Art. 21 ust. 1b pozwala na kwartalne opłacanie ryczałtu „podatnikom rozpoczynającym prowadzenie działalności,
@@ -401,7 +416,7 @@
           - text: Na ryczałcie od przychodów ewidencjonowanych za okres objęty zawieszeniem nie masz obowiązku obliczania i wpłacania ryczałtu miesięcznego ani kwartalnego w zakresie zawieszonej działalności.
             uses: [zasada.ryczalt_kwartalnie]
             basis: art. 21 ust. 1d ustawy o zryczałtowanym podatku dochodowym
-          - text: Ryczałt dotyczący okresu zawieszenia w danym roku podatkowym obliczasz i wpłacasz po wznowieniu działalności, do 20 dnia miesiąca następującego po miesiącu wznowienia (gdy opłacasz ryczałt miesięcznie) albo do 20 dnia miesiąca następującego po kwartale wznowienia (gdy opłacasz go kwartalnie). Gdy wznowienie następuje w ostatnim miesiącu roku podatkowego (przy ryczałcie kwartalnym w ostatnim kwartale), termin mija 20 stycznia następnego roku.
+          - text: Ryczałt dotyczący okresu zawieszenia w danym roku podatkowym obliczasz i wpłacasz po wznowieniu działalności, do 20. dnia miesiąca następującego po miesiącu wznowienia (gdy opłacasz ryczałt miesięcznie) albo do 20. dnia miesiąca następującego po kwartale wznowienia (gdy opłacasz go kwartalnie). Gdy wznowienie następuje w ostatnim miesiącu roku podatkowego (przy ryczałcie kwartalnym w ostatnim kwartale), termin mija 20 stycznia następnego roku.
             uses: [termin.zaliczka_ryczalt, termin.ryczalt_kwartal]
             basis: art. 21 ust. 1g i 1h ustawy o zryczałtowanym podatku dochodowym
           - text: Gdy wznawiasz działalność w kolejnym roku albo później, ryczałt za okres zawieszenia w roku, w którym zawieszenie się zaczęło, i w każdym następnym roku przed rokiem wznowienia wpłacasz do 20 stycznia roku następującego po danym roku; ryczałt za okres zawieszenia w roku wznowienia wpłacasz w terminach z poprzedniego kroku.
@@ -410,9 +425,6 @@
           - text: Jak ustalić zaliczkę albo ryczałt za miesiąc lub kwartał, w którego trakcie zawieszenie się zaczęło albo skończyło, jest niewyjaśnione (otwarte pytanie do eksperta).
             uses: []
             basis: art. 44 ust. 10 i 13 ustawy o podatku dochodowym od osób fizycznych, art. 21 ust. 1d i 1g ustawy o zryczałtowanym podatku dochodowym, art. 24 ust. 7 ustawy – Prawo przedsiębiorców
-          - text: Ta zasada nie opisuje wspólników spółki jawnej lub partnerskiej, która zawiesiła działalność (art. 44 ust. 11 i 12 ustawy o PIT, art. 21 ust. 1e i 1f ustawy o ryczałcie), zawieszenia działalności przedsiębiorcy wpisanego do rejestru przedsiębiorców KRS ani skutków zawieszenia w VAT i składkach ZUS.
-            uses: []
-            basis: art. 44 ust. 11 i 12 ustawy o podatku dochodowym od osób fizycznych, art. 21 ust. 1e i 1f ustawy o zryczałtowanym podatku dochodowym
       note: >-
         Tekst jednolity ustawy o PIT (Dz.U. 2026 poz. 592) uwzględnia stan prawny na 1 kwietnia 2026 r., a ustawy
         o ryczałcie (Dz.U. 2025 poz. 843) zmiany ogłoszone przed 2025-06-12; data początku obowiązywania (2026-01-01) nie jest
@@ -424,6 +436,11 @@
         wznowieniu i likwidacji działalności” (aktualizacja 04.05.2026) podaje to samo co kroki o braku zaliczek na skali
         i podatku liniowym oraz o ryczałcie za okres zawieszenia i jego wpłacie po wznowieniu (bez wznowienia w kolejnych
         latach), dlatego nie jest drugim źródłem całej zasady. Wcześniejszych wersji nie wprowadzono.
+        Korekta z 28 listopada 2026 r.: usunięty krok 8.
+      not_covered: >-
+        Wspólników spółki jawnej lub partnerskiej, która zawiesiła działalność (art. 44 ust. 11 i 12 ustawy o PIT, art. 21
+        ust. 1e i 1f ustawy o ryczałcie), zawieszenia działalności przedsiębiorcy wpisanego do rejestru przedsiębiorców KRS
+        ani skutków zawieszenia w VAT i składkach ZUS.
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (brak zaliczek w okresie zawieszenia)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -462,8 +479,8 @@
           article: art. 25 ust. 1
           quote: "przedsiębiorca nie może wykonywać działalności gospodarczej i osiągać bieżących przychodów z pozarolniczej działalności gospodarczej"
       verification:
-        checked_at: 2026-11-26
-        agent_check: 2026-11-26
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue: >-
           Art. 44 ust. 10 ustawy o PIT i art. 21 ust. 1d ustawy o ryczałcie zwalniają z obowiązków „za okres objęty
           zawieszeniem”, a art. 24 ust. 7 Prawa przedsiębiorców liczy skutki zawieszenia od dnia jego rozpoczęcia do dnia

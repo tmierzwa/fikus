@@ -74,9 +74,6 @@
           - text: Dochód (stratę) z kwalifikowanego prawa wykazujesz w zeznaniu za rok podatkowy, w którym go osiągnąłeś (poniosłeś). Ze stawki IP Box korzystasz dopiero w zeznaniu; zaliczki w trakcie roku płacisz na zasadach ogólnych według swojej formy opodatkowania.
             uses: [zasada.skala_podatek, zasada.liniowy_podatek]
             basis: art. 30ca ust. 11 ustawy o podatku dochodowym od osób fizycznych; objaśnienia podatkowe MF z 15 lipca 2019 r. (IP Box), akapity 200 i 201
-          - text: Ta zasada nie opisuje zmniejszenia podstawy ustalonej według art. 30ca ust. 3 o wartość nieuregulowanych wierzytelności ani jej zwiększenia o wartość nieuregulowanych zobowiązań na zasadach art. 26i ust. 1 pkt 1 i 2 (ulga na złe długi), przepisu przejściowego z art. 52u, opodatkowania w spółkach niebędących osobami prawnymi ani składki zdrowotnej od dochodów opodatkowanych stawką IP Box.
-            uses: []
-            basis: art. 26i ust. 1 pkt 1 i 2 oraz art. 52u ustawy o podatku dochodowym od osób fizycznych
       note: >-
         Tekst jednolity Dz.U. 2026 poz. 592 uwzględnia stan prawny na 1 kwietnia 2026 r.; zmiany ustawy o PIT, które weszły w życie po 1 stycznia 2026 r., a przed 1 kwietnia 2026 r. (Dz.U. 2025 poz. 1795, Dz.U. 2026 poz. 203 i 424), zmieniają
         tylko art. 21 i 52zr. Późniejsze nowelizacje (Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371,
@@ -86,6 +83,12 @@
         Ustęp 9a dodała ustawa
         Dz.U. 2021 poz. 2105 (art. 1 pkt 55 lit. b), czyli po wydaniu objaśnień MF z 15 lipca 2019 r. Wcześniejszych wersji
         nie wprowadzono.
+        Korekta z 28 listopada 2026 r.: usunięty krok 11.
+      not_covered: >-
+        Zmniejszenia podstawy ustalonej według art. 30ca ust. 3 o wartość nieuregulowanych wierzytelności ani jej zwiększenia
+        o wartość nieuregulowanych zobowiązań na zasadach art. 26i ust. 1 pkt 1 i 2 (ulga na złe długi), przepisu
+        przejściowego z art. 52u, opodatkowania w spółkach niebędących osobami prawnymi ani składki zdrowotnej od dochodów
+        opodatkowanych stawką IP Box.
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (stawka)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -225,8 +228,8 @@
           quote: "ulga B+R nie podlega uwzględnieniu w obliczeniu podstawy opodatkowania podlegającej 5% podatkowi z IP Box"
           as_of: 2019-07-15
       verification:
-        checked_at: 2026-11-26
-        agent_check: 2026-11-27
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue: >-
           Art. 30ca ust. 9a (od 2022 r.) pozwala odliczyć od dochodu z kwalifikowanego prawa koszty kwalifikowane
           z art. 26e ust. 2–3b. Nie wiadomo, czy odliczenie pomniejsza dochód przed pomnożeniem przez wskaźnik z ust. 4
@@ -294,9 +297,9 @@
           - text: Odliczenia dokonujesz w zeznaniu za rok podatkowy, w którym poniosłeś koszty kwalifikowane. Jeżeli poniosłeś stratę albo dochód jest niższy od przysługującego odliczenia, odliczasz całość albo pozostałą część w zeznaniach za kolejno następujące po sobie sześć lat podatkowych po roku, w którym skorzystałeś lub miałeś prawo skorzystać z odliczenia; dokonując tego odliczenia, uwzględniasz kwoty pomniejszeń z art. 26eb ust. 1. Odliczenia w zeznaniach za kolejne sześć lat ani uwzględniania pomniejszeń z art. 26eb ust. 1 nie stosujesz, jeżeli wykażesz w zeznaniu kwotę przysługującą Ci zgodnie z art. 26ea (art. 26e ust. 9 wyłącza tylko ust. 8 zdanie drugie i trzecie).
             uses: []
             basis: art. 26e ust. 8 i 9 ustawy o podatku dochodowym od osób fizycznych
-          - text: Ta zasada nie opisuje procentów i warunków dla podatników ze statusem centrum badawczo-rozwojowego (art. 26e ust. 3a–3j i ust. 7 pkt 1–2), warunków przy zwolnieniach z art. 21 ust. 1 pkt 63a lub 63b (art. 26e ust. 6; w brzmieniu od 1 stycznia 2027 r. ust. 6 odsyła tylko do pkt 63b; zasada nie opisuje przepisów przejściowych ustawy Dz.U. 2026 poz. 1542), zwrotu gotówkowego dla rozpoczynających działalność (art. 26ea), treści pomniejszeń z art. 26eb, odliczenia przez przedsiębiorstwo w spadku (art. 26e ust. 10), niestosowania art. 23 ust. 1 pkt 45 do kosztów kwalifikowanych stanowiących odpisy amortyzacyjne (art. 26e ust. 3k) ani zmniejszenia i zwiększenia podstawy obliczenia podatku ustalonej po odliczeniu kwot z art. 26e na zasadach art. 26i ust. 1 (ulga na złe długi). Odliczenie kosztów kwalifikowanych od dochodu z kwalifikowanego prawa własności intelektualnej opisuje zasada IP Box. Czy kwoty z art. 26e odlicza się także od podstawy z art. 30ca ust. 3 (art. 26i ust. 1), jest niewyjaśnione (otwarte pytanie do eksperta).
+          - text: Czy kwoty z art. 26e odlicza się także od podstawy z art. 30ca ust. 3 (art. 26i ust. 1), jest niewyjaśnione (otwarte pytanie do eksperta).
             uses: [zasada.ip_box]
-            basis: art. 26e ust. 3a–3k, 6, 7 i 10, art. 26ea, 26eb i 26i ust. 1 ustawy o podatku dochodowym od osób fizycznych; art. 4 pkt 4 ustawy z 22 października 2026 r. (Dz.U. 2026 poz. 1542)
+            basis: art. 26e ust. 1 i art. 26i ust. 1 ustawy o podatku dochodowym od osób fizycznych
       note: >-
         Tekst jednolity Dz.U. 2026 poz. 592 uwzględnia stan prawny na 1 kwietnia 2026 r.; zmiany ustawy o PIT, które weszły w życie po 1 stycznia 2026 r., a przed 1 kwietnia 2026 r. (Dz.U. 2025 poz. 1795, Dz.U. 2026 poz. 203 i 424), zmieniają
         tylko art. 21 i 52zr. Ustawa Dz.U. 2026 poz. 779 od 1 lipca 2026 r. zmienia w art. 24a ust. 1b tylko określenie
@@ -307,6 +310,17 @@
         od 1 stycznia 2027 r. zmienia art. 11 ust. 1 ustawy o ryczałcie (wyrazy „art. 26 ust. 1 pkt 2, 2a, 2b, 2c, 5–6a i 9”
         zastępuje się wyrazami „art. 26 ust. 1 pkt 2, 2a, 2b, 2c, 5, 6 i 9”); art. 26e nadal nie dochodzi, więc krok o ryczałcie się
         nie zmienia. Wcześniejszych wersji nie wprowadzono.
+        Korekta z 28 listopada 2026 r.: zmieniony krok 6.
+      not_covered: >-
+        Procentów i warunków dla podatników ze statusem centrum badawczo-rozwojowego (art. 26e ust. 3a–3j i ust. 7 pkt 1–2),
+        warunków przy zwolnieniach z art. 21 ust. 1 pkt 63a lub 63b (art. 26e ust. 6, także w brzmieniu od 1 stycznia 2027 r.)
+        i przepisów przejściowych ustawy Dz.U. 2026 poz. 1542, zwrotu gotówkowego dla rozpoczynających działalność (art.
+        26ea), treści pomniejszeń z art. 26eb, odliczenia przez przedsiębiorstwo w spadku (art. 26e ust. 10), niestosowania
+        art. 23 ust. 1 pkt 45 do kosztów kwalifikowanych stanowiących odpisy amortyzacyjne (art. 26e ust. 3k) ani zmniejszenia
+        i zwiększenia podstawy obliczenia podatku ustalonej po odliczeniu kwot z art. 26e na zasadach art. 26i ust. 1 (ulga na
+        złe długi). Odliczenia kosztów kwalifikowanych od dochodu z kwalifikowanego prawa własności intelektualnej (opisuje je
+        zasada IP Box).
+      see_also: [zasada.ip_box]
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (prawo do odliczenia)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -460,8 +474,8 @@
           article: art. 11 ust. 1
           quote: "oraz wydatki określone w art. 26 ust. 1 pkt 2, 2a, 2b, 2c, 5–6a i 9"
       verification:
-        checked_at: 2026-11-26
-        agent_check: 2026-11-27
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue: >-
           Krok o podstawie odliczenia: art. 26e ust. 1 mówi o podstawie ustalonej zgodnie z art. 26 ust. 1 lub art. 30c
           ust. 2, a art. 26i ust. 1 o podstawie ustalonej zgodnie z art. 26 ust. 1, art. 30c ust. 2 lub art. 30ca ust. 3

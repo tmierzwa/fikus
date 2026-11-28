@@ -293,9 +293,6 @@
           - text: Gdy do działalności wykorzystujesz, wynajmujesz lub wydzierżawiasz tylko część nieruchomości lub lokalu użytkowego, odpisów dokonujesz od wartości początkowej odpowiadającej stosunkowi powierzchni użytkowej tak wykorzystywanej do ogólnej powierzchni użytkowej.
             uses: []
             basis: art. 22f ust. 4 ustawy o PIT
-          - text: Ta zasada nie opisuje ustalania wartości początkowej (art. 22g), amortyzacji wartości niematerialnych i prawnych (art. 22m), taboru transportu morskiego (art. 22l), amortyzacji przy zmianie formy prawnej i podobnych zdarzeniach (art. 22h ust. 3–3e), używania sezonowego (art. 22h ust. 1 pkt 3), składników o przewidywanym okresie używania nie dłuższym niż rok (art. 22e), ewidencji środków trwałych (art. 22n) ani pozostałych wyłączeń z kosztów w art. 23 ust. 1.
-            uses: []
-            basis: art. 22e, 22g, 22h ust. 1 pkt 3 i ust. 3–3e, art. 22l, 22m i 22n ustawy o PIT
       note: >-
         Data początku obowiązywania (2026-01-01) to ostrożnie wybrana data, a nie dzień wejścia przepisów w życie; od tego dnia
         obowiązuje art. 22j ust. 7 w brzmieniu z ustawy Dz.U. 2025 poz. 1817 (odnośnik 30 w tekście jednolitym). Tekst
@@ -303,6 +300,12 @@
         (Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1541, 1542 i 1556) nie zmieniają
         art. 22d–22k ani art. 23 ust. 1 pkt 4. Strona biznes.gov.pl „Podstawowe informacje o księgowości i ewidencjach
         w przedsiębiorstwie” (aktualizacja 14.03.2026) potwierdza tylko część kroków 1 i 2, więc nie jest drugim źródłem zasady.
+        Korekta z 28 listopada 2026 r.: usunięty krok 12.
+      not_covered: >-
+        Ustalania wartości początkowej (art. 22g), amortyzacji wartości niematerialnych i prawnych (art. 22m), taboru
+        transportu morskiego (art. 22l), amortyzacji przy zmianie formy prawnej i podobnych zdarzeniach (art. 22h ust. 3–3e),
+        używania sezonowego (art. 22h ust. 1 pkt 3), składników o przewidywanym okresie używania nie dłuższym niż rok (art.
+        22e), ewidencji środków trwałych (art. 22n) ani pozostałych wyłączeń z kosztów w art. 23 ust. 1.
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (krok 1)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -360,7 +363,7 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
           article: art. 22f ust. 4
           quote: "odpowiadającej stosunkowi powierzchni użytkowej wykorzystywanej do prowadzenia działalności gospodarczej, wynajmowanej lub wydzierżawianej, do ogólnej powierzchni użytkowej"
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: zasada.platnosci_gotowkowe_koszty
   name: Wyłączenie z kosztów płatności dokonanych poza rachunkiem płatniczym
@@ -386,9 +389,6 @@
           - text: Przelewu na rachunek spoza wykazu nie wyłącza się z kosztów, jeżeli przy pierwszej zapłacie należności przelewem na ten rachunek złożyłeś, w terminie 7 dni od dnia zlecenia przelewu, zawiadomienie z art. 117ba § 3 pkt 2 Ordynacji podatkowej do naczelnika urzędu skarbowego właściwego dla Ciebie, jeżeli zapłaciłeś na rachunek banku lub spółdzielczej kasy oszczędnościowo-kredytowej w przypadkach z art. 22p ust. 4 pkt 2, jeżeli zapłaciłeś z zastosowaniem mechanizmu podzielonej płatności albo jeżeli faktura dokumentuje wewnątrzwspólnotowe nabycie towarów, import towarów lub usług albo dostawę towarów rozliczaną przez nabywcę.
             uses: []
             basis: art. 22p ust. 4 ustawy o PIT
-          - text: Ta zasada nie opisuje obowiązku dokonywania płatności przez rachunek płatniczy i jego skutków poza podatkiem dochodowym, solidarnej odpowiedzialności w VAT przy zapłacie na rachunek spoza wykazu (art. 117ba Ordynacji podatkowej) ani obowiązku stosowania mechanizmu podzielonej płatności (art. 108a ustawy o VAT).
-            uses: []
-            basis: art. 117ba Ordynacji podatkowej, art. 108a ustawy o VAT
       note: >-
         Data początku obowiązywania (2026-01-01) to ostrożnie wybrana data, a nie dzień wejścia przepisów w życie; tekst
         jednolity ustawy o PIT Dz.U. 2026 poz. 592 uwzględnia stan prawny na 1 kwietnia 2026 r. Wersja kończy się
@@ -399,6 +399,11 @@
         z tekstu jednolitego Dz.U. 2026 poz. 1484 (stan prawny na 28 października 2026 r.); ma to samo brzmienie
         w tekście jednolitym Dz.U. 2025 poz. 1480, a ustawa Dz.U. 2026 poz. 1542 zmienia w tej ustawie tylko art. 47.
         Drugiego źródła urzędowego dla tej zasady nie znaleziono.
+        Korekta z 28 listopada 2026 r.: usunięty krok 6.
+      not_covered: >-
+        Obowiązku dokonywania płatności przez rachunek płatniczy i jego skutków poza podatkiem dochodowym, solidarnej
+        odpowiedzialności w VAT przy zapłacie na rachunek spoza wykazu (art. 117ba Ordynacji podatkowej) ani obowiązku
+        stosowania mechanizmu podzielonej płatności (art. 108a ustawy o VAT).
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (krok 1)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -432,7 +437,7 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1371/text.pdf
           article: art. 3 ust. 2
           quote: "Do płatności wynikającej z faktury wystawionej przed dniem 1 stycznia 2027 r. mają zastosowanie przepisy art. 22p ustawy zmienianej w art. 1, w brzmieniu dotychczasowym"
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
     - valid_from: 2027-01-01
       value:
         steps:
@@ -451,9 +456,6 @@
           - text: Do płatności wynikającej z faktury wystawionej przed 1 stycznia 2027 r. stosujesz art. 22p w brzmieniu sprzed tego dnia, czyli także wyłączenie przelewu na rachunek spoza wykazu podmiotów z art. 96b ust. 1 ustawy o VAT i płatności z pominięciem mechanizmu podzielonej płatności, z wyjątkami z dawnego art. 22p ust. 4 (wersja tej zasady obowiązująca do 31 grudnia 2026 r.).
             uses: []
             basis: art. 3 ust. 2 ustawy z dnia 18 września 2026 r. (Dz.U. 2026 poz. 1371)
-          - text: Ta zasada nie opisuje obowiązku dokonywania płatności przez rachunek płatniczy i jego skutków poza podatkiem dochodowym, solidarnej odpowiedzialności w VAT przy zapłacie na rachunek spoza wykazu (art. 117ba Ordynacji podatkowej) ani obowiązku stosowania mechanizmu podzielonej płatności (art. 108a ustawy o VAT).
-            uses: []
-            basis: art. 117ba Ordynacji podatkowej, art. 108a ustawy o VAT
       note: >-
         Nowe brzmienie art. 22p ust. 1 i 2 i uchylenie ust. 4 wynikają z ustawy Dz.U. 2026 poz. 1371, która w tym zakresie
         wchodzi w życie 1 stycznia 2027 r. (art. 6); nowego tekstu jednolitego jeszcze nie ogłoszono. Art. 22p ust. 3 cytowany
@@ -462,6 +464,11 @@
         nie zmieniają art. 22p. Art. 19 Prawa przedsiębiorców według tekstu jednolitego Dz.U. 2026 poz. 1484; ustawa
         Dz.U. 2026 poz. 1542 (od 1 stycznia 2027 r.) zmienia w tej ustawie tylko art. 47. Drugiego źródła urzędowego dla tej
         zasady nie znaleziono.
+        Korekta z 28 listopada 2026 r.: usunięty krok 6.
+      not_covered: >-
+        Obowiązku dokonywania płatności przez rachunek płatniczy i jego skutków poza podatkiem dochodowym, solidarnej
+        odpowiedzialności w VAT przy zapłacie na rachunek spoza wykazu (art. 117ba Ordynacji podatkowej) ani obowiązku
+        stosowania mechanizmu podzielonej płatności (art. 108a ustawy o VAT).
       sources:
         - title: Dz.U. 2026 poz. 1371, ustawa o zmianie ustawy o podatku dochodowym od osób fizycznych oraz ustawy o podatku dochodowym od osób prawnych (krok 1)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1371/text.pdf
@@ -491,4 +498,4 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1484/text.pdf
           article: art. 19
           quote: "jednorazowa wartość transakcji, bez względu na liczbę wynikających z niej płatności, przekracza 15 000 zł lub równowartość tej kwoty"
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
