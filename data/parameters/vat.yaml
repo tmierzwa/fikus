@@ -85,7 +85,11 @@
         do okresu prowadzonej działalności (art. 113 ust. 9). Kogo zwolnienie nie dotyczy niezależnie od wartości sprzedaży,
         określa art. 113 ust. 13; ta wartość tego nie opisuje, podobnie jak zwolnienia w procedurze SME (art. 113a).
         Kwota 240 000 zł obowiązuje od 1 stycznia 2026 r. (odnośnik do art. 113 ust. 1 w tekście jednolitym); wcześniej było to
-        200 000 zł, czego ta wersja nie obejmuje. Ustawa Dz.U. 2026 poz. 1270 dodaje od 1 stycznia 2027 r. art. 113 ust. 1a
+        200 000 zł, czego ta wersja nie obejmuje. Przepis przejściowy (art. 2 ustawy Dz.U. 2025 poz. 896) pozwala skorzystać ze zwolnienia
+        w nowym brzmieniu podatnikom z siedzibą działalności w kraju, u których wartość sprzedaży w 2025 r. była wyższa
+        niż 200 000 zł i nie przekroczyła 240 000 zł, także gdy rozpoczęli wykonywanie czynności w 2025 r., a wartość
+        sprzedaży w proporcji do okresu działalności mieściła się w tych granicach; przy sprzedaży podatników z art. 113a
+        stosuje się go odpowiednio. Ustawa Dz.U. 2026 poz. 1270 dodaje od 1 stycznia 2027 r. art. 113 ust. 1a
         (do wartości sprzedaży wlicza się również czynności z art. 13 ust. 3), a do wartości sprzedaży za 2026 r. każe stosować
         przepisy dotychczasowe (art. 5); kwoty nie zmienia. Ustawy Dz.U. 2026 poz. 1446, 1509 i 1556 nie zmieniają art. 113.
       sources:
@@ -97,6 +101,10 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
           quote: "Ze zmianą wprowadzoną przez art. 1 ustawy z dnia 24 czerwca 2025 r. o zmianie ustawy o podatku od towarów i usług (Dz. U. poz. 896), która weszła w życie z dniem 1 stycznia 2026 r."
           article: art. 113 ust. 1, odnośnik 29
+        - title: Dz.U. 2025 poz. 896, ustawa z dnia 24 czerwca 2025 r. o zmianie ustawy o podatku od towarów i usług (przepis przejściowy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2025/896/text.pdf
+          quote: "u których wartość sprzedaży w 2025 r. była wyższa niż 200 000 zł i nie przekroczyła 240 000 zł, mogą skorzystać ze zwolnienia"
+          article: art. 2 ust. 1–3
         - title: biznes.gov.pl, Kto musi płacić VAT, aktualizacja 30.10.2026
           url: https://www.biznes.gov.pl/pl/portal/00246
           kind: control
@@ -107,7 +115,7 @@
           kind: control
           quote: "nie przekroczyła łącznie w poprzednim ani w bieżącym roku podatkowym kwoty 240 000 zł"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification: {checked_at: 2026-11-28}
 
 - id: zasada.vat_odliczenie
   name: Odliczenie podatku naliczonego VAT, moment, korekta, samochody i wyłączenia

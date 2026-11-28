@@ -320,7 +320,7 @@
           który z nich stosuje się przy składaniu zeznania. Zob. docs/pytania-do-eksperta.md.
 
 - id: zasada.dane_autoryzujace
-  name: Podpis danymi autoryzującymi (zeznania PIT, JPK_V7M, JPK_EWP i JPK_PKPIR)
+  name: Podpis danymi autoryzującymi (zeznania PIT, JPK_V7M, JPK_V7K, JPK_EWP i JPK_PKPIR)
   kind: rule
   versions:
     - valid_from: 2026-04-01
@@ -354,21 +354,21 @@
               Danymi autoryzującymi możesz opatrzyć zeznania PIT-28, PIT-36 i PIT-36L oraz inne deklaracje i podania
               wymienione w § 11 rozporządzenia o deklaracjach, przesyłane przez oprogramowanie interfejsowe
               e-Deklaracji albo przez Platformę Usług Elektronicznych Skarbowo-Celnych. Tak samo możesz podpisać plik
-              JPK_V7M (deklaracja z ewidencją VAT), ewidencję przychodów w strukturze JPK_EWP i podatkową księgę
+              JPK_V7M albo JPK_V7K (deklaracja z ewidencją VAT), ewidencję przychodów w strukturze JPK_EWP i podatkową księgę
               przychodów i rozchodów w strukturze JPK_PKPIR, bo przesyła się je na zasadach przesyłania ksiąg
               podatkowych; kwotę przychodu podajesz wtedy za rok podatkowy o dwa lata wcześniejszy niż rok przesłania
               pliku. Rozporządzenia o deklaracjach nie stosuje się do przesyłania przez e-Urząd Skarbowy.
-            uses: [schemat.pit_36, schemat.pit_36l, schemat.pit_28, schemat.jpk_v7m, schemat.jpk_pkpir, schemat.jpk_ewp, zasada.jpk_pd_ryczalt, zasada.jpk_pd_pkpir]
+            uses: [schemat.pit_36, schemat.pit_36l, schemat.pit_28, schemat.jpk_v7m, schemat.jpk_v7k, schemat.jpk_pkpir, schemat.jpk_ewp, zasada.jpk_pd_ryczalt, zasada.jpk_pd_pkpir]
             basis: § 1a, § 4 pkt 5 i § 11 pkt 16 i 18 rozporządzenia Dz.U. 2025 poz. 327 (§ 1a dodany przez Dz.U. 2026 poz. 442); § 2 ust. 1, ust. 2 pkt 3 i ust. 2a rozporządzenia Dz.U. 2025 poz. 461; art. 99 ust. 11c ustawy o VAT; art. 15 ust. 12 ustawy o zryczałtowanym podatku dochodowym; art. 24a ust. 1e ustawy o PIT
           - text: >-
               Danymi autoryzującymi nie podpiszesz deklaracji ani podania, których nie przesyła podatnik, płatnik
-              albo podmiot będący osobą fizyczną, ani księgi (także JPK_V7M, JPK_EWP i JPK_PKPIR), której nie przesyła
+              albo podmiot będący osobą fizyczną, ani księgi (także JPK_V7M, JPK_V7K, JPK_EWP i JPK_PKPIR), której nie przesyła
               podatnik będący osobą fizyczną. MF podaje, że w niektórych formularzach online, gdy podatnikiem jest osoba
               fizyczna, a formularz składa osoba niefizyczna albo pełnomocnik osoby fizycznej, nie można użyć danych
               autoryzujących, a wyłącznie podpisu kwalifikowanego. Deklaracji i podań spoza
               wykazu w § 11 nie podpiszesz danymi autoryzującymi; kwalifikowanym podpisem elektronicznym możesz opatrzyć
               wszystkie rodzaje deklaracji i podań.
-            uses: [schemat.jpk_v7m, schemat.jpk_pkpir, schemat.jpk_ewp]
+            uses: [schemat.jpk_v7m, schemat.jpk_v7k, schemat.jpk_pkpir, schemat.jpk_ewp]
             basis: § 4 pkt 1 i 5, § 5 ust. 1 i § 11 rozporządzenia Dz.U. 2025 poz. 327; § 2 ust. 2 rozporządzenia Dz.U. 2025 poz. 461; e-Deklaracje, pytania i odpowiedzi (MF); specyfikacja interfejsów usług JPK 5.6.0 (MF)
       note: >-
         Data początku obowiązywania to wejście w życie § 1a (wyłączenie e-Urzędu Skarbowego) i § 2 ust. 5 rozporządzenia
@@ -384,8 +384,8 @@
         o księgach (tekst jednolity Dz.U. 2025 poz. 461) nie ma zmian po tym tekście (ELI, akty zmieniające).
         Pozycje zeznań, z których bierze się kwotę przychodu, MF podaje dla kolejnych wzorów w odpowiedziach na pytania
         o e-Deklaracje. Specyfikacja interfejsów usług JPK 5.6.0 podaje dane autoryzujące jako metodę uwierzytelnienia dla
-        JPK_V7M, JPK_EWP(4) i JPK_PKPIR(3). Żaden dokument nie podaje sam całej zasady (odpowiedzi MF nie mówią o plikach
-        JPK, a specyfikacja JPK nie podaje zestawu danych), więc wersja nie ma drugiego niezależnego dowodu.
+        JPK_V7M(1)–(3), JPK_V7K(1)–(3), JPK_EWP(4) i JPK_PKPIR(3). Żaden dokument nie podaje sam całej zasady (odpowiedzi MF nie mówią o plikach
+        JPK, a specyfikacja JPK nie podaje zestawu danych), więc wersja nie ma drugiego niezależnego dowodu. Korekta z 28 listopada 2026 r.: zmienione kroki 4 i 5.
       sources:
         - title: Dz.U. 2025 poz. 327, tekst jednolity rozporządzenia w sprawie sposobu przesyłania deklaracji i podań oraz rodzajów podpisu elektronicznego (zestaw danych)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/327/text.pdf
@@ -419,9 +419,13 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/461/text.pdf
           quote: "za rok podatkowy o dwa lata wcześniejszy niż rok przesyłania księgi albo wartość „0” (zero), gdy za ten rok podatkowy nie złożono żadnego z wymienionych zeznań lub obliczeń"
           article: § 2 ust. 2a pkt 5
-        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (sposób przesyłania JPK_V7M)
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (sposób przesyłania JPK_V7M i JPK_V7K)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
           quote: "Dokument elektroniczny, o którym mowa w zdaniu pierwszym, jest przesyłany w sposób określony w przepisach wydanych na podstawie art. 193a § 3 Ordynacji podatkowej i zgodnie z wymaganiami określonymi w tych przepisach."
+          article: art. 99 ust. 11c
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (deklaracje miesięczne i kwartalne)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "Deklaracje podatkowe, o których mowa w ust. 1–3, są składane zgodnie z wzorem dokumentu elektronicznego"
           article: art. 99 ust. 11c
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (sposób przesyłania ewidencji przychodów)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
@@ -456,8 +460,7 @@
           quote: "dokument złożony z użyciem danych autoryzujących może złożyć wyłącznie podatnik, będący osobą fizyczną"
           as_of: 2026-11-26
       verification:
-        checked_at: 2026-11-26
-        agent_check: 2026-11-26
+        checked_at: 2026-11-28
         open_issue: >-
           P42: którą kwotę przychodu podaje się w danych autoryzujących, gdy za rok podatkowy o dwa lata wcześniejszy
           podatnik złożył kilka z wymienionych zeznań (na przykład PIT-36L i PIT-38), także przy podpisywaniu plików
@@ -492,15 +495,15 @@
               Danymi autoryzującymi możesz opatrzyć zeznania PIT-28, PIT-36 i PIT-36L oraz inne deklaracje i podania
               wymienione w § 11 rozporządzenia o deklaracjach, przesyłane przez oprogramowanie interfejsowe
               e-Deklaracji albo przez Platformę Usług Elektronicznych Skarbowo-Celnych. Tak samo możesz podpisać plik
-              JPK_V7M (deklaracja z ewidencją VAT), ewidencję przychodów w strukturze JPK_EWP i podatkową księgę
+              JPK_V7M albo JPK_V7K (deklaracja z ewidencją VAT), ewidencję przychodów w strukturze JPK_EWP i podatkową księgę
               przychodów i rozchodów w strukturze JPK_PKPIR, bo przesyła się je na zasadach przesyłania ksiąg
               podatkowych; kwotę przychodu podajesz wtedy za rok podatkowy o dwa lata wcześniejszy niż rok przesłania
               pliku. Rozporządzenia o deklaracjach nie stosuje się do przesyłania przez e-Urząd Skarbowy.
-            uses: [schemat.pit_36, schemat.pit_36l, schemat.pit_28, schemat.jpk_v7m, schemat.jpk_pkpir, schemat.jpk_ewp, zasada.jpk_pd_ryczalt, zasada.jpk_pd_pkpir]
+            uses: [schemat.pit_36, schemat.pit_36l, schemat.pit_28, schemat.jpk_v7m, schemat.jpk_v7k, schemat.jpk_pkpir, schemat.jpk_ewp, zasada.jpk_pd_ryczalt, zasada.jpk_pd_pkpir]
             basis: § 1a, § 4 pkt 5 i § 11 pkt 16 i 18 rozporządzenia Dz.U. 2025 poz. 327 (§ 1a dodany przez Dz.U. 2026 poz. 442); § 2 ust. 1, ust. 2 pkt 3 i ust. 2a rozporządzenia Dz.U. 2025 poz. 461; art. 99 ust. 11c ustawy o VAT; art. 15 ust. 12 ustawy o zryczałtowanym podatku dochodowym; art. 24a ust. 1e ustawy o PIT
           - text: >-
               Danymi autoryzującymi nie podpiszesz deklaracji ani podania, których nie przesyła podatnik, płatnik
-              albo podmiot będący osobą fizyczną, ani księgi (także JPK_V7M, JPK_EWP i JPK_PKPIR), której nie przesyła
+              albo podmiot będący osobą fizyczną, ani księgi (także JPK_V7M, JPK_V7K, JPK_EWP i JPK_PKPIR), której nie przesyła
               podatnik będący osobą fizyczną. MF podaje, że w niektórych formularzach online, gdy podatnikiem jest osoba
               fizyczna, a formularz składa osoba niefizyczna albo pełnomocnik osoby fizycznej, nie można użyć danych
               autoryzujących, a wyłącznie podpisu kwalifikowanego. Pełnomocnictwo do podpisywania deklaracji składanej
@@ -511,7 +514,7 @@
               i prawnych przesyłanych na podstawie art. 15 ust. 12 ustawy o zryczałtowanym podatku dochodowym. Deklaracji i podań spoza
               wykazu w § 11 nie podpiszesz danymi autoryzującymi; kwalifikowanym podpisem elektronicznym możesz opatrzyć
               wszystkie rodzaje deklaracji i podań.
-            uses: [schemat.jpk_v7m, schemat.jpk_pkpir, schemat.jpk_ewp]
+            uses: [schemat.jpk_v7m, schemat.jpk_v7k, schemat.jpk_pkpir, schemat.jpk_ewp]
             basis: § 4 pkt 1 i 5, § 5 ust. 1 i § 11 rozporządzenia Dz.U. 2025 poz. 327; § 2 ust. 2 rozporządzenia Dz.U. 2025 poz. 461; art. 24a ust. 1g ustawy o PIT i art. 15 ust. 13a ustawy o zryczałtowanym podatku dochodowym (dodane przez Dz.U. 2026 poz. 779); e-Deklaracje, pytania i odpowiedzi (MF); specyfikacja interfejsów usług JPK 5.6.0 (MF)
       note: >-
         Nowa wersja od 16 czerwca 2026 r.: tego dnia weszły w życie art. 24a ust. 1g ustawy o PIT i art. 15 ust. 13a
@@ -536,8 +539,8 @@
         o księgach (tekst jednolity Dz.U. 2025 poz. 461) nie ma zmian po tym tekście (ELI, akty zmieniające).
         Pozycje zeznań, z których bierze się kwotę przychodu, MF podaje dla kolejnych wzorów w odpowiedziach na pytania
         o e-Deklaracje. Specyfikacja interfejsów usług JPK 5.6.0 podaje dane autoryzujące jako metodę uwierzytelnienia dla
-        JPK_V7M, JPK_EWP(4) i JPK_PKPIR(3). Żaden dokument nie podaje sam całej zasady (odpowiedzi MF nie mówią o plikach
-        JPK, a specyfikacja JPK nie podaje zestawu danych), więc wersja nie ma drugiego niezależnego dowodu.
+        JPK_V7M(1)–(3), JPK_V7K(1)–(3), JPK_EWP(4) i JPK_PKPIR(3). Żaden dokument nie podaje sam całej zasady (odpowiedzi MF nie mówią o plikach
+        JPK, a specyfikacja JPK nie podaje zestawu danych), więc wersja nie ma drugiego niezależnego dowodu. Korekta z 28 listopada 2026 r.: zmienione kroki 4 i 5.
       sources:
         - title: Dz.U. 2025 poz. 327, tekst jednolity rozporządzenia w sprawie sposobu przesyłania deklaracji i podań oraz rodzajów podpisu elektronicznego (zestaw danych)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/327/text.pdf
@@ -575,9 +578,13 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/461/text.pdf
           quote: "za rok podatkowy o dwa lata wcześniejszy niż rok przesyłania księgi albo wartość „0” (zero), gdy za ten rok podatkowy nie złożono żadnego z wymienionych zeznań lub obliczeń"
           article: § 2 ust. 2a pkt 5
-        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (sposób przesyłania JPK_V7M)
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (sposób przesyłania JPK_V7M i JPK_V7K)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
           quote: "Dokument elektroniczny, o którym mowa w zdaniu pierwszym, jest przesyłany w sposób określony w przepisach wydanych na podstawie art. 193a § 3 Ordynacji podatkowej i zgodnie z wymaganiami określonymi w tych przepisach."
+          article: art. 99 ust. 11c
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (deklaracje miesięczne i kwartalne)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          quote: "Deklaracje podatkowe, o których mowa w ust. 1–3, są składane zgodnie z wzorem dokumentu elektronicznego"
           article: art. 99 ust. 11c
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (sposób przesyłania ewidencji przychodów)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
@@ -624,8 +631,7 @@
           quote: "dokument złożony z użyciem danych autoryzujących może złożyć wyłącznie podatnik, będący osobą fizyczną"
           as_of: 2026-11-26
       verification:
-        checked_at: 2026-11-26
-        agent_check: 2026-11-26
+        checked_at: 2026-11-28
         open_issue: >-
           P42: którą kwotę przychodu podaje się w danych autoryzujących, gdy za rok podatkowy o dwa lata wcześniejszy
           podatnik złożył kilka z wymienionych zeznań (na przykład PIT-36L i PIT-38), także przy podpisywaniu plików
