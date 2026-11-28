@@ -102,7 +102,8 @@
           quote: "Jeżeli zawiesiłeś działalność bądź przestałeś ją prowadzić i nie będziesz wykazywał w deklaracji za kwiecień 2023 r. bieżących składek, to mimo tego masz obowiązek złożyć dokumenty rozliczeniowe za kwiecień 2023 r. z rozliczeniem rocznym."
           as_of: 2026-11-26
       verification:
-        checked_at: 2026-11-26
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue_scope: edge_case
         open_issue: >-
           Art. 36a ust. 3 ustawy o systemie ubezpieczeń społecznych zwalnia z deklaracji rozliczeniowej „za okres
@@ -551,7 +552,7 @@
           url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
           quote: "wysokość składki na ubezpieczenie zdrowotne, które finansuje ubezpieczony. W tym polu wpisujesz sumę składek ustalonych dla form opodatkowania wykazanych w bloku XI."
           as_of: 2026-05-01
-      verification: {checked_at: 2026-11-27}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: zasada.dra_bloki_zdrowotne
   name: Składka zdrowotna w deklaracji ZUS DRA za siebie (bloki XI i XII)
@@ -646,7 +647,8 @@
           article: art. 81 ust. 2c
           quote: "dochód z działalności gospodarczej uzyskany w miesiącu poprzedzającym miesiąc, za który opłacana jest składka"
       verification:
-        checked_at: 2026-11-27
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue: >-
           Art. 81 ust. 2g ustawy o świadczeniach opieki zdrowotnej pomniejsza przychody z ust. 2e i 2f o „kwoty opłaconych
           składek” bez wskazania okresu, a ust. 2h przy przychodzie z poprzedniego roku mówi o składkach „opłaconych

@@ -104,7 +104,8 @@
           quote: "Ulgi na IKZE nie możesz uwzględnić przy obliczaniu zaliczek na podatek dochodowy. Odliczenia dokonujesz w zeznaniu rocznym."
           as_of: 2026-11-26
       verification:
-        checked_at: 2026-11-27
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue: >-
           Krok o darowiznach: art. 26 ust. 5 ustawy o PIT, stosowany na ryczałcie odpowiednio (art. 11 ust. 2 ustawy
           o ryczałcie), określa limit jako 6% dochodu. Nie wiadomo, czy na ryczałcie liczy się go od przychodu przed
@@ -213,7 +214,8 @@
           article: art. 27f ust. 1
           quote: "Od podatku dochodowego obliczonego zgodnie z art. 27 podatnik ma prawo odliczyć kwotę obliczoną zgodnie z ust. 2"
       verification:
-        checked_at: 2026-11-27
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue: >-
           Krok o Internecie: art. 5 ust. 2 ustawy Dz.U. 2026 poz. 1541 stosuje przepis przejściowy do ryczałtu tylko
           odpowiednio; nie wiadomo, jak art. 5 ust. 1 stosuje się przy odliczeniu od przychodu na ryczałcie. Przepis nie

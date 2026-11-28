@@ -97,7 +97,8 @@
           quote: "złożycie wniosek o wspólne opodatkowanie dochodów, wyrażony w zeznaniu podatkowym PIT-37 lub PIT-36"
           as_of: 2026-11-26
       verification:
-        checked_at: 2026-11-26
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue: >-
           Przepis wymaga wniosku wyrażonego w zeznaniu, ale nie mówi, czy można go wyrazić w zeznaniu złożonym
           po terminie albo w korekcie zeznania, ani czy korektą można z niego zrezygnować. Strona MF podaje, że tak; pytanie P16 w docs/pytania-do-eksperta.md.
@@ -181,7 +182,8 @@
           quote: "złożysz wniosek o preferencyjne rozliczenie w zeznaniu PIT-37 lub PIT-36"
           as_of: 2026-11-26
       verification:
-        checked_at: 2026-11-26
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue: >-
           Przepis wymaga wniosku wyrażonego w rocznym zeznaniu, ale nie mówi, czy można go wyrazić w zeznaniu złożonym
           po terminie albo w korekcie zeznania, ani czy korektą można z niego zrezygnować. Strona MF podaje, że korekta jest możliwa. Przepis mówi też, że rodzic
@@ -269,7 +271,8 @@
           quote: "19% podatku liniowego lub przepisy ustawy o zryczałtowanym podatku dochodowym (z wyłączeniem przychodów z najmu lub dzierżawy prowadzonych poza działalnością gospodarczą)"
           as_of: 2026-11-26
       verification:
-        checked_at: 2026-11-26
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue: >-
           Przepis wyłącza łączne opodatkowanie przy stosowaniu podatku liniowego albo ryczałtu „w zakresie” przychodów,
           kosztów i odliczeń z roku podatkowego. Strona MF podaje, że nie wyklucza go rok bez przychodów, kosztów

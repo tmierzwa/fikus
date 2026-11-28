@@ -165,7 +165,8 @@
           quote: "Numer identyfikujący fakturę wystawioną przy użyciu Krajowego Systemu e-Faktur (numer KSeF) (pole opcjonalne)"
           as_of: 2026-11-26
       verification:
-        checked_at: 2026-11-26
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue: >-
           P32: w którym okresie i w jaki sposób wpisuje się do ewidencji korektę przychodu wynikającą z błędu rachunkowego
           lub innej oczywistej omyłki, do której nie stosuje się art. 14 ust. 1m ustawy o PIT, i jak wpisuje się korektę

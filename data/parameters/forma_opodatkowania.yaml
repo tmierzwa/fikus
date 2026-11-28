@@ -348,7 +348,8 @@
           quote: "Jeśli wybierzesz podatek liniowy, to tę formę opodatkowania będziesz stosować również w kolejnych latach podatkowych. Możesz z niej jednak zrezygnować albo wybrać ryczałt od przychodów ewidencjonowanych."
           as_of: 2026-11-26
       verification:
-        checked_at: 2026-11-26
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue_scope: edge_case
         open_issue: >-
           Art. 9 ust. 1b ustawy o ryczałcie i art. 9a ust. 2b ustawy o PIT mówią, że wybór formy dotyczy również lat

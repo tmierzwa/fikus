@@ -262,7 +262,7 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/622/text.pdf
           article: art. 63 § 1
           quote: "Podstawy opodatkowania, kwoty podatków, odsetki za zwłokę, opłaty prolongacyjne, oprocentowanie nadpłat oraz wynagrodzenia przysługujące płatnikom i inkasentom zaokrągla się do pełnych złotych"
-      verification: {checked_at: 2026-11-26}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: zasada.ryczalt_zdrowotna_prog
   name: Wybór progu składki zdrowotnej na ryczałcie
@@ -332,7 +332,8 @@
           quote: "Wypełnij, jeśli składka roczna jest mniejsza od sumy miesięcznych należnych składek wynikających ze złożonych dokumentów za rok, którego dotyczy roczne rozliczenie."
           as_of: 2026-05-01
       verification:
-        checked_at: 2026-11-27
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue: >-
           Ustawa Dz.U. 2026 poz. 1542 zmienia art. 81 ust. 2zd pkt 2 od 1 stycznia 2027 r. bez przepisu przejściowego.
           Od którego miesiąca składkowego albo dla przychodów i dochodów z jakiego okresu stosuje się nowe brzmienie?
@@ -415,7 +416,8 @@
           quote: "Wypełnij, jeśli składka roczna jest mniejsza od sumy miesięcznych należnych składek wynikających ze złożonych dokumentów za rok, którego dotyczy roczne rozliczenie."
           as_of: 2026-05-01
       verification:
-        checked_at: 2026-11-27
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue: >-
           Art. 81 ust. 2g pomniejsza przychód o „kwoty opłaconych składek” bez wskazania okresu: czy chodzi o składki
           zapłacone w okresie, czy należne za jego miesiące (docs/pytania-do-eksperta.md, P44)? Niedopłatę ust. 2j

@@ -257,4 +257,4 @@
           quote: "może obniżyć kwotę podatku należnego w deklaracji podatkowej za jeden z trzech następnych okresów rozliczeniowych, a w przypadku podatnika, o którym mowa w art. 99 ust. 2 i 3, w deklaracji podatkowej za jeden z dwóch następnych okresów rozliczeniowych"
           article: art. 86 ust. 11
           as_of: 2025-06-16
-      verification: {checked_at: 2026-11-26}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}

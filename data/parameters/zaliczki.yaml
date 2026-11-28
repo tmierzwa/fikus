@@ -198,7 +198,8 @@
           quote: "Zaliczki kwartalne możesz wpłacać tylko wtedy, gdy: rozpoczynasz prowadzenie działalności gospodarczej albo jesteś małym podatnikiem"
           as_of: 2026-11-26
       verification:
-        checked_at: 2026-11-26
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue_scope: edge_case
         open_issue: >-
           Art. 44 ust. 3g wymienia „podatnicy rozpoczynający prowadzenie działalności gospodarczej, o których mowa
@@ -294,7 +295,8 @@
           quote: "Jeżeli chcesz wpłacać zaliczki uproszczone, obliczone od dochodu z pozarolniczej działalności gospodarczej wykazanego przez Ciebie w latach ubiegłych, wpłacasz je w terminie do 20. dnia każdego miesiąca za miesiąc poprzedni"
           as_of: 2026-11-26
       verification:
-        checked_at: 2026-11-26
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue_scope: edge_case
         open_issue: >-
           Art. 44 ust. 6b pkt 2 każe sięgnąć do zeznania sprzed dwóch lat, gdy „w zeznaniu, o którym mowa w pkt 1”
@@ -329,8 +331,9 @@
         Korekta z 28 listopada 2026 r.: usunięty krok 5.
       not_covered: >-
         Kwartalnego opłacania ryczałtu przez przedsiębiorstwo w spadku i jego pierwszego ryczałtu (art. 21 ust. 1aa, 1ba i 5a)
-        ani ryczałtu za okres zawieszenia działalności i terminów jego wpłaty po wznowieniu (art. 21 ust. 1d–1k; opisuje je
-        zasada zaliczek na PIT i ryczałt w okresie zawieszenia działalności).
+        ani ryczałtu za okres zawieszenia działalności i terminów jego wpłaty po wznowieniu (art. 21 ust. 1d i 1g–1k; opisuje je
+        zasada zaliczek na PIT i ryczałt w okresie zawieszenia działalności), ani ryczałtu wspólnika spółki jawnej, która
+        zawiesiła działalność (art. 21 ust. 1e i 1f).
       see_also: [zasada.zaliczki_zawieszenie]
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (kto może)
@@ -362,7 +365,8 @@
           quote: "Ryczałt kwartalny możesz wpłacać tylko wtedy, gdy: rozpoczynasz prowadzenie działalności gospodarczej albo Twoje przychody z działalności prowadzonej samodzielnie albo przychody spółki"
           as_of: 2026-11-26
       verification:
-        checked_at: 2026-11-26
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue_scope: edge_case
         open_issue: >-
           Art. 21 ust. 1b pozwala na kwartalne opłacanie ryczałtu „podatnikom rozpoczynającym prowadzenie działalności,
@@ -451,7 +455,8 @@
           article: art. 25 ust. 1
           quote: "przedsiębiorca nie może wykonywać działalności gospodarczej i osiągać bieżących przychodów z pozarolniczej działalności gospodarczej"
       verification:
-        checked_at: 2026-11-26
+        checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue: >-
           Art. 44 ust. 10 ustawy o PIT i art. 21 ust. 1d ustawy o ryczałcie zwalniają z obowiązków „za okres objęty
           zawieszeniem”, a art. 24 ust. 7 Prawa przedsiębiorców liczy skutki zawieszenia od dnia jego rozpoczęcia do dnia

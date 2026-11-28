@@ -363,7 +363,7 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
           article: art. 22f ust. 4
           quote: "odpowiadającej stosunkowi powierzchni użytkowej wykorzystywanej do prowadzenia działalności gospodarczej, wynajmowanej lub wydzierżawianej, do ogólnej powierzchni użytkowej"
-      verification: {checked_at: 2026-11-26}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: zasada.platnosci_gotowkowe_koszty
   name: Wyłączenie z kosztów płatności dokonanych poza rachunkiem płatniczym
@@ -437,7 +437,7 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1371/text.pdf
           article: art. 3 ust. 2
           quote: "Do płatności wynikającej z faktury wystawionej przed dniem 1 stycznia 2027 r. mają zastosowanie przepisy art. 22p ustawy zmienianej w art. 1, w brzmieniu dotychczasowym"
-      verification: {checked_at: 2026-11-26}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
     - valid_from: 2027-01-01
       value:
         steps:
@@ -498,4 +498,4 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1484/text.pdf
           article: art. 19
           quote: "jednorazowa wartość transakcji, bez względu na liczbę wynikających z niej płatności, przekracza 15 000 zł lub równowartość tej kwoty"
-      verification: {checked_at: 2026-11-26}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
