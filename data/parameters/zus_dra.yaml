@@ -36,8 +36,8 @@
         niezależnego dowodu.
         Korekta z 28 listopada 2026 r.: usunięty krok 6.
       not_covered: >-
-        Deklaracji korygujących (art. 47 ust. 3–3b), deklaracji ZUS DRA cz. II, zawartości poszczególnych bloków deklaracji
-        (część bloków opisują zasady kolumn finansowania składek i składki zdrowotnej w deklaracji ZUS DRA) ani przekazywania
+        Deklaracji korygujących (art. 47 ust. 3–3b), deklaracji ZUS DRA cz. II i zawartości poszczególnych bloków deklaracji
+        (wzór deklaracji określa rozporządzenie wydane na podstawie art. 49 ust. 2 pkt 4; część bloków opisują zasady kolumn finansowania składek i składki zdrowotnej w deklaracji ZUS DRA) ani przekazywania
         dokumentów w formie elektronicznej (art. 47a).
       see_also: [zasada.dra_finansowanie_skladek, zasada.dra_bloki_zdrowotne]
       sources:
@@ -564,7 +564,7 @@
             uses: [schemat.zus_dra]
             basis: poradnik ZUS „ZUS DRA. Deklaracja rozliczeniowa. Jak wypełnić i skorygować” (maj 2026), blok XI
           - text: Na skali podatkowej w polu 02 wpisujesz dochód uzyskany w miesiącu bezpośrednio poprzedzającym rozliczany miesiąc, w polu 03 podstawę wymiaru, a w polu 04 składkę. Na podatku liniowym w polach 06–08 wpisujesz te same dane, a dochód ustalasz tak samo jak na skali.
-            uses: []
+            uses: [zasada.skala_zdrowotna, zasada.liniowy_zdrowotna]
             basis: art. 81 ust. 2c ustawy o świadczeniach opieki zdrowotnej; poradnik ZUS (maj 2026), blok XI, pola 02–08
           - text: Na ryczałcie w polu 13 wpisujesz sumę przychodów od początku roku kalendarzowego do końca rozliczanego miesiąca, jeżeli ustalasz składkę według przychodów bieżącego roku, a w polu 16 podstawę wymiaru i w polu 17 składkę dla progu przychodu. Czy w tym polu wpisujesz przychód pomniejszony o opłacone składki emerytalną, rentową, chorobową i wypadkową (art. 81 ust. 2g), czy przychód bez pomniejszenia, i czy chodzi o składki zapłacone w tym okresie, czy należne za jego miesiące, jest niewyjaśnione (otwarte pytanie do eksperta).
             uses: [zasada.ryczalt_zdrowotna_prog, zdrowotna.ryczalt.podstawa, zdrowotna.ryczalt.skladka]
@@ -590,8 +590,8 @@
         materiałami ZUS nie opisuje tych pól, więc wersja nie ma drugiego niezależnego dowodu.
         Korekta z 28 listopada 2026 r.: zmieniony krok 2, usunięty krok 8.
       not_covered: >-
-        Ustalania dochodu i podstawy wymiaru składki na skali podatkowej i przy podatku liniowym (opisują je zasady składki
-        zdrowotnej przy skali podatkowej i przy podatku liniowym).
+        Ustalania dochodu i podstawy wymiaru składki na skali podatkowej i przy podatku liniowym (art. 81 ust. 2, 2c i 2d ustawy
+        o świadczeniach opieki zdrowotnej; opisują je zasady składki zdrowotnej przy skali podatkowej i przy podatku liniowym).
         Pól dla karty podatkowej i osób bez formy opodatkowania, pól XII 02–03, 06–07 i 15 (zmiana formy opodatkowania w 2022
         r., zbycie składników majątku, obniżenie składki do wysokości zaliczki), korekty rozliczenia rocznego ani
         uwzględniania w polu 25 deklaracji korygujących za miesiące roku rozliczenia.

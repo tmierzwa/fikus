@@ -12,7 +12,7 @@
       value:
         steps:
           - text: Od przychodów opodatkowanych ryczałtem możesz odliczyć stratę z art. 9 ust. 3–3b ustawy o podatku dochodowym od osób fizycznych oraz wydatki z art. 26 ust. 1 pkt 2, 2a, 2b, 2c, 5–6a i 9, art. 26h ust. 1 i art. 26hb ust. 1 tej ustawy, jeżeli nie zostały odliczone od dochodu ani zaliczone do kosztów uzyskania przychodów.
-            uses: []
+            uses: [zasada.ryczalt_podstawa]
             basis: art. 11 ust. 1 i 1a ustawy o zryczałtowanym podatku dochodowym
           - text: Wpłaty na indywidualne konto zabezpieczenia emerytalnego dokonane w roku podatkowym odliczasz do wysokości rocznego limitu wpłat z ustawy o tych kontach, w zeznaniu.
             uses: [ikze.limit_wplat]
@@ -48,7 +48,7 @@
         Korekta z 28 listopada 2026 r.: zmienione kroki 1 i 6.
       not_covered: >-
         Sposobu odliczenia składek na ubezpieczenia społeczne (art. 26 ust. 1 pkt 2 i 2a ustawy o PIT) i połowy składki
-        zdrowotnej (opisuje je zasada podstawy opodatkowania ryczałtem).
+        zdrowotnej (art. 11 ust. 1a ustawy o ryczałcie; opisuje je zasada podstawy opodatkowania ryczałtem).
         Odliczenia wydatków na zabytki (art. 26hb ust. 1 ustawy o PIT) ani wydatków na terminal płatniczy (art. 11 ust. 3a
         ustawy o ryczałcie w zw. z art. 26hd ustawy o PIT).
       see_also: [zasada.ryczalt_podstawa]
@@ -112,7 +112,7 @@
       value:
         steps:
           - text: Od przychodów opodatkowanych ryczałtem możesz odliczyć stratę z art. 9 ust. 3–3b ustawy o podatku dochodowym od osób fizycznych oraz wydatki z art. 26 ust. 1 pkt 2, 2a, 2b, 2c, 5, 6 i 9, art. 26h ust. 1 i art. 26hb ust. 1 tej ustawy, jeżeli nie zostały odliczone od dochodu ani zaliczone do kosztów uzyskania przychodów.
-            uses: []
+            uses: [zasada.ryczalt_podstawa]
             basis: art. 11 ust. 1 i 1a ustawy o zryczałtowanym podatku dochodowym w brzmieniu od 1 stycznia 2027 r.
           - text: Wpłaty na indywidualne konto zabezpieczenia emerytalnego dokonane w roku podatkowym odliczasz do wysokości rocznego limitu wpłat z ustawy o tych kontach, w zeznaniu.
             uses: [ikze.limit_wplat]
@@ -145,7 +145,7 @@
         Korekta z 28 listopada 2026 r.: zmienione kroki 1 i 6.
       not_covered: >-
         Sposobu odliczenia składek na ubezpieczenia społeczne (art. 26 ust. 1 pkt 2 i 2a ustawy o PIT) i połowy składki
-        zdrowotnej (opisuje je zasada podstawy opodatkowania ryczałtem).
+        zdrowotnej (art. 11 ust. 1a ustawy o ryczałcie; opisuje je zasada podstawy opodatkowania ryczałtem).
         Odliczenia wydatków na zabytki (art. 26hb ust. 1 ustawy o PIT) ani wydatków na terminal płatniczy (art. 11 ust. 3a
         ustawy o ryczałcie w zw. z art. 26hd ustawy o PIT).
       see_also: [zasada.ryczalt_podstawa]

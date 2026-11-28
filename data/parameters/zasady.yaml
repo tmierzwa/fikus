@@ -277,7 +277,8 @@
         Korekty z 26 i 27 listopada 2026 r.: dodany krok 2, zmienione kroki 1 i 2 oraz ostatni krok (P8, P44, P45).
         Korekta z 28 listopada 2026 r.: zmieniony krok 5.
       not_covered: >-
-        Zwrotu nadpłaty (opisuje go zasada rocznego rozliczenia składki zdrowotnej).
+        Zwrotu nadpłaty (art. 81 ust. 2m–2v ustawy o świadczeniach opieki zdrowotnej; opisuje go zasada rocznego rozliczenia
+        składki zdrowotnej).
       see_also: [zasada.roczne_rozliczenie_zdrowotnej]
       value:
         steps:
@@ -294,7 +295,7 @@
             uses: [zdrowotna.ryczalt.skladka]
             basis: art. 81 ust. 2f ustawy o świadczeniach opieki zdrowotnej
           - text: Po końcu roku ustal roczną składkę według progu dla rocznego przychodu, pomnożonej przez liczbę miesięcy podlegania ubezpieczeniu (bez miesięcy zwolnienia ze składki). Roczny przychód pomniejszasz o opłacone składki i ustalasz z wyłączeniami tak jak w krokach 1 i 2 (z tymi samymi zastrzeżeniami). Niedopłatę ustawa liczy od sumy składek wynikającej ze złożonych dokumentów za miesiące roku (art. 81 ust. 2j); dopłacasz ją w rozliczeniu rocznym. Nadpłatę ustawa opisuje jako różnicę między sumą składek wpłaconych za miesiące roku a roczną składką (art. 81 ust. 2i), a wzór ZUS DRA wyznacza kwotę do zwrotu od sumy składek należnych ze złożonych dokumentów. Od której z tych kwot ustalasz nadpłatę, gdy się różnią, jest niewyjaśnione (otwarte pytanie do eksperta, P45).
-            uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka, termin.roczne_rozliczenie_zdrowotnej]
+            uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka, termin.roczne_rozliczenie_zdrowotnej, zasada.roczne_rozliczenie_zdrowotnej]
             basis: art. 81 ust. 2e, 2ea, 2g, 2i, 2j, 2k, 2l i 2zd ustawy o świadczeniach opieki zdrowotnej; wzór ZUS DRA, blok XII, pola 25–27
       sources:
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
@@ -346,7 +347,8 @@
         Korekta z 27 listopada 2026 r.: zmienione kroki 1 i ostatni (P44, P45).
         Korekta z 28 listopada 2026 r.: zmieniony krok 5.
       not_covered: >-
-        Zwrotu nadpłaty (opisuje go zasada rocznego rozliczenia składki zdrowotnej).
+        Zwrotu nadpłaty (art. 81 ust. 2m–2v ustawy o świadczeniach opieki zdrowotnej; opisuje go zasada rocznego rozliczenia
+        składki zdrowotnej).
       see_also: [zasada.roczne_rozliczenie_zdrowotnej]
       value:
         steps:
@@ -363,7 +365,7 @@
             uses: [zdrowotna.ryczalt.skladka]
             basis: art. 81 ust. 2f ustawy o świadczeniach opieki zdrowotnej
           - text: Po końcu roku ustal roczną składkę według progu dla rocznego przychodu, pomnożonej przez liczbę miesięcy podlegania ubezpieczeniu (bez miesięcy zwolnienia ze składki). Roczny przychód pomniejszasz o opłacone składki i ustalasz z wyłączeniami tak jak w krokach 1 i 2 (z tymi samymi zastrzeżeniami). Niedopłatę ustawa liczy od sumy składek wynikającej ze złożonych dokumentów za miesiące roku (art. 81 ust. 2j); dopłacasz ją w rozliczeniu rocznym. Nadpłatę ustawa opisuje jako różnicę między sumą składek wpłaconych za miesiące roku a roczną składką (art. 81 ust. 2i), a wzór ZUS DRA wyznacza kwotę do zwrotu od sumy składek należnych ze złożonych dokumentów. Od której z tych kwot ustalasz nadpłatę, gdy się różnią, jest niewyjaśnione (otwarte pytanie do eksperta, P45).
-            uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka, termin.roczne_rozliczenie_zdrowotnej]
+            uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka, termin.roczne_rozliczenie_zdrowotnej, zasada.roczne_rozliczenie_zdrowotnej]
             basis: art. 81 ust. 2e, 2ea, 2g, 2i, 2j, 2k, 2l i 2zd ustawy o świadczeniach opieki zdrowotnej; wzór ZUS DRA, blok XII, pola 25–27
       sources:
         - title: Dz.U. 2026 poz. 1542, ustawa z 22 października 2026 r. o zmianie ustawy o wspieraniu nowych inwestycji oraz niektórych innych ustaw (zmiana art. 81 ust. 2zd)
