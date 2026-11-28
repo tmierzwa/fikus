@@ -5,7 +5,7 @@
   name: Przesunięcie terminu na dzień roboczy
   kind: rule
   versions:
-    - valid_from: 2020-01-01
+    - valid_from: 2024-01-01
       valid_to: 2026-09-30
       value:
         steps:
@@ -17,8 +17,8 @@
             basis: art. 31 ustawy o systemie ubezpieczeń społecznych
       note: >-
         Korekta: dodany krok o składkach ZUS.
-        data początku obowiązywania (2020-01-01) nie jest potwierdzona źródłem.
-        Zamknięta 2026-09-30: od 1 października 2026 r. art. 12 § 5 ma brzmienie nadane ustawą Dz.U. 2026 poz. 846 (następna wersja).
+        Data początku obowiązywania (2024-01-01) to data odcięcia danych.
+        Zamknięta 2026-09-30: od 1 października 2026 r. art. 12 § 5 ma brzmienie nadane ustawą Dz.U. 2026 poz. 846 (następna wersja). Korekta z 28 listopada 2026 r.: zmieniony okres.
       sources:
         - title: Dz.U. 2026 poz. 622, tekst jednolity Ordynacji podatkowej
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/622/text.pdf
@@ -36,7 +36,7 @@
           url: https://www.zus.pl/en/firmy/rozliczenia-z-zus/dokumenty-rozliczeniowe/termin-skladania-dokumentow-i-oplacania-skladek
           quote: "Jeżeli koniec tego terminu przypada w święto (dzień ustawowo wolny od pracy), sobotę lub niedzielę, to za ostatni dzień terminu uważa się następny dzień roboczy"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification: {checked_at: 2026-11-28}
     - valid_from: 2026-10-01
       value:
         steps:

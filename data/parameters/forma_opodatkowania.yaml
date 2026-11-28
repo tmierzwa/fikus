@@ -7,7 +7,7 @@
   unit: EUR/rok
   applies_to: {tax_form: [ryczalt]}
   versions:
-    - valid_from: 2026-01-01
+    - valid_from: 2024-01-01
       value: 2000000
       note: >-
         Ryczałt opłaca w roku podatkowym podatnik, który w roku poprzedzającym rok podatkowy uzyskał przychody z działalności
@@ -19,8 +19,9 @@
         art. 11 ust. 4, 5, 8 i 9 albo podstawę obliczenia podatku na podstawie art. 26i ustawy o PIT (art. 6 ust. 8). Kwotę
         przelicza się na złote według średniego kursu euro ogłaszanego przez NBP na pierwszy dzień roboczy października roku
         poprzedzającego rok podatkowy (art. 4 ust. 2); ustawa o ryczałcie nie przewiduje zaokrąglenia tej kwoty. Tekst jednolity
-        uwzględnia zmiany ogłoszone przed 2025-06-12; data początku obowiązywania (2026-01-01) nie jest potwierdzona źródłem.
-        Nowelizacje ogłoszone później (Dz.U. 2026 poz. 779, 1098 i 1541) nie zmieniają art. 4 ani art. 6.
+        uwzględnia zmiany ogłoszone przed 2025-06-12; tekst jednolity Dz.U. 2024 poz. 776 (zmiany ogłoszone przed 11 kwietnia
+        2024 r.) ma to samo brzmienie art. 4 ust. 2 i art. 6 ust. 4, 5 i 8. Data początku obowiązywania (2024-01-01) to data odcięcia danych.
+        Nowelizacje ogłoszone później (Dz.U. 2026 poz. 779, 1098 i 1541) nie zmieniają art. 4 ani art. 6. Korekta z 28 listopada 2026 r.: zmieniony okres.
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (limit)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
@@ -40,7 +41,12 @@
           kind: control
           quote: "których przychody w poprzednim roku podatkowym nie przekroczyły limitu 2 mln euro, obliczonego według średniego kursu euro ogłaszanego przez Narodowy Bank Polski na pierwszy dzień roboczy października roku poprzedniego"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+        - title: Dz.U. 2024 poz. 776, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (to samo brzmienie w dniu odcięcia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/776/text.pdf
+          article: art. 6 ust. 4 pkt 1
+          quote: "uzyskali przychody z tej działalności, prowadzonej wyłącznie samodzielnie, w wysokości nieprzekraczającej 2 000 000 euro"
+          as_of: 2024-04-10
+      verification: {checked_at: 2026-11-28}
 
 - id: zasada.ryczalt_wylaczenia
   name: Kiedy nie można stosować ryczałtu od przychodów ewidencjonowanych i kiedy traci się do niego prawo
