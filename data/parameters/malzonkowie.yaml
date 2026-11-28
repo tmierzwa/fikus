@@ -120,7 +120,7 @@
             uses: [zasada.opodatkowanie_laczne_wylaczenia]
             basis: art. 6 ust. 4f i 8 ustawy o podatku dochodowym od osób fizycznych
           - text: Ten sam sposób stosuje się do osoby z ograniczonym obowiązkiem podatkowym, która samotnie wychowuje takie dzieci, jeżeli łącznie ma miejsce zamieszkania dla celów podatkowych w innym państwie Unii Europejskiej, Europejskiego Obszaru Gospodarczego albo w Szwajcarii, osiągnęła przychody podlegające opodatkowaniu w Polsce w wysokości co najmniej 75% całkowitego przychodu w roku podatkowym i udokumentowała miejsce zamieszkania certyfikatem rezydencji. Obowiązują wtedy te same warunki co do dzieci, wspólnego wychowywania i wyłączeń, a także warunek umowy o wymianie informacji podatkowych i obowiązek udokumentowania całkowitych przychodów na żądanie organu podatkowego.
-            uses: []
+            uses: [zasada.opodatkowanie_laczne_wylaczenia]
             basis: art. 6 ust. 4g, 4h i 11–13 oraz art. 3 ust. 2a ustawy o podatku dochodowym od osób fizycznych
           - text: Podatek ustala się na wniosek wyrażony w rocznym zeznaniu podatkowym. Zeznanie składa się w terminie z art. 45 ust. 1. Czy wniosek można wyrazić w zeznaniu złożonym po terminie albo w korekcie zeznania i czy korektą zeznania można zrezygnować z tego sposobu opodatkowania (albo przejść na niego po złożeniu zeznania bez wniosku), jest niewyjaśnione (otwarte pytanie do eksperta, P16).
             uses: [termin.zeznanie_skala]
@@ -139,7 +139,7 @@
         (PIT-36 albo PIT-37) podaje strona MF. Zasada podatku według skali
         i termin zeznania, do których odwołują się kroki, mają wersje od 1 stycznia 2026 r.
         Korekta z 26 listopada 2026 r.: zmieniony krok o wniosku (P16).
-        Korekta z 28 listopada 2026 r.: zmienione kroki 3, 5 i 7.
+        Korekta z 28 listopada 2026 r.: zmienione kroki 3, 4, 5 i 7.
       not_covered: >-
         Przypadków wyłączenia z art. 6 ust. 8 ustawy o PIT (opisuje je zasada o tym, kiedy nie można się rozliczyć wspólnie
         z małżonkiem ani jako osoba samotnie wychowująca dzieci).

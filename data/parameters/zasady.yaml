@@ -277,8 +277,9 @@
         Korekty z 26 i 27 listopada 2026 r.: dodany krok 2, zmienione kroki 1 i 2 oraz ostatni krok (P8, P44, P45).
         Korekta z 28 listopada 2026 r.: zmieniony krok 5.
       not_covered: >-
-        Zwrotu nadpłaty (art. 81 ust. 2m–2v ustawy o świadczeniach opieki zdrowotnej; opisuje go zasada rocznego rozliczenia
-        składki zdrowotnej).
+        Zwrotu nadpłaty (art. 81 ust. 2m–2qa i 2s ustawy o świadczeniach opieki zdrowotnej; opisuje go zasada rocznego
+        rozliczenia składki zdrowotnej). Ostateczności rozliczenia po zwrocie (art. 81 ust. 2r), formy zwrotu (ust. 2t) ani
+        odmowy zwrotu i odwołania od niej (ust. 2u i 2v).
       see_also: [zasada.roczne_rozliczenie_zdrowotnej]
       value:
         steps:
@@ -347,8 +348,9 @@
         Korekta z 27 listopada 2026 r.: zmienione kroki 1 i ostatni (P44, P45).
         Korekta z 28 listopada 2026 r.: zmieniony krok 5.
       not_covered: >-
-        Zwrotu nadpłaty (art. 81 ust. 2m–2v ustawy o świadczeniach opieki zdrowotnej; opisuje go zasada rocznego rozliczenia
-        składki zdrowotnej).
+        Zwrotu nadpłaty (art. 81 ust. 2m–2qa i 2s ustawy o świadczeniach opieki zdrowotnej; opisuje go zasada rocznego
+        rozliczenia składki zdrowotnej). Ostateczności rozliczenia po zwrocie (art. 81 ust. 2r), formy zwrotu (ust. 2t) ani
+        odmowy zwrotu i odwołania od niej (ust. 2u i 2v).
       see_also: [zasada.roczne_rozliczenie_zdrowotnej]
       value:
         steps:
