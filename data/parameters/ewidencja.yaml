@@ -46,8 +46,8 @@
           - text: Ewidencję prowadzisz według wzoru z załącznika do rozporządzenia. Wpis zawiera liczbę porządkową, datę wpisu, datę uzyskania przychodu, numer dowodu księgowego, numer identyfikujący fakturę wystawioną przy użyciu Krajowego Systemu e-Faktur, identyfikator podatkowy kontrahenta (z kodem kraju nadania), kwotę przychodu w kolumnie właściwej stawki ryczałtu, przychody ogółem i uwagi. Identyfikatora kontrahenta nie wpisujesz przy zapisach na podstawie dowodu wewnętrznego i raportów fiskalnych. Jeżeli wpłacasz ryczałt kwartalnie, w uwagach możesz wpisywać datę otrzymania przychodu.
             uses: [zasada.przychod_data_uzyskania]
             basis: § 2 ust. 1 rozporządzenia Dz.U. 2025 poz. 1294 i załącznik (wzór ewidencji z objaśnieniami)
-          - text: Ewidencję prowadzisz przy użyciu programów komputerowych i po zakończeniu roku przesyłasz ją w strukturze JPK_EWP; od którego roku te obowiązki cię dotyczą, opisuje zasada przesyłania ewidencji na ryczałcie w formie JPK. Jeżeli prowadzisz ewidencję bez użycia programów komputerowych, broszurujesz ją i kolejno numerujesz jej karty.
-            uses: [zasada.jpk_pd_ryczalt, schemat.jpk_ewp]
+          - text: Ewidencję prowadzisz przy użyciu programów komputerowych i po zakończeniu roku przesyłasz ją w strukturze JPK_EWP. Jeżeli prowadzisz ewidencję bez użycia programów komputerowych, broszurujesz ją i kolejno numerujesz jej karty.
+            uses: [schemat.jpk_ewp]
             basis: art. 15 ust. 12 ustawy o zryczałtowanym podatku dochodowym; § 2 ust. 3 rozporządzenia Dz.U. 2025 poz. 1294
           - text: Wpisów dokonujesz na podstawie faktur, faktur VAT RR, rachunków i dokumentów celnych, a przy sprzedaży bez faktur na podstawie dowodu wewnętrznego wystawionego na koniec dnia, z przychodami za ten dzień w podziale na stawki ryczałtu. Jeżeli prowadzisz ewidencję sprzedaży na kasie rejestrującej, wpisujesz dane z dobowych raportów fiskalnych albo na koniec miesiąca z miesięcznych raportów fiskalnych, skorygowane o kwoty mające wpływ na przychód; nie wpisujesz wtedy kwot z faktur do sprzedaży już ujętej na kasie. Przychody z art. 14 ust. 2 ustawy o PIT wpisujesz na podstawie dowodów potwierdzających ich uzyskanie.
             uses: []
@@ -72,10 +72,13 @@
         okresu przed 1 stycznia 2026 r. Rozporządzenie według API ELI nie było zmieniane. Tekst jednolity ustawy o ryczałcie (Dz.U. 2025 poz. 843) zmieniły później ustawy Dz.U. 2026 poz. 779 (dodaje art. 15 ust. 13a o pełnomocnictwie do podpisywania przesyłanej ewidencji), 1098 (art. 37: nowe brzmienie art. 21c, uchyla art. 21d; od 1 stycznia 2027 r.) i 1541 (art. 3: art. 11 ust. 1 i 2; od 1 stycznia 2027 r.); żadna nie zmienia art. 6 ust. 1e i 1f ani art. 15 ust. 1–3, 11a i 12. Tekst jednolity ustawy o PIT (Dz.U. 2026 poz. 592) zmieniły ustawy Dz.U. 2026 poz. 779 (art. 24a), 846 (art. 25b, 30f, 31d), 1079 (art. 21), 1098 (art. 2, 45ba, 45c, 45cd; uchyla art. 45ce i 45cf), 1123 (art. 21 ust. 1 pkt 67b, art. 22 ust. 1p), 1287 (dodaje art. 52zu), 1347 (uchyla art. 14 ust. 2 pkt 14 lit. b od 1 grudnia 2026 r.), 1354 (art. 14 ust. 2 pkt 10 lit. a od 1 stycznia 2027 r.), 1371 (uchyla art. 14 ust. 2h i 2i, zmienia art. 22p, 23q i 23zf), 1541 (art. 26, 26gb, 26i, 52jb), 1542 (art. 21, 23b, 23z, 26e, 26ga) i 1556 (art. 21 ust. 1 pkt 114a). Żadna z nich nie zmienia art. 14 ust. 1m–1o. Wzór ewidencji ma osobną kolumnę na numer KSeF faktury; broszura MF o JPK_EWP(4)
         opisuje to pole w pliku jako opcjonalne. Kroki opisują dane słownie; pola pliku JPK_EWP opisuje broszura przy
         schemacie. Ustawa o ryczałcie odwołuje się do korekty z art. 14 ust. 1m ustawy o PIT w art. 6 ust. 1e i 1f.
-        Korekta z 28 listopada 2026 r.: zmieniony krok 8.
+        Korekta z 28 listopada 2026 r.: zmienione kroki 3 i 8.
       not_covered: >-
+        Od którego roku obowiązek prowadzenia ewidencji przy użyciu programów komputerowych i przesyłania jej
+        w strukturze JPK_EWP dotyczy podatnika (opisuje to zasada przesyłania ewidencji na ryczałcie w formie JPK).
         Korekty przychodu w przypadkach wyłączonych przez art. 14 ust. 1o ustawy o PIT (korekta przychodu związanego z
         przedawnionym zobowiązaniem podatkowym, korekta cen transferowych).
+      see_also: [zasada.jpk_pd_ryczalt]
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (ewidencja za rok podatkowy)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf

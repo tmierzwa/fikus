@@ -19,8 +19,8 @@
           - text: Łączne opodatkowanie następuje na wspólny wniosek wyrażony w zeznaniu podatkowym. Wniosek może wyrazić jeden z małżonków; jest to równoznaczne z jego oświadczeniem, złożonym pod rygorem odpowiedzialności karnej za fałszywe zeznania, że współmałżonek upoważnił go do złożenia wniosku. Zeznanie roczne składa się w terminie z art. 45 ust. 1. Czy wniosek można wyrazić w zeznaniu złożonym po terminie albo w korekcie zeznania i czy korektą zeznania można zrezygnować z łącznego opodatkowania (albo przejść na nie po złożeniu odrębnych zeznań), jest niewyjaśnione (otwarte pytanie do eksperta, P16).
             uses: [termin.zeznanie_skala]
             basis: art. 6 ust. 2 i 2a oraz art. 45 ust. 1 ustawy o podatku dochodowym od osób fizycznych
-          - text: Łączne opodatkowanie nie ma zastosowania w przypadkach wyłączonych przepisem o podatku liniowym, ryczałcie, podatku tonażowym i aktywizacji przemysłu okrętowego; opisuje je osobna zasada.
-            uses: [zasada.opodatkowanie_laczne_wylaczenia]
+          - text: Łączne opodatkowanie nie ma zastosowania w przypadkach wyłączonych przepisem o podatku liniowym, ryczałcie, podatku tonażowym i aktywizacji przemysłu okrętowego.
+            uses: []
             basis: art. 6 ust. 2 i 8 ustawy o podatku dochodowym od osób fizycznych
           - text: Każdy z małżonków odrębnie ustala swój dochód według art. 9 ust. 1 i 1a i odrębnie odlicza od niego przysługujące mu kwoty pomniejszające dochód. Dochody obojga po tych odliczeniach sumuje się.
             uses: [zasada.skala_podatek]
@@ -43,10 +43,13 @@
         formularza (PIT-36 albo PIT-37) podaje strona MF. Zasada podatku według
         skali i termin zeznania, do których odwołują się kroki, mają wersje od 1 stycznia 2026 r.
         Korekta z 26 listopada 2026 r.: zmieniony krok o wniosku (P16).
-        Korekta z 28 listopada 2026 r.: zmieniony krok 3, usunięty krok 9.
+        Korekta z 28 listopada 2026 r.: zmienione kroki 3 i 4, usunięty krok 9.
       not_covered: >-
-        Doliczania dochodów małoletnich dzieci (art. 7), odliczeń od dochodu i od podatku przy łącznym opodatkowaniu ani
-        zaliczek w trakcie roku.
+        Przypadków wyłączenia z art. 6 ust. 8 ustawy o PIT (opisuje je zasada o tym, kiedy nie można się rozliczyć wspólnie
+        z małżonkiem ani jako osoba samotnie wychowująca dzieci).
+        Doliczania dochodów małoletnich dzieci (art. 7 ustawy o PIT), odliczeń od dochodu i od podatku przy łącznym
+        opodatkowaniu (art. 26 i art. 27f) ani zaliczek w trakcie roku (art. 44).
+      see_also: [zasada.opodatkowanie_laczne_wylaczenia]
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (warunki i wniosek)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -113,8 +116,8 @@
           - text: Dziecka uczącego się do ukończenia 25. roku życia nie uwzględnia się, jeżeli w roku podatkowym uzyskało dochody opodatkowane według art. 27 lub art. 30b (z wyjątkiem renty rodzinnej) albo przychody z art. 21 ust. 1 pkt 148 i 152 w łącznej wysokości przekraczającej dwunastokrotność kwoty renty socjalnej obowiązującej w grudniu roku podatkowego.
             uses: []
             basis: art. 6 ust. 4e ustawy o podatku dochodowym od osób fizycznych
-          - text: Tego sposobu nie stosuje się do osoby, która wychowuje co najmniej jedno dziecko wspólnie z drugim rodzicem albo opiekunem prawnym, także gdy dziecko jest pod opieką naprzemienną, w związku z którą obojgu rodzicom ustalono świadczenie wychowawcze według art. 5 ust. 2a ustawy o pomocy państwa w wychowywaniu dzieci. Nie stosuje się go też w przypadkach wyłączonych przepisem o podatku liniowym, ryczałcie, podatku tonażowym i aktywizacji przemysłu okrętowego; opisuje je osobna zasada.
-            uses: [zasada.opodatkowanie_laczne_wylaczenia]
+          - text: Tego sposobu nie stosuje się do osoby, która wychowuje co najmniej jedno dziecko wspólnie z drugim rodzicem albo opiekunem prawnym, także gdy dziecko jest pod opieką naprzemienną, w związku z którą obojgu rodzicom ustalono świadczenie wychowawcze według art. 5 ust. 2a ustawy o pomocy państwa w wychowywaniu dzieci. Nie stosuje się go też w przypadkach wyłączonych przepisem o podatku liniowym, ryczałcie, podatku tonażowym i aktywizacji przemysłu okrętowego.
+            uses: []
             basis: art. 6 ust. 4f i 8 ustawy o podatku dochodowym od osób fizycznych
           - text: Ten sam sposób stosuje się do osoby z ograniczonym obowiązkiem podatkowym, która samotnie wychowuje takie dzieci, jeżeli łącznie ma miejsce zamieszkania dla celów podatkowych w innym państwie Unii Europejskiej, Europejskiego Obszaru Gospodarczego albo w Szwajcarii, osiągnęła przychody podlegające opodatkowaniu w Polsce w wysokości co najmniej 75% całkowitego przychodu w roku podatkowym i udokumentowała miejsce zamieszkania certyfikatem rezydencji. Obowiązują wtedy te same warunki co do dzieci, wspólnego wychowywania i wyłączeń, a także warunek umowy o wymianie informacji podatkowych i obowiązek udokumentowania całkowitych przychodów na żądanie organu podatkowego.
             uses: []
@@ -136,9 +139,13 @@
         (PIT-36 albo PIT-37) podaje strona MF. Zasada podatku według skali
         i termin zeznania, do których odwołują się kroki, mają wersje od 1 stycznia 2026 r.
         Korekta z 26 listopada 2026 r.: zmieniony krok o wniosku (P16).
-        Korekta z 28 listopada 2026 r.: zmienione kroki 5 i 7.
+        Korekta z 28 listopada 2026 r.: zmienione kroki 3, 5 i 7.
       not_covered: >-
-        Doliczania dochodów małoletnich dzieci (art. 7), odliczeń od dochodu i od podatku ani zaliczek w trakcie roku.
+        Przypadków wyłączenia z art. 6 ust. 8 ustawy o PIT (opisuje je zasada o tym, kiedy nie można się rozliczyć wspólnie
+        z małżonkiem ani jako osoba samotnie wychowująca dzieci).
+        Doliczania dochodów małoletnich dzieci (art. 7 ustawy o PIT), odliczeń od dochodu i od podatku (art. 26 i art. 27f)
+        ani zaliczek w trakcie roku (art. 44).
+      see_also: [zasada.opodatkowanie_laczne_wylaczenia]
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (warunki)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf

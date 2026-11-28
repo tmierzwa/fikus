@@ -207,7 +207,7 @@
       note: >-
         Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku obowiązywania (2026-01-01)
         nie jest potwierdzona źródłem. Wcześniejszych wersji nie wprowadzono.
-        Korekta z 28 listopada 2026 r.: zmienione kroki 1 i 5 (dawny krok 6), usunięty dawny krok 5.
+        Korekta z 28 listopada 2026 r.: zmienione kroki 1 i 5, usunięty dawny krok 5, dawne kroki 6 i 7 to teraz 5 i 6.
       not_covered: >-
         Ustalania dochodu przy księgach rachunkowych (art. 24 ust. 1) i dochodu z odpłatnego zbycia składników majątku (art.
         24 ust. 2 zdanie drugie). Pozostałych odliczeń od dochodu i od podatku (między innymi z art. 26 ust. 1 pkt 2b–9, art.
@@ -275,6 +275,10 @@
         Korekta: zmienione okres i podstawa kroku 4.
         Ust. 2e-2i w tym brzmieniu obowiązują od 1 stycznia 2025 r. (Dz.U. 2024 poz. 1915).
         Korekty z 26 i 27 listopada 2026 r.: dodany krok 2, zmienione kroki 1 i 2 oraz ostatni krok (P8, P44, P45).
+        Korekta z 28 listopada 2026 r.: zmieniony krok 5.
+      not_covered: >-
+        Zwrotu nadpłaty (opisuje go zasada rocznego rozliczenia składki zdrowotnej).
+      see_also: [zasada.roczne_rozliczenie_zdrowotnej]
       value:
         steps:
           - text: Ustal przychód z działalności osiągnięty od początku roku kalendarzowego, pomniejszony o opłacone składki emerytalną, rentową, chorobową i wypadkową, jeżeli nie zostały zaliczone do kosztów ani odliczone od dochodu. Funduszu Pracy nie odejmuj. Czy odejmujesz składki zapłacone w tym okresie (według dnia zapłaty), czy składki należne za jego miesiące, jest niewyjaśnione (otwarte pytanie do eksperta, P44). Zamiast tego możesz przyjąć przychód z poprzedniego roku (zasada.ryczalt_zdrowotna_prog_poprzedni_rok).
@@ -289,8 +293,8 @@
           - text: Po przekroczeniu progu w trakcie roku płać kwotę wyższego progu od miesiąca przekroczenia.
             uses: [zdrowotna.ryczalt.skladka]
             basis: art. 81 ust. 2f ustawy o świadczeniach opieki zdrowotnej
-          - text: Po końcu roku ustal roczną składkę według progu dla rocznego przychodu, pomnożonej przez liczbę miesięcy podlegania ubezpieczeniu (bez miesięcy zwolnienia ze składki). Roczny przychód pomniejszasz o opłacone składki i ustalasz z wyłączeniami tak jak w krokach 1 i 2 (z tymi samymi zastrzeżeniami). Niedopłatę ustawa liczy od sumy składek wynikającej ze złożonych dokumentów za miesiące roku (art. 81 ust. 2j); dopłacasz ją w rozliczeniu rocznym. Nadpłatę ustawa opisuje jako różnicę między sumą składek wpłaconych za miesiące roku a roczną składką (art. 81 ust. 2i), a wzór ZUS DRA wyznacza kwotę do zwrotu od sumy składek należnych ze złożonych dokumentów. Od której z tych kwot ustalasz nadpłatę, gdy się różnią, jest niewyjaśnione (otwarte pytanie do eksperta, P45). Zwrot nadpłaty opisuje zasada rocznego rozliczenia.
-            uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka, termin.roczne_rozliczenie_zdrowotnej, zasada.roczne_rozliczenie_zdrowotnej]
+          - text: Po końcu roku ustal roczną składkę według progu dla rocznego przychodu, pomnożonej przez liczbę miesięcy podlegania ubezpieczeniu (bez miesięcy zwolnienia ze składki). Roczny przychód pomniejszasz o opłacone składki i ustalasz z wyłączeniami tak jak w krokach 1 i 2 (z tymi samymi zastrzeżeniami). Niedopłatę ustawa liczy od sumy składek wynikającej ze złożonych dokumentów za miesiące roku (art. 81 ust. 2j); dopłacasz ją w rozliczeniu rocznym. Nadpłatę ustawa opisuje jako różnicę między sumą składek wpłaconych za miesiące roku a roczną składką (art. 81 ust. 2i), a wzór ZUS DRA wyznacza kwotę do zwrotu od sumy składek należnych ze złożonych dokumentów. Od której z tych kwot ustalasz nadpłatę, gdy się różnią, jest niewyjaśnione (otwarte pytanie do eksperta, P45).
+            uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka, termin.roczne_rozliczenie_zdrowotnej]
             basis: art. 81 ust. 2e, 2ea, 2g, 2i, 2j, 2k, 2l i 2zd ustawy o świadczeniach opieki zdrowotnej; wzór ZUS DRA, blok XII, pola 25–27
       sources:
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
@@ -327,7 +331,6 @@
           as_of: 2026-05-01
       verification:
         checked_at: 2026-11-27
-        agent_check: 2026-11-27
         open_issue: >-
           Ustawa Dz.U. 2026 poz. 1542 zmienia art. 81 ust. 2zd pkt 2 od 1 stycznia 2027 r. bez przepisu przejściowego.
           Od którego miesiąca składkowego albo dla przychodów i dochodów z jakiego okresu stosuje się nowe brzmienie?
@@ -341,6 +344,10 @@
         pkt 63a ustawy o PIT (Dz.U. 2026 poz. 1542, art. 12); ta sama ustawa uchyla ten punkt w ustawie o PIT (art. 4
         pkt 1). Pozostałe kroki się nie zmieniają. Nowego brzmienia nie ma jeszcze w tekście jednolitym, więc źródłem jest ustawa zmieniająca.
         Korekta z 27 listopada 2026 r.: zmienione kroki 1 i ostatni (P44, P45).
+        Korekta z 28 listopada 2026 r.: zmieniony krok 5.
+      not_covered: >-
+        Zwrotu nadpłaty (opisuje go zasada rocznego rozliczenia składki zdrowotnej).
+      see_also: [zasada.roczne_rozliczenie_zdrowotnej]
       value:
         steps:
           - text: Ustal przychód z działalności osiągnięty od początku roku kalendarzowego, pomniejszony o opłacone składki emerytalną, rentową, chorobową i wypadkową, jeżeli nie zostały zaliczone do kosztów ani odliczone od dochodu. Funduszu Pracy nie odejmuj. Czy odejmujesz składki zapłacone w tym okresie (według dnia zapłaty), czy składki należne za jego miesiące, jest niewyjaśnione (otwarte pytanie do eksperta, P44). Zamiast tego możesz przyjąć przychód z poprzedniego roku (zasada.ryczalt_zdrowotna_prog_poprzedni_rok).
@@ -355,8 +362,8 @@
           - text: Po przekroczeniu progu w trakcie roku płać kwotę wyższego progu od miesiąca przekroczenia.
             uses: [zdrowotna.ryczalt.skladka]
             basis: art. 81 ust. 2f ustawy o świadczeniach opieki zdrowotnej
-          - text: Po końcu roku ustal roczną składkę według progu dla rocznego przychodu, pomnożonej przez liczbę miesięcy podlegania ubezpieczeniu (bez miesięcy zwolnienia ze składki). Roczny przychód pomniejszasz o opłacone składki i ustalasz z wyłączeniami tak jak w krokach 1 i 2 (z tymi samymi zastrzeżeniami). Niedopłatę ustawa liczy od sumy składek wynikającej ze złożonych dokumentów za miesiące roku (art. 81 ust. 2j); dopłacasz ją w rozliczeniu rocznym. Nadpłatę ustawa opisuje jako różnicę między sumą składek wpłaconych za miesiące roku a roczną składką (art. 81 ust. 2i), a wzór ZUS DRA wyznacza kwotę do zwrotu od sumy składek należnych ze złożonych dokumentów. Od której z tych kwot ustalasz nadpłatę, gdy się różnią, jest niewyjaśnione (otwarte pytanie do eksperta, P45). Zwrot nadpłaty opisuje zasada rocznego rozliczenia.
-            uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka, termin.roczne_rozliczenie_zdrowotnej, zasada.roczne_rozliczenie_zdrowotnej]
+          - text: Po końcu roku ustal roczną składkę według progu dla rocznego przychodu, pomnożonej przez liczbę miesięcy podlegania ubezpieczeniu (bez miesięcy zwolnienia ze składki). Roczny przychód pomniejszasz o opłacone składki i ustalasz z wyłączeniami tak jak w krokach 1 i 2 (z tymi samymi zastrzeżeniami). Niedopłatę ustawa liczy od sumy składek wynikającej ze złożonych dokumentów za miesiące roku (art. 81 ust. 2j); dopłacasz ją w rozliczeniu rocznym. Nadpłatę ustawa opisuje jako różnicę między sumą składek wpłaconych za miesiące roku a roczną składką (art. 81 ust. 2i), a wzór ZUS DRA wyznacza kwotę do zwrotu od sumy składek należnych ze złożonych dokumentów. Od której z tych kwot ustalasz nadpłatę, gdy się różnią, jest niewyjaśnione (otwarte pytanie do eksperta, P45).
+            uses: [zdrowotna.ryczalt.progi, zdrowotna.ryczalt.skladka, termin.roczne_rozliczenie_zdrowotnej]
             basis: art. 81 ust. 2e, 2ea, 2g, 2i, 2j, 2k, 2l i 2zd ustawy o świadczeniach opieki zdrowotnej; wzór ZUS DRA, blok XII, pola 25–27
       sources:
         - title: Dz.U. 2026 poz. 1542, ustawa z 22 października 2026 r. o zmianie ustawy o wspieraniu nowych inwestycji oraz niektórych innych ustaw (zmiana art. 81 ust. 2zd)
@@ -405,7 +412,6 @@
           as_of: 2026-05-01
       verification:
         checked_at: 2026-11-27
-        agent_check: 2026-11-27
         open_issue: >-
           Art. 81 ust. 2g pomniejsza przychód o „kwoty opłaconych składek” bez wskazania okresu: czy chodzi o składki
           zapłacone w okresie, czy należne za jego miesiące (docs/pytania-do-eksperta.md, P44)? Niedopłatę ust. 2j

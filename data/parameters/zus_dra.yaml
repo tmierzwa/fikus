@@ -527,8 +527,9 @@
         Żadne źródło poza materiałami ZUS nie opisuje tych pól, więc wersja nie ma drugiego niezależnego dowodu.
         Korekta z 28 listopada 2026 r.: usunięty krok 4.
       not_covered: >-
-        Składek osób współpracujących, które finansujesz jako płatnik, ani miesięcy objętych zwolnieniem z opłacenia składek z
-        art. 17a (wakacje składkowe), za które składki finansuje budżet państwa.
+        Składek osób współpracujących, które finansujesz jako płatnik (art. 16 ust. 5a ustawy o systemie ubezpieczeń
+        społecznych), ani miesięcy objętych zwolnieniem z opłacenia składek z art. 17a (wakacje składkowe), za które składki
+        finansuje budżet państwa (art. 16 ust. 4a).
       sources:
         - title: Dz.U. 2026 poz. 1474, tekst jednolity ustawy o systemie ubezpieczeń społecznych (finansowanie składek osób prowadzących działalność)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1474/text.pdf
@@ -562,8 +563,8 @@
           - text: W bloku XI zaznaczasz formę opodatkowania, którą stosowałeś w rozliczanym miesiącu, i wypełniasz pola tej formy.
             uses: [schemat.zus_dra]
             basis: poradnik ZUS „ZUS DRA. Deklaracja rozliczeniowa. Jak wypełnić i skorygować” (maj 2026), blok XI
-          - text: Na skali podatkowej w polu 02 wpisujesz dochód uzyskany w miesiącu bezpośrednio poprzedzającym rozliczany miesiąc, w polu 03 podstawę wymiaru, a w polu 04 składkę. Na podatku liniowym w polach 06–08 wpisujesz te same dane, a dochód ustalasz tak samo jak na skali. Jak ustalić dochód i podstawę, opisują zasady składki zdrowotnej dla tych form.
-            uses: [zasada.skala_zdrowotna, zasada.liniowy_zdrowotna]
+          - text: Na skali podatkowej w polu 02 wpisujesz dochód uzyskany w miesiącu bezpośrednio poprzedzającym rozliczany miesiąc, w polu 03 podstawę wymiaru, a w polu 04 składkę. Na podatku liniowym w polach 06–08 wpisujesz te same dane, a dochód ustalasz tak samo jak na skali.
+            uses: []
             basis: art. 81 ust. 2c ustawy o świadczeniach opieki zdrowotnej; poradnik ZUS (maj 2026), blok XI, pola 02–08
           - text: Na ryczałcie w polu 13 wpisujesz sumę przychodów od początku roku kalendarzowego do końca rozliczanego miesiąca, jeżeli ustalasz składkę według przychodów bieżącego roku, a w polu 16 podstawę wymiaru i w polu 17 składkę dla progu przychodu. Czy w tym polu wpisujesz przychód pomniejszony o opłacone składki emerytalną, rentową, chorobową i wypadkową (art. 81 ust. 2g), czy przychód bez pomniejszenia, i czy chodzi o składki zapłacone w tym okresie, czy należne za jego miesiące, jest niewyjaśnione (otwarte pytanie do eksperta).
             uses: [zasada.ryczalt_zdrowotna_prog, zdrowotna.ryczalt.podstawa, zdrowotna.ryczalt.skladka]
@@ -587,11 +588,14 @@
         XII 22 (pan Jan) zawierają sumę przychodów podaną w opisie przykładu, bez wzmianki o składkach, a ten sam
         poradnik w opisie rocznej podstawy na ryczałcie każe odjąć od przychodów opłacone składki. Żadne źródło poza
         materiałami ZUS nie opisuje tych pól, więc wersja nie ma drugiego niezależnego dowodu.
-        Korekta z 28 listopada 2026 r.: usunięty krok 8.
+        Korekta z 28 listopada 2026 r.: zmieniony krok 2, usunięty krok 8.
       not_covered: >-
+        Ustalania dochodu i podstawy wymiaru składki na skali podatkowej i przy podatku liniowym (opisują je zasady składki
+        zdrowotnej przy skali podatkowej i przy podatku liniowym).
         Pól dla karty podatkowej i osób bez formy opodatkowania, pól XII 02–03, 06–07 i 15 (zmiana formy opodatkowania w 2022
         r., zbycie składników majątku, obniżenie składki do wysokości zaliczki), korekty rozliczenia rocznego ani
         uwzględniania w polu 25 deklaracji korygujących za miesiące roku rozliczenia.
+      see_also: [zasada.skala_zdrowotna, zasada.liniowy_zdrowotna]
       sources:
         - title: ZUS, poradnik „ZUS DRA. Deklaracja rozliczeniowa. Jak wypełnić i skorygować”, maj 2026 (blok XI, pole 02)
           url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf

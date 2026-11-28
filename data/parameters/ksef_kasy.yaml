@@ -49,8 +49,8 @@
         Korekta z 28 listopada 2026 r.: usunięty krok 8.
       not_covered: >-
         Wystawiania faktur w trybie offline24 i w czasie awarii albo niedostępności KSeF (art. 106nda–106nh), faktur z
-        załącznikiem (art. 106gba), podawania numeru KSeF przy płatnościach (art. 108g, od 1 stycznia 2027 r.) ani faktur VAT
-        RR.
+        załącznikiem (art. 106gba), podawania numeru KSeF przy płatnościach (art. 108g) ani faktur VAT RR
+        (art. 116).
       sources:
         - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (obowiązek)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
