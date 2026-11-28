@@ -31,9 +31,6 @@
           - text: Kary pieniężne z art. 106ni ust. 1 (między innymi za niewystawienie wbrew obowiązkowi faktury ustrukturyzowanej w KSeF) stosuje się od 1 stycznia 2027 r.
             uses: []
             basis: art. 106ni ust. 1 ustawy o podatku od towarów i usług w zw. z art. 23 pkt 4 ustawy z dnia 16 czerwca 2023 r. o zmianie ustawy o podatku od towarów i usług oraz niektórych innych ustaw
-          - text: Ta zasada nie opisuje wystawiania faktur w trybie offline24 i w czasie awarii albo niedostępności KSeF (art. 106nda–106nh), faktur z załącznikiem (art. 106gba), podawania numeru KSeF przy płatnościach (art. 108g, od 1 stycznia 2027 r.) ani faktur VAT RR.
-            uses: []
-            basis: art. 106gba, 106nda–106nh, 108g i 116 ustawy o podatku od towarów i usług
       note: >-
         Art. 106ga i art. 145l–145n w brzmieniu nadanym ustawą Dz.U. 2023 poz. 1598, zmienioną ustawami Dz.U. 2024 poz. 852
         i 1721 oraz Dz.U. 2025 poz. 1203, obowiązują od 1 lutego 2026 r. (art. 23 tej ustawy, przytoczony
@@ -49,6 +46,11 @@
         wdrożenia KSeF” z 31.03.2026 i „Najczęstsze pytania” z 15.04.2026, zmienione 29.04.2026) podają wprost, że po przekroczeniu limitu
         obowiązek KSeF obejmuje fakturę, którą przekroczono limit, i wszystkie kolejne, a późniejsze nieprzekroczenie
         limitu nie ma znaczenia. Tak samo opisuje to uzasadnienie projektu (druk sejmowy nr 1407). Korekta z 27 listopada 2026 r.: zmieniony krok o art. 145m.
+        Korekta z 28 listopada 2026 r.: usunięty krok 8.
+      not_covered: >-
+        Wystawiania faktur w trybie offline24 i w czasie awarii albo niedostępności KSeF (art. 106nda–106nh), faktur z
+        załącznikiem (art. 106gba), podawania numeru KSeF przy płatnościach (art. 108g, od 1 stycznia 2027 r.) ani faktur VAT
+        RR.
       sources:
         - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (obowiązek)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
@@ -118,7 +120,6 @@
           as_of: 2026-11-27
       verification:
         checked_at: 2026-11-27
-        agent_check: 2026-11-27
 
     - valid_from: 2027-01-01
       value:
@@ -192,7 +193,7 @@
       verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
 
 - id: vat.kasa_fiskalna.limit_zwolnienia
-  name: Limit sprzedaży na rzecz osób fizycznych zwalniający z ewidencji przy użyciu kasy rejestrującej
+  name: Limit sprzedaży na rzecz osób fizycznych nieprowadzących działalności gospodarczej i rolników ryczałtowych zwalniający z ewidencji przy użyciu kasy rejestrującej
   unit: PLN/rok
   versions:
     - valid_from: 2025-01-01

@@ -133,7 +133,7 @@ class DeadlinesResult(BaseModel):
     year: int
     month: int
     deadlines: list[DeadlineRule] = Field(description="Reguły terminów przypadających w tym miesiącu.")
-    non_working_days: list[date] = Field(description="Dni ustawowo wolne w tym miesiącu (bez sobót).")
+    non_working_days: list[date] = Field(description="Dni ustawowo wolne w tym miesiącu (bez sobót i zwykłych niedziel).")
     calendar_found: bool = Field(description="False, gdy w danych nie ma kalendarza na ten miesiąc.")
     shift_rule: ParameterResult = Field(description="Zasada przesunięcia terminu, gdy wypada w dzień wolny.")
 

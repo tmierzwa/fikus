@@ -9,7 +9,7 @@
     - valid_from: 2026-01-01
       value: {day_of_month: 20}
       note: >-
-        Wpisy za miesiąc dokonuje się najpóźniej do 20. dnia następnego miesiąca, także za grudzień (do 20 stycznia):
+        Wpisów za miesiąc dokonuje się najpóźniej do 20. dnia następnego miesiąca, także za grudzień (do 20 stycznia):
         przepis dotyczy każdego miesiąca i nie ma wyjątku dla grudnia (P31, rozstrzygnięte bez eksperta). Ten sam termin
         dotyczy zapisów na podstawie miesięcznych raportów fiskalnych (§ 4 ust. 3). Termin wpisu nie zależy od tego, czy
         ryczałt wpłaca się miesięcznie, czy kwartalnie. Data początku obowiązywania to wejście w życie rozporządzenia
@@ -61,7 +61,7 @@
           - text: Jeżeli stosujesz metodę kasową rozliczania przychodów, prowadzisz też ewidencję faktur z datą wystawienia, numerem faktury, kwotą należności z faktury i datą uregulowania należności.
             uses: [zasada.przychod_data_uzyskania]
             basis: art. 15 ust. 11a ustawy o zryczałtowanym podatku dochodowym
-          - text: Korektę przychodu, która nie wynika z błędu rachunkowego ani innej oczywistej omyłki, ujmujesz przez zmniejszenie albo zwiększenie przychodów okresu rozliczeniowego, w którym wystawiono fakturę korygującą, a bez faktury – inny dokument potwierdzający przyczynę korekty. Jeżeli przychody tego okresu są niższe od zmniejszenia, zmniejszasz przychody w kolejnych okresach. Jeżeli korekta następuje po zmianie formy opodatkowania z ryczałtu na zasady ogólne, podatek liniowy, podatek tonażowy albo podatek od wartości sprzedanej produkcji, zmniejszenia lub zwiększenia przychodów dokonujesz w ostatnim okresie rozliczeniowym przed zmianą formy opodatkowania. Wyłączeń z art. 14 ust. 1o ustawy o PIT (korekta przychodu związanego z przedawnionym zobowiązaniem podatkowym, korekta cen transferowych) ten krok nie opisuje. Korektę danych z raportów fiskalnych, której nie ujmujesz w odrębnych ewidencjach, wpisujesz na podstawie dowodu wewnętrznego ze znakiem minus. W jaki sposób wpisujesz do ewidencji korektę faktury (nowym zapisem czy poprawieniem pierwotnego) oraz w którym okresie i jak wpisujesz korektę wynikającą z błędu rachunkowego lub oczywistej omyłki, jest niewyjaśnione (otwarte pytanie do eksperta).
+          - text: Korektę przychodu, która nie wynika z błędu rachunkowego ani innej oczywistej omyłki, ujmujesz przez zmniejszenie albo zwiększenie przychodów okresu rozliczeniowego, w którym wystawiono fakturę korygującą, a bez faktury – inny dokument potwierdzający przyczynę korekty. Jeżeli przychody tego okresu są niższe od zmniejszenia, zmniejszasz przychody w kolejnych okresach. Jeżeli korekta następuje po zmianie formy opodatkowania z ryczałtu na zasady ogólne, podatek liniowy, podatek tonażowy albo podatek od wartości sprzedanej produkcji, zmniejszenia lub zwiększenia przychodów dokonujesz w ostatnim okresie rozliczeniowym przed zmianą formy opodatkowania. Korektę danych z raportów fiskalnych, której nie ujmujesz w odrębnych ewidencjach, wpisujesz na podstawie dowodu wewnętrznego ze znakiem minus. W jaki sposób wpisujesz do ewidencji korektę faktury (nowym zapisem czy poprawieniem pierwotnego) oraz w którym okresie i jak wpisujesz korektę wynikającą z błędu rachunkowego lub oczywistej omyłki, jest niewyjaśnione (otwarte pytanie do eksperta).
             uses: []
             basis: art. 14 ust. 1m i 1o ustawy o PIT; art. 6 ust. 1e i 1f ustawy o zryczałtowanym podatku dochodowym; § 4 ust. 4 i 5 rozporządzenia Dz.U. 2025 poz. 1294
           - text: Ewidencję prowadzisz rzetelnie i w sposób niewadliwy. Niewadliwa jest ewidencja prowadzona zgodnie z rozporządzeniem i według wzoru, a rzetelna – gdy zapisy odzwierciedlają stan rzeczywisty. Ewidencję uznaje się za rzetelną i niewadliwą także wtedy, gdy niewpisane lub błędnie wpisane przychody łącznie nie przekraczają 0,5 % przychodu wykazanego w ewidencji za rok (albo do dnia stwierdzenia błędów), gdy brak zapisów wynika z nieszczęśliwego wypadku lub zdarzenia losowego, gdy uzupełniłeś lub poprawiłeś zapisy przed rozpoczęciem kontroli albo w terminie do złożenia deklaracji lub korekty z art. 62 ust. 4 ustawy o KAS, albo gdy błędne zapisy są oczywistą omyłką i masz dowody, na podstawie których dokonuje się wpisów.
@@ -72,6 +72,10 @@
         okresu przed 1 stycznia 2026 r. Rozporządzenie według API ELI nie było zmieniane. Tekst jednolity ustawy o ryczałcie (Dz.U. 2025 poz. 843) zmieniły później ustawy Dz.U. 2026 poz. 779 (dodaje art. 15 ust. 13a o pełnomocnictwie do podpisywania przesyłanej ewidencji), 1098 (art. 37: nowe brzmienie art. 21c, uchyla art. 21d; od 1 stycznia 2027 r.) i 1541 (art. 3: art. 11 ust. 1 i 2; od 1 stycznia 2027 r.); żadna nie zmienia art. 6 ust. 1e i 1f ani art. 15 ust. 1–3, 11a i 12. Tekst jednolity ustawy o PIT (Dz.U. 2026 poz. 592) zmieniły ustawy Dz.U. 2026 poz. 779 (art. 24a), 846 (art. 25b, 30f, 31d), 1079 (art. 21), 1098 (art. 2, 45ba, 45c, 45cd; uchyla art. 45ce i 45cf), 1123 (art. 21 ust. 1 pkt 67b, art. 22 ust. 1p), 1287 (dodaje art. 52zu), 1347 (uchyla art. 14 ust. 2 pkt 14 lit. b od 1 grudnia 2026 r.), 1354 (art. 14 ust. 2 pkt 10 lit. a od 1 stycznia 2027 r.), 1371 (uchyla art. 14 ust. 2h i 2i, zmienia art. 22p, 23q i 23zf), 1541 (art. 26, 26gb, 26i, 52jb), 1542 (art. 21, 23b, 23z, 26e, 26ga) i 1556 (art. 21 ust. 1 pkt 114a). Żadna z nich nie zmienia art. 14 ust. 1m–1o. Wzór ewidencji ma osobną kolumnę na numer KSeF faktury; broszura MF o JPK_EWP(4)
         opisuje to pole w pliku jako opcjonalne. Kroki opisują dane słownie; pola pliku JPK_EWP opisuje broszura przy
         schemacie. Ustawa o ryczałcie odwołuje się do korekty z art. 14 ust. 1m ustawy o PIT w art. 6 ust. 1e i 1f.
+        Korekta z 28 listopada 2026 r.: zmieniony krok 8.
+      not_covered: >-
+        Korekty przychodu w przypadkach wyłączonych przez art. 14 ust. 1o ustawy o PIT (korekta przychodu związanego z
+        przedawnionym zobowiązaniem podatkowym, korekta cen transferowych).
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (ewidencja za rok podatkowy)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
@@ -159,7 +163,6 @@
           as_of: 2026-11-26
       verification:
         checked_at: 2026-11-26
-        agent_check: 2026-11-26
         open_issue: >-
           P32: w którym okresie i w jaki sposób wpisuje się do ewidencji korektę przychodu wynikającą z błędu rachunkowego
           lub innej oczywistej omyłki, do której nie stosuje się art. 14 ust. 1m ustawy o PIT, i jak wpisuje się korektę

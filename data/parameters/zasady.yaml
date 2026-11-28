@@ -186,7 +186,7 @@
     - valid_from: 2026-01-01
       value:
         steps:
-          - text: Ustal dochód z działalności według art. 9, art. 23o, art. 23u, art. 24 ust. 1, 2, 3b–3e, 4–4e, 6 i 21 albo art. 24b ust. 1 i 2 ustawy o PIT, z uwzględnieniem obniżenia o straty z lat poprzednich na zasadach art. 9 ust. 3. Przy podatkowej księdze przychodów i rozchodów dochodem jest różnica między przychodem a kosztami jego uzyskania, powiększona albo pomniejszona o różnicę między wartością remanentu końcowego i początkowego (art. 24 ust. 2 zdanie pierwsze). Ta zasada nie opisuje ustalania dochodu przy księgach rachunkowych (art. 24 ust. 1) ani dochodu z odpłatnego zbycia składników majątku (art. 24 ust. 2 zdanie drugie).
+          - text: Ustal dochód z działalności według art. 9, art. 23o, art. 23u, art. 24 ust. 1, 2, 3b–3e, 4–4e, 6 i 21 albo art. 24b ust. 1 i 2 ustawy o PIT, z uwzględnieniem obniżenia o straty z lat poprzednich na zasadach art. 9 ust. 3. Przy podatkowej księdze przychodów i rozchodów dochodem jest różnica między przychodem a kosztami jego uzyskania, powiększona albo pomniejszona o różnicę między wartością remanentu końcowego i początkowego (art. 24 ust. 2 zdanie pierwsze).
             uses: []
             basis: art. 26 ust. 1 zdanie pierwsze, art. 9 ust. 2 i 3 oraz art. 24 ust. 2 ustawy o podatku dochodowym od osób fizycznych
           - text: Od dochodu odlicz składki na ubezpieczenia społeczne z art. 26 ust. 1 pkt 2 lit. a i pkt 2a ustawy o PIT zapłacone w roku podatkowym, na warunkach z tych przepisów (przy pkt 2 bez składek, których podstawą są dochody zwolnione albo dochody, od których zaniechano poboru podatku; przy pkt 2a z zastrzeżeniem art. 26 ust. 13b i 13c). Odliczasz tylko składki, które nie zostały zaliczone do kosztów uzyskania przychodów, odliczone od dochodów opodatkowanych na zasadach art. 30c ani od przychodu na podstawie ustawy o zryczałtowanym podatku dochodowym i nie zostały zwrócone w jakiejkolwiek formie (art. 26 ust. 13a).
@@ -198,10 +198,7 @@
           - text: Podstawę opodatkowania i kwotę podatku zaokrąglij do pełnych złotych; końcówki poniżej 50 groszy pomiń, a od 50 groszy podwyższ do pełnego złotego.
             uses: []
             basis: art. 63 § 1 Ordynacji podatkowej
-          - text: Ta zasada nie opisuje pozostałych odliczeń od dochodu i od podatku (między innymi z art. 26 ust. 1 pkt 2b–9, art. 26e–26i, art. 27f i art. 52jb–52x ustawy o PIT), wspólnego opodatkowania małżonków i osób samotnie wychowujących dzieci (art. 6), łączenia dochodu z działalności z innymi dochodami opodatkowanymi według skali ani dochodów i podatku zagranicznego (metoda z art. 27 ust. 8 i odliczenie podatku zapłaconego za granicą z art. 27 ust. 9 i 9a).
-            uses: []
-            basis: art. 6, art. 26, art. 27 i art. 27f ustawy o podatku dochodowym od osób fizycznych
-          - text: Przy zaliczkach miesięcznych obowiązek zaliczki powstaje od miesiąca, w którym dochody przekroczyły iloraz kwoty zmniejszającej podatek i stawki niższej (art. 44 ust. 3 pkt 1). Zaliczka za ten miesiąc to podatek od tego dochodu obliczony według kroków powyżej, z tym że przy podatkowej księdze przychodów i rozchodów dochodem do zaliczki jest różnica między przychodem a kosztami wynikającymi z księgi, a różnicę remanentową uwzględniasz tylko wtedy, gdy sporządzasz remanent na koniec miesiąca albo zarządzi to naczelnik urzędu skarbowego (art. 44 ust. 2); a za dalsze miesiące różnica między podatkiem od dochodu od początku roku a sumą zaliczek za miesiące poprzedzające. Zaliczki można nie wpłacać, jeżeli podatek od dochodu od początku roku pomniejszony o sumę wpłaconych zaliczek nie przekracza 1000 zł. Gdy ta kwota przekroczy 1000 zł, wpłać różnicę między podatkiem od dochodu od początku roku a sumą zaliczek wpłaconych od początku roku. Mały podatnik i podatnik rozpoczynający działalność mogą zamiast tego wpłacać zaliczki kwartalne (art. 44 ust. 3g i 3i), a podatnik może wybrać zaliczki uproszczone (art. 44 ust. 6b–6e); ta zasada tych sposobów nie opisuje. Nie opisuje też zwolnienia z zaliczek podatnika, który po raz pierwszy rozpoczął działalność (art. 44 ust. 7a–7k), braku zaliczek w okresie zawieszenia działalności (art. 44 ust. 10) ani korekty dochodu przy niezapłaconych należnościach i zobowiązaniach (art. 44 ust. 17–26).
+          - text: Przy zaliczkach miesięcznych obowiązek zaliczki powstaje od miesiąca, w którym dochody przekroczyły iloraz kwoty zmniejszającej podatek i stawki niższej (art. 44 ust. 3 pkt 1). Zaliczka za ten miesiąc to podatek od tego dochodu obliczony według kroków powyżej, z tym że przy podatkowej księdze przychodów i rozchodów dochodem do zaliczki jest różnica między przychodem a kosztami wynikającymi z księgi, a różnicę remanentową uwzględniasz tylko wtedy, gdy sporządzasz remanent na koniec miesiąca albo zarządzi to naczelnik urzędu skarbowego (art. 44 ust. 2); a za dalsze miesiące różnica między podatkiem od dochodu od początku roku a sumą zaliczek za miesiące poprzedzające. Zaliczki można nie wpłacać, jeżeli podatek od dochodu od początku roku pomniejszony o sumę wpłaconych zaliczek nie przekracza 1000 zł. Gdy ta kwota przekroczy 1000 zł, wpłać różnicę między podatkiem od dochodu od początku roku a sumą zaliczek wpłaconych od początku roku. Mały podatnik i podatnik rozpoczynający działalność mogą zamiast tego wpłacać zaliczki kwartalne (art. 44 ust. 3g i 3i), a podatnik może wybrać zaliczki uproszczone (art. 44 ust. 6b–6e).
             uses: [podatek.skala, termin.zaliczka_skala]
             basis: art. 44 ust. 2, ust. 3 pkt 1–3 i ust. 15 ustawy o podatku dochodowym od osób fizycznych
           - text: Po końcu roku podatek należny wykazujesz w zeznaniu rocznym. Przed upływem terminu złożenia zeznania wpłacasz różnicę między podatkiem należnym wynikającym z zeznania a sumą zapłaconych za ten rok zaliczek.
@@ -210,6 +207,20 @@
       note: >-
         Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku obowiązywania (2026-01-01)
         nie jest potwierdzona źródłem. Wcześniejszych wersji nie wprowadzono.
+        Korekta z 28 listopada 2026 r.: zmienione kroki 1 i 5 (dawny krok 6), usunięty dawny krok 5.
+      not_covered: >-
+        Ustalania dochodu przy księgach rachunkowych (art. 24 ust. 1) i dochodu z odpłatnego zbycia składników majątku (art.
+        24 ust. 2 zdanie drugie). Pozostałych odliczeń od dochodu i od podatku (między innymi z art. 26 ust. 1 pkt 2b–9, art.
+        26e–26i, art. 27f i art. 52jb–52x ustawy o PIT; część z nich opisuje zasada ulg i odliczeń przy skali podatkowej),
+        wspólnego opodatkowania małżonków i osób samotnie wychowujących dzieci (art. 6; opisują je zasady wspólnego
+        opodatkowania małżonków i opodatkowania osoby samotnie wychowującej dzieci), łączenia dochodu z działalności z innymi
+        dochodami opodatkowanymi według skali ani dochodów i podatku zagranicznego (metoda z art. 27 ust. 8 i odliczenie
+        podatku zapłaconego za granicą z art. 27 ust. 9 i 9a). Zaliczek kwartalnych (art. 44 ust. 3g i 3i; opisuje je zasada
+        zaliczek kwartalnych) i uproszczonych (art. 44 ust. 6b–6e; opisuje je zasada zaliczek uproszczonych), zwolnienia z
+        zaliczek podatnika, który po raz pierwszy rozpoczął działalność (art. 44 ust. 7a–7k), braku zaliczek w okresie
+        zawieszenia działalności (art. 44 ust. 10; opisuje go zasada zaliczek na PIT i ryczałt w okresie zawieszenia
+        działalności) ani korekty dochodu przy niezapłaconych należnościach i zobowiązaniach (art. 44 ust. 17–26).
+      see_also: [zasada.ulgi_skala, zasada.malzonkowie_wspolne_opodatkowanie, zasada.samotny_rodzic_opodatkowanie, zasada.zaliczki_kwartalne_pit, zasada.zaliczki_uproszczone, zasada.zaliczki_zawieszenie]
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (podstawa)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -251,7 +262,7 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/622/text.pdf
           article: art. 63 § 1
           quote: "Podstawy opodatkowania, kwoty podatków, odsetki za zwłokę, opłaty prolongacyjne, oprocentowanie nadpłat oraz wynagrodzenia przysługujące płatnikom i inkasentom zaokrągla się do pełnych złotych"
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification: {checked_at: 2026-11-26}
 
 - id: zasada.ryczalt_zdrowotna_prog
   name: Wybór progu składki zdrowotnej na ryczałcie
@@ -329,7 +340,7 @@
         Zmiana względem poprzedniej wersji: od 1 stycznia 2027 r. art. 81 ust. 2zd pkt 2 nie wymienia już art. 21 ust. 1
         pkt 63a ustawy o PIT (Dz.U. 2026 poz. 1542, art. 12); ta sama ustawa uchyla ten punkt w ustawie o PIT (art. 4
         pkt 1). Pozostałe kroki się nie zmieniają. Nowego brzmienia nie ma jeszcze w tekście jednolitym, więc źródłem jest ustawa zmieniająca.
-        Korekta z 27 listopada 2026 r.: zmienione krok 1 i ostatni krok (P44, P45).
+        Korekta z 27 listopada 2026 r.: zmienione kroki 1 i ostatni (P44, P45).
       value:
         steps:
           - text: Ustal przychód z działalności osiągnięty od początku roku kalendarzowego, pomniejszony o opłacone składki emerytalną, rentową, chorobową i wypadkową, jeżeli nie zostały zaliczone do kosztów ani odliczone od dochodu. Funduszu Pracy nie odejmuj. Czy odejmujesz składki zapłacone w tym okresie (według dnia zapłaty), czy składki należne za jego miesiące, jest niewyjaśnione (otwarte pytanie do eksperta, P44). Zamiast tego możesz przyjąć przychód z poprzedniego roku (zasada.ryczalt_zdrowotna_prog_poprzedni_rok).
@@ -448,7 +459,7 @@
         Zmiana względem poprzedniej wersji: od 1 stycznia 2027 r. art. 81 ust. 2zd pkt 2 nie wymienia już art. 21 ust. 1
         pkt 63a ustawy o PIT (Dz.U. 2026 poz. 1542, art. 12); ta sama ustawa uchyla ten punkt w ustawie o PIT (art. 4
         pkt 1). Pozostałe kroki się nie zmieniają. Nowego brzmienia nie ma jeszcze w tekście jednolitym, więc źródłem jest ustawa zmieniająca.
-        Korekta z 26 listopada 2026 r.: zmienione krok o wyłączeniach z art. 81 ust. 2zd (P8) i ostatni krok (P1).
+        Korekta z 26 listopada 2026 r.: zmienione kroki o wyłączeniach z art. 81 ust. 2zd (P8) i ostatni (P1).
       value:
         steps:
           - text: Ta możliwość dotyczy tylko podatnika, który przez cały poprzedni rok kalendarzowy prowadził działalność opodatkowaną ryczałtem, skalą, liniowym albo IP Box.

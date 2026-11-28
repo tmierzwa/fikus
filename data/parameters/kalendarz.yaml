@@ -3,7 +3,7 @@
 # scripts/gen_holidays.py; wersja trafia do danych z cytatem i drugim źródłem jak każda inna.
 
 - id: kalendarz.dni_wolne
-  name: Dni ustawowo wolne od pracy
+  name: Dni ustawowo wolne od pracy bez zwykłych niedziel
   kind: calendar
   versions:
     - valid_from: 2026-01-01
