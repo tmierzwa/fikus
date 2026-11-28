@@ -86,12 +86,31 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
           quote: "Składka na ubezpieczenie zdrowotne wynosi 9 % podstawy wymiaru składki"
           article: art. 81 ust. 2f, art. 79 ust. 1
-        - title: Komunikat ZUS z 30 stycznia 2025 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2025 r. (ryczałt; podaje wszystkie trzy kwoty, cytat dla progu powyżej 300 000 zł)
+        - title: Komunikat ZUS z 30 stycznia 2025 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2025 r., ryczałt (okres)
           url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2025-r.-dla-niekt%C3%B3rych-grup-ubezpieczonych
           independent: true
-          quote: "Składka na ubezpieczenie zdrowotne wynosi 1.384,97 zł"
+          confirms: [period]
+          quote: "Podstawę wymiaru składki na ubezpieczenie zdrowotne w 2025 r. dla"
           as_of: 2025-01-30
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+        - title: Komunikat ZUS z 30 stycznia 2025 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2025 r., ryczałt (próg do 60 000 zł)
+          url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2025-r.-dla-niekt%C3%B3rych-grup-ubezpieczonych
+          independent: true
+          confirms: [do_60000]
+          quote: "nie przekroczyły kwoty 60 000 zł. Składka na ubezpieczenie zdrowotne wynosi 461,66 zł"
+          as_of: 2025-01-30
+        - title: Komunikat ZUS z 30 stycznia 2025 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2025 r., ryczałt (próg do 300 000 zł)
+          url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2025-r.-dla-niekt%C3%B3rych-grup-ubezpieczonych
+          independent: true
+          confirms: [do_300000]
+          quote: "i nie przekroczyły kwoty 300 000 zł. Składka na ubezpieczenie zdrowotne wynosi 769,43 zł"
+          as_of: 2025-01-30
+        - title: Komunikat ZUS z 30 stycznia 2025 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2025 r., ryczałt (próg powyżej 300 000 zł)
+          url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2025-r.-dla-niekt%C3%B3rych-grup-ubezpieczonych
+          independent: true
+          confirms: [powyzej_300000]
+          quote: "przekroczyły kwotę 300 000 zł. Składka na ubezpieczenie zdrowotne wynosi 1.384,97 zł"
+          as_of: 2025-01-30
+      verification: {checked_at: 2026-11-28}
     - valid_from: 2026-01-01
       valid_to: 2026-12-31
       value: {do_60000: 498.35, do_300000: 830.58, powyzej_300000: 1495.04}
@@ -106,17 +125,61 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/1461/text.pdf
           quote: "Składka na ubezpieczenie zdrowotne wynosi 9 % podstawy wymiaru składki"
           article: art. 81 ust. 2f, art. 79 ust. 1
-        - title: Komunikat ZUS z 2 lutego 2026 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r. (ryczałt; podaje wszystkie trzy kwoty, cytat dla progu powyżej 300 000 zł)
+        - title: Komunikat ZUS z 2 lutego 2026 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r., ryczałt (okres)
           url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2026-r.
           independent: true
-          quote: "Składka na ubezpieczenie zdrowotne wynosi 1.495,04 zł"
+          confirms: [period]
+          quote: "Podstawę wymiaru składki na ubezpieczenie zdrowotne w 2026 r. dla"
           as_of: 2026-02-02
-        - title: biznes.gov.pl, Ile wynosi składka zdrowotna (tabela dla ryczałtu)
+        - title: Komunikat ZUS z 2 lutego 2026 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r., ryczałt (próg do 60 000 zł)
+          url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2026-r.
+          independent: true
+          confirms: [do_60000]
+          quote: "nie przekroczyły kwoty 60 000 zł. Składka na ubezpieczenie zdrowotne wynosi 498,35 zł"
+          as_of: 2026-02-02
+        - title: Komunikat ZUS z 2 lutego 2026 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r., ryczałt (próg do 300 000 zł)
+          url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2026-r.
+          independent: true
+          confirms: [do_300000]
+          quote: "i nie przekroczyły kwoty 300 000 zł. Składka na ubezpieczenie zdrowotne wynosi 830,58 zł"
+          as_of: 2026-02-02
+        - title: Komunikat ZUS z 2 lutego 2026 r., informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r., ryczałt (próg powyżej 300 000 zł)
+          url: https://www.zus.pl/-/informacja-w-sprawie-podstawy-wymiaru-sk%C5%82adki-oraz-kwoty-sk%C5%82adki-na-ubezpieczenie-zdrowotne-w-2026-r.
+          independent: true
+          confirms: [powyzej_300000]
+          quote: "przekroczyły kwotę 300 000 zł. Składka na ubezpieczenie zdrowotne wynosi 1.495,04 zł"
+          as_of: 2026-02-02
+        - title: ZUS, poradnik „ZUS DRA. Deklaracja rozliczeniowa. Jak wypełnić i skorygować”, maj 2026 (ryczałt, do 60000 zł)
+          url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
+          kind: control
+          confirms: [do_60000]
+          quote: "nie przekroczyły 60 tys. zł; składka wynosi wtedy 498,35 zł"
+          as_of: 2026-05-01
+        - title: ZUS, poradnik „ZUS DRA. Deklaracja rozliczeniowa. Jak wypełnić i skorygować”, maj 2026 (ryczałt, do 300000 zł)
+          url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
+          kind: control
+          confirms: [do_300000]
+          quote: "ale nie przekroczyły 300 tys. zł; składka wynosi wtedy 830,58 zł"
+          as_of: 2026-05-01
+        - title: ZUS, poradnik „ZUS DRA. Deklaracja rozliczeniowa. Jak wypełnić i skorygować”, maj 2026 (ryczałt, powyżej 300000 zł)
+          url: https://www.zus.pl/documents/10182/167567/poradnik+ZUS+DRA.pdf
+          kind: control
+          confirms: [powyzej_300000]
+          quote: "przekroczyły 300 tys. zł; składka wynosi wtedy 1495,04 zł"
+          as_of: 2026-05-01
+        - title: biznes.gov.pl, Ile wynosi składka zdrowotna (tabela dla ryczałtu, rok)
           url: https://www.biznes.gov.pl/pl/portal/001052
           kind: control
-          quote: "poniżej 60 tys. zł 498,35 zł 5980,16 zł od 60 tys. zł do 300 tys. zł 830,58 zł 9966,96 zł powyżej 300 tys. zł 1495,04 zł"
-          as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+          confirms: [period]
+          quote: "Składka miesięczna w 2026"
+          as_of: 2026-11-28
+        - title: biznes.gov.pl, Ile wynosi składka zdrowotna (tabela dla ryczałtu, próg powyżej 300 000 zł)
+          url: https://www.biznes.gov.pl/pl/portal/001052
+          kind: control
+          confirms: [powyzej_300000]
+          quote: "powyżej 300 tys. zł 1495,04 zł"
+          as_of: 2026-11-28
+      verification: {checked_at: 2026-11-28}
 
 - id: zdrowotna.ryczalt.podstawa
   name: Miesięczna podstawa wymiaru składki zdrowotnej na ryczałcie wg progu przychodu

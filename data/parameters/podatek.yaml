@@ -33,58 +33,124 @@
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 1)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           article: art. 12 ust. 1 pkt 1
+          confirms: [pkt_1]
           quote: "Ryczałt od przychodów ewidencjonowanych wynosi: 1) 17 % przychodów osiąganych w zakresie wolnych zawodów"
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 2)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           article: art. 12 ust. 1 pkt 2
+          confirms: [pkt_2]
           quote: "2) 15 % przychodów ze świadczenia usług"
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 2a)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           article: art. 12 ust. 1 pkt 2a
+          confirms: [pkt_2a]
           quote: "2a) 14 % przychodów ze świadczenia usług"
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 2b)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           article: art. 12 ust. 1 pkt 2b
+          confirms: [pkt_2b]
           quote: "2b) 12 % przychodów ze świadczenia usług"
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 3)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           article: art. 12 ust. 1 pkt 3
+          confirms: [pkt_3]
           quote: "3) 10 % przychodów ze świadczenia usług w zakresie kupna i sprzedaży nieruchomości"
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 4)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           article: art. 12 ust. 1 pkt 4
+          confirms: [pkt_4]
           quote: "8,5 % przychodów do kwoty 100 000 zł oraz 12,5 % przychodów od nadwyżki ponad kwotę 100 000 zł"
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 5)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           article: art. 12 ust. 1 pkt 5
+          confirms: [pkt_5]
           quote: "5) 8,5 %: a) przychodów z działalności usługowej"
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 6)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           article: art. 12 ust. 1 pkt 6
+          confirms: [pkt_6]
           quote: "6) 5,5 %: a) przychodów z działalności wytwórczej"
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 7)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           article: art. 12 ust. 1 pkt 7
+          confirms: [pkt_7]
           quote: "3,0 % przychodów: a) z działalności gastronomicznej"
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 8)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
           article: art. 12 ust. 1 pkt 8
+          confirms: [pkt_8]
           quote: "8) 2 % przychodów, o których mowa w art. 6 ust. 1d"
         - title: Dz.U. 2024 poz. 776, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (to samo brzmienie, dla daty początku obowiązywania)
           url: https://api.sejm.gov.pl/eli/acts/DU/2024/776/text.pdf
           article: art. 12 ust. 1 pkt 2b
+          confirms: [pkt_2b]
           quote: "2b) 12 % przychodów ze świadczenia usług"
           as_of: 2024-04-10
-        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (podaje wszystkie dziesięć stawek)
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (pkt 1)
           url: https://www.biznes.gov.pl/pl/portal/00263
           kind: control
-          quote: "12% przychodów ze świadczenia usług:"
-          as_of: 2026-11-26
+          confirms: [pkt_1]
+          quote: "1) 17% w przypadku przychodów osiąganych w zakresie wolnych zawodów"
+          as_of: 2026-11-28
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (pkt 2)
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          confirms: [pkt_2]
+          quote: "2) 15% w przypadku przychodów osiąganych między innymi w zakresie świadczenia usług"
+          as_of: 2026-11-28
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (pkt 2a)
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          confirms: [pkt_2a]
+          quote: "3) 14% przychodów ze świadczenia usług"
+          as_of: 2026-11-28
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (pkt 2b)
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          confirms: [pkt_2b]
+          quote: "4) 12% przychodów ze świadczenia usług"
+          as_of: 2026-11-28
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (pkt 3)
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          confirms: [pkt_3]
+          quote: "5) 10% przychodów ze świadczenia usług w zakresie kupna i sprzedaży nieruchomości na własny rachunek"
+          as_of: 2026-11-28
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (pkt 4)
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          confirms: [pkt_4]
+          quote: "6) 8,5% przychodów do kwoty 100 tys. zł oraz 12,5% przychodów od nadwyżki ponad kwotę 100 tys. zł"
+          as_of: 2026-11-28
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (pkt 5)
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          confirms: [pkt_5]
+          quote: "7) 8,5% w przypadku: przychodów z działalności usługowej"
+          as_of: 2026-11-28
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (pkt 6)
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          confirms: [pkt_6]
+          quote: "8) 5,5% w przypadku: przychodów z działalności wytwórczej"
+          as_of: 2026-11-28
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (pkt 7)
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          confirms: [pkt_7]
+          quote: "9) 3% w przypadku: działalności gastronomicznej"
+          as_of: 2026-11-28
+        - title: biznes.gov.pl, Ryczałt od przychodów ewidencjonowanych, aktualizacja 07.01.2026 (pkt 8)
+          url: https://www.biznes.gov.pl/pl/portal/00263
+          kind: control
+          confirms: [pkt_8]
+          quote: "10) 2% w przypadku przychodów ze sprzedaży produktów roślinnych i zwierzęcych"
+          as_of: 2026-11-28
         - title: podatki.gov.pl (MF), Stawki i limity, aktualizacja 15.12.2025 (stawki bez 2%)
           url: https://podatki.gov.pl/podatki-firmowe/pit/stawki-i-limity
           quote: "12% - od przychodów ze świadczenia niektórych usług informatycznych"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+      verification: {checked_at: 2026-11-28}
 
 - id: ryczalt.zakres_uslug
   name: Brzmienie art. 12 ust. 1 ustawy o zryczałtowanym podatku dochodowym dla usług informatycznych i inżynierskich (symbole PKWiU)
