@@ -22,7 +22,7 @@
           kind: control
           quote: "do 20. dnia każdego miesiąca – dla pozostałych płatników składek"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: termin.jpk_v7m
   name: JPK_V7M i wpłata VAT za miesiąc
@@ -48,7 +48,7 @@
           kind: control
           quote: "Musisz złożyć deklarację i zapłacić wynikający z niej podatek: przy rozliczeniu miesięcznym – do 25. dnia następnego miesiąca"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: termin.zaliczka_ryczalt
   name: Ryczałt za miesiąc
@@ -71,7 +71,7 @@
           kind: control
           quote: "Ryczałt wpłacasz w terminie: do 20. dnia każdego miesiąca za miesiąc poprzedni, a za grudzień – do 20 stycznia następnego roku"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: termin.zaliczka_liniowy
   name: Zaliczka na PIT liniowy za miesiąc
@@ -94,7 +94,7 @@
           kind: control
           quote: "Zaliczki wpłacasz w terminie: do 20. dnia każdego miesiąca za miesiąc poprzedni, a za grudzień – do 20 stycznia następnego roku"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: termin.roczne_rozliczenie_zdrowotnej
   name: Roczne rozliczenie składki zdrowotnej (w DRA za kwiecień)
@@ -105,7 +105,6 @@
       note: >-
         Rozliczenie roczne w dokumencie rozliczeniowym za miesiąc, w którym upływa termin zeznania
         rocznego (kwiecień); dopłata w terminie składek za ten miesiąc, czyli do 20 maja.
-        Korekta: zmieniona podstawa prawna.
         Data początku obowiązywania (2024-01-01) to data odcięcia danych. Korekta z 28 listopada 2026 r.: zmieniony okres.
       sources:
         - title: Dz.U. 2025 poz. 1461, tekst jednolity ustawy o świadczeniach opieki zdrowotnej
@@ -121,7 +120,7 @@
           kind: control
           quote: "Tę różnicę powinieneś dopłacić w terminie opłacania składek za kwiecień, czyli do 20 maja danego roku"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: termin.jpk_v7k_kwartal
   name: JPK_V7K za kwartał (część deklaracyjna, ewidencja za 3. miesiąc kwartału) i wpłata VAT za kwartał
@@ -151,7 +150,7 @@
           article: art. 99 ust. 2
           quote: "deklaracje podatkowe za okresy kwartalne w terminie do 25. dnia miesiąca następującego po każdym kolejnym kwartale"
           as_of: 2024-02-06
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: termin.jpk_v7k_ewidencja
   name: JPK_V7K, ewidencja za 1. i 2. miesiąc kwartału
@@ -177,7 +176,7 @@
           article: art. 109 ust. 3c pkt 1
           quote: "za pierwszy i drugi miesiąc danego kwartału – w terminie do 25. dnia miesiąca następującego odpowiednio po każdym z tych miesięcy"
           as_of: 2024-02-06
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: termin.zeznanie_liniowy
   name: Zeznanie roczne PIT-36L i wpłata różnicy podatku
@@ -211,7 +210,7 @@
           article: art. 45 ust. 1
           quote: "w terminie od dnia 15 lutego do dnia 30 kwietnia roku następującego po roku podatkowym"
           as_of: 2024-02-05
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: termin.zeznanie_ryczalt
   name: Zeznanie roczne PIT-28
@@ -240,7 +239,7 @@
           article: art. 21 ust. 2 pkt 2
           quote: "należnego ryczałtu od przychodów ewidencjonowanych – w terminie od dnia 15 lutego do dnia 30 kwietnia roku następującego po roku podatkowym"
           as_of: 2024-04-10
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: termin.zaliczka_skala
   name: Zaliczka na PIT według skali za miesiąc
@@ -263,7 +262,7 @@
           kind: control
           quote: "Zaliczki wpłacasz w terminie: do 20. dnia każdego miesiąca za miesiąc poprzedni, a za grudzień – do 20 stycznia następnego roku"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: termin.zeznanie_skala
   name: Zeznanie roczne PIT-36 i wpłata różnicy podatku
@@ -297,4 +296,4 @@
           article: art. 45 ust. 1
           quote: "w terminie od dnia 15 lutego do dnia 30 kwietnia roku następującego po roku podatkowym"
           as_of: 2024-02-05
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}

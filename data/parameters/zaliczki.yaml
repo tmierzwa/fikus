@@ -39,7 +39,7 @@
           article: art. 5a pkt 20
           quote: "nie przekroczyła w poprzednim roku podatkowym wyrażonej w złotych kwoty odpowiadającej równowartości 2 000 000 euro"
           as_of: 2024-02-05
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: ryczalt.kwartalnie.limit_euro
   name: Limit przychodu za poprzedni rok uprawniający do kwartalnego opłacania ryczałtu (w euro)
@@ -77,7 +77,7 @@
           article: art. 21 ust. 1b
           quote: "w roku poprzedzającym rok podatkowy – nie przekroczyły kwoty stanowiącej równowartość 200 000 euro"
           as_of: 2024-04-10
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: termin.zaliczka_kwartalna_pit
   name: Zaliczka kwartalna na PIT (skala albo liniowy) za kwartał
@@ -106,7 +106,7 @@
           article: art. 44 ust. 6 zdanie drugie i trzecie
           quote: "Zaliczki kwartalne podatnicy wpłacają w terminie do 20 dnia każdego miesiąca następującego po kwartale, za który wpłacana jest zaliczka. Zaliczkę za ostatni miesiąc lub ostatni kwartał roku podatkowego podatnik wpłaca w terminie do 20 stycznia następnego roku podatkowego"
           as_of: 2024-02-05
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: termin.ryczalt_kwartal
   name: Ryczałt za kwartał
@@ -140,7 +140,7 @@
           article: art. 21 ust. 1a
           quote: "w terminie do dnia 20 następnego miesiąca po upływie kwartału, za który ryczałt ma być opłacony, a za ostatni kwartał roku podatkowego – w terminie do dnia 20 stycznia następnego roku podatkowego"
           as_of: 2024-04-10
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: zasada.zaliczki_kwartalne_pit
   name: Zaliczki kwartalne na PIT (skala i podatek liniowy)

@@ -46,7 +46,7 @@
           article: art. 6 ust. 4 pkt 1
           quote: "uzyskali przychody z tej działalności, prowadzonej wyłącznie samodzielnie, w wysokości nieprzekraczającej 2 000 000 euro"
           as_of: 2024-04-10
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: zasada.ryczalt_wylaczenia
   name: Kiedy nie można stosować ryczałtu od przychodów ewidencjonowanych i kiedy traci się do niego prawo
