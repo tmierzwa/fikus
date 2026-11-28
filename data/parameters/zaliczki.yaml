@@ -8,7 +8,7 @@
   unit: EUR/rok
   applies_to: {tax_form: [skala, liniowy]}
   versions:
-    - valid_from: 2026-01-01
+    - valid_from: 2024-01-01
       value: 2000000
       note: >-
         Mały podatnik to podatnik, u którego przychód ze sprzedaży razem z należnym VAT nie przekroczył
@@ -16,8 +16,9 @@
         ze sprzedaży u zmarłego przedsiębiorcy. Kwotę przelicza się na złote według średniego kursu euro NBP
         z pierwszego dnia roboczego października poprzedniego roku podatkowego, w zaokrągleniu do 1000 zł.
         Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.;
-        data początku obowiązywania (2026-01-01) nie jest potwierdzona źródłem. Nowelizacje ogłoszone później
-        (Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1541, 1542 i 1556) nie zmieniają art. 5a pkt 20.
+        tekst jednolity Dz.U. 2024 poz. 226 (przepisy ogłoszone przed 6 lutego 2024 r.) ma to samo brzmienie art. 5a pkt 20.
+        Data początku obowiązywania (2024-01-01) to data odcięcia danych. Nowelizacje ogłoszone później
+        (Dz.U. 2026 poz. 779, 846, 1079, 1098, 1123, 1287, 1347, 1354, 1371, 1541, 1542 i 1556) nie zmieniają art. 5a pkt 20. Korekta z 28 listopada 2026 r.: zmieniony okres.
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -33,14 +34,19 @@
           kind: control
           quote: "Mały podatnik – podatnik, którego przychody ze sprzedaży wraz z podatkiem VAT nie przekroczyły w poprzednim roku podatkowym 2 mln euro"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+        - title: Dz.U. 2024 poz. 226, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (to samo brzmienie w dniu odcięcia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/226/text.pdf
+          article: art. 5a pkt 20
+          quote: "nie przekroczyła w poprzednim roku podatkowym wyrażonej w złotych kwoty odpowiadającej równowartości 2 000 000 euro"
+          as_of: 2024-02-05
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: ryczalt.kwartalnie.limit_euro
   name: Limit przychodu za poprzedni rok uprawniający do kwartalnego opłacania ryczałtu (w euro)
   unit: EUR/rok
   applies_to: {tax_form: [ryczalt]}
   versions:
-    - valid_from: 2026-01-01
+    - valid_from: 2024-01-01
       value: 200000
       note: >-
         Przychody z działalności prowadzonej samodzielnie albo przychody spółki w roku poprzedzającym rok podatkowy.
@@ -48,8 +54,9 @@
         5, 8 i 9 albo podstawę obliczenia podatku na podstawie art. 26i ustawy o PIT. Kwotę przelicza się na złote
         według średniego kursu euro NBP z pierwszego dnia roboczego października roku poprzedzającego rok podatkowy
         (art. 4 ust. 2). Tekst jednolity uwzględnia zmiany ogłoszone
-        przed 2025-06-12; data początku obowiązywania (2026-01-01) nie jest potwierdzona źródłem. Nowelizacje ogłoszone
-        później (Dz.U. 2026 poz. 779, 1098 i 1541) nie zmieniają art. 4, 7 ani 21 ust. 1a–1c.
+        przed 2025-06-12; tekst jednolity Dz.U. 2024 poz. 776 (zmiany ogłoszone przed 11 kwietnia 2024 r.)
+        ma to samo brzmienie art. 4 ust. 2 i art. 21 ust. 1b. Data początku obowiązywania (2024-01-01) to data odcięcia danych. Nowelizacje ogłoszone
+        później (Dz.U. 2026 poz. 779, 1098 i 1541) nie zmieniają art. 4, 7 ani 21 ust. 1a–1c. Korekta z 28 listopada 2026 r.: zmieniony okres.
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
@@ -65,19 +72,25 @@
           kind: control
           quote: "w poprzednim roku, w ramach działalności prowadzonej samodzielnie albo w formie spółki, osiągnąłeś przychody nieprzekraczające 200 tys. euro"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+        - title: Dz.U. 2024 poz. 776, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (to samo brzmienie w dniu odcięcia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/776/text.pdf
+          article: art. 21 ust. 1b
+          quote: "w roku poprzedzającym rok podatkowy – nie przekroczyły kwoty stanowiącej równowartość 200 000 euro"
+          as_of: 2024-04-10
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: termin.zaliczka_kwartalna_pit
   name: Zaliczka kwartalna na PIT (skala albo liniowy) za kwartał
   kind: deadline
   applies_to: {tax_form: [skala, liniowy]}
   versions:
-    - valid_from: 2026-01-01
+    - valid_from: 2024-01-01
       value: {day_of_month: 20, months: [1, 4, 7, 10]}
       note: >-
         Dotyczy tylko podatników, którzy wybrali zaliczki kwartalne (zasada.zaliczki_kwartalne_pit). Termin w miesiącu
         po kwartale; za ostatni kwartał roku do 20 stycznia następnego roku. Tekst jednolity uwzględnia stan prawny
-        na 1 kwietnia 2026 r.; data początku obowiązywania (2026-01-01) nie jest potwierdzona źródłem.
+        na 1 kwietnia 2026 r.; tekst jednolity Dz.U. 2024 poz. 226 (przepisy ogłoszone
+        przed 6 lutego 2024 r.) ma to samo brzmienie art. 44 ust. 6. Data początku obowiązywania (2024-01-01) to data odcięcia danych. Korekta z 28 listopada 2026 r.: zmieniony okres.
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -88,19 +101,25 @@
           kind: control
           quote: "do 20. dnia każdego miesiąca następującego po kwartale, za który wpłacasz zaliczkę, a za ostatni kwartał roku podatkowego – do 20 stycznia następnego roku"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+        - title: Dz.U. 2024 poz. 226, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (to samo brzmienie w dniu odcięcia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/226/text.pdf
+          article: art. 44 ust. 6 zdanie drugie i trzecie
+          quote: "Zaliczki kwartalne podatnicy wpłacają w terminie do 20 dnia każdego miesiąca następującego po kwartale, za który wpłacana jest zaliczka. Zaliczkę za ostatni miesiąc lub ostatni kwartał roku podatkowego podatnik wpłaca w terminie do 20 stycznia następnego roku podatkowego"
+          as_of: 2024-02-05
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: termin.ryczalt_kwartal
   name: Ryczałt za kwartał
   kind: deadline
   applies_to: {tax_form: [ryczalt]}
   versions:
-    - valid_from: 2026-01-01
+    - valid_from: 2024-01-01
       value: {day_of_month: 20, months: [1, 4, 7, 10]}
       note: >-
         Dotyczy tylko podatników, którzy wybrali kwartalne opłacanie ryczałtu (zasada.ryczalt_kwartalnie). Termin
         w miesiącu po kwartale; za ostatni kwartał roku do 20 stycznia następnego roku. Tekst jednolity uwzględnia
-        zmiany ogłoszone przed 2025-06-12; data początku obowiązywania (2026-01-01) nie jest potwierdzona źródłem.
+        zmiany ogłoszone przed 2025-06-12; tekst jednolity Dz.U. 2024 poz. 776 (zmiany ogłoszone
+        przed 11 kwietnia 2024 r.) ma to samo brzmienie art. 21 ust. 1a. Data początku obowiązywania (2024-01-01) to data odcięcia danych. Korekta z 28 listopada 2026 r.: zmieniony okres.
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
@@ -116,7 +135,12 @@
           kind: control
           quote: "za dany kwartał - do 20. dnia następującego po upływie kwartału za ostatni kwartał roku podatkowego - do 20 stycznia następnego roku podatkowego"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+        - title: Dz.U. 2024 poz. 776, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (to samo brzmienie w dniu odcięcia)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2024/776/text.pdf
+          article: art. 21 ust. 1a
+          quote: "w terminie do dnia 20 następnego miesiąca po upływie kwartału, za który ryczałt ma być opłacony, a za ostatni kwartał roku podatkowego – w terminie do dnia 20 stycznia następnego roku podatkowego"
+          as_of: 2024-04-10
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: zasada.zaliczki_kwartalne_pit
   name: Zaliczki kwartalne na PIT (skala i podatek liniowy)

@@ -10,7 +10,7 @@
       valid_to: 2026-12-31
       value:
         steps:
-          - text: Jako podatnik VAT masz obowiązek wystawiać faktury ustrukturyzowane przy użyciu Krajowego Systemu e-Faktur. Obowiązek dotyczy także podatnika zwolnionego z VAT na podstawie art. 113 ust. 1 lub 9 ustawy o VAT, gdy wystawia fakturę; ustawa nie wyłącza go z tego obowiązku (wyłączenie dotyczy tylko zwolnienia w procedurze SME z art. 113a ust. 1). Kiedy fakturę w ogóle trzeba wystawić, określa art. 106b; sprzedaży zwolnionej z art. 113 ust. 1 i 9 nie musisz dokumentować fakturą, chyba że nabywca zażąda faktury.
+          - text: Jako podatnik VAT masz obowiązek wystawiać faktury ustrukturyzowane przy użyciu Krajowego Systemu e-Faktur. Obowiązek dotyczy także podatnika zwolnionego z VAT na podstawie art. 113 ust. 1 lub 9 ustawy o VAT, gdy wystawia fakturę; ustawa nie wyłącza go z tego obowiązku (wyłączenie dotyczy tylko zwolnienia w procedurze SME z art. 113a ust. 1). Kiedy fakturę w ogóle trzeba wystawić, określa art. 106b; sprzedaży zwolnionej z art. 113 ust. 1 i 9 nie musisz dokumentować fakturą, chyba że nabywca zażąda faktury w terminie 3 miesięcy, licząc od końca miesiąca, w którym dostarczono towar lub wykonano usługę bądź otrzymano całość lub część zapłaty.
             uses: [vat.limit_zwolnienia]
             basis: art. 106ga ust. 1 i 2 oraz art. 106b ust. 2 i 3 ustawy o podatku od towarów i usług
           - text: Od 1 lutego do 31 marca 2026 r. możesz zamiast faktur ustrukturyzowanych wystawiać faktury elektroniczne lub papierowe, jeżeli łączna wartość Twojej sprzedaży razem z podatkiem nie przekroczyła w 2024 r. 200 000 000 zł.
@@ -46,7 +46,7 @@
         wdrożenia KSeF” z 31.03.2026 i „Najczęstsze pytania” z 15.04.2026, zmienione 29.04.2026) podają wprost, że po przekroczeniu limitu
         obowiązek KSeF obejmuje fakturę, którą przekroczono limit, i wszystkie kolejne, a późniejsze nieprzekroczenie
         limitu nie ma znaczenia. Tak samo opisuje to uzasadnienie projektu (druk sejmowy nr 1407). Korekta z 27 listopada 2026 r.: zmieniony krok o art. 145m.
-        Korekta z 28 listopada 2026 r.: usunięty krok 8.
+        Korekta z 28 listopada 2026 r.: zmieniony krok 1, usunięty krok 8.
       not_covered: >-
         Wystawiania faktur w trybie offline24 i w czasie awarii albo niedostępności KSeF (art. 106nda–106nh), faktur z
         załącznikiem (art. 106gba), podawania numeru KSeF przy płatnościach (art. 108g) ani faktur VAT RR
@@ -76,6 +76,10 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
           article: art. 106b ust. 2
           quote: "Podatnik nie jest obowiązany do wystawienia faktury w odniesieniu do sprzedaży zwolnionej od podatku na podstawie art. 43 ust. 1, art. 113 ust. 1 i 9"
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (faktura na żądanie nabywcy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 106b ust. 3
+          quote: "jeżeli żądanie jej wystawienia zostało zgłoszone w terminie 3 miesięcy, licząc od końca miesiąca, w którym dostarczono towar lub wykonano usługę bądź otrzymano całość lub część zapłaty"
         - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (luty–marzec 2026)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
           article: art. 145l
@@ -125,7 +129,7 @@
     - valid_from: 2027-01-01
       value:
         steps:
-          - text: Jako podatnik VAT masz obowiązek wystawiać faktury ustrukturyzowane przy użyciu Krajowego Systemu e-Faktur. Obowiązek dotyczy także podatnika zwolnionego z VAT na podstawie art. 113 ust. 1 lub 9 ustawy o VAT, gdy wystawia fakturę; ustawa nie wyłącza go z tego obowiązku (wyłączenie dotyczy tylko zwolnienia w procedurze SME z art. 113a ust. 1). Kiedy fakturę w ogóle trzeba wystawić, określa art. 106b; sprzedaży zwolnionej z art. 113 ust. 1 i 9 nie musisz dokumentować fakturą, chyba że nabywca zażąda faktury.
+          - text: Jako podatnik VAT masz obowiązek wystawiać faktury ustrukturyzowane przy użyciu Krajowego Systemu e-Faktur. Obowiązek dotyczy także podatnika zwolnionego z VAT na podstawie art. 113 ust. 1 lub 9 ustawy o VAT, gdy wystawia fakturę; ustawa nie wyłącza go z tego obowiązku (wyłączenie dotyczy tylko zwolnienia w procedurze SME z art. 113a ust. 1). Kiedy fakturę w ogóle trzeba wystawić, określa art. 106b; sprzedaży zwolnionej z art. 113 ust. 1 i 9 nie musisz dokumentować fakturą, chyba że nabywca zażąda faktury w terminie 3 miesięcy, licząc od końca miesiąca, w którym dostarczono towar lub wykonano usługę bądź otrzymano całość lub część zapłaty.
             uses: [vat.limit_zwolnienia]
             basis: art. 106ga ust. 1 i 2 oraz art. 106b ust. 2 i 3 ustawy o podatku od towarów i usług
           - text: Przepisy przejściowe, które pozwalały do końca 2026 r. wystawiać faktury elektroniczne lub papierowe (przy sprzedaży do 10 000 zł miesięcznie, przy zastosowaniu kas rejestrujących i paragony fiskalne uznane za faktury), już nie obowiązują.
@@ -145,7 +149,7 @@
         ust. 1 wchodzi w życie 1 stycznia 2027 r. (odnośnik 23 w tekście jednolitym). Nowelizacje ogłoszone po tekście
         jednolitym Dz.U. 2026 poz. 1263 (Dz.U. 2026 poz. 1270, 1446, 1509 i 1556) nie zmieniają art. 106ga, 106gb ani 106ni;
         ustawa Dz.U. 2026 poz. 1270 zmienia w art. 106b tylko odesłanie w ust. 3 pkt 2. Korekta z 27 listopada 2026 r.:
-        usunięty krok 6.
+        usunięty krok 6. Korekta z 28 listopada 2026 r.: zmieniony krok 1.
       not_covered: >-
         Wystawiania faktur w trybie offline24 i w czasie awarii albo niedostępności KSeF (art. 106nda–106nh ustawy
         o podatku od towarów i usług), faktur z załącznikiem (art. 106gba), podawania numeru KSeF przy płatnościach
@@ -171,6 +175,10 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
           article: art. 106b ust. 2
           quote: "Podatnik nie jest obowiązany do wystawienia faktury w odniesieniu do sprzedaży zwolnionej od podatku na podstawie art. 43 ust. 1, art. 113 ust. 1 i 9"
+        - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (faktura na żądanie nabywcy)
+          url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
+          article: art. 106b ust. 3
+          quote: "jeżeli żądanie jej wystawienia zostało zgłoszone w terminie 3 miesięcy, licząc od końca miesiąca, w którym dostarczono towar lub wykonano usługę bądź otrzymano całość lub część zapłaty"
         - title: Dz.U. 2026 poz. 1263, tekst jednolity ustawy o podatku od towarów i usług (okres przepisów przejściowych z art. 145n)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/1263/text.pdf
           article: art. 145n ust. 1
@@ -191,7 +199,7 @@
           url: https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/zakres-obowiazkowego-ksef/
           quote: "W KSeF nie są wystawiane także faktury dokumentujące czynności dokonane przez podatnika korzystającego ze zwolnienia, o którym mowa w art. 113a ust.1 ustawy (procedura SME)."
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-27, agent_check: 2026-11-27}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: vat.kasa_fiskalna.limit_zwolnienia
   name: Limit sprzedaży na rzecz osób fizycznych nieprowadzących działalności gospodarczej i rolników ryczałtowych zwalniający z ewidencji przy użyciu kasy rejestrującej

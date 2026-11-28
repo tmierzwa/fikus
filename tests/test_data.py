@@ -404,3 +404,42 @@ def test_cutoff_start_needs_no_confirmation_but_end_does():
     assert _cutoff("2028-12-31", end_docs=2)._unconfirmed_fields() == []
     later = Version.model_validate({**_cutoff().model_dump(mode="json"), "valid_from": "2024-01-02"})
     assert later._unconfirmed_fields() == ["period"]
+
+
+# Odesłania w krokach zasad, którym brakuje wersji na dzień początku zasady. Pozycję usuwasz,
+# gdy powstanie brakująca wersja parametru (albo zasada zacznie się później); nowych nie dopisujesz.
+ZNANE_BRAKI_ODESLAN = {
+    ("zasada.malzonkowie_wspolne_opodatkowanie", date(2025, 1, 1), "zasada.skala_podatek"),
+    ("zasada.samotny_rodzic_opodatkowanie", date(2025, 1, 1), "zasada.skala_podatek"),
+    ("zasada.dane_autoryzujace", date(2026, 4, 1), "zasada.jpk_pd_pkpir"),
+    ("zasada.dane_autoryzujace", date(2026, 6, 16), "zasada.jpk_pd_pkpir"),
+    ("zasada.przesuniecie_terminu", date(2024, 1, 1), "kalendarz.dni_wolne"),
+    ("zasada.ryczalt_zdrowotna_prog", date(2027, 1, 1), "zdrowotna.ryczalt.skladka"),
+    ("zasada.ryczalt_zdrowotna_prog_poprzedni_rok", date(2027, 1, 1), "zdrowotna.ryczalt.skladka"),
+    ("zasada.ryczalt_podstawa", date(2024, 1, 1), "zus.stawka.emerytalna"),
+    ("zasada.ryczalt_podstawa", date(2024, 1, 1), "zus.stawka.rentowa"),
+    ("zasada.ryczalt_podstawa", date(2024, 1, 1), "zus.stawka.chorobowa"),
+    ("zasada.ryczalt_podstawa", date(2024, 1, 1), "zus.stawka.wypadkowa_do_9"),
+    ("zasada.ryczalt_podstawa", date(2024, 1, 1), "zdrowotna.ryczalt.skladka"),
+    ("zasada.liniowy_zdrowotna", date(2027, 2, 1), "zdrowotna.minimum"),
+    ("zasada.dra_obowiazek", date(2024, 11, 1), "schemat.zus_dra"),
+    ("zasada.dra_obowiazek", date(2024, 11, 1), "zasada.roczne_rozliczenie_zdrowotnej"),
+    ("zasada.roczne_rozliczenie_zdrowotnej", date(2025, 1, 1), "zasada.skala_zdrowotna"),
+    ("zasada.roczne_rozliczenie_zdrowotnej", date(2025, 1, 1), "zasada.liniowy_zdrowotna"),
+    ("zasada.roczne_rozliczenie_zdrowotnej", date(2025, 1, 1), "schemat.zus_dra"),
+}
+
+
+def test_rule_uses_have_version_at_rule_start():
+    """Każdy parametr z uses ma wersję obowiązującą w dniu początku wersji zasady."""
+    braki = set()
+    for p in store.params.values():
+        if p.kind != "rule":
+            continue
+        for v in p.versions:
+            for step in v.value.get("steps", []):
+                for u in step.get("uses", []):
+                    if not any(x.covers(v.valid_from) for x in store.params[u].versions):
+                        braki.add((p.id, v.valid_from, u))
+    assert braki - ZNANE_BRAKI_ODESLAN == set(), "nowe odesłania bez wersji"
+    assert ZNANE_BRAKI_ODESLAN - braki == set(), "usuń z listy pozycje, które już mają wersję"
