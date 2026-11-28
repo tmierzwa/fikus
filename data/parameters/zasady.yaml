@@ -192,9 +192,9 @@
           - text: Od dochodu odlicz składki na ubezpieczenia społeczne z art. 26 ust. 1 pkt 2 lit. a i pkt 2a ustawy o PIT zapłacone w roku podatkowym, na warunkach z tych przepisów (przy pkt 2 bez składek, których podstawą są dochody zwolnione albo dochody, od których zaniechano poboru podatku; przy pkt 2a z zastrzeżeniem art. 26 ust. 13b i 13c). Odliczasz tylko składki, które nie zostały zaliczone do kosztów uzyskania przychodów, odliczone od dochodów opodatkowanych na zasadach art. 30c ani od przychodu na podstawie ustawy o zryczałtowanym podatku dochodowym i nie zostały zwrócone w jakiejkolwiek formie (art. 26 ust. 13a).
             uses: [zus.stawka.emerytalna, zus.stawka.rentowa, zus.stawka.chorobowa, zus.stawka.wypadkowa_do_9]
             basis: art. 26 ust. 1 pkt 2 lit. a i pkt 2a oraz ust. 13a–13c ustawy o podatku dochodowym od osób fizycznych
-          - text: Od podstawy obliczenia podatku do progu podatek to podstawa pomnożona przez stawkę niższą, pomniejszona o kwotę zmniejszającą podatek. Od podstawy ponad próg podatek to kwota podatku od progu powiększona o stawkę wyższą od nadwyżki ponad próg.
+          - text: Od podstawy obliczenia podatku do progu podatek to podstawa pomnożona przez stawkę niższą, pomniejszona o kwotę zmniejszającą podatek. Od podstawy ponad próg podatek to kwota podatku od progu powiększona o stawkę wyższą od nadwyżki ponad próg. Gdy podatek obliczony do progu jest liczbą ujemną (podstawa pomnożona przez stawkę niższą jest mniejsza od kwoty zmniejszającej podatek), podatek wynosi zero; ustawa nie mówi tego wprost, podaje to MF w objaśnieniach do zeznań.
             uses: [podatek.skala]
-            basis: art. 27 ust. 1 ustawy o podatku dochodowym od osób fizycznych
+            basis: art. 27 ust. 1 ustawy o podatku dochodowym od osób fizycznych; broszury MF do zeznań PIT-36 i PIT-37 (podatek ujemny)
           - text: Podstawę opodatkowania i kwotę podatku zaokrąglij do pełnych złotych; końcówki poniżej 50 groszy pomiń, a od 50 groszy podwyższ do pełnego złotego.
             uses: []
             basis: art. 63 § 1 Ordynacji podatkowej
@@ -209,7 +209,9 @@
             basis: art. 45 ust. 1 i ust. 4 pkt 1 ustawy o podatku dochodowym od osób fizycznych
       note: >-
         Tekst jednolity uwzględnia stan prawny na 1 kwietnia 2026 r.; data początku obowiązywania (2026-01-01)
-        nie jest potwierdzona źródłem. Wcześniejszych wersji nie wprowadzono.
+        nie jest potwierdzona źródłem. Wcześniejszych wersji nie wprowadzono. Zero przy podatku ujemnym podają broszury
+        MF do zeznań za 2025 r. (PIT-36, opis poz. 296, i PIT-37, opis poz. 134); broszur za 2026 r. jeszcze nie ma,
+        a art. 27 ust. 1 ma to samo brzmienie. Korekta z 28 listopada 2026 r.: zmieniony krok 3.
       sources:
         - title: Dz.U. 2026 poz. 592, tekst jednolity ustawy o podatku dochodowym od osób fizycznych (podstawa)
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/592/text.pdf
@@ -251,7 +253,17 @@
           url: https://api.sejm.gov.pl/eli/acts/DU/2026/622/text.pdf
           article: art. 63 § 1
           quote: "Podstawy opodatkowania, kwoty podatków, odsetki za zwłokę, opłaty prolongacyjne, oprocentowanie nadpłat oraz wynagrodzenia przysługujące płatnikom i inkasentom zaokrągla się do pełnych złotych"
-      verification: {checked_at: 2026-11-26, agent_check: 2026-11-26}
+        - title: podatki.gov.pl (MF), broszura informacyjna do zeznania PIT-36 za 2025 r. (poz. 296)
+          url: https://podatki.gov.pl/media/i11o5dtk/broszura-do-pit-36-za-2025-r.pdf
+          article: art. 27 ust. 1 ustawy o PIT
+          quote: "Jeżeli kwota podatku obliczonego w powyższy sposób jest liczbą ujemną, w poz. 296 należy wpisać „0”."
+          as_of: 2026-11-28
+        - title: podatki.gov.pl (MF), broszura informacyjna do zeznania PIT-37 za 2025 r. (poz. 134)
+          url: https://podatki.gov.pl/media/zzfhmt2c/broszura-pit-37-za-2025-r.pdf
+          article: art. 27 ust. 1 ustawy o PIT
+          quote: "Jeśli tak obliczony podatek jest liczbą ujemną, w poz. 134 wpisz „0”."
+          as_of: 2026-11-28
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: zasada.ryczalt_zdrowotna_prog
   name: Wybór progu składki zdrowotnej na ryczałcie
