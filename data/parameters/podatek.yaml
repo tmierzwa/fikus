@@ -25,10 +25,7 @@
         z każdego rodzaju działalności, stawkę wyznacza art. 12 ust. 3. Art. 12 ust. 1 ma to samo brzmienie
         w tekstach jednolitych Dz.U. 2024 poz. 776 (przepisy ogłoszone przed 11 kwietnia 2024 r.) i Dz.U. 2025
         poz. 843 (przed 12 czerwca 2025 r.); późniejsze nowelizacje ustawy nie zmieniają art. 12 ust. 1.
-        Data początku obowiązywania (2024-01-01) to początek okresu, który potwierdzają te teksty jednolite,
-        a nie dzień wejścia stawek w życie: zmiana art. 12 ust. 1, która weszła w życie tego dnia (Dz.U. 2023
-        poz. 1414), dotyczyła zakresu przychodów w pkt 7 lit. e, nie wysokości stawek. Według strony MF stawki
-        obowiązują od 2022 r.; okresu sprzed 2024 r. ta wersja nie obejmuje.
+        Data początku obowiązywania (2024-01-01) to data odcięcia danych, a nie dzień wejścia stawek w życie.
       sources:
         - title: Dz.U. 2025 poz. 843, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (pkt 1)
           url: https://api.sejm.gov.pl/eli/acts/DU/2025/843/text.pdf
@@ -80,7 +77,7 @@
           article: art. 12 ust. 1 pkt 8
           confirms: [pkt_8]
           quote: "8) 2 % przychodów, o których mowa w art. 6 ust. 1d"
-        - title: Dz.U. 2024 poz. 776, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (to samo brzmienie, dla daty początku obowiązywania)
+        - title: Dz.U. 2024 poz. 776, tekst jednolity ustawy o zryczałtowanym podatku dochodowym (to samo brzmienie od początku okresu)
           url: https://api.sejm.gov.pl/eli/acts/DU/2024/776/text.pdf
           article: art. 12 ust. 1 pkt 2b
           confirms: [pkt_2b]
