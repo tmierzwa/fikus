@@ -263,7 +263,7 @@
           article: art. 27 ust. 1 ustawy o PIT
           quote: "Jeśli tak obliczony podatek jest liczbą ujemną, w poz. 134 wpisz „0”."
           as_of: 2026-11-28
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: zasada.ryczalt_zdrowotna_prog
   name: Wybór progu składki zdrowotnej na ryczałcie

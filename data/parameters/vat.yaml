@@ -115,7 +115,7 @@
           kind: control
           quote: "nie przekroczyła łącznie w poprzednim ani w bieżącym roku podatkowym kwoty 240 000 zł"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: zasada.vat_odliczenie
   name: Odliczenie podatku naliczonego VAT, moment, korekta, samochody i wyłączenia

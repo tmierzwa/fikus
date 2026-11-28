@@ -461,6 +461,7 @@
           as_of: 2026-11-26
       verification:
         checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue: >-
           P42: którą kwotę przychodu podaje się w danych autoryzujących, gdy za rok podatkowy o dwa lata wcześniejszy
           podatnik złożył kilka z wymienionych zeznań (na przykład PIT-36L i PIT-38), także przy podpisywaniu plików
@@ -632,6 +633,7 @@
           as_of: 2026-11-26
       verification:
         checked_at: 2026-11-28
+        agent_check: 2026-11-28
         open_issue: >-
           P42: którą kwotę przychodu podaje się w danych autoryzujących, gdy za rok podatkowy o dwa lata wcześniejszy
           podatnik złożył kilka z wymienionych zeznań (na przykład PIT-36L i PIT-38), także przy podpisywaniu plików
