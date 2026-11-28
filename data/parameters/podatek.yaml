@@ -147,7 +147,7 @@
           url: https://podatki.gov.pl/podatki-firmowe/pit/stawki-i-limity
           quote: "12% - od przychodów ze świadczenia niektórych usług informatycznych"
           as_of: 2026-11-26
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: ryczalt.zakres_uslug
   name: Brzmienie art. 12 ust. 1 ustawy o zryczałtowanym podatku dochodowym dla usług informatycznych i inżynierskich (symbole PKWiU)

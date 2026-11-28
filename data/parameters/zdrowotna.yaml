@@ -110,7 +110,7 @@
           confirms: [powyzej_300000]
           quote: "przekroczyły kwotę 300 000 zł. Składka na ubezpieczenie zdrowotne wynosi 1.384,97 zł"
           as_of: 2025-01-30
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
     - valid_from: 2026-01-01
       valid_to: 2026-12-31
       value: {do_60000: 498.35, do_300000: 830.58, powyzej_300000: 1495.04}
@@ -179,7 +179,7 @@
           confirms: [powyzej_300000]
           quote: "powyżej 300 tys. zł 1495,04 zł"
           as_of: 2026-11-28
-      verification: {checked_at: 2026-11-28}
+      verification: {checked_at: 2026-11-28, agent_check: 2026-11-28}
 
 - id: zdrowotna.ryczalt.podstawa
   name: Miesięczna podstawa wymiaru składki zdrowotnej na ryczałcie wg progu przychodu
